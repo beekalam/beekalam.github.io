@@ -1,0 +1,676 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2016-12-30 Fri 15:39 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title></title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="moh" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org92e975b">1. speedtest</a></li>
+<li><a href="#orgc049a40">2. linux</a>
+<ul>
+<li><a href="#orga26be2e">2.1. magazine</a></li>
+<li><a href="#org1451447">2.2. tutorials</a></li>
+</ul>
+</li>
+<li><a href="#org4938fcf">3. emacs</a>
+<ul>
+<li><a href="#orga1b1b06">3.1. org-emacs</a>
+<ul>
+<li><a href="#org1f6220d">3.1.1. org-mode protocol</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org2df9f2b">4. angular</a>
+<ul>
+<li><a href="#orgcc55745">4.1. directive with pattern</a></li>
+<li><a href="#org51968f3">4.2. programming</a></li>
+</ul>
+</li>
+<li><a href="#orgf714d31">5. blogs</a></li>
+<li><a href="#org51581ee">6. magazine</a></li>
+<li><a href="#orgc82c6a2">7. individuals</a>
+<ul>
+<li><a href="#org055148f">7.1. </a></li>
+<li><a href="#org816a212">7.2. </a></li>
+<li><a href="#org55c4f97">7.3. </a></li>
+</ul>
+</li>
+<li><a href="#orgaa729b6">8. javascript</a>
+<ul>
+<li><a href="#org376497c">8.1. design patterns</a></li>
+<li><a href="#orga568a8b">8.2. template</a></li>
+<li><a href="#orgf600568">8.3. ide</a></li>
+<li><a href="#org1aaf49d">8.4. individuals</a></li>
+</ul>
+</li>
+<li><a href="#orgbf5963d">9. web development</a></li>
+<li><a href="#orgd3cdd2f">10. php</a></li>
+<li><a href="#orgcd4ba6d">11. others</a></li>
+<li><a href="#org15be0f4">12. books</a></li>
+<li><a href="#orgffd6833">13. prog practice</a>
+<ul>
+<li><a href="#orgf1ed243">13.1. algorithmic</a></li>
+<li><a href="#orgf33b727">13.2. strings</a></li>
+<li><a href="#orge49fe29">13.3. angular</a>
+<ul>
+<li><a href="#orga79d67d">13.3.1. write a directive that moves an html object with keyboard</a></li>
+<li><a href="#org2ad6529">13.3.2. write a checkbox directive without using the html checkbox input type</a></li>
+<li><a href="#orgef190b3">13.3.3. write a directive to show the current time</a></li>
+</ul>
+</li>
+<li><a href="#orgd87d341">13.4. javascript</a>
+<ul>
+<li><a href="#org4203db8">13.4.1. implement lodash functions</a></li>
+<li><a href="#org8393181">13.4.2. implement the built-in prototype functions of Array.prototype.*</a></li>
+<li><a href="#org4826ec2">13.4.3. write an O() function like the one in javascript plugins.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org9ac760d">14. programming problems</a></li>
+<li><a href="#org428d485">15. network</a></li>
+<li><a href="#org00bb2e8">16. cron</a></li>
+<li><a href="#org78cb1e9">17. monitor</a></li>
+<li><a href="#org7499454">18. electronics</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org92e975b" class="outline-2">
+<h2 id="org92e975b"><span class="section-number-2">1</span> speedtest</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+<a href="http://www.tecmint.com/speedtest-mini-server-to-test-bandwidth-speed/">http://www.tecmint.com/speedtest-mini-server-to-test-bandwidth-speed/</a>
+<a href="http://www.brandonchecketts.com/open-source-speedtest">http://www.brandonchecketts.com/open-source-speedtest</a>
+<a href="https://github.com/adolfintel/speedtest">https://github.com/adolfintel/speedtest</a>
+<a href="https://github.com/satyaakam/speedtest">https://github.com/satyaakam/speedtest</a>
+<a href="http://speedtest.xfinity.com/speedtest.swf">http://speedtest.xfinity.com/speedtest.swf</a>
+<a href="http://speedtestbeta.xfinity.com/">http://speedtestbeta.xfinity.com/</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc049a40" class="outline-2">
+<h2 id="orgc049a40"><span class="section-number-2">2</span> linux</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+<a href="http://doc.norang.ca/">http://doc.norang.ca/</a>
+<a href="https://lwn.net/">https://lwn.net/</a>
+<a href="http://man7.org/articles/index.html">http://man7.org/articles/index.html</a>
+<a href="http://blog.man7.org/">http://blog.man7.org/</a>
+<a href="http://giantdorks.org/">http://giantdorks.org/</a>
+</p>
+</div>
+<div id="outline-container-orga26be2e" class="outline-3">
+<h3 id="orga26be2e"><span class="section-number-3">2.1</span> magazine</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+<a href="ftp://ftp.freiesmagazin.de/">ftp://ftp.freiesmagazin.de/</a>
+<a href="http://magzdb.org/j/5803">http://magzdb.org/j/5803</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org1451447" class="outline-3">
+<h3 id="org1451447"><span class="section-number-3">2.2</span> tutorials</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+<a href="https://community.linuxmint.com/index.php/tutorial/search/">https://community.linuxmint.com/index.php/tutorial/search/</a>
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org4938fcf" class="outline-2">
+<h2 id="org4938fcf"><span class="section-number-2">3</span> emacs</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+<a href="https://nakkaya.com/">https://nakkaya.com/</a>
+<a href="http://ehneilsen.net/notebook/orgExamples/org-examples.html">http://ehneilsen.net/notebook/orgExamples/org-examples.html</a>
+</p>
+</div>
+
+<div id="outline-container-orga1b1b06" class="outline-3">
+<h3 id="orga1b1b06"><span class="section-number-3">3.1</span> org-emacs</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+<a href="http://orgmode.org/worg/orgcard.html">http://orgmode.org/worg/orgcard.html</a>
+<a href="http://orgmode.org/worg/org-tutorials/">http://orgmode.org/worg/org-tutorials/</a>
+<a href="http://emacs.stackexchange.com/">http://emacs.stackexchange.com/</a>
+<a href="https://news.ycombinator.com/item?id=11386590">https://news.ycombinator.com/item?id=11386590</a>
+</p>
+</div>
+
+<div id="outline-container-org1f6220d" class="outline-4">
+<h4 id="org1f6220d"><span class="section-number-4">3.1.1</span> org-mode protocol</h4>
+<div class="outline-text-4" id="text-3-1-1">
+<p>
+<a href="https://github.com/alphapapa/org-protocol-capture-html">https://github.com/alphapapa/org-protocol-capture-html</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2df9f2b" class="outline-2">
+<h2 id="org2df9f2b"><span class="section-number-2">4</span> angular</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+<a href="http://www.angularjshub.com/">http://www.angularjshub.com/</a>
+<a href="http://twofuckingdevelopers.com/">http://twofuckingdevelopers.com/</a>
+<a href="http://www.codelord.net/">http://www.codelord.net/</a>
+</p>
+</div>
+<div id="outline-container-orgcc55745" class="outline-3">
+<h3 id="orgcc55745"><span class="section-number-3">4.1</span> directive with pattern</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+<a href="https://codepen.io/TheLarkInn/pen/GgbrWr">https://codepen.io/TheLarkInn/pen/GgbrWr</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org51968f3" class="outline-3">
+<h3 id="org51968f3"><span class="section-number-3">4.2</span> programming</h3>
+</div>
+</div>
+
+<div id="outline-container-orgf714d31" class="outline-2">
+<h2 id="orgf714d31"><span class="section-number-2">5</span> blogs</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+<a href="https://lostechies.com/">https://lostechies.com/</a>
+<a href="http://www.kelvinwong.ca/">http://www.kelvinwong.ca/</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org51581ee" class="outline-2">
+<h2 id="org51581ee"><span class="section-number-2">6</span> magazine</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+<a href="http://www.codemag.com/Magazine/AllIssues">http://www.codemag.com/Magazine/AllIssues</a>
+<a href="ftp://ftp.freiesmagazin.de/">ftp://ftp.freiesmagazin.de/</a>
+<a href="http://fullcirclemagazine.org/">http://fullcirclemagazine.org/</a>
+<a href="https://bsdmag.org/">https://bsdmag.org/</a>
+<a href="https://pragprog.com/magazines">https://pragprog.com/magazines</a>
+<a href="http://www.perl-magazin.de/">http://www.perl-magazin.de/</a>
+<a href="http://www.gamasutra.com/topic/game-developer">http://www.gamasutra.com/topic/game-developer</a>
+<a href="https://visualstudiomagazine.com/Home.aspx">https://visualstudiomagazine.com/Home.aspx</a>
+<a href="http://java.sys-con.com/">http://java.sys-con.com/</a>
+<a href="https://accu.org/">https://accu.org/</a>
+<a href="https://www.computer.org/software-magazine/">https://www.computer.org/software-magazine/</a>
+<a href="http://www.embedded.com/">http://www.embedded.com/</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc82c6a2" class="outline-2">
+<h2 id="orgc82c6a2"><span class="section-number-2">7</span> individuals</h2>
+<div class="outline-text-2" id="text-7">
+</div><div id="outline-container-org055148f" class="outline-3">
+<h3 id="org055148f"><span class="section-number-3">7.1</span> <a href="https://www.jwz.org/blog/">https://www.jwz.org/blog/</a></h3>
+</div>
+<div id="outline-container-org816a212" class="outline-3">
+<h3 id="org816a212"><span class="section-number-3">7.2</span> <a href="https://www.jwz.org/gruntle/wrists.html">https://www.jwz.org/gruntle/wrists.html</a></h3>
+</div>
+<div id="outline-container-org55c4f97" class="outline-3">
+<h3 id="org55c4f97"><span class="section-number-3">7.3</span> <a href="http://www.lcdf.org/~eddietwo/xwrits/index.html">http://www.lcdf.org/~eddietwo/xwrits/index.html</a></h3>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgaa729b6" class="outline-2">
+<h2 id="orgaa729b6"><span class="section-number-2">8</span> javascript</h2>
+<div class="outline-text-2" id="text-8">
+</div><div id="outline-container-org376497c" class="outline-3">
+<h3 id="org376497c"><span class="section-number-3">8.1</span> design patterns</h3>
+<div class="outline-text-3" id="text-8-1">
+<p>
+<a href="http://jsdesignpatterns.co/">http://jsdesignpatterns.co/</a>
+<a href="https://addyosmani.com/resources/essentialjsdesignpatterns/book/">https://addyosmani.com/resources/essentialjsdesignpatterns/book/</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga568a8b" class="outline-3">
+<h3 id="orga568a8b"><span class="section-number-3">8.2</span> template</h3>
+<div class="outline-text-3" id="text-8-2">
+<p>
+<a href="https://github.com/puikinsh/gentelella">https://github.com/puikinsh/gentelella</a>
+<a href="http://phpflow.com/misc/angular/convert-bootstrap-html-theme-angularjs-template/">http://phpflow.com/misc/angular/convert-bootstrap-html-theme-angularjs-template/</a>
+<a href="https://colorlib.com/polygon/gentelella/index.html">https://colorlib.com/polygon/gentelella/index.html</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf600568" class="outline-3">
+<h3 id="orgf600568"><span class="section-number-3">8.3</span> ide</h3>
+<div class="outline-text-3" id="text-8-3">
+<p>
+<a href="http://brackets.io/">http://brackets.io/</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org1aaf49d" class="outline-3">
+<h3 id="org1aaf49d"><span class="section-number-3">8.4</span> individuals</h3>
+<div class="outline-text-3" id="text-8-4">
+<p>
+<a href="http://yehudakatz.com/">http://yehudakatz.com/</a>
+<a href="http://sporto.github.io/">http://sporto.github.io/</a>
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgbf5963d" class="outline-2">
+<h2 id="orgbf5963d"><span class="section-number-2">9</span> web development</h2>
+<div class="outline-text-2" id="text-9">
+<p>
+<a href="http://www.jblotus.com/">http://www.jblotus.com/</a>
+</p>
+</div>
+</div>
+<div id="outline-container-orgd3cdd2f" class="outline-2">
+<h2 id="orgd3cdd2f"><span class="section-number-2">10</span> php</h2>
+<div class="outline-text-2" id="text-10">
+<p>
+<a href="http://phpflow.com/">http://phpflow.com/</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgcd4ba6d" class="outline-2">
+<h2 id="orgcd4ba6d"><span class="section-number-2">11</span> others</h2>
+<div class="outline-text-2" id="text-11">
+<p>
+<a href="https://github.com/jnv/lists">https://github.com/jnv/lists</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org15be0f4" class="outline-2">
+<h2 id="org15be0f4"><span class="section-number-2">12</span> books</h2>
+<div class="outline-text-2" id="text-12">
+<p>
+<a href="http://www.onlineprogrammingbooks.com/linux/">http://www.onlineprogrammingbooks.com/linux/</a>
+<a href="https://www.computer-pdf.com/">https://www.computer-pdf.com/</a>
+<a href="http://www.wowebook.pw/">http://www.wowebook.pw/</a>
+<a href="https://1bookcase.com/">https://1bookcase.com/</a>
+<a href="http://www.itebookshare.com/">http://www.itebookshare.com/</a>
+<a href="http://ebookee.org/">http://ebookee.org/</a>
+<a href="http://itbookshub.com/">http://itbookshub.com/</a>
+<a href="http://www.freebookcentre.net/">http://www.freebookcentre.net/</a>
+<a href="http://freecomputerbooks.com/">http://freecomputerbooks.com/</a>
+<a href="http://aosabook.org/en/index.html">http://aosabook.org/en/index.html</a>
+<a href="http://www.e-booksdirectory.com/n">http://www.e-booksdirectory.com/n</a>
+<a href="http://www.getfreeebooks.com/">http://www.getfreeebooks.com/</a>
+<a href="http://www.ebook3000.com/">http://www.ebook3000.com/</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgffd6833" class="outline-2">
+<h2 id="orgffd6833"><span class="section-number-2">13</span> prog practice</h2>
+<div class="outline-text-2" id="text-13">
+</div><div id="outline-container-orgf1ed243" class="outline-3">
+<h3 id="orgf1ed243"><span class="section-number-3">13.1</span> algorithmic</h3>
+<div class="outline-text-3" id="text-13-1">
+<p>
+write a stack
+write a queue
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf33b727" class="outline-3">
+<h3 id="orgf33b727"><span class="section-number-3">13.2</span> strings</h3>
+<div class="outline-text-3" id="text-13-2">
+<p>
+reverse string (without language utilities)
+write function TitleCase(to capitalize the first letter of every word)
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge49fe29" class="outline-3">
+<h3 id="orge49fe29"><span class="section-number-3">13.3</span> angular</h3>
+<div class="outline-text-3" id="text-13-3">
+</div><div id="outline-container-orga79d67d" class="outline-4">
+<h4 id="orga79d67d"><span class="section-number-4">13.3.1</span> write a directive that moves an html object with keyboard</h4>
+<div class="outline-text-4" id="text-13-3-1">
+<p>
+<a href="https://plnkr.co/edit/h6BN3BIVYD2HGe7nKaGL?p=preview">https://plnkr.co/edit/h6BN3BIVYD2HGe7nKaGL?p=preview</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org2ad6529" class="outline-4">
+<h4 id="org2ad6529"><span class="section-number-4">13.3.2</span> write a checkbox directive without using the html checkbox input type</h4>
+<div class="outline-text-4" id="text-13-3-2">
+<p>
+<a href="https://github.com/shusain/angular-sh-checkbox/blob/master/directive.js">https://github.com/shusain/angular-sh-checkbox/blob/master/directive.js</a>
+</p>
+</div>
+</div>
+<div id="outline-container-orgef190b3" class="outline-4">
+<h4 id="orgef190b3"><span class="section-number-4">13.3.3</span> write a directive to show the current time</h4>
+</div>
+</div>
+<div id="outline-container-orgd87d341" class="outline-3">
+<h3 id="orgd87d341"><span class="section-number-3">13.4</span> javascript</h3>
+<div class="outline-text-3" id="text-13-4">
+</div><div id="outline-container-org4203db8" class="outline-4">
+<h4 id="org4203db8"><span class="section-number-4">13.4.1</span> implement lodash functions</h4>
+<div class="outline-text-4" id="text-13-4-1">
+<p>
+<a href="http://devdocs.io/lodash~4/">http://devdocs.io/lodash~4/</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org8393181" class="outline-4">
+<h4 id="org8393181"><span class="section-number-4">13.4.2</span> implement the built-in prototype functions of Array.prototype.*</h4>
+</div>
+<div id="outline-container-org4826ec2" class="outline-4">
+<h4 id="org4826ec2"><span class="section-number-4">13.4.3</span> write an O() function like the one in javascript plugins.</h4>
+<div class="outline-text-4" id="text-13-4-3">
+<p>
+this  finds and element and changes its properties
+background = O('menu').style.backgroundColor
+O('menu').style.color = 'yellow'
+O(objectname, 'innerHTML', '&lt;h1&gt;Heading Text&lt;/h1&gt;’)
+O(Array('first', 'second'), 'mouseover', 'mousehandler')
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org9ac760d" class="outline-2">
+<h2 id="org9ac760d"><span class="section-number-2">14</span> programming problems</h2>
+<div class="outline-text-2" id="text-14">
+<p>
+<a href="http://rosettacode.org/">http://rosettacode.org/</a>
+<a href="http://codekata.pragprog.com/">http://codekata.pragprog.com/</a>
+<a href="http://www.ic.unicamp.br/~meidanis/courses/mc336/2006s2/funcional/L-99_Ninety-Nine_Lisp_Problems.html">http://www.ic.unicamp.br/~meidanis/courses/mc336/2006s2/funcional/L-99_Ninety-Nine_Lisp_Problems.html</a>
+<a href="https://wiki.haskell.org/99_Haskell_exercises">https://wiki.haskell.org/99_Haskell_exercises</a>
+<a href="http://rosettacode.org/">http://rosettacode.org/</a>
+<a href="http://www.codeabbey.com/">http://www.codeabbey.com/</a>
+<a href="https://github.com/lnishan/awesome-competitive-programming">https://github.com/lnishan/awesome-competitive-programming</a>
+<a href="http://codeforces.com/">http://codeforces.com/</a>
+<a href="https://www.hackerrank.com/">https://www.hackerrank.com/</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org428d485" class="outline-2">
+<h2 id="org428d485"><span class="section-number-2">15</span> network</h2>
+<div class="outline-text-2" id="text-15">
+<p>
+<a href="http://packetlife.net/">http://packetlife.net/</a>
+<a href="https://wiki.wireshark.org/FrontPage">https://wiki.wireshark.org/FrontPage</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org00bb2e8" class="outline-2">
+<h2 id="org00bb2e8"><span class="section-number-2">16</span> cron</h2>
+<div class="outline-text-2" id="text-16">
+<p>
+[project idea]
+<a href="http://crontab-generator.org/">http://crontab-generator.org/</a>
+<a href="https://crontab.guru/">https://crontab.guru/</a>
+<a href="http://www.crontutorials.com/">http://www.crontutorials.com/</a>
+<a href="http://crontab-generator.org/">http://crontab-generator.org/</a>
+<a href="http://stackoverflow.com/documentation/bash/topics">http://stackoverflow.com/documentation/bash/topics</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org78cb1e9" class="outline-2">
+<h2 id="org78cb1e9"><span class="section-number-2">17</span> monitor</h2>
+<div class="outline-text-2" id="text-17">
+<p>
+<a href="http://www.maadiran.com/">http://www.maadiran.com/</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org7499454" class="outline-2">
+<h2 id="org7499454"><span class="section-number-2">18</span> electronics</h2>
+<div class="outline-text-2" id="text-18">
+<p>
+<a href="http://irasaelec.com/">http://irasaelec.com/</a>
+<a href="http://aftabrayaneh.com/">http://aftabrayaneh.com/</a>
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: moh</p>
+<p class="date">Created: 2016-12-30 Fri 15:39</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

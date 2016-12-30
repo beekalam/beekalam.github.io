@@ -1,0 +1,2026 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2016-12-30 Fri 14:51 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title></title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="moh" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgb578b4b">1. arrays</a>
+<ul>
+<li><a href="#orgda46cfa">1.1. sort array numerically</a></li>
+<li><a href="#orgd734ba3">1.2. convert set to array</a></li>
+<li><a href="#orge285fcd">1.3. iterates through the elements of the array using a for&#x2026; in</a></li>
+<li><a href="#org99175d3">1.4. Count the number of occurences of a character in a string in Javascript</a></li>
+<li><a href="#org1cc830f">1.5. Searching Through an Array</a></li>
+<li><a href="#org474a9f9">1.6. Extracting a Portion of an Array</a></li>
+<li><a href="#orgeac10c4">1.7. Applying a Function to Every Element in an Array and Returning a New Array</a></li>
+<li><a href="#org20d0ff4">1.8. Creating a Filtered Array</a></li>
+<li><a href="#orgb32b118">1.9. Validating Array Contents</a></li>
+<li><a href="#org4375e9f">1.10. count elements of an array by value</a></li>
+</ul>
+</li>
+<li><a href="#org1361c31">2. strings</a>
+<ul>
+<li><a href="#org2581273">2.1. reverse string in javascript?</a></li>
+<li><a href="#org18755fe">2.2. ordinal value of a character?</a></li>
+<li><a href="#orgc50c01e">2.3. convert ascii code to string?</a></li>
+<li><a href="#org8f66273">2.4. Checking for an Existing, Nonempty String</a></li>
+<li><a href="#orgeed7828">2.5. convert a string in base 2 to decimal</a></li>
+<li><a href="#orgfd03ba4">2.6. replace all non-digit characters</a></li>
+<li><a href="#org2f89cbe">2.7. split a string by one or more spaces</a></li>
+<li><a href="#org2601d37">2.8. split a string by digits of size one or bigger(ignoring negative nums)</a></li>
+</ul>
+</li>
+<li><a href="#orgaea1067">3. numbers</a>
+<ul>
+<li><a href="#orgd807ec5">3.1. isNumber</a></li>
+</ul>
+</li>
+<li><a href="#orgb5ccb7c">4. date time</a>
+<ul>
+<li><a href="#org2b13804">4.1. next month</a></li>
+<li><a href="#org314802e">4.2. next day</a></li>
+<li><a href="#org9084da7">4.3. add days</a></li>
+</ul>
+</li>
+<li><a href="#org5e7b38d">5. node</a>
+<ul>
+<li><a href="#orgd8c3ab7">5.1. npm</a>
+<ul>
+<li><a href="#orgac5f271">5.1.1. install node packages from packages.json file?</a></li>
+<li><a href="#orgf70d3c9">5.1.2. Using npm search to Locate Modules in the npm Registry</a></li>
+<li><a href="#orgd96331c">5.1.3. package locations</a></li>
+</ul>
+</li>
+<li><a href="#org88eaa12">5.2. name of current function?</a></li>
+<li><a href="#org18ef4c1">5.3. generate random numbers between 1 and 6</a></li>
+<li><a href="#orgd27016d">5.4. Finding and Highlighting All Instances of a Pattern</a></li>
+<li><a href="#org51d8d97">5.5. Traversing the Results from querySelectorAll() with forEach() and call()</a></li>
+<li><a href="#org58db98e">5.6. Using a Destructuring Assignment to Simplify Code</a></li>
+</ul>
+</li>
+<li><a href="#org95a5b8c">6. code conventions, styles</a></li>
+<li><a href="#orge1f6a65">7. this</a>
+<ul>
+<li><a href="#orga10e1b4">7.1. understanding 'this'</a></li>
+<li><a href="#org5bbff75">7.2. this invokation</a>
+<ul>
+<li><a href="#orgf5c98d5">7.2.1. The Core Primitive</a></li>
+<li><a href="#orgf5b4c95">7.2.2. Simple Function Invocation</a></li>
+<li><a href="#org402d1a7">7.2.3. Member Functions</a></li>
+<li><a href="#orge18d56e">7.2.4. Using Function.prototype.bind</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org029d23f">8. achieve code privacy using the module pattern.</a></li>
+<li><a href="#org677db34">9. Dinamically selecting a method/property</a></li>
+<li><a href="#org33c78e6">10. using optional, variable and named arguments</a>
+<ul>
+<li>
+<ul>
+<li><a href="#orgbee52aa">10.0.1. Grab arguments(however many).</a></li>
+<li><a href="#orgbaf7560">10.0.2. Take optional arguments with default values.</a></li>
+<li><a href="#org7d90ee0">10.0.3. Use a literal object for pseudo-named arguments.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org2c46fde">11. obtaining references to DOM elements.</a>
+<ul>
+<li><a href="#org280f4db">11.1. Grab an element by its ID.</a></li>
+<li><a href="#org4c2dcb9">11.2. Grab elements by XPath/CSS selection.</a></li>
+<li><a href="#org553ffcb">11.3. Move around (DOM traversals).</a></li>
+</ul>
+</li>
+<li><a href="#org5f24e6b">12. Dynamically Styling Content</a>
+<ul>
+<li><a href="#orga77091b">12.1. Style an element.</a></li>
+<li><a href="#org937fabc">12.2. Changing an Element’s Contents</a>
+<ul>
+<li><a href="#org6565c8d">12.2.1. Update the entire contents of an element.</a></li>
+<li><a href="#orge6e9ccb">12.2.2. Inject extra contents into an element.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org7bb963f">13. Listening for Events (and Stopping)</a>
+<ul>
+<li><a href="#orgf02d43f">13.1. Listen to an event on one element.</a></li>
+<li><a href="#org1d794c1">13.2. Listen to an event on multiple elements.</a></li>
+<li><a href="#orga62d42c">13.3. Stop listening.</a></li>
+</ul>
+</li>
+<li><a href="#org8ef5156">14. patterns</a></li>
+<li><a href="#org86e0efa">15. Simple Inheritance in JavaScript</a></li>
+<li><a href="#org1d2794f">16. Asynchronous JS</a></li>
+<li><a href="#orgfabd2f5">17. html</a></li>
+<li><a href="#org580874e">18. codewars</a></li>
+<li><a href="#org9b14f94">19. Objects</a>
+<ul>
+<li><a href="#org2474503">19.1. retrieval</a></li>
+<li><a href="#org4f8b5db">19.2. Reference</a></li>
+<li><a href="#org8c2e031">19.3. Reflection</a></li>
+<li><a href="#org67520d2">19.4. Enumeration</a></li>
+<li><a href="#org634d9ad">19.5. Delete</a></li>
+</ul>
+</li>
+<li><a href="#org6071742">20. Functions</a>
+<ul>
+<li><a href="#org69055cb">20.1. Function Objects</a></li>
+<li><a href="#org0739120">20.2. Function literal</a></li>
+<li><a href="#org5b046c8">20.3. Invocation</a>
+<ul>
+<li><a href="#orgfa918c8">20.3.1. The Method Invocation Pattern</a></li>
+<li><a href="#org9052e24">20.3.2. The Function Invocation Pattern</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org82266ea">21. </a>
+<ul>
+<li><a href="#org6fbae80">21.1. js</a></li>
+</ul>
+</li>
+<li><a href="#orgbb59b08">22. tests</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb578b4b" class="outline-2">
+<h2 id="orgb578b4b"><span class="section-number-2">1</span> arrays</h2>
+<div class="outline-text-2" id="text-1">
+</div><div id="outline-container-orgda46cfa" class="outline-3">
+<h3 id="orgda46cfa"><span class="section-number-3">1.1</span> sort array numerically</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+By default the sort method sorts elements alphabetically.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-javascript">[2,3,0,1].sort(function(a, b) { return a - b; });
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd734ba3" class="outline-3">
+<h3 id="orgd734ba3"><span class="section-number-3">1.2</span> convert set to array</h3>
+<div class="outline-text-3" id="text-1-2">
+<pre class="example">
+Array.from(new Set([1,2,3]))
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orge285fcd" class="outline-3">
+<h3 id="orge285fcd"><span class="section-number-3">1.3</span> iterates through the elements of the array using a for&#x2026; in</h3>
+<div class="outline-text-3" id="text-1-3">
+<div class="org-src-container">
+<pre class="src src-javascript">var theArray = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ];
+var total1 = 0, total2 = 0;
+// statement to add each element's value to total2
+for ( var element in theArray )
+total2 += theArray[ element ];
+console.log( "Total using subscripts: " + total1 );
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org99175d3" class="outline-3">
+<h3 id="org99175d3"><span class="section-number-3">1.4</span> Count the number of occurences of a character in a string in Javascript</h3>
+<div class="outline-text-3" id="text-1-4">
+<div class="org-src-container">
+<pre class="src src-javascript">console.log(("str1,str2,str3,str4".match(/,/g) || []).length); //logs 3
+console.log(("str1,str2,str3,str4".match(new RegExp("str", "g")) || []).length); //logs 4
+
+function str_count(str, char){
+    return (str.match(new RegExp(char, "g")) || []).length;
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1cc830f" class="outline-3">
+<h3 id="org1cc830f"><span class="section-number-3">1.5</span> Searching Through an Array</h3>
+<div class="outline-text-3" id="text-1-5">
+<p>
+Use the Array methods indexOf() and lastIndexOf():
+</p>
+
+<p>
+var animals = new Array("dog","cat","seal","elephant","walrus","lion");
+console.log(animals.indexOf("elephant")); // prints 3
+</p>
+
+<p>
+Flattening a Two-Dimensional Array with concat() and apply()
+</p>
+
+<p>
+Use the Array object concat() method to merge the multidimensional array into a single-dimensional array:
+</p>
+
+<p>
+var fruitarray = [];
+fruitarray[0] = ['strawberry','orange'];
+fruitarray[1] = ['lime','peach','banana'];
+fruitarray[2] = ['tangerine','apricot'];
+fruitarray[3] = ['raspberry','kiwi'];
+</p>
+
+<p>
+// flatten array
+var newArray = fruitarray.concat.apply([],fruitarray);
+console.log(newArray[5]); // tangerine
+</p>
+
+<p>
+Removing or Replacing Array Elements
+</p>
+
+<p>
+You want to find occurrences of a given value in an array, and either remove the element or replace with another value.
+</p>
+
+<p>
+Use the Array indexOf() and splice() to find and remove/replace array elements:
+</p>
+
+<p>
+var animals = new Array("dog","cat","seal","walrus","lion", "cat");
+</p>
+
+<p>
+<i>/ remove the element from array
+animals.splice(animals.indexOf("walrus"),1); /</i> dog,cat,seal,lion,cat
+</p>
+
+<p>
+// splice in new element
+animals.splice(animals.lastIndexOf("cat"),1,"monkey");
+</p>
+
+<p>
+// dog,cat,seal,lion,monkey
+console.log(animals.toString());
+</p>
+</div>
+</div>
+
+<div id="outline-container-org474a9f9" class="outline-3">
+<h3 id="org474a9f9"><span class="section-number-3">1.6</span> Extracting a Portion of an Array</h3>
+<div class="outline-text-3" id="text-1-6">
+<p>
+The Array slice() method extracts a shallow copy of a portion of an existing array:
+</p>
+
+<p>
+var animals = ['elephant','tiger','lion','zebra','cat','dog','rabbit','goose'];
+</p>
+
+<p>
+var domestic = animals.slice(4,7);
+</p>
+
+<p>
+console.log(domestic); // ['cat','dog','rabbit'];
+</p>
+
+<p>
+Applying a Function Against Each Array Element
+</p>
+
+<p>
+Use the Array method forEach() to apply a callback function to each array element:
+</p>
+
+<p>
+var charSets = ["ab","bb","cd","ab","cc","ab","dd","ab"];
+</p>
+
+<p>
+function replaceElement(element,index,array) {
+  if (element == "ab") array[index] = "**";
+}
+</p>
+
+<p>
+// apply function to each array element
+charSets.forEach(replaceElement);
+console.log(charSets); // ["<b><b>", "bb", "cd", "</b></b>", "cc", "<b><b>", "dd", "</b></b>"]
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgeac10c4" class="outline-3">
+<h3 id="orgeac10c4"><span class="section-number-3">1.7</span> Applying a Function to Every Element in an Array and Returning a New Array</h3>
+<div class="outline-text-3" id="text-1-7">
+<p>
+you want to convert an array of decimal numbers into a new array with their hexadecimal equivalents.
+</p>
+
+<p>
+Use the Array map() method to create a new array consisting of elements from the old array that have been 
+modified via a callback function passed to the method:
+</p>
+
+<p>
+var decArray = [23, 255, 122, 5, 16, 99];
+</p>
+
+<p>
+var hexArray = decArray.map(function(element) {
+  return element.toString(16);
+});
+</p>
+
+<p>
+console.log(hexArray); // ["17", "ff", "7a", "5", "10", "63"]
+</p>
+</div>
+</div>
+
+<div id="outline-container-org20d0ff4" class="outline-3">
+<h3 id="org20d0ff4"><span class="section-number-3">1.8</span> Creating a Filtered Array</h3>
+<div class="outline-text-3" id="text-1-8">
+<p>
+You want to filter element values in an array and assign the results to a new array.
+</p>
+
+<p>
+Use the Array filter() method:
+</p>
+
+<p>
+var charSet = ["<b><b>","bb","cd","</b></b>","cc","<b><b>","dd","</b></b>"];
+</p>
+
+<p>
+var newArray = charSet.filter(function(element) {
+  return (element !== "**");
+});
+</p>
+
+<p>
+console.log(newArray); // ["bb", "cd", "cc", "dd"]
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb32b118" class="outline-3">
+<h3 id="orgb32b118"><span class="section-number-3">1.9</span> Validating Array Contents</h3>
+<div class="outline-text-3" id="text-1-9">
+<p>
+Problem
+</p>
+
+<p>
+You want to ensure that array contents meet certain criteria.
+</p>
+
+
+<p>
+Use the Array every() method to check that every element passes a given criterion.
+ For instance, the following code checks to ensure that every element in the array consists of alphabetical characters:
+</p>
+
+<p>
+// testing function
+function testValue (element,index,array) {
+  var textExp = <i>^[a-zA-Z]+$</i>;
+  return textExp.test(element);
+}
+</p>
+
+<p>
+var elemSet = ["**",123,"aaa","abc","-",46,"AAA"];
+</p>
+
+
+<p>
+// run test
+var result = elemSet.every(testValue);
+</p>
+
+<p>
+console.log(result); // false
+</p>
+
+<p>
+var elemSet2 = ["elephant","lion","cat","dog"];
+</p>
+
+<p>
+result = elemSet2.every(testValue);
+</p>
+
+<p>
+console.log(result); // true
+</p>
+
+<p>
+Or use the Array some() method to ensure that one or more of the elements pass the criteria.
+ As an example, the following code checks to ensure that at least some of the array elements are alphabetical strings:
+</p>
+
+<p>
+var elemSet = new Array("**",123,"aaa","abc","-",46,"AAA");
+</p>
+
+<p>
+// testing function
+function testValue (element) {
+   var textExp = <i>^[a-zA-Z]+$</i>;
+   return textExp.test(element);
+}
+</p>
+
+<p>
+// run test
+var result = elemSet.some(testValue);
+</p>
+
+<p>
+console.log(result); // true
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4375e9f" class="outline-3">
+<h3 id="org4375e9f"><span class="section-number-3">1.10</span> count elements of an array by value</h3>
+<div class="outline-text-3" id="text-1-10">
+<p>
+// count elements of an array
+function array<sub>count</sub>(arr, value){
+    let ret = 0;
+    for(let i = 0; i &lt; arr.length; ++i){
+	if (arr[i] <code>=</code> value){
+	    ret++;
+	}
+    }
+    return ret;
+}
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org1361c31" class="outline-2">
+<h2 id="org1361c31"><span class="section-number-2">2</span> strings</h2>
+<div class="outline-text-2" id="text-2">
+</div><div id="outline-container-org2581273" class="outline-3">
+<h3 id="org2581273"><span class="section-number-3">2.1</span> reverse string in javascript?</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+function reverse(s){
+    return s.split("").reverse().join("");
+}
+</p>
+</div>
+</div>
+
+<div id="outline-container-org18755fe" class="outline-3">
+<h3 id="org18755fe"><span class="section-number-3">2.2</span> ordinal value of a character?</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+"\n".charCodeAt(0);
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc50c01e" class="outline-3">
+<h3 id="orgc50c01e"><span class="section-number-3">2.3</span> convert ascii code to string?</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+String.fromCharCode(97); // returns 
+</p>
+</div>
+</div>
+<div id="outline-container-org8f66273" class="outline-3">
+<h3 id="org8f66273"><span class="section-number-3">2.4</span> Checking for an Existing, Nonempty String</h3>
+<div class="outline-text-3" id="text-2-4">
+<p>
+if (((typeof unknownVariable != 'undefined' &amp;&amp; unknownVariable) &amp;&amp;
+unknownVariable.length() &gt; 0) &amp;&amp;
+typeof unknownVariable.valueOf() == 'string') &#x2026;
+</p>
+</div>
+</div>
+<div id="outline-container-orgeed7828" class="outline-3">
+<h3 id="orgeed7828"><span class="section-number-3">2.5</span> convert a string in base 2 to decimal</h3>
+<div class="outline-text-3" id="text-2-5">
+<p>
+parseInt("1111", 2);
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgfd03ba4" class="outline-3">
+<h3 id="orgfd03ba4"><span class="section-number-3">2.6</span> replace all non-digit characters</h3>
+<div class="outline-text-3" id="text-2-6">
+<p>
+str.replace(/\D/g,' ');
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2f89cbe" class="outline-3">
+<h3 id="org2f89cbe"><span class="section-number-3">2.7</span> split a string by one or more spaces</h3>
+<div class="outline-text-3" id="text-2-7">
+<p>
+str.split(/\s+/g)
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2601d37" class="outline-3">
+<h3 id="org2601d37"><span class="section-number-3">2.8</span> split a string by digits of size one or bigger(ignoring negative nums)</h3>
+<div class="outline-text-3" id="text-2-8">
+<p>
+str.match(<i>\d+/g)
+str.match(</i>\d+/g) || []).map(Number)
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgaea1067" class="outline-2">
+<h2 id="orgaea1067"><span class="section-number-2">3</span> numbers</h2>
+<div class="outline-text-2" id="text-3">
+</div><div id="outline-container-orgd807ec5" class="outline-3">
+<h3 id="orgd807ec5"><span class="section-number-3">3.1</span> isNumber</h3>
+<div class="outline-text-3" id="text-3-1">
+<div class="org-src-container">
+<pre class="src src-javascript">function isNumber(obj) {
+  return obj!== undefined &amp;&amp; typeof(obj) === 'number' &amp;&amp; !isNaN(obj);
+}
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb5ccb7c" class="outline-2">
+<h2 id="orgb5ccb7c"><span class="section-number-2">4</span> date time</h2>
+<div class="outline-text-2" id="text-4">
+</div><div id="outline-container-org2b13804" class="outline-3">
+<h3 id="org2b13804"><span class="section-number-3">4.1</span> next month</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+  var nextmonth = function(x){
+  if (x.getMonth() == 11) {
+      var x = new Date(x.getFullYear() + 1, 0, 1);
+  } else {
+      var x = new Date(x.getFullYear(), x.getMonth() + 1, 1);
+  }
+  return x;
+}
+</p>
+</div>
+</div>
+
+<div id="outline-container-org314802e" class="outline-3">
+<h3 id="org314802e"><span class="section-number-3">4.2</span> next day</h3>
+<div class="outline-text-3" id="text-4-2">
+<p>
+var nextday = function(x){
+  x.setDate(x.getDate() + 1);
+  return x;
+}
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9084da7" class="outline-3">
+<h3 id="org9084da7"><span class="section-number-3">4.3</span> add days</h3>
+<div class="outline-text-3" id="text-4-3">
+<p>
+function addDays(days) {
+     var result = new Date("2016-01-01");
+     result.setDate(result.getDate() + days);
+     return result.toISOString().split("T")[0];
+ }
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org5e7b38d" class="outline-2">
+<h2 id="org5e7b38d"><span class="section-number-2">5</span> node</h2>
+<div class="outline-text-2" id="text-5">
+</div><div id="outline-container-orgd8c3ab7" class="outline-3">
+<h3 id="orgd8c3ab7"><span class="section-number-3">5.1</span> npm</h3>
+<div class="outline-text-3" id="text-5-1">
+</div><div id="outline-container-orgac5f271" class="outline-4">
+<h4 id="orgac5f271"><span class="section-number-4">5.1.1</span> install node packages from packages.json file?</h4>
+<div class="outline-text-4" id="text-5-1-1">
+<p>
+npm install (in package directory, no arguments)
+</p>
+
+<p>
+<a href="https://docs.npmjs.com/cli/instal">https://docs.npmjs.com/cli/instal</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf70d3c9" class="outline-4">
+<h4 id="orgf70d3c9"><span class="section-number-4">5.1.2</span> Using npm search to Locate Modules in the npm Registry</h4>
+<div class="outline-text-4" id="text-5-1-2">
+<p>
+$ npm search database 
+If you’re not interested in installing the latest version of a package, you can specify a version number. Node
+modules follow a major.minor.patch versioning scheme. For example, to install commander version 1.0.0, use the
+command shown in Listing 2-3. The @ character is used to separate the package name from the version.
+Listing 2-3.  Installing Version 1.0.0 of commander
+$ npm install commander@1.0.0
+</p>
+
+<p>
+Changes to the major version number can indicate that a module has changed in a non-backwards-compatible
+way (known as a breaking change). Even changes to the minor version can accidentally introduce breaking changes.
+Therefore, you’ll typically want to install the latest patch of a certain release—a scenario that npm supports with the
+x wildcard. The command shown in Listing 2-4 installs the latest patch of version 1.0 of commander. (Note that the x
+wildcard can also be used in place of the major and minor revisions.)
+Listing 2-4.  Installing the Latest Patch of commander 1.0
+$ npm install commander@1.0.x
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd96331c" class="outline-4">
+<h4 id="orgd96331c"><span class="section-number-4">5.1.3</span> package locations</h4>
+<div class="outline-text-4" id="text-5-1-3">
+<p>
+$ npm ls
+to query global packages
+$ npm ls -g     
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org88eaa12" class="outline-3">
+<h3 id="org88eaa12"><span class="section-number-3">5.2</span> name of current function?</h3>
+<div class="outline-text-3" id="text-5-2">
+<p>
+You should be able to get it by using arguments.callee.
+</p>
+
+<p>
+You may have to parse out the name though, as it will probably include some extra junk. 
+Though, in some implementations you can simply get the name using arguments.callee.name.
+</p>
+
+<p>
+Parsing:
+</p>
+
+<p>
+function DisplayMyName() 
+{
+   var myName = arguments.callee.toString();
+   myName = myName.substr('function '.length);
+   myName = myName.substr(0, myName.indexOf('('));
+</p>
+
+<p>
+   alert(myName);
+}
+</p>
+
+
+<p>
+var fn = arguments.callee.toString().match(<i>function\s+([^\s\(]+)</i>);
+alert(fn[1]);
+For the caller, just use caller.toString().
+</p>
+</div>
+</div>
+
+<div id="outline-container-org18ef4c1" class="outline-3">
+<h3 id="org18ef4c1"><span class="section-number-3">5.3</span> generate random numbers between 1 and 6</h3>
+<div class="outline-text-3" id="text-5-3">
+<p>
+Math.floor( 1 + Math.random() * 6)
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd27016d" class="outline-3">
+<h3 id="orgd27016d"><span class="section-number-3">5.4</span> Finding and Highlighting All Instances of a Pattern</h3>
+<div class="outline-text-3" id="text-5-4">
+<p>
+var searchString = "Now is the time and this is the time and that is the time";
+var pattern = /t\w*e/g;
+var matchArray;
+</p>
+
+<p>
+var str = "";
+</p>
+
+<p>
+// check for pattern with regexp exec, if not null, process
+while((matchArray = pattern.exec(searchString)) != null) {
+  str+="at " + matchArray.index + " we found " + matchArray[0] + "\n";
+}
+console.log(str);
+</p>
+
+<p>
+The results are:
+</p>
+
+<p>
+at 7 we found the
+at 11 we found time
+at 28 we found the
+at 32 we found time
+at 49 we found the
+at 53 we found time
+</p>
+</div>
+</div>
+
+<div id="outline-container-org51d8d97" class="outline-3">
+<h3 id="org51d8d97"><span class="section-number-3">5.5</span> Traversing the Results from querySelectorAll() with forEach() and call()</h3>
+<div class="outline-text-3" id="text-5-5">
+<p>
+You want to use forEach() on the nodeList returned from a call to querySelectorAll().
+</p>
+
+<p>
+ou can coerce forEach() into working with a NodeList (the collection returned by querySelectorAll()) 
+using the following:
+</p>
+
+<p>
+// use querySelector to find all second table cells
+var cells = document.querySelectorAll("td + td");
+</p>
+
+<p>
+[].forEach.call(cells,function(cell) {
+      sum+=parseFloat(cell.firstChild.data);
+   });
+</p>
+</div>
+</div>
+
+<div id="outline-container-org58db98e" class="outline-3">
+<h3 id="org58db98e"><span class="section-number-3">5.6</span> Using a Destructuring Assignment to Simplify Code</h3>
+<div class="outline-text-3" id="text-5-6">
+<p>
+You want to assign array element values to several variables, but you really don’t want to have assign each, individually.
+</p>
+
+<p>
+Use ECMAScript 6’s destructuring assignment to simplify array assignment:
+</p>
+
+<p>
+var stateValues = [459, 144, 96, 34, 0, 14];
+</p>
+
+<p>
+var [Arizona, Missouri, Idaho, Nebraska, Texas, Minnesota] = stateValues;
+</p>
+
+<p>
+console.log(Missouri); // 144
+</p>
+
+<p>
+Converting Function Arguments into an Array
+</p>
+
+<p>
+Use Array.prototype.slice() and then the function call() method to convert the arguments collection into an array:
+</p>
+
+<p>
+function someFunc() {
+   var args = Array.prototype.slice.call(arguments);
+   &#x2026;
+}
+</p>
+
+<p>
+Or, here’s a simpler approach:
+</p>
+
+<p>
+function someFunc() {
+   var args = [].slice.call(arguments);
+}
+</p>
+
+<p>
+function sumRounds() {
+  var args = [].slice.call(arguments);
+</p>
+
+<p>
+return args.reduce(function(val1,val2) {
+  return parseInt(val1,10) + parseInt(val2,10);
+});
+}
+</p>
+
+<p>
+var sum = sumRounds("2.3", 4, 5, "16", 18.1);
+</p>
+
+<p>
+console.log(sum); // 45
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org95a5b8c" class="outline-2">
+<h2 id="org95a5b8c"><span class="section-number-2">6</span> code conventions, styles</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+<a href="http://javascript.crockford.com/code.html">http://javascript.crockford.com/code.html</a>
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-orge1f6a65" class="outline-2">
+<h2 id="orge1f6a65"><span class="section-number-2">7</span> this</h2>
+<div class="outline-text-2" id="text-7">
+</div><div id="outline-container-orga10e1b4" class="outline-3">
+<h3 id="orga10e1b4"><span class="section-number-3">7.1</span> understanding 'this'</h3>
+<div class="outline-text-3" id="text-7-1">
+<p>
+Since JavaScript uses function scope, the meaning of this is quite different than what you get in PHP,
+ and causes a lot of confusion. Consider the following:
+</p>
+
+<p>
+console.log(this); // outputs window object
+</p>
+
+<p>
+var myFunction = function() {
+  console.log(this);
+}
+</p>
+
+<p>
+myFunction(); //outputs window object
+</p>
+
+<p>
+var newObject = {
+  myFunction: myFunction
+}
+</p>
+
+<p>
+newObject.myFunction(); //outputs newObjectthis by default refers to the object a function is contained in. 
+Since myFunction() is a property of the global object, this is a reference to the global object, which is window.
+</p>
+
+<p>
+this by default refers to the object a function is contained in. Since myFunction() is a property of the global object,
+this is a reference to the global object, which is window.
+Now when we mix myFunction() into a newObject, this now refers to newObject. In PHP and other similar languages,
+this always refers to the the instance of a class containing the method.
+You could argue that JavaScript is doing something stupid here, but truthfully much of the power of the JavaScript
+language comes from this feature. In fact, we can even replace the value of this when invoking our JavaScript functions
+by using the call() or apply() methods.
+</p>
+
+<p>
+var myFunction = function(arg1, arg2) {
+  console.log(this, arg1, arg2);
+};
+</p>
+
+<p>
+var newObject = {};
+</p>
+
+<p>
+myFunction.call(newObject, 'foo', 'bar'); //outputs newObject "foo" "bar"
+myFunction.apply(newObject, ['foo', 'bar']); //outputs newObject "foo" "bar"
+</p>
+
+<p>
+But let's not get ahead of ourselves. All we are doing here is invoking the function myFunction by
+substituting an alternative value for this inside the function by placing the value of the object
+we want to use a substitute as the first argument. The fundamental difference between call() and apply()
+is the way you pass arguments to the function. call() will take an unlimited amount of arguments after 
+the first argument and apply() expects and array of arguments as it's second argument.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5bbff75" class="outline-3">
+<h3 id="org5bbff75"><span class="section-number-3">7.2</span> this invokation</h3>
+<div class="outline-text-3" id="text-7-2">
+</div><div id="outline-container-orgf5c98d5" class="outline-4">
+<h4 id="orgf5c98d5"><span class="section-number-4">7.2.1</span> The Core Primitive</h4>
+<div class="outline-text-4" id="text-7-2-1">
+<p>
+First, let's look at the core function invocation primitive, a Function's call method[1].
+ The call method is relatively straight forward.
+Make an argument list (argList) out of parameters 1 through the end
+The first parameter is thisValue
+Invoke the function with this set to thisValue and the argList as its argument list
+For example:
+</p>
+
+<p>
+function hello(thing) {  
+  console.log(this + " says hello " + thing);
+}
+</p>
+
+<p>
+hello.call("Yehuda", "world") //=&gt; Yehuda says hello world  
+As you can see, we invoked the hello method with this set to "Yehuda" and a single argument "world". 
+This is the core primitive of JavaScript function invocation. You can think of all other function calls as
+ desugaring to this primitive. (to "desugar" is to take a convenient syntax and describe it in terms of a more basic core primitive).
+</p>
+
+<p>
+<a href="http://yehudakatz.com/2011/08/11/understanding-javascript-function-invocation-and-this">http://yehudakatz.com/2011/08/11/understanding-javascript-function-invocation-and-this</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf5b4c95" class="outline-4">
+<h4 id="orgf5b4c95"><span class="section-number-4">7.2.2</span> Simple Function Invocation</h4>
+<div class="outline-text-4" id="text-7-2-2">
+<p>
+Obviously, invoking functions with call all the time would be pretty annoying.
+ JavaScript allows us to invoke functions directly using the parens syntax (hello("world").
+ When we do that, the invocation desugars:
+</p>
+
+<p>
+function hello(thing) {  
+  console.log("Hello " + thing);
+}
+</p>
+
+<p>
+// this:
+hello("world")
+</p>
+
+<p>
+// desugars to:
+hello.call(window, "world");  
+This behavior has changed in ECMAScript 5 only when using strict mode[2]:
+</p>
+
+<p>
+// this:
+hello("world")
+</p>
+
+<p>
+// desugars to:
+hello.call(undefined, "world");  
+The short version is: a function invocation like fn(&#x2026;args) is the
+same as fn.call(window [ES5-strict: undefined], &#x2026;args).
+</p>
+
+<p>
+Note that this is also true about functions declared inline: (function() {})() is the
+ same as (function() {}).call(window [ES5-strict: undefined).
+</p>
+</div>
+</div>
+
+<div id="outline-container-org402d1a7" class="outline-4">
+<h4 id="org402d1a7"><span class="section-number-4">7.2.3</span> Member Functions</h4>
+<div class="outline-text-4" id="text-7-2-3">
+<p>
+The next very common way to invoke a method is as a member of an object (person.hello()). In this case, the invocation desugars:
+</p>
+
+<p>
+var person = {  
+  name: "Brendan Eich",
+  hello: function(thing) {
+    console.log(this + " says hello " + thing);
+  }
+}
+</p>
+
+<p>
+// this:
+person.hello("world")
+</p>
+
+<p>
+// desugars to this:
+person.hello.call(person, "world");  
+Note that it doesn't matter how the hello method becomes attached to the object in this form. 
+Remember that we previously defined hello as a standalone function. Let's see what happens if we attach is to the object dynamically:
+</p>
+
+<p>
+function hello(thing) {  
+console.log(this + " says hello " + thing);
+}
+</p>
+
+<p>
+person = { name: "Brendan Eich" }  
+person.hello = hello;
+</p>
+
+<p>
+person.hello("world") // still desugars to person.hello.call(person, "world")
+</p>
+
+<p>
+hello("world") // "[object DOMWindow]world"  
+Notice that the function doesn't have a persistent notion of its 'this'. It is always set at call time based upon
+ the way it was invoked by its caller.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge18d56e" class="outline-4">
+<h4 id="orge18d56e"><span class="section-number-4">7.2.4</span> Using Function.prototype.bind</h4>
+<div class="outline-text-4" id="text-7-2-4">
+<p>
+Because it can sometimes be convenient to have a reference to a function with a persistent this value,
+ people have historically used a simple closure trick to convert a function into one with an unchanging this:
+</p>
+
+<p>
+var person = {  
+  name: "Brendan Eich",
+  hello: function(thing) {
+    console.log(this.name + " says hello " + thing);
+  }
+}
+</p>
+
+<p>
+var boundHello = function(thing) { return person.hello.call(person, thing); }
+</p>
+
+<p>
+boundHello("world");  
+Even though our boundHello call still desugars to boundHello.call(window, "world"),
+ we turn right around and use our primitive call method to change the this value back to what we want it to be.
+</p>
+
+<p>
+We can make this trick general-purpose with a few tweaks:
+</p>
+
+<p>
+var bind = function(func, thisValue) {  
+  return function() {
+    return func.apply(thisValue, arguments);
+  }
+}
+</p>
+
+<p>
+var boundHello = bind(person.hello, person);  
+boundHello("world") // "Brendan Eich says hello world"  
+In order to understand this, you just need two more pieces of information. First, arguments is an Array-like object that represents all of the arguments passed into a function. Second, the apply method works exactly like the call primitive, except that it takes an Array-like object instead of listing the arguments out one at a time.
+</p>
+
+<p>
+Our bind method simply returns a new function. When it is invoked, our new function simply invokes the original function that was passed in, setting the original value as this. It also passes through the arguments.
+</p>
+
+<p>
+Because this was a somewhat common idiom, ES5 introduced a new method bind on all Function objects that implements this behavior:
+</p>
+
+<p>
+var boundHello = person.hello.bind(person);  
+boundHello("world") // "Brendan Eich says hello world"  
+This is most useful when you need a raw function to pass as a callback:
+</p>
+
+<p>
+var person = {  
+  name: "Alex Russell",
+  hello: function() { console.log(this.name + " says hello world"); }
+}
+</p>
+
+<p>
+$("#some-div").click(person.hello.bind(person));
+</p>
+
+<p>
+// when the div is clicked, "Alex Russell says hello world" is printed
+This is, of course, somewhat clunky, and TC39 (the committee that works on the next version(s) of ECMAScript)
+ continues to work on a more elegant, still-backwards-compatible solution.
+</p>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org029d23f" class="outline-2">
+<h2 id="org029d23f"><span class="section-number-2">8</span> achieve code privacy using the module pattern.</h2>
+<div class="outline-text-2" id="text-8">
+<p>
+var obj = (function() {
+var privateField = 42;
+var publicField = 'foobar';
+function processInternals() { alert('Internal stuff: ' + privateField); }
+function run() {
+	processInternals();
+	alert('Still private stuff: ' + privateField);
+	alert('Public stuff: ' + publicField);
+ }
+	return {
+		publicField: publicField,
+	      run: run
+	 };
+ })();
+obj.run() <i>/ three alerts: Internal, still private, public
+obj.publicField /</i> foobar
+obj.processInternals() <i>/ Undefined
+obj.privateField /</i> Undefined
+</p>
+</div>
+</div>
+
+<div id="outline-container-org677db34" class="outline-2">
+<h2 id="org677db34"><span class="section-number-2">9</span> Dinamically selecting a method/property</h2>
+<div class="outline-text-2" id="text-9">
+<p>
+Use the square brackets ( [ ] ) operator.
+object['propertyName']                    <i>/ =&gt; object.propertyName
+object['methodName'](arg1)                /</i> =&gt; object.methodName(arg1)
+</p>
+
+<p>
+Toggle behavior.
+// Call show() or hide(), depending on shouldBeVisible
+ element[shouldBeVisible ? 'show' : 'hide']();
+<i>/ Avoid "heavy" animations on IE to favor immediate reflow
+/</i> (assumes we've got a properly set isIE variable)
+element[isIE ? 'simpleEffect' : 'complexEffect']();
+Compose method names.
+element[(enable ? 'add' : 'remove') + 'ClassName']('enabled');
+Try this example code in any window.
+var love = { firstName: 'Élodie', lastName: 'Porteneuve' };
+var useFirstName = true;
+alert(love[useFirstName ? 'firstName' : 'lastName']); // =&gt; "Élodie"
+</p>
+</div>
+</div>
+<div id="outline-container-org33c78e6" class="outline-2">
+<h2 id="org33c78e6"><span class="section-number-2">10</span> using optional, variable and named arguments</h2>
+<div class="outline-text-2" id="text-10">
+</div><div id="outline-container-orgbee52aa" class="outline-4">
+<h4 id="orgbee52aa"><span class="section-number-4">10.0.1</span> Grab arguments(however many).</h4>
+<div class="outline-text-4" id="text-10-0-1">
+<p>
+The built-in arguments local variable lets you access them dynamically.
+This lets you emulate variable-length argument lists, or varargs.
+</p>
+
+<p>
+function repeat(times) {
+	while (&#x2013;times &gt;= 0) {
+		for (var index = 1, len = arguments.length; index &lt; len; ++index) {
+			alert(arguments[index]);
+		}
+	}
+	}
+repeat(2, 'IE6 must die!', 'So should IE7&#x2026;'); // =&gt; 4 alert boxes
+</p>
+</div>
+</div>
+<div id="outline-container-orgbaf7560" class="outline-4">
+<h4 id="orgbaf7560"><span class="section-number-4">10.0.2</span> Take optional arguments with default values.</h4>
+<div class="outline-text-4" id="text-10-0-2">
+<p>
+function repeat(times, rant) {
+	if (undefined <code>=</code> rant) {
+		rant = 'IE6 must die!';
+	}	
+	while (&#x2013;times &gt;= 0) {
+		alert(rant);
+	}
+}
+repeat(3); <i>/ =&gt; 3 IE6 alert boxes
+repeat(3, 'So should IE7&#x2026;'); /</i> =&gt; 3 IE7 alert boxes
+</p>
+</div>
+</div>
+<div id="outline-container-org7d90ee0" class="outline-4">
+<h4 id="org7d90ee0"><span class="section-number-4">10.0.3</span> Use a literal object for pseudo-named arguments.</h4>
+<div class="outline-text-4" id="text-10-0-3">
+<p>
+function repeat(options) {
+    options = options || {};
+    for (var opt in (repeat.defaultOptions || {})) {
+	if (!(opt in options)) {
+	options[opt] = repeat.defaultOptions[opt];
+	}
+    }
+    for (var index = 0; index &lt; options.times; ++index) {
+	alert(options.rant);
+    }
+}
+repeat.defaultOptions = { times: 2, rant: 'IE6 must die!' };
+repeat(); <i>/ 2 IE6 alert boxes
+repeat({ times: 3 }); /</i> 3 IE6 alert boxes
+repeat({ times: 2, rant: 'Flash must die!' }); // 2 Flash alert boxes
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2c46fde" class="outline-2">
+<h2 id="org2c46fde"><span class="section-number-2">11</span> obtaining references to DOM elements.</h2>
+<div class="outline-text-2" id="text-11">
+</div><div id="outline-container-org280f4db" class="outline-3">
+<h3 id="org280f4db"><span class="section-number-3">11.1</span> Grab an element by its ID.</h3>
+<div class="outline-text-3" id="text-11-1">
+<p>
+document.getElementById('elementId')  //plain W3C DOM
+$('#elementId')  //jquery
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org4c2dcb9" class="outline-3">
+<h3 id="org4c2dcb9"><span class="section-number-3">11.2</span> Grab elements by XPath/CSS selection.</h3>
+<div class="outline-text-3" id="text-11-2">
+<p>
+document.querySelectorAll('selectors')
+$('selectors')
+</p>
+</div>
+</div>
+
+<div id="outline-container-org553ffcb" class="outline-3">
+<h3 id="org553ffcb"><span class="section-number-3">11.3</span> Move around (DOM traversals).</h3>
+</div>
+</div>
+
+<div id="outline-container-org5f24e6b" class="outline-2">
+<h2 id="org5f24e6b"><span class="section-number-2">12</span> Dynamically Styling Content</h2>
+<div class="outline-text-2" id="text-12">
+</div><div id="outline-container-orga77091b" class="outline-3">
+<h3 id="orga77091b"><span class="section-number-3">12.1</span> Style an element.</h3>
+<div class="outline-text-3" id="text-12-1">
+<p>
+// jQuery
+$(element).css('prop', 'value')
+$(element).css({ prop: 'value', prop2: 'value2' })
+</p>
+
+<p>
+Retrieve a style.
+// jQuery
+$(element).css('prop')
+</p>
+</div>
+</div>
+
+<div id="outline-container-org937fabc" class="outline-3">
+<h3 id="org937fabc"><span class="section-number-3">12.2</span> Changing an Element’s Contents</h3>
+<div class="outline-text-3" id="text-12-2">
+</div><div id="outline-container-org6565c8d" class="outline-4">
+<h4 id="org6565c8d"><span class="section-number-4">12.2.1</span> Update the entire contents of an element.</h4>
+<div class="outline-text-4" id="text-12-2-1">
+<p>
+// jQuery
+$(element).html('&lt;p&gt;new internal HTML&lt;/p&gt;')
+$(element).text('The &lt;div&gt; and &lt;span&gt; elements carry no inherent semantics.')
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge6e9ccb" class="outline-4">
+<h4 id="orge6e9ccb"><span class="section-number-4">12.2.2</span> Inject extra contents into an element.</h4>
+<div class="outline-text-4" id="text-12-2-2">
+<p>
+// jQuery (many more methods available)
+$(element).before('&lt;p&gt;This gets before the element&lt;/p&gt;')
+$(element).prepend('&lt;p&gt;This gets at top&lt;/p&gt;')
+$(element).append('&lt;p&gt;This gets at bottom&lt;/p&gt;')
+$(element).after('&lt;p&gt;This gets after the element&lt;/p&gt;')
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org7bb963f" class="outline-2">
+<h2 id="org7bb963f"><span class="section-number-2">13</span> Listening for Events (and Stopping)</h2>
+<div class="outline-text-2" id="text-13">
+</div><div id="outline-container-orgf02d43f" class="outline-3">
+<h3 id="orgf02d43f"><span class="section-number-3">13.1</span> Listen to an event on one element.</h3>
+<div class="outline-text-3" id="text-13-1">
+<p>
+// jQuery
+$(elementOrSelector).bind('event', handlerFx)
+</p>
+</div>
+</div>
+<div id="outline-container-org1d794c1" class="outline-3">
+<h3 id="org1d794c1"><span class="section-number-3">13.2</span> Listen to an event on multiple elements.</h3>
+<div class="outline-text-3" id="text-13-2">
+<p>
+// jQuery
+$(elements).bind('event', handlerFx)
+</p>
+</div>
+</div>
+<div id="outline-container-orga62d42c" class="outline-3">
+<h3 id="orga62d42c"><span class="section-number-3">13.3</span> Stop listening.</h3>
+<div class="outline-text-3" id="text-13-3">
+<p>
+*
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org8ef5156" class="outline-2">
+<h2 id="org8ef5156"><span class="section-number-2">14</span> patterns</h2>
+</div>
+
+<div id="outline-container-org86e0efa" class="outline-2">
+<h2 id="org86e0efa"><span class="section-number-2">15</span> Simple Inheritance in JavaScript</h2>
+<div class="outline-text-2" id="text-15">
+<p>
+Grossly simplified, JavaScript clones objects to extend them, while PHP, Ruby, Python and Java use and extend classes. 
+In JavaScript you have something called a prototype, and every object has one. 
+In fact, all functions, strings, numbers and objects have a common ancestor, Object. 
+There are two things about prototype to remember:  blueprints and chains.
+</p>
+
+<p>
+Each prototype is basically an object in itself that describes properties available when creating 
+an instance of an object. The prototype chain is what allows prototypes to extend other prototypes.
+In fact, prototypes themselves can have prototypes. When a method or attribute does not exist on
+an object instance, then it is looked for in that object's prototype, and the prototypes's prototype, 
+and so on until it finally reaches undefined if no such property exists.
+</p>
+
+<p>
+Thankfully, beginners generally don't need to mess with this stuff at all, since it is easy enough
+ to create an object literal and append properties to it at runtime.
+</p>
+
+<p>
+var obj = {};
+</p>
+
+<p>
+obj.newFunction = function() {
+  console.log('I am a dynamic function');
+};
+</p>
+
+<p>
+obj.newFunction();
+An easy way to extend objects that I use all the time is jQuery.extend()
+</p>
+
+<p>
+var obj = {
+  a: 'i am a lonely property'
+};
+</p>
+
+<p>
+var newObj = {
+  b: function() {
+    return 'i am a lonely function';
+  }
+};
+</p>
+
+
+<p>
+var finalObj = $.extend({}, obj, newObj);
+</p>
+
+<p>
+console.log(finalObj.a); //outputs "i am a lonely property"
+console.log(finalObj.b()); //outputs "i am a lonely function"
+ECMAScript 5 offers us Object.create(), which you can use to extend from an existing object
+but you probably need to avoid using this if you need to support older browsers. 
+It does offer distinct advantages to property creation and setting attributes of properties (yes, properties also have properties).
+</p>
+
+<p>
+var obj = {
+  a: 'i am a lonely property'
+};
+</p>
+
+<p>
+var finalObj = Object.create(obj, {
+  b: {
+    get: function() {
+      return "i am a lonely function";
+    }
+  }
+});
+</p>
+
+<p>
+console.log(finalObj.a); //outputs "i am a lonely property"
+console.log(finalObj.b); //outputs "i am a lonely function"
+You can get pretty deep into the subject of inheritance in JavaScript but the beautiful thing here again
+ is that you really don't have to due to the immense power and flexibility of the language.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org1d2794f" class="outline-2">
+<h2 id="org1d2794f"><span class="section-number-2">16</span> Asynchronous JS</h2>
+<div class="outline-text-2" id="text-16">
+<p>
+<a href="http://sporto.github.io/blog/2012/12/09/callbacks-listeners-promises/">http://sporto.github.io/blog/2012/12/09/callbacks-listeners-promises/</a>
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-orgfabd2f5" class="outline-2">
+<h2 id="orgfabd2f5"><span class="section-number-2">17</span> html</h2>
+</div>
+
+<div id="outline-container-org580874e" class="outline-2">
+<h2 id="org580874e"><span class="section-number-2">18</span> codewars</h2>
+<div class="outline-text-2" id="text-18">
+<p>
+function balanceStatements(list){
+  let isFloatStr =  function(f){
+    return <i>\d{1,}\.\d{1,}</i>.test(f);
+  }
+</p>
+
+<p>
+let orders = list.split(',');
+let badorders = 0, nbBadOrders = 0;
+let buy = 0;
+let sell = 0;
+let badOrders = [];
+for(let i = 0; i &lt; orders.length; ++i)
+{
+let order = (orders[i].trim()).split(' ');
+  console.log(order);
+  let stock = order[0];
+  let qty = order[1]; 
+  let price = order[2];
+  let status = order[3];
+  if(isFloatStr(qty)){
+    nbBadOrders++;
+    badOrders.push(orders[i] + ";");
+    continue;
+  }
+  if(status &amp;&amp; status.toLowerCase() <code>= 'b'){
+      buy +</code> parseInt(qty) * parseFloat(price);
+  }
+</p>
+
+<p>
+  if(status &amp;&amp; status.toLowerCase() <code>= 's'){
+      sell +</code> parseInt(qty) * parseFloat(price);
+  }
+}
+var ret = "";
+</p>
+
+<p>
+ret += "Buy: " + buy;
+</p>
+
+
+<p>
+ret += " Sell: " + sell;
+</p>
+
+<p>
+if(nbBadOrders &gt; 0){
+  ret += "; " + "Badly formed " + nbBadOrders + ": ";
+  for(let i = 0; i &lt; badOrders.length; ++i){
+   ret += badOrders[i];
+  }
+}
+return ret;
+}
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9b14f94" class="outline-2">
+<h2 id="org9b14f94"><span class="section-number-2">19</span> Objects</h2>
+<div class="outline-text-2" id="text-19">
+</div><div id="outline-container-org2474503" class="outline-3">
+<h3 id="org2474503"><span class="section-number-3">19.1</span> retrieval</h3>
+<div class="outline-text-3" id="text-19-1">
+<p>
+The || operator can be used to fill in default values:
+var middle = stooge["middle-name"] || "(none)";
+var status = flight.status || "unknown";
+</p>
+
+<p>
+Attempting to retrieve values from undefined will throw a TypeError exception. This
+can be guarded against with the &amp;&amp; operator:
+</p>
+
+<p>
+flight.equipment
+flight.equipment.model
+flight.equipment &amp;&amp; flight.equipment.model
+<i>/ undefined
+/</i> throw "TypeError"
+// undefined
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4f8b5db" class="outline-3">
+<h3 id="org4f8b5db"><span class="section-number-3">19.2</span> Reference</h3>
+<div class="outline-text-3" id="text-19-2">
+<p>
+Objects are passed around by reference. They are never copied:
+</p>
+
+<p>
+var x = stooge;
+x.nickname = 'Curly';
+var nick = stooge.nickname;
+<i>/ nick is 'Curly' because x and stooge
+/</i> are references to the same object
+var a = {}, b = {}, c = {};
+<i>/ a, b, and c each refer to a
+/</i> different empty object
+a = b = c = {};
+<i>/ a, b, and c all refer to
+/</i> the same empty object
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8c2e031" class="outline-3">
+<h3 id="org8c2e031"><span class="section-number-3">19.3</span> Reflection</h3>
+<div class="outline-text-3" id="text-19-3">
+<p>
+typeof flight.number   <i>/ 'number'
+typeof flight.toString /</i> 'function'
+</p>
+
+<p>
+flight.hasOwnProperty('number')         <i>/ true
+flight.hasOwnProperty('constructor')    /</i> false
+</p>
+
+<p>
+The hasOwnProperty method does not look at the prototype chain.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org67520d2" class="outline-3">
+<h3 id="org67520d2"><span class="section-number-3">19.4</span> Enumeration</h3>
+<div class="outline-text-3" id="text-19-4">
+<p>
+var name;
+for (name in another<sub>stooge</sub>) {
+   if (typeof another<sub>stooge</sub>[name] !== 'function') {
+       document.writeln(name + ': ' + another<sub>stooge</sub>[name]);
+   }
+}
+</p>
+</div>
+</div>
+
+<div id="outline-container-org634d9ad" class="outline-3">
+<h3 id="org634d9ad"><span class="section-number-3">19.5</span> Delete</h3>
+<div class="outline-text-3" id="text-19-5">
+<p>
+The delete operator can be used to remove a property from an object. It will remove
+a property from the object if it has one. It will not touch any of the objects in the proto-
+type linkage.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6071742" class="outline-2">
+<h2 id="org6071742"><span class="section-number-2">20</span> Functions</h2>
+<div class="outline-text-2" id="text-20">
+</div><div id="outline-container-org69055cb" class="outline-3">
+<h3 id="org69055cb"><span class="section-number-3">20.1</span> Function Objects</h3>
+<div class="outline-text-3" id="text-20-1">
+<p>
+Functions in JavaScript are objects. Objects are collections of name/value pairs hav-
+ing a hidden link to a prototype object. Objects produced from object literals are
+linked to Object.prototype . Function objects are linked to Function.prototype
+(which is itself linked to Object.prototype ). Every function is also created with two
+additional hidden properties: the function’s context and the code that implements
+the function’s behavior.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0739120" class="outline-3">
+<h3 id="org0739120"><span class="section-number-3">20.2</span> Function literal</h3>
+<div class="outline-text-3" id="text-20-2">
+<p>
+Function objects are created with function literals:
+</p>
+
+<p>
+<i>/ Create a variable called add and store a function
+/</i> in it that adds two numbers.
+var add = function (a, b) {
+    return a + b;
+};
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5b046c8" class="outline-3">
+<h3 id="org5b046c8"><span class="section-number-3">20.3</span> Invocation</h3>
+<div class="outline-text-3" id="text-20-3">
+<p>
+Invoking a function suspends the execution of the current function, passing control
+and parameters to the new function. In addition to the declared parameters, every
+function receives two additional parameters: this and arguments . The this parame-
+ter is very important in object oriented programming, and its value is determined by
+the invocation pattern. There are four patterns of invocation in JavaScript: the
+method invocation pattern, the function invocation pattern, the constructor invoca-
+tion pattern, and the apply invocation pattern. The patterns differ in how the bonus
+parameter this is initialized.
+</p>
+</div>
+
+<div id="outline-container-orgfa918c8" class="outline-4">
+<h4 id="orgfa918c8"><span class="section-number-4">20.3.1</span> The Method Invocation Pattern</h4>
+<div class="outline-text-4" id="text-20-3-1">
+<p>
+When a function is stored as a property of an object, we call it a method. When a
+method is invoked, this is bound to that object. If an invocation expression con-
+tains a refinement (that is, a . dot expression or [subscript] expression), it is
+invoked as a method:
+</p>
+
+<p>
+<i>/ Create myObject. It has a value and an increment
+/</i> method. The increment method takes an optional
+<i>/ parameter. If the argument is not a number, then 1
+/</i> is used as the default.
+var myObject = {
+value: 0,
+increment: function (inc) {
+this.value += typeof inc <code>=</code> 'number' ? inc : 1;
+}
+};
+myObject.increment( );
+document.writeln(myObject.value); // 1
+myObject.increment(2);
+document.writeln(myObject.value); // 3
+</p>
+
+<p>
+A method can use this to access the object so that it can retrieve values from the
+object or modify the object. The binding of this to the object happens at invocation
+time. This very late binding makes functions that use this highly reusable. Methods
+that get their object context from this are called public methods.
+</p>
+</div>
+</div>
+<div id="outline-container-org9052e24" class="outline-4">
+<h4 id="org9052e24"><span class="section-number-4">20.3.2</span> The Function Invocation Pattern</h4>
+<div class="outline-text-4" id="text-20-3-2">
+<p>
+When a function is not the property of an object, then it is invoked as a function:
+var sum = add(3, 4);
+// sum is 7
+When a function is invoked with this pattern, this is bound to the global object.
+This was a mistake in the design of the language. Had the language been designed
+correctly, when the inner function is invoked, this would still be bound to the this
+</p>
+
+<p>
+variable of the outer function. A consequence of this error is that a method cannot
+employ an inner function to help it do its work because the inner function does not
+share the method’s access to the object as its this is bound to the wrong value. For-
+tunately, there is an easy workaround. If the method defines a variable and assigns it
+the value of this , the inner function will have access to this through that variable. By
+convention, the name of that variable is that :
+</p>
+
+<p>
+// Augment myObject with a double method.
+myObject.double = function ( ) {
+   var that = this;   // Workaround.
+   var helper = function ( ) {
+      that.value = add(that.value, that.value); 
+    };
+    helper( );  // Invoke helper as a function.
+};
+</p>
+
+<p>
+// Invoke double as a method.
+myObject.double( );
+document.writeln(myObject.getValue( ));   // 6
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org82266ea" class="outline-2">
+<h2 id="org82266ea"><span class="section-number-2">21</span> </h2>
+<div class="outline-text-2" id="text-21">
+</div><div id="outline-container-org6fbae80" class="outline-3">
+<h3 id="org6fbae80"><span class="section-number-3">21.1</span> js</h3>
+</div>
+</div>
+
+<div id="outline-container-orgbb59b08" class="outline-2">
+<h2 id="orgbb59b08"><span class="section-number-2">22</span> tests</h2>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: moh</p>
+<p class="date">Created: 2016-12-30 Fri 14:51</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

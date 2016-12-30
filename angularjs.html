@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2016-12-30 Fri 14:52 -->
+<!-- 2016-12-30 Fri 14:53 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title></title>
@@ -228,16 +228,161 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgdc01794">1. Using AngularJS Filter Inside the Controller</a></li>
+<li><a href="#orge704eb5">2. inline template using ng-template</a></li>
+<li><a href="#org5c2ddd1">3. Pre-defined templates in the cache</a></li>
+<li><a href="#orga8ce7ac">4. resources</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgdc01794" class="outline-2">
+<h2 id="orgdc01794"><span class="section-number-2">1</span> Using AngularJS Filter Inside the Controller</h2>
+<div class="outline-text-2" id="text-1">
 <p>
-<a href="emacs-notes.html">emacs-notes</a>
-<a href="links.html">links</a>
-<a href="javascript.html">javascript</a>
-<a href="ubuntu.html">ubuntu</a>
+March 27, 2014
+By Matt Bonneau
 </p>
+
+<p>
+The filter functionality of AngularJS is often used inside the view when you need to filter a set of items in a collection. I had overlooked the usefulness this might have as a tool inside the controller as well. It can be very useful in “querying” information.
+</p>
+
+<p>
+When I say “using filter” I am referring to the filter named “filter” not just the $filter service.
+</p>
+
+<p>
+Suppose you have the following:
+</p>
+
+<p>
+// sample collection of objects
+var myObjects = [
+    { name: "Object1", shape: "circle", color: "red" },
+    { name: "Object2", shape: "square", color: "orange" },
+    { name: "Object3", shape: "triangle", color: "yellow" },
+    { name: "Object4", shape: "circle", color: "green" },
+    { name: "Object5", shape: "sphere", color: "blue" },
+    { name: "Object6", shape: "hexagon", color: "indigo" },
+    { name: "Object7", shape: "square", color: "violet" },
+    { name: "Object8", shape: "triangle", color: "red" }
+];
+You can easily get an array of just the objects matching a specific criteria:
+</p>
+
+<p>
+// return an array with only red objects
+var myRedObjects = $filter('filter')(myObjects, { color: "red" });
+This also works if you need to match on multiple properties:
+</p>
+
+<p>
+var myRedObjects = $filter('filter')(myObjects, { shape: "circle", color: "red" });
+The filter always returns an array whether there is many, one or zero matching objects:
+</p>
+
+<p>
+// return an array with only green objects (in this case - an array of one
+var myGreenObject = $filter('filter')(myObjects, { color: "green" });
+</p>
+
+<p>
+// When you don't get anything back (returns an empty array)
+var niceTry = $filter('filter')(myObjects, { color: "white" });
+If you are feeling lucky, you can even try to grab the first element for immediate use. (Although it would probably be good form to actually check to see if you got a result back first.)
+</p>
+
+<p>
+<i>/ If you are feeling really lucky that you are going to find one
+/</i> and want to just grab the first one
+var luckyGrab = $filter('filter')(myObjects, { color: "green" })[0];
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-orge704eb5" class="outline-2">
+<h2 id="orge704eb5"><span class="section-number-2">2</span> inline template using ng-template</h2>
+<div class="outline-text-2" id="text-2">
+<div class="org-src-container">
+<pre class="src src-javascript">angular.module('myApp', [])
+.directive('playerBox', function() {
+return {
+	templateUrl: 'player-box.html',
+		link: function(scope) {
+			scope.player = {
+			name: 'Jimmy Butler',
+			number: 21
+		};
+	}
+  };
+});
+
+&lt;div ng-app="myApp"&gt;
+
+&lt;player-box&gt;&lt;/player-box&gt;
+&lt;script type="text/ng-template" id="player-box.html"&gt;
+	&lt;div&gt;
+	#{{ player.number }} {{ player.name }}
+	&lt;/div&gt;
+&lt;/script&gt;
+&lt;/div&gt;
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org5c2ddd1" class="outline-2">
+<h2 id="org5c2ddd1"><span class="section-number-2">3</span> Pre-defined templates in the cache</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+angular.module('myApp', [])
+.run(function($templateCache) {
+	$templateCache.put(
+		// the template key
+		'player-box.html',
+		// the template markup
+		'&lt;div&gt;' +
+		' #{{ player.number }} {{ player.name }}' +
+		'&lt;/div&gt;'
+	);
+})
+.directive('playerBox', function() {
+	return {
+	templateUrl: 'player-box.html',
+	link: function(scope) {
+		scope.player = {
+		name: 'Jimmy Butler',
+		number: 21
+		};
+	  }
+	};
+});
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga8ce7ac" class="outline-2">
+<h2 id="orga8ce7ac"><span class="section-number-2">4</span> resources</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+<a href="http://learnkode.com/Examples/Angular">http://learnkode.com/Examples/Angular</a>
+</p>
+
+<p>
+xzhxzww7
+</p>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: moh</p>
-<p class="date">Created: 2016-12-30 Fri 14:52</p>
+<p class="date">Created: 2016-12-30 Fri 14:53</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

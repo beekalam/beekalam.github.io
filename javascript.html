@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-01-09 Mon 20:35 -->
+<!-- 2017-01-12 Thu 22:32 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title></title>
@@ -287,6 +287,7 @@ for the JavaScript code in this tag.
 <li><a href="#orgeec7200">1.19. Creating New Arrays from Existing Arrays</a></li>
 <li><a href="#org82700cc">1.20. shuffle array</a></li>
 <li><a href="#orgdf43b8a">1.21. Sort an array based on the length of each element</a></li>
+<li><a href="#orgba42583">1.22. make an array using Array.from</a></li>
 </ul>
 </li>
 <li><a href="#org1361c31">2. strings</a>
@@ -304,7 +305,6 @@ for the JavaScript code in this tag.
 <li><a href="#orgd27016d">2.11. Finding and Highlighting All Instances of a Pattern</a></li>
 <li><a href="#org51d8d97">2.12. Traversing the Results from querySelectorAll() with forEach() and call()</a></li>
 <li><a href="#org58db98e">2.13. Using a Destructuring Assignment to Simplify Code</a></li>
-<li><a href="#orge34e7c1">2.14. change base using toString</a></li>
 </ul>
 </li>
 <li><a href="#orgaea1067">3. numbers</a>
@@ -315,6 +315,7 @@ for the JavaScript code in this tag.
 <li><a href="#orgdad6a56">3.4. check if a number has a fractional part?</a></li>
 <li><a href="#org18ef4c1">3.5. generate random numbers between 1 and 6</a></li>
 <li><a href="#org174f532">3.6. generate a random integer</a></li>
+<li><a href="#orge34e7c1">3.7. change base using toString</a></li>
 </ul>
 </li>
 <li><a href="#orgb5ccb7c">4. date time</a>
@@ -324,6 +325,7 @@ for the JavaScript code in this tag.
 <li><a href="#org9084da7">4.3. add days</a></li>
 <li><a href="#org404e81a">4.4. How can I compare two time strings in the format HH:MM:SS?</a></li>
 <li><a href="#org7901861">4.5. How do I get the number of days between two dates in JavaScript?</a></li>
+<li><a href="#org562b520">4.6. check if a date object is today</a></li>
 </ul>
 </li>
 <li><a href="#org8a3995c">5. Regular expressions</a>
@@ -338,13 +340,18 @@ for the JavaScript code in this tag.
 <li><a href="#org3e51251">5.8. Regex to match a word containing all of specified characters</a></li>
 <li><a href="#orgb50d776">5.9. regex to match entire words which contains certain characters</a></li>
 <li><a href="#org74d1519">5.10. replace two or more spaces with one</a></li>
+<li><a href="#org37b3bee">5.11. Replacing Patterns with New Strings</a></li>
+<li><a href="#org1c37c30">5.12. Finding  All Instances of a Pattern</a></li>
+<li><a href="#orgdf835ef">5.13. the following inserts dashes into a hypothetical social security number:</a></li>
+<li><a href="#org4fda922">5.14. Remove all exclamation marks from the end of words. Words are separated by spaces in the sentence.</a></li>
+<li><a href="#org80999a4">5.15. isLetter</a></li>
 </ul>
 </li>
 <li><a href="#orga333412">6. Misc</a>
 <ul>
 <li><a href="#org4ab810b">6.1. Best way to break from nested loops in Javascript?</a></li>
 <li><a href="#org24dddea">6.2. Using toString() to detect object class</a></li>
-<li><a href="#org9198d09">6.3. Reflection</a></li>
+<li><a href="#orgc13568b">6.3. Reflection</a></li>
 </ul>
 </li>
 <li><a href="#org95a5b8c">7. code conventions, styles</a></li>
@@ -418,7 +425,7 @@ for the JavaScript code in this tag.
 <ul>
 <li><a href="#org2474503">18.1. retrieval</a></li>
 <li><a href="#org4f8b5db">18.2. Reference</a></li>
-<li><a href="#orgc13568b">18.3. Reflection</a></li>
+<li><a href="#orgc88e93f">18.3. Reflection</a></li>
 <li><a href="#org67520d2">18.4. Enumeration</a></li>
 <li><a href="#org634d9ad">18.5. Delete</a></li>
 <li><a href="#org6361ff8">18.6. Traversing an object</a></li>
@@ -470,21 +477,15 @@ for the JavaScript code in this tag.
 <li><a href="#orgef008c9">20.4. sets and maps</a>
 <ul>
 <li><a href="#orgeb320e6">20.4.1. ES5 workarounds</a></li>
-<li><a href="#orgf57282a">20.4.2. </a></li>
+<li><a href="#orgd8010bf">20.4.2. </a></li>
 <li><a href="#org9c24530">20.4.3. sets</a></li>
 <li><a href="#org9ff850e">20.4.4. weak sets</a></li>
-<li><a href="#org9a6ac78">20.4.5. </a></li>
-<li><a href="#org944a4d0">20.4.6. </a></li>
-<li><a href="#orgcd21ea5">20.4.7. </a></li>
-<li><a href="#orgb674978">20.4.8. </a></li>
-<li><a href="#orgfa9bb01">20.4.9. </a></li>
-<li><a href="#org7aad7b4">20.4.10. maps</a>
+<li><a href="#org7aad7b4">20.4.5. maps</a>
 <ul>
-<li><a href="#orgfb69eec">20.4.10.1. Map methods</a></li>
-<li><a href="#orge0ed475">20.4.10.2. Map Initialization</a></li>
+<li><a href="#orgfb69eec">20.4.5.1. Map methods</a></li>
+<li><a href="#orge0ed475">20.4.5.2. Map Initialization</a></li>
 </ul>
 </li>
-<li><a href="#orgd8010bf">20.4.11. </a></li>
 </ul>
 </li>
 <li><a href="#org44e629d">20.5. method definition</a></li>
@@ -543,6 +544,25 @@ for the JavaScript code in this tag.
 <li><a href="#orgdddf39d">26.1.6. Core Modules</a></li>
 <li><a href="#orgd5bcef2">26.1.7. File Modules</a></li>
 <li><a href="#orgff355e7">26.1.8. Resolving a Module Location</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgf16aba6">27. webgl</a>
+<ul>
+<li><a href="#orgff51678">27.1. blank canvas</a></li>
+<li><a href="#org9a3833b">27.2. Getting context</a></li>
+<li><a href="#orga9bf9a5">27.3. WebGL Components</a>
+<ul>
+<li><a href="#orga5688c1">27.3.1. The Drawing Buffers</a>
+<ul>
+<li><a href="#org8ebaa04">27.3.1.1. Color buffer</a></li>
+<li><a href="#org71696c3">27.3.1.2. depth buffer</a></li>
+<li><a href="#org53b7e84">27.3.1.3. stencil buffer</a></li>
+</ul>
+</li>
+<li><a href="#org6ba1201">27.3.2. Primitive Types</a></li>
+<li><a href="#orgdebcd25">27.3.3. Vertex Buffer Objects (VBOs)</a></li>
 </ul>
 </li>
 </ul>
@@ -1189,8 +1209,20 @@ If the objective is to sort by length then by dictionary order you must specify 
 </div>
 </div>
 </div>
-</div>
 
+<div id="outline-container-orgba42583" class="outline-3">
+<h3 id="orgba42583"><span class="section-number-3">1.22</span> make an array using Array.from</h3>
+<div class="outline-text-3" id="text-1-22">
+<p>
+for example, the following will create and array from 1-n.
+</p>
+<div class="org-src-container">
+<pre class="src src-javascript">Array.from({length:n}, (v,k) =&gt; k+1);
+</pre>
+</div>
+</div>
+</div>
+</div>
 <div id="outline-container-org1361c31" class="outline-2">
 <h2 id="org1361c31"><span class="section-number-2">2</span> strings</h2>
 <div class="outline-text-2" id="text-2">
@@ -1239,12 +1271,12 @@ typeof unknownVariable.valueOf() == 'string') ...
 <div id="outline-container-orgeed7828" class="outline-3">
 <h3 id="orgeed7828"><span class="section-number-3">2.5</span> convert a string in base 2 to decimal</h3>
 <div class="outline-text-3" id="text-2-5">
-<p>
-parseInt("1111", 2);
-</p>
+<div class="org-src-container">
+<pre class="src src-javascript">parseInt("1111", 2);
+</pre>
 </div>
 </div>
-
+</div>
 <div id="outline-container-orgfd03ba4" class="outline-3">
 <h3 id="orgfd03ba4"><span class="section-number-3">2.6</span> replace all non-digit characters</h3>
 <div class="outline-text-3" id="text-2-6">
@@ -1319,7 +1351,6 @@ For the caller, just use caller.toString().
 </p>
 </div>
 </div>
-
 
 <div id="outline-container-orgd27016d" class="outline-3">
 <h3 id="orgd27016d"><span class="section-number-3">2.11</span> Finding and Highlighting All Instances of a Pattern</h3>
@@ -1437,16 +1468,6 @@ console.log(sum); // 45
 </div>
 </div>
 </div>
-
-<div id="outline-container-orge34e7c1" class="outline-3">
-<h3 id="orge34e7c1"><span class="section-number-3">2.14</span> change base using toString</h3>
-<div class="outline-text-3" id="text-2-14">
-<div class="org-src-container">
-<pre class="src src-javascript">(num).toString(radix)
-</pre>
-</div>
-</div>
-</div>
 </div>
 
 <div id="outline-container-orgaea1067" class="outline-2">
@@ -1510,6 +1531,16 @@ if( r % 1 == 0) ...
 <div class="outline-text-3" id="text-3-6">
 <div class="org-src-container">
 <pre class="src src-javascript">Math.round(Math.random() * 100);
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge34e7c1" class="outline-3">
+<h3 id="orge34e7c1"><span class="section-number-3">3.7</span> change base using toString</h3>
+<div class="outline-text-3" id="text-3-7">
+<div class="org-src-container">
+<pre class="src src-javascript">(num).toString(radix)
 </pre>
 </div>
 </div>
@@ -1607,6 +1638,18 @@ alert(daydiff(parseDate($('#first').val()), parseDate($('#second').val())));
 <p>
 <a href="http://stackoverflow.com/questions/542938/how-do-i-get-the-number-of-days-between-two-dates-in-javascript">http://stackoverflow.com/questions/542938/how-do-i-get-the-number-of-days-between-two-dates-in-javascript</a>
 </p>
+</div>
+</div>
+
+<div id="outline-container-org562b520" class="outline-3">
+<h3 id="org562b520"><span class="section-number-3">4.6</span> check if a date object is today</h3>
+<div class="outline-text-3" id="text-4-6">
+<div class="org-src-container">
+<pre class="src src-javascript">function isToday(date) {
+  return new Date().toDateString() === date.toDateString();
+}
+</pre>
+</div>
 </div>
 </div>
 </div>
@@ -1914,6 +1957,164 @@ all the words that contains the letter l and a as - car, patrol, left
 </div>
 </div>
 </div>
+
+<div id="outline-container-org37b3bee" class="outline-3">
+<h3 id="org37b3bee"><span class="section-number-3">5.11</span> Replacing Patterns with New Strings</h3>
+<div class="outline-text-3" id="text-5-11">
+<div class="org-src-container">
+<pre class="src src-javascript">var searchString = "Now is the time, this is the tame";
+var re = /t\w{2}e/g;
+var replacement = searchString.replace(re, "place");
+console.log(replacement); // Now is the place, this is the place
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1c37c30" class="outline-3">
+<h3 id="org1c37c30"><span class="section-number-3">5.12</span> Finding  All Instances of a Pattern</h3>
+<div class="outline-text-3" id="text-5-12">
+<p>
+Use the RegExp exec method and the global flag (g) in a loop to locate
+all instances of a pattern, such as any word that begins with t and
+ends with e, with any number of characters in between:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-javascript">var searchString = "Now is the time and this is the time and that is the time";
+var pattern = /t\w*e/g;
+var matchArray;
+
+var str = "";
+
+// check for pattern with regexp exec, if not null, process
+while((matchArray = pattern.exec(searchString)) != null) {
+  str+="at " + matchArray.index + " we found " + matchArray[0] + "\n";
+}
+console.log(str);
+</pre>
+</div>
+
+<p>
+The RegExp exec() method executes the regular expression, returning
+null if a match is not found, or an object with information about the
+match, if found. Included in the returned array is the actual matched
+value, the index in the string where the match is found, any
+parenthetical substring matches, and the original string:
+</p>
+
+<ul class="org-ul">
+<li>index: The index of the located match</li>
+<li>input: The original input string</li>
+<li>[0]: The matched value</li>
+<li>[1],…,[n]+: Parenthesized substring matches, if any</li>
+</ul>
+
+<p>
+The parentheses capture the matched values. Given a regular expression
+like that in the following code snippet:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-javascript">var re = /a(p+).*(pie)/ig;
+var result = re.exec("The apples in the apple pie are tart");
+console.log(result);
+console.log(result.index);
+console.log(result.input);
+</pre>
+</div>
+
+<p>
+the resulting output is:
+</p>
+<pre class="example">
+["apples in the apple pie", "pp", "pie"]
+4
+"The apples in the apple pie are tart"
+</pre>
+
+
+<p>
+The array results contain the complete matched value at index zero
+(0), and the rest of the array entries are the parenthetical
+matches. The index is the index of the match, and the input is just a
+repeat of the string being matched. In the solution, the index where
+the match was found is printed out in addition to the matched value.
+</p>
+
+<p>
+The solution also uses the global flag (g). This triggers the RegExp
+object to preserve the location of each match, and to begin the search
+after the previously discovered match. When used in a loop, we can
+find all instances where the pattern matches the string. In the
+solution, the following are printed out:
+</p>
+
+<pre class="example">
+at 7 we found the
+at 11 we found time
+at 28 we found the
+at 32 we found time
+at 49 we found the
+at 53 we found time
+</pre>
+
+<p>
+Both time and the match the pattern.
+</p>
+
+<p>
+The results are:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-javascript">at 7 we found the
+at 11 we found time
+at 28 we found the
+at 32 we found time
+at 49 we found the
+at 53 we found time
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgdf835ef" class="outline-3">
+<h3 id="orgdf835ef"><span class="section-number-3">5.13</span> the following inserts dashes into a hypothetical social security number:</h3>
+<div class="outline-text-3" id="text-5-13">
+<div class="org-src-container">
+<pre class="src src-javascript">var pattern = /(\d{3})(\d{2})(\d{4})/;
+var ssn = "123456789";
+ssn = ssn.replace(pattern, "$1-$2-$3");
+</pre>
+</div>
+
+<p>
+The result “123-45-6789” is placed in ssn.
+</p>
+</div>
+</div>
+<div id="outline-container-org4fda922" class="outline-3">
+<h3 id="org4fda922"><span class="section-number-3">5.14</span> Remove all exclamation marks from the end of words. Words are separated by spaces in the sentence.</h3>
+<div class="outline-text-3" id="text-5-14">
+<div class="org-src-container">
+<pre class="src src-javascript">s.replace(/\b!+/g, '');
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org80999a4" class="outline-3">
+<h3 id="org80999a4"><span class="section-number-3">5.15</span> isLetter</h3>
+<div class="outline-text-3" id="text-5-15">
+<div class="org-src-container">
+<pre class="src src-javascript">String.prototype.isLetter = function() {
+  return /^[a-z]$/i.test(this);
+};
+</pre>
+</div>
+</div>
+</div>
 </div>
 
 <div id="outline-container-orga333412" class="outline-2">
@@ -1974,8 +2175,8 @@ toString.call(null);        // [object Null]
 </div>
 </div>
 
-<div id="outline-container-org9198d09" class="outline-3">
-<h3 id="org9198d09"><span class="section-number-3">6.3</span> Reflection</h3>
+<div id="outline-container-orgc13568b" class="outline-3">
+<h3 id="orgc13568b"><span class="section-number-3">6.3</span> Reflection</h3>
 <div class="outline-text-3" id="text-6-3">
 <div class="org-src-container">
 <pre class="src src-javascript">function isUndefined(value) {
@@ -3196,10 +3397,12 @@ $(elements).bind('event', handlerFx)
 <h2 id="org86e0efa"><span class="section-number-2">16</span> Simple Inheritance in JavaScript</h2>
 <div class="outline-text-2" id="text-16">
 <p>
-Grossly simplified, JavaScript clones objects to extend them, while PHP, Ruby, Python and Java use and extend classes. 
-In JavaScript you have something called a prototype, and every object has one. 
-In fact, all functions, strings, numbers and objects have a common ancestor, Object. 
-There are two things about prototype to remember:  blueprints and chains.
+Grossly simplified, JavaScript clones objects to extend them, while
+PHP, Ruby, Python and Java use and extend classes.  In JavaScript you
+have something called a prototype, and every object has one.  In fact,
+all functions, strings, numbers and objects have a common ancestor,
+Object.  There are two things about prototype to remember: blueprints
+and chains.
 </p>
 
 <p>
@@ -3328,8 +3531,8 @@ a = b = c = {};
 </div>
 </div>
 
-<div id="outline-container-orgc13568b" class="outline-3">
-<h3 id="orgc13568b"><span class="section-number-3">18.3</span> Reflection</h3>
+<div id="outline-container-orgc88e93f" class="outline-3">
+<h3 id="orgc88e93f"><span class="section-number-3">18.3</span> Reflection</h3>
 <div class="outline-text-3" id="text-18-3">
 <div class="org-src-container">
 <pre class="src src-javascript">typeof flight.number   // 'number'
@@ -4403,8 +4606,8 @@ because all object properties mustbe strings, you must be certain no two keys ev
 </p>
 </div>
 </div>
-<div id="outline-container-orgf57282a" class="outline-4">
-<h4 id="orgf57282a"><span class="section-number-4">20.4.2</span> </h4>
+<div id="outline-container-orgd8010bf" class="outline-4">
+<h4 id="orgd8010bf"><span class="section-number-4">20.4.2</span> </h4>
 </div>
 
 <div id="outline-container-org9c24530" class="outline-4">
@@ -4583,34 +4786,9 @@ iterators (such as the keys() and values() methods), so there is no way to progr
 </div>
 </div>
 
-<div id="outline-container-org9a6ac78" class="outline-4">
-<h4 id="org9a6ac78"><span class="section-number-4">20.4.5</span> </h4>
-</div>
-<div id="outline-container-org944a4d0" class="outline-4">
-<h4 id="org944a4d0"><span class="section-number-4">20.4.6</span> </h4>
-</div>
-<div id="outline-container-orgcd21ea5" class="outline-4">
-<h4 id="orgcd21ea5"><span class="section-number-4">20.4.7</span> </h4>
-</div>
-<div id="outline-container-orgb674978" class="outline-4">
-<h4 id="orgb674978"><span class="section-number-4">20.4.8</span> </h4>
-</div>
-<div id="outline-container-orgfa9bb01" class="outline-4">
-<h4 id="orgfa9bb01"><span class="section-number-4">20.4.9</span> </h4>
-</div>
-
-
-
-
-
-
-
-
-
-
 <div id="outline-container-org7aad7b4" class="outline-4">
-<h4 id="org7aad7b4"><span class="section-number-4">20.4.10</span> maps</h4>
-<div class="outline-text-4" id="text-20-4-10">
+<h4 id="org7aad7b4"><span class="section-number-4">20.4.5</span> maps</h4>
+<div class="outline-text-4" id="text-20-4-5">
 <p>
 The ECMAScript 6 Map type is an ordered list of key-value pairs, where the
 key and the value can be any type.
@@ -4631,8 +4809,8 @@ console.log(map.get("year"));    // "Understanding ECMAScript 6"
 </div>
 
 <div id="outline-container-orgfb69eec" class="outline-5">
-<h5 id="orgfb69eec"><span class="section-number-5">20.4.10.1</span> Map methods</h5>
-<div class="outline-text-5" id="text-20-4-10-1">
+<h5 id="orgfb69eec"><span class="section-number-5">20.4.5.1</span> Map methods</h5>
+<div class="outline-text-5" id="text-20-4-5-1">
 <p>
 has(key)   Determines if the given key exists in the map
 delete(key)   Removes the key and its associated value from the map
@@ -4642,8 +4820,8 @@ clear()   Removes all keys and values from the map
 </div>
 
 <div id="outline-container-orge0ed475" class="outline-5">
-<h5 id="orge0ed475"><span class="section-number-5">20.4.10.2</span> Map Initialization</h5>
-<div class="outline-text-5" id="text-20-4-10-2">
+<h5 id="orge0ed475"><span class="section-number-5">20.4.5.2</span> Map Initialization</h5>
+<div class="outline-text-5" id="text-20-4-5-2">
 <div class="org-src-container">
 <pre class="src src-javascript">let map = new Map([["name", "Nicholas"], ["age", 25]]);
 console.log(map.has("name"));   // true
@@ -4655,10 +4833,6 @@ console.log(map.size);         // 2
 </div>
 </div>
 </div>
-</div>
-
-<div id="outline-container-orgd8010bf" class="outline-4">
-<h4 id="orgd8010bf"><span class="section-number-4">20.4.11</span> </h4>
 </div>
 </div>
 
@@ -6803,10 +6977,205 @@ Locating the http Module Using require.resolve()
 </div>
 </div>
 </div>
+<div id="outline-container-orgf16aba6" class="outline-2">
+<h2 id="orgf16aba6"><span class="section-number-2">27</span> webgl</h2>
+<div class="outline-text-2" id="text-27">
+</div><div id="outline-container-orgff51678" class="outline-3">
+<h3 id="orgff51678"><span class="section-number-3">27.1</span> blank canvas</h3>
+<div class="outline-text-3" id="text-27-1">
+<div class="org-src-container">
+<pre class="src src-html">&lt;canvas id="my-canvas" width="400" height="300"&gt;
+   your browser does not support html5 cavas element.
+&lt;/canvas&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org9a3833b" class="outline-3">
+<h3 id="org9a3833b"><span class="section-number-3">27.2</span> Getting context</h3>
+<div class="outline-text-3" id="text-27-2">
+<p>
+At the moment there are two canvas contexts: "2D" and "webgl". The
+canvas element does not really care which context we use, but it needs
+to explicitly know so that it can provide us with an appropriate
+object that exposes the desired API.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-javascript">&lt;script&gt;
+window.onload = setupWebGL;
+var gl = null;
+function setupWebGL()
+{
+var canvas = document.getElementById("my-canvas");
+try{
+   gl = canvas.getContext("experimental-webgl");
+}catch(e){
+}
+
+if(gl)
+{
+  //set the clear color to red
+  gl.clearColor(1.0, 0.0, 0.0, 1.0);
+  gl.clear(gl.COLOR_BUFFER_BIT);
+}else{
+ alert( "Error: Your browser does not appear to support WebGL.");
+ }
+}
+&lt;/script&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga9bf9a5" class="outline-3">
+<h3 id="orga9bf9a5"><span class="section-number-3">27.3</span> WebGL Components</h3>
+<div class="outline-text-3" id="text-27-3">
+</div><div id="outline-container-orga5688c1" class="outline-4">
+<h4 id="orga5688c1"><span class="section-number-4">27.3.1</span> The Drawing Buffers</h4>
+<div class="outline-text-4" id="text-27-3-1">
+<p>
+WebGL has a color buffer, depth buffer, and stencil buffer.A buffer is a block
+of memory that can be written to and read from,and temporarily stores data.
+</p>
+</div>
+
+<div id="outline-container-org8ebaa04" class="outline-5">
+<h5 id="org8ebaa04"><span class="section-number-5">27.3.1.1</span> Color buffer</h5>
+<div class="outline-text-5" id="text-27-3-1-1">
+<p>
+the color buffer holds color information - red,green,and blue values - and 
+optionally and alpha value that stores the amount of transparency/opacity.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org71696c3" class="outline-5">
+<h5 id="org71696c3"><span class="section-number-5">27.3.1.2</span> depth buffer</h5>
+<div class="outline-text-5" id="text-27-3-1-2">
+<p>
+the depth buffers stores information on a pixel's depth
+component(z-value). As the map from 3D world space to 2D screen space
+can result in several points being projected to the same (x,y) canvas
+value, the z-values are compared and only one point, usually the
+nearest, is kept and rendered. For those seeking a quick refresher,
+Appendix B discusses coordinate systems.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org53b7e84" class="outline-5">
+<h5 id="org53b7e84"><span class="section-number-5">27.3.1.3</span> stencil buffer</h5>
+<div class="outline-text-5" id="text-27-3-1-3">
+<p>
+The stencil buffer is used to outline areas to render or not
+render. When an area of an image is marked off to not render, it is
+known as masking that area. The entire image, including the masked
+portions, is known as a stencil.  The stencil buffer can also be used
+in combination with the depth buffer to optimize performance by not
+attempting to render portions of a scene that are determined to be not
+viewable. By default, the color buffer’s alpha channel is enabled and
+so is the depth buffer, but the stencil buffer is disabled
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6ba1201" class="outline-4">
+<h4 id="org6ba1201"><span class="section-number-4">27.3.2</span> Primitive Types</h4>
+<div class="outline-text-4" id="text-27-3-2">
+<p>
+Primitives are the graphical building blocks that all models in a
+particular graphics language are built with. In WebGL, there are three
+primitive types: points, lines and triangles and seven ways to render
+them: POINTS, LINES, LINE<sub>STRIP</sub>, LINE<sub>LOOP</sub>, TRIANGLES, TRIANGLE<sub>STRIP</sub>,
+and TRIANGLE<sub>FAN</sub>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgdebcd25" class="outline-4">
+<h4 id="orgdebcd25"><span class="section-number-4">27.3.3</span> Vertex Buffer Objects (VBOs)</h4>
+<div class="outline-text-4" id="text-27-3-3">
+<p>
+Each VBO stores data about a particular attribute of your vertices. This could be position, color, a normal vector,
+texture coordinates, or something else. A buffer can also have multiple attributes interleaved.
+to create a buffer, you call WebGLBuffer createBuffer()and store the returned object, like so:
+</p>
+<div class="org-src-container">
+<pre class="src src-javascript">var myBuffer = gl.createBuffer();
+</pre>
+</div>
+<p>
+Next you bind the buffer using void bindBuffer(GLenum target, WebGLBuffer buffer) like this:
+</p>
+<div class="org-src-container">
+<pre class="src src-javascript">gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, myBuffer);
+</pre>
+</div>
+<p>
+The target parameter is either gl.ARRAY<sub>BUFFER</sub> or gl.ELEMENT<sub>ARRAY</sub><sub>BUFFER</sub>. The target ELEMENT<sub>ARRAY</sub>_
+BUFFER is used when the buffer contains vertex indices, and ARRAY<sub>BUFFER</sub> is used for vertex attributes such as
+position and color.
+</p>
+
+<p>
+Once a buffer is bound and the type is set, we can place data into it with this function:
+</p>
+<div class="org-src-container">
+<pre class="src src-javascript">void bufferData(GLenum target, ArrayBuffer data, GLenum usage)
+</pre>
+</div>
+<p>
+The usage parameter of the bufferData call can be one of STATIC<sub>DRAW</sub>, DYNAMIC<sub>DRAW</sub>, or STREAM<sub>DRAW</sub>.
+STATIC<sub>DRAW</sub> will set the data once and never change throughout the application’s use of it, which will be many
+times. DYNAMIC<sub>DRAW</sub> will also use the data many times in the application but will respecify the contents to be
+used each time. STREAM<sub>DRAW</sub> is similar to STATIC<sub>DRAW</sub> in never changing the data, but it will be used at most a
+few times by the application. Using this function looks like the following:
+</p>
+<div class="org-src-container">
+<pre class="src src-javascript">var data = [
+1.0, 0.0, 0.0,
+0.0, 1.0, 0.0,
+0.0, 1.0, 1.0
+];
+gl.bufferData(gl.ARRAY_BUFFER, data, gl.STATIC_DRAW);
+</pre>
+</div>
+
+<p>
+Altogether the procedure of creating, binding and storing data inside of a buffer looks like:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-javascript">var data = [
+1.0, 0.0, 0.0,
+0.0, 1.0, 0.0,
+0.0, 1.0, 1.0
+];
+
+var myBuffer = gl.createBuffer();
+gl.bindBuffer(gl.ARRAY_BUFFER, myBuffer);
+gl.bufferData(gl.ARRAY_BUFFER, data, STATIC_DRAW);
+</pre>
+</div>
+
+<p>
+Notice that in the gl.bufferData line, we do not explicitly specify the buffer to place the data into. WebGL
+implicitly uses the currently bound buffer.
+When you are done with a buffer you can delete it with a call to this:
+void deleteBuffer(WebGLBuffer buffer);
+As the chapter progresses, we will show how to setup a shader program and pass VBO data into it.
+</p>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: moh</p>
-<p class="date">Created: 2017-01-09 Mon 20:35</p>
+<p class="date">Created: 2017-01-12 Thu 22:32</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

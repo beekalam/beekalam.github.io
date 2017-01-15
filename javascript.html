@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-01-12 Thu 22:32 -->
+<!-- 2017-01-15 Sun 22:16 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title></title>
@@ -288,6 +288,7 @@ for the JavaScript code in this tag.
 <li><a href="#org82700cc">1.20. shuffle array</a></li>
 <li><a href="#orgdf43b8a">1.21. Sort an array based on the length of each element</a></li>
 <li><a href="#orgba42583">1.22. make an array using Array.from</a></li>
+<li><a href="#orgd2943ad">1.23. check for array equality?</a></li>
 </ul>
 </li>
 <li><a href="#org1361c31">2. strings</a>
@@ -315,7 +316,8 @@ for the JavaScript code in this tag.
 <li><a href="#orgdad6a56">3.4. check if a number has a fractional part?</a></li>
 <li><a href="#org18ef4c1">3.5. generate random numbers between 1 and 6</a></li>
 <li><a href="#org174f532">3.6. generate a random integer</a></li>
-<li><a href="#orge34e7c1">3.7. change base using toString</a></li>
+<li><a href="#orgfecc827">3.7. generate random number within a range</a></li>
+<li><a href="#orge34e7c1">3.8. change base using toString</a></li>
 </ul>
 </li>
 <li><a href="#orgb5ccb7c">4. date time</a>
@@ -351,7 +353,7 @@ for the JavaScript code in this tag.
 <ul>
 <li><a href="#org4ab810b">6.1. Best way to break from nested loops in Javascript?</a></li>
 <li><a href="#org24dddea">6.2. Using toString() to detect object class</a></li>
-<li><a href="#orgc13568b">6.3. Reflection</a></li>
+<li><a href="#orgc88e93f">6.3. Reflection</a></li>
 </ul>
 </li>
 <li><a href="#org95a5b8c">7. code conventions, styles</a></li>
@@ -425,7 +427,7 @@ for the JavaScript code in this tag.
 <ul>
 <li><a href="#org2474503">18.1. retrieval</a></li>
 <li><a href="#org4f8b5db">18.2. Reference</a></li>
-<li><a href="#orgc88e93f">18.3. Reflection</a></li>
+<li><a href="#org138ce04">18.3. Reflection</a></li>
 <li><a href="#org67520d2">18.4. Enumeration</a></li>
 <li><a href="#org634d9ad">18.5. Delete</a></li>
 <li><a href="#org6361ff8">18.6. Traversing an object</a></li>
@@ -477,13 +479,12 @@ for the JavaScript code in this tag.
 <li><a href="#orgef008c9">20.4. sets and maps</a>
 <ul>
 <li><a href="#orgeb320e6">20.4.1. ES5 workarounds</a></li>
-<li><a href="#orgd8010bf">20.4.2. </a></li>
-<li><a href="#org9c24530">20.4.3. sets</a></li>
-<li><a href="#org9ff850e">20.4.4. weak sets</a></li>
-<li><a href="#org7aad7b4">20.4.5. maps</a>
+<li><a href="#org9c24530">20.4.2. sets</a></li>
+<li><a href="#org9ff850e">20.4.3. weak sets</a></li>
+<li><a href="#org7aad7b4">20.4.4. maps</a>
 <ul>
-<li><a href="#orgfb69eec">20.4.5.1. Map methods</a></li>
-<li><a href="#orge0ed475">20.4.5.2. Map Initialization</a></li>
+<li><a href="#orgfb69eec">20.4.4.1. Map methods</a></li>
+<li><a href="#orge0ed475">20.4.4.2. Map Initialization</a></li>
 </ul>
 </li>
 </ul>
@@ -528,41 +529,47 @@ for the JavaScript code in this tag.
 <li><a href="#org90cea06">25.6. Web Sockets</a></li>
 </ul>
 </li>
-<li><a href="#orgb403396">26. nodejs</a>
+<li><a href="#org516c95e">26. geolocation API</a></li>
+<li><a href="#orgb403396">27. nodejs</a>
 <ul>
-<li><a href="#orgdb04b4c">26.1. Node Module System</a>
+<li><a href="#orgdb04b4c">27.1. Node Module System</a>
 <ul>
-<li><a href="#orgac5f271">26.1.1. install node packages from packages.json file?</a></li>
-<li><a href="#orgf70d3c9">26.1.2. Using npm search to Locate Modules in the npm Registry</a></li>
-<li><a href="#orgd96331c">26.1.3. package locations</a></li>
-<li><a href="#org1ee6ee4">26.1.4. Intalling packages</a>
+<li><a href="#orgac5f271">27.1.1. install node packages from packages.json file?</a></li>
+<li><a href="#orgf70d3c9">27.1.2. Using npm search to Locate Modules in the npm Registry</a></li>
+<li><a href="#orgd96331c">27.1.3. package locations</a></li>
+<li><a href="#org1ee6ee4">27.1.4. Intalling packages</a>
 <ul>
-<li><a href="#org813156b">26.1.4.1. Installing from URLs</a></li>
+<li><a href="#org813156b">27.1.4.1. Installing from URLs</a></li>
 </ul>
 </li>
-<li><a href="#org69c8f30">26.1.5. Uninstalling Packages</a></li>
-<li><a href="#orgdddf39d">26.1.6. Core Modules</a></li>
-<li><a href="#orgd5bcef2">26.1.7. File Modules</a></li>
-<li><a href="#orgff355e7">26.1.8. Resolving a Module Location</a></li>
+<li><a href="#org69c8f30">27.1.5. Uninstalling Packages</a></li>
+<li><a href="#orgdddf39d">27.1.6. Core Modules</a></li>
+<li><a href="#orgd5bcef2">27.1.7. File Modules</a></li>
+<li><a href="#orgff355e7">27.1.8. Resolving a Module Location</a></li>
+</ul>
+</li>
+<li><a href="#org24d6c29">27.2. Node Programming model</a>
+<ul>
+<li><a href="#org291a837">27.2.1. Async exception handling</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgf16aba6">27. webgl</a>
+<li><a href="#orgf16aba6">28. webgl</a>
 <ul>
-<li><a href="#orgff51678">27.1. blank canvas</a></li>
-<li><a href="#org9a3833b">27.2. Getting context</a></li>
-<li><a href="#orga9bf9a5">27.3. WebGL Components</a>
+<li><a href="#orgff51678">28.1. blank canvas</a></li>
+<li><a href="#org9a3833b">28.2. Getting context</a></li>
+<li><a href="#orga9bf9a5">28.3. WebGL Components</a>
 <ul>
-<li><a href="#orga5688c1">27.3.1. The Drawing Buffers</a>
+<li><a href="#orga5688c1">28.3.1. The Drawing Buffers</a>
 <ul>
-<li><a href="#org8ebaa04">27.3.1.1. Color buffer</a></li>
-<li><a href="#org71696c3">27.3.1.2. depth buffer</a></li>
-<li><a href="#org53b7e84">27.3.1.3. stencil buffer</a></li>
+<li><a href="#org8ebaa04">28.3.1.1. Color buffer</a></li>
+<li><a href="#org71696c3">28.3.1.2. depth buffer</a></li>
+<li><a href="#org53b7e84">28.3.1.3. stencil buffer</a></li>
 </ul>
 </li>
-<li><a href="#org6ba1201">27.3.2. Primitive Types</a></li>
-<li><a href="#orgdebcd25">27.3.3. Vertex Buffer Objects (VBOs)</a></li>
+<li><a href="#org6ba1201">28.3.2. Primitive Types</a></li>
+<li><a href="#orgdebcd25">28.3.3. Vertex Buffer Objects (VBOs)</a></li>
 </ul>
 </li>
 </ul>
@@ -647,7 +654,13 @@ thing:
 <h3 id="orgda46cfa"><span class="section-number-3">1.2</span> sort array numerically</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
-By default the sort method sorts elements alphabetically.
+By default the sort method sorts elements alphabetically.  
+</p>
+
+<p>
+sort can be passed a compare function as a callback. The compare
+function should return a negative number if a should be before b, a
+positive number if a should be after b, or 0 if they are equal.
 </p>
 
 <div class="org-src-container">
@@ -1222,7 +1235,43 @@ for example, the following will create and array from 1-n.
 </div>
 </div>
 </div>
+<div id="outline-container-orgd2943ad" class="outline-3">
+<h3 id="orgd2943ad"><span class="section-number-3">1.23</span> check for array equality?</h3>
+<div class="outline-text-3" id="text-1-23">
+<div class="org-src-container">
+<pre class="src src-javascript">function arraysEqual(a, b) {
+  if (a === b) return true;
+  if (a == null || b == null) return false;
+  if (a.length != b.length) return false;
+
+  // If you don't care about the order of the elements inside
+  // the array, you should sort both arrays here.
+
+  for (var i = 0; i &lt; a.length; ++i) {
+    if (a[i] !== b[i]) return false;
+  }
+  return true;
+}
+</pre>
 </div>
+
+<div class="org-src-container">
+<pre class="src src-javascript">function arraysEqual(a1,a2) {
+    /* WARNING: arrays must not contain {objects} or behavior may be undefined */
+    return JSON.stringify(a1)==JSON.stringify(a2);
+}
+</pre>
+</div>
+
+
+<p>
+<a href="http://stackoverflow.com/questions/3115982/how-to-check-if-two-arrays-are-equal-with-javascript">http://stackoverflow.com/questions/3115982/how-to-check-if-two-arrays-are-equal-with-javascript</a>
+<a href="http://stackoverflow.com/questions/7837456/how-to-compare-arrays-in-javascript">http://stackoverflow.com/questions/7837456/how-to-compare-arrays-in-javascript</a>
+</p>
+</div>
+</div>
+</div>
+
 <div id="outline-container-org1361c31" class="outline-2">
 <h2 id="org1361c31"><span class="section-number-2">2</span> strings</h2>
 <div class="outline-text-2" id="text-2">
@@ -1311,6 +1360,18 @@ str.match(</i>\d+/g) || []).map(Number)
 <pre class="src src-javascript">var rotate = function(str){
      return str[str.length -1 ] + str.slice(0,str.length-1);
 };
+//another example
+var rotate2 = function(str){
+    return str.substring(1) + s[0];
+}
+// arr of all rotations
+var  allRotations = function(str){
+    var ret = [];
+    for(var i = 0; i &lt; str.length; ++i){
+      ret.push( str.slice(i) + str.slice(0,i) );
+    }
+    return ret;
+}
 </pre>
 </div>
 </div>
@@ -1536,9 +1597,22 @@ if( r % 1 == 0) ...
 </div>
 </div>
 
-<div id="outline-container-orge34e7c1" class="outline-3">
-<h3 id="orge34e7c1"><span class="section-number-3">3.7</span> change base using toString</h3>
+<div id="outline-container-orgfecc827" class="outline-3">
+<h3 id="orgfecc827"><span class="section-number-3">3.7</span> generate random number within a range</h3>
 <div class="outline-text-3" id="text-3-7">
+<div class="org-src-container">
+<pre class="src src-javascript">function ourRandomRange(ourMin, ourMax) {
+
+  return Math.floor(Math.random() * (ourMax - ourMin + 1)) + ourMin;
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge34e7c1" class="outline-3">
+<h3 id="orge34e7c1"><span class="section-number-3">3.8</span> change base using toString</h3>
+<div class="outline-text-3" id="text-3-8">
 <div class="org-src-container">
 <pre class="src src-javascript">(num).toString(radix)
 </pre>
@@ -2175,8 +2249,8 @@ toString.call(null);        // [object Null]
 </div>
 </div>
 
-<div id="outline-container-orgc13568b" class="outline-3">
-<h3 id="orgc13568b"><span class="section-number-3">6.3</span> Reflection</h3>
+<div id="outline-container-orgc88e93f" class="outline-3">
+<h3 id="orgc88e93f"><span class="section-number-3">6.3</span> Reflection</h3>
 <div class="outline-text-3" id="text-6-3">
 <div class="org-src-container">
 <pre class="src src-javascript">function isUndefined(value) {
@@ -2200,10 +2274,10 @@ toString.call(null);        // [object Null]
 <div class="outline-text-2" id="text-7">
 <p>
 <a href="http://javascript.crockford.com/code.html">http://javascript.crockford.com/code.html</a>
+<a href="https://github.com/ryanmcdermott/clean-code-javascript">https://github.com/ryanmcdermott/clean-code-javascript</a>
 </p>
 </div>
 </div>
-
 <div id="outline-container-orge1f6a65" class="outline-2">
 <h2 id="orge1f6a65"><span class="section-number-2">8</span> this</h2>
 <div class="outline-text-2" id="text-8">
@@ -3531,8 +3605,8 @@ a = b = c = {};
 </div>
 </div>
 
-<div id="outline-container-orgc88e93f" class="outline-3">
-<h3 id="orgc88e93f"><span class="section-number-3">18.3</span> Reflection</h3>
+<div id="outline-container-org138ce04" class="outline-3">
+<h3 id="org138ce04"><span class="section-number-3">18.3</span> Reflection</h3>
 <div class="outline-text-3" id="text-18-3">
 <div class="org-src-container">
 <pre class="src src-javascript">typeof flight.number   // 'number'
@@ -4606,13 +4680,9 @@ because all object properties mustbe strings, you must be certain no two keys ev
 </p>
 </div>
 </div>
-<div id="outline-container-orgd8010bf" class="outline-4">
-<h4 id="orgd8010bf"><span class="section-number-4">20.4.2</span> </h4>
-</div>
-
 <div id="outline-container-org9c24530" class="outline-4">
-<h4 id="org9c24530"><span class="section-number-4">20.4.3</span> sets</h4>
-<div class="outline-text-4" id="text-20-4-3">
+<h4 id="org9c24530"><span class="section-number-4">20.4.2</span> sets</h4>
+<div class="outline-text-4" id="text-20-4-2">
 <div class="org-src-container">
 <pre class="src src-javascript">let set = new Set();
 set.add(5);
@@ -4701,8 +4771,8 @@ console.log(array);
 </div>
 
 <div id="outline-container-org9ff850e" class="outline-4">
-<h4 id="org9ff850e"><span class="section-number-4">20.4.4</span> weak sets</h4>
-<div class="outline-text-4" id="text-20-4-4">
+<h4 id="org9ff850e"><span class="section-number-4">20.4.3</span> weak sets</h4>
+<div class="outline-text-4" id="text-20-4-3">
 <p>
 The Set type could be called a strong set because of the way it stores object
 references. Storing an object in an instance of Set is effectively the same as
@@ -4787,8 +4857,8 @@ iterators (such as the keys() and values() methods), so there is no way to progr
 </div>
 
 <div id="outline-container-org7aad7b4" class="outline-4">
-<h4 id="org7aad7b4"><span class="section-number-4">20.4.5</span> maps</h4>
-<div class="outline-text-4" id="text-20-4-5">
+<h4 id="org7aad7b4"><span class="section-number-4">20.4.4</span> maps</h4>
+<div class="outline-text-4" id="text-20-4-4">
 <p>
 The ECMAScript 6 Map type is an ordered list of key-value pairs, where the
 key and the value can be any type.
@@ -4809,8 +4879,8 @@ console.log(map.get("year"));    // "Understanding ECMAScript 6"
 </div>
 
 <div id="outline-container-orgfb69eec" class="outline-5">
-<h5 id="orgfb69eec"><span class="section-number-5">20.4.5.1</span> Map methods</h5>
-<div class="outline-text-5" id="text-20-4-5-1">
+<h5 id="orgfb69eec"><span class="section-number-5">20.4.4.1</span> Map methods</h5>
+<div class="outline-text-5" id="text-20-4-4-1">
 <p>
 has(key)   Determines if the given key exists in the map
 delete(key)   Removes the key and its associated value from the map
@@ -4820,8 +4890,8 @@ clear()   Removes all keys and values from the map
 </div>
 
 <div id="outline-container-orge0ed475" class="outline-5">
-<h5 id="orge0ed475"><span class="section-number-5">20.4.5.2</span> Map Initialization</h5>
-<div class="outline-text-5" id="text-20-4-5-2">
+<h5 id="orge0ed475"><span class="section-number-5">20.4.4.2</span> Map Initialization</h5>
+<div class="outline-text-5" id="text-20-4-4-2">
 <div class="org-src-container">
 <pre class="src src-javascript">let map = new Map([["name", "Nicholas"], ["age", 25]]);
 console.log(map.has("name"));   // true
@@ -6814,15 +6884,30 @@ websocketd &#x2013;port=8001 my-script
 </div>
 </div>
 
-<div id="outline-container-orgb403396" class="outline-2">
-<h2 id="orgb403396"><span class="section-number-2">26</span> nodejs</h2>
+<div id="outline-container-org516c95e" class="outline-2">
+<h2 id="org516c95e"><span class="section-number-2">26</span> geolocation API</h2>
 <div class="outline-text-2" id="text-26">
+<div class="org-src-container">
+<pre class="src src-javascript">$(document).ready(function(){
+  navigator.geolocation.getCurrentPosition(function(position){
+    $("#data").html("latitude: " + position.coords.latitude + "&lt;br&gt;longitude: " +
+		    position.coords.longitude);
+  })
+});
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb403396" class="outline-2">
+<h2 id="orgb403396"><span class="section-number-2">27</span> nodejs</h2>
+<div class="outline-text-2" id="text-27">
 </div><div id="outline-container-orgdb04b4c" class="outline-3">
-<h3 id="orgdb04b4c"><span class="section-number-3">26.1</span> Node Module System</h3>
-<div class="outline-text-3" id="text-26-1">
+<h3 id="orgdb04b4c"><span class="section-number-3">27.1</span> Node Module System</h3>
+<div class="outline-text-3" id="text-27-1">
 </div><div id="outline-container-orgac5f271" class="outline-4">
-<h4 id="orgac5f271"><span class="section-number-4">26.1.1</span> install node packages from packages.json file?</h4>
-<div class="outline-text-4" id="text-26-1-1">
+<h4 id="orgac5f271"><span class="section-number-4">27.1.1</span> install node packages from packages.json file?</h4>
+<div class="outline-text-4" id="text-27-1-1">
 <p>
 npm install (in package directory, no arguments)
 </p>
@@ -6834,8 +6919,8 @@ npm install (in package directory, no arguments)
 </div>
 
 <div id="outline-container-orgf70d3c9" class="outline-4">
-<h4 id="orgf70d3c9"><span class="section-number-4">26.1.2</span> Using npm search to Locate Modules in the npm Registry</h4>
-<div class="outline-text-4" id="text-26-1-2">
+<h4 id="orgf70d3c9"><span class="section-number-4">27.1.2</span> Using npm search to Locate Modules in the npm Registry</h4>
+<div class="outline-text-4" id="text-27-1-2">
 <p>
 $ npm search database 
 If you’re not interested in installing the latest version of a package, you can specify a version number. Node
@@ -6858,8 +6943,8 @@ $ npm install commander@1.0.x
 </div>
 
 <div id="outline-container-orgd96331c" class="outline-4">
-<h4 id="orgd96331c"><span class="section-number-4">26.1.3</span> package locations</h4>
-<div class="outline-text-4" id="text-26-1-3">
+<h4 id="orgd96331c"><span class="section-number-4">27.1.3</span> package locations</h4>
+<div class="outline-text-4" id="text-27-1-3">
 <p>
 $ npm ls
 to query global packages
@@ -6869,8 +6954,8 @@ $ npm ls -g
 </div>
 
 <div id="outline-container-org1ee6ee4" class="outline-4">
-<h4 id="org1ee6ee4"><span class="section-number-4">26.1.4</span> Intalling packages</h4>
-<div class="outline-text-4" id="text-26-1-4">
+<h4 id="org1ee6ee4"><span class="section-number-4">27.1.4</span> Intalling packages</h4>
+<div class="outline-text-4" id="text-27-1-4">
 <p>
 Installing the Latest Version of the commander Package Using npm
 $ npm install commander
@@ -6888,8 +6973,8 @@ $ npm install commander@1.0.x
 </div>
 
 <div id="outline-container-org813156b" class="outline-5">
-<h5 id="org813156b"><span class="section-number-5">26.1.4.1</span> Installing from URLs</h5>
-<div class="outline-text-5" id="text-26-1-4-1">
+<h5 id="org813156b"><span class="section-number-5">27.1.4.1</span> Installing from URLs</h5>
+<div class="outline-text-5" id="text-27-1-4-1">
 <p>
 Installing a Tarball from a GitHub Repository
 $ npm install <a href="https://github.com/user/project/tarball/master">https://github.com/user/project/tarball/master</a>
@@ -6898,8 +6983,8 @@ $ npm install <a href="https://github.com/user/project/tarball/master">https://g
 </div>
 </div>
 <div id="outline-container-org69c8f30" class="outline-4">
-<h4 id="org69c8f30"><span class="section-number-4">26.1.5</span> Uninstalling Packages</h4>
-<div class="outline-text-4" id="text-26-1-5">
+<h4 id="org69c8f30"><span class="section-number-4">27.1.5</span> Uninstalling Packages</h4>
+<div class="outline-text-4" id="text-27-1-5">
 <p>
 Uninstalling commander Using npm rm
 $ npm rm commander
@@ -6907,8 +6992,8 @@ $ npm rm commander
 </div>
 </div>
 <div id="outline-container-orgdddf39d" class="outline-4">
-<h4 id="orgdddf39d"><span class="section-number-4">26.1.6</span> Core Modules</h4>
-<div class="outline-text-4" id="text-26-1-6">
+<h4 id="orgdddf39d"><span class="section-number-4">27.1.6</span> Core Modules</h4>
+<div class="outline-text-4" id="text-27-1-6">
 <p>
 Core modules are modules compiled into the Node binary. They are given the highest precedence by require(),
 meaning that in the event of a module-naming conflict, the core module is loaded. For example, Node contains a core
@@ -6919,8 +7004,8 @@ modules are located in the lib directory of the Node source code.
 </div>
 </div>
 <div id="outline-container-orgd5bcef2" class="outline-4">
-<h4 id="orgd5bcef2"><span class="section-number-4">26.1.7</span> File Modules</h4>
-<div class="outline-text-4" id="text-26-1-7">
+<h4 id="orgd5bcef2"><span class="section-number-4">27.1.7</span> File Modules</h4>
+<div class="outline-text-4" id="text-27-1-7">
 <p>
 File modules are non-core modules loaded from the file system. They can be specified using absolute paths, relative
 paths, or from the node<sub>modules</sub> directory. Module names that begin with a slash (/) are treated as absolute paths.
@@ -6955,8 +7040,8 @@ require("./sub/foo");
 </div>
 
 <div id="outline-container-orgff355e7" class="outline-4">
-<h4 id="orgff355e7"><span class="section-number-4">26.1.8</span> Resolving a Module Location</h4>
-<div class="outline-text-4" id="text-26-1-8">
+<h4 id="orgff355e7"><span class="section-number-4">27.1.8</span> Resolving a Module Location</h4>
+<div class="outline-text-4" id="text-27-1-8">
 <p>
 If you are interested only in learning where a package is located, use the require.resolve() function, which uses
 the same mechanism as require() to locate modules. However, instead of actually loading the module, resolve()
@@ -6976,13 +7061,52 @@ Locating the http Module Using require.resolve()
 </div>
 </div>
 </div>
+<div id="outline-container-org24d6c29" class="outline-3">
+<h3 id="org24d6c29"><span class="section-number-3">27.2</span> Node Programming model</h3>
+<div class="outline-text-3" id="text-27-2">
+</div><div id="outline-container-org291a837" class="outline-4">
+<h4 id="org291a837"><span class="section-number-4">27.2.1</span> Async exception handling</h4>
+<div class="outline-text-4" id="text-27-2-1">
+<p>
+processing asynchronous exceptions by setting up global event handler
+for the process's <code>uncaughtException</code> event. 
+</p>
+
+<p>
+Node provides a global object, named process, that interacts with the
+Node process. When an unhandled exception bubbles all the way back to
+the event loop, an uncaughtException error is created. This exception
+can be handled using the process object’s on() method. Listing 3-8
+shows an example of a global exception handler.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-javascript">var fs = require("fs");
+
+fs.readFile("", "utf8", function(error, data) {
+  if (error) {
+   throw error;
+ }
+
+ console.log(data);
+});
+
+process.on("uncaughtException", function(error) {
+  console.log("The exception was caught!")
+});
+</pre>
 </div>
+</div>
+</div>
+</div>
+</div>
+
 <div id="outline-container-orgf16aba6" class="outline-2">
-<h2 id="orgf16aba6"><span class="section-number-2">27</span> webgl</h2>
-<div class="outline-text-2" id="text-27">
+<h2 id="orgf16aba6"><span class="section-number-2">28</span> webgl</h2>
+<div class="outline-text-2" id="text-28">
 </div><div id="outline-container-orgff51678" class="outline-3">
-<h3 id="orgff51678"><span class="section-number-3">27.1</span> blank canvas</h3>
-<div class="outline-text-3" id="text-27-1">
+<h3 id="orgff51678"><span class="section-number-3">28.1</span> blank canvas</h3>
+<div class="outline-text-3" id="text-28-1">
 <div class="org-src-container">
 <pre class="src src-html">&lt;canvas id="my-canvas" width="400" height="300"&gt;
    your browser does not support html5 cavas element.
@@ -6993,8 +7117,8 @@ Locating the http Module Using require.resolve()
 </div>
 
 <div id="outline-container-org9a3833b" class="outline-3">
-<h3 id="org9a3833b"><span class="section-number-3">27.2</span> Getting context</h3>
-<div class="outline-text-3" id="text-27-2">
+<h3 id="org9a3833b"><span class="section-number-3">28.2</span> Getting context</h3>
+<div class="outline-text-3" id="text-28-2">
 <p>
 At the moment there are two canvas contexts: "2D" and "webgl". The
 canvas element does not really care which context we use, but it needs
@@ -7030,11 +7154,11 @@ if(gl)
 </div>
 
 <div id="outline-container-orga9bf9a5" class="outline-3">
-<h3 id="orga9bf9a5"><span class="section-number-3">27.3</span> WebGL Components</h3>
-<div class="outline-text-3" id="text-27-3">
+<h3 id="orga9bf9a5"><span class="section-number-3">28.3</span> WebGL Components</h3>
+<div class="outline-text-3" id="text-28-3">
 </div><div id="outline-container-orga5688c1" class="outline-4">
-<h4 id="orga5688c1"><span class="section-number-4">27.3.1</span> The Drawing Buffers</h4>
-<div class="outline-text-4" id="text-27-3-1">
+<h4 id="orga5688c1"><span class="section-number-4">28.3.1</span> The Drawing Buffers</h4>
+<div class="outline-text-4" id="text-28-3-1">
 <p>
 WebGL has a color buffer, depth buffer, and stencil buffer.A buffer is a block
 of memory that can be written to and read from,and temporarily stores data.
@@ -7042,8 +7166,8 @@ of memory that can be written to and read from,and temporarily stores data.
 </div>
 
 <div id="outline-container-org8ebaa04" class="outline-5">
-<h5 id="org8ebaa04"><span class="section-number-5">27.3.1.1</span> Color buffer</h5>
-<div class="outline-text-5" id="text-27-3-1-1">
+<h5 id="org8ebaa04"><span class="section-number-5">28.3.1.1</span> Color buffer</h5>
+<div class="outline-text-5" id="text-28-3-1-1">
 <p>
 the color buffer holds color information - red,green,and blue values - and 
 optionally and alpha value that stores the amount of transparency/opacity.
@@ -7052,8 +7176,8 @@ optionally and alpha value that stores the amount of transparency/opacity.
 </div>
 
 <div id="outline-container-org71696c3" class="outline-5">
-<h5 id="org71696c3"><span class="section-number-5">27.3.1.2</span> depth buffer</h5>
-<div class="outline-text-5" id="text-27-3-1-2">
+<h5 id="org71696c3"><span class="section-number-5">28.3.1.2</span> depth buffer</h5>
+<div class="outline-text-5" id="text-28-3-1-2">
 <p>
 the depth buffers stores information on a pixel's depth
 component(z-value). As the map from 3D world space to 2D screen space
@@ -7066,8 +7190,8 @@ Appendix B discusses coordinate systems.
 </div>
 
 <div id="outline-container-org53b7e84" class="outline-5">
-<h5 id="org53b7e84"><span class="section-number-5">27.3.1.3</span> stencil buffer</h5>
-<div class="outline-text-5" id="text-27-3-1-3">
+<h5 id="org53b7e84"><span class="section-number-5">28.3.1.3</span> stencil buffer</h5>
+<div class="outline-text-5" id="text-28-3-1-3">
 <p>
 The stencil buffer is used to outline areas to render or not
 render. When an area of an image is marked off to not render, it is
@@ -7083,8 +7207,8 @@ so is the depth buffer, but the stencil buffer is disabled
 </div>
 
 <div id="outline-container-org6ba1201" class="outline-4">
-<h4 id="org6ba1201"><span class="section-number-4">27.3.2</span> Primitive Types</h4>
-<div class="outline-text-4" id="text-27-3-2">
+<h4 id="org6ba1201"><span class="section-number-4">28.3.2</span> Primitive Types</h4>
+<div class="outline-text-4" id="text-28-3-2">
 <p>
 Primitives are the graphical building blocks that all models in a
 particular graphics language are built with. In WebGL, there are three
@@ -7096,24 +7220,28 @@ and TRIANGLE<sub>FAN</sub>.
 </div>
 
 <div id="outline-container-orgdebcd25" class="outline-4">
-<h4 id="orgdebcd25"><span class="section-number-4">27.3.3</span> Vertex Buffer Objects (VBOs)</h4>
-<div class="outline-text-4" id="text-27-3-3">
+<h4 id="orgdebcd25"><span class="section-number-4">28.3.3</span> Vertex Buffer Objects (VBOs)</h4>
+<div class="outline-text-4" id="text-28-3-3">
 <p>
 Each VBO stores data about a particular attribute of your vertices. This could be position, color, a normal vector,
 texture coordinates, or something else. A buffer can also have multiple attributes interleaved.
 to create a buffer, you call WebGLBuffer createBuffer()and store the returned object, like so:
 </p>
+
 <div class="org-src-container">
 <pre class="src src-javascript">var myBuffer = gl.createBuffer();
 </pre>
 </div>
+
 <p>
 Next you bind the buffer using void bindBuffer(GLenum target, WebGLBuffer buffer) like this:
 </p>
+
 <div class="org-src-container">
 <pre class="src src-javascript">gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, myBuffer);
 </pre>
 </div>
+
 <p>
 The target parameter is either gl.ARRAY<sub>BUFFER</sub> or gl.ELEMENT<sub>ARRAY</sub><sub>BUFFER</sub>. The target ELEMENT<sub>ARRAY</sub>_
 BUFFER is used when the buffer contains vertex indices, and ARRAY<sub>BUFFER</sub> is used for vertex attributes such as
@@ -7123,10 +7251,12 @@ position and color.
 <p>
 Once a buffer is bound and the type is set, we can place data into it with this function:
 </p>
+
 <div class="org-src-container">
 <pre class="src src-javascript">void bufferData(GLenum target, ArrayBuffer data, GLenum usage)
 </pre>
 </div>
+
 <p>
 The usage parameter of the bufferData call can be one of STATIC<sub>DRAW</sub>, DYNAMIC<sub>DRAW</sub>, or STREAM<sub>DRAW</sub>.
 STATIC<sub>DRAW</sub> will set the data once and never change throughout the application’s use of it, which will be many
@@ -7134,6 +7264,7 @@ times. DYNAMIC<sub>DRAW</sub> will also use the data many times in the applicati
 used each time. STREAM<sub>DRAW</sub> is similar to STATIC<sub>DRAW</sub> in never changing the data, but it will be used at most a
 few times by the application. Using this function looks like the following:
 </p>
+
 <div class="org-src-container">
 <pre class="src src-javascript">var data = [
 1.0, 0.0, 0.0,
@@ -7175,7 +7306,7 @@ As the chapter progresses, we will show how to setup a shader program and pass V
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: moh</p>
-<p class="date">Created: 2017-01-12 Thu 22:32</p>
+<p class="date">Created: 2017-01-15 Sun 22:16</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

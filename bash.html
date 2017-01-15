@@ -1,0 +1,807 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2017-01-15 Sun 22:16 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title></title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="moh" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org5f0a8ea">1. Bash Keyboard Shortcuts</a></li>
+<li><a href="#org5206940">2. increment variable in bash</a></li>
+<li><a href="#org564cbfd">3. testing with <b>if</b></a></li>
+<li><a href="#org1713adb">4. for loops to display only odd natural numbers from  to 99.</a></li>
+<li><a href="#orgac56836">5. Single Quotes versus double quotes</a></li>
+<li><a href="#org25698ab">6. Using Braces to Protect Your Variables</a></li>
+<li><a href="#org8338b2d">7. While Loops</a></li>
+<li><a href="#org5136319">8. comparing numbers</a>
+<ul>
+<li><a href="#org3eb4f3d">8.1. example</a></li>
+</ul>
+</li>
+<li><a href="#org8ba88b8">9. string comparison</a></li>
+<li><a href="#org8d69d1d">10. airthmetic with <b>bc</b></a>
+<ul>
+<li><a href="#org6ae0c28">10.1. example</a></li>
+<li><a href="#orgacea2f2">10.2. rounding the result</a></li>
+</ul>
+</li>
+<li><a href="#org504a72c">11. airthmetic with <b>expr</b></a></li>
+<li><a href="#orgd7c6448">12. reading lines from file</a></li>
+<li><a href="#orgd3b4e11">13. references</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org5f0a8ea" class="outline-2">
+<h2 id="org5f0a8ea"><span class="section-number-2">1</span> Bash Keyboard Shortcuts</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Moving the cursor:
+  Ctrl + a   Go to the beginning of the line (Home)
+  Ctrl + e   Go to the End of the line (End)
+  Ctrl + p   Previous command (Up arrow)
+  Ctrl + n   Next command (Down arrow)
+   Alt + b   Back (left) one word
+   Alt + f   Forward (right) one word
+  Ctrl + f   Forward one character
+  Ctrl + b   Backward one character
+  Ctrl + xx  Toggle between the start of line and current cursor position
+Editing:
+ Ctrl + L   Clear the Screen, similar to the clear command
+</p>
+
+<p>
+ Alt + Del Delete the Word before the cursor.
+ Alt + d   Delete the Word after the cursor.
+Ctrl + d   Delete character under the cursor
+Ctrl + h   Delete character before the cursor (Backspace)
+</p>
+
+<p>
+Ctrl + w   Cut the Word before the cursor to the clipboard.
+Ctrl + k   Cut the Line after the cursor to the clipboard.
+Ctrl + u   Cut/delete the Line before the cursor to the clipboard.
+</p>
+
+<p>
+ Alt + t   Swap current word with previous
+Ctrl + t   Swap the last two characters before the cursor (typo).
+Esc  + t   Swap the last two words before the cursor.
+</p>
+
+<p>
+ctrl + y   Paste the last thing to be cut (yank)
+ Alt + u   UPPER capitalize every character from the cursor to the end of the current word.
+ Alt + l   Lower the case of every character from the cursor to the end of the current word.
+ Alt + c   Capitalize the character under the cursor and move to the end of the word.
+ Alt + r   Cancel the changes and put back the line as it was in the history (revert).
+ctrl + _   Undo
+</p>
+
+<p>
+TAB        Tab completion for file/directory names
+For example, to move to a directory 'sample1'; Type cd sam ; then press TAB and ENTER. 
+type just enough characters to uniquely identify the directory you wish to open.
+</p>
+
+<p>
+Special keys: Tab, Backspace, Enter, Esc
+Text Terminals send characters (bytes), not key strokes. 
+Special keys such as Tab, Backspace, Enter and Esc are encoded as control characters. 
+Control characters are not printable, they display in the terminal as ^ and are intended to have an effect on applications.
+</p>
+
+<p>
+Ctrl+I = Tab
+Ctrl+J = Newline
+Ctrl+M = Enter
+Ctrl+[ = Escape
+</p>
+
+<p>
+Many terminals will also send control characters for keys in the digit row: 
+Ctrl+2 → ^@
+Ctrl+3 → ^[ Escape
+Ctrl+4 → ^\
+Ctrl+5 → ^]
+Ctrl+6 → ^^
+Ctrl+7 → ^_ Undo
+Ctrl+8 → ^? Backward-delete-char
+</p>
+
+<p>
+Ctrl+v tells the terminal to not interpret the following character, so Ctrl+v Ctrl-I will display a tab character, 
+similarly Ctrl+v ENTER will display the escape sequence for the Enter key: ^M
+</p>
+
+<p>
+History:
+  Ctrl + r   Recall the last command including the specified character(s)
+             searches the command history as you type.
+             Equivalent to : vim ~/.bash<sub>history</sub>. 
+  Ctrl + p   Previous command in history (i.e. walk back through the command history)
+  Ctrl + n   Next command in history (i.e. walk forward through the command history)
+</p>
+
+<p>
+ Ctrl + s   Go back to the next most recent command.
+	    (beware to not execute it from a terminal because this will also launch its XOFF).
+ Ctrl + o   Execute the command found via Ctrl+r or Ctrl+s
+ Ctrl + g   Escape from history searching mode
+       !!   Repeat last command
+     !abc   Run last command starting with abc
+   !abc:p   Print last command starting with abc
+       !$   Last argument of previous command
+  ALT + .   Last argument of previous command
+       !*   All arguments of previous command
+^abc­^­def   Run previous command, replacing abc with def
+Process control:
+Ctrl + C   Interrupt/Kill whatever you are running (SIGINT)
+Ctrl + l   Clear the screen
+Ctrl + s   Stop output to the screen (for long running verbose commands)
+	   Then use PgUp/PgDn for navigation
+Ctrl + q   Allow output to the screen (if previously stopped using command above)
+Ctrl + D   Send an EOF marker, unless disabled by an option, this will close the current shell (EXIT)
+Ctrl + Z   Send the signal SIGTSTP to the current task, which suspends it.
+	   To return to it later enter fg 'process name' (foreground).
+Emacs mode vs Vi Mode
+All the above assume that bash is running in the default Emacs setting, if you prefer this can be switched to Vi shortcuts instead.
+</p>
+
+<p>
+Set Vi Mode in bash:
+</p>
+
+<p>
+$ set -o vi 
+Set Emacs Mode in bash:
+</p>
+
+<p>
+$ set -o emacs 
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5206940" class="outline-2">
+<h2 id="org5206940"><span class="section-number-2">2</span> increment variable in bash</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+There are more than one way to increment a variable in bash, but what you tried is not correct.
+</p>
+
+<p>
+You can use for example arithmetic expansion:
+</p>
+
+<p>
+var=$((var+1))
+or only:
+</p>
+
+<p>
+((var=var+1))
+or:
+</p>
+
+<p>
+((var+=1))
+or even:
+</p>
+
+<p>
+((var++))
+Or you can use let:
+</p>
+
+<p>
+let "var=var+1"
+or only:
+</p>
+
+<p>
+let "var+=1"
+or even:
+</p>
+
+<p>
+let "var++"
+</p>
+</div>
+</div>
+
+<div id="outline-container-org564cbfd" class="outline-2">
+<h2 id="org564cbfd"><span class="section-number-2">3</span> testing with <b>if</b></h2>
+</div>
+<div id="outline-container-org1713adb" class="outline-2">
+<h2 id="org1713adb"><span class="section-number-2">4</span> for loops to display only odd natural numbers from  to 99.</h2>
+<div class="outline-text-2" id="text-4">
+<div class="org-src-container">
+<pre class="src src-shell">for i in `seq 1 2 99`
+do
+    echo $i
+done
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgac56836" class="outline-2">
+<h2 id="orgac56836"><span class="section-number-2">5</span> Single Quotes versus double quotes</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+Basically,variable names are exapnded within double quotes, but not
+single quotes. If you do not need to refer to variables, single
+quotes are good to use as the results are more predictable.  An
+example
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">#!/bin/bash
+echo -n '$USER='     # -n option stops echo from breaking the line
+echo "$USER"
+echo "\$USER=$USER"  # this does the same thing as the first two lines
+</pre>
+</div>
+
+<p>
+The output looks like this (assuming your username is elflord)
+</p>
+
+<p>
+$USER=elflord
+</p>
+
+<p>
+$USER=elflord
+</p>
+
+<p>
+so the double quotes still have a work around. Double quotes are more
+flexible, but less predictable. Given the choice between single quotes
+and double quotes, use single quotes.
+</p>
+
+<p>
+Sometimes, it is a good idea to protect variable names in double
+quotes. This is usually the most important if your variables value
+either (a) contains spaces or (b) is the empty string. An example is
+as follows:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">#!/bin/bash
+X=""
+if [ -n $X ]; then 	# -n tests to see if the argument is non empty
+	echo "the variable X is not the empty string"
+fi
+</pre>
+</div>
+
+<p>
+This script will give the following output:
+</p>
+
+<p>
+the variable X is not the empty string
+</p>
+
+<p>
+Why ? because the shell expands $X to the empty string. The expression
+[ -n ] returns true (since it is not provided with an argument). A
+better script would have been:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">#!/bin/bash
+X=""
+if [ -n "$X" ]; then 	# -n tests to see if the argument is non empty
+	echo "the variable X is not the empty string"
+fi
+</pre>
+</div>
+
+<p>
+In this example, the expression expands to [ -n "" ] which returns
+false, since the string enclosed in inverted commas is clearly empty.
+</p>
+</div>
+</div>
+<div id="outline-container-org25698ab" class="outline-2">
+<h2 id="org25698ab"><span class="section-number-2">6</span> Using Braces to Protect Your Variables</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+OK. Here's a potential problem situation. Suppose you want to echo the
+value of the variable X, followed immediately by the letters
+"abc". Question: how do you do this ? Let's have a try :
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">#!/bin/bash
+X=ABC
+echo "$Xabc"
+</pre>
+</div>
+
+<p>
+THis gives no output. What went wrong ? The answer is that the shell
+thought that we were asking for the variable Xabc, which is
+uninitialised. The way to deal with this is to put braces around X to
+seperate it from the other characters. The following gives the desired
+result:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">#!/bin/bash
+X=ABC
+echo "${X}abc"
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8338b2d" class="outline-2">
+<h2 id="org8338b2d"><span class="section-number-2">7</span> While Loops</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+While loops iterate "while" a given condition is true. An example of this:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">#!/bin/bash
+X=0
+while [ $X -le 20 ]
+do
+	echo $X
+	X=$((X+1))
+done
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org5136319" class="outline-2">
+<h2 id="org5136319"><span class="section-number-2">8</span> comparing numbers</h2>
+<div class="outline-text-2" id="text-8">
+<p>
+In bash, you should do your check in arithmetic context:
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">if (( a &gt; b )); then
+    ...
+fi
+</pre>
+</div>
+
+<p>
+For POSIX shells that don't support (()), you can use -lt and -gt.
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">if [ "$a" -gt "$b" ]; then
+    ...
+fi
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">operator</th>
+<th scope="col" class="org-left">comparison</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">-lt</td>
+<td class="org-left">Less than</td>
+</tr>
+
+<tr>
+<td class="org-left">-le</td>
+<td class="org-left">Less than or equal</td>
+</tr>
+
+<tr>
+<td class="org-left">-eq</td>
+<td class="org-left">Equal</td>
+</tr>
+
+<tr>
+<td class="org-left">-ge</td>
+<td class="org-left">Greater than or equal</td>
+</tr>
+
+<tr>
+<td class="org-left">-gt</td>
+<td class="org-left">Greater than</td>
+</tr>
+
+<tr>
+<td class="org-left">-ne</td>
+<td class="org-left">Not equal</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div id="outline-container-org3eb4f3d" class="outline-3">
+<h3 id="org3eb4f3d"><span class="section-number-3">8.1</span> example</h3>
+<div class="outline-text-3" id="text-8-1">
+<div class="org-src-container">
+<pre class="src src-c">#!/bin/bash
+count=100
+if [ $count -eq 100 ]
+then
+  echo "Count is 100"
+fi
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8ba88b8" class="outline-2">
+<h2 id="org8ba88b8"><span class="section-number-2">9</span> string comparison</h2>
+<div class="outline-text-2" id="text-9">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">operator</th>
+<th scope="col" class="org-left">true if</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">str1 = str2[4]</td>
+<td class="org-left">str1 matches str2</td>
+</tr>
+
+<tr>
+<td class="org-left">str1 != str2</td>
+<td class="org-left">str1 does not match str2</td>
+</tr>
+
+<tr>
+<td class="org-left">str1 &lt; str2</td>
+<td class="org-left">str1 is less than str2</td>
+</tr>
+
+<tr>
+<td class="org-left">str1 &gt; str2</td>
+<td class="org-left">str1 is greater than str2</td>
+</tr>
+
+<tr>
+<td class="org-left">-n str1 str1</td>
+<td class="org-left">is not null (has length greater than 0)</td>
+</tr>
+
+<tr>
+<td class="org-left">-z str1 str1</td>
+<td class="org-left">is null (has length 0)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-org8d69d1d" class="outline-2">
+<h2 id="org8d69d1d"><span class="section-number-2">10</span> airthmetic with <b>bc</b></h2>
+<div class="outline-text-2" id="text-10">
+</div><div id="outline-container-org6ae0c28" class="outline-3">
+<h3 id="org6ae0c28"><span class="section-number-3">10.1</span> example</h3>
+<div class="outline-text-3" id="text-10-1">
+<pre class="example">
+~$ echo "5+5.2"| bc -l
+10.2
+</pre>
+</div>
+</div>
+
+
+
+
+<div id="outline-container-orgacea2f2" class="outline-3">
+<h3 id="orgacea2f2"><span class="section-number-3">10.2</span> rounding the result</h3>
+<div class="outline-text-3" id="text-10-2">
+<p>
+use "scale" (number of decimal points).
+</p>
+
+<pre class="example">
+~$ echo "scale = 2; 10 * 100 / 30" | bc
+33.33
+~$ echo "scale = 2; 10 / 30 * 100" | bc
+33.00
+~$ echo "scale = 2; (10 / 30) * 100" | bc
+33.00
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org504a72c" class="outline-2">
+<h2 id="org504a72c"><span class="section-number-2">11</span> airthmetic with <b>expr</b></h2>
+<div class="outline-text-2" id="text-11">
+<pre class="example">
+~$ echo $(expr 5 + 5)
+10
+~$ echo $(expr 5 - 5 + 2 )
+2
+~$ echo $(expr 5 - 5 + 2 / 3 )
+0
+~$ echo $(expr 5 - 5 + 2 / 1 )
+2
+</pre>
+
+<p>
+Be careful with spacing in such expressions! Bash is very sensitive to them.
+</p>
+</div>
+</div>
+<div id="outline-container-orgd7c6448" class="outline-2">
+<h2 id="orgd7c6448"><span class="section-number-2">12</span> reading lines from file</h2>
+<div class="outline-text-2" id="text-12">
+<div class="org-src-container">
+<pre class="src src-javascript">while read line file; do
+
+done
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd3b4e11" class="outline-2">
+<h2 id="orgd3b4e11"><span class="section-number-2">13</span> references</h2>
+<div class="outline-text-2" id="text-13">
+<p>
+<a href="http://www.panix.com/~elflord/unix/bash-tute.html">http://www.panix.com/~elflord/unix/bash-tute.html</a>
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: moh</p>
+<p class="date">Created: 2017-01-15 Sun 22:16</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-01-12 Thu 22:32 -->
+<!-- 2017-01-15 Sun 22:16 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title></title>
@@ -257,6 +257,8 @@ for the JavaScript code in this tag.
 <li><a href="#org53e89e9">1. network</a>
 <ul>
 <li><a href="#orgc0087d0">1.1. put wireless card in monitor mode</a></li>
+<li><a href="#org8f4c4e5">1.2. add bridges to tor</a></li>
+<li><a href="#org94f3fb4">1.3. use privoxy to http over socks</a></li>
 </ul>
 </li>
 <li><a href="#orgfff6978">2. Misc</a>
@@ -358,6 +360,29 @@ for the JavaScript code in this tag.
 </li>
 </ul>
 </li>
+<li><a href="#org3a8f935">13. Text processing</a>
+<ul>
+<li><a href="#org80d115e">13.1. cut</a>
+<ul>
+<li><a href="#org9574cac">13.1.1. example inputs</a></li>
+<li><a href="#org6a0068d">13.1.2. Write a unix/linux cut command to print characters by position?</a></li>
+<li><a href="#org952771d">13.1.3. Write a unix/linux cut command to print characters by range?</a></li>
+<li><a href="#orga3ea664">13.1.4. print the first six characters in a line</a></li>
+<li><a href="#org97e9754">13.1.5. To print the characters from tenth position to the end</a></li>
+<li><a href="#org18d29b2">13.1.6. Write a unix/linux cut command to print the fields using the delimiter?</a></li>
+<li><a href="#org3fe1b89">13.1.7. prints the second and third field in each line.</a></li>
+<li><a href="#orgc12eb02">13.1.8. Write a unix/linux cut command to display range of fields?</a></li>
+<li><a href="#orged10ac9">13.1.9. cut by new line?</a></li>
+</ul>
+</li>
+<li><a href="#orgbcaafa2">13.2. tr</a>
+<ul>
+<li><a href="#org346d496">13.2.1. Replace multiple spaces with one using 'tr' only</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgc660c13">14. references</a></li>
 </ul>
 </div>
 </div>
@@ -375,6 +400,36 @@ Check:
 
 <p>
 iwconfig
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8f4c4e5" class="outline-3">
+<h3 id="org8f4c4e5"><span class="section-number-3">1.2</span> add bridges to tor</h3>
+<div class="outline-text-3" id="text-1-2">
+<ol class="org-ol">
+<li><a href="https://bridges.torproject.org/">https://bridges.torproject.org/</a></li>
+<li>add the bridges at the end of  torrc</li>
+</ol>
+<pre class="example">
+UseBridges 1
+Bridge &lt;ip&gt;:&lt;port&gt; &lt;fingerprint&gt;
+</pre>
+</div>
+</div>
+<div id="outline-container-org94f3fb4" class="outline-3">
+<h3 id="org94f3fb4"><span class="section-number-3">1.3</span> use privoxy to http over socks</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+open ~/etc/privoxy/config/ and comment out the line
+</p>
+
+<p>
+and maybe
+</p>
+
+<p>
+and
 </p>
 </div>
 </div>
@@ -1173,10 +1228,168 @@ gcc -print-prog-name=l
 </div>
 </div>
 </div>
+
+<div id="outline-container-org3a8f935" class="outline-2">
+<h2 id="org3a8f935"><span class="section-number-2">13</span> Text processing</h2>
+<div class="outline-text-2" id="text-13">
+</div><div id="outline-container-org80d115e" class="outline-3">
+<h3 id="org80d115e"><span class="section-number-3">13.1</span> cut</h3>
+<div class="outline-text-3" id="text-13-1">
+</div><div id="outline-container-org9574cac" class="outline-4">
+<h4 id="org9574cac"><span class="section-number-4">13.1.1</span> example inputs</h4>
+<div class="outline-text-4" id="text-13-1-1">
+<div class="org-src-container">
+<pre class="src src-shell">&gt; cat file.txt
+unix or linux os
+is unix good os
+is linux good os
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6a0068d" class="outline-4">
+<h4 id="org6a0068d"><span class="section-number-4">13.1.2</span> Write a unix/linux cut command to print characters by position?</h4>
+<div class="outline-text-4" id="text-13-1-2">
+<div class="org-src-container">
+<pre class="src src-shell">cut -c4 file.txt
+x
+u
+l
+</pre>
+</div>
+
+<p>
+The above cut command prints the fourth character in each line of the file
+</p>
+</div>
+</div>
+<div id="outline-container-org952771d" class="outline-4">
+<h4 id="org952771d"><span class="section-number-4">13.1.3</span> Write a unix/linux cut command to print characters by range?</h4>
+<div class="outline-text-4" id="text-13-1-3">
+<div class="org-src-container">
+<pre class="src src-shell">cut -c4-7 file.txt
+x or
+unix
+linu
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga3ea664" class="outline-4">
+<h4 id="orga3ea664"><span class="section-number-4">13.1.4</span> print the first six characters in a line</h4>
+<div class="outline-text-4" id="text-13-1-4">
+<div class="org-src-container">
+<pre class="src src-shell">cut -c-6 file.txt
+unix o
+is uni
+is lin
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org97e9754" class="outline-4">
+<h4 id="org97e9754"><span class="section-number-4">13.1.5</span> To print the characters from tenth position to the end</h4>
+<div class="outline-text-4" id="text-13-1-5">
+<div class="org-src-container">
+<pre class="src src-shell">cut -c10- file.txt
+inux os
+ood os
+good os
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org18d29b2" class="outline-4">
+<h4 id="org18d29b2"><span class="section-number-4">13.1.6</span> Write a unix/linux cut command to print the fields using the delimiter?</h4>
+<div class="outline-text-4" id="text-13-1-6">
+<div class="org-src-container">
+<pre class="src src-shell">cut -d' ' -f2 file.txt
+or
+unix
+linux
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3fe1b89" class="outline-4">
+<h4 id="org3fe1b89"><span class="section-number-4">13.1.7</span> prints the second and third field in each line.</h4>
+<div class="outline-text-4" id="text-13-1-7">
+<div class="org-src-container">
+<pre class="src src-shell">cut -d' ' -f2,3 file.txt
+or linux
+unix good
+linux good
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc12eb02" class="outline-4">
+<h4 id="orgc12eb02"><span class="section-number-4">13.1.8</span> Write a unix/linux cut command to display range of fields?</h4>
+<div class="outline-text-4" id="text-13-1-8">
+<p>
+You can print a range of fields by specifying the start and end position.
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">cut -d' ' -f1-3 file.txt
+</pre>
+</div>
+
+<p>
+The above command prints the first, second and third fields.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orged10ac9" class="outline-4">
+<h4 id="orged10ac9"><span class="section-number-4">13.1.9</span> cut by new line?</h4>
+<div class="outline-text-4" id="text-13-1-9">
+<div class="org-src-container">
+<pre class="src src-shell">cat textfile | cut -f3 -d$'\n'
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgbcaafa2" class="outline-3">
+<h3 id="orgbcaafa2"><span class="section-number-3">13.2</span> tr</h3>
+<div class="outline-text-3" id="text-13-2">
+</div><div id="outline-container-org346d496" class="outline-4">
+<h4 id="org346d496"><span class="section-number-4">13.2.1</span> Replace multiple spaces with one using 'tr' only</h4>
+<div class="outline-text-4" id="text-13-2-1">
+<p>
+With tr, use the squeeze repeat option:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">$ tr -s " " &lt; file
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc660c13" class="outline-2">
+<h2 id="orgc660c13"><span class="section-number-2">14</span> references</h2>
+<div class="outline-text-2" id="text-14">
+<p>
+<a href="http://www.folkstalk.com/2012/02/cut-command-in-unix-linux-examples.html">http://www.folkstalk.com/2012/02/cut-command-in-unix-linux-examples.html</a>
+<a href="http://unix.stackexchange.com/questions/35369/how-to-cut-by-tab-character">http://unix.stackexchange.com/questions/35369/how-to-cut-by-tab-character</a>
+<a href="http://unix.stackexchange.com/questions/145978/replace-multiple-spaces-with-one-using-tr-only">http://unix.stackexchange.com/questions/145978/replace-multiple-spaces-with-one-using-tr-only</a>
+</p>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: moh</p>
-<p class="date">Created: 2017-01-12 Thu 22:32</p>
+<p class="date">Created: 2017-01-15 Sun 22:16</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

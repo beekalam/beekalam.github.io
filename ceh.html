@@ -232,131 +232,81 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org8d3a8b6">1. memory space</a></li>
-<li><a href="#orgc272580">2. Execution Contexts</a></li>
-<li><a href="#org72a7cef">3. Processors</a></li>
-<li><a href="#orgc87f0c7">4. Stand-Alone Processors</a>
+<li><a href="#orgb1b8c2b">1. website footprinting</a>
 <ul>
-<li><a href="#org884630d">4.1. Companion Chipsets</a>
-<ul>
-<li><a href="#org3939fe8">4.1.1. northbridge , southbridge</a></li>
+<li><a href="#org255f4d1">1.1. view headers</a></li>
+<li><a href="#orgd0e2f05">1.2. examine cookies set by the server to determine the software</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li><a href="#org3f9092e">5. Linux kernel</a>
-<ul>
-<li><a href="#org79db7f2">5.1. kernel version</a></li>
-</ul>
-</li>
+<li><a href="#orgbd0da67">2. Email footprinting</a></li>
+<li><a href="#org60a3c62">3. google search operators</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org8d3a8b6" class="outline-2">
-<h2 id="org8d3a8b6"><span class="section-number-2">1</span> memory space</h2>
+<div id="outline-container-orgb1b8c2b" class="outline-2">
+<h2 id="orgb1b8c2b"><span class="section-number-2">1</span> website footprinting</h2>
 <div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>operating system used.</li>
+<li>subdirectories and parameters</li>
+<li>Filename, path, database field name, or query:You should analyze anything after the
+a  query that looks like a filename, path, database field name, or query carefully
+to check whether it offers opportunities for SQL injection</li>
+<li>Scripting platform</li>
+<li>Contact details and CMS details: The contact pages usually offer details such as names
+phone numbers, email addresses, and locations of admin or support people.</li>
+</ul>
+</div>
+
+<div id="outline-container-org255f4d1" class="outline-3">
+<h3 id="org255f4d1"><span class="section-number-3">1.1</span> view headers</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>Connection status and content-type</li>
+<li>Accept-ranges</li>
+<li>Last-Modified information</li>
+<li>X-Powered-By information</li>
+<li>Web server in use and its version</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgd0e2f05" class="outline-3">
+<h3 id="orgd0e2f05"><span class="section-number-3">1.2</span> examine cookies set by the server to determine the software</h3>
+<div class="outline-text-3" id="text-1-2">
 <p>
-High-performance microprocessors contain complex hardware engines called
-Memory Management Units (MMUs). Their purpose is to enable an operating system
-to exercise a high degree of management and control over its address space and the
-address space it allocates to processes. This control comes in two primary forms: access
-rights and memory translation. Access rights allow an operating system to assign specific
-memory-access privileges to specific tasks. Memory translation allows an operating
-system to virtualize its address space, which has many benefits.
- The Linux kernel takes advantage of these hardware MMUs to create a virtual
-memory operating system
+running and its behavior.
 </p>
 </div>
 </div>
-<div id="outline-container-orgc272580" class="outline-2">
-<h2 id="orgc272580"><span class="section-number-2">2</span> Execution Contexts</h2>
+</div>
+
+<div id="outline-container-orgbd0da67" class="outline-2">
+<h2 id="orgbd0da67"><span class="section-number-2">2</span> Email footprinting</h2>
 <div class="outline-text-2" id="text-2">
 <p>
-In Linux, we refer to two distinctly separate operational contexts, based on the
-environment in which a given thread15 is executing. Threads executing entirely within
-the kernel are said to be operating in kernel context. Application programs are said to
-operate in user space context. A user space process can access only memory it owns, and
-it is required to use kernel system calls to access privileged resources such as file and
-device I/O. 
-When an application program executes a system call that
-results in a context switch and enters the kernel, it is executing kernel code on behalf
-of a process. You will often hear this referred to as process context within the kernel. In
-contrast, the interrupt service routine (ISR) handling the IDE drive (or any other ISR,
-for that matter) is kernel code that is not executing on behalf of any particular process.
-This is typically called interrupt context.
-</p>
-</div>
-</div>
-<div id="outline-container-org72a7cef" class="outline-2">
-<h2 id="org72a7cef"><span class="section-number-2">3</span> Processors</h2>
-</div>
-<div id="outline-container-orgc87f0c7" class="outline-2">
-<h2 id="orgc87f0c7"><span class="section-number-2">4</span> Stand-Alone Processors</h2>
-<div class="outline-text-2" id="text-4">
-<p>
-Stand-alone processors are processor chips that are dedicated exclusively to the
-processing function. As opposed to integrated processors, stand-alone processors
-require additional support circuitry for their basic operation. In many cases, this
-means a chipset or custom logic surrounding the processor to handle functions such
-as DRAM controller, system bus addressing configuration, and external peripheral
-devices such as keyboard controllers and serial ports. Stand-alone processors often
-offer the highest overall CPU performance.
-</p>
-</div>
-
-<div id="outline-container-org884630d" class="outline-3">
-<h3 id="org884630d"><span class="section-number-3">4.1</span> Companion Chipsets</h3>
-<div class="outline-text-3" id="text-4-1">
-<p>
-Stand-alone processors require support logic to connect to and enable
-external peripheral devices such as main system memory (DRAM), ROM or
-Flash memory, system buses such as PCI, and other peripherals.  This
-support logic often is accomplished by companion chipsets, which may
-even be purpose-designed specifically for a family of processors.
-</p>
-</div>
-
-<div id="outline-container-org3939fe8" class="outline-4">
-<h4 id="org3939fe8"><span class="section-number-4">4.1.1</span> northbridge , southbridge</h4>
-<div class="outline-text-4" id="text-4-1-1">
-<p>
-northbridge is directly connected to the  processor's high-speed front-side bus (FSB).
-</p>
-</div>
-</div>
-</div>
-</div>
-<div id="outline-container-org3f9092e" class="outline-2">
-<h2 id="org3f9092e"><span class="section-number-2">5</span> Linux kernel</h2>
-<div class="outline-text-2" id="text-5">
-</div><div id="outline-container-org79db7f2" class="outline-3">
-<h3 id="org79db7f2"><span class="section-number-3">5.1</span> kernel version</h3>
-<div class="outline-text-3" id="text-5-1">
-<p>
-It is easy to tell what kernel version you are working with. The first few lines of the
-top-level makefile in a kernel source tree detail the exact kernel version represented by
-a given instance. It looks like this for the 2.6.30 kernel release:
+By using email tracking tools you can gather the following information about
+the victim:
 </p>
 
-<p>
-VERSION = 2
-PATCHLEVEL = 6
-SUBLEVEL = 30
-EXTRAVERSION =
-NAME=Man-Eating Seals of Antiquity
-</p>
-
-<p>
-You can check the kernel release string from a command prompt on a running Linux system
-like this:
-</p>
-
-<p>
-$ cat /proc/version
-Linux version 2.6.13 (chris@pluto) (gcc version 4.0.0 (DENX ELDK 4.0
-4.0.0)) #2 Thu Feb 16 19:30:13 EST 2006
-</p>
+<ul class="org-ul">
+<li>Geolocation</li>
+<li>read duration</li>
+<li>proxy detection</li>
+<li>links : allows you to check whether the links sent to the recipient through email
+have been checked or not.</li>
+<li>Operating System</li>
+<li>Forward email : whether or not the email sent to you is forwarded to another person
+can be determined easily by using this tool.</li>
+</ul>
 </div>
+</div>
+<div id="outline-container-org60a3c62" class="outline-2">
+<h2 id="org60a3c62"><span class="section-number-2">3</span> google search operators</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+<a href="http://www.googleguide.com/">http://www.googleguide.com/</a>
+</p>
 </div>
 </div>
 </div>

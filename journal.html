@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-01-15 Sun 22:16 -->
+<!-- 2017-01-12 Thu 22:32 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title></title>
@@ -232,137 +232,73 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org8d3a8b6">1. memory space</a></li>
-<li><a href="#orgc272580">2. Execution Contexts</a></li>
-<li><a href="#org72a7cef">3. Processors</a></li>
-<li><a href="#orgc87f0c7">4. Stand-Alone Processors</a>
+<li><a href="#org7e015e6">1. 2017</a>
 <ul>
-<li><a href="#org884630d">4.1. Companion Chipsets</a>
+<li><a href="#org6f13a75">1.1. 2017-01 January</a>
 <ul>
-<li><a href="#org3939fe8">4.1.1. northbridge , southbridge</a></li>
+<li><a href="#orgce8cb12">1.1.1. 2017-01-09 Monday</a>
+<ul>
+<li><a href="#orgae3b995">1.1.1.1. something</a></li>
+<li><a href="#orgac37ac4">1.1.1.2. </a></li>
+<li><a href="#orgecdcf5c">1.1.1.3. </a></li>
+<li><a href="#orgb1f1f2d">1.1.1.4. </a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org3f9092e">5. Linux kernel</a>
-<ul>
-<li><a href="#org79db7f2">5.1. kernel version</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org8d3a8b6" class="outline-2">
-<h2 id="org8d3a8b6"><span class="section-number-2">1</span> memory space</h2>
+<div id="outline-container-org7e015e6" class="outline-2">
+<h2 id="org7e015e6"><span class="section-number-2">1</span> 2017</h2>
 <div class="outline-text-2" id="text-1">
+</div><div id="outline-container-org6f13a75" class="outline-3">
+<h3 id="org6f13a75"><span class="section-number-3">1.1</span> 2017-01 January</h3>
+<div class="outline-text-3" id="text-1-1">
+</div><div id="outline-container-orgce8cb12" class="outline-4">
+<h4 id="orgce8cb12"><span class="section-number-4">1.1.1</span> 2017-01-09 Monday</h4>
+<div class="outline-text-4" id="text-1-1-1">
+</div><div id="outline-container-orgae3b995" class="outline-5">
+<h5 id="orgae3b995"><span class="section-number-5">1.1.1.1</span> something</h5>
+<div class="outline-text-5" id="text-1-1-1-1">
 <p>
-High-performance microprocessors contain complex hardware engines called
-Memory Management Units (MMUs). Their purpose is to enable an operating system
-to exercise a high degree of management and control over its address space and the
-address space it allocates to processes. This control comes in two primary forms: access
-rights and memory translation. Access rights allow an operating system to assign specific
-memory-access privileges to specific tasks. Memory translation allows an operating
-system to virtualize its address space, which has many benefits.
- The Linux kernel takes advantage of these hardware MMUs to create a virtual
-memory operating system
+Entered on <span class="timestamp-wrapper"><span class="timestamp">[2017-01-09 Mon 21:33]</span></span>
 </p>
 </div>
 </div>
-<div id="outline-container-orgc272580" class="outline-2">
-<h2 id="orgc272580"><span class="section-number-2">2</span> Execution Contexts</h2>
-<div class="outline-text-2" id="text-2">
+<div id="outline-container-orgac37ac4" class="outline-5">
+<h5 id="orgac37ac4"><span class="section-number-5">1.1.1.2</span> </h5>
+<div class="outline-text-5" id="text-1-1-1-2">
 <p>
-In Linux, we refer to two distinctly separate operational contexts, based on the
-environment in which a given thread15 is executing. Threads executing entirely within
-the kernel are said to be operating in kernel context. Application programs are said to
-operate in user space context. A user space process can access only memory it owns, and
-it is required to use kernel system calls to access privileged resources such as file and
-device I/O. 
-When an application program executes a system call that
-results in a context switch and enters the kernel, it is executing kernel code on behalf
-of a process. You will often hear this referred to as process context within the kernel. In
-contrast, the interrupt service routine (ISR) handling the IDE drive (or any other ISR,
-for that matter) is kernel code that is not executing on behalf of any particular process.
-This is typically called interrupt context.
+Entered on <span class="timestamp-wrapper"><span class="timestamp">[2017-01-09 Mon 21:41]</span></span>
 </p>
 </div>
 </div>
-<div id="outline-container-org72a7cef" class="outline-2">
-<h2 id="org72a7cef"><span class="section-number-2">3</span> Processors</h2>
-</div>
-<div id="outline-container-orgc87f0c7" class="outline-2">
-<h2 id="orgc87f0c7"><span class="section-number-2">4</span> Stand-Alone Processors</h2>
-<div class="outline-text-2" id="text-4">
+<div id="outline-container-orgecdcf5c" class="outline-5">
+<h5 id="orgecdcf5c"><span class="section-number-5">1.1.1.3</span> </h5>
+<div class="outline-text-5" id="text-1-1-1-3">
 <p>
-Stand-alone processors are processor chips that are dedicated exclusively to the
-processing function. As opposed to integrated processors, stand-alone processors
-require additional support circuitry for their basic operation. In many cases, this
-means a chipset or custom logic surrounding the processor to handle functions such
-as DRAM controller, system bus addressing configuration, and external peripheral
-devices such as keyboard controllers and serial ports. Stand-alone processors often
-offer the highest overall CPU performance.
-</p>
-</div>
-
-<div id="outline-container-org884630d" class="outline-3">
-<h3 id="org884630d"><span class="section-number-3">4.1</span> Companion Chipsets</h3>
-<div class="outline-text-3" id="text-4-1">
-<p>
-Stand-alone processors require support logic to connect to and enable
-external peripheral devices such as main system memory (DRAM), ROM or
-Flash memory, system buses such as PCI, and other peripherals.  This
-support logic often is accomplished by companion chipsets, which may
-even be purpose-designed specifically for a family of processors.
-</p>
-</div>
-
-<div id="outline-container-org3939fe8" class="outline-4">
-<h4 id="org3939fe8"><span class="section-number-4">4.1.1</span> northbridge , southbridge</h4>
-<div class="outline-text-4" id="text-4-1-1">
-<p>
-northbridge is directly connected to the  processor's high-speed front-side bus (FSB).
+Entered on <span class="timestamp-wrapper"><span class="timestamp">[2017-01-09 Mon 21:42]</span></span>
 </p>
 </div>
 </div>
+<div id="outline-container-orgb1f1f2d" class="outline-5">
+<h5 id="orgb1f1f2d"><span class="section-number-5">1.1.1.4</span> </h5>
+<div class="outline-text-5" id="text-1-1-1-4">
+<p>
+Entered on <span class="timestamp-wrapper"><span class="timestamp">[2017-01-09 Mon 21:43]</span></span>
+</p>
 </div>
 </div>
-<div id="outline-container-org3f9092e" class="outline-2">
-<h2 id="org3f9092e"><span class="section-number-2">5</span> Linux kernel</h2>
-<div class="outline-text-2" id="text-5">
-</div><div id="outline-container-org79db7f2" class="outline-3">
-<h3 id="org79db7f2"><span class="section-number-3">5.1</span> kernel version</h3>
-<div class="outline-text-3" id="text-5-1">
-<p>
-It is easy to tell what kernel version you are working with. The first few lines of the
-top-level makefile in a kernel source tree detail the exact kernel version represented by
-a given instance. It looks like this for the 2.6.30 kernel release:
-</p>
-
-<p>
-VERSION = 2
-PATCHLEVEL = 6
-SUBLEVEL = 30
-EXTRAVERSION =
-NAME=Man-Eating Seals of Antiquity
-</p>
-
-<p>
-You can check the kernel release string from a command prompt on a running Linux system
-like this:
-</p>
-
-<p>
-$ cat /proc/version
-Linux version 2.6.13 (chris@pluto) (gcc version 4.0.0 (DENX ELDK 4.0
-4.0.0)) #2 Thu Feb 16 19:30:13 EST 2006
-</p>
 </div>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: moh</p>
-<p class="date">Created: 2017-01-15 Sun 22:16</p>
+<p class="date">Created: 2017-01-12 Thu 22:32</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

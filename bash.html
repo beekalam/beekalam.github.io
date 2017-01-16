@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-01-15 Sun 22:16 -->
+<!-- 2017-01-16 Mon 21:40 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title></title>
@@ -238,22 +238,32 @@ for the JavaScript code in this tag.
 <li><a href="#org1713adb">4. for loops to display only odd natural numbers from  to 99.</a></li>
 <li><a href="#orgac56836">5. Single Quotes versus double quotes</a></li>
 <li><a href="#org25698ab">6. Using Braces to Protect Your Variables</a></li>
-<li><a href="#org8338b2d">7. While Loops</a></li>
+<li><a href="#org8338b2d">7. While Loops</a>
+<ul>
+<li><a href="#org9ffe0e9">7.1. intro</a></li>
+<li><a href="#org5e3d989">7.2. break</a></li>
+</ul>
+</li>
 <li><a href="#org5136319">8. comparing numbers</a>
 <ul>
-<li><a href="#org3eb4f3d">8.1. example</a></li>
+<li><a href="#org6ae0c28">8.1. example</a></li>
 </ul>
 </li>
 <li><a href="#org8ba88b8">9. string comparison</a></li>
 <li><a href="#org8d69d1d">10. airthmetic with <b>bc</b></a>
 <ul>
-<li><a href="#org6ae0c28">10.1. example</a></li>
+<li><a href="#orgfbea552">10.1. example</a></li>
 <li><a href="#orgacea2f2">10.2. rounding the result</a></li>
 </ul>
 </li>
 <li><a href="#org504a72c">11. airthmetic with <b>expr</b></a></li>
 <li><a href="#orgd7c6448">12. reading lines from file</a></li>
-<li><a href="#orgd3b4e11">13. references</a></li>
+<li><a href="#orga601da6">13. example</a>
+<ul>
+<li><a href="#org0a58b28">13.1. write <code>head -n 20</code> with shell script</a></li>
+</ul>
+</li>
+<li><a href="#orgd3b4e11">14. references</a></li>
 </ul>
 </div>
 </div>
@@ -568,6 +578,9 @@ echo "${X}abc"
 <div id="outline-container-org8338b2d" class="outline-2">
 <h2 id="org8338b2d"><span class="section-number-2">7</span> While Loops</h2>
 <div class="outline-text-2" id="text-7">
+</div><div id="outline-container-org9ffe0e9" class="outline-3">
+<h3 id="org9ffe0e9"><span class="section-number-3">7.1</span> intro</h3>
+<div class="outline-text-3" id="text-7-1">
 <p>
 While loops iterate "while" a given condition is true. An example of this:
 </p>
@@ -581,6 +594,29 @@ do
 	X=$((X+1))
 done
 </pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org5e3d989" class="outline-3">
+<h3 id="org5e3d989"><span class="section-number-3">7.2</span> break</h3>
+<div class="outline-text-3" id="text-7-2">
+<div class="org-src-container">
+<pre class="src src-shell">#!/bin/sh
+
+a=0
+
+while [ $a -lt 10 ]
+do
+   echo $a
+   if [ $a -eq 5 ]
+   then
+      break
+   fi
+   a=`expr $a + 1`
+done
+</pre>
+</div>
 </div>
 </div>
 </div>
@@ -656,8 +692,8 @@ fi
 </table>
 </div>
 
-<div id="outline-container-org3eb4f3d" class="outline-3">
-<h3 id="org3eb4f3d"><span class="section-number-3">8.1</span> example</h3>
+<div id="outline-container-org6ae0c28" class="outline-3">
+<h3 id="org6ae0c28"><span class="section-number-3">8.1</span> example</h3>
 <div class="outline-text-3" id="text-8-1">
 <div class="org-src-container">
 <pre class="src src-c">#!/bin/bash
@@ -727,8 +763,8 @@ fi
 <div id="outline-container-org8d69d1d" class="outline-2">
 <h2 id="org8d69d1d"><span class="section-number-2">10</span> airthmetic with <b>bc</b></h2>
 <div class="outline-text-2" id="text-10">
-</div><div id="outline-container-org6ae0c28" class="outline-3">
-<h3 id="org6ae0c28"><span class="section-number-3">10.1</span> example</h3>
+</div><div id="outline-container-orgfbea552" class="outline-3">
+<h3 id="orgfbea552"><span class="section-number-3">10.1</span> example</h3>
 <div class="outline-text-3" id="text-10-1">
 <pre class="example">
 ~$ echo "5+5.2"| bc -l
@@ -736,9 +772,6 @@ fi
 </pre>
 </div>
 </div>
-
-
-
 
 <div id="outline-container-orgacea2f2" class="outline-3">
 <h3 id="orgacea2f2"><span class="section-number-3">10.2</span> rounding the result</h3>
@@ -781,7 +814,7 @@ Be careful with spacing in such expressions! Bash is very sensitive to them.
 <h2 id="orgd7c6448"><span class="section-number-2">12</span> reading lines from file</h2>
 <div class="outline-text-2" id="text-12">
 <div class="org-src-container">
-<pre class="src src-javascript">while read line file; do
+<pre class="src src-shell">while read line file; do
 
 done
 </pre>
@@ -789,9 +822,32 @@ done
 </div>
 </div>
 
-<div id="outline-container-orgd3b4e11" class="outline-2">
-<h2 id="orgd3b4e11"><span class="section-number-2">13</span> references</h2>
+<div id="outline-container-orga601da6" class="outline-2">
+<h2 id="orga601da6"><span class="section-number-2">13</span> example</h2>
 <div class="outline-text-2" id="text-13">
+</div><div id="outline-container-org0a58b28" class="outline-3">
+<h3 id="org0a58b28"><span class="section-number-3">13.1</span> write <code>head -n 20</code> with shell script</h3>
+<div class="outline-text-3" id="text-13-1">
+<div class="org-src-container">
+<pre class="src src-shell">counter=0
+while read line
+do
+    echo $line
+    counter=$((counter + 1))
+    if [ $counter -eq  20 ]
+    then
+	break
+    fi
+done
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd3b4e11" class="outline-2">
+<h2 id="orgd3b4e11"><span class="section-number-2">14</span> references</h2>
+<div class="outline-text-2" id="text-14">
 <p>
 <a href="http://www.panix.com/~elflord/unix/bash-tute.html">http://www.panix.com/~elflord/unix/bash-tute.html</a>
 </p>
@@ -800,7 +856,7 @@ done
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: moh</p>
-<p class="date">Created: 2017-01-15 Sun 22:16</p>
+<p class="date">Created: 2017-01-16 Mon 21:40</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

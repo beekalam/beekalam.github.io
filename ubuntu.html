@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-01-15 Sun 22:16 -->
+<!-- 2017-01-16 Mon 21:40 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title></title>
@@ -382,7 +382,15 @@ for the JavaScript code in this tag.
 </li>
 </ul>
 </li>
-<li><a href="#orgc660c13">14. references</a></li>
+<li><a href="#orgd2f888f">14. processes</a>
+<ul>
+<li><a href="#orgb549a01">14.1. checking the priority of a process?</a></li>
+<li><a href="#org9f5d563">14.2. Setting priority on new processes</a></li>
+<li><a href="#orga3381d4">14.3. Setting Priority on Existing Processes</a></li>
+<li><a href="#org2ca586e">14.4. Setting Permanent Priority on all Processes for a Specific User</a></li>
+</ul>
+</li>
+<li><a href="#orgc660c13">15. references</a></li>
 </ul>
 </div>
 </div>
@@ -1376,9 +1384,74 @@ With tr, use the squeeze repeat option:
 </div>
 </div>
 
-<div id="outline-container-orgc660c13" class="outline-2">
-<h2 id="orgc660c13"><span class="section-number-2">14</span> references</h2>
+<div id="outline-container-orgd2f888f" class="outline-2">
+<h2 id="orgd2f888f"><span class="section-number-2">14</span> processes</h2>
 <div class="outline-text-2" id="text-14">
+</div><div id="outline-container-orgb549a01" class="outline-3">
+<h3 id="orgb549a01"><span class="section-number-3">14.1</span> checking the priority of a process?</h3>
+<div class="outline-text-3" id="text-14-1">
+<pre class="example">
+ps -o pid,comm,nice -p 594
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org9f5d563" class="outline-3">
+<h3 id="org9f5d563"><span class="section-number-3">14.2</span> Setting priority on new processes</h3>
+<div class="outline-text-3" id="text-14-2">
+<pre class="example">
+nice -n 10 apt-get upgrade
+</pre>
+
+<p>
+This will increment the default nice value
+by a positive 10 for the command, ‘apt-get upgrade’ This is often
+useful for times when you want to upgrade apps but don’t want the
+extra process burden at the given time.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga3381d4" class="outline-3">
+<h3 id="orga3381d4"><span class="section-number-3">14.3</span> Setting Priority on Existing Processes</h3>
+<div class="outline-text-3" id="text-14-3">
+<pre class="example">
+renice 10 -p 21827
+</pre>
+</div>
+</div>
+<div id="outline-container-org2ca586e" class="outline-3">
+<h3 id="org2ca586e"><span class="section-number-3">14.4</span> Setting Permanent Priority on all Processes for a Specific User</h3>
+<div class="outline-text-3" id="text-14-4">
+<p>
+Sometimes it is helpful to give specific users lower priority than
+others to keep system resources allocated in the proper places like
+core services and other programs.
+</p>
+
+<p>
+You can set the default nice value of a particular user or group in
+the /etc/security/limits.conf file.
+</p>
+
+<pre class="example">
+/etc/security/limits.conf
+</pre>
+
+<p>
+It uses this syntax: [username] [hard|soft] priority [nice value]
+</p>
+
+<pre class="example">
+backupuser hard priority 1
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc660c13" class="outline-2">
+<h2 id="orgc660c13"><span class="section-number-2">15</span> references</h2>
+<div class="outline-text-2" id="text-15">
 <p>
 <a href="http://www.folkstalk.com/2012/02/cut-command-in-unix-linux-examples.html">http://www.folkstalk.com/2012/02/cut-command-in-unix-linux-examples.html</a>
 <a href="http://unix.stackexchange.com/questions/35369/how-to-cut-by-tab-character">http://unix.stackexchange.com/questions/35369/how-to-cut-by-tab-character</a>
@@ -1389,7 +1462,7 @@ With tr, use the squeeze repeat option:
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: moh</p>
-<p class="date">Created: 2017-01-15 Sun 22:16</p>
+<p class="date">Created: 2017-01-16 Mon 21:40</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

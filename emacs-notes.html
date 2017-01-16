@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-01-15 Sun 22:16 -->
+<!-- 2017-01-16 Mon 21:40 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title></title>
@@ -274,11 +274,11 @@ for the JavaScript code in this tag.
 </li>
 </ul>
 </li>
-<li><a href="#org684d8c5">5. Tables</a></li>
+<li><a href="#org4913fe3">5. Tables</a></li>
 <li><a href="#orgb8c70cb">6. Org-Mode Reference Card</a>
 <ul>
 <li><a href="#orgbfa4b0e">6.1. Getting started</a></li>
-<li><a href="#org4913fe3">6.2. Tables</a>
+<li><a href="#orgb662a84">6.2. Tables</a>
 <ul>
 <li><a href="#org3242b72">6.2.1. creating a table</a></li>
 <li><a href="#orgc1c91e3">6.2.2. commands available inside tables</a></li>
@@ -300,10 +300,10 @@ for the JavaScript code in this tag.
 <li><a href="#org284bb62">9. Repeating Query-Replaces (and Other Complex Commands)</a></li>
 <li><a href="#org19a29ef">10. Recursive Editing</a></li>
 <li><a href="#org435ce6c">11. regular expressions</a></li>
-<li><a href="#orgc0f0e56">12. word abbreviations</a>
+<li><a href="#org30d5b0f">12. word abbreviations</a>
 <ul>
 <li><a href="#orgffaf00f">12.1. dynamic abbreviations</a></li>
-<li><a href="#orgcc99c16">12.2. word abbreviations</a>
+<li><a href="#orgc0f0e56">12.2. word abbreviations</a>
 <ul>
 <li><a href="#org42ced3e">12.2.1. Trying word abbreviations for one session</a></li>
 </ul>
@@ -330,6 +330,8 @@ for the JavaScript code in this tag.
 <li><a href="#org1cf8c89">20. org-mode</a>
 <ul>
 <li><a href="#orgd8ee833">20.1. org-capture</a></li>
+<li><a href="#orgf7061ea">20.2. run desktop-change-dir at startup</a></li>
+<li><a href="#orgfad7488">20.3. save abbrev-mode globally</a></li>
 </ul>
 </li>
 <li><a href="#org9cdb406">21. indent paragraph</a></li>
@@ -507,8 +509,8 @@ underneath.</dd>
 </div>
 </div>
 
-<div id="outline-container-org684d8c5" class="outline-2">
-<h2 id="org684d8c5"><span class="section-number-2">5</span> Tables</h2>
+<div id="outline-container-org4913fe3" class="outline-2">
+<h2 id="org4913fe3"><span class="section-number-2">5</span> Tables</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 Hopefully you can see straight away that the simple structure provided
@@ -543,8 +545,8 @@ cells - you should notice the columns changing width as needed.</li>
 <h3 id="orgbfa4b0e"><span class="section-number-3">6.1</span> Getting started</h3>
 </div>
 
-<div id="outline-container-org4913fe3" class="outline-3">
-<h3 id="org4913fe3"><span class="section-number-3">6.2</span> Tables</h3>
+<div id="outline-container-orgb662a84" class="outline-3">
+<h3 id="orgb662a84"><span class="section-number-3">6.2</span> Tables</h3>
 <div class="outline-text-3" id="text-6-2">
 </div><div id="outline-container-org3242b72" class="outline-4">
 <h4 id="org3242b72"><span class="section-number-4">6.2.1</span> creating a table</h4>
@@ -676,8 +678,8 @@ C-M-%Edit
 </p>
 </div>
 </div>
-<div id="outline-container-orgc0f0e56" class="outline-2">
-<h2 id="orgc0f0e56"><span class="section-number-2">12</span> word abbreviations</h2>
+<div id="outline-container-org30d5b0f" class="outline-2">
+<h2 id="org30d5b0f"><span class="section-number-2">12</span> word abbreviations</h2>
 <div class="outline-text-2" id="text-12">
 </div><div id="outline-container-orgffaf00f" class="outline-3">
 <h3 id="orgffaf00f"><span class="section-number-3">12.1</span> dynamic abbreviations</h3>
@@ -687,8 +689,8 @@ M-/
 </p>
 </div>
 </div>
-<div id="outline-container-orgcc99c16" class="outline-3">
-<h3 id="orgcc99c16"><span class="section-number-3">12.2</span> word abbreviations</h3>
+<div id="outline-container-orgc0f0e56" class="outline-3">
+<h3 id="orgc0f0e56"><span class="section-number-3">12.2</span> word abbreviations</h3>
 <div class="outline-text-3" id="text-12-2">
 </div><div id="outline-container-org42ced3e" class="outline-4">
 <h4 id="org42ced3e"><span class="section-number-4">12.2.1</span> Trying word abbreviations for one session</h4>
@@ -1093,7 +1095,27 @@ M-x auto-fill-mode + M-q allow you to wordwrap for real a pre-existing paragraph
 </ul>
 </div>
 </div>
+<div id="outline-container-orgf7061ea" class="outline-3">
+<h3 id="orgf7061ea"><span class="section-number-3">20.2</span> run desktop-change-dir at startup</h3>
+<div class="outline-text-3" id="text-20-2">
+<div class="org-src-container">
+<pre class="src src-elisp">(setq desktop-path (list "~/emacs-server"))
+</pre>
 </div>
+</div>
+</div>
+
+<div id="outline-container-orgfad7488" class="outline-3">
+<h3 id="orgfad7488"><span class="section-number-3">20.3</span> save abbrev-mode globally</h3>
+<div class="outline-text-3" id="text-20-3">
+<div class="org-src-container">
+<pre class="src src-elisp">(setq-default abbrev-mode t)
+</pre>
+</div>
+</div>
+</div>
+</div>
+
 <div id="outline-container-org9cdb406" class="outline-2">
 <h2 id="org9cdb406"><span class="section-number-2">21</span> indent paragraph</h2>
 <div class="outline-text-2" id="text-21">
@@ -1106,7 +1128,7 @@ C-u C-x C-i
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: moh</p>
-<p class="date">Created: 2017-01-15 Sun 22:16</p>
+<p class="date">Created: 2017-01-16 Mon 21:40</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

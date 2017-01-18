@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-01-16 Mon 21:40 -->
+<!-- 2017-01-18 Wed 18:17 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title></title>
@@ -390,7 +390,12 @@ for the JavaScript code in this tag.
 <li><a href="#org2ca586e">14.4. Setting Permanent Priority on all Processes for a Specific User</a></li>
 </ul>
 </li>
-<li><a href="#orgc660c13">15. references</a></li>
+<li><a href="#orgd0b8a24">15. tor</a>
+<ul>
+<li><a href="#orgba506bb">15.1. change ip</a></li>
+</ul>
+</li>
+<li><a href="#orgc660c13">16. references</a></li>
 </ul>
 </div>
 </div>
@@ -1449,20 +1454,44 @@ backupuser hard priority 1
 </div>
 </div>
 
-<div id="outline-container-orgc660c13" class="outline-2">
-<h2 id="orgc660c13"><span class="section-number-2">15</span> references</h2>
+<div id="outline-container-orgd0b8a24" class="outline-2">
+<h2 id="orgd0b8a24"><span class="section-number-2">15</span> tor</h2>
 <div class="outline-text-2" id="text-15">
+</div><div id="outline-container-orgba506bb" class="outline-3">
+<h3 id="orgba506bb"><span class="section-number-3">15.1</span> change ip</h3>
+<div class="outline-text-3" id="text-15-1">
+<div class="org-src-container">
+<pre class="src src-shell">printf "AUTHENTICATE \"password\"\r\nSIGNAL NEWNYM\r\n" | nc 127.0.0.1 9051
+</pre>
+</div>
+
+<p>
+yet another way
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">service tor reload
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc660c13" class="outline-2">
+<h2 id="orgc660c13"><span class="section-number-2">16</span> references</h2>
+<div class="outline-text-2" id="text-16">
 <p>
 <a href="http://www.folkstalk.com/2012/02/cut-command-in-unix-linux-examples.html">http://www.folkstalk.com/2012/02/cut-command-in-unix-linux-examples.html</a>
 <a href="http://unix.stackexchange.com/questions/35369/how-to-cut-by-tab-character">http://unix.stackexchange.com/questions/35369/how-to-cut-by-tab-character</a>
 <a href="http://unix.stackexchange.com/questions/145978/replace-multiple-spaces-with-one-using-tr-only">http://unix.stackexchange.com/questions/145978/replace-multiple-spaces-with-one-using-tr-only</a>
+<a href="http://askubuntu.com/questions/499995/change-ip-address-which-is-given-by-tor-using-the-terminal">http://askubuntu.com/questions/499995/change-ip-address-which-is-given-by-tor-using-the-terminal</a>
 </p>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: moh</p>
-<p class="date">Created: 2017-01-16 Mon 21:40</p>
+<p class="date">Created: 2017-01-18 Wed 18:17</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

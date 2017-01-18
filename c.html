@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-01-15 Sun 22:16 -->
+<!-- 2017-01-18 Wed 18:17 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title></title>
@@ -262,15 +262,23 @@ for the JavaScript code in this tag.
 <li><a href="#orgc4c1487">1.4. Array and pointer differences</a></li>
 <li><a href="#org1d5cf6a">1.5. Arrays of character Strings</a></li>
 <li><a href="#org1aa4b69">1.6. Pointers and Strings</a></li>
-<li><a href="#org15afa4f">1.7. string length example</a></li>
-<li><a href="#org8c095ff">1.8. concatenation of strings example</a></li>
-<li><a href="#orgc6af7a1">1.9. startsWith</a></li>
-<li><a href="#org3eecf7d">1.10. equalStrings example</a></li>
-<li><a href="#org5b383f3">1.11. read string with scanf</a></li>
-<li><a href="#org2824c3f">1.12. reading lines of code</a></li>
-<li><a href="#orgaefb6f2">1.13. Initializing and Displaying Character Strings</a></li>
-<li><a href="#org99cceb4">1.14. Counting words</a></li>
-<li><a href="#orgeaca293">1.15. Converting a String to its Integer Equivalent</a></li>
+<li><a href="#org0e07ab0">1.7. string input</a>
+<ul>
+<li><a href="#orgd58de90">1.7.1. alternatives to gets</a></li>
+<li><a href="#orgdfb44c9">1.7.2. scanf() function</a></li>
+</ul>
+</li>
+<li><a href="#org0dbef1a">1.8. string output</a></li>
+<li><a href="#orgec1c9ec">1.9. Null character and Null pointer</a></li>
+<li><a href="#org15afa4f">1.10. string length example</a></li>
+<li><a href="#org8c095ff">1.11. concatenation of strings example</a></li>
+<li><a href="#orgc6af7a1">1.12. startsWith</a></li>
+<li><a href="#org3eecf7d">1.13. equalStrings example</a></li>
+<li><a href="#org5b383f3">1.14. read string with scanf</a></li>
+<li><a href="#org2824c3f">1.15. reading lines of code</a></li>
+<li><a href="#orgaefb6f2">1.16. Initializing and Displaying Character Strings</a></li>
+<li><a href="#org99cceb4">1.17. Counting words</a></li>
+<li><a href="#orgeaca293">1.18. Converting a String to its Integer Equivalent</a></li>
 </ul>
 </li>
 </ul>
@@ -688,9 +696,161 @@ copy = Don't be a fool!; &amp;copy = 0x0012ff44; value = 0x0040a000
 </p>
 </div>
 </div>
-<div id="outline-container-org15afa4f" class="outline-3">
-<h3 id="org15afa4f"><span class="section-number-3">1.7</span> string length example</h3>
+<div id="outline-container-org0e07ab0" class="outline-3">
+<h3 id="org0e07ab0"><span class="section-number-3">1.7</span> string input</h3>
 <div class="outline-text-3" id="text-1-7">
+</div><div id="outline-container-orgd58de90" class="outline-4">
+<h4 id="orgd58de90"><span class="section-number-4">1.7.1</span> alternatives to gets</h4>
+<div class="outline-text-4" id="text-1-7-1">
+<p>
+The fgets() Function (and fputs() )
+Here is how fgets() differs from gets() :
+</p>
+<ul class="org-ul">
+<li>It takes a second argument indicating the maximum number of
+characters to read. If thisargument has the value n , fgets() reads
+up to n-1 characters or through the newline character, whichever
+comes first.</li>
+<li>If fgets() reads the newline, it stores it in the string, unlike
+gets() , which discards it.</li>
+<li>It takes a third argument indicating which file to read. To read
+from the keyboard, use</li>
+</ul>
+<p>
+stdin (for standard input ) as the argument; this identifier is defined in stdio.h .
+</p>
+
+<p>
+Because the fgets() function includes the newline as part of the
+string (assuming the input line fits), it’s often paired with fputs()
+, which works like puts() , except that it doesn’t auto- matically
+append a newline. It takes a second argument to indicate which file to
+write to. For the computer monitor we can use stdout (for standard
+output) as an argument. Listing 11.7 illustrates how fgets() and
+fputs() behave.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-c">/* fgets1.c -- using fgets() and fputs() */
+#include &lt;stdio.h&gt;
+#define STLEN 14
+int main(void)
+{
+    char words[STLEN];
+    puts("Enter a string, please.");
+    fgets(words, STLEN, stdin);
+    printf("Your string twice (puts(), then fputs()):\n");
+    puts(words);
+    fputs(words, stdout);
+    puts("Enter another string, please.");
+    fgets(words, STLEN, stdin);
+    printf("Your string twice (puts(), then fputs()):\n");
+    puts(words);
+    fputs(words, stdout);
+    puts("Done.");
+    return 0;
+}
+</pre>
+</div>
+
+<p>
+The fgets() function returns a pointer to char . If all goes well, it just returns the same address
+that was passed to it as the first argument. If the function encounters end-of-file, however,
+it returns a special pointer called the null pointer .
+</p>
+
+<div class="org-src-container">
+<pre class="src src-c">/* fgets2.c -- using fgets() and fputs() */
+#include &lt;stdio.h&gt;
+#define STLEN 10
+int main(void)
+{
+    char words[STLEN];
+    puts("Enter strings (empty line to quit):");
+    while (fgets(words, STLEN, stdin) != NULL &amp;&amp; words[0] != '\n')
+    fputs(words, stdout);
+    puts("Done.");
+    return 0;
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgdfb44c9" class="outline-4">
+<h4 id="orgdfb44c9"><span class="section-number-4">1.7.2</span> scanf() function</h4>
+<div class="outline-text-4" id="text-1-7-2">
+<p>
+If you use the %s format, the string runs up to (but not including)
+the next whitespace character (blank, tab, or newline). If you specify
+a field width, as in %10s , the scanf() collects up to 10 characters
+or up to the first whitespace character, whichever comes first.
+</p>
+
+<p>
+scanf() function returns an integer value that equals the number of items
+successfully read or returns EOF if it encounters the end of file.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-c">/* scan_str.c -- using scanf() */
+#include &lt;stdio.h&gt;
+int main(void)
+{
+    char name1[11], name2[11];
+    int count;
+    printf("Please enter 2 names.\n");
+    count = scanf("%5s %10s",name1, name2);
+    printf("I read the %d names %s and %s.\n",
+    count, name1, name2);
+    return 0;
+}
+</pre>
+</div>
+<pre class="example">
+Here are three runs:
+Please enter 2 names.
+Jesse Jukes
+I read the 2 names Jesse and Jukes.
+Please enter 2 names.
+Liza Applebottham
+I read the 2 names Liza and Applebotth.
+Please enter 2 names.
+Portensia Callowit
+I read the 2 names Porte and nsia.
+</pre>
+
+<p>
+In the first example, both names fell within the allowed size limits. In the second example,
+only the first 10 characters of Applebottham were read because we used a %10s format. In the
+third example, the last four letters of Portensia went into name2 because the second call to
+scanf() resumed reading input where the first ended; in this case, that was still inside the
+word Portensia.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0dbef1a" class="outline-3">
+<h3 id="org0dbef1a"><span class="section-number-3">1.8</span> string output</h3>
+</div>
+<div id="outline-container-orgec1c9ec" class="outline-3">
+<h3 id="orgec1c9ec"><span class="section-number-3">1.9</span> Null character and Null pointer</h3>
+<div class="outline-text-3" id="text-1-9">
+<p>
+Null character and null pointer both appear in Listing 11.9 . Conceptually, these two nulls are
+different from one another. The null character, or '\0' , is the character used to mark the end
+of a C string. It’s the character whose code is zero.
+The null pointer, or NULL , has a value that doesn’t correspond to a valid address of data.
+So the null character is an integer type, while the null pointer is a pointer type.
+Also, while the null character, being a character, is one
+byte, the null pointer, being an address, typically is four bytes.
+</p>
+</div>
+</div>
+<div id="outline-container-org15afa4f" class="outline-3">
+<h3 id="org15afa4f"><span class="section-number-3">1.10</span> string length example</h3>
+<div class="outline-text-3" id="text-1-10">
 <div class="org-src-container">
 <pre class="src src-c">// Function to count the number of characters in a string
 
@@ -723,8 +883,8 @@ int main (void)
 </div>
 </div>
 <div id="outline-container-org8c095ff" class="outline-3">
-<h3 id="org8c095ff"><span class="section-number-3">1.8</span> concatenation of strings example</h3>
-<div class="outline-text-3" id="text-1-8">
+<h3 id="org8c095ff"><span class="section-number-3">1.11</span> concatenation of strings example</h3>
+<div class="outline-text-3" id="text-1-11">
 <div class="org-src-container">
 <pre class="src src-c">#include &lt;stdio.h&gt;
 
@@ -768,8 +928,8 @@ void concat (char  result[], const char  str1[], const char  str2[])
 </div>
 
 <div id="outline-container-orgc6af7a1" class="outline-3">
-<h3 id="orgc6af7a1"><span class="section-number-3">1.9</span> startsWith</h3>
-<div class="outline-text-3" id="text-1-9">
+<h3 id="orgc6af7a1"><span class="section-number-3">1.12</span> startsWith</h3>
+<div class="outline-text-3" id="text-1-12">
 <div class="org-src-container">
 <pre class="src src-c">int startsWith(const char *string, const char *prefix) {
   while(*prefix) {
@@ -785,8 +945,8 @@ void concat (char  result[], const char  str1[], const char  str2[])
 </div>
 
 <div id="outline-container-org3eecf7d" class="outline-3">
-<h3 id="org3eecf7d"><span class="section-number-3">1.10</span> equalStrings example</h3>
-<div class="outline-text-3" id="text-1-10">
+<h3 id="org3eecf7d"><span class="section-number-3">1.13</span> equalStrings example</h3>
+<div class="outline-text-3" id="text-1-13">
 <div class="org-src-container">
 <pre class="src src-c">// Function to determine if two strings are equal
 
@@ -829,8 +989,8 @@ int main (void)
 </div>
 
 <div id="outline-container-org5b383f3" class="outline-3">
-<h3 id="org5b383f3"><span class="section-number-3">1.11</span> read string with scanf</h3>
-<div class="outline-text-3" id="text-1-11">
+<h3 id="org5b383f3"><span class="section-number-3">1.14</span> read string with scanf</h3>
+<div class="outline-text-3" id="text-1-14">
 <div class="org-src-container">
 <pre class="src src-c">//  Program to illustrate the %s scanf format characters
 
@@ -853,8 +1013,8 @@ int main (void)
 </div>
 
 <div id="outline-container-org2824c3f" class="outline-3">
-<h3 id="org2824c3f"><span class="section-number-3">1.12</span> reading lines of code</h3>
-<div class="outline-text-3" id="text-1-12">
+<h3 id="org2824c3f"><span class="section-number-3">1.15</span> reading lines of code</h3>
+<div class="outline-text-3" id="text-1-15">
 <div class="org-src-container">
 <pre class="src src-c">#include &lt;stdio.h&gt;
 
@@ -896,8 +1056,8 @@ void  readLine (char  buffer[])
 </div>
 
 <div id="outline-container-orgaefb6f2" class="outline-3">
-<h3 id="orgaefb6f2"><span class="section-number-3">1.13</span> Initializing and Displaying Character Strings</h3>
-<div class="outline-text-3" id="text-1-13">
+<h3 id="orgaefb6f2"><span class="section-number-3">1.16</span> Initializing and Displaying Character Strings</h3>
+<div class="outline-text-3" id="text-1-16">
 <p>
 C permits a character array to be initialized by simply specifying a
 constant character string rather than a list of individual
@@ -956,8 +1116,8 @@ it either).
 </div>
 </div>
 <div id="outline-container-org99cceb4" class="outline-3">
-<h3 id="org99cceb4"><span class="section-number-3">1.14</span> Counting words</h3>
-<div class="outline-text-3" id="text-1-14">
+<h3 id="org99cceb4"><span class="section-number-3">1.17</span> Counting words</h3>
+<div class="outline-text-3" id="text-1-17">
 <div class="org-src-container">
 <pre class="src src-c">//  Function to determine if a character is alphabetic
 
@@ -1011,8 +1171,8 @@ int main (void)
 </div>
 
 <div id="outline-container-orgeaca293" class="outline-3">
-<h3 id="orgeaca293"><span class="section-number-3">1.15</span> Converting a String to its Integer Equivalent</h3>
-<div class="outline-text-3" id="text-1-15">
+<h3 id="orgeaca293"><span class="section-number-3">1.18</span> Converting a String to its Integer Equivalent</h3>
+<div class="outline-text-3" id="text-1-18">
 <div class="org-src-container">
 <pre class="src src-c">// Function to convert a string to an integer
 
@@ -1049,7 +1209,7 @@ int main (void)
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: moh</p>
-<p class="date">Created: 2017-01-15 Sun 22:16</p>
+<p class="date">Created: 2017-01-18 Wed 18:17</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

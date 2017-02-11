@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-01-12 Thu 22:32 -->
+<!-- 2017-02-10 Fri 13:12 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title></title>
@@ -259,18 +259,28 @@ for the JavaScript code in this tag.
 <li><a href="#org0069da2">1.1. german anthem</a></li>
 <li><a href="#org7ddd1d1">1.2. Linux Standard Base</a></li>
 <li><a href="#org2ff179b">1.3. Linux Standard Base Project</a></li>
-<li><a href="#org09dac8f">1.4. <span class="todo TODO">TODO</span> new todosfdsfsd</a></li>
-<li><a href="#org2a49eba">1.5. <span class="todo TODO">TODO</span> </a></li>
-<li><a href="#org8252a3e">1.6. <span class="todo TODO">TODO</span> </a></li>
-<li><a href="#org0e76e93">1.7. <span class="todo TODO">TODO</span> </a></li>
-<li><a href="#org4eb6ff3">1.8. <span class="todo TODO">TODO</span> </a></li>
+<li><a href="#org03b3746">1.4. <span class="todo TODO">TODO</span> learn some more</a></li>
 </ul>
 </li>
-<li><a href="#org5b2fd3b">2. Ich kann alless lyrics</a></li>
-<li><a href="#org0e5bd15">3. LFS assumes that the root file system (/) is of type ext4. To create an ext4 file system on the LFS partition, run the following:</a></li>
-<li><a href="#org51e1fae">4. LFS assumes that the root file system (/) is of type ext4. To create an ext4 file system on the LFS partition, run the following:</a></li>
-<li><a href="#org30da2c4">5. LFS assumes that the root file system (/) is of type ext4. To create an ext4 file system on the LFS partition, run the following:</a></li>
-<li><a href="#orgfbfdea8">6. LFS assumes that the root file system (/) is of type ext4. To create an ext4 file system on the LFS partition, run the following:</a></li>
+<li><a href="#org5f88ab5">2. Embedded</a></li>
+<li><a href="#org2a31a9c">3. memory space</a></li>
+<li><a href="#org6479adc">4. Execution Contexts</a></li>
+<li><a href="#orgbcd0a80">5. Processors</a></li>
+<li><a href="#org0b37039">6. Stand-Alone Processors</a>
+<ul>
+<li><a href="#orgb6071ff">6.1. Companion Chipsets</a>
+<ul>
+<li><a href="#org0919f65">6.1.1. northbridge , southbridge</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org5b2fd3b">7. Ich kann alless lyrics</a></li>
+<li><a href="#org866d9d5">8. LFS assumes that the root file system (/) is of type ext4. To create an ext4 file system on the LFS partition, run the following:</a></li>
+<li><a href="#orgc76a352">9. LFS assumes that the root file system (/) is of type ext4. To create an ext4 file system on the LFS partition, run the following:</a></li>
+<li><a href="#org1c7fd31">10. LFS assumes that the root file system (/) is of type ext4. To create an ext4 file system on the LFS partition, run the following:</a></li>
+<li><a href="#org3ba8188">11. LFS assumes that the root file system (/) is of type ext4. To create an ext4 file system on the LFS partition, run the following:</a></li>
+<li><a href="#org7b58cc7">12. this is a capture dump</a></li>
 </ul>
 </div>
 </div>
@@ -347,27 +357,97 @@ Linux Foundation
 </p>
 </div>
 </div>
-<div id="outline-container-org09dac8f" class="outline-3">
-<h3 id="org09dac8f"><span class="section-number-3">1.4</span> <span class="todo TODO">TODO</span> new todosfdsfsd</h3>
+<div id="outline-container-org03b3746" class="outline-3">
+<h3 id="org03b3746"><span class="section-number-3">1.4</span> <span class="todo TODO">TODO</span> learn some more</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+<a href="file:///home/moh/Documents/notes/emacs-notes.html#orgd8ee833">org-capture</a>
+<a href="file:///home/moh/Documents/notes/problem-solving.html#org6c01eaf">Backtracking</a>
+</p>
 </div>
-<div id="outline-container-org2a49eba" class="outline-3">
-<h3 id="org2a49eba"><span class="section-number-3">1.5</span> <span class="todo TODO">TODO</span> </h3>
 </div>
-<div id="outline-container-org8252a3e" class="outline-3">
-<h3 id="org8252a3e"><span class="section-number-3">1.6</span> <span class="todo TODO">TODO</span> </h3>
 </div>
-<div id="outline-container-org0e76e93" class="outline-3">
-<h3 id="org0e76e93"><span class="section-number-3">1.7</span> <span class="todo TODO">TODO</span> </h3>
+<div id="outline-container-org5f88ab5" class="outline-2">
+<h2 id="org5f88ab5"><span class="section-number-2">2</span> Embedded</h2>
 </div>
-<div id="outline-container-org4eb6ff3" class="outline-3">
-<h3 id="org4eb6ff3"><span class="section-number-3">1.8</span> <span class="todo TODO">TODO</span> </h3>
+<div id="outline-container-org2a31a9c" class="outline-2">
+<h2 id="org2a31a9c"><span class="section-number-2">3</span> memory space</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+High-performance microprocessors contain complex hardware engines called
+Memory Management Units (MMUs). Their purpose is to enable an operating system
+to exercise a high degree of management and control over its address space and the
+address space it allocates to processes. This control comes in two primary forms: access
+rights and memory translation. Access rights allow an operating system to assign specific
+memory-access privileges to specific tasks. Memory translation allows an operating
+system to virtualize its address space, which has many benefits.
+ The Linux kernel takes advantage of these hardware MMUs to create a virtual
+memory operating system
+</p>
 </div>
+</div>
+<div id="outline-container-org6479adc" class="outline-2">
+<h2 id="org6479adc"><span class="section-number-2">4</span> Execution Contexts</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+In Linux, we refer to two distinctly separate operational contexts, based on the
+environment in which a given thread15 is executing. Threads executing entirely within
+the kernel are said to be operating in kernel context. Application programs are said to
+operate in user space context. A user space process can access only memory it owns, and
+it is required to use kernel system calls to access privileged resources such as file and
+device I/O. 
+When an application program executes a system call that
+results in a context switch and enters the kernel, it is executing kernel code on behalf
+of a process. You will often hear this referred to as process context within the kernel. In
+contrast, the interrupt service routine (ISR) handling the IDE drive (or any other ISR,
+for that matter) is kernel code that is not executing on behalf of any particular process.
+This is typically called interrupt context.
+</p>
+</div>
+</div>
+<div id="outline-container-orgbcd0a80" class="outline-2">
+<h2 id="orgbcd0a80"><span class="section-number-2">5</span> Processors</h2>
+</div>
+<div id="outline-container-org0b37039" class="outline-2">
+<h2 id="org0b37039"><span class="section-number-2">6</span> Stand-Alone Processors</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+Stand-alone processors are processor chips that are dedicated exclusively to the
+processing function. As opposed to integrated processors, stand-alone processors
+require additional support circuitry for their basic operation. In many cases, this
+means a chipset or custom logic surrounding the processor to handle functions such
+as DRAM controller, system bus addressing configuration, and external peripheral
+devices such as keyboard controllers and serial ports. Stand-alone processors often
+offer the highest overall CPU performance.
+</p>
 </div>
 
+<div id="outline-container-orgb6071ff" class="outline-3">
+<h3 id="orgb6071ff"><span class="section-number-3">6.1</span> Companion Chipsets</h3>
+<div class="outline-text-3" id="text-6-1">
+<p>
+Stand-alone processors require support logic to connect to and enable
+external peripheral devices such as main system memory (DRAM), ROM or
+Flash memory, system buses such as PCI, and other peripherals.  This
+support logic often is accomplished by companion chipsets, which may
+even be purpose-designed specifically for a family of processors.
+</p>
+</div>
+
+<div id="outline-container-org0919f65" class="outline-4">
+<h4 id="org0919f65"><span class="section-number-4">6.1.1</span> northbridge , southbridge</h4>
+<div class="outline-text-4" id="text-6-1-1">
+<p>
+northbridge is directly connected to the  processor's high-speed front-side bus (FSB).
+</p>
+</div>
+</div>
+</div>
+</div>
 
 <div id="outline-container-org5b2fd3b" class="outline-2">
-<h2 id="org5b2fd3b"><span class="section-number-2">2</span> Ich kann alless lyrics</h2>
-<div class="outline-text-2" id="text-2">
+<h2 id="org5b2fd3b"><span class="section-number-2">7</span> Ich kann alless lyrics</h2>
+<div class="outline-text-2" id="text-7">
 <p>
 [Verse 1]
 Ich nehm' mein Ego, quetsch' es aus
@@ -461,9 +541,9 @@ Bis ich aufschlag' beweis' ich, dass ich flieg'
 </p>
 </div>
 </div>
-<div id="outline-container-org0e5bd15" class="outline-2">
-<h2 id="org0e5bd15"><span class="section-number-2">3</span> LFS assumes that the root file system (/) is of type ext4. To create an ext4 file system on the LFS partition, run the following:</h2>
-<div class="outline-text-2" id="text-3">
+<div id="outline-container-org866d9d5" class="outline-2">
+<h2 id="org866d9d5"><span class="section-number-2">8</span> LFS assumes that the root file system (/) is of type ext4. To create an ext4 file system on the LFS partition, run the following:</h2>
+<div class="outline-text-2" id="text-8">
 <p>
 mkfs -v -t ext4 /dev/&lt;xxx&gt;
 If you are using an existing swap partition, there is no need to format it. If a new swap partition was created, it will need to be initialized with this command:
@@ -475,9 +555,9 @@ Replace &lt;yyy&gt; with the name of the swap partition.
 </p>
 </div>
 </div>
-<div id="outline-container-org51e1fae" class="outline-2">
-<h2 id="org51e1fae"><span class="section-number-2">4</span> LFS assumes that the root file system (/) is of type ext4. To create an ext4 file system on the LFS partition, run the following:</h2>
-<div class="outline-text-2" id="text-4">
+<div id="outline-container-orgc76a352" class="outline-2">
+<h2 id="orgc76a352"><span class="section-number-2">9</span> LFS assumes that the root file system (/) is of type ext4. To create an ext4 file system on the LFS partition, run the following:</h2>
+<div class="outline-text-2" id="text-9">
 <p>
 mkfs -v -t ext4 /dev/&lt;xxx&gt;
 If you are using an existing swap partition, there is no need to format it. If a new swap partition was created, it will need to be initialized with this command:
@@ -489,9 +569,9 @@ Replace &lt;yyy&gt; with the name of the swap partition.
 </p>
 </div>
 </div>
-<div id="outline-container-org30da2c4" class="outline-2">
-<h2 id="org30da2c4"><span class="section-number-2">5</span> LFS assumes that the root file system (/) is of type ext4. To create an ext4 file system on the LFS partition, run the following:</h2>
-<div class="outline-text-2" id="text-5">
+<div id="outline-container-org1c7fd31" class="outline-2">
+<h2 id="org1c7fd31"><span class="section-number-2">10</span> LFS assumes that the root file system (/) is of type ext4. To create an ext4 file system on the LFS partition, run the following:</h2>
+<div class="outline-text-2" id="text-10">
 <p>
 mkfs -v -t ext4 /dev/&lt;xxx&gt;
 If you are using an existing swap partition, there is no need to format it. If a new swap partition was created, it will need to be initialized with this command:
@@ -503,9 +583,9 @@ Replace &lt;yyy&gt; with the name of the swap partition.
 </p>
 </div>
 </div>
-<div id="outline-container-orgfbfdea8" class="outline-2">
-<h2 id="orgfbfdea8"><span class="section-number-2">6</span> LFS assumes that the root file system (/) is of type ext4. To create an ext4 file system on the LFS partition, run the following:</h2>
-<div class="outline-text-2" id="text-6">
+<div id="outline-container-org3ba8188" class="outline-2">
+<h2 id="org3ba8188"><span class="section-number-2">11</span> LFS assumes that the root file system (/) is of type ext4. To create an ext4 file system on the LFS partition, run the following:</h2>
+<div class="outline-text-2" id="text-11">
 <p>
 mkfs -v -t ext4 /dev/&lt;xxx&gt;
 If you are using an existing swap partition, there is no need to format it. If a new swap partition was created, it will need to be initialized with this command:
@@ -654,10 +734,13 @@ make install
 </p>
 </div>
 </div>
+<div id="outline-container-org7b58cc7" class="outline-2">
+<h2 id="org7b58cc7"><span class="section-number-2">12</span> this is a capture dump</h2>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: moh</p>
-<p class="date">Created: 2017-01-12 Thu 22:32</p>
+<p class="date">Created: 2017-02-10 Fri 13:12</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

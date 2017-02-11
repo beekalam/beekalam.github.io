@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-01-16 Mon 21:40 -->
+<!-- 2017-02-07 Tue 16:32 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title></title>
@@ -274,11 +274,11 @@ for the JavaScript code in this tag.
 </li>
 </ul>
 </li>
-<li><a href="#org4913fe3">5. Tables</a></li>
+<li><a href="#org627d1f2">5. Tables</a></li>
 <li><a href="#orgb8c70cb">6. Org-Mode Reference Card</a>
 <ul>
 <li><a href="#orgbfa4b0e">6.1. Getting started</a></li>
-<li><a href="#orgb662a84">6.2. Tables</a>
+<li><a href="#org7ca2597">6.2. Tables</a>
 <ul>
 <li><a href="#org3242b72">6.2.1. creating a table</a></li>
 <li><a href="#orgc1c91e3">6.2.2. commands available inside tables</a></li>
@@ -300,10 +300,10 @@ for the JavaScript code in this tag.
 <li><a href="#org284bb62">9. Repeating Query-Replaces (and Other Complex Commands)</a></li>
 <li><a href="#org19a29ef">10. Recursive Editing</a></li>
 <li><a href="#org435ce6c">11. regular expressions</a></li>
-<li><a href="#org30d5b0f">12. word abbreviations</a>
+<li><a href="#org8825542">12. word abbreviations</a>
 <ul>
 <li><a href="#orgffaf00f">12.1. dynamic abbreviations</a></li>
-<li><a href="#orgc0f0e56">12.2. word abbreviations</a>
+<li><a href="#orgd70eb8f">12.2. word abbreviations</a>
 <ul>
 <li><a href="#org42ced3e">12.2.1. Trying word abbreviations for one session</a></li>
 </ul>
@@ -509,8 +509,8 @@ underneath.</dd>
 </div>
 </div>
 
-<div id="outline-container-org4913fe3" class="outline-2">
-<h2 id="org4913fe3"><span class="section-number-2">5</span> Tables</h2>
+<div id="outline-container-org627d1f2" class="outline-2">
+<h2 id="org627d1f2"><span class="section-number-2">5</span> Tables</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 Hopefully you can see straight away that the simple structure provided
@@ -545,8 +545,8 @@ cells - you should notice the columns changing width as needed.</li>
 <h3 id="orgbfa4b0e"><span class="section-number-3">6.1</span> Getting started</h3>
 </div>
 
-<div id="outline-container-orgb662a84" class="outline-3">
-<h3 id="orgb662a84"><span class="section-number-3">6.2</span> Tables</h3>
+<div id="outline-container-org7ca2597" class="outline-3">
+<h3 id="org7ca2597"><span class="section-number-3">6.2</span> Tables</h3>
 <div class="outline-text-3" id="text-6-2">
 </div><div id="outline-container-org3242b72" class="outline-4">
 <h4 id="org3242b72"><span class="section-number-4">6.2.1</span> creating a table</h4>
@@ -608,16 +608,18 @@ M-p M-n
 <h2 id="orga4dda19"><span class="section-number-2">8</span> Query-replace</h2>
 <div class="outline-text-2" id="text-8">
 <p>
-To use query-replace, go to the beginning of the buffer using M-&lt; and then type M-%.
-The prompt Query replace: appears in the minibuffer. Type the search string and press Enter. Now this appears: 
-Query replace searchstring  with:
+To use query-replace, go to the beginning of the buffer using M-&lt; and
+then type M-%.  The prompt Query replace: appears in the
+minibuffer. Type the search string and press Enter. Now this appears:
+Query replace searchstring with:
 </p>
 
 <p>
-Type the replacement string and press Enter. So far, this procedure is almost identical to a
- replace-string operation; only the prompts are different. 
-Emacs now searches for the first occurrence of the search string. When it finds one, a new prompt appears: 
-Query replacing searchstring  with newstring.
+Type the replacement string and press Enter. So far, this procedure is
+ almost identical to a replace-string operation; only the prompts are
+ different.  Emacs now searches for the first occurrence of the search
+ string. When it finds one, a new prompt appears: Query replacing
+ searchstring with newstring.
 </p>
 
 
@@ -678,8 +680,8 @@ C-M-%Edit
 </p>
 </div>
 </div>
-<div id="outline-container-org30d5b0f" class="outline-2">
-<h2 id="org30d5b0f"><span class="section-number-2">12</span> word abbreviations</h2>
+<div id="outline-container-org8825542" class="outline-2">
+<h2 id="org8825542"><span class="section-number-2">12</span> word abbreviations</h2>
 <div class="outline-text-2" id="text-12">
 </div><div id="outline-container-orgffaf00f" class="outline-3">
 <h3 id="orgffaf00f"><span class="section-number-3">12.1</span> dynamic abbreviations</h3>
@@ -689,8 +691,8 @@ M-/
 </p>
 </div>
 </div>
-<div id="outline-container-orgc0f0e56" class="outline-3">
-<h3 id="orgc0f0e56"><span class="section-number-3">12.2</span> word abbreviations</h3>
+<div id="outline-container-orgd70eb8f" class="outline-3">
+<h3 id="orgd70eb8f"><span class="section-number-3">12.2</span> word abbreviations</h3>
 <div class="outline-text-3" id="text-12-2">
 </div><div id="outline-container-org42ced3e" class="outline-4">
 <h4 id="org42ced3e"><span class="section-number-4">12.2.1</span> Trying word abbreviations for one session</h4>
@@ -724,10 +726,6 @@ Emacs then expands the abbreviation and will do so each time you type it followe
 <p>
 If you find that you like using word abbreviation mode,
  may want to make it part of your startup, as described in the following section.
-</p>
-
-<p>
-#+begin<sub>src</sub>
 </p>
 </div>
 </div>
@@ -1128,7 +1126,7 @@ C-u C-x C-i
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: moh</p>
-<p class="date">Created: 2017-01-16 Mon 21:40</p>
+<p class="date">Created: 2017-02-07 Tue 16:32</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

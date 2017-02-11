@@ -225,6 +225,28 @@ for the JavaScript code in this tag.
  }
 /*]]>*///-->
 </script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
 </head>
 <body>
 <div id="content">
@@ -232,135 +254,41 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org7e015e6">1. 2017</a>
-<ul>
-<li><a href="#org6f13a75">1.1. 2017-01 January</a>
-<ul>
-<li><a href="#orgce8cb12">1.1.1. 2017-01-09 Monday</a>
-<ul>
-<li><a href="#orgae3b995">1.1.1.1. something</a></li>
-<li><a href="#orgb1f1f2d">1.1.1.2. </a></li>
-<li><a href="#orgcec9def">1.1.1.3. </a></li>
-<li><a href="#org9ad7100">1.1.1.4. </a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#org05d21e9">1.2. 2017-02 February</a>
-<ul>
-<li><a href="#org640eb2a">1.2.1. 2017-02-01 Wednesday</a>
-<ul>
-<li><a href="#orgdd0f539">1.2.1.1. new jornual</a></li>
-<li><a href="#org1cc1910">1.2.1.2. new journal entry</a></li>
-<li><a href="#org6b7a87f">1.2.1.3. new journal entry</a></li>
-<li><a href="#org9a41244">1.2.1.4. org testljl totod</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
+<li><a href="#org6a93acd">1. allow root remote connections to mysql?</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org7e015e6" class="outline-2">
-<h2 id="org7e015e6"><span class="section-number-2">1</span> 2017</h2>
+<div id="outline-container-org6a93acd" class="outline-2">
+<h2 id="org6a93acd"><span class="section-number-2">1</span> allow root remote connections to mysql?</h2>
 <div class="outline-text-2" id="text-1">
-</div><div id="outline-container-org6f13a75" class="outline-3">
-<h3 id="org6f13a75"><span class="section-number-3">1.1</span> 2017-01 January</h3>
-<div class="outline-text-3" id="text-1-1">
-</div><div id="outline-container-orgce8cb12" class="outline-4">
-<h4 id="orgce8cb12"><span class="section-number-4">1.1.1</span> 2017-01-09 Monday</h4>
-<div class="outline-text-4" id="text-1-1-1">
-</div><div id="outline-container-orgae3b995" class="outline-5">
-<h5 id="orgae3b995"><span class="section-number-5">1.1.1.1</span> something</h5>
-<div class="outline-text-5" id="text-1-1-1-1">
 <p>
-Entered on <span class="timestamp-wrapper"><span class="timestamp">[2017-01-09 Mon 21:33]</span></span>
+root remote access is disabled by default.
 </p>
-</div>
-</div>
-<div id="outline-container-orgb1f1f2d" class="outline-5">
-<h5 id="orgb1f1f2d"><span class="section-number-5">1.1.1.2</span> </h5>
-<div class="outline-text-5" id="text-1-1-1-2">
+
+<pre class="example">
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'password' WITH GRANT OPTION;
+ FLUSH PRIVILEGES;
+</pre>
+
 <p>
-Entered on <span class="timestamp-wrapper"><span class="timestamp">[2017-01-09 Mon 21:41]</span></span>
-</p>
-</div>
-</div>
-<div id="outline-container-orgcec9def" class="outline-5">
-<h5 id="orgcec9def"><span class="section-number-5">1.1.1.3</span> </h5>
-<div class="outline-text-5" id="text-1-1-1-3">
-<p>
-Entered on <span class="timestamp-wrapper"><span class="timestamp">[2017-01-09 Mon 21:42]</span></span>
-</p>
-</div>
-</div>
-<div id="outline-container-org9ad7100" class="outline-5">
-<h5 id="org9ad7100"><span class="section-number-5">1.1.1.4</span> </h5>
-<div class="outline-text-5" id="text-1-1-1-4">
-<p>
-Entered on <span class="timestamp-wrapper"><span class="timestamp">[2017-01-09 Mon 21:43]</span></span>
-</p>
-</div>
-</div>
-</div>
-</div>
-<div id="outline-container-org05d21e9" class="outline-3">
-<h3 id="org05d21e9"><span class="section-number-3">1.2</span> 2017-02 February</h3>
-<div class="outline-text-3" id="text-1-2">
-</div><div id="outline-container-org640eb2a" class="outline-4">
-<h4 id="org640eb2a"><span class="section-number-4">1.2.1</span> 2017-02-01 Wednesday</h4>
-<div class="outline-text-4" id="text-1-2-1">
-</div><div id="outline-container-orgdd0f539" class="outline-5">
-<h5 id="orgdd0f539"><span class="section-number-5">1.2.1.1</span> new jornual</h5>
-<div class="outline-text-5" id="text-1-2-1-1">
-<p>
-Entered on <span class="timestamp-wrapper"><span class="timestamp">[2017-02-01 Wed 19:52]</span></span>
+and then find my.cnf(linux /etc/mysql/my.cnf) or my.ini(windows C:\Program Files\MySQL\MySQL Server 5.5\).
 </p>
 
 <p>
-<a href="file:///home/moh/Documents/notes/dumps.html#orgf074886">Tasks</a>
-</p>
-</div>
-</div>
-<div id="outline-container-org1cc1910" class="outline-5">
-<h5 id="org1cc1910"><span class="section-number-5">1.2.1.2</span> new journal entry</h5>
-<div class="outline-text-5" id="text-1-2-1-2">
-<p>
-Entered on <span class="timestamp-wrapper"><span class="timestamp">[2017-02-01 Wed 19:55]</span></span>
+Change line
 </p>
 
 <p>
-<a href="file:///home/moh/Documents/notes/emacs-notes.html#orgd8ee833">org-capture</a>
-</p>
-</div>
-</div>
-<div id="outline-container-org6b7a87f" class="outline-5">
-<h5 id="org6b7a87f"><span class="section-number-5">1.2.1.3</span> new journal entry</h5>
-<div class="outline-text-5" id="text-1-2-1-3">
-<p>
-Entered on <span class="timestamp-wrapper"><span class="timestamp">[2017-02-01 Wed 19:56]</span></span>
+bind-address = 127.0.0.1
 </p>
 
 <p>
-<a href="file:///home/moh/Documents/notes/emacs-notes.html#orgd8ee833">org-capture</a>
-</p>
-</div>
-</div>
-<div id="outline-container-org9a41244" class="outline-5">
-<h5 id="org9a41244"><span class="section-number-5">1.2.1.4</span> org testljl totod</h5>
-<div class="outline-text-5" id="text-1-2-1-4">
-<p>
-Entered on <span class="timestamp-wrapper"><span class="timestamp">[2017-02-01 Wed 19:56]</span></span>
+to
 </p>
 
 <p>
-<a href="file:///home/moh/Documents/notes/emacs-notes.html#orgd8ee833">org-capture</a>
+#bind-address = 127.0.0.1
 </p>
-</div>
-</div>
-</div>
 </div>
 </div>
 </div>

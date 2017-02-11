@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-01-15 Sun 22:16 -->
+<!-- 2017-01-23 Mon 23:19 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title></title>
@@ -254,335 +254,534 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgb578b4b">1. arrays</a>
+<li><a href="#org950aefa">1. operators</a>
 <ul>
-<li><a href="#org3951322">1.1. length</a></li>
-<li><a href="#orgda46cfa">1.2. sort array numerically</a></li>
-<li><a href="#orgd734ba3">1.3. convert set to array</a></li>
-<li><a href="#orge285fcd">1.4. iterates through the elements of the array using a for&#x2026; in</a></li>
-<li><a href="#org99175d3">1.5. Count the number of occurences of a character in a string in Javascript</a></li>
-<li><a href="#org1cc830f">1.6. Searching Through an Array</a></li>
-<li><a href="#org535ee9a">1.7. Flattening a Two-Dimensional Array with concat() and apply()</a></li>
-<li><a href="#org4ecdb91">1.8. Removing or Replacing Array Elements</a></li>
-<li><a href="#org474a9f9">1.9. Extracting a Portion of an Array</a></li>
-<li><a href="#org7efa983">1.10. Applying a Function Against Each Array Element</a></li>
-<li><a href="#orgeac10c4">1.11. Applying a Function to Every Element in an Array and Returning a New Array</a></li>
-<li><a href="#org20d0ff4">1.12. Creating a Filtered Array</a></li>
-<li><a href="#orgb32b118">1.13. Validating Array Contents</a></li>
-<li><a href="#org4375e9f">1.14. count elements of an array by value</a></li>
-<li><a href="#org6a9ba2a">1.15. check if a value is an array</a>
-<ul>
-<li><a href="#org04bc50f">1.15.1. solution 1</a></li>
-<li><a href="#org28cb241">1.15.2. solution 2</a></li>
+<li><a href="#orge142648">1.1. <code>typeof</code></a></li>
+<li><a href="#orge27d358">1.2. <code>in</code></a></li>
+<li><a href="#org7b3f05b">1.3. <code>instanceof</code></a></li>
 </ul>
 </li>
-<li><a href="#org964b820">1.16. Dimensions</a>
+<li><a href="#orgb578b4b">2. arrays</a>
 <ul>
-<li><a href="#org03c225b">1.16.1. initialize array</a></li>
-<li><a href="#org8bd1275">1.16.2. multidimensional array</a></li>
-</ul>
-</li>
-<li><a href="#org941dc95">1.17. make  a deep copy of an array</a></li>
-<li><a href="#org3a07b77">1.18. string representation</a></li>
-<li><a href="#orgeec7200">1.19. Creating New Arrays from Existing Arrays</a></li>
-<li><a href="#org82700cc">1.20. shuffle array</a></li>
-<li><a href="#orgdf43b8a">1.21. Sort an array based on the length of each element</a></li>
-<li><a href="#orgba42583">1.22. make an array using Array.from</a></li>
-<li><a href="#orgd2943ad">1.23. check for array equality?</a></li>
-</ul>
-</li>
-<li><a href="#org1361c31">2. strings</a>
+<li><a href="#org3951322">2.1. length</a></li>
+<li><a href="#orgda46cfa">2.2. sort array numerically</a></li>
+<li><a href="#orgd734ba3">2.3. convert set to array</a></li>
+<li><a href="#orge285fcd">2.4. iterates through the elements of the array using a for&#x2026; in</a></li>
+<li><a href="#org99175d3">2.5. Count the number of occurences of a character in a string in Javascript</a></li>
+<li><a href="#org1cc830f">2.6. Searching Through an Array</a></li>
+<li><a href="#org535ee9a">2.7. Flattening a Two-Dimensional Array with concat() and apply()</a></li>
+<li><a href="#org4ecdb91">2.8. Removing or Replacing Array Elements</a></li>
+<li><a href="#org474a9f9">2.9. Extracting a Portion of an Array</a></li>
+<li><a href="#org7efa983">2.10. Applying a Function Against Each Array Element</a></li>
+<li><a href="#orgeac10c4">2.11. Applying a Function to Every Element in an Array and Returning a New Array</a></li>
+<li><a href="#org20d0ff4">2.12. Creating a Filtered Array</a></li>
+<li><a href="#orgb32b118">2.13. Validating Array Contents</a></li>
+<li><a href="#org4375e9f">2.14. count elements of an array by value</a></li>
+<li><a href="#org6a9ba2a">2.15. check if a value is an array</a>
 <ul>
-<li><a href="#org2581273">2.1. reverse string in javascript?</a></li>
-<li><a href="#org18755fe">2.2. ordinal value of a character?</a></li>
-<li><a href="#orgc50c01e">2.3. convert ascii code to string?</a></li>
-<li><a href="#org8f66273">2.4. Checking for an Existing, Nonempty String</a></li>
-<li><a href="#orgeed7828">2.5. convert a string in base 2 to decimal</a></li>
-<li><a href="#orgfd03ba4">2.6. replace all non-digit characters</a></li>
-<li><a href="#org2f89cbe">2.7. split a string by one or more spaces</a></li>
-<li><a href="#org2601d37">2.8. split a string by digits of size one or bigger(ignoring negative nums)</a></li>
-<li><a href="#org4926c44">2.9. rotate string</a></li>
-<li><a href="#org88eaa12">2.10. name of current function?</a></li>
-<li><a href="#orgd27016d">2.11. Finding and Highlighting All Instances of a Pattern</a></li>
-<li><a href="#org51d8d97">2.12. Traversing the Results from querySelectorAll() with forEach() and call()</a></li>
-<li><a href="#org58db98e">2.13. Using a Destructuring Assignment to Simplify Code</a></li>
+<li><a href="#org04bc50f">2.15.1. solution 1</a></li>
+<li><a href="#org28cb241">2.15.2. solution 2</a></li>
 </ul>
 </li>
-<li><a href="#orgaea1067">3. numbers</a>
+<li><a href="#org964b820">2.16. Dimensions</a>
 <ul>
-<li><a href="#orgd807ec5">3.1. isNumber</a></li>
-<li><a href="#org189897c">3.2. Max &amp; Min value of a array of number?</a></li>
-<li><a href="#org21233c1">3.3. check if a string can be converted to number?</a></li>
-<li><a href="#orgdad6a56">3.4. check if a number has a fractional part?</a></li>
-<li><a href="#org18ef4c1">3.5. generate random numbers between 1 and 6</a></li>
-<li><a href="#org174f532">3.6. generate a random integer</a></li>
-<li><a href="#orgfecc827">3.7. generate random number within a range</a></li>
-<li><a href="#orge34e7c1">3.8. change base using toString</a></li>
+<li><a href="#org03c225b">2.16.1. initialize array</a></li>
+<li><a href="#org8bd1275">2.16.2. multidimensional array</a></li>
 </ul>
 </li>
-<li><a href="#orgb5ccb7c">4. date time</a>
+<li><a href="#org941dc95">2.17. make  a deep copy of an array</a></li>
+<li><a href="#org3a07b77">2.18. string representation</a></li>
+<li><a href="#orgeec7200">2.19. Creating New Arrays from Existing Arrays</a></li>
+<li><a href="#org82700cc">2.20. shuffle array</a></li>
+<li><a href="#orgdf43b8a">2.21. Sort an array based on the length of each element</a></li>
+<li><a href="#orgba42583">2.22. make an array using Array.from</a></li>
+<li><a href="#orgd2943ad">2.23. check for array equality?</a></li>
+</ul>
+</li>
+<li><a href="#org1361c31">3. strings</a>
 <ul>
-<li><a href="#org2b13804">4.1. next month</a></li>
-<li><a href="#org314802e">4.2. next day</a></li>
-<li><a href="#org9084da7">4.3. add days</a></li>
-<li><a href="#org404e81a">4.4. How can I compare two time strings in the format HH:MM:SS?</a></li>
-<li><a href="#org7901861">4.5. How do I get the number of days between two dates in JavaScript?</a></li>
-<li><a href="#org562b520">4.6. check if a date object is today</a></li>
+<li><a href="#org2581273">3.1. reverse string in javascript?</a></li>
+<li><a href="#org18755fe">3.2. ordinal value of a character?</a></li>
+<li><a href="#orgc50c01e">3.3. convert ascii code to string?</a></li>
+<li><a href="#org8f66273">3.4. Checking for an Existing, Nonempty String</a></li>
+<li><a href="#orgeed7828">3.5. convert a string in base 2 to decimal</a></li>
+<li><a href="#orgfd03ba4">3.6. replace all non-digit characters</a></li>
+<li><a href="#org2f89cbe">3.7. split a string by one or more spaces</a></li>
+<li><a href="#org2601d37">3.8. split a string by digits of size one or bigger(ignoring negative nums)</a></li>
+<li><a href="#org4926c44">3.9. rotate string</a></li>
+<li><a href="#org88eaa12">3.10. name of current function?</a></li>
+<li><a href="#orgd27016d">3.11. Finding and Highlighting All Instances of a Pattern</a></li>
+<li><a href="#org51d8d97">3.12. Traversing the Results from querySelectorAll() with forEach() and call()</a></li>
+<li><a href="#org58db98e">3.13. Using a Destructuring Assignment to Simplify Code</a></li>
+<li><a href="#orgeffe51c">3.14. convert string to set</a></li>
 </ul>
 </li>
-<li><a href="#org8a3995c">5. Regular expressions</a>
+<li><a href="#orgaea1067">4. numbers</a>
 <ul>
-<li><a href="#org7b3edc8">5.1. parseurl example</a></li>
-<li><a href="#org807c450">5.2. extract first letter of every word</a></li>
-<li><a href="#org5e7b3ad">5.3. remove the last of occurrence of a character from a sentence.</a></li>
-<li><a href="#org324f242">5.4. remove the last occurrence except the last one.</a></li>
-<li><a href="#orgcbade51">5.5. remove all none-numbers from a string</a></li>
-<li><a href="#orga665a02">5.6. parsenumber example</a></li>
-<li><a href="#orgf0b3b10">5.7. regular expression from string</a></li>
-<li><a href="#org3e51251">5.8. Regex to match a word containing all of specified characters</a></li>
-<li><a href="#orgb50d776">5.9. regex to match entire words which contains certain characters</a></li>
-<li><a href="#org74d1519">5.10. replace two or more spaces with one</a></li>
-<li><a href="#org37b3bee">5.11. Replacing Patterns with New Strings</a></li>
-<li><a href="#org1c37c30">5.12. Finding  All Instances of a Pattern</a></li>
-<li><a href="#orgdf835ef">5.13. the following inserts dashes into a hypothetical social security number:</a></li>
-<li><a href="#org4fda922">5.14. Remove all exclamation marks from the end of words. Words are separated by spaces in the sentence.</a></li>
-<li><a href="#org80999a4">5.15. isLetter</a></li>
+<li><a href="#orgd807ec5">4.1. isNumber</a></li>
+<li><a href="#org189897c">4.2. Max &amp; Min value of a array of number?</a></li>
+<li><a href="#org21233c1">4.3. check if a string can be converted to number?</a></li>
+<li><a href="#orgdad6a56">4.4. check if a number has a fractional part?</a></li>
+<li><a href="#org18ef4c1">4.5. generate random numbers between 1 and 6</a></li>
+<li><a href="#org174f532">4.6. generate a random integer</a></li>
+<li><a href="#orgfecc827">4.7. generate random number within a range</a></li>
+<li><a href="#orge34e7c1">4.8. change base using toString</a></li>
+<li><a href="#orgb7ab31e">4.9. convret string to number with operator</a></li>
 </ul>
 </li>
-<li><a href="#orga333412">6. Misc</a>
+<li><a href="#orgb5ccb7c">5. date time</a>
 <ul>
-<li><a href="#org4ab810b">6.1. Best way to break from nested loops in Javascript?</a></li>
-<li><a href="#org24dddea">6.2. Using toString() to detect object class</a></li>
-<li><a href="#orgc88e93f">6.3. Reflection</a></li>
+<li><a href="#org2b13804">5.1. next month</a></li>
+<li><a href="#org314802e">5.2. next day</a></li>
+<li><a href="#org9084da7">5.3. add days</a></li>
+<li><a href="#org404e81a">5.4. How can I compare two time strings in the format HH:MM:SS?</a></li>
+<li><a href="#org7901861">5.5. How do I get the number of days between two dates in JavaScript?</a></li>
+<li><a href="#org562b520">5.6. check if a date object is today</a></li>
 </ul>
 </li>
-<li><a href="#org95a5b8c">7. code conventions, styles</a></li>
-<li><a href="#orge1f6a65">8. this</a>
+<li><a href="#org8a3995c">6. Regular expressions</a>
 <ul>
-<li><a href="#orga10e1b4">8.1. understanding 'this'</a></li>
-<li><a href="#org5bbff75">8.2. this invokation</a>
+<li><a href="#org7b3edc8">6.1. parseurl example</a></li>
+<li><a href="#org807c450">6.2. extract first letter of every word</a></li>
+<li><a href="#org5e7b3ad">6.3. remove the last of occurrence of a character from a sentence.</a></li>
+<li><a href="#org324f242">6.4. remove the last occurrence except the last one.</a></li>
+<li><a href="#orgcbade51">6.5. remove all none-numbers from a string</a></li>
+<li><a href="#orga665a02">6.6. parsenumber example</a></li>
+<li><a href="#orgf0b3b10">6.7. regular expression from string</a></li>
+<li><a href="#org3e51251">6.8. Regex to match a word containing all of specified characters</a></li>
+<li><a href="#orgb50d776">6.9. regex to match entire words which contains certain characters</a></li>
+<li><a href="#org74d1519">6.10. replace two or more spaces with one</a></li>
+<li><a href="#org37b3bee">6.11. Replacing Patterns with New Strings</a></li>
+<li><a href="#org1c37c30">6.12. Finding  All Instances of a Pattern</a></li>
+<li><a href="#orgdf835ef">6.13. the following inserts dashes into a hypothetical social security number:</a></li>
+<li><a href="#org4fda922">6.14. Remove all exclamation marks from the end of words. Words are separated by spaces in the sentence.</a></li>
+<li><a href="#org80999a4">6.15. isLetter</a></li>
+</ul>
+</li>
+<li><a href="#orga333412">7. Misc</a>
 <ul>
-<li><a href="#orgf5c98d5">8.2.1. The Core Primitive</a></li>
-<li><a href="#orgf5b4c95">8.2.2. Simple Function Invocation</a></li>
-<li><a href="#org402d1a7">8.2.3. Member Functions</a></li>
-<li><a href="#orge18d56e">8.2.4. Using Function.prototype.bind</a></li>
+<li><a href="#org4ab810b">7.1. Best way to break from nested loops in Javascript?</a></li>
+<li><a href="#org24dddea">7.2. Using toString() to detect object class</a></li>
+<li><a href="#org138ce04">7.3. Reflection</a></li>
+<li><a href="#org544f8fe">7.4. cloning objects</a></li>
+<li><a href="#org3258f25">7.5. return immutable object from a function</a></li>
+<li><a href="#orgfd69e07">7.6. tell if a number is even using bitwise &amp; operator</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li><a href="#org029d23f">9. achieve code privacy using the module pattern.</a></li>
-<li><a href="#org4cf4943">10. Modular programming</a>
+<li><a href="#org95a5b8c">8. code conventions, styles</a></li>
+<li><a href="#orge1f6a65">9. this</a>
 <ul>
-<li><a href="#org50f9e7a">10.1. Module patterns</a>
+<li><a href="#orga10e1b4">9.1. understanding 'this'</a></li>
+<li><a href="#org5bbff75">9.2. this invokation</a>
 <ul>
-<li><a href="#org60ee2e3">10.1.1. IIFE</a></li>
-<li><a href="#org90fd8e3">10.1.2. Augmentation</a></li>
-<li><a href="#org39c3ec9">10.1.3. Module standards</a></li>
-<li><a href="#org930de8c">10.1.4. How to use asynchronous modules in the browser</a></li>
-<li><a href="#org78e1aca">10.1.5. How to – use synchronous modules on the server</a></li>
+<li><a href="#orgf5c98d5">9.2.1. The Core Primitive</a></li>
+<li><a href="#orgf5b4c95">9.2.2. Simple Function Invocation</a></li>
+<li><a href="#org402d1a7">9.2.3. Member Functions</a></li>
+<li><a href="#orge18d56e">9.2.4. Using Function.prototype.bind</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org8aa6937">11. Dynamically selecting a method/property</a></li>
-<li><a href="#org33c78e6">12. using optional, variable and named arguments</a>
+<li><a href="#org029d23f">10. achieve code privacy using the module pattern.</a></li>
+<li><a href="#org4cf4943">11. Modular programming</a>
+<ul>
+<li><a href="#org50f9e7a">11.1. Module patterns</a>
+<ul>
+<li><a href="#org60ee2e3">11.1.1. IIFE</a></li>
+<li><a href="#org90fd8e3">11.1.2. Augmentation</a></li>
+<li><a href="#org39c3ec9">11.1.3. Module standards</a></li>
+<li><a href="#org930de8c">11.1.4. How to use asynchronous modules in the browser</a></li>
+<li><a href="#org78e1aca">11.1.5. How to – use synchronous modules on the server</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org8aa6937">12. Dynamically selecting a method/property</a></li>
+<li><a href="#org33c78e6">13. using optional, variable and named arguments</a>
 <ul>
 <li>
 <ul>
-<li><a href="#orgbee52aa">12.0.1. Grab arguments(however many).</a></li>
-<li><a href="#orgbaf7560">12.0.2. Take optional arguments with default values.</a></li>
-<li><a href="#org7d90ee0">12.0.3. Use a literal object for pseudo-named arguments.</a></li>
+<li><a href="#orgbee52aa">13.0.1. Grab arguments(however many).</a></li>
+<li><a href="#orgbaf7560">13.0.2. Take optional arguments with default values.</a></li>
+<li><a href="#org7d90ee0">13.0.3. Use a literal object for pseudo-named arguments.</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org2c46fde">13. obtaining references to DOM elements.</a>
+<li><a href="#org2c46fde">14. obtaining references to DOM elements.</a>
 <ul>
-<li><a href="#org280f4db">13.1. Grab an element by its ID.</a></li>
-<li><a href="#org4c2dcb9">13.2. Grab elements by XPath/CSS selection.</a></li>
-<li><a href="#org553ffcb">13.3. Move around (DOM traversals).</a></li>
+<li><a href="#org280f4db">14.1. Grab an element by its ID.</a></li>
+<li><a href="#org4c2dcb9">14.2. Grab elements by XPath/CSS selection.</a></li>
+<li><a href="#org553ffcb">14.3. Move around (DOM traversals).</a></li>
 </ul>
 </li>
-<li><a href="#org5f24e6b">14. Dynamically Styling Content</a>
+<li><a href="#org5f24e6b">15. Dynamically Styling Content</a>
 <ul>
-<li><a href="#orga77091b">14.1. Style an element.</a></li>
-<li><a href="#org937fabc">14.2. Changing an Element’s Contents</a>
+<li><a href="#orga77091b">15.1. Style an element.</a></li>
+<li><a href="#org937fabc">15.2. Changing an Element’s Contents</a>
 <ul>
-<li><a href="#org6565c8d">14.2.1. Update the entire contents of an element.</a></li>
-<li><a href="#orge6e9ccb">14.2.2. Inject extra contents into an element.</a></li>
+<li><a href="#org6565c8d">15.2.1. Update the entire contents of an element.</a></li>
+<li><a href="#orge6e9ccb">15.2.2. Inject extra contents into an element.</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org7bb963f">15. Listening for Events (and Stopping)</a>
+<li><a href="#org7bb963f">16. Listening for Events (and Stopping)</a>
 <ul>
-<li><a href="#orgf02d43f">15.1. Listen to an event on one element.</a></li>
-<li><a href="#org1d794c1">15.2. Listen to an event on multiple elements.</a></li>
-<li><a href="#orga62d42c">15.3. Stop listening.</a></li>
+<li><a href="#orgf02d43f">16.1. Listen to an event on one element.</a></li>
+<li><a href="#org1d794c1">16.2. Listen to an event on multiple elements.</a></li>
+<li><a href="#orga62d42c">16.3. Stop listening.</a></li>
 </ul>
 </li>
-<li><a href="#org86e0efa">16. Simple Inheritance in JavaScript</a></li>
-<li><a href="#org1d2794f">17. Asynchronous JS</a></li>
-<li><a href="#org9b14f94">18. Objects</a>
+<li><a href="#org86e0efa">17. Simple Inheritance in JavaScript</a></li>
+<li><a href="#org1d2794f">18. Asynchronous JS</a></li>
+<li><a href="#org9b14f94">19. Objects</a>
 <ul>
-<li><a href="#org2474503">18.1. retrieval</a></li>
-<li><a href="#org4f8b5db">18.2. Reference</a></li>
-<li><a href="#org138ce04">18.3. Reflection</a></li>
-<li><a href="#org67520d2">18.4. Enumeration</a></li>
-<li><a href="#org634d9ad">18.5. Delete</a></li>
-<li><a href="#org6361ff8">18.6. Traversing an object</a></li>
-<li><a href="#orgc6c144e">18.7. Iterating the key-value object safely and fast</a></li>
-<li><a href="#org11e6b11">18.8. Enumerating an array-like object</a></li>
-<li><a href="#orgac9393d">18.9. magic methods in JavaScript</a></li>
-<li><a href="#org28fc639">18.10. Accessors in ES6 </a></li>
+<li><a href="#org2474503">19.1. retrieval</a></li>
+<li><a href="#org4f8b5db">19.2. Reference</a></li>
+<li><a href="#org6c48916">19.3. Reflection</a></li>
+<li><a href="#org67520d2">19.4. Enumeration</a></li>
+<li><a href="#org634d9ad">19.5. Delete</a></li>
+<li><a href="#org6361ff8">19.6. Traversing an object</a></li>
+<li><a href="#orgc6c144e">19.7. Iterating the key-value object safely and fast</a></li>
+<li><a href="#org11e6b11">19.8. Enumerating an array-like object</a></li>
+<li><a href="#orgac9393d">19.9. magic methods in JavaScript</a></li>
+<li><a href="#org28fc639">19.10. Accessors in ES6 </a></li>
 </ul>
 </li>
-<li><a href="#org6071742">19. Functions</a>
+<li><a href="#org6071742">20. Functions</a>
 <ul>
-<li><a href="#org69055cb">19.1. Function Objects</a></li>
-<li><a href="#org0739120">19.2. Function literal</a></li>
-<li><a href="#org5b046c8">19.3. Invocation</a>
+<li><a href="#org69055cb">20.1. Function Objects</a></li>
+<li><a href="#org0739120">20.2. Function literal</a></li>
+<li><a href="#org5b046c8">20.3. Invocation</a>
 <ul>
-<li><a href="#orgfa918c8">19.3.1. The Method Invocation Pattern</a></li>
-<li><a href="#org9052e24">19.3.2. The Function Invocation Pattern</a></li>
-<li><a href="#orge2b944f">19.3.3. The Constructor Invocation Pattern</a></li>
-<li><a href="#orge0a385a">19.3.4. The Apply Invocation Pattern</a></li>
+<li><a href="#orgfa918c8">20.3.1. The Method Invocation Pattern</a></li>
+<li><a href="#org9052e24">20.3.2. The Function Invocation Pattern</a></li>
+<li><a href="#orge2b944f">20.3.3. The Constructor Invocation Pattern</a></li>
+<li><a href="#orge0a385a">20.3.4. The Apply Invocation Pattern</a></li>
 </ul>
 </li>
-<li><a href="#orgbd50b0f">19.4. Arguments</a></li>
-<li><a href="#org45fbc04">19.5. Return</a></li>
-<li><a href="#orgb77438c">19.6. Augumenting Types</a></li>
-<li><a href="#orgfdf2e7e">19.7. Curry</a></li>
-<li><a href="#org62c1dba">19.8. Memoization</a></li>
-<li><a href="#org96c7e52">19.9. Conditional invocation</a></li>
+<li><a href="#orgbd50b0f">20.4. Arguments</a></li>
+<li><a href="#org45fbc04">20.5. Return</a></li>
+<li><a href="#orgb77438c">20.6. Augumenting Types</a></li>
+<li><a href="#orgfdf2e7e">20.7. Curry</a></li>
+<li><a href="#org62c1dba">20.8. Memoization</a></li>
+<li><a href="#org96c7e52">20.9. Conditional invocation</a></li>
 </ul>
 </li>
-<li><a href="#org484a0b9">20. ES6</a>
+<li><a href="#org484a0b9">21. ES6</a>
 <ul>
-<li><a href="#org4f18ae4">20.1. Block level declarations</a>
+<li><a href="#org4f18ae4">21.1. Block level declarations</a>
 <ul>
-<li><a href="#orgae32adc">20.1.1. const</a>
+<li><a href="#orgae32adc">21.1.1. const</a>
 <ul>
-<li><a href="#org37b9eaf">20.1.1.1. object declarations with const</a></li>
+<li><a href="#org37b9eaf">21.1.1.1. object declarations with const</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgaa237b1">20.2. functions</a></li>
-<li><a href="#orgf7aa622">20.3. default parameter</a>
+<li><a href="#orgaa237b1">21.2. functions</a></li>
+<li><a href="#orgf7aa622">21.3. default parameter</a>
 <ul>
-<li><a href="#org27a01ed">20.3.1. default parameter expressions</a></li>
-<li><a href="#org1402303">20.3.2. Rest parameters</a></li>
-<li><a href="#orgc869d6a">20.3.3. Rest Parameter Restrictions</a></li>
+<li><a href="#org27a01ed">21.3.1. default parameter expressions</a></li>
+<li><a href="#org1402303">21.3.2. Rest parameters</a></li>
+<li><a href="#orgc869d6a">21.3.3. Rest Parameter Restrictions</a></li>
 </ul>
 </li>
-<li><a href="#orgef008c9">20.4. sets and maps</a>
+<li><a href="#orgef008c9">21.4. sets and maps</a>
 <ul>
-<li><a href="#orgeb320e6">20.4.1. ES5 workarounds</a></li>
-<li><a href="#org9c24530">20.4.2. sets</a></li>
-<li><a href="#org9ff850e">20.4.3. weak sets</a></li>
-<li><a href="#org7aad7b4">20.4.4. maps</a>
+<li><a href="#orgeb320e6">21.4.1. ES5 workarounds</a></li>
+<li><a href="#org9c24530">21.4.2. sets</a></li>
+<li><a href="#org9ff850e">21.4.3. weak sets</a></li>
+<li><a href="#org7aad7b4">21.4.4. maps</a>
 <ul>
-<li><a href="#orgfb69eec">20.4.4.1. Map methods</a></li>
-<li><a href="#orge0ed475">20.4.4.2. Map Initialization</a></li>
+<li><a href="#orgfb69eec">21.4.4.1. Map methods</a></li>
+<li><a href="#orge0ed475">21.4.4.2. Map Initialization</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org44e629d">20.5. method definition</a></li>
-<li><a href="#org04d11db">20.6. Iterators and Generators</a>
+<li><a href="#org44e629d">21.5. method definition</a></li>
+<li><a href="#org04d11db">21.6. Iterators and Generators</a>
 <ul>
-<li><a href="#orgc503b27">20.6.1. Iterators</a></li>
-<li><a href="#org1f68732">20.6.2. Generators</a>
+<li><a href="#orgc503b27">21.6.1. Iterators</a></li>
+<li><a href="#org1f68732">21.6.2. Generators</a>
 <ul>
-<li><a href="#orga89caf2">20.6.2.1. Generator Function Expressions</a></li>
-<li><a href="#orgda9b1f7">20.6.2.2. Generator Object Methods</a></li>
+<li><a href="#orga89caf2">21.6.2.1. Generator Function Expressions</a></li>
+<li><a href="#orgda9b1f7">21.6.2.2. Generator Object Methods</a></li>
 </ul>
 </li>
-<li><a href="#org8c3c602">20.6.3. Iterables and for-of loops</a></li>
-<li><a href="#org4cfbcfd">20.6.4. Accessing the Default Iterator</a></li>
-<li><a href="#org66fb7f4">20.6.5. Creating Iterables</a></li>
+<li><a href="#org8c3c602">21.6.3. Iterables and for-of loops</a></li>
+<li><a href="#org4cfbcfd">21.6.4. Accessing the Default Iterator</a></li>
+<li><a href="#org66fb7f4">21.6.5. Creating Iterables</a></li>
 </ul>
 </li>
-<li><a href="#org0d12cb5">20.7. Accessors in ES6 classes</a></li>
+<li><a href="#org0d12cb5">21.7. Accessors in ES6 classes</a></li>
 </ul>
 </li>
-<li><a href="#org98e428d">21. Is javascript Functional or object-oriented?</a></li>
-<li><a href="#org0d84ab9">22. DOM scripting</a>
+<li><a href="#org98e428d">22. Is javascript Functional or object-oriented?</a></li>
+<li><a href="#org0d84ab9">23. DOM scripting</a>
 <ul>
-<li><a href="#orgda0fd9d">22.1. DOM operations</a></li>
-<li><a href="#org26a9cc0">22.2. Traversing the DOM</a></li>
-<li><a href="#orge79cf00">22.3. styling the DOM</a></li>
-<li><a href="#orgc6b83fb">22.4. Making use of attributes and properties</a></li>
-<li><a href="#orgc1fad82">22.5. Handling DOM events</a></li>
+<li><a href="#orgda0fd9d">23.1. DOM operations</a></li>
+<li><a href="#org26a9cc0">23.2. Traversing the DOM</a></li>
+<li><a href="#orge79cf00">23.3. styling the DOM</a></li>
+<li><a href="#orgc6b83fb">23.4. Making use of attributes and properties</a></li>
+<li><a href="#orgc1fad82">23.5. Handling DOM events</a></li>
 </ul>
 </li>
-<li><a href="#org40c5816">23. XHR</a></li>
-<li><a href="#org73d100d">24. Fetch API</a></li>
-<li><a href="#org16c8e25">25. HTML5 APIS</a>
+<li><a href="#org40c5816">24. XHR</a></li>
+<li><a href="#org73d100d">25. Fetch API</a></li>
+<li><a href="#org16c8e25">26. HTML5 APIS</a>
 <ul>
-<li><a href="#orgb1b5742">25.1. Web Storage API</a></li>
-<li><a href="#org1ff33a2">25.2. IndexedDB</a></li>
-<li><a href="#orge8775c3">25.3. FileSystem API</a></li>
-<li><a href="#org3c3e884">25.4. Boosting performance with JavaScript workers</a></li>
-<li><a href="#orgccf6d85">25.5. Server-Sent Events</a></li>
-<li><a href="#org90cea06">25.6. Web Sockets</a></li>
+<li><a href="#orgb1b5742">26.1. Web Storage API</a></li>
+<li><a href="#org1ff33a2">26.2. IndexedDB</a></li>
+<li><a href="#orge8775c3">26.3. FileSystem API</a></li>
+<li><a href="#org3c3e884">26.4. Boosting performance with JavaScript workers</a></li>
+<li><a href="#orgccf6d85">26.5. Server-Sent Events</a></li>
+<li><a href="#org90cea06">26.6. Web Sockets</a></li>
 </ul>
 </li>
-<li><a href="#org516c95e">26. geolocation API</a></li>
-<li><a href="#orgb403396">27. nodejs</a>
+<li><a href="#org516c95e">27. geolocation API</a></li>
+<li><a href="#orgb403396">28. nodejs</a>
 <ul>
-<li><a href="#orgdb04b4c">27.1. Node Module System</a>
+<li><a href="#orgdb04b4c">28.1. Node Module System</a>
 <ul>
-<li><a href="#orgac5f271">27.1.1. install node packages from packages.json file?</a></li>
-<li><a href="#orgf70d3c9">27.1.2. Using npm search to Locate Modules in the npm Registry</a></li>
-<li><a href="#orgd96331c">27.1.3. package locations</a></li>
-<li><a href="#org1ee6ee4">27.1.4. Intalling packages</a>
+<li><a href="#orgac5f271">28.1.1. install node packages from packages.json file?</a></li>
+<li><a href="#orgf70d3c9">28.1.2. Using npm search to Locate Modules in the npm Registry</a></li>
+<li><a href="#orgd96331c">28.1.3. package locations</a></li>
+<li><a href="#org1ee6ee4">28.1.4. Intalling packages</a>
 <ul>
-<li><a href="#org813156b">27.1.4.1. Installing from URLs</a></li>
+<li><a href="#org813156b">28.1.4.1. Installing from URLs</a></li>
 </ul>
 </li>
-<li><a href="#org69c8f30">27.1.5. Uninstalling Packages</a></li>
-<li><a href="#orgdddf39d">27.1.6. Core Modules</a></li>
-<li><a href="#orgd5bcef2">27.1.7. File Modules</a></li>
-<li><a href="#orgff355e7">27.1.8. Resolving a Module Location</a></li>
+<li><a href="#org69c8f30">28.1.5. Uninstalling Packages</a></li>
+<li><a href="#orgdddf39d">28.1.6. Core Modules</a></li>
+<li><a href="#orgd5bcef2">28.1.7. File Modules</a></li>
+<li><a href="#orgff355e7">28.1.8. Resolving a Module Location</a></li>
 </ul>
 </li>
-<li><a href="#org24d6c29">27.2. Node Programming model</a>
+<li><a href="#org24d6c29">28.2. Node Programming model</a>
 <ul>
-<li><a href="#org291a837">27.2.1. Async exception handling</a></li>
+<li><a href="#org291a837">28.2.1. Async exception handling</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgf16aba6">28. webgl</a>
+<li><a href="#orgf16aba6">29. webgl</a>
 <ul>
-<li><a href="#orgff51678">28.1. blank canvas</a></li>
-<li><a href="#org9a3833b">28.2. Getting context</a></li>
-<li><a href="#orga9bf9a5">28.3. WebGL Components</a>
+<li><a href="#orgff51678">29.1. blank canvas</a></li>
+<li><a href="#org9a3833b">29.2. Getting context</a></li>
+<li><a href="#orga9bf9a5">29.3. WebGL Components</a>
 <ul>
-<li><a href="#orga5688c1">28.3.1. The Drawing Buffers</a>
+<li><a href="#orga5688c1">29.3.1. The Drawing Buffers</a>
 <ul>
-<li><a href="#org8ebaa04">28.3.1.1. Color buffer</a></li>
-<li><a href="#org71696c3">28.3.1.2. depth buffer</a></li>
-<li><a href="#org53b7e84">28.3.1.3. stencil buffer</a></li>
+<li><a href="#org8ebaa04">29.3.1.1. Color buffer</a></li>
+<li><a href="#org71696c3">29.3.1.2. depth buffer</a></li>
+<li><a href="#org53b7e84">29.3.1.3. stencil buffer</a></li>
 </ul>
 </li>
-<li><a href="#org6ba1201">28.3.2. Primitive Types</a></li>
-<li><a href="#orgdebcd25">28.3.3. Vertex Buffer Objects (VBOs)</a></li>
+<li><a href="#org6ba1201">29.3.2. Primitive Types</a></li>
+<li><a href="#orgdebcd25">29.3.3. Vertex Buffer Objects (VBOs)</a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li><a href="#org54e575b">30. user interaction</a>
+<ul>
+<li><a href="#orgb377d2e">30.1. prompt</a></li>
+<li><a href="#org7601713">30.2. confirm</a></li>
+</ul>
+</li>
+<li><a href="#org9089b41">31. references</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgb578b4b" class="outline-2">
-<h2 id="orgb578b4b"><span class="section-number-2">1</span> arrays</h2>
+<div id="outline-container-org950aefa" class="outline-2">
+<h2 id="org950aefa"><span class="section-number-2">1</span> operators</h2>
 <div class="outline-text-2" id="text-1">
-</div><div id="outline-container-org3951322" class="outline-3">
-<h3 id="org3951322"><span class="section-number-3">1.1</span> length</h3>
+</div><div id="outline-container-orge142648" class="outline-3">
+<h3 id="orge142648"><span class="section-number-3">1.1</span> <code>typeof</code></h3>
 <div class="outline-text-3" id="text-1-1">
+<p>
+Typeof operator returns the data type of the variable, function or an
+object. It returns a string value.
+</p>
+
+<p>
+<b>syntax:</b>
+<code>typeof x or typeof(x)</code>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h1&gt;typeof Operator&lt;/h1&gt;
+
+&lt;p id="op"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+    document.getElementById("op").innerHTML =
+	typeof "Harry" + "&lt;br&gt;" +
+	typeof 3 + "&lt;br&gt;" +
+
+	typeof false + "&lt;br&gt;" +
+	typeof [1, 2, 3, 4] + "&lt;br&gt;" +
+	typeof {name:'John', age:34} + "&lt;br&gt;" +
+	typeof new Date() + "&lt;br&gt;" +
+	typeof function () {} + "&lt;br&gt;" +
+	typeof myCar + "&lt;br&gt;" +
+	typeof NaN + "&lt;br&gt;" +
+	typeof null;
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</div>
+
+<p>
+output
+</p>
+<pre class="example">
+typeof Operator
+
+
+string
+number
+boolean
+object
+object
+object
+function
+undefined
+number
+object
+</pre>
+
+<p>
+typeof works well with primitive types but it treats Arrays, Object &amp;
+Data as objects. It cannot distinguish between them.
+</p>
+
+<p>
+It means
+</p>
+
+<div class="org-src-container">
+<pre class="src src-javascript">typeof []; //will result in object
+typeof{}; //will result in object
+typeof new Date(); //will result in object
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge27d358" class="outline-3">
+<h3 id="orge27d358"><span class="section-number-3">1.2</span> <code>in</code></h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+in operator is used to check whether a particular property is present
+within an object. If the property exists then return true else return
+false. in operator can also be used to check the property of
+predefined objects like “length” in String object.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+&lt;h1&gt; in Operator &lt;/h1&gt;
+&lt;p id="op1"&gt;&lt;/p&gt;
+&lt;script&gt;
+    var employee = {
+	empId: 10002,
+	firstName: "Harry",
+	lastName: "Joe"
+    };
+
+    var op1 = document.getElementById("op1");
+
+    op1.innerHTML = "First name exist :" + ("firstName" in employee) + "&lt;br&gt;";
+
+    op1.innerHTML += "Last name exists: " + ("lastname" in employee) + "&lt;br&gt;";
+
+    op1.innerHTML += "Designation exists: " + ("designation" in employee);
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</div>
+
+<p>
+output: 
+</p>
+
+<pre class="example">
+ in Operator 
+
+First name exist :true
+Last name exists: false
+Designation exists: false
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org7b3f05b" class="outline-3">
+<h3 id="org7b3f05b"><span class="section-number-3">1.3</span> <code>instanceof</code></h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+instanceof operator is used to check whether an object is an instance
+of the specified object. It returns true if an object is an instance
+of a particular object else returns false.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+&lt;h1&gt; instanceof Operator &lt;/h1&gt;
+&lt;p id="op1"&gt;&lt;/p&gt;
+&lt;script&gt;
+    var employee = {empId:10002, firstName:"Harry", lastName:"Joe"};
+
+    var arr_fruits = ["Orange","Apple","Grapes"]
+
+    var op1 = document.getElementById("op1");
+
+    op1.innerHTML = (employee instanceof Object) + "&lt;br&gt;";
+    op1.innerHTML += (employee instanceof Array) + "&lt;br&gt;";
+    op1.innerHTML += (arr_fruits instanceof Object) + "&lt;br&gt;";
+    op1.innerHTML += (arr_fruits instanceof Array);
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</div>
+
+<p>
+output:
+</p>
+
+<pre class="example">
+ instanceof Operator 
+
+true
+false
+true
+true
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb578b4b" class="outline-2">
+<h2 id="orgb578b4b"><span class="section-number-2">2</span> arrays</h2>
+<div class="outline-text-2" id="text-2">
+</div><div id="outline-container-org3951322" class="outline-3">
+<h3 id="org3951322"><span class="section-number-3">2.1</span> length</h3>
+<div class="outline-text-3" id="text-2-1">
 <p>
 Every array has a length property. Unlike most other languages, JavaScript’s array
 length is not an upper bound. If you store an element with a subscript that is greater
@@ -651,8 +850,8 @@ thing:
 </div>
 
 <div id="outline-container-orgda46cfa" class="outline-3">
-<h3 id="orgda46cfa"><span class="section-number-3">1.2</span> sort array numerically</h3>
-<div class="outline-text-3" id="text-1-2">
+<h3 id="orgda46cfa"><span class="section-number-3">2.2</span> sort array numerically</h3>
+<div class="outline-text-3" id="text-2-2">
 <p>
 By default the sort method sorts elements alphabetically.  
 </p>
@@ -671,8 +870,8 @@ positive number if a should be after b, or 0 if they are equal.
 </div>
 
 <div id="outline-container-orgd734ba3" class="outline-3">
-<h3 id="orgd734ba3"><span class="section-number-3">1.3</span> convert set to array</h3>
-<div class="outline-text-3" id="text-1-3">
+<h3 id="orgd734ba3"><span class="section-number-3">2.3</span> convert set to array</h3>
+<div class="outline-text-3" id="text-2-3">
 <pre class="example">
 Array.from(new Set([1,2,3]))
 </pre>
@@ -680,8 +879,8 @@ Array.from(new Set([1,2,3]))
 </div>
 
 <div id="outline-container-orge285fcd" class="outline-3">
-<h3 id="orge285fcd"><span class="section-number-3">1.4</span> iterates through the elements of the array using a for&#x2026; in</h3>
-<div class="outline-text-3" id="text-1-4">
+<h3 id="orge285fcd"><span class="section-number-3">2.4</span> iterates through the elements of the array using a for&#x2026; in</h3>
+<div class="outline-text-3" id="text-2-4">
 <div class="org-src-container">
 <pre class="src src-javascript">var theArray = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ];
 var total1 = 0, total2 = 0;
@@ -691,12 +890,45 @@ total2 += theArray[ element ];
 console.log( "Total using subscripts: " + total1 );
 </pre>
 </div>
+
+<p>
+to safey iterate over array elements use the <code>hasOwnProperty()</code> function like so:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-javascript">var arr = [1,2,3];
+ for(var k in arr){
+    if(this.hasOwnProperty(k))
+
+  }
+</pre>
+</div>
+
+<p>
+as an example implement length of an array without using the length property:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-javascript">Array.prototype.size = function() {
+  let ret = 0;
+  for(var k in this){
+    if(this.hasOwnProperty(k))
+     ret++;
+  }
+  // es6
+  // for(let x of this){
+  //  ret++;
+  // }
+  return ret;
+};
+</pre>
+</div>
 </div>
 </div>
 
 <div id="outline-container-org99175d3" class="outline-3">
-<h3 id="org99175d3"><span class="section-number-3">1.5</span> Count the number of occurences of a character in a string in Javascript</h3>
-<div class="outline-text-3" id="text-1-5">
+<h3 id="org99175d3"><span class="section-number-3">2.5</span> Count the number of occurences of a character in a string in Javascript</h3>
+<div class="outline-text-3" id="text-2-5">
 <div class="org-src-container">
 <pre class="src src-javascript">console.log(("str1,str2,str3,str4".match(/,/g) || []).length); //logs 3
 console.log(("str1,str2,str3,str4".match(new RegExp("str", "g")) || []).length); //logs 4
@@ -733,11 +965,12 @@ const getCharacterCount = (input, letter) =&gt; input.split(letter).length - 1;
 </div>
 
 <div id="outline-container-org1cc830f" class="outline-3">
-<h3 id="org1cc830f"><span class="section-number-3">1.6</span> Searching Through an Array</h3>
-<div class="outline-text-3" id="text-1-6">
+<h3 id="org1cc830f"><span class="section-number-3">2.6</span> Searching Through an Array</h3>
+<div class="outline-text-3" id="text-2-6">
 <p>
 Use the Array methods indexOf() and lastIndexOf():
 </p>
+
 <div class="org-src-container">
 <pre class="src src-javascript">var animals = new Array("dog","cat","seal","elephant","walrus","lion");
 console.log(animals.indexOf("elephant")); // prints 3
@@ -747,11 +980,13 @@ console.log(animals.indexOf("elephant")); // prints 3
 </div>
 
 <div id="outline-container-org535ee9a" class="outline-3">
-<h3 id="org535ee9a"><span class="section-number-3">1.7</span> Flattening a Two-Dimensional Array with concat() and apply()</h3>
-<div class="outline-text-3" id="text-1-7">
+<h3 id="org535ee9a"><span class="section-number-3">2.7</span> Flattening a Two-Dimensional Array with concat() and apply()</h3>
+<div class="outline-text-3" id="text-2-7">
 <p>
-Use the Array object concat() method to merge the multidimensional array into a single-dimensional array:
+Use the Array object concat() method to merge the multidimensional
+array into a single-dimensional array:
 </p>
+
 <div class="org-src-container">
 <pre class="src src-javascript">var fruitarray = [];
 fruitarray[0] = ['strawberry','orange'];
@@ -768,10 +1003,11 @@ console.log(newArray[5]); // tangerine
 </div>
 
 <div id="outline-container-org4ecdb91" class="outline-3">
-<h3 id="org4ecdb91"><span class="section-number-3">1.8</span> Removing or Replacing Array Elements</h3>
-<div class="outline-text-3" id="text-1-8">
+<h3 id="org4ecdb91"><span class="section-number-3">2.8</span> Removing or Replacing Array Elements</h3>
+<div class="outline-text-3" id="text-2-8">
 <p>
-You want to find occurrences of a given value in an array, and either remove the element or replace with another value.
+You want to find occurrences of a given value in an array, and either
+remove the element or replace with another value.
 </p>
 
 <p>
@@ -794,11 +1030,13 @@ console.log(animals.toString());
 </div>
 
 <div id="outline-container-org474a9f9" class="outline-3">
-<h3 id="org474a9f9"><span class="section-number-3">1.9</span> Extracting a Portion of an Array</h3>
-<div class="outline-text-3" id="text-1-9">
+<h3 id="org474a9f9"><span class="section-number-3">2.9</span> Extracting a Portion of an Array</h3>
+<div class="outline-text-3" id="text-2-9">
 <p>
-The Array slice() method extracts a shallow copy of a portion of an existing array:
+The Array slice() method extracts a shallow copy of a portion of an
+existing array:
 </p>
+
 <div class="org-src-container">
 <pre class="src src-javascript">var animals = ['elephant','tiger','lion','zebra','cat','dog','rabbit','goose'];
 
@@ -811,11 +1049,13 @@ console.log(domestic); // ['cat','dog','rabbit'];
 </div>
 
 <div id="outline-container-org7efa983" class="outline-3">
-<h3 id="org7efa983"><span class="section-number-3">1.10</span> Applying a Function Against Each Array Element</h3>
-<div class="outline-text-3" id="text-1-10">
+<h3 id="org7efa983"><span class="section-number-3">2.10</span> Applying a Function Against Each Array Element</h3>
+<div class="outline-text-3" id="text-2-10">
 <p>
-Use the Array method forEach() to apply a callback function to each array element:
+Use the Array method forEach() to apply a callback function to each
+array element:
 </p>
+
 <div class="org-src-container">
 <pre class="src src-javascript">var charSets = ["ab","bb","cd","ab","cc","ab","dd","ab"];
 
@@ -832,15 +1072,17 @@ console.log(charSets); // ["**", "bb", "cd", "**", "cc", "**", "dd", "**"]
 </div>
 
 <div id="outline-container-orgeac10c4" class="outline-3">
-<h3 id="orgeac10c4"><span class="section-number-3">1.11</span> Applying a Function to Every Element in an Array and Returning a New Array</h3>
-<div class="outline-text-3" id="text-1-11">
+<h3 id="orgeac10c4"><span class="section-number-3">2.11</span> Applying a Function to Every Element in an Array and Returning a New Array</h3>
+<div class="outline-text-3" id="text-2-11">
 <p>
-you want to convert an array of decimal numbers into a new array with their hexadecimal equivalents.
+you want to convert an array of decimal numbers into a new array with
+their hexadecimal equivalents.
 </p>
 
 <p>
-Use the Array map() method to create a new array consisting of elements from the old array that have been 
-modified via a callback function passed to the method:
+Use the Array map() method to create a new array consisting of
+elements from the old array that have been modified via a callback
+function passed to the method:
 </p>
 
 <div class="org-src-container">
@@ -857,8 +1099,8 @@ console.log(hexArray); // ["17", "ff", "7a", "5", "10", "63"]
 </div>
 
 <div id="outline-container-org20d0ff4" class="outline-3">
-<h3 id="org20d0ff4"><span class="section-number-3">1.12</span> Creating a Filtered Array</h3>
-<div class="outline-text-3" id="text-1-12">
+<h3 id="org20d0ff4"><span class="section-number-3">2.12</span> Creating a Filtered Array</h3>
+<div class="outline-text-3" id="text-2-12">
 <p>
 You want to filter element values in an array and assign the results to a new array.
 </p>
@@ -880,8 +1122,8 @@ console.log(newArray); // ["bb", "cd", "cc", "dd"]
 </div>
 
 <div id="outline-container-orgb32b118" class="outline-3">
-<h3 id="orgb32b118"><span class="section-number-3">1.13</span> Validating Array Contents</h3>
-<div class="outline-text-3" id="text-1-13">
+<h3 id="orgb32b118"><span class="section-number-3">2.13</span> Validating Array Contents</h3>
+<div class="outline-text-3" id="text-2-13">
 <p>
 Problem
 </p>
@@ -942,8 +1184,8 @@ console.log(result); // true
 </div>
 
 <div id="outline-container-org4375e9f" class="outline-3">
-<h3 id="org4375e9f"><span class="section-number-3">1.14</span> count elements of an array by value</h3>
-<div class="outline-text-3" id="text-1-14">
+<h3 id="org4375e9f"><span class="section-number-3">2.14</span> count elements of an array by value</h3>
+<div class="outline-text-3" id="text-2-14">
 <div class="org-src-container">
 <pre class="src src-javascript">// count elements of an array
 function array_count(arr, value){
@@ -961,11 +1203,11 @@ function array_count(arr, value){
 </div>
 
 <div id="outline-container-org6a9ba2a" class="outline-3">
-<h3 id="org6a9ba2a"><span class="section-number-3">1.15</span> check if a value is an array</h3>
-<div class="outline-text-3" id="text-1-15">
+<h3 id="org6a9ba2a"><span class="section-number-3">2.15</span> check if a value is an array</h3>
+<div class="outline-text-3" id="text-2-15">
 </div><div id="outline-container-org04bc50f" class="outline-4">
-<h4 id="org04bc50f"><span class="section-number-4">1.15.1</span> solution 1</h4>
-<div class="outline-text-4" id="text-1-15-1">
+<h4 id="org04bc50f"><span class="section-number-4">2.15.1</span> solution 1</h4>
+<div class="outline-text-4" id="text-2-15-1">
 <div class="org-src-container">
 <pre class="src src-javascript">var is_array = function (value) {
    return value &amp;&amp; typeof value === 'object' &amp;&amp; value.constructor === Array;
@@ -991,8 +1233,8 @@ typeof value.splice === 'function' &amp;&amp;
 </div>
 
 <div id="outline-container-org28cb241" class="outline-4">
-<h4 id="org28cb241"><span class="section-number-4">1.15.2</span> solution 2</h4>
-<div class="outline-text-4" id="text-1-15-2">
+<h4 id="org28cb241"><span class="section-number-4">2.15.2</span> solution 2</h4>
+<div class="outline-text-4" id="text-2-15-2">
 <p>
 We can verify that an object is an array by calling the Array.isArray() function, like
 this:
@@ -1009,11 +1251,11 @@ print(Array.isArray(arr)); // displays true
 </div>
 
 <div id="outline-container-org964b820" class="outline-3">
-<h3 id="org964b820"><span class="section-number-3">1.16</span> Dimensions</h3>
-<div class="outline-text-3" id="text-1-16">
+<h3 id="org964b820"><span class="section-number-3">2.16</span> Dimensions</h3>
+<div class="outline-text-3" id="text-2-16">
 </div><div id="outline-container-org03c225b" class="outline-4">
-<h4 id="org03c225b"><span class="section-number-4">1.16.1</span> initialize array</h4>
-<div class="outline-text-4" id="text-1-16-1">
+<h4 id="org03c225b"><span class="section-number-4">2.16.1</span> initialize array</h4>
+<div class="outline-text-4" id="text-2-16-1">
 <p>
 JavaScript arrays usually are not initialized. If you ask for a new array with [] , it will
 be empty. If you access a missing element, you will get the undefined value. If you are
@@ -1054,8 +1296,8 @@ Array.from({length: 5}, (v, k) =&gt; k);
 </div>
 
 <div id="outline-container-org8bd1275" class="outline-4">
-<h4 id="org8bd1275"><span class="section-number-4">1.16.2</span> multidimensional array</h4>
-<div class="outline-text-4" id="text-1-16-2">
+<h4 id="org8bd1275"><span class="section-number-4">2.16.2</span> multidimensional array</h4>
+<div class="outline-text-4" id="text-2-16-2">
 <p>
 JavaScript does not have arrays of more than one dimension, but like most C lan-
 guages, it can have arrays of arrays:
@@ -1124,8 +1366,8 @@ document.writeln(myMatrix[3][3]);  // 1
 </div>
 
 <div id="outline-container-org941dc95" class="outline-3">
-<h3 id="org941dc95"><span class="section-number-3">1.17</span> make  a deep copy of an array</h3>
-<div class="outline-text-3" id="text-1-17">
+<h3 id="org941dc95"><span class="section-number-3">2.17</span> make  a deep copy of an array</h3>
+<div class="outline-text-3" id="text-2-17">
 <div class="org-src-container">
 <pre class="src src-javascript">function copy(arr1, arr2) {
    for (var i = 0; i &lt; arr1.length; ++i) {
@@ -1138,8 +1380,8 @@ document.writeln(myMatrix[3][3]);  // 1
 </div>
 
 <div id="outline-container-org3a07b77" class="outline-3">
-<h3 id="org3a07b77"><span class="section-number-3">1.18</span> string representation</h3>
-<div class="outline-text-3" id="text-1-18">
+<h3 id="org3a07b77"><span class="section-number-3">2.18</span> string representation</h3>
+<div class="outline-text-3" id="text-2-18">
 <p>
 There are two functions that return string representations of an array: join() and
 toString() . Both functions return a string containing the elements of the array de‐
@@ -1157,12 +1399,12 @@ print(namestr); // David,Cynthia,Raymond,Clayton,Mike,Jennifer
 </div>
 
 <div id="outline-container-orgeec7200" class="outline-3">
-<h3 id="orgeec7200"><span class="section-number-3">1.19</span> Creating New Arrays from Existing Arrays</h3>
+<h3 id="orgeec7200"><span class="section-number-3">2.19</span> Creating New Arrays from Existing Arrays</h3>
 </div>
 
 <div id="outline-container-org82700cc" class="outline-3">
-<h3 id="org82700cc"><span class="section-number-3">1.20</span> shuffle array</h3>
-<div class="outline-text-3" id="text-1-20">
+<h3 id="org82700cc"><span class="section-number-3">2.20</span> shuffle array</h3>
+<div class="outline-text-3" id="text-2-20">
 <p>
 <a href="https://bost.ocks.org/mike/shuffle/">https://bost.ocks.org/mike/shuffle/</a>
 </p>
@@ -1192,8 +1434,8 @@ print(namestr); // David,Cynthia,Raymond,Clayton,Mike,Jennifer
 </div>
 
 <div id="outline-container-orgdf43b8a" class="outline-3">
-<h3 id="orgdf43b8a"><span class="section-number-3">1.21</span> Sort an array based on the length of each element</h3>
-<div class="outline-text-3" id="text-1-21">
+<h3 id="orgdf43b8a"><span class="section-number-3">2.21</span> Sort an array based on the length of each element</h3>
+<div class="outline-text-3" id="text-2-21">
 <div class="org-src-container">
 <pre class="src src-javascript">arr.sort(function(a, b){
   // ASC  -&gt; a.length - b.length
@@ -1224,8 +1466,8 @@ If the objective is to sort by length then by dictionary order you must specify 
 </div>
 
 <div id="outline-container-orgba42583" class="outline-3">
-<h3 id="orgba42583"><span class="section-number-3">1.22</span> make an array using Array.from</h3>
-<div class="outline-text-3" id="text-1-22">
+<h3 id="orgba42583"><span class="section-number-3">2.22</span> make an array using Array.from</h3>
+<div class="outline-text-3" id="text-2-22">
 <p>
 for example, the following will create and array from 1-n.
 </p>
@@ -1236,8 +1478,8 @@ for example, the following will create and array from 1-n.
 </div>
 </div>
 <div id="outline-container-orgd2943ad" class="outline-3">
-<h3 id="orgd2943ad"><span class="section-number-3">1.23</span> check for array equality?</h3>
-<div class="outline-text-3" id="text-1-23">
+<h3 id="orgd2943ad"><span class="section-number-3">2.23</span> check for array equality?</h3>
+<div class="outline-text-3" id="text-2-23">
 <div class="org-src-container">
 <pre class="src src-javascript">function arraysEqual(a, b) {
   if (a === b) return true;
@@ -1273,11 +1515,11 @@ for example, the following will create and array from 1-n.
 </div>
 
 <div id="outline-container-org1361c31" class="outline-2">
-<h2 id="org1361c31"><span class="section-number-2">2</span> strings</h2>
-<div class="outline-text-2" id="text-2">
+<h2 id="org1361c31"><span class="section-number-2">3</span> strings</h2>
+<div class="outline-text-2" id="text-3">
 </div><div id="outline-container-org2581273" class="outline-3">
-<h3 id="org2581273"><span class="section-number-3">2.1</span> reverse string in javascript?</h3>
-<div class="outline-text-3" id="text-2-1">
+<h3 id="org2581273"><span class="section-number-3">3.1</span> reverse string in javascript?</h3>
+<div class="outline-text-3" id="text-3-1">
 <div class="org-src-container">
 <pre class="src src-javascript">function reverse(s){
     return s.split("").reverse().join("");
@@ -1288,8 +1530,8 @@ for example, the following will create and array from 1-n.
 </div>
 
 <div id="outline-container-org18755fe" class="outline-3">
-<h3 id="org18755fe"><span class="section-number-3">2.2</span> ordinal value of a character?</h3>
-<div class="outline-text-3" id="text-2-2">
+<h3 id="org18755fe"><span class="section-number-3">3.2</span> ordinal value of a character?</h3>
+<div class="outline-text-3" id="text-3-2">
 <div class="org-src-container">
 <pre class="src src-javascript">"\n".charCodeAt(0);
 </pre>
@@ -1298,16 +1540,16 @@ for example, the following will create and array from 1-n.
 </div>
 
 <div id="outline-container-orgc50c01e" class="outline-3">
-<h3 id="orgc50c01e"><span class="section-number-3">2.3</span> convert ascii code to string?</h3>
-<div class="outline-text-3" id="text-2-3">
+<h3 id="orgc50c01e"><span class="section-number-3">3.3</span> convert ascii code to string?</h3>
+<div class="outline-text-3" id="text-3-3">
 <p>
 String.fromCharCode(97); // returns 
 </p>
 </div>
 </div>
 <div id="outline-container-org8f66273" class="outline-3">
-<h3 id="org8f66273"><span class="section-number-3">2.4</span> Checking for an Existing, Nonempty String</h3>
-<div class="outline-text-3" id="text-2-4">
+<h3 id="org8f66273"><span class="section-number-3">3.4</span> Checking for an Existing, Nonempty String</h3>
+<div class="outline-text-3" id="text-3-4">
 <div class="org-src-container">
 <pre class="src src-javascript">if (((typeof unknownVariable != 'undefined' &amp;&amp; unknownVariable) &amp;&amp;
 unknownVariable.length() &gt; 0) &amp;&amp;
@@ -1318,8 +1560,8 @@ typeof unknownVariable.valueOf() == 'string') ...
 </div>
 
 <div id="outline-container-orgeed7828" class="outline-3">
-<h3 id="orgeed7828"><span class="section-number-3">2.5</span> convert a string in base 2 to decimal</h3>
-<div class="outline-text-3" id="text-2-5">
+<h3 id="orgeed7828"><span class="section-number-3">3.5</span> convert a string in base 2 to decimal</h3>
+<div class="outline-text-3" id="text-3-5">
 <div class="org-src-container">
 <pre class="src src-javascript">parseInt("1111", 2);
 </pre>
@@ -1327,8 +1569,8 @@ typeof unknownVariable.valueOf() == 'string') ...
 </div>
 </div>
 <div id="outline-container-orgfd03ba4" class="outline-3">
-<h3 id="orgfd03ba4"><span class="section-number-3">2.6</span> replace all non-digit characters</h3>
-<div class="outline-text-3" id="text-2-6">
+<h3 id="orgfd03ba4"><span class="section-number-3">3.6</span> replace all non-digit characters</h3>
+<div class="outline-text-3" id="text-3-6">
 <p>
 str.replace(/\D/g,' ');
 </p>
@@ -1336,8 +1578,8 @@ str.replace(/\D/g,' ');
 </div>
 
 <div id="outline-container-org2f89cbe" class="outline-3">
-<h3 id="org2f89cbe"><span class="section-number-3">2.7</span> split a string by one or more spaces</h3>
-<div class="outline-text-3" id="text-2-7">
+<h3 id="org2f89cbe"><span class="section-number-3">3.7</span> split a string by one or more spaces</h3>
+<div class="outline-text-3" id="text-3-7">
 <p>
 str.split(/\s+/g)
 </p>
@@ -1345,8 +1587,8 @@ str.split(/\s+/g)
 </div>
 
 <div id="outline-container-org2601d37" class="outline-3">
-<h3 id="org2601d37"><span class="section-number-3">2.8</span> split a string by digits of size one or bigger(ignoring negative nums)</h3>
-<div class="outline-text-3" id="text-2-8">
+<h3 id="org2601d37"><span class="section-number-3">3.8</span> split a string by digits of size one or bigger(ignoring negative nums)</h3>
+<div class="outline-text-3" id="text-3-8">
 <p>
 str.match(<i>\d+/g)
 str.match(</i>\d+/g) || []).map(Number)
@@ -1354,8 +1596,8 @@ str.match(</i>\d+/g) || []).map(Number)
 </div>
 </div>
 <div id="outline-container-org4926c44" class="outline-3">
-<h3 id="org4926c44"><span class="section-number-3">2.9</span> rotate string</h3>
-<div class="outline-text-3" id="text-2-9">
+<h3 id="org4926c44"><span class="section-number-3">3.9</span> rotate string</h3>
+<div class="outline-text-3" id="text-3-9">
 <div class="org-src-container">
 <pre class="src src-javascript">var rotate = function(str){
      return str[str.length -1 ] + str.slice(0,str.length-1);
@@ -1377,8 +1619,8 @@ var  allRotations = function(str){
 </div>
 </div>
 <div id="outline-container-org88eaa12" class="outline-3">
-<h3 id="org88eaa12"><span class="section-number-3">2.10</span> name of current function?</h3>
-<div class="outline-text-3" id="text-2-10">
+<h3 id="org88eaa12"><span class="section-number-3">3.10</span> name of current function?</h3>
+<div class="outline-text-3" id="text-3-10">
 <p>
 You should be able to get it by using arguments.callee.
 </p>
@@ -1414,8 +1656,8 @@ For the caller, just use caller.toString().
 </div>
 
 <div id="outline-container-orgd27016d" class="outline-3">
-<h3 id="orgd27016d"><span class="section-number-3">2.11</span> Finding and Highlighting All Instances of a Pattern</h3>
-<div class="outline-text-3" id="text-2-11">
+<h3 id="orgd27016d"><span class="section-number-3">3.11</span> Finding and Highlighting All Instances of a Pattern</h3>
+<div class="outline-text-3" id="text-3-11">
 <div class="org-src-container">
 <pre class="src src-javascript">var searchString = "Now is the time and this is the time and that is the time";
 var pattern = /t\w*e/g;
@@ -1447,8 +1689,8 @@ at 53 we found time
 </div>
 
 <div id="outline-container-org51d8d97" class="outline-3">
-<h3 id="org51d8d97"><span class="section-number-3">2.12</span> Traversing the Results from querySelectorAll() with forEach() and call()</h3>
-<div class="outline-text-3" id="text-2-12">
+<h3 id="org51d8d97"><span class="section-number-3">3.12</span> Traversing the Results from querySelectorAll() with forEach() and call()</h3>
+<div class="outline-text-3" id="text-3-12">
 <p>
 You want to use forEach() on the nodeList returned from a call to querySelectorAll().
 </p>
@@ -1472,8 +1714,8 @@ var cells = document.querySelectorAll("td + td");
 </div>
 
 <div id="outline-container-org58db98e" class="outline-3">
-<h3 id="org58db98e"><span class="section-number-3">2.13</span> Using a Destructuring Assignment to Simplify Code</h3>
-<div class="outline-text-3" id="text-2-13">
+<h3 id="org58db98e"><span class="section-number-3">3.13</span> Using a Destructuring Assignment to Simplify Code</h3>
+<div class="outline-text-3" id="text-3-13">
 <p>
 You want to assign array element values to several variables, but you really don’t want to have assign each, individually.
 </p>
@@ -1529,14 +1771,26 @@ console.log(sum); // 45
 </div>
 </div>
 </div>
+
+<div id="outline-container-orgeffe51c" class="outline-3">
+<h3 id="orgeffe51c"><span class="section-number-3">3.14</span> convert string to set</h3>
+<div class="outline-text-3" id="text-3-14">
+<div class="org-src-container">
+<pre class="src src-javascript">let s1="somestring";
+let s2="anotherstring";
+let v  = new Set([...s1, ...s2]);
+</pre>
+</div>
+</div>
+</div>
 </div>
 
 <div id="outline-container-orgaea1067" class="outline-2">
-<h2 id="orgaea1067"><span class="section-number-2">3</span> numbers</h2>
-<div class="outline-text-2" id="text-3">
+<h2 id="orgaea1067"><span class="section-number-2">4</span> numbers</h2>
+<div class="outline-text-2" id="text-4">
 </div><div id="outline-container-orgd807ec5" class="outline-3">
-<h3 id="orgd807ec5"><span class="section-number-3">3.1</span> isNumber</h3>
-<div class="outline-text-3" id="text-3-1">
+<h3 id="orgd807ec5"><span class="section-number-3">4.1</span> isNumber</h3>
+<div class="outline-text-3" id="text-4-1">
 <div class="org-src-container">
 <pre class="src src-javascript">function isNumber(obj) {
   return obj!== undefined &amp;&amp; typeof(obj) === 'number' &amp;&amp; !isNaN(obj);
@@ -1546,19 +1800,24 @@ console.log(sum); // 45
 </div>
 </div>
 <div id="outline-container-org189897c" class="outline-3">
-<h3 id="org189897c"><span class="section-number-3">3.2</span> Max &amp; Min value of a array of number?</h3>
-<div class="outline-text-3" id="text-3-2">
+<h3 id="org189897c"><span class="section-number-3">4.2</span> Max &amp; Min value of a array of number?</h3>
+<div class="outline-text-3" id="text-4-2">
 <div class="org-src-container">
 <pre class="src src-javascript">Math.max.apply(0, numbers);
 Math.min.apply(0, numbers);
+
+// using the spread operator
+
+Math.min(...array);
+Math.max(...array);
 </pre>
 </div>
 </div>
 </div>
 
 <div id="outline-container-org21233c1" class="outline-3">
-<h3 id="org21233c1"><span class="section-number-3">3.3</span> check if a string can be converted to number?</h3>
-<div class="outline-text-3" id="text-3-3">
+<h3 id="org21233c1"><span class="section-number-3">4.3</span> check if a string can be converted to number?</h3>
+<div class="outline-text-3" id="text-4-3">
 <div class="org-src-container">
 <pre class="src src-javascript">isFinite(parseInt(number))
 </pre>
@@ -1567,8 +1826,8 @@ Math.min.apply(0, numbers);
 </div>
 
 <div id="outline-container-orgdad6a56" class="outline-3">
-<h3 id="orgdad6a56"><span class="section-number-3">3.4</span> check if a number has a fractional part?</h3>
-<div class="outline-text-3" id="text-3-4">
+<h3 id="orgdad6a56"><span class="section-number-3">4.4</span> check if a number has a fractional part?</h3>
+<div class="outline-text-3" id="text-4-4">
 <div class="org-src-container">
 <pre class="src src-javascript">const r = Math.sqrt(x);
 if( r % 1 == 0) ...
@@ -1578,8 +1837,8 @@ if( r % 1 == 0) ...
 </div>
 
 <div id="outline-container-org18ef4c1" class="outline-3">
-<h3 id="org18ef4c1"><span class="section-number-3">3.5</span> generate random numbers between 1 and 6</h3>
-<div class="outline-text-3" id="text-3-5">
+<h3 id="org18ef4c1"><span class="section-number-3">4.5</span> generate random numbers between 1 and 6</h3>
+<div class="outline-text-3" id="text-4-5">
 <div class="org-src-container">
 <pre class="src src-javascript">Math.floor( 1 + Math.random() * 6)
 </pre>
@@ -1588,8 +1847,8 @@ if( r % 1 == 0) ...
 </div>
 
 <div id="outline-container-org174f532" class="outline-3">
-<h3 id="org174f532"><span class="section-number-3">3.6</span> generate a random integer</h3>
-<div class="outline-text-3" id="text-3-6">
+<h3 id="org174f532"><span class="section-number-3">4.6</span> generate a random integer</h3>
+<div class="outline-text-3" id="text-4-6">
 <div class="org-src-container">
 <pre class="src src-javascript">Math.round(Math.random() * 100);
 </pre>
@@ -1598,8 +1857,8 @@ if( r % 1 == 0) ...
 </div>
 
 <div id="outline-container-orgfecc827" class="outline-3">
-<h3 id="orgfecc827"><span class="section-number-3">3.7</span> generate random number within a range</h3>
-<div class="outline-text-3" id="text-3-7">
+<h3 id="orgfecc827"><span class="section-number-3">4.7</span> generate random number within a range</h3>
+<div class="outline-text-3" id="text-4-7">
 <div class="org-src-container">
 <pre class="src src-javascript">function ourRandomRange(ourMin, ourMax) {
 
@@ -1611,10 +1870,21 @@ if( r % 1 == 0) ...
 </div>
 
 <div id="outline-container-orge34e7c1" class="outline-3">
-<h3 id="orge34e7c1"><span class="section-number-3">3.8</span> change base using toString</h3>
-<div class="outline-text-3" id="text-3-8">
+<h3 id="orge34e7c1"><span class="section-number-3">4.8</span> change base using toString</h3>
+<div class="outline-text-3" id="text-4-8">
 <div class="org-src-container">
 <pre class="src src-javascript">(num).toString(radix)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb7ab31e" class="outline-3">
+<h3 id="orgb7ab31e"><span class="section-number-3">4.9</span> convret string to number with operator</h3>
+<div class="outline-text-3" id="text-4-9">
+<div class="org-src-container">
+<pre class="src src-javascript">var num='1234';
+var cnum = +num;
 </pre>
 </div>
 </div>
@@ -1622,11 +1892,11 @@ if( r % 1 == 0) ...
 </div>
 
 <div id="outline-container-orgb5ccb7c" class="outline-2">
-<h2 id="orgb5ccb7c"><span class="section-number-2">4</span> date time</h2>
-<div class="outline-text-2" id="text-4">
+<h2 id="orgb5ccb7c"><span class="section-number-2">5</span> date time</h2>
+<div class="outline-text-2" id="text-5">
 </div><div id="outline-container-org2b13804" class="outline-3">
-<h3 id="org2b13804"><span class="section-number-3">4.1</span> next month</h3>
-<div class="outline-text-3" id="text-4-1">
+<h3 id="org2b13804"><span class="section-number-3">5.1</span> next month</h3>
+<div class="outline-text-3" id="text-5-1">
 <div class="org-src-container">
 <pre class="src src-javascript">  var nextmonth = function(x){
   if (x.getMonth() == 11) {
@@ -1642,8 +1912,8 @@ if( r % 1 == 0) ...
 </div>
 
 <div id="outline-container-org314802e" class="outline-3">
-<h3 id="org314802e"><span class="section-number-3">4.2</span> next day</h3>
-<div class="outline-text-3" id="text-4-2">
+<h3 id="org314802e"><span class="section-number-3">5.2</span> next day</h3>
+<div class="outline-text-3" id="text-5-2">
 <div class="org-src-container">
 <pre class="src src-javascript">var nextday = function(x){
   x.setDate(x.getDate() + 1);
@@ -1655,8 +1925,8 @@ if( r % 1 == 0) ...
 </div>
 
 <div id="outline-container-org9084da7" class="outline-3">
-<h3 id="org9084da7"><span class="section-number-3">4.3</span> add days</h3>
-<div class="outline-text-3" id="text-4-3">
+<h3 id="org9084da7"><span class="section-number-3">5.3</span> add days</h3>
+<div class="outline-text-3" id="text-5-3">
 <div class="org-src-container">
 <pre class="src src-javascript">function addDays(days) {
      var result = new Date("2016-01-01");
@@ -1669,8 +1939,8 @@ if( r % 1 == 0) ...
 </div>
 
 <div id="outline-container-org404e81a" class="outline-3">
-<h3 id="org404e81a"><span class="section-number-3">4.4</span> How can I compare two time strings in the format HH:MM:SS?</h3>
-<div class="outline-text-3" id="text-4-4">
+<h3 id="org404e81a"><span class="section-number-3">5.4</span> How can I compare two time strings in the format HH:MM:SS?</h3>
+<div class="outline-text-3" id="text-5-4">
 <p>
 provided your times are based on a 24 hour clock (and they should be
 if there's no AM/PM) and provided they are always in the format
@@ -1694,8 +1964,8 @@ else
 </div>
 
 <div id="outline-container-org7901861" class="outline-3">
-<h3 id="org7901861"><span class="section-number-3">4.5</span> How do I get the number of days between two dates in JavaScript?</h3>
-<div class="outline-text-3" id="text-4-5">
+<h3 id="org7901861"><span class="section-number-3">5.5</span> How do I get the number of days between two dates in JavaScript?</h3>
+<div class="outline-text-3" id="text-5-5">
 <div class="org-src-container">
 <pre class="src src-javascript">function parseDate(str) {
     var mdy = str.split('/');
@@ -1716,8 +1986,8 @@ alert(daydiff(parseDate($('#first').val()), parseDate($('#second').val())));
 </div>
 
 <div id="outline-container-org562b520" class="outline-3">
-<h3 id="org562b520"><span class="section-number-3">4.6</span> check if a date object is today</h3>
-<div class="outline-text-3" id="text-4-6">
+<h3 id="org562b520"><span class="section-number-3">5.6</span> check if a date object is today</h3>
+<div class="outline-text-3" id="text-5-6">
 <div class="org-src-container">
 <pre class="src src-javascript">function isToday(date) {
   return new Date().toDateString() === date.toDateString();
@@ -1729,11 +1999,11 @@ alert(daydiff(parseDate($('#first').val()), parseDate($('#second').val())));
 </div>
 
 <div id="outline-container-org8a3995c" class="outline-2">
-<h2 id="org8a3995c"><span class="section-number-2">5</span> Regular expressions</h2>
-<div class="outline-text-2" id="text-5">
+<h2 id="org8a3995c"><span class="section-number-2">6</span> Regular expressions</h2>
+<div class="outline-text-2" id="text-6">
 </div><div id="outline-container-org7b3edc8" class="outline-3">
-<h3 id="org7b3edc8"><span class="section-number-3">5.1</span> parseurl example</h3>
-<div class="outline-text-3" id="text-5-1">
+<h3 id="org7b3edc8"><span class="section-number-3">6.1</span> parseurl example</h3>
+<div class="outline-text-3" id="text-6-1">
 <div class="org-src-container">
 <pre class="src src-javascript">var parse_url = /^(?:([A-Za-z]+):)?(\/{0,3})([0-9.\-A-Za-z]+)
 (?::(\d+))?(?:\/([^?#]*))?(?:\?([^#]*))?(?:#(.*))?$/;
@@ -1821,8 +2091,8 @@ $
 </div>
 </div>
 <div id="outline-container-org807c450" class="outline-3">
-<h3 id="org807c450"><span class="section-number-3">5.2</span> extract first letter of every word</h3>
-<div class="outline-text-3" id="text-5-2">
+<h3 id="org807c450"><span class="section-number-3">6.2</span> extract first letter of every word</h3>
+<div class="outline-text-3" id="text-6-2">
 <div class="org-src-container">
 <pre class="src src-javascript">"ab bc de".match(/\b(\w)/g)
 </pre>
@@ -1831,8 +2101,8 @@ $
 </div>
 
 <div id="outline-container-org5e7b3ad" class="outline-3">
-<h3 id="org5e7b3ad"><span class="section-number-3">5.3</span> remove the last of occurrence of a character from a sentence.</h3>
-<div class="outline-text-3" id="text-5-3">
+<h3 id="org5e7b3ad"><span class="section-number-3">6.3</span> remove the last of occurrence of a character from a sentence.</h3>
+<div class="outline-text-3" id="text-6-3">
 <p>
 for example remove the exclamation mark from the end of a string(it can be one or more !)
 </p>
@@ -1845,8 +2115,8 @@ for example remove the exclamation mark from the end of a string(it can be one o
 </div>
 
 <div id="outline-container-org324f242" class="outline-3">
-<h3 id="org324f242"><span class="section-number-3">5.4</span> remove the last occurrence except the last one.</h3>
-<div class="outline-text-3" id="text-5-4">
+<h3 id="org324f242"><span class="section-number-3">6.4</span> remove the last occurrence except the last one.</h3>
+<div class="outline-text-3" id="text-6-4">
 <p>
 for example I want to remove all occurrences of substring = . in a string except the last one.
 The following one-liner is a regular expression that takes advantage of the fact
@@ -1863,8 +2133,8 @@ The following one-liner is a regular expression that takes advantage of the fact
 </div>
 
 <div id="outline-container-orgcbade51" class="outline-3">
-<h3 id="orgcbade51"><span class="section-number-3">5.5</span> remove all none-numbers from a string</h3>
-<div class="outline-text-3" id="text-5-5">
+<h3 id="orgcbade51"><span class="section-number-3">6.5</span> remove all none-numbers from a string</h3>
+<div class="outline-text-3" id="text-6-5">
 <p>
 <code>str.replace(/[^0-9]/g,'')</code>
 <code>s.replace(/\D/g, "");</code>
@@ -1872,8 +2142,8 @@ The following one-liner is a regular expression that takes advantage of the fact
 </div>
 </div>
 <div id="outline-container-orga665a02" class="outline-3">
-<h3 id="orga665a02"><span class="section-number-3">5.6</span> parsenumber example</h3>
-<div class="outline-text-3" id="text-5-6">
+<h3 id="orga665a02"><span class="section-number-3">6.6</span> parsenumber example</h3>
+<div class="outline-text-3" id="text-6-6">
 <p>
 Let’s look at another example: a regular expression that matches numbers. Numbers
 can have an integer part with an optional minus sign, an optional fractional part, and
@@ -1974,8 +2244,8 @@ The following one-liner is a regular expression that takes advantage of the fact
 </div>
 </div>
 <div id="outline-container-orgf0b3b10" class="outline-3">
-<h3 id="orgf0b3b10"><span class="section-number-3">5.7</span> regular expression from string</h3>
-<div class="outline-text-3" id="text-5-7">
+<h3 id="orgf0b3b10"><span class="section-number-3">6.7</span> regular expression from string</h3>
+<div class="outline-text-3" id="text-6-7">
 <p>
 Use the RegExp object constructor to create a regular expression from a string:
 </p>
@@ -1993,8 +2263,8 @@ var re = /a|b/i;
 </div>
 
 <div id="outline-container-org3e51251" class="outline-3">
-<h3 id="org3e51251"><span class="section-number-3">5.8</span> Regex to match a word containing all of specified characters</h3>
-<div class="outline-text-3" id="text-5-8">
+<h3 id="org3e51251"><span class="section-number-3">6.8</span> Regex to match a word containing all of specified characters</h3>
+<div class="outline-text-3" id="text-6-8">
 <p>
 if the set contains {A,C,T} then the following would be matches: ACT,
 CAT, TACT, &#x2026; However, the following would not match: CAB, TAN, CUT.
@@ -2010,8 +2280,8 @@ CAT, TACT, &#x2026; However, the following would not match: CAB, TAN, CUT.
 </div>
 
 <div id="outline-container-orgb50d776" class="outline-3">
-<h3 id="orgb50d776"><span class="section-number-3">5.9</span> regex to match entire words which contains certain characters</h3>
-<div class="outline-text-3" id="text-5-9">
+<h3 id="orgb50d776"><span class="section-number-3">6.9</span> regex to match entire words which contains certain characters</h3>
+<div class="outline-text-3" id="text-6-9">
 <p>
 all the words that contains the letter l and a as - car, patrol, left
 </p>
@@ -2023,8 +2293,8 @@ all the words that contains the letter l and a as - car, patrol, left
 </div>
 
 <div id="outline-container-org74d1519" class="outline-3">
-<h3 id="org74d1519"><span class="section-number-3">5.10</span> replace two or more spaces with one</h3>
-<div class="outline-text-3" id="text-5-10">
+<h3 id="org74d1519"><span class="section-number-3">6.10</span> replace two or more spaces with one</h3>
+<div class="outline-text-3" id="text-6-10">
 <div class="org-src-container">
 <pre class="src src-javascript">string.replace(/\s{2,}/g,' ')
 </pre>
@@ -2033,8 +2303,8 @@ all the words that contains the letter l and a as - car, patrol, left
 </div>
 
 <div id="outline-container-org37b3bee" class="outline-3">
-<h3 id="org37b3bee"><span class="section-number-3">5.11</span> Replacing Patterns with New Strings</h3>
-<div class="outline-text-3" id="text-5-11">
+<h3 id="org37b3bee"><span class="section-number-3">6.11</span> Replacing Patterns with New Strings</h3>
+<div class="outline-text-3" id="text-6-11">
 <div class="org-src-container">
 <pre class="src src-javascript">var searchString = "Now is the time, this is the tame";
 var re = /t\w{2}e/g;
@@ -2046,8 +2316,8 @@ console.log(replacement); // Now is the place, this is the place
 </div>
 
 <div id="outline-container-org1c37c30" class="outline-3">
-<h3 id="org1c37c30"><span class="section-number-3">5.12</span> Finding  All Instances of a Pattern</h3>
-<div class="outline-text-3" id="text-5-12">
+<h3 id="org1c37c30"><span class="section-number-3">6.12</span> Finding  All Instances of a Pattern</h3>
+<div class="outline-text-3" id="text-6-12">
 <p>
 Use the RegExp exec method and the global flag (g) in a loop to locate
 all instances of a pattern, such as any word that begins with t and
@@ -2154,8 +2424,8 @@ at 53 we found time
 </div>
 
 <div id="outline-container-orgdf835ef" class="outline-3">
-<h3 id="orgdf835ef"><span class="section-number-3">5.13</span> the following inserts dashes into a hypothetical social security number:</h3>
-<div class="outline-text-3" id="text-5-13">
+<h3 id="orgdf835ef"><span class="section-number-3">6.13</span> the following inserts dashes into a hypothetical social security number:</h3>
+<div class="outline-text-3" id="text-6-13">
 <div class="org-src-container">
 <pre class="src src-javascript">var pattern = /(\d{3})(\d{2})(\d{4})/;
 var ssn = "123456789";
@@ -2169,8 +2439,8 @@ The result “123-45-6789” is placed in ssn.
 </div>
 </div>
 <div id="outline-container-org4fda922" class="outline-3">
-<h3 id="org4fda922"><span class="section-number-3">5.14</span> Remove all exclamation marks from the end of words. Words are separated by spaces in the sentence.</h3>
-<div class="outline-text-3" id="text-5-14">
+<h3 id="org4fda922"><span class="section-number-3">6.14</span> Remove all exclamation marks from the end of words. Words are separated by spaces in the sentence.</h3>
+<div class="outline-text-3" id="text-6-14">
 <div class="org-src-container">
 <pre class="src src-javascript">s.replace(/\b!+/g, '');
 </pre>
@@ -2179,8 +2449,8 @@ The result “123-45-6789” is placed in ssn.
 </div>
 
 <div id="outline-container-org80999a4" class="outline-3">
-<h3 id="org80999a4"><span class="section-number-3">5.15</span> isLetter</h3>
-<div class="outline-text-3" id="text-5-15">
+<h3 id="org80999a4"><span class="section-number-3">6.15</span> isLetter</h3>
+<div class="outline-text-3" id="text-6-15">
 <div class="org-src-container">
 <pre class="src src-javascript">String.prototype.isLetter = function() {
   return /^[a-z]$/i.test(this);
@@ -2192,11 +2462,11 @@ The result “123-45-6789” is placed in ssn.
 </div>
 
 <div id="outline-container-orga333412" class="outline-2">
-<h2 id="orga333412"><span class="section-number-2">6</span> Misc</h2>
-<div class="outline-text-2" id="text-6">
+<h2 id="orga333412"><span class="section-number-2">7</span> Misc</h2>
+<div class="outline-text-2" id="text-7">
 </div><div id="outline-container-org4ab810b" class="outline-3">
-<h3 id="org4ab810b"><span class="section-number-3">6.1</span> Best way to break from nested loops in Javascript?</h3>
-<div class="outline-text-3" id="text-6-1">
+<h3 id="org4ab810b"><span class="section-number-3">7.1</span> Best way to break from nested loops in Javascript?</h3>
+<div class="outline-text-3" id="text-7-1">
 <p>
 Just like Perl,
 </p>
@@ -2225,8 +2495,8 @@ Unlike C, these labels can only be used for continue and break, as Javascript do
 </div>
 </div>
 <div id="outline-container-org24dddea" class="outline-3">
-<h3 id="org24dddea"><span class="section-number-3">6.2</span> Using toString() to detect object class</h3>
-<div class="outline-text-3" id="text-6-2">
+<h3 id="org24dddea"><span class="section-number-3">7.2</span> Using toString() to detect object class</h3>
+<div class="outline-text-3" id="text-7-2">
 <p>
 toString() can be used with every object and allows you to get its
 class. To use the Object.prototype.toString() with every object, you
@@ -2249,9 +2519,9 @@ toString.call(null);        // [object Null]
 </div>
 </div>
 
-<div id="outline-container-orgc88e93f" class="outline-3">
-<h3 id="orgc88e93f"><span class="section-number-3">6.3</span> Reflection</h3>
-<div class="outline-text-3" id="text-6-3">
+<div id="outline-container-org138ce04" class="outline-3">
+<h3 id="org138ce04"><span class="section-number-3">7.3</span> Reflection</h3>
+<div class="outline-text-3" id="text-7-3">
 <div class="org-src-container">
 <pre class="src src-javascript">function isUndefined(value) {
    return typeof value === 'undefined';
@@ -2267,11 +2537,61 @@ toString.call(null);        // [object Null]
 </div>
 </div>
 </div>
+
+<div id="outline-container-org544f8fe" class="outline-3">
+<h3 id="org544f8fe"><span class="section-number-3">7.4</span> cloning objects</h3>
+<div class="outline-text-3" id="text-7-4">
+<div class="org-src-container">
+<pre class="src src-javascript">var object = { firstname: 'Kostas', lastname: 'Bariotis' };
+var clone = JSON.parse(JSON.stringify(object));
+</pre>
+</div>
+<p>
+<a href="http://stackoverflow.com/questions/728360/how-do-i-correctly-clone-a-javascript-object/">http://stackoverflow.com/questions/728360/how-do-i-correctly-clone-a-javascript-object/</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3258f25" class="outline-3">
+<h3 id="org3258f25"><span class="section-number-3">7.5</span> return immutable object from a function</h3>
+<div class="outline-text-3" id="text-7-5">
+<div class="org-src-container">
+<pre class="src src-javascript">function imm(name, age, location, status) {
+  return Object.freeze({
+    name: name,
+    age: age,
+    location: location,
+    status: status
+  });
+}
+
+function imm1(name, age, location, status) {
+  return Object.defineProperties({}, {
+    name: {enumerable: true, value: name},
+    age: {enumerable: true, value: age},
+    location: {enumerable: true, value: location},
+    status: {enumerable: true, value: status},
+  })
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgfd69e07" class="outline-3">
+<h3 id="orgfd69e07"><span class="section-number-3">7.6</span> tell if a number is even using bitwise &amp; operator</h3>
+<div class="outline-text-3" id="text-7-6">
+<div class="org-src-container">
+<pre class="src src-javascript">return (num &amp; 1) ? "is not even" : "is even";
+</pre>
+</div>
+</div>
+</div>
 </div>
 
 <div id="outline-container-org95a5b8c" class="outline-2">
-<h2 id="org95a5b8c"><span class="section-number-2">7</span> code conventions, styles</h2>
-<div class="outline-text-2" id="text-7">
+<h2 id="org95a5b8c"><span class="section-number-2">8</span> code conventions, styles</h2>
+<div class="outline-text-2" id="text-8">
 <p>
 <a href="http://javascript.crockford.com/code.html">http://javascript.crockford.com/code.html</a>
 <a href="https://github.com/ryanmcdermott/clean-code-javascript">https://github.com/ryanmcdermott/clean-code-javascript</a>
@@ -2279,11 +2599,11 @@ toString.call(null);        // [object Null]
 </div>
 </div>
 <div id="outline-container-orge1f6a65" class="outline-2">
-<h2 id="orge1f6a65"><span class="section-number-2">8</span> this</h2>
-<div class="outline-text-2" id="text-8">
+<h2 id="orge1f6a65"><span class="section-number-2">9</span> this</h2>
+<div class="outline-text-2" id="text-9">
 </div><div id="outline-container-orga10e1b4" class="outline-3">
-<h3 id="orga10e1b4"><span class="section-number-3">8.1</span> understanding 'this'</h3>
-<div class="outline-text-3" id="text-8-1">
+<h3 id="orga10e1b4"><span class="section-number-3">9.1</span> understanding 'this'</h3>
+<div class="outline-text-3" id="text-9-1">
 <p>
 Since JavaScript uses function scope, the meaning of this is quite different than what you get in PHP,
  and causes a lot of confusion. Consider the following:
@@ -2352,11 +2672,11 @@ the first argument and apply() expects and array of arguments as it's second arg
 </div>
 
 <div id="outline-container-org5bbff75" class="outline-3">
-<h3 id="org5bbff75"><span class="section-number-3">8.2</span> this invokation</h3>
-<div class="outline-text-3" id="text-8-2">
+<h3 id="org5bbff75"><span class="section-number-3">9.2</span> this invokation</h3>
+<div class="outline-text-3" id="text-9-2">
 </div><div id="outline-container-orgf5c98d5" class="outline-4">
-<h4 id="orgf5c98d5"><span class="section-number-4">8.2.1</span> The Core Primitive</h4>
-<div class="outline-text-4" id="text-8-2-1">
+<h4 id="orgf5c98d5"><span class="section-number-4">9.2.1</span> The Core Primitive</h4>
+<div class="outline-text-4" id="text-9-2-1">
 <p>
 First, let's look at the core function invocation primitive, a Function's call method[1].
  The call method is relatively straight forward.
@@ -2386,8 +2706,8 @@ This is the core primitive of JavaScript function invocation. You can think of a
 </div>
 
 <div id="outline-container-orgf5b4c95" class="outline-4">
-<h4 id="orgf5b4c95"><span class="section-number-4">8.2.2</span> Simple Function Invocation</h4>
-<div class="outline-text-4" id="text-8-2-2">
+<h4 id="orgf5b4c95"><span class="section-number-4">9.2.2</span> Simple Function Invocation</h4>
+<div class="outline-text-4" id="text-9-2-2">
 <p>
 Obviously, invoking functions with call all the time would be pretty annoying.
  JavaScript allows us to invoke functions directly using the parens syntax (hello("world").
@@ -2431,8 +2751,8 @@ Note that this is also true about functions declared inline: (function() {})() i
 </div>
 
 <div id="outline-container-org402d1a7" class="outline-4">
-<h4 id="org402d1a7"><span class="section-number-4">8.2.3</span> Member Functions</h4>
-<div class="outline-text-4" id="text-8-2-3">
+<h4 id="org402d1a7"><span class="section-number-4">9.2.3</span> Member Functions</h4>
+<div class="outline-text-4" id="text-9-2-3">
 <p>
 The next very common way to invoke a method is as a member of an object (person.hello()). In this case, the invocation desugars:
 </p>
@@ -2482,8 +2802,8 @@ Notice that the function doesn't have a persistent notion of its 'this'. It is a
 </div>
 
 <div id="outline-container-orge18d56e" class="outline-4">
-<h4 id="orge18d56e"><span class="section-number-4">8.2.4</span> Using Function.prototype.bind</h4>
-<div class="outline-text-4" id="text-8-2-4">
+<h4 id="orge18d56e"><span class="section-number-4">9.2.4</span> Using Function.prototype.bind</h4>
+<div class="outline-text-4" id="text-9-2-4">
 <p>
 Because it can sometimes be convenient to have a reference to a function with a persistent this value,
  people have historically used a simple closure trick to convert a function into one with an unchanging this:
@@ -2562,8 +2882,8 @@ This is, of course, somewhat clunky, and TC39 (the committee that works on the n
 </div>
 
 <div id="outline-container-org029d23f" class="outline-2">
-<h2 id="org029d23f"><span class="section-number-2">9</span> achieve code privacy using the module pattern.</h2>
-<div class="outline-text-2" id="text-9">
+<h2 id="org029d23f"><span class="section-number-2">10</span> achieve code privacy using the module pattern.</h2>
+<div class="outline-text-2" id="text-10">
 <div class="org-src-container">
 <pre class="src src-javascript">var obj = (function() {
 var privateField = 42;
@@ -2589,14 +2909,14 @@ obj.privateField // Undefined
 </div>
 
 <div id="outline-container-org4cf4943" class="outline-2">
-<h2 id="org4cf4943"><span class="section-number-2">10</span> Modular programming</h2>
-<div class="outline-text-2" id="text-10">
+<h2 id="org4cf4943"><span class="section-number-2">11</span> Modular programming</h2>
+<div class="outline-text-2" id="text-11">
 </div><div id="outline-container-org50f9e7a" class="outline-3">
-<h3 id="org50f9e7a"><span class="section-number-3">10.1</span> Module patterns</h3>
-<div class="outline-text-3" id="text-10-1">
+<h3 id="org50f9e7a"><span class="section-number-3">11.1</span> Module patterns</h3>
+<div class="outline-text-3" id="text-11-1">
 </div><div id="outline-container-org60ee2e3" class="outline-4">
-<h4 id="org60ee2e3"><span class="section-number-4">10.1.1</span> IIFE</h4>
-<div class="outline-text-4" id="text-10-1-1">
+<h4 id="org60ee2e3"><span class="section-number-4">11.1.1</span> IIFE</h4>
+<div class="outline-text-4" id="text-11-1-1">
 <p>
 Well, we know that modules help and we want to use them.
 How do we implement a module in JavaScript? First of all,
@@ -2656,6 +2976,7 @@ if the global undefined object is overridden.
 In order to expose a module element outside its scope, we can simply return an object.
 The result of the function call can be assigned to an external variable, as shown here:
 </p>
+
 <div class="org-src-container">
 <pre class="src src-javascript">Export
 /** @module foo */
@@ -2693,8 +3014,8 @@ console.log( foo.qux() ); // qux
 </div>
 </div>
 <div id="outline-container-org90fd8e3" class="outline-4">
-<h4 id="org90fd8e3"><span class="section-number-4">10.1.2</span> Augmentation</h4>
-<div class="outline-text-4" id="text-10-1-2">
+<h4 id="org90fd8e3"><span class="section-number-4">11.1.2</span> Augmentation</h4>
+<div class="outline-text-4" id="text-11-1-2">
 <p>
 Sometimes we need to mix things up in a module. For example, we have a module that provides core functionality,
 and we want to plug-in extensions depending on the context of use. 
@@ -2738,8 +3059,8 @@ console.log( foo.qux ); // qux
 </div>
 </div>
 <div id="outline-container-org39c3ec9" class="outline-4">
-<h4 id="org39c3ec9"><span class="section-number-4">10.1.3</span> Module standards</h4>
-<div class="outline-text-4" id="text-10-1-3">
+<h4 id="org39c3ec9"><span class="section-number-4">11.1.3</span> Module standards</h4>
+<div class="outline-text-4" id="text-11-1-3">
 <p>
 Module standards
 </p>
@@ -2769,8 +3090,8 @@ and similar to AMD, the modules load asynchronously and the loading is configura
 </div>
 
 <div id="outline-container-org930de8c" class="outline-4">
-<h4 id="org930de8c"><span class="section-number-4">10.1.4</span> How to use asynchronous modules in the browser</h4>
-<div class="outline-text-4" id="text-10-1-4">
+<h4 id="org930de8c"><span class="section-number-4">11.1.4</span> How to use asynchronous modules in the browser</h4>
+<div class="outline-text-4" id="text-11-1-4">
 <p>
 To get a grasp on AMD, we will do a few examples. We will need script
  loader RequireJS (<a href="http://requirejs.org/docs/download.html">http://requirejs.org/docs/download.html</a>).
@@ -3008,8 +3329,8 @@ require([ "jquery" ], function ( $ ) {
 </div>
 
 <div id="outline-container-org78e1aca" class="outline-4">
-<h4 id="org78e1aca"><span class="section-number-4">10.1.5</span> How to – use synchronous modules on the server</h4>
-<div class="outline-text-4" id="text-10-1-5">
+<h4 id="org78e1aca"><span class="section-number-4">11.1.5</span> How to – use synchronous modules on the server</h4>
+<div class="outline-text-4" id="text-11-1-5">
 <p>
 The following examples require Node.js. It will take just a few minutes to install Node.js
 using the pre-built installer available at <a href="https://nodejs.org/download/">https://nodejs.org/download/</a> or 
@@ -3268,8 +3589,8 @@ Runnnig foo.js
 </div>
 
 <div id="outline-container-org8aa6937" class="outline-2">
-<h2 id="org8aa6937"><span class="section-number-2">11</span> Dynamically selecting a method/property</h2>
-<div class="outline-text-2" id="text-11">
+<h2 id="org8aa6937"><span class="section-number-2">12</span> Dynamically selecting a method/property</h2>
+<div class="outline-text-2" id="text-12">
 <div class="org-src-container">
 <pre class="src src-javascript">Use the square brackets ( [ ] ) operator.
 object['propertyName']                    // =&gt; object.propertyName
@@ -3293,11 +3614,11 @@ alert(love[useFirstName ? 'firstName' : 'lastName']); // =&gt; "Élodie"
 </div>
 
 <div id="outline-container-org33c78e6" class="outline-2">
-<h2 id="org33c78e6"><span class="section-number-2">12</span> using optional, variable and named arguments</h2>
-<div class="outline-text-2" id="text-12">
+<h2 id="org33c78e6"><span class="section-number-2">13</span> using optional, variable and named arguments</h2>
+<div class="outline-text-2" id="text-13">
 </div><div id="outline-container-orgbee52aa" class="outline-4">
-<h4 id="orgbee52aa"><span class="section-number-4">12.0.1</span> Grab arguments(however many).</h4>
-<div class="outline-text-4" id="text-12-0-1">
+<h4 id="orgbee52aa"><span class="section-number-4">13.0.1</span> Grab arguments(however many).</h4>
+<div class="outline-text-4" id="text-13-0-1">
 <p>
 The built-in arguments local variable lets you access them dynamically.
 This lets you emulate variable-length argument lists, or varargs.
@@ -3317,8 +3638,8 @@ repeat(2, 'IE6 must die!', 'So should IE7...'); // =&gt; 4 alert boxes
 </div>
 
 <div id="outline-container-orgbaf7560" class="outline-4">
-<h4 id="orgbaf7560"><span class="section-number-4">12.0.2</span> Take optional arguments with default values.</h4>
-<div class="outline-text-4" id="text-12-0-2">
+<h4 id="orgbaf7560"><span class="section-number-4">13.0.2</span> Take optional arguments with default values.</h4>
+<div class="outline-text-4" id="text-13-0-2">
 <div class="org-src-container">
 <pre class="src src-javascript">function repeat(times, rant) {
 	if (undefined === rant) {
@@ -3336,8 +3657,8 @@ repeat(3, 'So should IE7...'); // =&gt; 3 IE7 alert boxes
 </div>
 
 <div id="outline-container-org7d90ee0" class="outline-4">
-<h4 id="org7d90ee0"><span class="section-number-4">12.0.3</span> Use a literal object for pseudo-named arguments.</h4>
-<div class="outline-text-4" id="text-12-0-3">
+<h4 id="org7d90ee0"><span class="section-number-4">13.0.3</span> Use a literal object for pseudo-named arguments.</h4>
+<div class="outline-text-4" id="text-13-0-3">
 <div class="org-src-container">
 <pre class="src src-javascript">function repeat(options) {
     options = options || {};
@@ -3361,11 +3682,11 @@ repeat({ times: 2, rant: 'Flash must die!' }); // 2 Flash alert boxes
 </div>
 
 <div id="outline-container-org2c46fde" class="outline-2">
-<h2 id="org2c46fde"><span class="section-number-2">13</span> obtaining references to DOM elements.</h2>
-<div class="outline-text-2" id="text-13">
+<h2 id="org2c46fde"><span class="section-number-2">14</span> obtaining references to DOM elements.</h2>
+<div class="outline-text-2" id="text-14">
 </div><div id="outline-container-org280f4db" class="outline-3">
-<h3 id="org280f4db"><span class="section-number-3">13.1</span> Grab an element by its ID.</h3>
-<div class="outline-text-3" id="text-13-1">
+<h3 id="org280f4db"><span class="section-number-3">14.1</span> Grab an element by its ID.</h3>
+<div class="outline-text-3" id="text-14-1">
 <p>
 document.getElementById('elementId')  //plain W3C DOM
 $('#elementId')  //jquery
@@ -3374,8 +3695,8 @@ $('#elementId')  //jquery
 </div>
 
 <div id="outline-container-org4c2dcb9" class="outline-3">
-<h3 id="org4c2dcb9"><span class="section-number-3">13.2</span> Grab elements by XPath/CSS selection.</h3>
-<div class="outline-text-3" id="text-13-2">
+<h3 id="org4c2dcb9"><span class="section-number-3">14.2</span> Grab elements by XPath/CSS selection.</h3>
+<div class="outline-text-3" id="text-14-2">
 <p>
 document.querySelectorAll('selectors')
 $('selectors')
@@ -3384,16 +3705,16 @@ $('selectors')
 </div>
 
 <div id="outline-container-org553ffcb" class="outline-3">
-<h3 id="org553ffcb"><span class="section-number-3">13.3</span> Move around (DOM traversals).</h3>
+<h3 id="org553ffcb"><span class="section-number-3">14.3</span> Move around (DOM traversals).</h3>
 </div>
 </div>
 
 <div id="outline-container-org5f24e6b" class="outline-2">
-<h2 id="org5f24e6b"><span class="section-number-2">14</span> Dynamically Styling Content</h2>
-<div class="outline-text-2" id="text-14">
+<h2 id="org5f24e6b"><span class="section-number-2">15</span> Dynamically Styling Content</h2>
+<div class="outline-text-2" id="text-15">
 </div><div id="outline-container-orga77091b" class="outline-3">
-<h3 id="orga77091b"><span class="section-number-3">14.1</span> Style an element.</h3>
-<div class="outline-text-3" id="text-14-1">
+<h3 id="orga77091b"><span class="section-number-3">15.1</span> Style an element.</h3>
+<div class="outline-text-3" id="text-15-1">
 <p>
 // jQuery
 $(element).css('prop', 'value')
@@ -3409,11 +3730,11 @@ $(element).css('prop')
 </div>
 
 <div id="outline-container-org937fabc" class="outline-3">
-<h3 id="org937fabc"><span class="section-number-3">14.2</span> Changing an Element’s Contents</h3>
-<div class="outline-text-3" id="text-14-2">
+<h3 id="org937fabc"><span class="section-number-3">15.2</span> Changing an Element’s Contents</h3>
+<div class="outline-text-3" id="text-15-2">
 </div><div id="outline-container-org6565c8d" class="outline-4">
-<h4 id="org6565c8d"><span class="section-number-4">14.2.1</span> Update the entire contents of an element.</h4>
-<div class="outline-text-4" id="text-14-2-1">
+<h4 id="org6565c8d"><span class="section-number-4">15.2.1</span> Update the entire contents of an element.</h4>
+<div class="outline-text-4" id="text-15-2-1">
 <div class="org-src-container">
 <pre class="src src-javascript">// jQuery
 $(element).html('&lt;p&gt;new internal HTML&lt;/p&gt;')
@@ -3424,8 +3745,8 @@ $(element).text('The &lt;div&gt; and &lt;span&gt; elements carry no inherent sem
 </div>
 
 <div id="outline-container-orge6e9ccb" class="outline-4">
-<h4 id="orge6e9ccb"><span class="section-number-4">14.2.2</span> Inject extra contents into an element.</h4>
-<div class="outline-text-4" id="text-14-2-2">
+<h4 id="orge6e9ccb"><span class="section-number-4">15.2.2</span> Inject extra contents into an element.</h4>
+<div class="outline-text-4" id="text-15-2-2">
 <div class="org-src-container">
 <pre class="src src-javascript">// jQuery (many more methods available)
 $(element).before('&lt;p&gt;This gets before the element&lt;/p&gt;')
@@ -3440,11 +3761,11 @@ $(element).after('&lt;p&gt;This gets after the element&lt;/p&gt;')
 </div>
 
 <div id="outline-container-org7bb963f" class="outline-2">
-<h2 id="org7bb963f"><span class="section-number-2">15</span> Listening for Events (and Stopping)</h2>
-<div class="outline-text-2" id="text-15">
+<h2 id="org7bb963f"><span class="section-number-2">16</span> Listening for Events (and Stopping)</h2>
+<div class="outline-text-2" id="text-16">
 </div><div id="outline-container-orgf02d43f" class="outline-3">
-<h3 id="orgf02d43f"><span class="section-number-3">15.1</span> Listen to an event on one element.</h3>
-<div class="outline-text-3" id="text-15-1">
+<h3 id="orgf02d43f"><span class="section-number-3">16.1</span> Listen to an event on one element.</h3>
+<div class="outline-text-3" id="text-16-1">
 <div class="org-src-container">
 <pre class="src src-javascript">// jQuery
 $(elementOrSelector).bind('event', handlerFx)
@@ -3454,8 +3775,8 @@ $(elementOrSelector).bind('event', handlerFx)
 </div>
 
 <div id="outline-container-org1d794c1" class="outline-3">
-<h3 id="org1d794c1"><span class="section-number-3">15.2</span> Listen to an event on multiple elements.</h3>
-<div class="outline-text-3" id="text-15-2">
+<h3 id="org1d794c1"><span class="section-number-3">16.2</span> Listen to an event on multiple elements.</h3>
+<div class="outline-text-3" id="text-16-2">
 <p>
 // jQuery
 $(elements).bind('event', handlerFx)
@@ -3463,13 +3784,13 @@ $(elements).bind('event', handlerFx)
 </div>
 </div>
 <div id="outline-container-orga62d42c" class="outline-3">
-<h3 id="orga62d42c"><span class="section-number-3">15.3</span> Stop listening.</h3>
+<h3 id="orga62d42c"><span class="section-number-3">16.3</span> Stop listening.</h3>
 </div>
 </div>
 
 <div id="outline-container-org86e0efa" class="outline-2">
-<h2 id="org86e0efa"><span class="section-number-2">16</span> Simple Inheritance in JavaScript</h2>
-<div class="outline-text-2" id="text-16">
+<h2 id="org86e0efa"><span class="section-number-2">17</span> Simple Inheritance in JavaScript</h2>
+<div class="outline-text-2" id="text-17">
 <p>
 Grossly simplified, JavaScript clones objects to extend them, while
 PHP, Ruby, Python and Java use and extend classes.  In JavaScript you
@@ -3551,8 +3872,8 @@ is that you really don't have to due to the immense power and flexibility of the
 </div>
 
 <div id="outline-container-org1d2794f" class="outline-2">
-<h2 id="org1d2794f"><span class="section-number-2">17</span> Asynchronous JS</h2>
-<div class="outline-text-2" id="text-17">
+<h2 id="org1d2794f"><span class="section-number-2">18</span> Asynchronous JS</h2>
+<div class="outline-text-2" id="text-18">
 <p>
 <a href="http://sporto.github.io/blog/2012/12/09/callbacks-listeners-promises/">http://sporto.github.io/blog/2012/12/09/callbacks-listeners-promises/</a>
 </p>
@@ -3560,11 +3881,11 @@ is that you really don't have to due to the immense power and flexibility of the
 </div>
 
 <div id="outline-container-org9b14f94" class="outline-2">
-<h2 id="org9b14f94"><span class="section-number-2">18</span> Objects</h2>
-<div class="outline-text-2" id="text-18">
+<h2 id="org9b14f94"><span class="section-number-2">19</span> Objects</h2>
+<div class="outline-text-2" id="text-19">
 </div><div id="outline-container-org2474503" class="outline-3">
-<h3 id="org2474503"><span class="section-number-3">18.1</span> retrieval</h3>
-<div class="outline-text-3" id="text-18-1">
+<h3 id="org2474503"><span class="section-number-3">19.1</span> retrieval</h3>
+<div class="outline-text-3" id="text-19-1">
 <div class="org-src-container">
 <pre class="src src-javascript">The || operator can be used to fill in default values:
 var middle = stooge["middle-name"] || "(none)";
@@ -3582,8 +3903,8 @@ flight.equipment &amp;&amp; flight.equipment.model // undefined
 </div>
 
 <div id="outline-container-org4f8b5db" class="outline-3">
-<h3 id="org4f8b5db"><span class="section-number-3">18.2</span> Reference</h3>
-<div class="outline-text-3" id="text-18-2">
+<h3 id="org4f8b5db"><span class="section-number-3">19.2</span> Reference</h3>
+<div class="outline-text-3" id="text-19-2">
 <p>
 Objects are passed around by reference. They are never copied:
 </p>
@@ -3605,9 +3926,9 @@ a = b = c = {};
 </div>
 </div>
 
-<div id="outline-container-org138ce04" class="outline-3">
-<h3 id="org138ce04"><span class="section-number-3">18.3</span> Reflection</h3>
-<div class="outline-text-3" id="text-18-3">
+<div id="outline-container-org6c48916" class="outline-3">
+<h3 id="org6c48916"><span class="section-number-3">19.3</span> Reflection</h3>
+<div class="outline-text-3" id="text-19-3">
 <div class="org-src-container">
 <pre class="src src-javascript">typeof flight.number   // 'number'
 typeof flight.toString // 'function'
@@ -3624,8 +3945,8 @@ The hasOwnProperty method does not look at the prototype chain.
 </div>
 
 <div id="outline-container-org67520d2" class="outline-3">
-<h3 id="org67520d2"><span class="section-number-3">18.4</span> Enumeration</h3>
-<div class="outline-text-3" id="text-18-4">
+<h3 id="org67520d2"><span class="section-number-3">19.4</span> Enumeration</h3>
+<div class="outline-text-3" id="text-19-4">
 <div class="org-src-container">
 <pre class="src src-javascript">var name;
 for (name in another_stooge) {
@@ -3639,8 +3960,8 @@ for (name in another_stooge) {
 </div>
 
 <div id="outline-container-org634d9ad" class="outline-3">
-<h3 id="org634d9ad"><span class="section-number-3">18.5</span> Delete</h3>
-<div class="outline-text-3" id="text-18-5">
+<h3 id="org634d9ad"><span class="section-number-3">19.5</span> Delete</h3>
+<div class="outline-text-3" id="text-19-5">
 <p>
 The delete operator can be used to remove a property from an object. It will remove
 a property from the object if it has one. It will not touch any of the objects in the proto-
@@ -3650,8 +3971,8 @@ type linkage.
 </div>
 
 <div id="outline-container-org6361ff8" class="outline-3">
-<h3 id="org6361ff8"><span class="section-number-3">18.6</span> Traversing an object</h3>
-<div class="outline-text-3" id="text-18-6">
+<h3 id="org6361ff8"><span class="section-number-3">19.6</span> Traversing an object</h3>
+<div class="outline-text-3" id="text-19-6">
 <p>
 It is a common case when we have a key-value object (let's say options) and need to iterate it.
  There is an academic way to do this, as shown in the following code:
@@ -3716,8 +4037,8 @@ for( key in options ) {
 </div>
 
 <div id="outline-container-orgc6c144e" class="outline-3">
-<h3 id="orgc6c144e"><span class="section-number-3">18.7</span> Iterating the key-value object safely and fast</h3>
-<div class="outline-text-3" id="text-18-7">
+<h3 id="orgc6c144e"><span class="section-number-3">19.7</span> Iterating the key-value object safely and fast</h3>
+<div class="outline-text-3" id="text-19-7">
 <p>
 Let's face the truth—the structure is clumsy and requires optimization (we have to perform the hasOwnProperty 
 test on every given key). Luckily, JavaScript has the Object.keys method that retrieves all string-valued keys
@@ -3745,8 +4066,8 @@ In order to see how much we gain, you can run this online test in distinct brows
 </div>
 
 <div id="outline-container-org11e6b11" class="outline-3">
-<h3 id="org11e6b11"><span class="section-number-3">18.8</span> Enumerating an array-like object</h3>
-<div class="outline-text-3" id="text-18-8">
+<h3 id="org11e6b11"><span class="section-number-3">19.8</span> Enumerating an array-like object</h3>
+<div class="outline-text-3" id="text-19-8">
 <p>
 Objects such as arguments and nodeList (node.querySelectorAll, document.forms) look like arrays, in fact
  they are not. Similar to arrays, they have the length property and can be iterated in the for loop. 
@@ -3784,8 +4105,8 @@ It's a pretty convenient solution, but looks like a trick. In ES6, we can do the
 </div>
 
 <div id="outline-container-orgac9393d" class="outline-3">
-<h3 id="orgac9393d"><span class="section-number-3">18.9</span> magic methods in JavaScript</h3>
-<div class="outline-text-3" id="text-18-9">
+<h3 id="orgac9393d"><span class="section-number-3">19.9</span> magic methods in JavaScript</h3>
+<div class="outline-text-3" id="text-19-9">
 <p>
 In the PHP world, there are things such as overloading methods, which are also known as
  magic methods (<a href="http://www.php.net/manual/en/language.oop5.overloading.php">http://www.php.net/manual/en/language.oop5.overloading.php</a>). 
@@ -3896,8 +4217,8 @@ you can simply remove the property:
 </div>
 
 <div id="outline-container-org28fc639" class="outline-3">
-<h3 id="org28fc639"><span class="section-number-3">18.10</span> Accessors in ES6 <a id="orgf64a19d"></a></h3>
-<div class="outline-text-3" id="text-18-10">
+<h3 id="org28fc639"><span class="section-number-3">19.10</span> Accessors in ES6 <a id="orgf64a19d"></a></h3>
+<div class="outline-text-3" id="text-19-10">
 <p>
 Another way by which we can declare accessors is using the ES6 classes:
 </p>
@@ -3961,11 +4282,11 @@ console.log( Bar.baz ); // baz
 </div>
 
 <div id="outline-container-org6071742" class="outline-2">
-<h2 id="org6071742"><span class="section-number-2">19</span> Functions</h2>
-<div class="outline-text-2" id="text-19">
+<h2 id="org6071742"><span class="section-number-2">20</span> Functions</h2>
+<div class="outline-text-2" id="text-20">
 </div><div id="outline-container-org69055cb" class="outline-3">
-<h3 id="org69055cb"><span class="section-number-3">19.1</span> Function Objects</h3>
-<div class="outline-text-3" id="text-19-1">
+<h3 id="org69055cb"><span class="section-number-3">20.1</span> Function Objects</h3>
+<div class="outline-text-3" id="text-20-1">
 <p>
 Functions in JavaScript are objects. Objects are collections of name/value pairs hav-
 ing a hidden link to a prototype object. Objects produced from object literals are
@@ -3978,8 +4299,8 @@ the function’s behavior.
 </div>
 
 <div id="outline-container-org0739120" class="outline-3">
-<h3 id="org0739120"><span class="section-number-3">19.2</span> Function literal</h3>
-<div class="outline-text-3" id="text-19-2">
+<h3 id="org0739120"><span class="section-number-3">20.2</span> Function literal</h3>
+<div class="outline-text-3" id="text-20-2">
 <p>
 Function objects are created with function literals:
 </p>
@@ -3996,8 +4317,8 @@ var add = function (a, b) {
 </div>
 
 <div id="outline-container-org5b046c8" class="outline-3">
-<h3 id="org5b046c8"><span class="section-number-3">19.3</span> Invocation</h3>
-<div class="outline-text-3" id="text-19-3">
+<h3 id="org5b046c8"><span class="section-number-3">20.3</span> Invocation</h3>
+<div class="outline-text-3" id="text-20-3">
 <p>
 Invoking a function suspends the execution of the current function, passing control
 and parameters to the new function. In addition to the declared parameters, every
@@ -4011,8 +4332,8 @@ parameter this is initialized.
 </div>
 
 <div id="outline-container-orgfa918c8" class="outline-4">
-<h4 id="orgfa918c8"><span class="section-number-4">19.3.1</span> The Method Invocation Pattern</h4>
-<div class="outline-text-4" id="text-19-3-1">
+<h4 id="orgfa918c8"><span class="section-number-4">20.3.1</span> The Method Invocation Pattern</h4>
+<div class="outline-text-4" id="text-20-3-1">
 <p>
 When a function is stored as a property of an object, we call it a method. When a
 method is invoked, this is bound to that object. If an invocation expression con-
@@ -4047,8 +4368,8 @@ that get their object context from this are called public methods.
 </div>
 </div>
 <div id="outline-container-org9052e24" class="outline-4">
-<h4 id="org9052e24"><span class="section-number-4">19.3.2</span> The Function Invocation Pattern</h4>
-<div class="outline-text-4" id="text-19-3-2">
+<h4 id="org9052e24"><span class="section-number-4">20.3.2</span> The Function Invocation Pattern</h4>
+<div class="outline-text-4" id="text-20-3-2">
 <p>
 When a function is not the property of an object, then it is invoked as a function:
 </p>
@@ -4088,8 +4409,8 @@ document.writeln(myObject.getValue( ));   // 6
 </div>
 
 <div id="outline-container-orge2b944f" class="outline-4">
-<h4 id="orge2b944f"><span class="section-number-4">19.3.3</span> The Constructor Invocation Pattern</h4>
-<div class="outline-text-4" id="text-19-3-3">
+<h4 id="orge2b944f"><span class="section-number-4">20.3.3</span> The Constructor Invocation Pattern</h4>
+<div class="outline-text-4" id="text-20-3-3">
 <p>
 JavaScript is a <b>prototypal inheritance language</b>. That means that objects can inherit
 properties directly from other objects. The language is class-free.
@@ -4130,8 +4451,8 @@ runtime warning, so the capitalization convention is really important.
 </div>
 
 <div id="outline-container-orge0a385a" class="outline-4">
-<h4 id="orge0a385a"><span class="section-number-4">19.3.4</span> The Apply Invocation Pattern</h4>
-<div class="outline-text-4" id="text-19-3-4">
+<h4 id="orge0a385a"><span class="section-number-4">20.3.4</span> The Apply Invocation Pattern</h4>
+<div class="outline-text-4" id="text-20-3-4">
 <p>
 Because JavaScript is a functional object-oriented language, functions can have
 methods.
@@ -4168,8 +4489,8 @@ var status = Quo.prototype.get_status.apply(statusObject);
 </div>
 
 <div id="outline-container-orgbd50b0f" class="outline-3">
-<h3 id="orgbd50b0f"><span class="section-number-3">19.4</span> Arguments</h3>
-<div class="outline-text-3" id="text-19-4">
+<h3 id="orgbd50b0f"><span class="section-number-3">20.4</span> Arguments</h3>
+<div class="outline-text-3" id="text-20-4">
 <p>
 A bonus parameter that is available to functions when they are invoked is the
 arguments array. It gives the function access to all of the arguments that were sup-
@@ -4204,8 +4525,8 @@ arguments has a length property, but it lacks all of the array methods.
 </div>
 
 <div id="outline-container-org45fbc04" class="outline-3">
-<h3 id="org45fbc04"><span class="section-number-3">19.5</span> Return</h3>
-<div class="outline-text-3" id="text-19-5">
+<h3 id="org45fbc04"><span class="section-number-3">20.5</span> Return</h3>
+<div class="outline-text-3" id="text-20-5">
 <p>
 A function always returns a value. If the return value is not specified, then undefined
 is returned.
@@ -4216,8 +4537,8 @@ then this (the new object) is returned instead.
 </div>
 
 <div id="outline-container-orgb77438c" class="outline-3">
-<h3 id="orgb77438c"><span class="section-number-3">19.6</span> Augumenting Types</h3>
-<div class="outline-text-3" id="text-19-6">
+<h3 id="orgb77438c"><span class="section-number-3">20.6</span> Augumenting Types</h3>
+<div class="outline-text-3" id="text-20-6">
 <p>
 JavaScript allows the basic types of the language to be augmented.
 For example, by augmenting Function.prototype , we can make a method available to
@@ -4303,8 +4624,8 @@ method to screen out inherited properties, and we can look for specific types.
 </div>
 
 <div id="outline-container-orgfdf2e7e" class="outline-3">
-<h3 id="orgfdf2e7e"><span class="section-number-3">19.7</span> Curry</h3>
-<div class="outline-text-3" id="text-19-7">
+<h3 id="orgfdf2e7e"><span class="section-number-3">20.7</span> Curry</h3>
+<div class="outline-text-3" id="text-20-7">
 <p>
 Functions are values, and we can manipulate function values in interesting ways.
 Currying allows us to produce a new function by combining a function and an
@@ -4352,8 +4673,8 @@ concat method:
 </div>
 
 <div id="outline-container-org62c1dba" class="outline-3">
-<h3 id="org62c1dba"><span class="section-number-3">19.8</span> Memoization</h3>
-<div class="outline-text-3" id="text-19-8">
+<h3 id="org62c1dba"><span class="section-number-3">20.8</span> Memoization</h3>
+<div class="outline-text-3" id="text-20-8">
 <p>
 Functions can use objects to remember the results of previous operations, making it
 possible to avoid unnecessary work. This optimization is called memoization.
@@ -4467,8 +4788,8 @@ tion, we only need to supply the basic factorial formula:
 </div>
 
 <div id="outline-container-org96c7e52" class="outline-3">
-<h3 id="org96c7e52"><span class="section-number-3">19.9</span> Conditional invocation</h3>
-<div class="outline-text-3" id="text-19-9">
+<h3 id="org96c7e52"><span class="section-number-3">20.9</span> Conditional invocation</h3>
+<div class="outline-text-3" id="text-20-9">
 <div class="org-src-container">
 <pre class="src src-javascript">function fn( cb ) {
  cb &amp;&amp; cb();
@@ -4485,11 +4806,11 @@ AbstractFoo = function(){
 </div>
 
 <div id="outline-container-org484a0b9" class="outline-2">
-<h2 id="org484a0b9"><span class="section-number-2">20</span> ES6</h2>
-<div class="outline-text-2" id="text-20">
+<h2 id="org484a0b9"><span class="section-number-2">21</span> ES6</h2>
+<div class="outline-text-2" id="text-21">
 </div><div id="outline-container-org4f18ae4" class="outline-3">
-<h3 id="org4f18ae4"><span class="section-number-3">20.1</span> Block level declarations</h3>
-<div class="outline-text-3" id="text-20-1">
+<h3 id="org4f18ae4"><span class="section-number-3">21.1</span> Block level declarations</h3>
+<div class="outline-text-3" id="text-21-1">
 <p>
 use <code>let</code> keyword instead of <code>var</code>.
 use <code>const</code> instead of <code>var</code>.
@@ -4508,8 +4829,8 @@ let count = 40;
 
 
 <div id="outline-container-orgae32adc" class="outline-4">
-<h4 id="orgae32adc"><span class="section-number-4">20.1.1</span> const</h4>
-<div class="outline-text-4" id="text-20-1-1">
+<h4 id="orgae32adc"><span class="section-number-4">21.1.1</span> const</h4>
+<div class="outline-text-4" id="text-21-1-1">
 <div class="org-src-container">
 <pre class="src src-javascript">// valid constant
 const maxItems = 30;
@@ -4527,8 +4848,8 @@ maxItems = 6;
 </div>
 
 <div id="outline-container-org37b9eaf" class="outline-5">
-<h5 id="org37b9eaf"><span class="section-number-5">20.1.1.1</span> object declarations with const</h5>
-<div class="outline-text-5" id="text-20-1-1-1">
+<h5 id="org37b9eaf"><span class="section-number-5">21.1.1.1</span> object declarations with const</h5>
+<div class="outline-text-5" id="text-21-1-1-1">
 <p>
 A const declaration prevents modification of the binding, not of the value.
 That means const declarations for objects don’t prevent modification of
@@ -4555,14 +4876,14 @@ name: "Greg"
 </div>
 
 <div id="outline-container-orgaa237b1" class="outline-3">
-<h3 id="orgaa237b1"><span class="section-number-3">20.2</span> functions</h3>
+<h3 id="orgaa237b1"><span class="section-number-3">21.2</span> functions</h3>
 </div>
 <div id="outline-container-orgf7aa622" class="outline-3">
-<h3 id="orgf7aa622"><span class="section-number-3">20.3</span> default parameter</h3>
-<div class="outline-text-3" id="text-20-3">
+<h3 id="orgf7aa622"><span class="section-number-3">21.3</span> default parameter</h3>
+<div class="outline-text-3" id="text-21-3">
 </div><div id="outline-container-org27a01ed" class="outline-4">
-<h4 id="org27a01ed"><span class="section-number-4">20.3.1</span> default parameter expressions</h4>
-<div class="outline-text-4" id="text-20-3-1">
+<h4 id="org27a01ed"><span class="section-number-4">21.3.1</span> default parameter expressions</h4>
+<div class="outline-text-4" id="text-21-3-1">
 <p>
 Perhaps the most interesting feature of default parameter values is that the
 default value need not be a primitive value. You can, for example, execute a
@@ -4590,8 +4911,8 @@ declaration is first parsed.
 </div>
 
 <div id="outline-container-org1402303" class="outline-4">
-<h4 id="org1402303"><span class="section-number-4">20.3.2</span> Rest parameters</h4>
-<div class="outline-text-4" id="text-20-3-2">
+<h4 id="org1402303"><span class="section-number-4">21.3.2</span> Rest parameters</h4>
+<div class="outline-text-4" id="text-21-3-2">
 <p>
 A rest parameter is indicated by three dots ( &#x2026; ) preceding a named param-
 eter. That named parameter becomes an Array containing the rest of the
@@ -4620,8 +4941,8 @@ like this:
 </div>
 
 <div id="outline-container-orgc869d6a" class="outline-4">
-<h4 id="orgc869d6a"><span class="section-number-4">20.3.3</span> Rest Parameter Restrictions</h4>
-<div class="outline-text-4" id="text-20-3-3">
+<h4 id="orgc869d6a"><span class="section-number-4">21.3.3</span> Rest Parameter Restrictions</h4>
+<div class="outline-text-4" id="text-21-3-3">
 <p>
 Rest parameters have two restrictions. The first restriction is that there
 can be only one rest parameter, and the rest parameter must be last.
@@ -4647,11 +4968,11 @@ error:
 </div>
 
 <div id="outline-container-orgef008c9" class="outline-3">
-<h3 id="orgef008c9"><span class="section-number-3">20.4</span> sets and maps</h3>
-<div class="outline-text-3" id="text-20-4">
+<h3 id="orgef008c9"><span class="section-number-3">21.4</span> sets and maps</h3>
+<div class="outline-text-3" id="text-21-4">
 </div><div id="outline-container-orgeb320e6" class="outline-4">
-<h4 id="orgeb320e6"><span class="section-number-4">20.4.1</span> ES5 workarounds</h4>
-<div class="outline-text-4" id="text-20-4-1">
+<h4 id="orgeb320e6"><span class="section-number-4">21.4.1</span> ES5 workarounds</h4>
+<div class="outline-text-4" id="text-21-4-1">
 <div class="org-src-container">
 <pre class="src src-javascript">var set = Object.create(null);
 set.foo = true;   // checking for existence
@@ -4681,8 +5002,8 @@ because all object properties mustbe strings, you must be certain no two keys ev
 </div>
 </div>
 <div id="outline-container-org9c24530" class="outline-4">
-<h4 id="org9c24530"><span class="section-number-4">20.4.2</span> sets</h4>
-<div class="outline-text-4" id="text-20-4-2">
+<h4 id="org9c24530"><span class="section-number-4">21.4.2</span> sets</h4>
+<div class="outline-text-4" id="text-21-4-2">
 <div class="org-src-container">
 <pre class="src src-javascript">let set = new Set();
 set.add(5);
@@ -4709,6 +5030,7 @@ console.log(set.size);  // 2
 <b>You can also initialize a set using an array
 The Set constructor actually accepts any iterable object as an argument.</b>
 </p>
+
 <div class="org-src-container">
 <pre class="src src-javascript">let set = new Set([1, 2, 3, 4, 5, 5, 5, 5]);
 console.log(set.size);     // 5
@@ -4745,8 +5067,8 @@ same for a set as it is for an array.
 <div class="org-src-container">
 <pre class="src src-javascript">let set = new Set([1, 2]);
 set.forEach(function(value, key, ownerSet) {
-console.log(key + " " + value);
-console.log(ownerSet === set);
+   console.log(key + " " + value);
+   console.log(ownerSet === set);
 });
 /* output
 1 1
@@ -4771,8 +5093,8 @@ console.log(array);
 </div>
 
 <div id="outline-container-org9ff850e" class="outline-4">
-<h4 id="org9ff850e"><span class="section-number-4">20.4.3</span> weak sets</h4>
-<div class="outline-text-4" id="text-20-4-3">
+<h4 id="org9ff850e"><span class="section-number-4">21.4.3</span> weak sets</h4>
+<div class="outline-text-4" id="text-21-4-3">
 <p>
 The Set type could be called a strong set because of the way it stores object
 references. Storing an object in an instance of Set is effectively the same as
@@ -4857,8 +5179,8 @@ iterators (such as the keys() and values() methods), so there is no way to progr
 </div>
 
 <div id="outline-container-org7aad7b4" class="outline-4">
-<h4 id="org7aad7b4"><span class="section-number-4">20.4.4</span> maps</h4>
-<div class="outline-text-4" id="text-20-4-4">
+<h4 id="org7aad7b4"><span class="section-number-4">21.4.4</span> maps</h4>
+<div class="outline-text-4" id="text-21-4-4">
 <p>
 The ECMAScript 6 Map type is an ordered list of key-value pairs, where the
 key and the value can be any type.
@@ -4879,8 +5201,8 @@ console.log(map.get("year"));    // "Understanding ECMAScript 6"
 </div>
 
 <div id="outline-container-orgfb69eec" class="outline-5">
-<h5 id="orgfb69eec"><span class="section-number-5">20.4.4.1</span> Map methods</h5>
-<div class="outline-text-5" id="text-20-4-4-1">
+<h5 id="orgfb69eec"><span class="section-number-5">21.4.4.1</span> Map methods</h5>
+<div class="outline-text-5" id="text-21-4-4-1">
 <p>
 has(key)   Determines if the given key exists in the map
 delete(key)   Removes the key and its associated value from the map
@@ -4890,8 +5212,8 @@ clear()   Removes all keys and values from the map
 </div>
 
 <div id="outline-container-orge0ed475" class="outline-5">
-<h5 id="orge0ed475"><span class="section-number-5">20.4.4.2</span> Map Initialization</h5>
-<div class="outline-text-5" id="text-20-4-4-2">
+<h5 id="orge0ed475"><span class="section-number-5">21.4.4.2</span> Map Initialization</h5>
+<div class="outline-text-5" id="text-21-4-4-2">
 <div class="org-src-container">
 <pre class="src src-javascript">let map = new Map([["name", "Nicholas"], ["age", 25]]);
 console.log(map.has("name"));   // true
@@ -4907,8 +5229,8 @@ console.log(map.size);         // 2
 </div>
 
 <div id="outline-container-org44e629d" class="outline-3">
-<h3 id="org44e629d"><span class="section-number-3">20.5</span> method definition</h3>
-<div class="outline-text-3" id="text-20-5">
+<h3 id="org44e629d"><span class="section-number-3">21.5</span> method definition</h3>
+<div class="outline-text-3" id="text-21-5">
 <p>
 ES6 provides new alternative method definition syntax besides the arrow functions. The old-school method declaration may look as follows:
 </p>
@@ -4934,11 +5256,11 @@ In ES6 we can get rid of the function keyword and the colon. So the preceding co
 </div>
 
 <div id="outline-container-org04d11db" class="outline-3">
-<h3 id="org04d11db"><span class="section-number-3">20.6</span> Iterators and Generators</h3>
-<div class="outline-text-3" id="text-20-6">
+<h3 id="org04d11db"><span class="section-number-3">21.6</span> Iterators and Generators</h3>
+<div class="outline-text-3" id="text-21-6">
 </div><div id="outline-container-orgc503b27" class="outline-4">
-<h4 id="orgc503b27"><span class="section-number-4">20.6.1</span> Iterators</h4>
-<div class="outline-text-4" id="text-20-6-1">
+<h4 id="orgc503b27"><span class="section-number-4">21.6.1</span> Iterators</h4>
+<div class="outline-text-4" id="text-21-6-1">
 <p>
 Iterators are objects with a specific interface designed for iteration. All itera-
 tor objects have a next() method that returns a result object. The result
@@ -4951,8 +5273,8 @@ with each call to the next() method, it returns the next appropriate value.
 </div>
 
 <div id="outline-container-org1f68732" class="outline-4">
-<h4 id="org1f68732"><span class="section-number-4">20.6.2</span> Generators</h4>
-<div class="outline-text-4" id="text-20-6-2">
+<h4 id="org1f68732"><span class="section-number-4">21.6.2</span> Generators</h4>
+<div class="outline-text-4" id="text-21-6-2">
 <p>
 A generator is a function that returns an iterator. Generator functions are
 indicated by an asterisk character ( * ) after the function keyword and use the
@@ -4961,8 +5283,8 @@ new yield keyword.
 </div>
 
 <div id="outline-container-orga89caf2" class="outline-5">
-<h5 id="orga89caf2"><span class="section-number-5">20.6.2.1</span> Generator Function Expressions</h5>
-<div class="outline-text-5" id="text-20-6-2-1">
+<h5 id="orga89caf2"><span class="section-number-5">21.6.2.1</span> Generator Function Expressions</h5>
+<div class="outline-text-5" id="text-21-6-2-1">
 <div class="org-src-container">
 <pre class="src src-javascript">let createIterator = function *(items) {
   for (let i = 0; i &lt; items.length; i++) {
@@ -4976,8 +5298,8 @@ new yield keyword.
 
 
 <div id="outline-container-orgda9b1f7" class="outline-5">
-<h5 id="orgda9b1f7"><span class="section-number-5">20.6.2.2</span> Generator Object Methods</h5>
-<div class="outline-text-5" id="text-20-6-2-2">
+<h5 id="orgda9b1f7"><span class="section-number-5">21.6.2.2</span> Generator Object Methods</h5>
+<div class="outline-text-5" id="text-21-6-2-2">
 <p>
 Because generators are just functions, you can add them to objects, too. For
 example, you can make a generator in an ECMAScript 5–style object literal
@@ -5017,8 +5339,8 @@ let iterator = o.createIterator([1, 2, 3]);
 </div>
 
 <div id="outline-container-org8c3c602" class="outline-4">
-<h4 id="org8c3c602"><span class="section-number-4">20.6.3</span> Iterables and for-of loops</h4>
-<div class="outline-text-4" id="text-20-6-3">
+<h4 id="org8c3c602"><span class="section-number-4">21.6.3</span> Iterables and for-of loops</h4>
+<div class="outline-text-4" id="text-21-6-3">
 <p>
 Closely related to iterators, an iterable is an object with a Symbol.iterator
 property. The well-known Symbol.iterator symbol specifies a function that
@@ -5047,8 +5369,8 @@ null , or undefined .
 </div>
 
 <div id="outline-container-org4cfbcfd" class="outline-4">
-<h4 id="org4cfbcfd"><span class="section-number-4">20.6.4</span> Accessing the Default Iterator</h4>
-<div class="outline-text-4" id="text-20-6-4">
+<h4 id="org4cfbcfd"><span class="section-number-4">21.6.4</span> Accessing the Default Iterator</h4>
+<div class="outline-text-4" id="text-21-6-4">
 <p>
 You can use Symbol.iterator to access the default iterator for an object,
 </p>
@@ -5084,8 +5406,8 @@ console.log(isIterable(new WeakSet()));  // false
 </div>
 
 <div id="outline-container-org66fb7f4" class="outline-4">
-<h4 id="org66fb7f4"><span class="section-number-4">20.6.5</span> Creating Iterables</h4>
-<div class="outline-text-4" id="text-20-6-5">
+<h4 id="org66fb7f4"><span class="section-number-4">21.6.5</span> Creating Iterables</h4>
+<div class="outline-text-4" id="text-21-6-5">
 <p>
 Developer-defined objects are not iterable by default, but you can make
 them iterable by creating a Symbol.iterator property containing a generator.
@@ -5115,12 +5437,12 @@ for (let x of collection) {
 
 
 <div id="outline-container-org0d12cb5" class="outline-3">
-<h3 id="org0d12cb5"><span class="section-number-3">20.7</span> <a href="#orgf64a19d">Accessors in ES6 classes</a></h3>
+<h3 id="org0d12cb5"><span class="section-number-3">21.7</span> <a href="#orgf64a19d">Accessors in ES6 classes</a></h3>
 </div>
 </div>
 <div id="outline-container-org98e428d" class="outline-2">
-<h2 id="org98e428d"><span class="section-number-2">21</span> Is javascript Functional or object-oriented?</h2>
-<div class="outline-text-2" id="text-21">
+<h2 id="org98e428d"><span class="section-number-2">22</span> Is javascript Functional or object-oriented?</h2>
+<div class="outline-text-2" id="text-22">
 <p>
 One of JavaScript’s defining characteristics is its treatment of functions as first-class values. Like
 numbers, strings, and other kinds of objects, references to functions can be passed as arguments to
@@ -5142,11 +5464,11 @@ evaluation of mathematical functions and avoids state and mutable data.
 </div>
 
 <div id="outline-container-org0d84ab9" class="outline-2">
-<h2 id="org0d84ab9"><span class="section-number-2">22</span> DOM scripting</h2>
-<div class="outline-text-2" id="text-22">
+<h2 id="org0d84ab9"><span class="section-number-2">23</span> DOM scripting</h2>
+<div class="outline-text-2" id="text-23">
 </div><div id="outline-container-orgda0fd9d" class="outline-3">
-<h3 id="orgda0fd9d"><span class="section-number-3">22.1</span> DOM operations</h3>
-<div class="outline-text-3" id="text-22-1">
+<h3 id="orgda0fd9d"><span class="section-number-3">23.1</span> DOM operations</h3>
+<div class="outline-text-3" id="text-23-1">
 <p>
 The DOM is a tree structure that represents the document that is open in the browser. 
 Every element of the DOM is an object that is called node.
@@ -5169,8 +5491,8 @@ console.log( head.parentNode === html );  // true
 </div>
 </div>
 <div id="outline-container-org26a9cc0" class="outline-3">
-<h3 id="org26a9cc0"><span class="section-number-3">22.2</span> Traversing the DOM</h3>
-<div class="outline-text-3" id="text-22-2">
+<h3 id="org26a9cc0"><span class="section-number-3">23.2</span> Traversing the DOM</h3>
+<div class="outline-text-3" id="text-23-2">
 <p>
 Surely you know how to find an element by ID (document.getElementById)
 or by tag name (document.getElementsByTagName). You can also search
@@ -5389,8 +5711,8 @@ function reload( el ) {
 </div>
 </div>
 <div id="outline-container-orge79cf00" class="outline-3">
-<h3 id="orge79cf00"><span class="section-number-3">22.3</span> styling the DOM</h3>
-<div class="outline-text-3" id="text-22-3">
+<h3 id="orge79cf00"><span class="section-number-3">23.3</span> styling the DOM</h3>
+<div class="outline-text-3" id="text-23-3">
 <p>
 When it comes to styling, we have to go with CSS classes wherever it
 is possible. This provides better maintainability—inheritance,
@@ -5499,8 +5821,8 @@ stylesheet.insertRule( ".foo::before { color: green }", 0 );
 </div>
 
 <div id="outline-container-orgc6b83fb" class="outline-3">
-<h3 id="orgc6b83fb"><span class="section-number-3">22.4</span> Making use of attributes and properties</h3>
-<div class="outline-text-3" id="text-22-4">
+<h3 id="orgc6b83fb"><span class="section-number-3">23.4</span> Making use of attributes and properties</h3>
+<div class="outline-text-3" id="text-23-4">
 <p>
 HTML elements have attributes and we can access them from JavaScript:
 </p>
@@ -5559,8 +5881,8 @@ el.dataset.fooBarBaz = "foo-bar-baz";
 </div>
 
 <div id="outline-container-orgc1fad82" class="outline-3">
-<h3 id="orgc1fad82"><span class="section-number-3">22.5</span> Handling DOM events</h3>
-<div class="outline-text-3" id="text-22-5">
+<h3 id="orgc1fad82"><span class="section-number-3">23.5</span> Handling DOM events</h3>
+<div class="outline-text-3" id="text-23-5">
 <p>
 Plenty of events happen in the browser. It can be device events (for
 example, the device changes position or orientation), window events
@@ -5732,8 +6054,8 @@ btn.dispatchEvent( event );
 </div>
 
 <div id="outline-container-org40c5816" class="outline-2">
-<h2 id="org40c5816"><span class="section-number-2">23</span> XHR</h2>
-<div class="outline-text-2" id="text-23">
+<h2 id="org40c5816"><span class="section-number-2">24</span> XHR</h2>
+<div class="outline-text-2" id="text-24">
 <p>
 XMLHttpRequest (XHR) is the main API in JavaScript to exchange data
 between client and server. XHR was firstly presented by Microsoft in
@@ -5795,8 +6117,8 @@ Besides, the library provides a mock object that can be used to replace real XHR
 </div>
 
 <div id="outline-container-org73d100d" class="outline-2">
-<h2 id="org73d100d"><span class="section-number-2">24</span> Fetch API</h2>
-<div class="outline-text-2" id="text-24">
+<h2 id="org73d100d"><span class="section-number-2">25</span> Fetch API</h2>
+<div class="outline-text-2" id="text-25">
 <p>
 We just examined the XHR API. This looked fine 15 years ago, but now
 looks clumsy. We have to use wrappers to make it more
@@ -5893,11 +6215,11 @@ API, you can go with the Fetch polyfill
 </div>
 
 <div id="outline-container-org16c8e25" class="outline-2">
-<h2 id="org16c8e25"><span class="section-number-2">25</span> HTML5 APIS</h2>
-<div class="outline-text-2" id="text-25">
+<h2 id="org16c8e25"><span class="section-number-2">26</span> HTML5 APIS</h2>
+<div class="outline-text-2" id="text-26">
 </div><div id="outline-container-orgb1b5742" class="outline-3">
-<h3 id="orgb1b5742"><span class="section-number-3">25.1</span> Web Storage API</h3>
-<div class="outline-text-3" id="text-25-1">
+<h3 id="orgb1b5742"><span class="section-number-3">26.1</span> Web Storage API</h3>
+<div class="outline-text-3" id="text-26-1">
 <p>
 In the past, we only had the mechanism to keep the application state,
 and it was using HTTP cookies. Besides unfriendly API, cookies have a
@@ -6074,8 +6396,8 @@ action:
 </div>
 
 <div id="outline-container-org1ff33a2" class="outline-3">
-<h3 id="org1ff33a2"><span class="section-number-3">25.2</span> IndexedDB</h3>
-<div class="outline-text-3" id="text-25-2">
+<h3 id="org1ff33a2"><span class="section-number-3">26.2</span> IndexedDB</h3>
+<div class="outline-text-3" id="text-26-2">
 <p>
 Web Storage serves well when we have to store a considerably small
 amount of data (megabytes). However, if we need structured data in a
@@ -6214,8 +6536,8 @@ db.employees
 </div>
 
 <div id="outline-container-orge8775c3" class="outline-3">
-<h3 id="orge8775c3"><span class="section-number-3">25.3</span> FileSystem API</h3>
-<div class="outline-text-3" id="text-25-3">
+<h3 id="orge8775c3"><span class="section-number-3">26.3</span> FileSystem API</h3>
+<div class="outline-text-3" id="text-26-3">
 <p>
 Well, in a web application, we can store key value pairs with Web
 Storage and we can create and use IndexedDB. Something is still
@@ -6332,8 +6654,8 @@ File object as text.
 </div>
 
 <div id="outline-container-org3c3e884" class="outline-3">
-<h3 id="org3c3e884"><span class="section-number-3">25.4</span> Boosting performance with JavaScript workers</h3>
-<div class="outline-text-3" id="text-25-4">
+<h3 id="org3c3e884"><span class="section-number-3">26.4</span> Boosting performance with JavaScript workers</h3>
+<div class="outline-text-3" id="text-26-4">
 <p>
 JavaScript is a single-threaded environment. So, multiple scripts
 cannot really run simultaneously. Yes, we use setTimeout(),
@@ -6576,8 +6898,8 @@ the network
 </div>
 
 <div id="outline-container-orgccf6d85" class="outline-3">
-<h3 id="orgccf6d85"><span class="section-number-3">25.5</span> Server-Sent Events</h3>
-<div class="outline-text-3" id="text-25-5">
+<h3 id="orgccf6d85"><span class="section-number-3">26.5</span> Server-Sent Events</h3>
+<div class="outline-text-3" id="text-26-5">
 <p>
 The technology that provides a way to subscribe to server-side events
 is the Server-Sent Events (SSE) API. On the client, we register a
@@ -6679,8 +7001,8 @@ Received from the server: Object { time="Tue, 25 Aug 2015 10:32:02 +0200"}
 </div>
 
 <div id="outline-container-org90cea06" class="outline-3">
-<h3 id="org90cea06"><span class="section-number-3">25.6</span> Web Sockets</h3>
-<div class="outline-text-3" id="text-25-6">
+<h3 id="org90cea06"><span class="section-number-3">26.6</span> Web Sockets</h3>
+<div class="outline-text-3" id="text-26-6">
 <p>
 Well, with XHR/Fetch we communicate from client to server. With SSE,
 we do this in the opposite direction. But can we have communication
@@ -6885,8 +7207,8 @@ websocketd &#x2013;port=8001 my-script
 </div>
 
 <div id="outline-container-org516c95e" class="outline-2">
-<h2 id="org516c95e"><span class="section-number-2">26</span> geolocation API</h2>
-<div class="outline-text-2" id="text-26">
+<h2 id="org516c95e"><span class="section-number-2">27</span> geolocation API</h2>
+<div class="outline-text-2" id="text-27">
 <div class="org-src-container">
 <pre class="src src-javascript">$(document).ready(function(){
   navigator.geolocation.getCurrentPosition(function(position){
@@ -6900,14 +7222,14 @@ websocketd &#x2013;port=8001 my-script
 </div>
 
 <div id="outline-container-orgb403396" class="outline-2">
-<h2 id="orgb403396"><span class="section-number-2">27</span> nodejs</h2>
-<div class="outline-text-2" id="text-27">
+<h2 id="orgb403396"><span class="section-number-2">28</span> nodejs</h2>
+<div class="outline-text-2" id="text-28">
 </div><div id="outline-container-orgdb04b4c" class="outline-3">
-<h3 id="orgdb04b4c"><span class="section-number-3">27.1</span> Node Module System</h3>
-<div class="outline-text-3" id="text-27-1">
+<h3 id="orgdb04b4c"><span class="section-number-3">28.1</span> Node Module System</h3>
+<div class="outline-text-3" id="text-28-1">
 </div><div id="outline-container-orgac5f271" class="outline-4">
-<h4 id="orgac5f271"><span class="section-number-4">27.1.1</span> install node packages from packages.json file?</h4>
-<div class="outline-text-4" id="text-27-1-1">
+<h4 id="orgac5f271"><span class="section-number-4">28.1.1</span> install node packages from packages.json file?</h4>
+<div class="outline-text-4" id="text-28-1-1">
 <p>
 npm install (in package directory, no arguments)
 </p>
@@ -6919,8 +7241,8 @@ npm install (in package directory, no arguments)
 </div>
 
 <div id="outline-container-orgf70d3c9" class="outline-4">
-<h4 id="orgf70d3c9"><span class="section-number-4">27.1.2</span> Using npm search to Locate Modules in the npm Registry</h4>
-<div class="outline-text-4" id="text-27-1-2">
+<h4 id="orgf70d3c9"><span class="section-number-4">28.1.2</span> Using npm search to Locate Modules in the npm Registry</h4>
+<div class="outline-text-4" id="text-28-1-2">
 <p>
 $ npm search database 
 If you’re not interested in installing the latest version of a package, you can specify a version number. Node
@@ -6943,8 +7265,8 @@ $ npm install commander@1.0.x
 </div>
 
 <div id="outline-container-orgd96331c" class="outline-4">
-<h4 id="orgd96331c"><span class="section-number-4">27.1.3</span> package locations</h4>
-<div class="outline-text-4" id="text-27-1-3">
+<h4 id="orgd96331c"><span class="section-number-4">28.1.3</span> package locations</h4>
+<div class="outline-text-4" id="text-28-1-3">
 <p>
 $ npm ls
 to query global packages
@@ -6954,8 +7276,8 @@ $ npm ls -g
 </div>
 
 <div id="outline-container-org1ee6ee4" class="outline-4">
-<h4 id="org1ee6ee4"><span class="section-number-4">27.1.4</span> Intalling packages</h4>
-<div class="outline-text-4" id="text-27-1-4">
+<h4 id="org1ee6ee4"><span class="section-number-4">28.1.4</span> Intalling packages</h4>
+<div class="outline-text-4" id="text-28-1-4">
 <p>
 Installing the Latest Version of the commander Package Using npm
 $ npm install commander
@@ -6973,8 +7295,8 @@ $ npm install commander@1.0.x
 </div>
 
 <div id="outline-container-org813156b" class="outline-5">
-<h5 id="org813156b"><span class="section-number-5">27.1.4.1</span> Installing from URLs</h5>
-<div class="outline-text-5" id="text-27-1-4-1">
+<h5 id="org813156b"><span class="section-number-5">28.1.4.1</span> Installing from URLs</h5>
+<div class="outline-text-5" id="text-28-1-4-1">
 <p>
 Installing a Tarball from a GitHub Repository
 $ npm install <a href="https://github.com/user/project/tarball/master">https://github.com/user/project/tarball/master</a>
@@ -6983,8 +7305,8 @@ $ npm install <a href="https://github.com/user/project/tarball/master">https://g
 </div>
 </div>
 <div id="outline-container-org69c8f30" class="outline-4">
-<h4 id="org69c8f30"><span class="section-number-4">27.1.5</span> Uninstalling Packages</h4>
-<div class="outline-text-4" id="text-27-1-5">
+<h4 id="org69c8f30"><span class="section-number-4">28.1.5</span> Uninstalling Packages</h4>
+<div class="outline-text-4" id="text-28-1-5">
 <p>
 Uninstalling commander Using npm rm
 $ npm rm commander
@@ -6992,8 +7314,8 @@ $ npm rm commander
 </div>
 </div>
 <div id="outline-container-orgdddf39d" class="outline-4">
-<h4 id="orgdddf39d"><span class="section-number-4">27.1.6</span> Core Modules</h4>
-<div class="outline-text-4" id="text-27-1-6">
+<h4 id="orgdddf39d"><span class="section-number-4">28.1.6</span> Core Modules</h4>
+<div class="outline-text-4" id="text-28-1-6">
 <p>
 Core modules are modules compiled into the Node binary. They are given the highest precedence by require(),
 meaning that in the event of a module-naming conflict, the core module is loaded. For example, Node contains a core
@@ -7004,8 +7326,8 @@ modules are located in the lib directory of the Node source code.
 </div>
 </div>
 <div id="outline-container-orgd5bcef2" class="outline-4">
-<h4 id="orgd5bcef2"><span class="section-number-4">27.1.7</span> File Modules</h4>
-<div class="outline-text-4" id="text-27-1-7">
+<h4 id="orgd5bcef2"><span class="section-number-4">28.1.7</span> File Modules</h4>
+<div class="outline-text-4" id="text-28-1-7">
 <p>
 File modules are non-core modules loaded from the file system. They can be specified using absolute paths, relative
 paths, or from the node<sub>modules</sub> directory. Module names that begin with a slash (/) are treated as absolute paths.
@@ -7040,8 +7362,8 @@ require("./sub/foo");
 </div>
 
 <div id="outline-container-orgff355e7" class="outline-4">
-<h4 id="orgff355e7"><span class="section-number-4">27.1.8</span> Resolving a Module Location</h4>
-<div class="outline-text-4" id="text-27-1-8">
+<h4 id="orgff355e7"><span class="section-number-4">28.1.8</span> Resolving a Module Location</h4>
+<div class="outline-text-4" id="text-28-1-8">
 <p>
 If you are interested only in learning where a package is located, use the require.resolve() function, which uses
 the same mechanism as require() to locate modules. However, instead of actually loading the module, resolve()
@@ -7062,11 +7384,11 @@ Locating the http Module Using require.resolve()
 </div>
 </div>
 <div id="outline-container-org24d6c29" class="outline-3">
-<h3 id="org24d6c29"><span class="section-number-3">27.2</span> Node Programming model</h3>
-<div class="outline-text-3" id="text-27-2">
+<h3 id="org24d6c29"><span class="section-number-3">28.2</span> Node Programming model</h3>
+<div class="outline-text-3" id="text-28-2">
 </div><div id="outline-container-org291a837" class="outline-4">
-<h4 id="org291a837"><span class="section-number-4">27.2.1</span> Async exception handling</h4>
-<div class="outline-text-4" id="text-27-2-1">
+<h4 id="org291a837"><span class="section-number-4">28.2.1</span> Async exception handling</h4>
+<div class="outline-text-4" id="text-28-2-1">
 <p>
 processing asynchronous exceptions by setting up global event handler
 for the process's <code>uncaughtException</code> event. 
@@ -7102,11 +7424,11 @@ process.on("uncaughtException", function(error) {
 </div>
 
 <div id="outline-container-orgf16aba6" class="outline-2">
-<h2 id="orgf16aba6"><span class="section-number-2">28</span> webgl</h2>
-<div class="outline-text-2" id="text-28">
+<h2 id="orgf16aba6"><span class="section-number-2">29</span> webgl</h2>
+<div class="outline-text-2" id="text-29">
 </div><div id="outline-container-orgff51678" class="outline-3">
-<h3 id="orgff51678"><span class="section-number-3">28.1</span> blank canvas</h3>
-<div class="outline-text-3" id="text-28-1">
+<h3 id="orgff51678"><span class="section-number-3">29.1</span> blank canvas</h3>
+<div class="outline-text-3" id="text-29-1">
 <div class="org-src-container">
 <pre class="src src-html">&lt;canvas id="my-canvas" width="400" height="300"&gt;
    your browser does not support html5 cavas element.
@@ -7117,8 +7439,8 @@ process.on("uncaughtException", function(error) {
 </div>
 
 <div id="outline-container-org9a3833b" class="outline-3">
-<h3 id="org9a3833b"><span class="section-number-3">28.2</span> Getting context</h3>
-<div class="outline-text-3" id="text-28-2">
+<h3 id="org9a3833b"><span class="section-number-3">29.2</span> Getting context</h3>
+<div class="outline-text-3" id="text-29-2">
 <p>
 At the moment there are two canvas contexts: "2D" and "webgl". The
 canvas element does not really care which context we use, but it needs
@@ -7154,11 +7476,11 @@ if(gl)
 </div>
 
 <div id="outline-container-orga9bf9a5" class="outline-3">
-<h3 id="orga9bf9a5"><span class="section-number-3">28.3</span> WebGL Components</h3>
-<div class="outline-text-3" id="text-28-3">
+<h3 id="orga9bf9a5"><span class="section-number-3">29.3</span> WebGL Components</h3>
+<div class="outline-text-3" id="text-29-3">
 </div><div id="outline-container-orga5688c1" class="outline-4">
-<h4 id="orga5688c1"><span class="section-number-4">28.3.1</span> The Drawing Buffers</h4>
-<div class="outline-text-4" id="text-28-3-1">
+<h4 id="orga5688c1"><span class="section-number-4">29.3.1</span> The Drawing Buffers</h4>
+<div class="outline-text-4" id="text-29-3-1">
 <p>
 WebGL has a color buffer, depth buffer, and stencil buffer.A buffer is a block
 of memory that can be written to and read from,and temporarily stores data.
@@ -7166,8 +7488,8 @@ of memory that can be written to and read from,and temporarily stores data.
 </div>
 
 <div id="outline-container-org8ebaa04" class="outline-5">
-<h5 id="org8ebaa04"><span class="section-number-5">28.3.1.1</span> Color buffer</h5>
-<div class="outline-text-5" id="text-28-3-1-1">
+<h5 id="org8ebaa04"><span class="section-number-5">29.3.1.1</span> Color buffer</h5>
+<div class="outline-text-5" id="text-29-3-1-1">
 <p>
 the color buffer holds color information - red,green,and blue values - and 
 optionally and alpha value that stores the amount of transparency/opacity.
@@ -7176,8 +7498,8 @@ optionally and alpha value that stores the amount of transparency/opacity.
 </div>
 
 <div id="outline-container-org71696c3" class="outline-5">
-<h5 id="org71696c3"><span class="section-number-5">28.3.1.2</span> depth buffer</h5>
-<div class="outline-text-5" id="text-28-3-1-2">
+<h5 id="org71696c3"><span class="section-number-5">29.3.1.2</span> depth buffer</h5>
+<div class="outline-text-5" id="text-29-3-1-2">
 <p>
 the depth buffers stores information on a pixel's depth
 component(z-value). As the map from 3D world space to 2D screen space
@@ -7190,8 +7512,8 @@ Appendix B discusses coordinate systems.
 </div>
 
 <div id="outline-container-org53b7e84" class="outline-5">
-<h5 id="org53b7e84"><span class="section-number-5">28.3.1.3</span> stencil buffer</h5>
-<div class="outline-text-5" id="text-28-3-1-3">
+<h5 id="org53b7e84"><span class="section-number-5">29.3.1.3</span> stencil buffer</h5>
+<div class="outline-text-5" id="text-29-3-1-3">
 <p>
 The stencil buffer is used to outline areas to render or not
 render. When an area of an image is marked off to not render, it is
@@ -7207,8 +7529,8 @@ so is the depth buffer, but the stencil buffer is disabled
 </div>
 
 <div id="outline-container-org6ba1201" class="outline-4">
-<h4 id="org6ba1201"><span class="section-number-4">28.3.2</span> Primitive Types</h4>
-<div class="outline-text-4" id="text-28-3-2">
+<h4 id="org6ba1201"><span class="section-number-4">29.3.2</span> Primitive Types</h4>
+<div class="outline-text-4" id="text-29-3-2">
 <p>
 Primitives are the graphical building blocks that all models in a
 particular graphics language are built with. In WebGL, there are three
@@ -7220,8 +7542,8 @@ and TRIANGLE<sub>FAN</sub>.
 </div>
 
 <div id="outline-container-orgdebcd25" class="outline-4">
-<h4 id="orgdebcd25"><span class="section-number-4">28.3.3</span> Vertex Buffer Objects (VBOs)</h4>
-<div class="outline-text-4" id="text-28-3-3">
+<h4 id="orgdebcd25"><span class="section-number-4">29.3.3</span> Vertex Buffer Objects (VBOs)</h4>
+<div class="outline-text-4" id="text-29-3-3">
 <p>
 Each VBO stores data about a particular attribute of your vertices. This could be position, color, a normal vector,
 texture coordinates, or something else. A buffer can also have multiple attributes interleaved.
@@ -7303,10 +7625,85 @@ As the chapter progresses, we will show how to setup a shader program and pass V
 </div>
 </div>
 </div>
+<div id="outline-container-org54e575b" class="outline-2">
+<h2 id="org54e575b"><span class="section-number-2">30</span> user interaction</h2>
+<div class="outline-text-2" id="text-30">
+</div><div id="outline-container-orgb377d2e" class="outline-3">
+<h3 id="orgb377d2e"><span class="section-number-3">30.1</span> prompt</h3>
+<div class="outline-text-3" id="text-30-1">
+<p>
+prompt() method is used to display a message box which prompts for some user input.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html">&lt;html&gt;
+&lt;body&gt;
+&lt;h1&gt; Prompt Dialog Example &lt;/h1&gt;
+&lt;button onclick="myFunc()"&gt; Click &lt;/button&gt;
+&lt;p id="display"&gt;&lt;/p&gt;
+&lt;script&gt;
+    function myFunc()
+    {
+	var strUser
+
+	strUser=prompt("Enter username","BatMan");
+
+	document.getElementById("display").innerHTML="Hello "+strUser + "!";
+    }
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org7601713" class="outline-3">
+<h3 id="org7601713"><span class="section-number-3">30.2</span> confirm</h3>
+<div class="outline-text-3" id="text-30-2">
+<p>
+confirm() method is used to display a dialog box with a message, OK and CANCEL button
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+&lt;h1&gt; Confirmation Dialog Example &lt;/h1&gt;
+&lt;button onclick="myFunc()"&gt; Click &lt;/button&gt;
+&lt;p id="display"&gt;&lt;/p&gt;
+&lt;script&gt;
+    function myFunc()
+    {
+	var userResponse;
+	var message;
+	userResponse=confirm("Do you want to continue learning JavaScript?");
+
+	if(userResponse==true)
+	{
+	    message="Happy Learning!";
+	}
+	else
+	{
+	    message="Choose another programming language.";
+	}
+	document.getElementById("display").innerHTML=message;
+    }
+&lt;/script&gt;
+&lt;/body&gt;
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org9089b41" class="outline-2">
+<h2 id="org9089b41"><span class="section-number-2">31</span> references</h2>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: moh</p>
-<p class="date">Created: 2017-01-15 Sun 22:16</p>
+<p class="date">Created: 2017-01-23 Mon 23:19</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

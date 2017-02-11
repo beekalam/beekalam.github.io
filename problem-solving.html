@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-01-15 Sun 22:16 -->
+<!-- 2017-02-07 Tue 16:32 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title></title>
@@ -234,6 +234,21 @@ for the JavaScript code in this tag.
 <ul>
 <li><a href="#orge4cde50">1. How much time is too much (to put into a single problem)?</a></li>
 <li><a href="#org6b4aacc">2. technique</a></li>
+<li><a href="#org168a18a">3. general strategies</a>
+<ul>
+<li><a href="#org6996864">3.1. Exhaustive Search</a>
+<ul>
+<li><a href="#orga0fafa9">3.1.1. cons</a>
+<ul>
+<li><a href="#org6ca31d7">3.1.1.1. Mechanics of generating all possible solution candidate</a></li>
+<li><a href="#org16754d5">3.1.1.2. The more fundamental, difficulty lies in the number of solution candidates that need to be generated and processed</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org6c01eaf">3.2. Backtracking</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -312,10 +327,121 @@ later". There are two clear benefits I can see to this approach:
 </table>
 </div>
 </div>
+
+<div id="outline-container-org168a18a" class="outline-2">
+<h2 id="org168a18a"><span class="section-number-2">3</span> general strategies</h2>
+<div class="outline-text-2" id="text-3">
+</div><div id="outline-container-org6996864" class="outline-3">
+<h3 id="org6996864"><span class="section-number-3">3.1</span> Exhaustive Search</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+Theoretically, many puzzles can be solved by exhaustive search—a
+problem-solving strategy that simply tries all possible candidate
+solutions until a solution to the problem is found.  
+</p>
+
+<p>
+The most important limitation of exhaustive search is its
+inefficiency.as a rule, the number of solution candidates that need to
+be processed grows at least exponentially with the problem size,
+making the approach inappropriate not only for a human but often for a
+computer as well.
+</p>
+</div>
+
+<div id="outline-container-orga0fafa9" class="outline-4">
+<h4 id="orga0fafa9"><span class="section-number-4">3.1.1</span> cons</h4>
+<div class="outline-text-4" id="text-3-1-1">
+</div><div id="outline-container-org6ca31d7" class="outline-5">
+<h5 id="org6ca31d7"><span class="section-number-5">3.1.1.1</span> Mechanics of generating all possible solution candidate</h5>
+<div class="outline-text-5" id="text-3-1-1-1">
+<p>
+For some problems, such candidates compose a well-structured set. For
+example, candidate arrangements of the first nine positive integers in
+the cells of the 3 × 3 table (see the Magic Square example above) can
+be obtained as permutations of these numbers, for which several
+algorithms are known. There are many problems, however, where solution
+candidates do not form a set with such a regular structure.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org16754d5" class="outline-5">
+<h5 id="org16754d5"><span class="section-number-5">3.1.1.2</span> The more fundamental, difficulty lies in the number of solution candidates that need to be generated and processed</h5>
+<div class="outline-text-5" id="text-3-1-1-2">
+<p>
+Typically, the size of this set grows at least exponentially with the
+problem size. Therefore, exhaustive search is practical only for very
+small instances of such problems.
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6c01eaf" class="outline-3">
+<h3 id="org6c01eaf"><span class="section-number-3">3.2</span> Backtracking</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+Backtracking is an important improvement over the brute-force approach
+of exhaustive search. <b>It provides a convenient method for generating</b>
+<b>candidate solutions while making it possible to avoid generating</b>
+<b>unnecessary candidates.</b> The main idea is to construct solutions one
+component at a time and evaluate such partially constructed candidates
+as follows: If a partially constructed solution can be developed
+further without violating the problem’s constraints, it is done by
+taking the first remaining legitimate option for the next
+component. If there is no legitimate option for the next component, no
+alternatives for any remaining component need to be considered. In
+this case, the algorithm backtracks to replace the last component of
+the partially constructed solution with the next option for that
+component.
+</p>
+
+
+<p>
+Typically, backtracking involves undoing a number of wrong choices—the
+smaller this number, the faster the algorithm finds a
+solution. Although in the worst-case scenario a backtracking algorithm
+may end up generating all the same candidate solutions as an
+exhaustive search, this rarely happens.
+</p>
+
+<p>
+It is convenient to interpret a backtracking algorithm as a process of
+constructing a tree that mirrors decisions being made. Computer
+scientists use the term tree to describe hierarchical structures such
+as family trees and organizational charts. A tree is usually shown
+with its root (the only node without a parent) on the top and its
+leaves (nodes without children) on or closer to the bottom of the
+diagram. This is nothing but a convenient typographical convention,
+however. For a backtracking algorithm, such a tree is called a
+state-space tree. The root of a state-space tree corresponds to the
+start of a solution construction process; we consider the root to be
+on the zero level of the tree. The root’s children—on the first level
+of the tree—correspond to possible choices of the first component of a
+solution (e.g., the cell to contain 1 in the magic square
+construction). Their children—the nodes on the second level—correspond
+to possible choices of the second component of a solution, and so
+on. Leaves can be of two kinds. The first kind—called nonpromising
+nodes or dead ends—correspond to partially constructed candidates that
+cannot lead to a solution. After establishing that a particular node
+is nonpromising, a backtracking algorithm terminates the node (the
+tree is said to be pruned), undoes the decision regarding the last
+component of the candidate solution by backtracking to the parent of
+the nonpromising node, and considers another choice for that
+component. The second kind of a leaf provides a solution to the
+problem. If a single solution suffices, the algorithm stops; if other
+solutions need to be searched for, the algorithm continues searching
+for them by backtracking to the leaf’s parent.
+</p>
+</div>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: moh</p>
-<p class="date">Created: 2017-01-15 Sun 22:16</p>
+<p class="date">Created: 2017-02-07 Tue 16:32</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-01-18 Wed 18:17 -->
+<!-- 2017-02-11 Sat 12:33 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title></title>
@@ -259,6 +259,8 @@ for the JavaScript code in this tag.
 <li><a href="#orgc0087d0">1.1. put wireless card in monitor mode</a></li>
 <li><a href="#org8f4c4e5">1.2. add bridges to tor</a></li>
 <li><a href="#org94f3fb4">1.3. use privoxy to http over socks</a></li>
+<li><a href="#org192d746">1.4. network open sockets by program name?</a></li>
+<li><a href="#org6badf82">1.5. bandwidth usage by program name?</a></li>
 </ul>
 </li>
 <li><a href="#orgfff6978">2. Misc</a>
@@ -287,7 +289,7 @@ for the JavaScript code in this tag.
 </li>
 </ul>
 </li>
-<li><a href="#orge09ff1f">4. file</a>
+<li><a href="#org305b73a">4. file</a>
 <ul>
 <li><a href="#org1398dbf">4.1. convert cue disk image to iso format?</a></li>
 </ul>
@@ -296,27 +298,41 @@ for the JavaScript code in this tag.
 <li><a href="#org1ed75c8">6. wget</a>
 <ul>
 <li><a href="#org1bbc593">6.1. ignore robots.txt</a></li>
+<li><a href="#org5de3a03">6.2. get the size of file before downloading</a></li>
+<li><a href="#orgfe9bfdd">6.3. wget download with proxy</a></li>
 </ul>
 </li>
-<li><a href="#org4a44058">7. System:</a>
+<li><a href="#org7533476">7. System</a>
 <ul>
 <li><a href="#org1ced91e">7.1. Running kernel and system information:</a></li>
 <li><a href="#org1fff0d4">7.2. Hardware Informations:</a></li>
-<li><a href="#org269910f">7.3. Load, statistics and messages:</a></li>
-<li><a href="#org3579a25">7.4. Signals/Kill:</a></li>
-<li><a href="#org65f1e9c">7.5. Permissions:</a></li>
-<li><a href="#org083ec85">7.6. Create a memory file system:</a></li>
-<li><a href="#org7bcb3ed">7.7. Disk performance:</a></li>
-<li><a href="#orge92ecfe">7.8. Networking:</a></li>
-<li><a href="#org0302b08">7.9. Ports in use:</a></li>
-<li><a href="#orgd0418cb">7.10. Firewall</a></li>
-<li><a href="#orgd69f831">7.11. IP Forward for routing</a></li>
-<li><a href="#org88b76b5">7.12. DNS</a></li>
-<li><a href="#org37bac69">7.13. tar</a></li>
-<li><a href="#org9160fa6">7.14. More advanced</a></li>
-<li><a href="#org65952c3">7.15. Find</a></li>
-<li><a href="#orgb1053e6">7.16. Miscellaneous</a></li>
-<li><a href="#org81ffcf8">7.17. Add/Remove software</a></li>
+<li><a href="#org269910f">7.3. Load, statistics and messages:</a>
+<ul>
+<li><a href="#orgc98dd23">7.3.1. Users</a></li>
+<li><a href="#orge70b648">7.3.2. Kernel modules</a></li>
+<li><a href="#orgc9a4e38">7.3.3. Compile Kernel</a></li>
+</ul>
+</li>
+<li><a href="#orgd2f888f">7.4. processes</a></li>
+<li><a href="#org3579a25">7.5. Signals/Kill:</a></li>
+<li><a href="#org65f1e9c">7.6. Permissions:</a></li>
+<li><a href="#org083ec85">7.7. Create a memory file system:</a></li>
+<li><a href="#org7bcb3ed">7.8. Disk performance:</a></li>
+<li><a href="#org6165ca5">7.9. Networking</a></li>
+<li><a href="#org0302b08">7.10. Ports in use:</a></li>
+<li><a href="#orgd0418cb">7.11. Firewall</a></li>
+<li><a href="#orgd69f831">7.12. IP Forward for routing</a></li>
+<li><a href="#org88b76b5">7.13. DNS</a></li>
+<li><a href="#org37bac69">7.14. tar</a>
+<ul>
+<li><a href="#org95b96d5">7.14.1. Create</a></li>
+<li><a href="#org11b45cb">7.14.2. Extract</a></li>
+</ul>
+</li>
+<li><a href="#org9160fa6">7.15. More advanced</a></li>
+<li><a href="#org65952c3">7.16. Find</a></li>
+<li><a href="#orgb1053e6">7.17. Miscellaneous</a></li>
+<li><a href="#org81ffcf8">7.18. Add/Remove software</a></li>
 </ul>
 </li>
 <li><a href="#orge9e1ba0">8. git</a>
@@ -336,6 +352,7 @@ for the JavaScript code in this tag.
 <li><a href="#org7cf426f">10.3. make partitions</a></li>
 <li><a href="#orgb8bd826">10.4. format a partition</a></li>
 <li><a href="#org08420d7">10.5. make a swap partition</a></li>
+<li><a href="#org069ebdd">10.6. auto mount a partition</a></li>
 </ul>
 </li>
 <li><a href="#orgd736c28">11. shell</a>
@@ -347,6 +364,8 @@ for the JavaScript code in this tag.
 <li><a href="#org018364c">11.1.3. bash non-login shell initilization?</a></li>
 </ul>
 </li>
+<li><a href="#org4ba9a59">11.2. change history size?</a></li>
+<li><a href="#org5892eff">11.3. adding to path to <code>$PATH</code> envrionment variable</a></li>
 </ul>
 </li>
 <li><a href="#orgfd860a5">12. Toolchain</a>
@@ -382,7 +401,7 @@ for the JavaScript code in this tag.
 </li>
 </ul>
 </li>
-<li><a href="#orgd2f888f">14. processes</a>
+<li><a href="#orgc431ba1">14. processes</a>
 <ul>
 <li><a href="#orgb549a01">14.1. checking the priority of a process?</a></li>
 <li><a href="#org9f5d563">14.2. Setting priority on new processes</a></li>
@@ -395,7 +414,76 @@ for the JavaScript code in this tag.
 <li><a href="#orgba506bb">15.1. change ip</a></li>
 </ul>
 </li>
-<li><a href="#orgc660c13">16. references</a></li>
+<li><a href="#orgbf9182a">16. multimedia</a>
+<ul>
+<li><a href="#org2d5321a">16.1. convert avi to mp4</a></li>
+</ul>
+</li>
+<li><a href="#orgc0bdd38">17. syslog</a>
+<ul>
+<li><a href="#org50e8ef7">17.1. debugging</a></li>
+</ul>
+</li>
+<li><a href="#org75d0b63">18. number crunching</a>
+<ul>
+<li><a href="#org9d7aa92">18.1. using bc to show control the number of digits after the decimal point?</a></li>
+</ul>
+</li>
+<li><a href="#org1ca685d">19. make a ramdisk?</a></li>
+<li><a href="#org3ffd698">20. ssh</a>
+<ul>
+<li><a href="#org50f394e">20.1. ssh escape sequences</a></li>
+</ul>
+</li>
+<li><a href="#orgc660c13">21. references</a></li>
+<li><a href="#org673533b">22. curl</a>
+<ul>
+<li><a href="#org509a260">22.1. send cookie with curl?</a></li>
+</ul>
+</li>
+<li><a href="#orgfec2626">23. postgresql</a>
+<ul>
+<li><a href="#org146722b">23.1. psql</a>
+<ul>
+<li><a href="#org4b170b9">23.1.1. list all dbs and users?</a></li>
+</ul>
+</li>
+<li><a href="#org84dc154">23.2. create autoincrement column</a></li>
+</ul>
+</li>
+<li><a href="#org8b40751">24. apache</a>
+<ul>
+<li><a href="#org7e46b46">24.1. virtual hosts</a></li>
+</ul>
+</li>
+<li><a href="#orgb8c61a5">25. grub</a>
+<ul>
+<li><a href="#orgfce28fa">25.1. grub change timeout</a></li>
+<li><a href="#orgaec7ccb">25.2. Repair grub</a></li>
+</ul>
+</li>
+<li><a href="#org2c5c367">26. listing broken packages?</a></li>
+<li><a href="#orgb4cc118">27. completely remove a package with configurations</a></li>
+<li><a href="#org5baa767">28. deleting broken packages?</a></li>
+<li><a href="#org84e3e1a">29. sudo timeout</a></li>
+<li><a href="#org907733f">30. Accessing a Postgres Prompt Without Switching Accounts</a></li>
+<li><a href="#org089903f">31. How can I get the recoll package to index markdown (.md) files?</a></li>
+<li><a href="#org636f693">32. json pretty print</a></li>
+<li><a href="#orgf9546cd">33. installation</a>
+<ul>
+<li><a href="#org17375b5">33.1. other useful php modules</a></li>
+<li><a href="#org38c0f17">33.2. starting windows in safe mode from grub</a></li>
+<li><a href="#org5cfa026">33.3. making windows usb boot in ubuntu</a></li>
+<li><a href="#orgcf2c333">33.4. ubuntu installation</a></li>
+<li><a href="#org260ffd9">33.5. tell which package does a file belong to?</a></li>
+<li><a href="#orgc67a3e1">33.6. installing apt-cacher-ng</a></li>
+<li><a href="#org46d7f4e">33.7. installing postgresql in ubuntu 16.0</a></li>
+<li><a href="#orgc2217bf">33.8. php modules for connecting to postgresql</a></li>
+<li><a href="#org36a620b">33.9. phpstorm bad gateway in phpstorm</a></li>
+<li><a href="#orgedf35b0">33.10. nodjs</a></li>
+<li><a href="#org0ad91e9">33.11. nvidia binary driver screen flickering</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -446,8 +534,24 @@ and
 </p>
 </div>
 </div>
-</div>
 
+<div id="outline-container-org192d746" class="outline-3">
+<h3 id="org192d746"><span class="section-number-3">1.4</span> network open sockets by program name?</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+netstat -ltpu
+</p>
+</div>
+</div>
+<div id="outline-container-org6badf82" class="outline-3">
+<h3 id="org6badf82"><span class="section-number-3">1.5</span> bandwidth usage by program name?</h3>
+<div class="outline-text-3" id="text-1-5">
+<p>
+sudo nethogs &lt;NIC&gt;
+</p>
+</div>
+</div>
+</div>
 <div id="outline-container-orgfff6978" class="outline-2">
 <h2 id="orgfff6978"><span class="section-number-2">2</span> Misc</h2>
 <div class="outline-text-2" id="text-2">
@@ -658,15 +762,15 @@ That should cover everything you need to know about adding users to groups on Li
 </div>
 </div>
 
-<div id="outline-container-orge09ff1f" class="outline-2">
-<h2 id="orge09ff1f"><span class="section-number-2">4</span> file</h2>
+<div id="outline-container-org305b73a" class="outline-2">
+<h2 id="org305b73a"><span class="section-number-2">4</span> file</h2>
 <div class="outline-text-2" id="text-4">
 </div><div id="outline-container-org1398dbf" class="outline-3">
 <h3 id="org1398dbf"><span class="section-number-3">4.1</span> convert cue disk image to iso format?</h3>
 <div class="outline-text-3" id="text-4-1">
 <p>
 Typically a .cue file will be accompanied by a .bin file that contains the actual image data. 
-If you'd like to convert it to the .iso format, the Iso9660 Analyzer Tool (apt-get install iat) should do the trick:
+If you'd like to convert it to the .iso format, the Iso9660 Analyzer Tool (-get install iat) should do the trick:
 </p>
 
 <p>
@@ -700,25 +804,96 @@ sudo apt-get install libapache2-mod-php7.0
 </p>
 </div>
 </div>
+
+<div id="outline-container-org5de3a03" class="outline-3">
+<h3 id="org5de3a03"><span class="section-number-3">6.2</span> get the size of file before downloading</h3>
+<div class="outline-text-3" id="text-6-2">
+<p>
+wget &#x2013;spider &lt;link&gt;
+curl &#x2013;head &lt;link&gt;
+</p>
+</div>
+</div>
+<div id="outline-container-orgfe9bfdd" class="outline-3">
+<h3 id="orgfe9bfdd"><span class="section-number-3">6.3</span> wget download with proxy</h3>
+<div class="outline-text-3" id="text-6-3">
+<p>
+Via ~/.wgetrc file:
+</p>
+
+<p>
+use<sub>proxy</sub>=yes
+http<sub>proxy</sub>=127.0.0.1:8080
+or via -e options placed after the URL:
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">$ wget ... -e use_proxy=yes -e http_proxy=127.0.0.1:8080 ...
+</pre>
 </div>
 
-<div id="outline-container-org4a44058" class="outline-2">
-<h2 id="org4a44058"><span class="section-number-2">7</span> System:</h2>
+<p>
+<b>https proxy</b>
+note you also need to set <b>https<sub>proxy</sub></b> if url is HTTPS
+</p>
+
+<p>
+<b>with authentication</b>
+</p>
+
+<p>
+http<sub>proxy</sub>=<a href="http://username:password@proxy_host%3Aproxy_port/">http://username:password@proxy_host:proxy_port/</a>
+</p>
+
+<p>
+<a href="http://stackoverflow.com/questions/11211705/setting-proxy-in-wget">http://stackoverflow.com/questions/11211705/setting-proxy-in-wget</a>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org7533476" class="outline-2">
+<h2 id="org7533476"><span class="section-number-2">7</span> System</h2>
 <div class="outline-text-2" id="text-7">
 </div><div id="outline-container-org1ced91e" class="outline-3">
 <h3 id="org1ced91e"><span class="section-number-3">7.1</span> Running kernel and system information:</h3>
 <div class="outline-text-3" id="text-7-1">
-<p>
+<div class="org-src-container">
+<pre class="src src-shell">$ uname -a                                  # Get the kernel version (and BSD version)
+$ lsb_release -a                         $ Full release info of any LSB distribution
+$ cat /etc/debian_version         # Get Debian version
 Use /etc/DISTR-release with DISTR= lsb (Ubuntu) /etc/issue.
-</p>
+$ uptime                                      # Show how long the system has been running + load
+$ hostname                                # system's host name
+$ hostname -i                            # Display the IP address of the host.
+$ man hier                                 # Description of the file system hierarchy
+$ last reboot                              # Show system reboot history
+</pre>
 </div>
 </div>
-
+</div>
 <div id="outline-container-org1fff0d4" class="outline-3">
 <h3 id="org1fff0d4"><span class="section-number-3">7.2</span> Hardware Informations:</h3>
 <div class="outline-text-3" id="text-7-2">
 <p>
 Kernel detected hardware:
+  $+begin<sub>src</sub> shell
+  $ dmesg                               # Detected hardware and boot messages
+  $ lsdev                                  # information about installed hardware
+  $ dd if=/dev/mem bs=1k skip=768 count=256 2&gt;/dev/null | strings -n 8 # Read BIOS
+</p>
+
+<p>
+$ cat /proc/cpuinfo                               # CPU model
+$ cat /proc/meminfo                             # Hardware memory
+$ grep MemTotal /proc/meminfo       # Display the physical memory
+$ watch -n1 'cat /proc/interrupts'        # Watch changeable interrupts continuously
+$ free -m                                                # Used and free memory (-m for MB)
+$ cat /proc/devices                              # Configured devices
+$ lspci -tv                       # Show PCI devices
+$ lsusb -tv                      # Show USB devices
+$ lshal                            # Show a list of all devices with their properties
+$ dmidecode                # Show DMI/SMBIOS: hw info from the BIOS
+#+end<sub>src</sub>
 </p>
 </div>
 </div>
@@ -727,35 +902,92 @@ Kernel detected hardware:
 <h3 id="org269910f"><span class="section-number-3">7.3</span> Load, statistics and messages:</h3>
 <div class="outline-text-3" id="text-7-3">
 <p>
-The following commands are useful to find out what is going on on the system.
+The following commands are useful to find out what is going on on the
+system.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">$ top                                                   # display and update the top cpu processes
+$ mpstat 1                                         # display processors related statistics
+$ vmstat 2                                         # display virtual memory statistics
+$ iostat 2                                           # display I/O statistics (2 s intervals)
+$ systat -vmstat 1                            # BSD summary of system statistics (1 s intervals)
+$ systat -tcp 1                                  # BSD tcp connections (try also -ip)
+$ systat -netstat 1                           # BSD active network connections
+$ systat -ifstat 1                               # BSD network traffic through active interfaces
+$ systat -iostat 1                              # BSD CPU and and disk throughput
+$ tail -n 500 /var/log/messages    # Last 500 kernel/syslog messages
+$ tail /var/log/warn                          # System warnings messages see syslog.conf
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgc98dd23" class="outline-4">
+<h4 id="orgc98dd23"><span class="section-number-4">7.3.1</span> Users</h4>
+<div class="outline-text-4" id="text-7-3-1">
+<div class="org-src-container">
+<pre class="src src-shell"># id                                                                     # Show the active user id with login and group
+# last                                                                  # Show last logins on the system
+# who                                                                 # Show who is logged on the system
+# groupadd admin                                           # Add group "admin" and user colin
+# useradd -c "Colin Barschel" -g admin -m colin
+# usermod -a -G                                               # Add existing user to group (Debian)
+# userdel colin                                                  # Delete user colin 
+# pw groupmod admin -m newmembe r      # Add a new member to a group
+# pw useradd colin -c "Colin Barschel" -g admin -m -s /bin/tcsh
+# pw userdel colin; pw groupdel admin
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge70b648" class="outline-4">
+<h4 id="orge70b648"><span class="section-number-4">7.3.2</span> Kernel modules</h4>
+<div class="outline-text-4" id="text-7-3-2">
+<div class="org-src-container">
+<pre class="src src-shell"># lsmod                                      # List all modules loaded in the kernel
+# modprobe isdn                      # To load a module (here isdn)
+</pre>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgc9a4e38" class="outline-4">
+<h4 id="orgc9a4e38"><span class="section-number-4">7.3.3</span> Compile Kernel</h4>
+<div class="outline-text-4" id="text-7-3-3">
+<div class="org-src-container">
+<pre class="src src-shell"># cd /usr/src/linux
+# make mrproper                      # Clean everything, including config files
+# make oldconfig                      # Reuse the old .config if existent
+# make menuconfig                 # or xconfig (Qt) or gconfig (GTK)
+# make                                       # Create a compressed kernel image
+# make modules                      # Compile the modules
+# make modules_install         # Install the modules
+# make install                           # Install the kernel
+# reboot
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd2f888f" class="outline-3">
+<h3 id="orgd2f888f"><span class="section-number-3">7.4</span> processes</h3>
+<div class="outline-text-3" id="text-7-4">
+<p>
+Listing and PIDs
 </p>
 
 <p>
-Users:
-</p>
-
-<p>
-Kernel modules:
-</p>
-
-<p>
-Compile Kernel
-</p>
-
-<p>
-Repair grub:
-So you broke grub? Boot from a live cd, [find your linux partition under /dev and use fdisk to
- find the linux partion] mount the linux partition, add /proc and /dev and use grub-install /dev/xyz. Suppose linux lies on /dev/sda4:
-</p>
-
-<p>
-Listing and PIDs:
 Each process has a unique number, the PID. A list of all running process is retrieved with ps.
 </p>
 
 <p>
 However more typical usage is with a pipe or with pgrep:
 </p>
+
 
 <p>
 586  ??  Is     0:01.48 /usr/sbin/cron -s
@@ -764,8 +996,8 @@ However more typical usage is with a pipe or with pgrep:
 </div>
 
 <div id="outline-container-org3579a25" class="outline-3">
-<h3 id="org3579a25"><span class="section-number-3">7.4</span> Signals/Kill:</h3>
-<div class="outline-text-3" id="text-7-4">
+<h3 id="org3579a25"><span class="section-number-3">7.5</span> Signals/Kill:</h3>
+<div class="outline-text-3" id="text-7-5">
 <p>
 Terminate or send a signal with kill or killall.
 </p>
@@ -782,12 +1014,13 @@ Important signals are:
 </div>
 
 <div id="outline-container-org65f1e9c" class="outline-3">
-<h3 id="org65f1e9c"><span class="section-number-3">7.5</span> Permissions:</h3>
-<div class="outline-text-3" id="text-7-5">
+<h3 id="org65f1e9c"><span class="section-number-3">7.6</span> Permissions:</h3>
+<div class="outline-text-3" id="text-7-6">
 <p>
-Change permission and ownership with chmod and chown. 
-The default umask can be changed for all users in /etc/profile for Linux.
- The default umask is usually 022. The umask is subtracted from 777, thus umask 022 results in a permission 0f 755.
+Change permission and ownership with chmod and chown.  The default
+umask can be changed for all users in /etc/profile for Linux.  The
+default umask is usually 022. The umask is subtracted from 777, thus
+umask 022 results in a permission 0f 755.
 </p>
 
 <p>
@@ -877,30 +1110,31 @@ Mount an image:
 </div>
 
 <div id="outline-container-org083ec85" class="outline-3">
-<h3 id="org083ec85"><span class="section-number-3">7.6</span> Create a memory file system:</h3>
-<div class="outline-text-3" id="text-7-6">
+<h3 id="org083ec85"><span class="section-number-3">7.7</span> Create a memory file system:</h3>
+<div class="outline-text-3" id="text-7-7">
 <p>
-A memory based file system is very fast for heavy IO application. How to create a 64 MB partition mounted on /memdisk:
+A memory based file system is very fast for heavy IO application. How
+to create a 64 MB partition mounted on /memdisk:
 </p>
 </div>
 </div>
 
 <div id="outline-container-org7bcb3ed" class="outline-3">
-<h3 id="org7bcb3ed"><span class="section-number-3">7.7</span> Disk performance:</h3>
-<div class="outline-text-3" id="text-7-7">
+<h3 id="org7bcb3ed"><span class="section-number-3">7.8</span> Disk performance:</h3>
+<div class="outline-text-3" id="text-7-8">
 <p>
 Read and write a 1 GB file on partition ad4s3c (/home)
 </p>
 </div>
 </div>
 
-<div id="outline-container-orge92ecfe" class="outline-3">
-<h3 id="orge92ecfe"><span class="section-number-3">7.8</span> Networking:</h3>
+<div id="outline-container-org6165ca5" class="outline-3">
+<h3 id="org6165ca5"><span class="section-number-3">7.9</span> Networking</h3>
 </div>
 
 <div id="outline-container-org0302b08" class="outline-3">
-<h3 id="org0302b08"><span class="section-number-3">7.9</span> Ports in use:</h3>
-<div class="outline-text-3" id="text-7-9">
+<h3 id="org0302b08"><span class="section-number-3">7.10</span> Ports in use:</h3>
+<div class="outline-text-3" id="text-7-10">
 <p>
 Listening open ports:
 </p>
@@ -908,8 +1142,8 @@ Listening open ports:
 </div>
 
 <div id="outline-container-orgd0418cb" class="outline-3">
-<h3 id="orgd0418cb"><span class="section-number-3">7.10</span> Firewall</h3>
-<div class="outline-text-3" id="text-7-10">
+<h3 id="orgd0418cb"><span class="section-number-3">7.11</span> Firewall</h3>
+<div class="outline-text-3" id="text-7-11">
 <p>
 Check if a firewall is running (typical configuration only):
 </p>
@@ -917,8 +1151,8 @@ Check if a firewall is running (typical configuration only):
 </div>
 
 <div id="outline-container-orgd69f831" class="outline-3">
-<h3 id="orgd69f831"><span class="section-number-3">7.11</span> IP Forward for routing</h3>
-<div class="outline-text-3" id="text-7-11">
+<h3 id="orgd69f831"><span class="section-number-3">7.12</span> IP Forward for routing</h3>
+<div class="outline-text-3" id="text-7-12">
 <p>
 Check and then enable IP forward with :
 </p>
@@ -943,8 +1177,8 @@ Network Address Translation
 </div>
 
 <div id="outline-container-org88b76b5" class="outline-3">
-<h3 id="org88b76b5"><span class="section-number-3">7.12</span> DNS</h3>
-<div class="outline-text-3" id="text-7-12">
+<h3 id="org88b76b5"><span class="section-number-3">7.13</span> DNS</h3>
+<div class="outline-text-3" id="text-7-13">
 <p>
 The DNS entries are valid for all interfaces and are stored in /etc/resolv.conf.
  The domain to which the host belongs is also stored in this file. A minimal configuration is:
@@ -969,33 +1203,68 @@ The lease with the full information is stored in:
 </div>
 
 <div id="outline-container-org37bac69" class="outline-3">
-<h3 id="org37bac69"><span class="section-number-3">7.13</span> tar</h3>
-<div class="outline-text-3" id="text-7-13">
+<h3 id="org37bac69"><span class="section-number-3">7.14</span> tar</h3>
+<div class="outline-text-3" id="text-7-14">
 <p>
-The command tar (tape archive) creates and extracts archives of file and directories. The archive .tar is uncompressed, a compressed archive has the extension .tgz or .tar.gz (zip) or .tbz (bzip2). Do not use absolute path when creating an archive, you probably want to unpack it somewhere else. Some typical commands are:
+The command tar (tape archive) creates and extracts archives of file
+and directories. The archive .tar is uncompressed, a compressed
+archive has the extension .tgz or .tar.gz (zip) or .tbz (bzip2). Do
+not use absolute path when creating an archive, you probably want to
+unpack it somewhere else. Some typical commands are:
 </p>
+</div>
 
+<div id="outline-container-org95b96d5" class="outline-4">
+<h4 id="org95b96d5"><span class="section-number-4">7.14.1</span> Create</h4>
+<div class="outline-text-4" id="text-7-14-1">
 <p>
-Create
+Only include one (or two) directories from a tree, but keep the
+relative structure. For example archive /usr/local/etc and
+<i>usr/local/www and the first directory in the archive should be
+local</i>.
 </p>
+<div class="org-src-container">
+<pre class="src src-shell"># tar -C /usr -czf local.tgz local/etc local/www
+# tar -C /usr -xzf local.tgz      # To untar the local dir into /usr
+# cd /usr; tar -xzf local.tgz     # Is the same as above
+</pre>
+</div>
+</div>
+</div>
 
-<p>
-Only include one (or two) directories from a tree, but keep the relative structure. For example archive <i>usr/local/etc and /usr/local/www and the first directory in the archive should be local</i>.
-</p>
-
-<p>
-Extract
-</p>
+<div id="outline-container-org11b45cb" class="outline-4">
+<h4 id="org11b45cb"><span class="section-number-4">7.14.2</span> Extract</h4>
+<div class="outline-text-4" id="text-7-14-2">
+<div class="org-src-container">
+<pre class="src src-shell"># tar -tzf home.tgz               # look inside the archive without extracting (list)
+# tar -xf home.tar                # extract the archive here (x for extract)
+# tar -xzf home.tgz             # same with zip compression (-xjf for bzip2 compression)
+				# remove leading path gallery2 and extract into gallery
+# tar --strip-components 1 -zxvf gallery2.tgz -C gallery/
+# tar -xjf home.tbz home/colin/file.txt    # Restore a single file
+</pre>
+</div>
+</div>
 </div>
 </div>
 
 <div id="outline-container-org9160fa6" class="outline-3">
-<h3 id="org9160fa6"><span class="section-number-3">7.14</span> More advanced</h3>
+<h3 id="org9160fa6"><span class="section-number-3">7.15</span> More advanced</h3>
+<div class="outline-text-3" id="text-7-15">
+<div class="org-src-container">
+<pre class="src src-shell"># tar c dir/ | gzip | ssh user@remote 'dd of=dir.tgz' # arch dir/ and store remotely.
+# tar cvf - `find . -print` &gt; backup.tar                 # arch the current directory.
+# tar -cf - -C /etc . | tar xpf - -C /backup/etc      # Copy directories
+# tar -cf - -C /etc . | ssh user@remote tar xpf - -C /backup/etc      # Remote copy.
+# tar -czf home.tgz --exclude '*.o' --exclude 'tmp/' home/
+</pre>
+</div>
+</div>
 </div>
 
 <div id="outline-container-org65952c3" class="outline-3">
-<h3 id="org65952c3"><span class="section-number-3">7.15</span> Find</h3>
-<div class="outline-text-3" id="text-7-15">
+<h3 id="org65952c3"><span class="section-number-3">7.16</span> Find</h3>
+<div class="outline-text-3" id="text-7-16">
 <p>
 Some important options:
 -x (on BSD) -xdev (on Linux)       Stay on the same file system (dev in fstab).
@@ -1005,22 +1274,71 @@ Some important options:
 -size n       n is +-n (k M G T P)
 -cmin n       File's status was last changed n minutes ago.
 </p>
+<div class="org-src-container">
+<pre class="src src-shell"># find . -type f ! -perm -444        # Find files not readable by all
+# find . -type d ! -perm -111        # Find dirs not accessible by all
+# find /home/user/ -cmin 10 -print   # Files created or modified in the last 10 min.
+# find . -name '*.[ch]' | xargs grep -E 'expr' # Search 'expr' in this dir and below.
+# find / -name "*.core" | xargs rm   # Find core dumps and delete them (also try core.*)
+# find / -name "*.core" -print -exec rm {} \;  # Other syntax
+# Find images and create an archive, iname is not case sensitive. -r for append
+# find . \( -iname "*.png" -o -iname "*.jpg" \) -print -exec tar -rf images.tar {} \;
+# find . -type f -name "*.txt" ! -name README.txt -print  # Exclude README.txt files
+# find /var/ -size +10M -exec ls -lh {} \;     # Find large files &gt; 10 MB
+# find /var/ -size +10M -ls           # This is simpler
+# find . -size +10M -size -50M -print
+# find /usr/ports/ -name work -type d -print -exec rm -rf {} \;  # Clean the ports
+# Find files with SUID; those file are vulnerable and must be kept secure
+# find / -type f -user root -perm -4000 -exec ls -l {} \;
+# find /home/ -name "*~"   #find tilde files (backup files)
+</pre>
+</div>
 </div>
 </div>
 
 <div id="outline-container-orgb1053e6" class="outline-3">
-<h3 id="orgb1053e6"><span class="section-number-3">7.16</span> Miscellaneous</h3>
+<h3 id="orgb1053e6"><span class="section-number-3">7.17</span> Miscellaneous</h3>
+<div class="outline-text-3" id="text-7-17">
+<div class="org-src-container">
+<pre class="src src-shell"># which command                      # Show full path name of command
+# time command                         # See how long a command takes to execute
+# time cat                                     # Use time as stopwatch. Ctrl-c to stop
+# set | grep $USER                    # List the current environment
+# cal -3                                         # Display a three month calendar
+# date [-u|--utc|--universal] [MMDDhhmm[[CC]YY][.ss]]
+# date 10022155                       # Set date and time
+# whatis grep                              # Display a short info on the command or word
+# whereis java                            # Search path and standard directories for word
+# setenv varname value           # Set env. variable varname to value (csh/tcsh)
+# export varname="value"        # set env. variable varname to value (sh/ksh/bash)
+# pwd                                # Print working directory
+# mkdir -p /path/to/dir                 # no error if existing, make parent dirs as needed
+# mkdir -p project/{bin,src,obj,doc/{html,man,pdf},debug/some/more/dirs}
+# rmdir /path/to/dir                     # Remove directory
+# rm -rf /path/to/dir                     # Remove directory and its content (force)
+# rm -- -badchar.txt                    # Remove file whitch starts with a dash (-)
+# cp -la /dir1 /dir2                       # Archive and hard link files instead of copy
+# cp -lpR /dir1 /dir2                    #
+# cp unixtoolbox.xhtml{,.bak}  # Short way to copy the file with a new extension
+# mv /dir1 /dir2                           # Rename a directory
+# ls -1                                           # list one file per line
+# history | tail -50                       # Display the last 50 used commands
+# cd -                                            # cd to previous ($OLDPWD) directory
+</pre>
+</div>
+</div>
 </div>
 
 <div id="outline-container-org81ffcf8" class="outline-3">
-<h3 id="org81ffcf8"><span class="section-number-3">7.17</span> Add/Remove software</h3>
-<div class="outline-text-3" id="text-7-17">
+<h3 id="org81ffcf8"><span class="section-number-3">7.18</span> Add/Remove software</h3>
+<div class="outline-text-3" id="text-7-18">
 <p>
 Debian/Ubuntu/Mint
 </p>
 </div>
 </div>
 </div>
+
 
 <div id="outline-container-orge9e1ba0" class="outline-2">
 <h2 id="orge9e1ba0"><span class="section-number-2">8</span> git</h2>
@@ -1114,7 +1432,23 @@ mkswap /dev/&lt;yyy&gt;
 </p>
 </div>
 </div>
+<div id="outline-container-org069ebdd" class="outline-3">
+<h3 id="org069ebdd"><span class="section-number-3">10.6</span> auto mount a partition</h3>
+<div class="outline-text-3" id="text-10-6">
+<p>
+Once a file system is actually mounted , an entry for it is made
+by the operating system in the <b>/etc/mtab</b> file.
+Automatic mounts are handled by configuration the <b>/etc/fstab</b> file.
+</p>
+
+<p>
+An entry in an fstab file contains several fields, each
+separated by a space or tab.
+</p>
 </div>
+</div>
+</div>
+
 <div id="outline-container-orgd736c28" class="outline-2">
 <h2 id="orgd736c28"><span class="section-number-2">11</span> shell</h2>
 <div class="outline-text-2" id="text-11">
@@ -1191,6 +1525,91 @@ when it is an interactive nonlogin shell, by steps equivalent to this:
 <pre class="src src-shell">test -r $HOME/.bashrc &amp;&amp; . $HOME/.bashrc            Try to read $HOME/.bashrc
 </pre>
 </div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org4ba9a59" class="outline-3">
+<h3 id="org4ba9a59"><span class="section-number-3">11.2</span> change history size?</h3>
+<div class="outline-text-3" id="text-11-2">
+<p>
+for ubuntu change <code>/.bashrc file variables ~HISTSIZE</code> &amp; <code>HISTFILESIZE</code>
+</p>
+</div>
+</div>
+<div id="outline-container-org5892eff" class="outline-3">
+<h3 id="org5892eff"><span class="section-number-3">11.3</span> adding to path to <code>$PATH</code> envrionment variable</h3>
+<div class="outline-text-3" id="text-11-3">
+<p>
+append to <b>/etc/environment</b>
+</p>
+<ul class="org-ul">
+<li>works for non-login shells but not for login-shells</li>
+</ul>
+
+<p>
+append to <b>/etc/profile</b>
+</p>
+<ul class="org-ul">
+<li>works for login-shells only</li>
+</ul>
+
+<p>
+append to <b>~/.bashrc</b>
+</p>
+<ul class="org-ul">
+<li>works only for none-login shells</li>
+</ul>
+
+<p>
+create file at <b>/etc/profile.d</b> and add a file with <b>sh</b> (important) extension eg:
+</p>
+
+<p>
+PATH=/opt/anaconda3/bin:$PATH
+</p>
+
+<ul class="org-ul">
+<li>this probably only works in non-login shells</li>
+</ul>
+
+<p>
+change default path for users at <b>/etc/login.defs</b>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">ENV_SUPATH      PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin    # for super users
+ENV_PATH        PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
+</pre>
+</div>
+
+<p>
+create <b>~/.bash<sub>profile</sub></b> and call <b>~/.bashrc</b> file like this
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">[[ -r ~/.bashrc ]] &amp;&amp; . ~/.bashrc
+</pre>
+</div>
+
+
+<p>
+<b>order of bash login init files</b>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">/bin/bash
+       The bash executable
+/etc/profile
+       The systemwide initialization file, executed for login shells
+~/.bash_profile
+       The personal initialization file, executed for login shells.Would be used only once, at login.
+~/.bashrc
+       The individual per-interactive-shell startup file.
+~/.bash_logout
+       The individual login shell cleanup file, executed when a login shell exits.
+~/.inputrc
+       Individual readline initialization file.
+</pre>
 </div>
 </div>
 </div>
@@ -1389,8 +1808,8 @@ With tr, use the squeeze repeat option:
 </div>
 </div>
 
-<div id="outline-container-orgd2f888f" class="outline-2">
-<h2 id="orgd2f888f"><span class="section-number-2">14</span> processes</h2>
+<div id="outline-container-orgc431ba1" class="outline-2">
+<h2 id="orgc431ba1"><span class="section-number-2">14</span> processes</h2>
 <div class="outline-text-2" id="text-14">
 </div><div id="outline-container-orgb549a01" class="outline-3">
 <h3 id="orgb549a01"><span class="section-number-3">14.1</span> checking the priority of a process?</h3>
@@ -1477,21 +1896,695 @@ yet another way
 </div>
 </div>
 
-<div id="outline-container-orgc660c13" class="outline-2">
-<h2 id="orgc660c13"><span class="section-number-2">16</span> references</h2>
+<div id="outline-container-orgbf9182a" class="outline-2">
+<h2 id="orgbf9182a"><span class="section-number-2">16</span> multimedia</h2>
 <div class="outline-text-2" id="text-16">
+</div><div id="outline-container-org2d5321a" class="outline-3">
+<h3 id="org2d5321a"><span class="section-number-3">16.1</span> convert avi to mp4</h3>
+<div class="outline-text-3" id="text-16-1">
+<div class="org-src-container">
+<pre class="src src-shell">avconv -i test.avi -c:v libx264 -c:a copy outputfile.mp4
+</pre>
+</div>
+
+<p>
+use the <code>-threads</code> switch to control the number of threads
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">avconv -i test.avi -c:v libx264 -c:a copy -threads 1  outputfile.mp4
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc0bdd38" class="outline-2">
+<h2 id="orgc0bdd38"><span class="section-number-2">17</span> syslog</h2>
+<div class="outline-text-2" id="text-17">
+</div><div id="outline-container-org50e8ef7" class="outline-3">
+<h3 id="org50e8ef7"><span class="section-number-3">17.1</span> debugging</h3>
+<div class="outline-text-3" id="text-17-1">
+<ul class="org-ul">
+<li>run the script every 1 minute</li>
+<li>make sure that the cron logs to syslog(or rsyslog). In ubuntu it's disabled by default
+and it's located at <b>/etc/rsyslog</b></li>
+</ul>
+
+<p>
+The easiest way is simply to send all STDOUT and STDERR to Syslog
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">* * * * * echo "test message" 2&gt;&amp;1 |logger
+</pre>
+</div>
+
+<p>
+If you want to debug your bash script just add debug mode to the beginning of your script
+</p>
+
+<p>
+set -x
+</p>
+
+<p>
+To ensure your jobs are executed tail on /var/log/cron
+</p>
+
+<p>
+tail -f /var/log/cron
+</p>
+
+<p>
+To see all the outputs in Syslog
+</p>
+
+<p>
+tail -f /var/log/messages
+</p>
+
+<p>
+<a href="http://www.emind.co/how-to/how-to-debug-cron-jobs/">http://www.emind.co/how-to/how-to-debug-cron-jobs/</a>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org75d0b63" class="outline-2">
+<h2 id="org75d0b63"><span class="section-number-2">18</span> number crunching</h2>
+<div class="outline-text-2" id="text-18">
+</div><div id="outline-container-org9d7aa92" class="outline-3">
+<h3 id="org9d7aa92"><span class="section-number-3">18.1</span> using bc to show control the number of digits after the decimal point?</h3>
+<div class="outline-text-3" id="text-18-1">
+<p>
+use the <code>scale</code> special variable
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">echo "scale=2; 100/3" | bc
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1ca685d" class="outline-2">
+<h2 id="org1ca685d"><span class="section-number-2">19</span> make a ramdisk?</h2>
+<div class="outline-text-2" id="text-19">
+<p>
+The tmpfs filesystem is a RAMDISK.
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">sudo mkdir -p /media/ramdisk
+sudo mount -t tmpfs -o size=2048M tmpfs /media/ramdisk
+</pre>
+</div>
+
+<p>
+<a href="http://askubuntu.com/questions/152868/how-do-i-make-a-ram-disk">http://askubuntu.com/questions/152868/how-do-i-make-a-ram-disk</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org3ffd698" class="outline-2">
+<h2 id="org3ffd698"><span class="section-number-2">20</span> ssh</h2>
+<div class="outline-text-2" id="text-20">
+</div><div id="outline-container-org50f394e" class="outline-3">
+<h3 id="org50f394e"><span class="section-number-3">20.1</span> ssh escape sequences</h3>
+<div class="outline-text-3" id="text-20-1">
+<p>
+all you’ve to do is press [Enter] key followed by ~.. Please note that
+escapes are only recognized immediately after newline.
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">command</th>
+<th scope="col" class="org-left">description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">~.</td>
+<td class="org-left">Disconnect.</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">~<sup>Z</sup></td>
+<td class="org-left">Background ssh.</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">~#</td>
+<td class="org-left">List forwarded connections.</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">~&amp;</td>
+<td class="org-left">Background ssh at logout when waiting for forwarded connection / X11 sessions to terminate.</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">~?</td>
+<td class="org-left">Display a list of escape characters.</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">~B</td>
+<td class="org-left">Send a BREAK to the remote system (only useful for SSH protocol version 2 and if the peer supports it).</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">~C</td>
+<td class="org-left">Open command line.</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">~R</td>
+<td class="org-left">Request rekeying of the connection (only useful for SSH protocol version 2 and if the peer supports it).</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc660c13" class="outline-2">
+<h2 id="orgc660c13"><span class="section-number-2">21</span> references</h2>
+<div class="outline-text-2" id="text-21">
 <p>
 <a href="http://www.folkstalk.com/2012/02/cut-command-in-unix-linux-examples.html">http://www.folkstalk.com/2012/02/cut-command-in-unix-linux-examples.html</a>
 <a href="http://unix.stackexchange.com/questions/35369/how-to-cut-by-tab-character">http://unix.stackexchange.com/questions/35369/how-to-cut-by-tab-character</a>
 <a href="http://unix.stackexchange.com/questions/145978/replace-multiple-spaces-with-one-using-tr-only">http://unix.stackexchange.com/questions/145978/replace-multiple-spaces-with-one-using-tr-only</a>
 <a href="http://askubuntu.com/questions/499995/change-ip-address-which-is-given-by-tor-using-the-terminal">http://askubuntu.com/questions/499995/change-ip-address-which-is-given-by-tor-using-the-terminal</a>
+<a href="http://superuser.com/questions/792525/how-to-change-ffmpeg-threads-settings">http://superuser.com/questions/792525/how-to-change-ffmpeg-threads-settings</a>
 </p>
+</div>
+</div>
+<div id="outline-container-org673533b" class="outline-2">
+<h2 id="org673533b"><span class="section-number-2">22</span> curl</h2>
+<div class="outline-text-2" id="text-22">
+</div><div id="outline-container-org509a260" class="outline-3">
+<h3 id="org509a260"><span class="section-number-3">22.1</span> send cookie with curl?</h3>
+<div class="outline-text-3" id="text-22-1">
+<div class="org-src-container">
+<pre class="src src-shell">curl -v --cookie "USER_TOKEN=Yes" http://127.0.0.1:5000/
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgfec2626" class="outline-2">
+<h2 id="orgfec2626"><span class="section-number-2">23</span> postgresql</h2>
+<div class="outline-text-2" id="text-23">
+</div><div id="outline-container-org146722b" class="outline-3">
+<h3 id="org146722b"><span class="section-number-3">23.1</span> psql</h3>
+<div class="outline-text-3" id="text-23-1">
+</div><div id="outline-container-org4b170b9" class="outline-4">
+<h4 id="org4b170b9"><span class="section-number-4">23.1.1</span> list all dbs and users?</h4>
+<div class="outline-text-4" id="text-23-1-1">
+<p>
+\l
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org84dc154" class="outline-3">
+<h3 id="org84dc154"><span class="section-number-3">23.2</span> create autoincrement column</h3>
+<div class="outline-text-3" id="text-23-2">
+<p>
+The data types serial and bigserial are not true types, but merely a
+notational convenience for creating unique identifier columns (similar
+to the AUTO<sub>INCREMENT</sub> property supported by some other databases). In
+the current implementation, specifying:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sql">CREATE TABLE tablename (
+    colname SERIAL
+);
+</pre>
+</div>
+
+
+<p>
+is equivalent to specifying:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sql">CREATE SEQUENCE tablename_colname_seq;
+CREATE TABLE tablename (
+    colname integer NOT NULL DEFAULT nextval('tablename_colname_seq')
+);
+</pre>
+</div>
+
+
+<p>
+ALTER SEQUENCE tablename<sub>colname</sub><sub>seq</sub> OWNED BY tablename.colname;
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8b40751" class="outline-2">
+<h2 id="org8b40751"><span class="section-number-2">24</span> apache</h2>
+<div class="outline-text-2" id="text-24">
+</div><div id="outline-container-org7e46b46" class="outline-3">
+<h3 id="org7e46b46"><span class="section-number-3">24.1</span> virtual hosts</h3>
+<div class="outline-text-3" id="text-24-1">
+<p>
+The basic unit that describes an individual site or domain is called a
+virtual host.
+</p>
+
+<p>
+These designations allow the administrator to use one server to host
+multiple domains or sites off of a single interface or IP by using a
+matching mechanism.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb8c61a5" class="outline-2">
+<h2 id="orgb8c61a5"><span class="section-number-2">25</span> grub</h2>
+<div class="outline-text-2" id="text-25">
+</div><div id="outline-container-orgfce28fa" class="outline-3">
+<h3 id="orgfce28fa"><span class="section-number-3">25.1</span> grub change timeout</h3>
+<div class="outline-text-3" id="text-25-1">
+<p>
+$ sudo vim /etc/default/grub 
+</p>
+
+<p>
+and set the <b>GRUB<sub>TIMEOUT</sub></b>. 
+-1 will disable it. And then run
+</p>
+
+<p>
+$ sudo update-grub
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgaec7ccb" class="outline-3">
+<h3 id="orgaec7ccb"><span class="section-number-3">25.2</span> Repair grub</h3>
+<div class="outline-text-3" id="text-25-2">
+<p>
+So you broke grub? Boot from a live cd, [find your linux partition
+ under /dev and use fdisk to find the linux partion] mount the linux
+ partition, add /proc and /dev and use grub-install /dev/xyz. Suppose
+ linux lies on /dev/sda4:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell"># mount /dev/sda6 /mnt                   # mount the linux partition on /mnt
+# mount --bind /proc /mnt/proc       # mount the proc subsystem into /mnt
+# mount --bind /dev /mnt/dev          # mount the devices into /mnt
+# chroot /mnt                                      # change root to the linux partition
+# grub-install /dev/sda                     # reinstall grub with your old settings
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2c5c367" class="outline-2">
+<h2 id="org2c5c367"><span class="section-number-2">26</span> listing broken packages?</h2>
+<div class="outline-text-2" id="text-26">
+<p>
+sudo apt-get check
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb4cc118" class="outline-2">
+<h2 id="orgb4cc118"><span class="section-number-2">27</span> completely remove a package with configurations</h2>
+<div class="outline-text-2" id="text-27">
+<p>
+sudo apt-get purge &lt;package<sub>name</sub>&gt;
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5baa767" class="outline-2">
+<h2 id="org5baa767"><span class="section-number-2">28</span> deleting broken packages?</h2>
+<div class="outline-text-2" id="text-28">
+<p>
+use synaptic package manager.
+</p>
+
+<p>
+$ sudo dpkg -P package<sub>name</sub>   # -P for purge
+</p>
+</div>
+</div>
+
+<div id="outline-container-org84e3e1a" class="outline-2">
+<h2 id="org84e3e1a"><span class="section-number-2">29</span> sudo timeout</h2>
+<div class="outline-text-2" id="text-29">
+<p>
+$ sudo visudo
+</p>
+
+<p>
+add <b>Defaults timestamp<sub>timeout</sub>=5</b> where 5 means 5 minutes which means
+sudo will remember your password for 5 minutes
+</p>
+</div>
+</div>
+
+<div id="outline-container-org907733f" class="outline-2">
+<h2 id="org907733f"><span class="section-number-2">30</span> Accessing a Postgres Prompt Without Switching Accounts</h2>
+<div class="outline-text-2" id="text-30">
+<p>
+You can also run the command you'd like with the postgres account directly with sudo.
+</p>
+
+<p>
+$ sudo -u postgres psql
+</p>
+</div>
+</div>
+
+<div id="outline-container-org089903f" class="outline-2">
+<h2 id="org089903f"><span class="section-number-2">31</span> How can I get the recoll package to index markdown (.md) files?</h2>
+<div class="outline-text-2" id="text-31">
+<p>
+Edit ~/.recoll/mimemap, add the following line:
+</p>
+
+<p>
+.md = text/plain
+</p>
+
+<p>
+This will tell recoll to index markdown as normal text, which it is, mostly, 
+so I think that things should "just work".
+</p>
+</div>
+</div>
+
+<div id="outline-container-org636f693" class="outline-2">
+<h2 id="org636f693"><span class="section-number-2">32</span> json pretty print</h2>
+<div class="outline-text-2" id="text-32">
+<p>
+$ cat some.json | python -m json.tool
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf9546cd" class="outline-2">
+<h2 id="orgf9546cd"><span class="section-number-2">33</span> installation</h2>
+<div class="outline-text-2" id="text-33">
+</div><div id="outline-container-org17375b5" class="outline-3">
+<h3 id="org17375b5"><span class="section-number-3">33.1</span> other useful php modules</h3>
+<div class="outline-text-3" id="text-33-1">
+<p>
+$ sudo apt-get install php-soap
+$ sudo apt-get install php-ssh2
+$ sudo apt-get install php-cli
+$ sudo apt-get install php-mbstring
+</p>
+</div>
+</div>
+
+<div id="outline-container-org38c0f17" class="outline-3">
+<h3 id="org38c0f17"><span class="section-number-3">33.2</span> starting windows in safe mode from grub</h3>
+<div class="outline-text-3" id="text-33-2">
+<p>
+for windows xp or 7 repeatedly press <b>F8</b> when you select the windows
+item.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5cfa026" class="outline-3">
+<h3 id="org5cfa026"><span class="section-number-3">33.3</span> making windows usb boot in ubuntu</h3>
+<div class="outline-text-3" id="text-33-3">
+<p>
+$ sudo apt-get install unetbootin
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgcf2c333" class="outline-3">
+<h3 id="orgcf2c333"><span class="section-number-3">33.4</span> ubuntu installation</h3>
+<div class="outline-text-3" id="text-33-4">
+<p>
+for installattion make an <b>ext4</b> partition as the primary and a <b>swap</b>
+partition as logical drive.
+</p>
+
+<p>
+when ubuntu is installed run <b>sudo update-grub</b> if the windows is not
+shown in the grub boot list.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org260ffd9" class="outline-3">
+<h3 id="org260ffd9"><span class="section-number-3">33.5</span> tell which package does a file belong to?</h3>
+<div class="outline-text-3" id="text-33-5">
+<p>
+dpkg -S libgthread-2.0.so.0
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc67a3e1" class="outline-3">
+<h3 id="orgc67a3e1"><span class="section-number-3">33.6</span> installing apt-cacher-ng</h3>
+<div class="outline-text-3" id="text-33-6">
+<p>
+add <b>00aptproxy</b> to <b><i>etc/apt/apt.conf.d</i></b> and add the following lines
+</p>
+
+<p>
+Acquire::<a href="http::Proxy">http::Proxy</a> "<a href="http://127.0.0.1:3142/">http://127.0.0.1:3142/</a>";
+</p>
+
+
+<p>
+make <b>_import</b> folder in <b>/var/cache/apt-cache-ng/<sub>import</sub></b> copy your
+deb files in <b>_import</b> and and goto <b>localhost:3142</b> and hit import.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org46d7f4e" class="outline-3">
+<h3 id="org46d7f4e"><span class="section-number-3">33.7</span> installing postgresql in ubuntu 16.0</h3>
+<div class="outline-text-3" id="text-33-7">
+<p>
+$ sudo apt-get install postgresql postgresql-contrib
+</p>
+
+<p>
+Now that we can connect to our PostgreSQL server, the next step is to
+set a password for the postgres user. Run the following command at a
+terminal prompt to connect to the default PostgreSQL template
+database:
+</p>
+
+<p>
+sudo -u postgres psql template1
+</p>
+
+<p>
+The above command connects to PostgreSQL database template1 as user
+postgres. Once you connect to the PostgreSQL server, you will be at a
+SQL prompt. You can run the following SQL command at the psql prompt
+to configure the password for the user postgres.
+</p>
+
+<p>
+ALTER USER postgres with encrypted password 'your<sub>password</sub>';
+</p>
+
+
+<p>
+Upon installation Postgres is set up to use ident authentication,
+which means that it associates Postgres roles with a matching
+Unix/Linux system account.
+</p>
+
+<p>
+The installation procedure created a user account called postgres that
+is associated with the default Postgres role.  Switch over to the
+postgres account on your server by typing:
+</p>
+
+<p>
+sudo -i -u postgres
+</p>
+
+<p>
+You can now access a Postgres prompt immediately by typing:
+</p>
+
+<p>
+psql
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc2217bf" class="outline-3">
+<h3 id="orgc2217bf"><span class="section-number-3">33.8</span> php modules for connecting to postgresql</h3>
+<div class="outline-text-3" id="text-33-8">
+<p>
+connecting to <b>postgresql</b> with <b>PDO</b>
+</p>
+
+<p>
+$ sudo apt-get install php-pgsql
+</p>
+
+<p>
+Or if the package is installed, you need to enable the module in php.ini
+</p>
+
+<p>
+extension=php<sub>pgsql.dll</sub> (windows)
+extension=php<sub>pgsql.so</sub> (linux)
+</p>
+</div>
+</div>
+
+<div id="outline-container-org36a620b" class="outline-3">
+<h3 id="org36a620b"><span class="section-number-3">33.9</span> phpstorm bad gateway in phpstorm</h3>
+<div class="outline-text-3" id="text-33-9">
+<p>
+try installing
+</p>
+
+<p>
+$ sudo apt-get install php-cgi
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgedf35b0" class="outline-3">
+<h3 id="orgedf35b0"><span class="section-number-3">33.10</span> nodjs</h3>
+<div class="outline-text-3" id="text-33-10">
+<p>
+How to install Node.js via binary archive on Linux?
+</p>
+
+<p>
+Unzip the binary archive to any directory you wanna install Node, I use /usr/lib/nodejs
+</p>
+
+<p>
+sudo mkdir /usr/lib/nodejs
+sudo tar -xJvf node-v6.5.0-linux-x64.tar.xz -C /usr/lib/nodejs
+sudo mv node-v6.5.0-linux-x64 node-v6.5.0
+Set the environment variable ~/.profile, add below to the end
+</p>
+
+<p>
+export NODEJS<sub>HOME</sub>=/usr/lib/nodejs/node-v6.5.0
+export PATH=$NODEJS<sub>HOME</sub>/bin:$PATH
+</p>
+
+<p>
+Test installation using
+</p>
+
+<p>
+$ node -v
+</p>
+
+<p>
+$ npm version
+</p>
+
+<p>
+the normal output is:
+</p>
+
+<p>
+➜  nodejs node -v
+v6.5.0
+➜  nodejs npm version
+{ npm: '3.10.3',
+ares: '1.10.1-DEV',
+http<sub>parser</sub>: '2.7.0',
+icu: '57.1',
+modules: '48',
+node: '6.5.0',
+openssl: '1.0.2h',
+uv: '1.9.1',
+v8: '5.1.281.81',
+zlib: '1.2.8' }
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0ad91e9" class="outline-3">
+<h3 id="org0ad91e9"><span class="section-number-3">33.11</span> nvidia binary driver screen flickering</h3>
+<div class="outline-text-3" id="text-33-11">
+<p>
+Install Compiz Config, from a terminal, type:
+</p>
+
+<p>
+$ sudo apt-get install compizconfig-settings-manager
+</p>
+
+<p>
+From the launcher, execute CompizConfig Settings Manager Check the
+checkbox in "Utility -&gt; Workarounds -&gt; Force full screen redraws
+(buffer swap) on repaint"
+</p>
+</div>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: moh</p>
-<p class="date">Created: 2017-01-18 Wed 18:17</p>
+<p class="date">Created: 2017-02-11 Sat 12:33</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

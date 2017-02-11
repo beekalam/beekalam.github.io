@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-02-07 Tue 16:32 -->
+<!-- 2017-02-10 Fri 13:12 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title></title>
@@ -232,133 +232,119 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org7e015e6">1. 2017</a>
+<li><a href="#org0155fdf">1. core types</a>
 <ul>
-<li><a href="#org6f13a75">1.1. 2017-01 January</a>
+<li><a href="#orgdedb787">1.1. lists</a>
 <ul>
-<li><a href="#orgce8cb12">1.1.1. 2017-01-09 Monday</a>
-<ul>
-<li><a href="#orgae3b995">1.1.1.1. something</a></li>
-<li><a href="#orgb1f1f2d">1.1.1.2. </a></li>
-<li><a href="#orgcec9def">1.1.1.3. </a></li>
-<li><a href="#org9ad7100">1.1.1.4. </a></li>
+<li><a href="#org7c27b03">1.1.1. remove duplicates from a list</a></li>
+<li><a href="#org843eef8">1.1.2. sort a list</a></li>
+<li><a href="#org37c6f2b">1.1.3. return n largest items from a list</a></li>
 </ul>
 </li>
+<li><a href="#org90c7ab3">1.2. dictionaries</a></li>
 </ul>
 </li>
-<li><a href="#org05d21e9">1.2. 2017-02 February</a>
+<li><a href="#org37c56dc">2. reflection</a>
 <ul>
-<li><a href="#org640eb2a">1.2.1. 2017-02-01 Wednesday</a>
+<li><a href="#org932d6ac">2.1. check if a variable is number</a></li>
+<li><a href="#org9ed20be">2.2. check if a variable is string</a></li>
+</ul>
+</li>
+<li><a href="#org6e31ac8">3. File</a>
 <ul>
-<li><a href="#orgdd0f539">1.2.1.1. new jornual</a></li>
-<li><a href="#org1cc1910">1.2.1.2. new journal entry</a></li>
-<li><a href="#org6b7a87f">1.2.1.3. new journal entry</a></li>
-<li><a href="#org9a41244">1.2.1.4. org testljl totod</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li><a href="#orgb75178b">3.1. check file exist</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org7e015e6" class="outline-2">
-<h2 id="org7e015e6"><span class="section-number-2">1</span> 2017</h2>
+<div id="outline-container-org0155fdf" class="outline-2">
+<h2 id="org0155fdf"><span class="section-number-2">1</span> core types</h2>
 <div class="outline-text-2" id="text-1">
-</div><div id="outline-container-org6f13a75" class="outline-3">
-<h3 id="org6f13a75"><span class="section-number-3">1.1</span> 2017-01 January</h3>
+</div><div id="outline-container-orgdedb787" class="outline-3">
+<h3 id="orgdedb787"><span class="section-number-3">1.1</span> lists</h3>
 <div class="outline-text-3" id="text-1-1">
-</div><div id="outline-container-orgce8cb12" class="outline-4">
-<h4 id="orgce8cb12"><span class="section-number-4">1.1.1</span> 2017-01-09 Monday</h4>
+</div><div id="outline-container-org7c27b03" class="outline-4">
+<h4 id="org7c27b03"><span class="section-number-4">1.1.1</span> remove duplicates from a list</h4>
 <div class="outline-text-4" id="text-1-1-1">
-</div><div id="outline-container-orgae3b995" class="outline-5">
-<h5 id="orgae3b995"><span class="section-number-5">1.1.1.1</span> something</h5>
-<div class="outline-text-5" id="text-1-1-1-1">
-<p>
-Entered on <span class="timestamp-wrapper"><span class="timestamp">[2017-01-09 Mon 21:33]</span></span>
-</p>
-</div>
-</div>
-<div id="outline-container-orgb1f1f2d" class="outline-5">
-<h5 id="orgb1f1f2d"><span class="section-number-5">1.1.1.2</span> </h5>
-<div class="outline-text-5" id="text-1-1-1-2">
-<p>
-Entered on <span class="timestamp-wrapper"><span class="timestamp">[2017-01-09 Mon 21:41]</span></span>
-</p>
-</div>
-</div>
-<div id="outline-container-orgcec9def" class="outline-5">
-<h5 id="orgcec9def"><span class="section-number-5">1.1.1.3</span> </h5>
-<div class="outline-text-5" id="text-1-1-1-3">
-<p>
-Entered on <span class="timestamp-wrapper"><span class="timestamp">[2017-01-09 Mon 21:42]</span></span>
-</p>
-</div>
-</div>
-<div id="outline-container-org9ad7100" class="outline-5">
-<h5 id="org9ad7100"><span class="section-number-5">1.1.1.4</span> </h5>
-<div class="outline-text-5" id="text-1-1-1-4">
-<p>
-Entered on <span class="timestamp-wrapper"><span class="timestamp">[2017-01-09 Mon 21:43]</span></span>
-</p>
+<div class="org-src-container">
+<pre class="src src-python">set([1,1,2,3])
+</pre>
 </div>
 </div>
 </div>
-</div>
-<div id="outline-container-org05d21e9" class="outline-3">
-<h3 id="org05d21e9"><span class="section-number-3">1.2</span> 2017-02 February</h3>
-<div class="outline-text-3" id="text-1-2">
-</div><div id="outline-container-org640eb2a" class="outline-4">
-<h4 id="org640eb2a"><span class="section-number-4">1.2.1</span> 2017-02-01 Wednesday</h4>
-<div class="outline-text-4" id="text-1-2-1">
-</div><div id="outline-container-orgdd0f539" class="outline-5">
-<h5 id="orgdd0f539"><span class="section-number-5">1.2.1.1</span> new jornual</h5>
-<div class="outline-text-5" id="text-1-2-1-1">
-<p>
-Entered on <span class="timestamp-wrapper"><span class="timestamp">[2017-02-01 Wed 19:52]</span></span>
-</p>
 
-<p>
-<a href="file:///home/moh/Documents/notes/dumps.html#orgf074886">Tasks</a>
-</p>
+<div id="outline-container-org843eef8" class="outline-4">
+<h4 id="org843eef8"><span class="section-number-4">1.1.2</span> sort a list</h4>
+<div class="outline-text-4" id="text-1-1-2">
+<div class="org-src-container">
+<pre class="src src-python">sorted(list)
+</pre>
 </div>
 </div>
-<div id="outline-container-org1cc1910" class="outline-5">
-<h5 id="org1cc1910"><span class="section-number-5">1.2.1.2</span> new journal entry</h5>
-<div class="outline-text-5" id="text-1-2-1-2">
-<p>
-Entered on <span class="timestamp-wrapper"><span class="timestamp">[2017-02-01 Wed 19:55]</span></span>
-</p>
+</div>
 
-<p>
-<a href="file:///home/moh/Documents/notes/emacs-notes.html#orgd8ee833">org-capture</a>
-</p>
+<div id="outline-container-org37c6f2b" class="outline-4">
+<h4 id="org37c6f2b"><span class="section-number-4">1.1.3</span> return n largest items from a list</h4>
+<div class="outline-text-4" id="text-1-1-3">
+<div class="org-src-container">
+<pre class="src src-python">import heapq
+def two_highest(list_):
+    return heapq.nlargest(2, set(list_)) if type(list_) == list else False
+</pre>
 </div>
 </div>
-<div id="outline-container-org6b7a87f" class="outline-5">
-<h5 id="org6b7a87f"><span class="section-number-5">1.2.1.3</span> new journal entry</h5>
-<div class="outline-text-5" id="text-1-2-1-3">
-<p>
-Entered on <span class="timestamp-wrapper"><span class="timestamp">[2017-02-01 Wed 19:56]</span></span>
-</p>
+</div>
+</div>
 
-<p>
-<a href="file:///home/moh/Documents/notes/emacs-notes.html#orgd8ee833">org-capture</a>
-</p>
+<div id="outline-container-org90c7ab3" class="outline-3">
+<h3 id="org90c7ab3"><span class="section-number-3">1.2</span> dictionaries</h3>
 </div>
 </div>
-<div id="outline-container-org9a41244" class="outline-5">
-<h5 id="org9a41244"><span class="section-number-5">1.2.1.4</span> org testljl totod</h5>
-<div class="outline-text-5" id="text-1-2-1-4">
-<p>
-Entered on <span class="timestamp-wrapper"><span class="timestamp">[2017-02-01 Wed 19:56]</span></span>
-</p>
+<div id="outline-container-org37c56dc" class="outline-2">
+<h2 id="org37c56dc"><span class="section-number-2">2</span> reflection</h2>
+<div class="outline-text-2" id="text-2">
+</div><div id="outline-container-org932d6ac" class="outline-3">
+<h3 id="org932d6ac"><span class="section-number-3">2.1</span> check if a variable is number</h3>
+<div class="outline-text-3" id="text-2-1">
+<div class="org-src-container">
+<pre class="src src-python">type(var) == int
+type(var) == float
 
-<p>
-<a href="file:///home/moh/Documents/notes/emacs-notes.html#orgd8ee833">org-capture</a>
-</p>
+type(var) is int
+type(var) is float
+
+isinstance(var,int)
+isinstance(var,(int,long))
+</pre>
 </div>
+</div>
+</div>
+
+<div id="outline-container-org9ed20be" class="outline-3">
+<h3 id="org9ed20be"><span class="section-number-3">2.2</span> check if a variable is string</h3>
+<div class="outline-text-3" id="text-2-2">
+<div class="org-src-container">
+<pre class="src src-python">type(var) == str
+
+isinstance(var,str)
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6e31ac8" class="outline-2">
+<h2 id="org6e31ac8"><span class="section-number-2">3</span> File</h2>
+<div class="outline-text-2" id="text-3">
+</div><div id="outline-container-orgb75178b" class="outline-3">
+<h3 id="orgb75178b"><span class="section-number-3">3.1</span> check file exist</h3>
+<div class="outline-text-3" id="text-3-1">
+<div class="org-src-container">
+<pre class="src src-python">import os.path
+os.path.isfile(fname)    # checks if fname is afile
+os.path.exists(file_path) # checks if file_path is file or directory
+</pre>
 </div>
 </div>
 </div>
@@ -366,7 +352,7 @@ Entered on <span class="timestamp-wrapper"><span class="timestamp">[2017-02-01 W
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: moh</p>
-<p class="date">Created: 2017-02-07 Tue 16:32</p>
+<p class="date">Created: 2017-02-10 Fri 13:12</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

@@ -1,0 +1,2778 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2017-02-11 Sat 12:34 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title></title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="moh" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org27f0a97">1. strings</a>
+<ul>
+<li><a href="#org7f5682e">1.1. defining heredoc document</a></li>
+<li><a href="#org5d87bd4">1.2. Accessing Substrings</a></li>
+<li><a href="#orgd5dc8d6">1.3. Extracting Substrings</a></li>
+<li><a href="#orgbfda7af">1.4. substring from beginning of the line except the last char</a></li>
+<li><a href="#orgf4c4369">1.5. Replacing substrings</a></li>
+<li><a href="#org25c66d1">1.6. Processing a String One Byte at a Time</a></li>
+<li><a href="#orgd5f2e8f">1.7. Reversing a String by Byte</a></li>
+<li><a href="#org07de9f0">1.8. Reversing a string by word</a></li>
+<li><a href="#orgbded153">1.9. Switching tabs and spaces</a></li>
+<li><a href="#orge0e7553">1.10. trimming space</a></li>
+<li><a href="#org5049c85">1.11. controlling case</a>
+<ul>
+<li><a href="#org37f033e">1.11.1. capitalizing letters</a></li>
+<li><a href="#org1f39f6f">1.11.2. whole string case control</a></li>
+</ul>
+</li>
+<li><a href="#org62bdecc">1.12. ordinal value of character</a></li>
+<li><a href="#orgca3b44e">1.13. character value of integer</a></li>
+<li><a href="#org1b8bcf7">1.14. replace multiple</a></li>
+<li><a href="#org0b071ee">1.15. convert string to array</a></li>
+<li><a href="#orga882b78">1.16. split a string by char</a></li>
+</ul>
+</li>
+<li><a href="#orgd6e16cb">2. regular expression</a>
+<ul>
+<li><a href="#orgf3e7a87">2.1. Finding the nth Occurrence of a Match</a></li>
+<li><a href="#org1f51b62">2.2. replace n counts of a pattern</a></li>
+</ul>
+</li>
+<li><a href="#orgdb8f5d7">3. numbers</a>
+<ul>
+<li><a href="#orgc545cf9">3.1. Checking Whether a Variable Contains a Valid Number</a></li>
+<li><a href="#org0b9fcf6">3.2. comparing floating point numbers</a></li>
+<li><a href="#org0a39363">3.3. Rounding Floating-Point Numbers</a></li>
+<li><a href="#org28db7c6">3.4. Converting between bases</a></li>
+</ul>
+</li>
+<li><a href="#orgfe0a047">4. arrays</a>
+<ul>
+<li><a href="#orgc40efc0">4.1. check for empty array</a></li>
+<li><a href="#orgcf9fe6a">4.2. sum of items in an array</a></li>
+<li><a href="#org2a7081b">4.3. Specifying an Array Not Beginning at Element 0</a></li>
+<li><a href="#orga2ad772">4.4. Storing Multiple Elements Per Key in an Array</a></li>
+<li><a href="#org769d71c">4.5. Initializing an Array to a Range of Integers</a></li>
+<li><a href="#orgd062d08">4.6. Iterating through an array</a></li>
+<li><a href="#org12cd7ef">4.7. Deleting elements from an array</a></li>
+<li><a href="#org1f38577">4.8. Changing array size</a></li>
+<li><a href="#org1368f30">4.9. Appending one array to another</a></li>
+<li><a href="#orga8a1aee">4.10. Turning an Array into a String</a></li>
+<li><a href="#org11f772d">4.11. Checking if a Key Is in an Array</a></li>
+<li><a href="#org2f72e7d">4.12. Checking if an Element Is in an Array</a></li>
+<li><a href="#org2b75e97">4.13. Finding the Position of a Value in an Array</a></li>
+<li><a href="#org9391bd4">4.14. Finding Elements That Pass a Certain Test</a></li>
+<li><a href="#org85b5288">4.15. Finding the Largest or Smallest Valued Element in an Array</a></li>
+<li><a href="#org1cea9e2">4.16. Sorting an Array</a></li>
+<li><a href="#orgec07308">4.17. Randomizing an Array</a></li>
+<li><a href="#org0daa2a6">4.18. Removing Duplicate Elements from an Array</a></li>
+<li><a href="#orgd39d039">4.19. Applying a Function to Each Element in an Array</a></li>
+<li><a href="#orgefd7f6d">4.20. Finding the Union, Intersection, or Difference of Two Arrays</a></li>
+<li><a href="#org07cb094">4.21. Making an Object Act like an Array</a></li>
+<li><a href="#orgcc4bfe2">4.22. array<sub>reduce</sub></a></li>
+<li><a href="#org5177cce">4.23. create and array from variables and their values</a>
+<ul>
+<li><a href="#org6facc44">4.23.1. intro</a></li>
+<li><a href="#orgf951a2f">4.23.2. using compact for debugging</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgd511018">5. Date and Time</a>
+<ul>
+<li><a href="#org06755db">5.1. Finding the Current Date and Time</a></li>
+<li><a href="#org590fa06">5.2. Converting Time and Date Parts to an Epoch Timestamp</a></li>
+<li><a href="#org078a542">5.3. Converting an Epoch Timestamp to Time and Date Parts</a></li>
+<li><a href="#org8b336f8">5.4. Finding the Difference of Two Dates</a></li>
+<li><a href="#org681848c">5.5. date difference using <code>DateInterval</code></a></li>
+<li><a href="#org32af68e">5.6. number of days between two dates</a></li>
+</ul>
+</li>
+<li><a href="#org8a24443">6. variables</a>
+<ul>
+<li><a href="#org14ba1d9">6.1. Establishing a Default Value</a></li>
+<li><a href="#org648a3dd">6.2. Exchanging Values Without Using Temporary Variables</a></li>
+<li><a href="#org3723f1b">6.3. Creating a Dynamic Variable Name</a></li>
+<li><a href="#orgcebcab6">6.4. Using Static Variables</a></li>
+<li><a href="#org88c36d5">6.5. Encapsulating Complex Data Types in a String</a></li>
+</ul>
+</li>
+<li><a href="#org2335cc0">7. functions</a>
+<ul>
+<li><a href="#org328de91">7.1. checking for a function's existence</a></li>
+</ul>
+</li>
+<li><a href="#org899a838">8. Misc</a>
+<ul>
+<li><a href="#orgb96f420">8.1. get results from eval</a></li>
+<li><a href="#org59d9e2a">8.2. check if a class has a property</a></li>
+</ul>
+</li>
+<li><a href="#orgfbec5b2">9. json</a>
+<ul>
+<li><a href="#orge078d2c">9.1. json encode raw UTF?</a></li>
+</ul>
+</li>
+<li><a href="#orge22dc73">10. webservice</a>
+<ul>
+<li><a href="#org897a489">10.1. types of webservices</a>
+<ul>
+<li><a href="#org4f543f1">10.1.1. SOAP</a></li>
+<li><a href="#org7b20449">10.1.2. WSDL</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org74bbb36">11. lumen</a>
+<ul>
+<li><a href="#org156e249">11.1. lumen on apache</a></li>
+<li><a href="#orgb51961f">11.2. installing globally</a></li>
+<li><a href="#org393fec9">11.3. PHP dependencies</a></li>
+<li><a href="#orgf85306e">11.4. artisan</a>
+<ul>
+<li><a href="#orge9b8f57">11.4.1. create a migration</a></li>
+<li><a href="#orgb4fcc12">11.4.2. commit migration to db</a></li>
+<li><a href="#orgba76ae5">11.4.3. Refreshing the Schema and Seeding the Database</a></li>
+</ul>
+</li>
+<li><a href="#org45a330c">11.5. middleware</a></li>
+</ul>
+</li>
+<li><a href="#org34d290e">12. classes</a>
+<ul>
+<li><a href="#org40be2c5">12.1. static attributes or methods.</a></li>
+<li><a href="#orgaf591b4">12.2. _<sub>clone</sub> magic method</a></li>
+</ul>
+</li>
+<li><a href="#orgcecdbc5">13. patterns</a>
+<ul>
+<li><a href="#orgd47f4df">13.1. value object pattern</a></li>
+<li><a href="#org6ed13a0">13.2. The factory pattern</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org27f0a97" class="outline-2">
+<h2 id="org27f0a97"><span class="section-number-2">1</span> strings</h2>
+<div class="outline-text-2" id="text-1">
+</div><div id="outline-container-org7f5682e" class="outline-3">
+<h3 id="org7f5682e"><span class="section-number-3">1.1</span> defining heredoc document</h3>
+<div class="outline-text-3" id="text-1-1">
+<div class="org-src-container">
+<pre class="src src-php">print &lt;&lt;&lt; END
+It's funny when signs say things like:
+   Original "Root" Beer
+   "Free" Gift
+   Shoes cleaned while "you" wait
+or have other misquoted words.
+END;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org5d87bd4" class="outline-3">
+<h3 id="org5d87bd4"><span class="section-number-3">1.2</span> Accessing Substrings</h3>
+<div class="outline-text-3" id="text-1-2">
+<div class="org-src-container">
+<pre class="src src-php">&lt;?php
+
+if (strpos($_POST['email'], '@') === false) {
+    print 'There was no @ in the e-mail address!';
+ }
+
+?&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd5dc8d6" class="outline-3">
+<h3 id="orgd5dc8d6"><span class="section-number-3">1.3</span> Extracting Substrings</h3>
+<div class="outline-text-3" id="text-1-3">
+<div class="org-src-container">
+<pre class="src src-php">&lt;?php
+$substring = substr($string,$start,$length);
+$username = substr($_GET['username'],0,8);
+?&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgbfda7af" class="outline-3">
+<h3 id="orgbfda7af"><span class="section-number-3">1.4</span> substring from beginning of the line except the last char</h3>
+<div class="outline-text-3" id="text-1-4">
+<div class="org-src-container">
+<pre class="src src-php">substr("abcd",0,-1);       // abc
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf4c4369" class="outline-3">
+<h3 id="orgf4c4369"><span class="section-number-3">1.5</span> Replacing substrings</h3>
+<div class="outline-text-3" id="text-1-5">
+<div class="org-src-container">
+<pre class="src src-php">// Everything from position $start to the end of $old_string
+// becomes $new_substring
+$new_string = substr_replace($old_string,$new_substring,$start);
+
+// $length characters, starting at position $start, become $new_substring
+$new_string = substr_replace($old_string,$new_substring,$start,$length);
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org25c66d1" class="outline-3">
+<h3 id="org25c66d1"><span class="section-number-3">1.6</span> Processing a String One Byte at a Time</h3>
+<div class="outline-text-3" id="text-1-6">
+<div class="org-src-container">
+<pre class="src src-php">&lt;?php
+$string = "This weekend, I'm going shopping for a pet chicken.";
+$vowels = 0;
+for ($i = 0, $j = strlen($string); $i &lt; $j; $i++) {
+    if (strstr('aeiouAEIOU',$string[$i])) {
+	$vowels++;
+    }
+}
+?&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd5f2e8f" class="outline-3">
+<h3 id="orgd5f2e8f"><span class="section-number-3">1.7</span> Reversing a String by Byte</h3>
+<div class="outline-text-3" id="text-1-7">
+<div class="org-src-container">
+<pre class="src src-php">&lt;?php
+print strrev('This is not a palindrome.');
+?&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org07de9f0" class="outline-3">
+<h3 id="org07de9f0"><span class="section-number-3">1.8</span> Reversing a string by word</h3>
+<div class="outline-text-3" id="text-1-8">
+<div class="org-src-container">
+<pre class="src src-php">&lt;?php
+$s = "Once upon a time there was a turtle.";
+// break the string up into words
+$words = explode(' ',$s);
+// reverse the array of words
+$words = array_reverse($words);
+// rebuild the string
+$s = implode(' ',$words);
+print $s;
+?&gt;
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-php">&lt;?php
+$reversed_s = implode(' ',array_reverse(explode(' ',$s)));
+?&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgbded153" class="outline-3">
+<h3 id="orgbded153"><span class="section-number-3">1.9</span> Switching tabs and spaces</h3>
+<div class="outline-text-3" id="text-1-9">
+<div class="org-src-container">
+<pre class="src src-php">&lt;?php
+$r = mysql_query("SELECT message FROM messages WHERE id = 1") or die();
+$ob = mysql_fetch_object($r);
+$tabbed = str_replace(' ',"\t",$ob-&gt;message);
+$spaced = str_replace("\t",' ',$ob-&gt;message);
+
+print "With Tabs: &lt;pre&gt;$tabbed&lt;/pre&gt;";
+print "With Spaces: &lt;pre&gt;$spaced&lt;/pre&gt;";
+?&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge0e7553" class="outline-3">
+<h3 id="orge0e7553"><span class="section-number-3">1.10</span> trimming space</h3>
+<div class="outline-text-3" id="text-1-10">
+<p>
+Use ltrim(), rtrim(), or trim(). ltrim() removes whitespace from the
+beginning of a string, rtrim() from the end of a string, and trim()
+from both the beginning and end of a string:
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5049c85" class="outline-3">
+<h3 id="org5049c85"><span class="section-number-3">1.11</span> controlling case</h3>
+<div class="outline-text-3" id="text-1-11">
+</div><div id="outline-container-org37f033e" class="outline-4">
+<h4 id="org37f033e"><span class="section-number-4">1.11.1</span> capitalizing letters</h4>
+<div class="outline-text-4" id="text-1-11-1">
+<div class="org-src-container">
+<pre class="src src-php">&lt;?php
+print ucfirst("how do you do today?");  //capitalized the first word in string
+print ucwords("the prince of wales");  //capitalizes the first character of each word in a string
+?&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1f39f6f" class="outline-4">
+<h4 id="org1f39f6f"><span class="section-number-4">1.11.2</span> whole string case control</h4>
+<div class="outline-text-4" id="text-1-11-2">
+<p>
+The functions strtolower() and strtoupper() work on entire strings,
+not just individual characters. All alphabetic characters are changed
+to lowercase by strtolower() and strtoupper() changes all alphabetic
+characters to uppercase:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-php">&lt;?php
+print strtolower("I programmed the WOPR and the TRS-80.");
+print strtoupper('"since feeling is first" is a poem by e. e. cummings.');
+?&gt;
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org62bdecc" class="outline-3">
+<h3 id="org62bdecc"><span class="section-number-3">1.12</span> ordinal value of character</h3>
+<div class="outline-text-3" id="text-1-12">
+<p>
+use <code>ord("h")</code>
+</p>
+</div>
+</div>
+<div id="outline-container-orgca3b44e" class="outline-3">
+<h3 id="orgca3b44e"><span class="section-number-3">1.13</span> character value of integer</h3>
+<div class="outline-text-3" id="text-1-13">
+<p>
+use <code>chr(ascii)</code>
+</p>
+</div>
+</div>
+<div id="outline-container-org1b8bcf7" class="outline-3">
+<h3 id="org1b8bcf7"><span class="section-number-3">1.14</span> replace multiple</h3>
+<div class="outline-text-3" id="text-1-14">
+<div class="org-src-container">
+<pre class="src src-php">str_ireplace(['a', 'e', 'i', 'o', 'u'], '!', $str);
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0b071ee" class="outline-3">
+<h3 id="org0b071ee"><span class="section-number-3">1.15</span> convert string to array</h3>
+<div class="outline-text-3" id="text-1-15">
+<div class="org-src-container">
+<pre class="src src-php">str_split(' ',$str);
+explode(' ', $str);
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga882b78" class="outline-3">
+<h3 id="orga882b78"><span class="section-number-3">1.16</span> split a string by char</h3>
+<div class="outline-text-3" id="text-1-16">
+<div class="org-src-container">
+<pre class="src src-ph">preg_split('/,/',$str);   // split by ','
+preg_split('//',$str);    // split characters
+explode(',', $str);
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd6e16cb" class="outline-2">
+<h2 id="orgd6e16cb"><span class="section-number-2">2</span> regular expression</h2>
+<div class="outline-text-2" id="text-2">
+</div><div id="outline-container-orgf3e7a87" class="outline-3">
+<h3 id="orgf3e7a87"><span class="section-number-3">2.1</span> Finding the nth Occurrence of a Match</h3>
+<div class="outline-text-3" id="text-2-1">
+<div class="org-src-container">
+<pre class="src src-php">&lt;?php
+$todo = "1. Get Dressed 2. Eat Jelly 3. Squash every week into a day";
+
+preg_match_all("/\d\. ([^\d]+)/", $todo, $matches);
+
+print "The second item on the todo list is: ";
+// $matches[1] is an array of each substring captured by ([^\d]+)
+print $matches[1][1];
+
+print "The entire todo list is: ";
+foreach($matches[1] as $match) {
+    print "$match\n";
+}
+?&gt;
+</pre>
+</div>
+
+<p>
+Because the preg<sub>match</sub>() function stops after it finds one match, you
+need to use preg<sub>match</sub><sub>all</sub>() instead if you’re looking for additional
+matches. The preg<sub>match</sub><sub>all</sub>() function returns the number of full
+pattern matches it finds. If it finds no matches, it returns 0. If it
+encounters an error, such as a syntax problem in the pattern, it
+returns false.
+</p>
+
+<p>
+The third argument to preg<sub>match</sub><sub>all</sub>() is populated with an array
+holding information about the various substrings that the pattern has
+matched. The first element holds an array of matches of the complete
+pattern. For Example 22-4, this means that $matches[0] holds the parts
+of $todo that match <i>\d\. ([^\d]+)</i>: 1. Get Dressed, 2. Eat Jelly,
+and 3. Squash every week into a day.
+</p>
+
+<p>
+Subsequent elements of the $matches array hold arrays of text matched
+by each parenthesized subpattern. The pattern in Example 22-4 has just
+one subpattern ([^\d]+). So $matches[1] is an array of strings that
+match that subpattern: Get Dressed, Eat Jelly, and Squash every week
+into a day.
+</p>
+
+<p>
+If there were a second subpattern, the substrings that it matched
+would be in $matches[2], a third subpattern’s matches would be in
+$matches[3], and so on.
+</p>
+
+<p>
+Instead of returning an array divided into full matches and then
+submatches, preg<sub>match</sub><sub>all</sub>() can return an array divided by matches,
+with each submatch inside. To trigger this, pass PREG<sub>SET</sub><sub>ORDER</sub> in as
+the fourth argument. This is particularly useful when you’ve got
+multiple captured subpatterns and you want to iterate through the
+subpattern groups one group at a time, as shown in Example 22-5.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-php">&lt;?php
+$todo = "
+first=Get Dressed
+next=Eat Jelly
+last=Squash every week into a day
+";
+
+preg_match_all("/([a-zA-Z]+)=(.*)/", $todo, $matches, PREG_SET_ORDER);
+
+foreach ($matches as $match) {
+    print "The {$match[1]} action is {$match[2]} \n";
+}
+?&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1f51b62" class="outline-3">
+<h3 id="org1f51b62"><span class="section-number-3">2.2</span> replace n counts of a pattern</h3>
+<div class="outline-text-3" id="text-2-2">
+<div class="org-src-container">
+<pre class="src src-php">preg_replace($pattern,$replacement,$string,$limit);
+</pre>
+</div>
+
+<p>
+$limit is by the default is -1 which means no limit.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgdb8f5d7" class="outline-2">
+<h2 id="orgdb8f5d7"><span class="section-number-2">3</span> numbers</h2>
+<div class="outline-text-2" id="text-3">
+</div><div id="outline-container-orgc545cf9" class="outline-3">
+<h3 id="orgc545cf9"><span class="section-number-3">3.1</span> Checking Whether a Variable Contains a Valid Number</h3>
+<div class="outline-text-3" id="text-3-1">
+<div class="org-src-container">
+<pre class="src src-php">&lt;?php
+if (is_numeric(5))          { /* true  */ }
+if (is_numeric('5'))        { /* true  */ }
+if (is_numeric("05"))       { /* true  */ }
+if (is_numeric('five'))     { /* false */ }
+
+if (is_numeric(0xDECAFBAD)) { /* true  */ }
+if (is_numeric("10e200"))   { /* true  */ }
+?&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0b9fcf6" class="outline-3">
+<h3 id="org0b9fcf6"><span class="section-number-3">3.2</span> comparing floating point numbers</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+Use a small delta value, and check if the numbers have a difference smaller than that delta:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-php">&lt;?php
+$delta = 0.00001;
+
+$a = 1.00000001;
+$b = 1.00000000;
+
+if (abs($a - $b) &lt; $delta) { /* $a and $b are equal */ }
+?&gt;
+</pre>
+</div>
+
+
+<p>
+Floating-point numbers are represented in binary form with only a
+finite number of bits for the mantissa and the exponent. You get
+overflows when you exceed those bits. As a result, sometimes PHP (just
+like some other languages) doesn’t believe that two equal numbers are
+actually equal because they may differ toward the very end.
+</p>
+
+<p>
+To avoid this problem, instead of checking if $a == $b, make sure the
+first number is within a very small amount ($delta) of the second
+one. The size of your delta should be the smallest amount of
+difference you care about between two numbers. Then use abs() to get
+the absolute value of the difference.
+</p>
+</div>
+</div>
+<div id="outline-container-org0a39363" class="outline-3">
+<h3 id="org0a39363"><span class="section-number-3">3.3</span> Rounding Floating-Point Numbers</h3>
+<div class="outline-text-3" id="text-3-3">
+<p>
+To round a number to the closest integer, use round() :
+</p>
+
+<p>
+$number = round(2.4);   // $number = 2
+</p>
+
+<p>
+To round up, use ceil() :
+</p>
+
+<p>
+$number = ceil(2.4);    // $number = 3
+</p>
+
+<p>
+To round down, use floor() :
+</p>
+
+<p>
+$number = floor(2.4);   // $number = 2
+</p>
+
+<p>
+To keep a set number of digits after the decimal point, round()
+accepts an optional precision argument. For example, perhaps you are
+calculating thetotal price for the items in a user’s shopping cart:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-php">&lt;?php
+$cart = 54.23;
+$tax = $cart * .05;
+$total = $cart + $tax;       // $total = 56.9415
+
+$final = round($total, 2);   // $final = 56.94
+?&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org28db7c6" class="outline-3">
+<h3 id="org28db7c6"><span class="section-number-3">3.4</span> Converting between bases</h3>
+<div class="outline-text-3" id="text-3-4">
+<p>
+Use the base<sub>convert</sub>() function:
+</p>
+
+<p>
+$hex = 'a1';                           // hexadecimal number (base 16)
+</p>
+
+<p>
+<i>/ convert from base 16 to base 10
+$decimal = base<sub>convert</sub>($hex, 16, 10); /</i> $decimal is now 161
+</p>
+
+<p>
+The base<sub>convert</sub>() function changes a string in one base to the
+correct string in another. It works for all bases from 2 to 36
+inclusive, using the letters a through z as additional symbols for
+bases above 10. The first argument is the number to be converted,
+followed by the base it is in and the base you want it to become.
+</p>
+
+<p>
+There are also a few specialized functions for conversions to and from
+base 10 and the most commonly used other bases of 2, 8,
+and 16. They’re bindec() and decbin(), octdec() and decoct(), and
+hexdec() and dechex() :
+</p>
+
+<p>
+<i>/ convert to base 10
+print bindec(11011); /</i> 27
+print octdec(33);    <i>/ 27
+print hexdec('1b');  /</i> 27
+</p>
+
+<p>
+<i>/ convert from base 10
+print decbin(27);    /</i> 11011
+print decoct(27);    <i>/ 33
+print dechex(27);    /</i> 1b
+</p>
+
+<p>
+Another alternative is to use printf(), which allows you to convert
+decimal numbers to binary, octal, and hexadecimal numbers with a wide
+range of formatting, such as leading zeros and a choice between upper-
+and lowercase letters for hexadecimal numbers.
+</p>
+
+<p>
+For instance, say you want to print out HTML color values:
+</p>
+
+<p>
+printf('#%02X%02X%02X', 0, 102, 204); // #0066CC
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgfe0a047" class="outline-2">
+<h2 id="orgfe0a047"><span class="section-number-2">4</span> arrays</h2>
+<div class="outline-text-2" id="text-4">
+</div><div id="outline-container-orgc40efc0" class="outline-3">
+<h3 id="orgc40efc0"><span class="section-number-3">4.1</span> check for empty array</h3>
+<div class="outline-text-3" id="text-4-1">
+<div class="org-src-container">
+<pre class="src src-php">empty([]) // true
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgcf9fe6a" class="outline-3">
+<h3 id="orgcf9fe6a"><span class="section-number-3">4.2</span> sum of items in an array</h3>
+<div class="outline-text-3" id="text-4-2">
+<div class="org-src-container">
+<pre class="src src-php">$scores  = array(98, 76, 56, 80);
+$total   = array_sum($scores);    // $total = 310
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2a7081b" class="outline-3">
+<h3 id="org2a7081b"><span class="section-number-3">4.3</span> Specifying an Array Not Beginning at Element 0</h3>
+<div class="outline-text-3" id="text-4-3">
+<p>
+Instruct array() to use a different index using the =&gt; syntax:
+</p>
+<div class="org-src-container">
+<pre class="src src-php">$residents = array(1 =&gt; 'Washington', 'Adams', 'Jefferson', 'Madison');
+
+foreach ($presidents as $number =&gt; $president) {
+    print "$number: $president\n";
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga2ad772" class="outline-3">
+<h3 id="orga2ad772"><span class="section-number-3">4.4</span> Storing Multiple Elements Per Key in an Array</h3>
+<div class="outline-text-3" id="text-4-4">
+<p>
+Store the multiple elements in an array:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-php">$fruits = array('red' =&gt; array('strawberry','apple'),
+		'yellow' =&gt; array('banana'));
+</pre>
+</div>
+
+<p>
+Or use an object:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-php">while ($obj = mysql_fetch_object($r)) {
+    $fruits[] = $obj;
+}
+</pre>
+</div>
+
+<p>
+In PHP, keys are unique per array, so you can’t associate more than
+one entry in a key without overwriting the old value. Instead, store
+your values in an anonymous array:
+</p>
+<div class="org-src-container">
+<pre class="src src-php">$fruits['red'][] = 'strawberry';
+$fruits['red'][] = 'apple';
+$fruits['yellow'][] = 'banana';
+</pre>
+</div>
+
+<p>
+Or, if you’re processing items in a loop:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-php">while (list($color,$fruit) = mysql_fetch_array($r)) {
+    $fruits[$color][] = $fruit;
+}
+</pre>
+</div>
+
+<p>
+To print the entries, loop through the array:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-php">foreach ($fruits as $color=&gt;$color_fruit) {
+    // $color_fruit is an array
+    foreach ($color_fruit as $fruit) {
+	print "$fruit is colored $color.&lt;br&gt;";
+    }
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org769d71c" class="outline-3">
+<h3 id="org769d71c"><span class="section-number-3">4.5</span> Initializing an Array to a Range of Integers</h3>
+<div class="outline-text-3" id="text-4-5">
+<p>
+Use range($start, $stop):
+</p>
+
+<p>
+$cards = range(1, 52);
+</p>
+</div>
+</div>
+<div id="outline-container-orgd062d08" class="outline-3">
+<h3 id="orgd062d08"><span class="section-number-3">4.6</span> Iterating through an array</h3>
+<div class="outline-text-3" id="text-4-6">
+<p>
+Use foreach:
+</p>
+
+<p>
+foreach ($array as $value) {
+    // Act on $value
+}
+</p>
+
+<p>
+Or to get an array’s keys and values:
+</p>
+
+<p>
+foreach ($array as $key =&gt; $value) {
+    // Act II
+}
+</p>
+
+<p>
+Another technique is to use for:
+</p>
+
+<p>
+for ($key = 0, $size = count($array); $key &lt; $size; $key++) {
+   // Act III
+}
+</p>
+
+<p>
+Finally, you can use each() in combination with list() and while:
+</p>
+
+<p>
+reset($array) // reset internal pointer to beginning of array
+while (list($key, $value) = each ($array)) {
+    // Final Act
+}
+</p>
+</div>
+</div>
+
+<div id="outline-container-org12cd7ef" class="outline-3">
+<h3 id="org12cd7ef"><span class="section-number-3">4.7</span> Deleting elements from an array</h3>
+<div class="outline-text-3" id="text-4-7">
+<p>
+To delete one element, use unset():
+</p>
+
+<p>
+unset($array[3]);
+unset($array['foo']);
+</p>
+
+<p>
+To delete multiple noncontiguous elements, also use unset():
+</p>
+
+<p>
+unset($array[3], $array[5]);
+unset($array['foo'], $array['bar']);
+</p>
+
+<p>
+To delete multiple contiguous elements, use array<sub>splice</sub>():
+</p>
+
+<p>
+array<sub>splice</sub>($array, $offset, $length);
+</p>
+</div>
+</div>
+<div id="outline-container-org1f38577" class="outline-3">
+<h3 id="org1f38577"><span class="section-number-3">4.8</span> Changing array size</h3>
+<div class="outline-text-3" id="text-4-8">
+<p>
+Use array<sub>pad</sub>() to make an array grow:
+</p>
+
+<p>
+// start at three
+$array = array('apple', 'banana', 'coconut');
+</p>
+
+<p>
+// grow to five
+$array = array<sub>pad</sub>($array, 5, '');
+</p>
+
+<p>
+Now, count($array) is 5, and the last two elements, $array[3] and $array[4], contain the empty string.
+</p>
+
+<p>
+To reduce an array, you can use array<sub>splice</sub>():
+</p>
+
+<p>
+// no assignment to $array
+array<sub>splice</sub>($array, 2);
+</p>
+
+<p>
+This removes all but the first two elements from $array.
+</p>
+</div>
+</div>
+<div id="outline-container-org1368f30" class="outline-3">
+<h3 id="org1368f30"><span class="section-number-3">4.9</span> Appending one array to another</h3>
+<div class="outline-text-3" id="text-4-9">
+<p>
+The array<sub>merge</sub>() function works with both predefined arrays and arrays defined in place using array() :
+</p>
+
+<p>
+$p<sub>languages</sub> = array('Perl', 'PHP');
+$p<sub>languages</sub> = array<sub>merge</sub>($p<sub>languages</sub>, array('Python'));
+print<sub>r</sub>($p<sub>languages</sub>);
+Array
+(
+    [0] =&gt; PHP
+    [1] =&gt; Perl
+    [2] =&gt; Python
+)
+</p>
+
+<p>
+Merging arrays with only numerical keys causes the arrays to get
+renumbered, so values aren’t lost. Merging arrays with string keys
+causes the second array to overwrite the value of any duplicated
+keys. Arrays with both types of keys exhibit both types of
+behavior. For example:
+</p>
+
+<p>
+$lc = array('a', 'b' =&gt; 'b'); <i>/ lower-case letters as values
+$uc = array('A', 'b' =&gt; 'B'); /</i> upper-case letters as values
+$ac = array<sub>merge</sub>($lc, $uc);  // all-cases?
+print<sub>r</sub>($ac);
+Array
+(
+    [0] =&gt; a
+    [b] =&gt; B
+    [1] =&gt; A
+)
+</p>
+
+<p>
+The uppercase A has been renumbered from index 0 to index 1, to avoid
+a collision, and merged onto the end. The uppercase B has overwritten
+the lowercase b and replaced it in the original place within the
+array.
+</p>
+
+<p>
+The + operator can also merge arrays. The array on the right
+overwrites any identically named keys found on the left. It doesn’t do
+any reordering to prevent collisions. Using the previous example:
+</p>
+
+<p>
+print<sub>r</sub>($uc + $lc);
+print<sub>r</sub>($lc + $uc);
+Array
+(
+    [0] =&gt; a
+    [b] =&gt; b
+)
+Array
+(
+    [0] =&gt; A
+    [b] =&gt; B
+)
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga8a1aee" class="outline-3">
+<h3 id="orga8a1aee"><span class="section-number-3">4.10</span> Turning an Array into a String</h3>
+<div class="outline-text-3" id="text-4-10">
+<p>
+You have an array, and you want to convert it into a nicely formatted string.
+</p>
+
+<p>
+Use join():
+</p>
+
+<p>
+// make a comma delimited list
+$string = join(',', $array);
+</p>
+
+<p>
+Or loop yourself:
+</p>
+
+<p>
+$string = '';
+</p>
+
+<p>
+foreach ($array as $key <code>&gt; $value) {
+    $string .</code> ",$value";
+}
+</p>
+
+<p>
+$string = substr($string, 1); // remove leading ","
+</p>
+</div>
+</div>
+<div id="outline-container-org11f772d" class="outline-3">
+<h3 id="org11f772d"><span class="section-number-3">4.11</span> Checking if a Key Is in an Array</h3>
+<div class="outline-text-3" id="text-4-11">
+<p>
+Use array<sub>key</sub><sub>exists</sub>() to check for a key no matter what the associated value is:
+</p>
+
+<p>
+if (array<sub>key</sub><sub>exists</sub>('key', $array)) {
+    <i>* there is a value for $array['key'] *</i>
+}
+</p>
+
+<p>
+Use isset() to find a key whose associated value is anything but null:
+</p>
+
+<p>
+if (isset($array['key'])) { <i>* there is a non-null value for 'key' in $array *</i> }
+</p>
+
+<p>
+Discussion
+</p>
+
+<p>
+The array<sub>key</sub><sub>exists</sub>() function completely ignores array values—it
+just reports whether there is an element in the array with a
+particular key. isset(), however, behaves the same way on array keys
+as it does with other variables. A null value causes isset() to return
+false.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2f72e7d" class="outline-3">
+<h3 id="org2f72e7d"><span class="section-number-3">4.12</span> Checking if an Element Is in an Array</h3>
+<div class="outline-text-3" id="text-4-12">
+<p>
+Use in<sub>array</sub>():
+</p>
+
+<p>
+if (in<sub>array</sub>($value, $array)) {
+    // an element has $value as its value in array $array
+}
+</p>
+
+<p>
+The default behavior of in<sub>array</sub>() is to compare items using the <code>=
+operator. To use the strict equality check, ==</code>, pass true as the
+third parameter to in<sub>array</sub>():
+</p>
+
+<p>
+$array = array(1, '2', 'three');
+</p>
+
+<p>
+in<sub>array</sub>(0, $array);        <i>/ true!
+in<sub>array</sub>(0, $array, true);  /</i> false
+in<sub>array</sub>(1, $array);        <i>/ true
+in<sub>array</sub>(1, $array, true);  /</i> true
+in<sub>array</sub>(2, $array);        <i>/ true
+in<sub>array</sub>(2, $array, true);  /</i> false
+</p>
+</div>
+</div>
+<div id="outline-container-org2b75e97" class="outline-3">
+<h3 id="org2b75e97"><span class="section-number-3">4.13</span> Finding the Position of a Value in an Array</h3>
+<div class="outline-text-3" id="text-4-13">
+<p>
+Use array<sub>search</sub>() . It returns the key of the found value. If the
+value is not in the array, it returns false:
+</p>
+
+<p>
+$position = array<sub>search</sub>($value, $array);
+if ($position !== false) {
+    // the element in position $position has $value as its value in array $array
+}
+</p>
+</div>
+</div>
+<div id="outline-container-org9391bd4" class="outline-3">
+<h3 id="org9391bd4"><span class="section-number-3">4.14</span> Finding Elements That Pass a Certain Test</h3>
+<div class="outline-text-3" id="text-4-14">
+<p>
+Use a foreach loop:
+</p>
+
+<p>
+$movies = array(&#x2026;);
+</p>
+
+<p>
+foreach ($movies as $movie) {
+    if ($movie['box<sub>office</sub><sub>gross</sub>'] &lt; 5000000) { $flops[] = $movie; }
+}
+</p>
+
+<p>
+Or array<sub>filter</sub>():
+</p>
+
+<p>
+$movies = array(&#x2026;);
+</p>
+
+<p>
+function flops($movie) {
+    return ($movie['box<sub>office</sub><sub>gross</sub>'] &lt; 5000000) ? 1 : 0;
+}
+</p>
+
+<p>
+$flops = array<sub>filter</sub>($movies, 'flops');
+</p>
+</div>
+</div>
+<div id="outline-container-org85b5288" class="outline-3">
+<h3 id="org85b5288"><span class="section-number-3">4.15</span> Finding the Largest or Smallest Valued Element in an Array</h3>
+<div class="outline-text-3" id="text-4-15">
+<p>
+To find the largest element, use max():
+</p>
+
+<p>
+$largest = max($array);
+</p>
+
+<p>
+To find the smallest element, use min():
+</p>
+
+<p>
+$smallest = min($array);
+</p>
+</div>
+</div>
+<div id="outline-container-org1cea9e2" class="outline-3">
+<h3 id="org1cea9e2"><span class="section-number-3">4.16</span> Sorting an Array</h3>
+<div class="outline-text-3" id="text-4-16">
+<p>
+To sort an array using the traditional definition of sort, use sort():
+</p>
+
+<p>
+$states = array('Delaware', 'Pennsylvania', 'New Jersey');
+sort($states);
+</p>
+
+<p>
+To sort numerically, pass SORT<sub>NUMERIC</sub> as the second argument to sort():
+</p>
+
+<p>
+$scores = array(1, 10, 2, 20);
+sort($scores, SORT<sub>NUMERIC</sub>);
+</p>
+
+<p>
+This resorts the numbers in ascending order (1, 2, 10, 20) instead of
+lexicographical order (1, 10, 2, 20).
+</p>
+
+<p>
+The sort() function doesn’t preserve the key/value association between
+elements; instead, entries are reindexed starting at 0 and going
+upward. (The one exception to this rule is a one-element array; its
+lone element doesn’t have its index reset to 0. This is fixed as of
+PHP 4.2.3.)
+</p>
+
+<p>
+To preserve the key/value links, use asort(). The asort() function is
+normally used for associative arrays, but it can also be useful when
+the indexes of the entries are meaningful:
+</p>
+
+<p>
+$states = array(1 =&gt; 'Delaware', 'Pennsylvania', 'New Jersey');
+asort($states);
+</p>
+
+<p>
+while (list($rank, $state) = each($states)) {
+    print "$state was the #$rank state to join the United States\n";
+</p>
+
+<p>
+}
+</p>
+
+<p>
+Use natsort() to sort the array using a natural sorting
+algorithm. Under natural sorting, you can mix strings and numbers
+inside your elements and still get the right answer:
+</p>
+
+<p>
+$tests = array('test1.php', 'test10.php', 'test11.php', 'test2.php');
+natsort($tests);
+</p>
+
+<p>
+The elements are now ordered 'test1.php', 'test2.php', 'test10.php',
+and 'test11.php'. With natural sorting, the number 10 comes after the
+number 2; the opposite occurs under traditional sorting. For
+case-insensitive natural sorting, use natcasesort().
+</p>
+
+<p>
+To sort the array in reverse order, use rsort() or arsort(), which is
+like rsort() but also preserves keys. There is no natrsort() or
+natcasersort(). You can also pass SORT<sub>NUMERIC</sub> into these functions.
+</p>
+</div>
+</div>
+<div id="outline-container-orgec07308" class="outline-3">
+<h3 id="orgec07308"><span class="section-number-3">4.17</span> Randomizing an Array</h3>
+<div class="outline-text-3" id="text-4-17">
+<p>
+Use shuffle():
+</p>
+
+<p>
+shuffle($array);
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0daa2a6" class="outline-3">
+<h3 id="org0daa2a6"><span class="section-number-3">4.18</span> Removing Duplicate Elements from an Array</h3>
+<div class="outline-text-3" id="text-4-18">
+<p>
+If the array is already complete, use array<sub>unique</sub>(), which returns a
+new array that contains no duplicate values:
+</p>
+
+<p>
+$unique = array<sub>unique</sub>($array);
+</p>
+
+<p>
+If you create the array while processing results, here is a technique for numerical arrays:
+</p>
+
+<p>
+foreach ($<sub>REQUEST</sub>['fruits'] as $fruit) {
+    if (!in<sub>array</sub>($array, $fruit)) { $array[] = $fruit; }
+}
+</p>
+
+<p>
+Here’s one for associative arrays:
+</p>
+
+<p>
+foreach ($<sub>REQUEST</sub>['fruits'] as $fruit) {
+    $array[$fruit] = $fruit;
+}
+</p>
+</div>
+</div>
+<div id="outline-container-orgd39d039" class="outline-3">
+<h3 id="orgd39d039"><span class="section-number-3">4.19</span> Applying a Function to Each Element in an Array</h3>
+<div class="outline-text-3" id="text-4-19">
+<p>
+Use array<sub>walk</sub>():
+</p>
+
+<p>
+function escape<sub>data</sub>(&amp;$value, $key) {
+	$value = htmlentities($value, ENT<sub>QUOTES</sub>);
+}
+</p>
+
+<p>
+$names = array('firstname' =&gt; "Baba",
+               'lastname'  =&gt; "O'Riley");
+</p>
+
+<p>
+array<sub>walk</sub>($names, 'escape<sub>data</sub>');
+</p>
+
+<p>
+foreach ($names as $name) {
+	print "$name\n";
+}
+</p>
+
+<p>
+Baba
+O&amp;#039;Riley
+</p>
+
+<p>
+For nested data, use array<sub>walk</sub><sub>recursive</sub>():
+</p>
+
+<p>
+function escape<sub>data</sub>(&amp;$value, $key) {
+	$value = htmlentities($value, ENT<sub>QUOTES</sub>);
+}
+</p>
+
+<p>
+$names = array('firstnames' =&gt; array("Baba", "Bill"),
+               'lastnames'  =&gt; array("O'Riley", "O'Reilly"));
+</p>
+
+<p>
+array<sub>walk</sub><sub>recursive</sub>($names, 'escape<sub>data</sub>');
+</p>
+
+<p>
+foreach ($names as $nametypes) {
+	foreach ($nametypes as $name) {
+		print "$name\n";
+	}
+}
+</p>
+
+<p>
+Baba
+Bill
+O&amp;#039;Riley
+O&amp;#039;Reilly
+</p>
+</div>
+</div>
+<div id="outline-container-orgefd7f6d" class="outline-3">
+<h3 id="orgefd7f6d"><span class="section-number-3">4.20</span> Finding the Union, Intersection, or Difference of Two Arrays</h3>
+<div class="outline-text-3" id="text-4-20">
+<p>
+To compute the union:
+</p>
+
+<p>
+$union = array<sub>unique</sub>(array<sub>merge</sub>($a, $b));
+</p>
+
+<p>
+To compute the intersection:
+</p>
+
+<p>
+$intersection = array<sub>intersect</sub>($a, $b);
+</p>
+
+<p>
+To find the simple difference:
+</p>
+
+<p>
+$difference = array<sub>diff</sub>($a, $b);
+</p>
+
+<p>
+And for the symmetric difference:
+</p>
+
+<p>
+$difference = array<sub>merge</sub>(array<sub>diff</sub>($a, $b), array<sub>diff</sub>($b, $a));
+</p>
+</div>
+</div>
+<div id="outline-container-org07cb094" class="outline-3">
+<h3 id="org07cb094"><span class="section-number-3">4.21</span> Making an Object Act like an Array</h3>
+<div class="outline-text-3" id="text-4-21">
+<p>
+Implement SPL’s ArrayAccess interface:
+</p>
+
+<p>
+class FakeArray implements ArrayAccess {
+</p>
+
+<p>
+private $elements;
+</p>
+
+<p>
+public function _<sub>construct</sub>() {
+	$this-&gt;elements = array();
+}
+</p>
+
+<p>
+public function offsetExists($offset) {
+	return isset($this-&gt;elements[$offset]);
+}
+</p>
+
+<p>
+public function offsetGet($offset) {
+	return $this-&gt;elements[$offset];
+}
+</p>
+
+<p>
+public function offsetSet($offset, $value) {
+	return $this-&gt;elements[$offset] = $value;
+}
+</p>
+
+<p>
+public function offsetUnset($offset) {
+	unset($this-&gt;elements[$offset]);
+}
+}
+</p>
+
+<p>
+$array = new FakeArray;
+</p>
+
+<p>
+// What's Opera, Doc?
+$array['animal'] = 'wabbit';
+</p>
+
+<p>
+// Be very quiet I'm hunting wabbits
+if (isset($array['animal']) &amp;&amp;
+	// Wabbit tracks!!!
+    $array['animal'] == 'wabbit') {
+</p>
+
+<p>
+// Kill the wabbit, kill the wabbit, kill the wabbit
+unset($array['animal']);
+// Yo ho to oh! Yo ho to oh! Yo ho&#x2026;
+}    
+</p>
+
+<p>
+<i>/ What have I done?? I've killed the wabbit&#x2026;.
+/</i> Poor little bunny, poor little wabbit&#x2026;
+if (!isset($array['animal'])) {
+	print "Well, what did you expect in an opera? A happy ending?\n";
+}
+Well, what did you expect in an opera? A happy ending?
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgcc4bfe2" class="outline-3">
+<h3 id="orgcc4bfe2"><span class="section-number-3">4.22</span> array<sub>reduce</sub></h3>
+<div class="outline-text-3" id="text-4-22">
+<p>
+syntax
+   mixed array<sub>reduce</sub> ( array $array , callable $callback [, mixed $initial = NULL ] )
+</p>
+
+<div class="org-src-container">
+<pre class="src src-php">&lt;?php
+function sum($carry, $item)
+{
+    $carry += $item;
+    return $carry;
+}
+
+function product($carry, $item)
+{
+    $carry *= $item;
+    return $carry;
+}
+
+$a = array(1, 2, 3, 4, 5);
+$x = array();
+
+var_dump(array_reduce($a, "sum")); // int(15)
+var_dump(array_reduce($a, "product", 10)); // int(1200), because: 10*1*2*3*4*5
+var_dump(array_reduce($x, "sum", "No data to reduce")); // string(17) "No data to reduce"
+?&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org5177cce" class="outline-3">
+<h3 id="org5177cce"><span class="section-number-3">4.23</span> create and array from variables and their values</h3>
+<div class="outline-text-3" id="text-4-23">
+</div><div id="outline-container-org6facc44" class="outline-4">
+<h4 id="org6facc44"><span class="section-number-4">4.23.1</span> intro</h4>
+<div class="outline-text-4" id="text-4-23-1">
+<p>
+There may also be times when you’ll want to use compact, the inverse
+of extract, to create an array from variables and their
+values. Example 6-14 shows how you might use this function.
+</p>
+
+<p>
+Example 6-14. Using the compact function
+</p>
+<div class="org-src-container">
+<pre class="src src-php">&lt;?php
+$fname   = "Elizabeth";
+$sname   = "Windsor";
+$address = "Buckingham Palace";
+$city    = "London";
+$country = "United Kingdom";
+
+$contact = compact('fname', 'sname', 'address', 'city', 'country');
+print_r($contact);
+?&gt;
+</pre>
+</div>
+
+<p>
+The result of running Example 6-14 is:
+</p>
+<pre class="example">
+Array
+(
+    [fname] =&gt; Elizabeth
+    [sname] =&gt; Windsor
+    [address] =&gt; Buckingham Palace
+    [city] =&gt; London
+    [country] =&gt; United Kingdom
+)
+</pre>
+
+<p>
+Note that compact requires the variable names to be supplied in quotes
+and not as variables preceded with a $ symbol. This is because compact
+is looking for an array of variable names.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf951a2f" class="outline-4">
+<h4 id="orgf951a2f"><span class="section-number-4">4.23.2</span> using compact for debugging</h4>
+<div class="outline-text-4" id="text-4-23-2">
+<p>
+Another use of this function is for debugging, when you wish to
+quickly view several variables and their values, as in Example 6-15.
+</p>
+
+<p>
+Example 6-15. Using compact to help with debugging
+</p>
+<div class="org-src-container">
+<pre class="src src-php">&lt;?php
+$j       = 23;
+$temp    = "Hello";
+$address = "1 Old Street";
+$age     = 61;
+
+print_r(compact(explode(' ', 'j temp address age')));
+?&gt;
+</pre>
+</div>
+
+<p>
+This works by using the explode function to extract all the words from
+the string into an array, which is then passed to the compact
+function. This function in turn returns an array to print<sub>r</sub>, which
+shows its contents.
+</p>
+
+<p>
+If you copy and paste the print<sub>r</sub> line of code, you only need to alter
+the variables named there for a quick printout of a group of
+variables’ values. In this example, the output is:
+</p>
+<pre class="example">
+Array
+(
+    [j] =&gt; 23
+    [temp] =&gt; Hello
+    [address] =&gt; 1 Old Street
+    [age] =&gt; 61
+)
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd511018" class="outline-2">
+<h2 id="orgd511018"><span class="section-number-2">5</span> Date and Time</h2>
+<div class="outline-text-2" id="text-5">
+</div><div id="outline-container-org06755db" class="outline-3">
+<h3 id="org06755db"><span class="section-number-3">5.1</span> Finding the Current Date and Time</h3>
+<div class="outline-text-3" id="text-5-1">
+<p>
+Use strftime() or date() for a formatted time string, as in Example 3-2.
+</p>
+
+<p>
+<b>Example 3-2. Finding the current date and time</b>
+</p>
+
+<p>
+&lt;?php
+print strftime('%c');
+print "\n";
+print date('r');
+?&gt;
+</p>
+
+<p>
+Example 3-2 prints:
+</p>
+
+<p>
+Wed May 10 18:29:59 2006
+Wed, 10 May 2006 18:29:59 -0400
+</p>
+
+<p>
+<b>Use getdate() or localtime() if you want time parts.</b>
+Example 3-3 shows how these functions work.
+</p>
+
+<p>
+Example 3-3. Finding time parts
+</p>
+
+<p>
+&lt;?php
+$now<sub>1</sub> = getdate();
+$now<sub>2</sub> = localtime();
+print "{$now<sub>1</sub>['hours']}:{$now<sub>1</sub>['minutes']}:{$now<sub>1</sub>['seconds']}\n";
+print "$now<sub>2</sub>[2]:$now<sub>2</sub>[1]:$now<sub>2</sub>[0]";
+</p>
+
+<p>
+Example 3-3 prints:
+</p>
+
+<p>
+18:23:45
+18:23:45
+</p>
+
+<p>
+<b>Example 3-4 shows how to use getdate() to print out the month, day, and year.</b>
+</p>
+
+<p>
+Example 3-4. Finding the month, day, and year
+</p>
+
+<p>
+&lt;?php
+$a = getdate();
+printf('%s %d, %d',$a['month'],$a['mday'],$a['year']);
+?&gt;
+</p>
+
+<p>
+Example 3-4 prints:
+</p>
+
+<p>
+May 5, 2007
+</p>
+
+<p>
+Pass getdate() an epoch timestamp as an argument to make the returned
+array the appropriate values for local time at that timestamp. The
+month, day, and year at epoch timestamp 163727100 is shown in Example
+3-5.
+</p>
+
+<p>
+Example 3-5. getdate() with a specific timestamp
+</p>
+
+<p>
+&lt;?php
+$a = getdate(163727100);
+printf('%s %d, %d',$a['month'],$a['mday'],$a['year']);
+?&gt;
+</p>
+
+<p>
+Example 3-5 prints:
+</p>
+
+<p>
+March 10, 1975
+</p>
+
+<p>
+The function localtime() returns an array of time and date parts. It
+also takes an epoch timestamp as an optional first argument, as well
+as a boolean as an optional second argument. If that second argument
+is true, localtime() returns an associative array instead of a
+numerically indexed array. The keys of that array are the same as the
+members of the tm<sub>struct</sub> structure that the C function localtime()
+returns, as shown in Table 3-2.
+</p>
+
+<p>
+<b>Example 3-6 shows how to use localtime() to print out today’s date in month/day/year format.</b>
+</p>
+
+<p>
+Example 3-6. Using localtime()
+</p>
+
+<p>
+&lt;?php
+$a = localtime();
+$a[4] += 1;
+$a[5] += 1900;
+print "$a[4]/$a[3]/$a[5]";
+</p>
+
+<p>
+Example 3-6 prints:
+</p>
+
+<p>
+6/23/2006
+</p>
+
+<p>
+The month is incremented by 1 before printing since localtime() starts
+counting months with 0 for January, but we want to display 1 if the
+current month is January. Similarly, the year is incremented by 1900
+because localtime() starts counting years with 0 for 1900.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org590fa06" class="outline-3">
+<h3 id="org590fa06"><span class="section-number-3">5.2</span> Converting Time and Date Parts to an Epoch Timestamp</h3>
+<div class="outline-text-3" id="text-5-2">
+<p>
+Use mktime() if your time and date parts are in the local time zone,
+as shown in Example 3-7.
+</p>
+
+<p>
+Example 3-7. Getting a specific epoch timestamp
+</p>
+
+<p>
+&lt;?php
+// 7:45:03 PM on March 10, 1975, local time
+$then = mktime(19,45,3,3,10,1975);
+?&gt;
+</p>
+
+<p>
+Use gmmktime() , as in Example 3-8, if your time and date parts are in
+GMT.
+</p>
+
+<p>
+Example 3-8. Getting a specific GMT-based epoch timestamp
+</p>
+
+<p>
+&lt;?php
+// 7:45:03 PM on March 10, 1975, in GMT
+$then = gmmktime(19,45,3,3,10,1975);
+?&gt;
+</p>
+</div>
+</div>
+<div id="outline-container-org078a542" class="outline-3">
+<h3 id="org078a542"><span class="section-number-3">5.3</span> Converting an Epoch Timestamp to Time and Date Parts</h3>
+<div class="outline-text-3" id="text-5-3">
+<p>
+Pass an epoch timestamp to getdate(): $time<sub>parts</sub> = getdate(163727100);.
+</p>
+</div>
+</div>
+<div id="outline-container-org8b336f8" class="outline-3">
+<h3 id="org8b336f8"><span class="section-number-3">5.4</span> Finding the Difference of Two Dates</h3>
+<div class="outline-text-3" id="text-5-4">
+<p>
+Convert both dates to epoch timestamps and subtract one from the
+other. Example 3-13 separates the difference into weeks, days, hours,
+minutes, and seconds.
+</p>
+
+<p>
+Example 3-13. Calculating the difference between two dates
+</p>
+<div class="org-src-container">
+<pre class="src src-php">&lt;?php
+// 7:32:56 pm on May 10, 1965
+$epoch_1 = mktime(19,32,56,5,10,1965);
+// 4:29:11 am on November 20, 1962
+$epoch_2 = mktime(4,29,11,11,20,1962);
+
+$diff_seconds  = $epoch_1 - $epoch_2;
+$diff_weeks    = floor($diff_seconds/604800);
+$diff_seconds -= $diff_weeks   * 604800;
+$diff_days     = floor($diff_seconds/86400);
+$diff_seconds -= $diff_days    * 86400;
+$diff_hours    = floor($diff_seconds/3600);
+$diff_seconds -= $diff_hours   * 3600;
+$diff_minutes  = floor($diff_seconds/60);
+$diff_seconds -= $diff_minutes * 60;
+
+print "The two dates have $diff_weeks weeks, $diff_days days, ";
+print "$diff_hours hours, $diff_minutes minutes, and $diff_seconds ";
+print "seconds elapsed between them.";
+?&gt;
+</pre>
+</div>
+
+<p>
+Example 3-13 prints:
+</p>
+
+<p>
+The two dates have 128 weeks, 6 days, 14 hours, 3 minutes, 
+and 45 seconds elapsed between them.
+</p>
+
+<p>
+Note that the difference isn’t divided into larger chunks than weeks
+(i.e., months or years) because those chunks have variable length and
+wouldn’t give an accurate count of the time difference calculated.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org681848c" class="outline-3">
+<h3 id="org681848c"><span class="section-number-3">5.5</span> date difference using <code>DateInterval</code></h3>
+<div class="outline-text-3" id="text-5-5">
+<p>
+&lt;?php
+$datetime1 = new DateTime('2009-10-11');
+$datetime2 = new DateTime('2009-10-13');
+$interval = $datetime1-&gt;diff($datetime2);
+echo $interval-&gt;format('%R%a days');
+?&gt;
+</p>
+
+<p>
+Procedural style
+</p>
+
+<p>
+&lt;?php
+$datetime1 = date<sub>create</sub>('2009-10-11');
+$datetime2 = date<sub>create</sub>('2009-10-13');
+$interval = date<sub>diff</sub>($datetime1, $datetime2);
+echo $interval-&gt;format('%R%a days');
+?&gt;
+</p>
+
+<p>
+The above examples will output:
++2 days
+</p>
+</div>
+</div>
+
+<div id="outline-container-org32af68e" class="outline-3">
+<h3 id="org32af68e"><span class="section-number-3">5.6</span> number of days between two dates</h3>
+<div class="outline-text-3" id="text-5-6">
+<div class="org-src-container">
+<pre class="src src-php">$today-&gt;diff($yesterday)-&gt;days;
+
+date_diff($today, $yesterday)-&gt;days;
+
+// using epoch timestamp
+// 86400 is number of seoconds in day
+$today-&gt;getTimestamp() - $yesterday-&gt;getTimestamp()/86400;
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8a24443" class="outline-2">
+<h2 id="org8a24443"><span class="section-number-2">6</span> variables</h2>
+<div class="outline-text-2" id="text-6">
+</div><div id="outline-container-org14ba1d9" class="outline-3">
+<h3 id="org14ba1d9"><span class="section-number-3">6.1</span> Establishing a Default Value</h3>
+<div class="outline-text-3" id="text-6-1">
+<p>
+Use isset() to assign a default to a variable that may already have a value:
+</p>
+
+<p>
+if (! isset($cars)) { $cars = $default<sub>cars</sub>; }
+</p>
+
+<p>
+Use the ternary (a ? b : c) operator to give a new variable a (possibly default) value:
+</p>
+
+<p>
+$cars = isset($<sub>REQUEST</sub>['cars']) ? $<sub>REQUEST</sub>['cars'] : $default<sub>cars</sub>;
+</p>
+
+<p>
+Using isset() is essential when assigning default values. Without it,
+the nondefault value can’t be 0 or anything else that evaluates to
+false. Consider this assignment:
+</p>
+
+<p>
+$cars = $<sub>REQUEST</sub>['cars'] ? $<sub>REQUEST</sub>['cars'] : $default<sub>cars</sub>;
+</p>
+
+<p>
+If $<sub>REQUEST</sub>['cars'] is 0, $cars is set to $default<sub>cars</sub> even though 0
+may be a valid value for $cars.
+</p>
+
+<p>
+An alternative syntax for checking arrays is the array<sub>key</sub><sub>exists</sub>() function:
+</p>
+
+<p>
+$cars = array<sub>key</sub><sub>exists</sub>('cars', $<sub>REQUEST</sub>) ? $<sub>REQUEST</sub>['cars'] : $default<sub>cars</sub>;
+</p>
+
+<p>
+The one difference between isset() and array<sub>key</sub><sub>exists</sub>() is that when
+a key exists but its value is null, then array<sub>key</sub><sub>exists</sub>() returns
+true, while isset() returns false:
+</p>
+
+<p>
+$vehicles = array('cars' =&gt; null);
+array<sub>key</sub><sub>exists</sub>('cars', $vehicles); <i>/ true
+isset($vehicles['cars']);            /</i> false
+</p>
+</div>
+</div>
+
+<div id="outline-container-org648a3dd" class="outline-3">
+<h3 id="org648a3dd"><span class="section-number-3">6.2</span> Exchanging Values Without Using Temporary Variables</h3>
+<div class="outline-text-3" id="text-6-2">
+<p>
+To swap $a and $b:
+</p>
+
+<p>
+list($a,$b) = array($b,$a);
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3723f1b" class="outline-3">
+<h3 id="org3723f1b"><span class="section-number-3">6.3</span> Creating a Dynamic Variable Name</h3>
+<div class="outline-text-3" id="text-6-3">
+<p>
+You want to construct a variable’s name dynamically. For example, you
+want to use variable names that match the field names from a database
+query.
+</p>
+
+<p>
+Use PHP’s variable variable syntax by prepending a $ to a variable
+whose value is the variable name you want:
+</p>
+<div class="org-src-container">
+<pre class="src src-php">$animal = 'turtles';
+$turtles = 103;
+print $$animal;    // 103
+</pre>
+</div>
+
+<p>
+Using curly braces , you can construct more complicated expressions that indicate variable names:
+</p>
+
+<p>
+$stooges = array('Moe','Larry','Curly');
+$stooge<sub>moe</sub> = 'Moses Horwitz';
+$stooge<sub>larry</sub> = 'Louis Feinberg';
+$stooge<sub>curly</sub> = 'Jerome Horwitz';
+</p>
+
+<p>
+foreach ($stooges as $s) {
+  print "$s's real name was ${'stooge_'.strtolower($s)}.\n";
+}
+Moe's real name was Moses Horwitz.
+Larry's real name was Louis Feinberg.
+Curly's real name was Jerome Horwitz.
+</p>
+
+<p>
+PHP evaluates the expression between the curly braces and uses it as a
+variable name. That expression can even have function calls in it,
+such as strtolower().
+</p>
+
+<p>
+Variable variables are also useful when iterating through similarly
+named variables. Say you are querying a database table that has fields
+named title<sub>1</sub>, title<sub>2</sub>, etc. If you want to check if a title matches
+any of those values, the easiest way is to loop through them like
+this:
+</p>
+
+<p>
+for ($i = 1; $i &lt;= $n; $i++) {
+    $t = "title_$i";
+    if ($title == $$t) { <i>* match *</i> }
+}
+</p>
+
+<p>
+Of course, it would be more straightforward to store these values in
+an array, but if you are maintaining old code that uses this technique
+(and you can’t change it), variable variables are helpful.
+</p>
+
+<p>
+The curly brace syntax is also necessary in resolving ambiguity about
+array elements. The variable variable $$donkeys[12] could have two
+meanings. The first is “take what’s in the 12th element of the
+$donkeys array and use that as a variable name.” Write this as:
+${$donkeys[12]}. The second is “use what’s in the scalar $donkeys as
+an array name and look in the 12th element of that array.” Write this
+as: ${$donkeys}[12].
+</p>
+
+<p>
+You are not limited by two dollar signs. You can use three, or more,
+but in practice it’s rare to see greater than two levels of
+indirection.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgcebcab6" class="outline-3">
+<h3 id="orgcebcab6"><span class="section-number-3">6.4</span> Using Static Variables</h3>
+<div class="outline-text-3" id="text-6-4">
+<p>
+Declare the variable as static:
+</p>
+
+<p>
+function track<sub>times</sub><sub>called</sub>() {
+    static $i = 0;
+    $i++;
+    return $i;
+}
+</p>
+</div>
+</div>
+
+<div id="outline-container-org88c36d5" class="outline-3">
+<h3 id="org88c36d5"><span class="section-number-3">6.5</span> Encapsulating Complex Data Types in a String</h3>
+<div class="outline-text-3" id="text-6-5">
+<p>
+You want a string representation of an array or object for storage in
+a file or database. This string should be easily reconstitutable into
+the original array or object.  Solution
+</p>
+
+<p>
+Use serialize() to encode variables and their values into a textual form:
+</p>
+
+<p>
+$pantry = array('sugar' =&gt; '2 lbs.','butter' =&gt; '3 sticks');
+$fp = fopen('/tmp/pantry','w') or die ("Can't open pantry");
+fputs($fp,serialize($pantry));
+fclose($fp);
+</p>
+
+<p>
+To recreate the variables, use unserialize():
+</p>
+
+<p>
+$new<sub>pantry</sub> = unserialize(file<sub>get</sub><sub>contents</sub>('/tmp/pantry'));
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2335cc0" class="outline-2">
+<h2 id="org2335cc0"><span class="section-number-2">7</span> functions</h2>
+<div class="outline-text-2" id="text-7">
+</div><div id="outline-container-org328de91" class="outline-3">
+<h3 id="org328de91"><span class="section-number-3">7.1</span> checking for a function's existence</h3>
+<div class="outline-text-3" id="text-7-1">
+<div class="org-src-container">
+<pre class="src src-php">&lt;?php
+if (function_exists("array_combine"))
+{
+    echo "Function exists";
+}
+else
+{
+    echo "Function does not exist - better write our own";
+}
+?&gt;
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org899a838" class="outline-2">
+<h2 id="org899a838"><span class="section-number-2">8</span> Misc</h2>
+<div class="outline-text-2" id="text-8">
+</div><div id="outline-container-orgb96f420" class="outline-3">
+<h3 id="orgb96f420"><span class="section-number-3">8.1</span> get results from eval</h3>
+<div class="outline-text-3" id="text-8-1">
+<p>
+use  <code>return</code> eg:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-php">$res = eval('return 2 + 3;');      // 5
+</pre>
+</div>
+</div>
+</div>
+
+
+
+
+<div id="outline-container-org59d9e2a" class="outline-3">
+<h3 id="org59d9e2a"><span class="section-number-3">8.2</span> check if a class has a property</h3>
+<div class="outline-text-3" id="text-8-2">
+<div class="org-src-container">
+<pre class="src src-php">bool property_exists ( mixed $class , string $property )
+</pre>
+</div>
+
+<p>
+This function checks if the given property exists in the specified class.
+</p>
+
+<p>
+Note:
+As opposed with isset(), property<sub>exists</sub>() returns TRUE even if the property has the value NULL.
+</p>
+
+<p>
+Returns TRUE if the property exists, FALSE if it doesn't exist or NULL in case of an error.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgfbec5b2" class="outline-2">
+<h2 id="orgfbec5b2"><span class="section-number-2">9</span> json</h2>
+<div class="outline-text-2" id="text-9">
+</div><div id="outline-container-orge078d2c" class="outline-3">
+<h3 id="orge078d2c"><span class="section-number-3">9.1</span> json encode raw UTF?</h3>
+<div class="outline-text-3" id="text-9-1">
+<p>
+json<sub>encode</sub>( $text, JSON<sub>UNESCAPED</sub><sub>UNICODE</sub> );
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orge22dc73" class="outline-2">
+<h2 id="orge22dc73"><span class="section-number-2">10</span> webservice</h2>
+<div class="outline-text-2" id="text-10">
+</div><div id="outline-container-org897a489" class="outline-3">
+<h3 id="org897a489"><span class="section-number-3">10.1</span> types of webservices</h3>
+<div class="outline-text-3" id="text-10-1">
+<ul class="org-ul">
+<li>restful</li>
+<li>SOAP</li>
+</ul>
+</div>
+<div id="outline-container-org4f543f1" class="outline-4">
+<h4 id="org4f543f1"><span class="section-number-4">10.1.1</span> SOAP</h4>
+<div class="outline-text-4" id="text-10-1-1">
+<p>
+SOAP is an acronym for Simple Object Access Protocol.
+</p>
+
+<p>
+SOAP is a XML-based protocol for accessing web services.
+</p>
+
+<p>
+SOAP is a W3C recommendation for communication between applications.
+</p>
+
+<p>
+SOAP is XML based, so it is platform independent and language
+independent. In other words, it can be used with Java, .Net or PHP
+language on any platform.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7b20449" class="outline-4">
+<h4 id="org7b20449"><span class="section-number-4">10.1.2</span> WSDL</h4>
+<div class="outline-text-4" id="text-10-1-2">
+<p>
+WSDL is an acronym for Web Services Description Language.
+</p>
+
+<p>
+WSDL is a xml document containing information about web services such
+as method name, method parameter and how to access it.
+</p>
+
+<p>
+WSDL is a part of UDDI. It acts as a interface between web service applications.
+</p>
+
+<p>
+WSDL is pronounced as wiz-dull.
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org74bbb36" class="outline-2">
+<h2 id="org74bbb36"><span class="section-number-2">11</span> lumen</h2>
+<div class="outline-text-2" id="text-11">
+</div><div id="outline-container-org156e249" class="outline-3">
+<h3 id="org156e249"><span class="section-number-3">11.1</span> lumen on apache</h3>
+<div class="outline-text-3" id="text-11-1">
+<p>
+install a lumen app in <b>/var/www</b>
+</p>
+
+<p>
+$ lumen new cms.app
+</p>
+
+<p>
+make your storage folder writable
+</p>
+
+<p>
+$ sudo chmod -R 777 storage
+</p>
+
+<p>
+create a virtual host file
+</p>
+
+<p>
+$ cp /ect/apache2/sites-available/000-default.conf /etc/apache2/sites-available/cms.conf
+</p>
+
+<p>
+here we use a different port for listening incoming requests for this <b>VirtualHost</b>:
+</p>
+
+<pre class="example">
+&lt;VirtualHost *:8081&gt;
+#...
+DocunemtRoot /var/www/cms.app/public
+&lt;Directory /var/www/cms.app/public&gt;
+   AllowOverride all
+   # other options
+&lt;/Directory&gt;
+#...
+&lt;/VirtualHost&gt;
+</pre>
+
+<p>
+change <b>ports.conf</b> to listen to port 8081 by adding <b>Listen 8081</b> 
+to <b>/etc/apache2/ports.conf</b> file.
+</p>
+
+<p>
+now we have to make the <b>VirtualHost</b> active by running <b>a2ensite</b>.
+</p>
+
+<p>
+$ sudo a2ensite cms.conf
+</p>
+
+<p>
+restart the service for the new settings to take effect.
+</p>
+
+<p>
+$ sudo service apache2 restart   
+</p>
+
+<p>
+<a href="https://httpd.apache.org/docs/2.4/vhosts/examples.html">https://httpd.apache.org/docs/2.4/vhosts/examples.html</a>
+<a href="https://gist.github.com/dbaeck/89d0b52d9d3d2777a96f">https://gist.github.com/dbaeck/89d0b52d9d3d2777a96f</a>
+<a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-apache-virtual-hosts-on-ubuntu-14-04-lts">https://www.digitalocean.com/community/tutorials/how-to-set-up-apache-virtual-hosts-on-ubuntu-14-04-lts</a>
+<a href="https://www.digitalocean.com/community/questions/what-is-the-correct-folder-to-put-my-website-files-var-www-or-var-www-html">https://www.digitalocean.com/community/questions/what-is-the-correct-folder-to-put-my-website-files-var-www-or-var-www-html</a>
+<a href="http://tecadmin.net/install-laravel-framework-on-ubuntu/">http://tecadmin.net/install-laravel-framework-on-ubuntu/</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb51961f" class="outline-3">
+<h3 id="orgb51961f"><span class="section-number-3">11.2</span> installing globally</h3>
+<div class="outline-text-3" id="text-11-2">
+<p>
+install the lumen-intaller
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">$ composer global require "laravel/lumen-installer"
+</pre>
+</div>
+
+<p>
+add the lumen binary to path. It can be found at:
+</p>
+
+<ul class="org-ul">
+<li><b>~/.composer/vendor/bin</b></li>
+<li><b>~/.config/composer/vendor/bin</b></li>
+</ul>
+
+<p>
+call like this <code>$ lumen new blog</code> .
+</p>
+</div>
+</div>
+
+<div id="outline-container-org393fec9" class="outline-3">
+<h3 id="org393fec9"><span class="section-number-3">11.3</span> PHP dependencies</h3>
+<div class="outline-text-3" id="text-11-3">
+<div class="org-src-container">
+<pre class="src src-shell">$ sudo apt-get install php7.0-zip
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf85306e" class="outline-3">
+<h3 id="orgf85306e"><span class="section-number-3">11.4</span> artisan</h3>
+<div class="outline-text-3" id="text-11-4">
+</div><div id="outline-container-orge9b8f57" class="outline-4">
+<h4 id="orge9b8f57"><span class="section-number-4">11.4.1</span> create a migration</h4>
+<div class="outline-text-4" id="text-11-4-1">
+<p>
+php artisan make:migration create<sub>books</sub><sub>table</sub> &#x2013;create=books
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb4fcc12" class="outline-4">
+<h4 id="orgb4fcc12"><span class="section-number-4">11.4.2</span> commit migration to db</h4>
+<div class="outline-text-4" id="text-11-4-2">
+<p>
+php artisan migrate
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgba76ae5" class="outline-4">
+<h4 id="orgba76ae5"><span class="section-number-4">11.4.3</span> Refreshing the Schema and Seeding the Database</h4>
+<div class="outline-text-4" id="text-11-4-3">
+<p>
+$ composer dump-autoload
+$ php artisan migrate:refresh
+$ php artisan db:seed
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org45a330c" class="outline-3">
+<h3 id="org45a330c"><span class="section-number-3">11.5</span> middleware</h3>
+<div class="outline-text-3" id="text-11-5">
+<p>
+Middleware provides a way to filter
+incoming HTTP requests before a defined route handles the request. You can use middleware to do any
+number of things, like authentication, validating a signed request, and CORS support, to name a few.
+Middleware classes are typically created in the app/Http/Middleware path by convention
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org34d290e" class="outline-2">
+<h2 id="org34d290e"><span class="section-number-2">12</span> classes</h2>
+<div class="outline-text-2" id="text-12">
+</div><div id="outline-container-org40be2c5" class="outline-3">
+<h3 id="org40be2c5"><span class="section-number-3">12.1</span> static attributes or methods.</h3>
+<div class="outline-text-3" id="text-12-1">
+<p>
+A static property is a class variable that is associated with the class, rather than with an
+instance of the class.
+</p>
+
+<p>
+Static properties are declared with the static keyword and are
+accessed via the syntax ClassName::$property .The following example illustrates
+how static properties work:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-php">class TestClass {
+   public static $counter;
+}
+$counter = TestClass::$counter;
+</pre>
+</div>
+
+<p>
+If you need to access a static property inside a class, you can also use the magic keywords
+self and parent , which resolve to the current class and the parent of the current class.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-php">class TestClass {
+   public static $counter = 0;
+      public $id;
+   public function _ _construct()
+   {
+      $this-&gt;id = self::$counter++;
+    }
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgaf591b4" class="outline-3">
+<h3 id="orgaf591b4"><span class="section-number-3">12.2</span> _<sub>clone</sub> magic method</h3>
+<div class="outline-text-3" id="text-12-2">
+<p>
+To actually copy an object in PHP5, you need to use the built-in _ _ clone()
+method.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-php">$obj = new TestClass;
+$copy = $obj-&gt;_ _clone();
+</pre>
+</div>
+
+<p>
+For some classes, the built-in deep-copy _ _clone() method may not be adequate for
+your needs, so PHP allows you to override it. Inside the _ _clone() method, you not
+only have $this , which represents the new object, but also $that , which is the object
+being cloned. For example, in the TestClass class defined previously in this chapter, if
+you use the default _ _clone() method, you will copy its id property. Instead, you
+should rewrite the class as follows:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-php">class TestClass {
+   public static $counter = 0;
+   public $id;
+   public $other;
+   public function _ _construct()
+   {
+      $this-&gt;id = self::$counter++;
+   }
+   public function _ _clone()
+   {
+      $this-&gt;other = $that-&gt;other;
+      $this-&gt;id = self::$counter++;
+   }
+}
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgcecdbc5" class="outline-2">
+<h2 id="orgcecdbc5"><span class="section-number-2">13</span> patterns</h2>
+<div class="outline-text-2" id="text-13">
+</div><div id="outline-container-orgd47f4df" class="outline-3">
+<h3 id="orgd47f4df"><span class="section-number-3">13.1</span> value object pattern</h3>
+<div class="outline-text-3" id="text-13-1">
+<p>
+<b>The Problem</b>
+So, how do you implement a lightweight, or easy to construct, descriptive object like Date or Dollar?
+</p>
+
+<p>
+<b>The Solution</b>
+Lightweight objects should behave like PHP integers: if you assign the same object to two different
+variables and then change one of the variables, the other variable should remain unaffected.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-php">class Dollar {
+   protected $amount;
+   public function __construct($amount=0) {
+     $this-&gt;amount = (float)$amount;
+   }
+   public function getAmount() {
+      return $this-&gt;amount;
+   }
+   public function add($dollar) {
+      return new Dollar($this-&gt;amount + $dollar-&gt;getAmount());
+   }
+}
+</pre>
+</div>
+
+<p>
+The fundamentals of the ValueObject pattern in PHP 5 are:
+</p>
+<ol class="org-ol">
+<li>Protect the attributes of a Value Object so direct access is forbidden.</li>
+<li>Set the object’s attributes in the constructor.</li>
+<li>Provide no “setter” functions, which otherwise allow attributes to be altered.</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org6ed13a0" class="outline-3">
+<h3 id="org6ed13a0"><span class="section-number-3">13.2</span> The factory pattern</h3>
+<div class="outline-text-3" id="text-13-2">
+<p>
+<b>The Problem</b>
+How can you create such “complex” objects easily and conveniently—without cut-and-paste pro-
+gramming?
+</p>
+
+<p>
+<b>The Solution</b>
+Create a “factory”—a function or a class method— to “manufacture” new objects.
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: moh</p>
+<p class="date">Created: 2017-02-11 Sat 12:34</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

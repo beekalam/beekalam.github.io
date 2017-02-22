@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-02-16 Thu 20:08 -->
+<!-- 2017-02-14 Tue 18:22 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title></title>
@@ -179,7 +179,6 @@
   .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
-<link rel="stylesheet" type="text/css" href="css/main.css" />
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -226,28 +225,6 @@ for the JavaScript code in this tag.
  }
 /*]]>*///-->
 </script>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        displayAlign: "center",
-        displayIndent: "0em",
-
-        "HTML-CSS": { scale: 100,
-                        linebreaks: { automatic: "false" },
-                        webFont: "TeX"
-                       },
-        SVG: {scale: 100,
-              linebreaks: { automatic: "false" },
-              font: "TeX"},
-        NativeMML: {scale: 100},
-        TeX: { equationNumbers: {autoNumber: "AMS"},
-               MultLineWidth: "85%",
-               TagSide: "right",
-               TagIndent: ".8em"
-             }
-});
-</script>
-<script type="text/javascript"
-        src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
 </head>
 <body>
 <div id="content">
@@ -255,238 +232,56 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgd77169f">1. setting up DHCP for freebsd in virtual box</a></li>
-<li><a href="#org24f95d5">2. setting up static ip</a></li>
-<li><a href="#org0a63b31">3. Multiple IPs on one network card</a></li>
-<li><a href="#org3e9b596">4. Set IP address useing ifconfig command:</a></li>
-<li><a href="#orga0b40b4">5. installing package manager.</a></li>
-<li><a href="#org390d952">6. starting `sshd`</a></li>
-<li><a href="#orgdffbb71">7. ssh into virtual machine</a></li>
-<li><a href="#orgf7eecb5">8. searching packages with pkg</a></li>
-<li><a href="#orgf68ecb7">9. installing postgresql</a></li>
-<li><a href="#org1090326">10. restoring database with pg<sub>restore</sub></a></li>
-<li><a href="#orgb3079cb">11. switching between databases in psql</a></li>
-<li><a href="#org6cec5a7">12. use scp to move files</a></li>
-<li><a href="#orgda24614">13. install bash on freebsd</a></li>
-<li><a href="#org3c8e1e7">14. running bash scripts</a></li>
-<li><a href="#org8014a68">15. cron jobs</a></li>
+<li><a href="#org4b46020">1. make an options request</a></li>
+<li><a href="#org98d1ed8">2. make a head request</a></li>
+<li><a href="#org5dc9a05">3. make an options request</a></li>
+<li><a href="#org852c251">4. set a header</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgd77169f" class="outline-2">
-<h2 id="orgd77169f"><span class="section-number-2">1</span> setting up DHCP for freebsd in virtual box</h2>
+<div id="outline-container-org4b46020" class="outline-2">
+<h2 id="org4b46020"><span class="section-number-2">1</span> make an options request</h2>
 <div class="outline-text-2" id="text-1">
 <p>
-hostname="plato.myhostname.com"
-ifconfig<sub>xl0</sub>="DHCP"
-</p>
-
-<p>
-where `xl0` is the name of the interface.
+curl -i -X OPTIONS <a href="http://example.org/path">http://example.org/path</a>
 </p>
 </div>
 </div>
 
-<div id="outline-container-org24f95d5" class="outline-2">
-<h2 id="org24f95d5"><span class="section-number-2">2</span> setting up static ip</h2>
+<div id="outline-container-org98d1ed8" class="outline-2">
+<h2 id="org98d1ed8"><span class="section-number-2">2</span> make a head request</h2>
 <div class="outline-text-2" id="text-2">
 <p>
-ifconfig<sub>xl0</sub>="inet 192.168.0.53 netmask 255.255.255.0"
-defaultrouter="192.168.0.1"
-hostname="plato.myhostname.com"
+curl &#x2013;head <a href="http://example.org/">http://example.org/</a>
 </p>
 </div>
 </div>
 
-<div id="outline-container-org0a63b31" class="outline-2">
-<h2 id="org0a63b31"><span class="section-number-2">3</span> Multiple IPs on one network card</h2>
+<div id="outline-container-org5dc9a05" class="outline-2">
+<h2 id="org5dc9a05"><span class="section-number-2">3</span> make an options request</h2>
 <div class="outline-text-2" id="text-3">
 <p>
-ifconfig<sub>xl0</sub>="inet 192.168.0.53 netmask 255.255.255.0"
-ifconfig<sub>xl0</sub><sub>alias0</sub>="inet 192.168.0.54 netmask 255.255.255.0"
-ifconfig<sub>xl0</sub><sub>alias1</sub>="inet 192.168.0.55 netmask 255.255.255.0"
-defaultrouter="192.168.0.1"
-hostname="plato.myhostname.com"
+curl -i -X OPTIONS <a href="http://example.org/path">http://example.org/path</a>
 </p>
 </div>
 </div>
 
-<div id="outline-container-org3e9b596" class="outline-2">
-<h2 id="org3e9b596"><span class="section-number-2">4</span> Set IP address useing ifconfig command:</h2>
+<div id="outline-container-org852c251" class="outline-2">
+<h2 id="org852c251"><span class="section-number-2">4</span> set a header</h2>
 <div class="outline-text-2" id="text-4">
 <p>
-ifconfig re0 inet 202.54.1.22
-</p>
-</div>
-</div>
-
-<div id="outline-container-orga0b40b4" class="outline-2">
-<h2 id="orga0b40b4"><span class="section-number-2">5</span> installing package manager.</h2>
-<div class="outline-text-2" id="text-5">
-<p>
-just type `pkg`
-</p>
-</div>
-</div>
-
-<div id="outline-container-org390d952" class="outline-2">
-<h2 id="org390d952"><span class="section-number-2">6</span> starting `sshd`</h2>
-<div class="outline-text-2" id="text-6">
-<p>
-FreeBSD has OpenSSH-server installed by default.
-Enable it with sshd<sub>enable</sub>="YES" in rc.conf, and run "sh /etc/rc.d/sshd start"
+curl &#x2013;header "X-MyHeader: 123" www.google.com
 </p>
 
 <p>
-check for status:
+echo "0217"$(date +%Y-%m-%d-%H-%M-%S-%N) | tr -d "-" | php -r 'echo substr(file("php://stdin")[0],0,20);'
 </p>
-
-<p>
-/etc/rc.d/sshd status
-</p>
-</div>
-</div>
-
-<div id="outline-container-orgdffbb71" class="outline-2">
-<h2 id="orgdffbb71"><span class="section-number-2">7</span> ssh into virtual machine</h2>
-<div class="outline-text-2" id="text-7">
-<p>
-use bridging instead of NAT.
-and you should enable `PermitRootLogin` in `/etc/ssh/sshd<sub>config</sub>`
-</p>
-
-<p>
-PermitRootLogin yes
-</p>
-</div>
-</div>
-
-<div id="outline-container-orgf7eecb5" class="outline-2">
-<h2 id="orgf7eecb5"><span class="section-number-2">8</span> searching packages with pkg</h2>
-<div class="outline-text-2" id="text-8">
-<p>
-$ pkg search &lt;packagename&gt;
-</p>
-</div>
-</div>
-
-<div id="outline-container-orgf68ecb7" class="outline-2">
-<h2 id="orgf68ecb7"><span class="section-number-2">9</span> installing postgresql</h2>
-<div class="outline-text-2" id="text-9">
-<p>
-$ pkg install postgresql-&lt;version&gt;
-$ /usr/local/etc/rc.d/postgresql initdb
-$ /usr/local/etc/rc.d/postgresql start
-</p>
-
-<p>
-the default user created when you install `postgresql` in Freebsd is `pgsql`
-</p>
-
-<p>
-$ su pgsql
-</p>
-
-<p>
-logs in as pgsql.
-</p>
-
-<p>
-_<sub>ADDING</sub> root user to postgresql login__
-</p>
-
-<p>
-$ su pgsql
-$ createuser &#x2013;interactive
-</p>
-
-<p>
-_<sub>REMOVING</sub> role__
-</p>
-
-<p>
-$ su pgsql
-$ drop role &lt;rolename&gt;
-</p>
-</div>
-</div>
-
-<div id="outline-container-org1090326" class="outline-2">
-<h2 id="org1090326"><span class="section-number-2">10</span> restoring database with pg<sub>restore</sub></h2>
-<div class="outline-text-2" id="text-10">
-<p>
-pg<sub>restore</sub> -h localhost -p 5432 -U root -C -d mydb ./mydb.custom
-</p>
-
-<p>
--C creates the datbase
--d connects to the database
-</p>
-</div>
-</div>
-
-<div id="outline-container-orgb3079cb" class="outline-2">
-<h2 id="orgb3079cb"><span class="section-number-2">11</span> switching between databases in psql</h2>
-<div class="outline-text-2" id="text-11">
-<p>
-\connect DBNAME
-</p>
-</div>
-</div>
-
-<div id="outline-container-org6cec5a7" class="outline-2">
-<h2 id="org6cec5a7"><span class="section-number-2">12</span> use scp to move files</h2>
-<div class="outline-text-2" id="text-12">
-<p>
-scp -r <i>tmp/backupmanager root@192.168.1.103:/root</i>
-</p>
-</div>
-</div>
-
-<div id="outline-container-orgda24614" class="outline-2">
-<h2 id="orgda24614"><span class="section-number-2">13</span> install bash on freebsd</h2>
-<div class="outline-text-2" id="text-13">
-<p>
-pkg install bash
-</p>
-</div>
-</div>
-
-<div id="outline-container-org3c8e1e7" class="outline-2">
-<h2 id="org3c8e1e7"><span class="section-number-2">14</span> running bash scripts</h2>
-<div class="outline-text-2" id="text-14">
-<p>
-bash /path/bashfile.sh
-</p>
-</div>
-</div>
-
-<div id="outline-container-org8014a68" class="outline-2">
-<h2 id="org8014a68"><span class="section-number-2">15</span> cron jobs</h2>
-<div class="outline-text-2" id="text-15">
-<p>
-cron has its own environment.So make sure to add additional paths to cron
-when you issue `crontab -e` on top of the file.
-</p>
-
-<p>
-PATH=/sbin:/bin:/usr/sbin:/usr/bin
-</p>
-
-<p>
-If you need default system wide PATHs and other ENV variables
- (which defined in /etc/profile.d), just put the following:
-</p>
-
-<ul class="org-ul">
-<li>* * * * . /etc/profile; your cmd</li>
-</ul>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: moh</p>
-<p class="date">Created: 2017-02-16 Thu 20:08</p>
+<p class="date">Created: 2017-02-14 Tue 18:22</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

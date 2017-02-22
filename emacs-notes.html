@@ -3,12 +3,12 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-02-07 Tue 16:32 -->
+<!-- 2017-02-16 Thu 20:08 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title></title>
+<title>Emacs org-mode examples</title>
 <meta name="generator" content="Org mode" />
-<meta name="author" content="moh" />
+<meta name="author" content="Mohammad Reza Mansouri" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -179,6 +179,7 @@
   .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
+<link rel="stylesheet" type="text/css" href="css/main.css" />
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -228,142 +229,134 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
+<h1 class="title">Emacs org-mode examples</h1>
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org0abcfb5">1. tasks</a>
+<li><a href="#orgd06fa82">1. Introduction</a>
 <ul>
-<li><a href="#org47cd31a">1.1. <span class="done DONE">DONE</span> todo start new org file for tutorial</a></li>
-<li><a href="#org6a8f2f8">1.2. <span class="done DONE">DONE</span> outline document</a></li>
-<li><a href="#org4106ed1">1.3. <span class="done DONE">DONE</span> Write Introduction</a></li>
-<li><a href="#org03293ae">1.4. <span class="todo TODO">TODO</span> write documentation</a></li>
+<li><a href="#org088b21b">1.1. Obtaining org-mode</a></li>
+<li><a href="#orgf13aa2b">1.2. Cofiguration</a></li>
 </ul>
 </li>
-<li><a href="#orgd06fa82">2. Introduction</a>
+<li><a href="#orgbba42c9">2. Header</a>
 <ul>
-<li><a href="#org088b21b">2.1. Obtaining org-mode</a></li>
-<li><a href="#orgf13aa2b">2.2. Cofiguration</a></li>
+<li><a href="#org85ddbde">2.1. General metadata</a></li>
+<li><a href="#orgb64ac81">2.2. Common export parameters</a></li>
+<li><a href="#org67775f3">2.3. emacs options</a></li>
 </ul>
 </li>
-<li><a href="#orgf71d4fa">3. The basics</a>
+<li><a href="#org9f4d248">3. Using org-mode as spreadsheet</a>
 <ul>
-<li><a href="#orgd0e6eeb">3.1. Creating a new file</a></li>
-<li><a href="#org6c4a560">3.2. Simple task list</a></li>
-<li><a href="#orgbda4df1">3.3. Usign headlines to structure a document</a></li>
-<li><a href="#orga563b64">3.4. Links to other places</a></li>
-<li><a href="#org39ef50a">3.5. Adding notes to a task</a></li>
-<li><a href="#org72d07bf">3.6. Scheduling an appointment.</a></li>
-<li><a href="#org0061b1d">3.7. Using the agenda</a></li>
+<li><a href="#orgde3bf00">3.1. Define one column using a formula in terms of others</a></li>
 </ul>
 </li>
-<li><a href="#org82e2145">4. org-mode structure</a>
+<li><a href="#org0abcfb5">4. tasks</a>
 <ul>
-<li><a href="#org62ca1c5">4.1. a subheading</a>
-<ul>
-<li><a href="#org8612711">4.1.1. navigation</a></li>
+<li><a href="#org47cd31a">4.1. <span class="done DONE">DONE</span> todo start new org file for tutorial</a></li>
+<li><a href="#org6a8f2f8">4.2. <span class="done DONE">DONE</span> outline document</a></li>
+<li><a href="#org4106ed1">4.3. <span class="done DONE">DONE</span> Write Introduction</a></li>
+<li><a href="#org03293ae">4.4. <span class="todo TODO">TODO</span> write documentation</a></li>
 </ul>
 </li>
-<li><a href="#org0dc4c9d">4.2. lists</a>
+<li><a href="#orgf71d4fa">5. The basics</a>
 <ul>
-<li><a href="#org8f3acb9">4.2.1. bullet lists</a></li>
-<li><a href="#org255d5c6">4.2.2. numbered lists</a></li>
-<li><a href="#org0430f1b">4.2.3. checklists <code>[0/4]</code></a></li>
-<li><a href="#org7ba58f6">4.2.4. definition lists</a></li>
+<li><a href="#orgd0e6eeb">5.1. Creating a new file</a></li>
+<li><a href="#org6c4a560">5.2. Simple task list</a></li>
+<li><a href="#orgbda4df1">5.3. Usign headlines to structure a document</a></li>
+<li><a href="#orga563b64">5.4. Links to other places</a></li>
+<li><a href="#org39ef50a">5.5. Adding notes to a task</a></li>
+<li><a href="#org72d07bf">5.6. Scheduling an appointment.</a></li>
+<li><a href="#org0061b1d">5.7. Using the agenda</a></li>
 </ul>
 </li>
+<li><a href="#org82e2145">6. org-mode structure</a>
+<ul>
+<li><a href="#org62ca1c5">6.1. a subheading</a>
+<ul>
+<li><a href="#org8612711">6.1.1. navigation</a></li>
 </ul>
 </li>
-<li><a href="#org627d1f2">5. Tables</a></li>
-<li><a href="#orgb8c70cb">6. Org-Mode Reference Card</a>
+<li><a href="#org0dc4c9d">6.2. lists</a>
 <ul>
-<li><a href="#orgbfa4b0e">6.1. Getting started</a></li>
-<li><a href="#org7ca2597">6.2. Tables</a>
-<ul>
-<li><a href="#org3242b72">6.2.1. creating a table</a></li>
-<li><a href="#orgc1c91e3">6.2.2. commands available inside tables</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#org9483a7e">7. searching</a>
-<ul>
-<li><a href="#org3ccca25">7.1. incremental search</a>
-<ul>
-<li><a href="#org0ac1b71">7.1.1. search a word under cursor</a></li>
-<li><a href="#orge5e0a67">7.1.2. move to back/forth between search strings</a></li>
+<li><a href="#org8f3acb9">6.2.1. bullet lists</a></li>
+<li><a href="#org255d5c6">6.2.2. numbered lists</a></li>
+<li><a href="#org0430f1b">6.2.3. checklists <code>[0/4]</code></a></li>
+<li><a href="#org7ba58f6">6.2.4. definition lists</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orga4dda19">8. Query-replace</a></li>
-<li><a href="#org284bb62">9. Repeating Query-Replaces (and Other Complex Commands)</a></li>
-<li><a href="#org19a29ef">10. Recursive Editing</a></li>
-<li><a href="#org435ce6c">11. regular expressions</a></li>
-<li><a href="#org8825542">12. word abbreviations</a>
+<li><a href="#org03cd7fa">7. Tables</a></li>
+<li><a href="#orgb8c70cb">8. Org-Mode Reference Card</a>
 <ul>
-<li><a href="#orgffaf00f">12.1. dynamic abbreviations</a></li>
-<li><a href="#orgd70eb8f">12.2. word abbreviations</a>
+<li><a href="#orgbfa4b0e">8.1. Getting started</a></li>
+<li><a href="#orgb6ea097">8.2. Tables</a>
 <ul>
-<li><a href="#org42ced3e">12.2.1. Trying word abbreviations for one session</a></li>
+<li><a href="#org3242b72">8.2.1. creating a table</a></li>
+<li><a href="#orgc1c91e3">8.2.2. commands available inside tables</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org69b0a52">13. moving</a></li>
-<li><a href="#org781bb58">14. correcting</a>
+<li><a href="#org9483a7e">9. searching</a>
 <ul>
-<li><a href="#org727b11c">14.1. repeat and redo</a></li>
+<li><a href="#org3ccca25">9.1. incremental search</a>
+<ul>
+<li><a href="#org0ac1b71">9.1.1. search a word under cursor</a></li>
+<li><a href="#orge5e0a67">9.1.2. move to back/forth between search strings</a></li>
 </ul>
 </li>
-<li><a href="#org95e4574">15. screens</a></li>
-<li><a href="#org4ab86c3">16. buffers</a></li>
-<li><a href="#orgcd93778">17. Files</a></li>
-<li><a href="#orgb41543d">18. Using Buffers, Windows, and Frames</a>
-<ul>
-<li><a href="#orgfeac472">18.1. mode line</a></li>
-<li><a href="#orga1ad8e4">18.2. mini-buffer</a></li>
-<li><a href="#org642319c">18.3. completion</a></li>
 </ul>
 </li>
-<li><a href="#orga873f84">19. wrap text</a></li>
-<li><a href="#org1cf8c89">20. org-mode</a>
+<li><a href="#orga4dda19">10. Query-replace</a></li>
+<li><a href="#org284bb62">11. Repeating Query-Replaces (and Other Complex Commands)</a></li>
+<li><a href="#org19a29ef">12. Recursive Editing</a></li>
+<li><a href="#org435ce6c">13. regular expressions</a></li>
+<li><a href="#orgfca6272">14. word abbreviations</a>
 <ul>
-<li><a href="#orgd8ee833">20.1. org-capture</a></li>
-<li><a href="#orgf7061ea">20.2. run desktop-change-dir at startup</a></li>
-<li><a href="#orgfad7488">20.3. save abbrev-mode globally</a></li>
+<li><a href="#orgffaf00f">14.1. dynamic abbreviations</a></li>
+<li><a href="#orgff0c56c">14.2. word abbreviations</a>
+<ul>
+<li><a href="#org42ced3e">14.2.1. Trying word abbreviations for one session</a></li>
 </ul>
 </li>
-<li><a href="#org9cdb406">21. indent paragraph</a></li>
 </ul>
-</div>
-</div>
-<div id="outline-container-org0abcfb5" class="outline-2">
-<h2 id="org0abcfb5"><span class="section-number-2">1</span> tasks</h2>
-<div class="outline-text-2" id="text-1">
-</div><div id="outline-container-org47cd31a" class="outline-3">
-<h3 id="org47cd31a"><span class="section-number-3">1.1</span> <span class="done DONE">DONE</span> todo start new org file for tutorial</h3>
-<div class="outline-text-3" id="text-1-1">
-</div>
-</div>
-<div id="outline-container-org6a8f2f8" class="outline-3">
-<h3 id="org6a8f2f8"><span class="section-number-3">1.2</span> <span class="done DONE">DONE</span> outline document</h3>
-<div class="outline-text-3" id="text-1-2">
-</div>
-</div>
-<div id="outline-container-org4106ed1" class="outline-3">
-<h3 id="org4106ed1"><span class="section-number-3">1.3</span> <span class="done DONE">DONE</span> Write Introduction</h3>
-<div class="outline-text-3" id="text-1-3">
-</div>
-</div>
-<div id="outline-container-org03293ae" class="outline-3">
-<h3 id="org03293ae"><span class="section-number-3">1.4</span> <span class="todo TODO">TODO</span> write documentation</h3>
+</li>
+<li><a href="#org69b0a52">15. moving</a></li>
+<li><a href="#org781bb58">16. correcting</a>
+<ul>
+<li><a href="#org727b11c">16.1. repeat and redo</a></li>
+</ul>
+</li>
+<li><a href="#org95e4574">17. screens</a></li>
+<li><a href="#org4ab86c3">18. buffers</a></li>
+<li><a href="#orgcd93778">19. Files</a></li>
+<li><a href="#orgb41543d">20. Using Buffers, Windows, and Frames</a>
+<ul>
+<li><a href="#orgfeac472">20.1. mode line</a></li>
+<li><a href="#orga1ad8e4">20.2. mini-buffer</a></li>
+<li><a href="#org642319c">20.3. completion</a></li>
+</ul>
+</li>
+<li><a href="#orga873f84">21. wrap text</a></li>
+<li><a href="#org1cf8c89">22. org-mode</a>
+<ul>
+<li><a href="#orgd8ee833">22.1. org-capture</a></li>
+<li><a href="#orgf7061ea">22.2. run desktop-change-dir at startup</a></li>
+<li><a href="#orgfad7488">22.3. save abbrev-mode globally</a></li>
+</ul>
+</li>
+<li><a href="#org9cdb406">23. indent paragraph</a></li>
+<li><a href="#orgafe4851">24. References</a></li>
+</ul>
 </div>
 </div>
 
 <div id="outline-container-orgd06fa82" class="outline-2">
-<h2 id="orgd06fa82"><span class="section-number-2">2</span> Introduction</h2>
-<div class="outline-text-2" id="text-2">
+<h2 id="orgd06fa82"><span class="section-number-2">1</span> Introduction</h2>
+<div class="outline-text-2" id="text-1">
 <p>
 Org-mode is a personal, information management and outlining tool for
 Emacs. This document is intended to give the reader a "feel" for 
@@ -372,8 +365,8 @@ org-mode and to teach basic operations.
 </div>
 
 <div id="outline-container-org088b21b" class="outline-3">
-<h3 id="org088b21b"><span class="section-number-3">2.1</span> Obtaining org-mode</h3>
-<div class="outline-text-3" id="text-2-1">
+<h3 id="org088b21b"><span class="section-number-3">1.1</span> Obtaining org-mode</h3>
+<div class="outline-text-3" id="text-1-1">
 <p>
 you can download org-mode from the
 <a href="http://staff.science.uva.nl/~dowinik/Tools/org/">
@@ -383,39 +376,294 @@ org-mode home page.</a>
 </div>
 
 <div id="outline-container-orgf13aa2b" class="outline-3">
-<h3 id="orgf13aa2b"><span class="section-number-3">2.2</span> Cofiguration</h3>
+<h3 id="orgf13aa2b"><span class="section-number-3">1.2</span> Cofiguration</h3>
+</div>
+</div>
+<div id="outline-container-orgbba42c9" class="outline-2">
+<h2 id="orgbba42c9"><span class="section-number-2">2</span> Header</h2>
+<div class="outline-text-2" id="text-2">
+</div><div id="outline-container-org85ddbde" class="outline-3">
+<h3 id="org85ddbde"><span class="section-number-3">2.1</span> General metadata</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+An initial group sets the metadata used in any title pages, headers,
+footers, etc. used by the various exporters:
+</p>
+<div class="org-src-container">
+<pre class="src src-lisp">#+TITLE:     Emacs org-mode examples
+#+AUTHOR:    Eric H. Neilsen, Jr.
+#+EMAIL:     neilsen@fnal.gov
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb64ac81" class="outline-3">
+<h3 id="orgb64ac81"><span class="section-number-3">2.2</span> Common export parameters</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+Configue the org-mode tags for forcing inclusion of exclusion of
+sections in exported documents
+</p>
+
+<div class="org-src-container">
+<pre class="src src-lisp">#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+</pre>
+</div>
+
+<p>
+Additional options handle interpretation of special characters in the
+buffer, numbering of headings, etc.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-lisp">#+OPTIONS: H:2 num:nil toc:nil \n:nil @:t ::t |:t ^:{} _:{} *:t TeX:t LaTeX:t
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org67775f3" class="outline-3">
+<h3 id="org67775f3"><span class="section-number-3">2.3</span> emacs options</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+THE STARTUP keyword sets how the buffer is displayed when the file is opened in emacs:
+</p>
+<div class="org-src-container">
+<pre class="src src-lisp">#+STARTUP: overview
+#+STARTUP: content
+#+STARTUP: showall
+#+STARTUP: showeverything
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org9f4d248" class="outline-2">
+<h2 id="org9f4d248"><span class="section-number-2">3</span> Using org-mode as spreadsheet</h2>
+<div class="outline-text-2" id="text-3">
+</div><div id="outline-container-orgde3bf00" class="outline-3">
+<h3 id="orgde3bf00"><span class="section-number-3">3.1</span> Define one column using a formula in terms of others</h3>
+<div class="outline-text-3" id="text-3-1">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">airmass</th>
+<th scope="col" class="org-right">zenith<sub>seeing</sub></th>
+<th scope="col" class="org-right">delivered<sub>seeing</sub></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">1.3</td>
+<td class="org-right">0.95</td>
+<td class="org-right">1.1119612</td>
+</tr>
+
+<tr>
+<td class="org-right">1.3</td>
+<td class="org-right">1.0</td>
+<td class="org-right">1.1704854</td>
+</tr>
+
+<tr>
+<td class="org-right">1.3</td>
+<td class="org-right">1.1</td>
+<td class="org-right">1.2875340</td>
+</tr>
+
+<tr>
+<td class="org-right">1.3</td>
+<td class="org-right">1.2</td>
+<td class="org-right">1.4045825</td>
+</tr>
+
+<tr>
+<td class="org-right">1.3</td>
+<td class="org-right">1.25</td>
+<td class="org-right">1.4631068</td>
+</tr>
+
+<tr>
+<td class="org-right">1.3</td>
+<td class="org-right">1.3</td>
+<td class="org-right">1.5216311</td>
+</tr>
+
+<tr>
+<td class="org-right">1.3</td>
+<td class="org-right">1.5</td>
+<td class="org-right">1.7557281</td>
+</tr>
+
+<tr>
+<td class="org-right">1.3</td>
+<td class="org-right">1.8</td>
+<td class="org-right">2.1068738</td>
+</tr>
+
+<tr>
+<td class="org-right">1.2</td>
+<td class="org-right">1.8</td>
+<td class="org-right">2.0080811</td>
+</tr>
+
+<tr>
+<td class="org-right">1.4</td>
+<td class="org-right">2.0</td>
+<td class="org-right">2.4474105</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+To recalculate the column, put the cursor on the #+TBLFM column and
+hit ctrl-c twice.
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">a</th>
+<th scope="col" class="org-right">b</th>
+<th scope="col" class="org-right">sum</th>
+<th scope="col" class="org-right">div</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">2</td>
+<td class="org-right">3</td>
+<td class="org-right">2</td>
+</tr>
+
+<tr>
+<td class="org-right">2</td>
+<td class="org-right">3</td>
+<td class="org-right">5</td>
+<td class="org-right">1.5</td>
+</tr>
+
+<tr>
+<td class="org-right">3</td>
+<td class="org-right">4</td>
+<td class="org-right">7</td>
+<td class="org-right">1.3333333</td>
+</tr>
+
+<tr>
+<td class="org-right">4</td>
+<td class="org-right">5</td>
+<td class="org-right">9</td>
+<td class="org-right">1.25</td>
+</tr>
+
+<tr>
+<td class="org-right">5</td>
+<td class="org-right">6</td>
+<td class="org-right">11</td>
+<td class="org-right">1.2</td>
+</tr>
+
+<tr>
+<td class="org-right">6</td>
+<td class="org-right">7</td>
+<td class="org-right">13</td>
+<td class="org-right">1.1666667</td>
+</tr>
+
+<tr>
+<td class="org-right">7</td>
+<td class="org-right">8</td>
+<td class="org-right">15</td>
+<td class="org-right">1.1428571</td>
+</tr>
+
+<tr>
+<td class="org-right">8</td>
+<td class="org-right">9</td>
+<td class="org-right">17</td>
+<td class="org-right">1.125</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="outline-container-org0abcfb5" class="outline-2">
+<h2 id="org0abcfb5"><span class="section-number-2">4</span> tasks</h2>
+<div class="outline-text-2" id="text-4">
+</div><div id="outline-container-org47cd31a" class="outline-3">
+<h3 id="org47cd31a"><span class="section-number-3">4.1</span> <span class="done DONE">DONE</span> todo start new org file for tutorial</h3>
+<div class="outline-text-3" id="text-4-1">
+</div>
+</div>
+<div id="outline-container-org6a8f2f8" class="outline-3">
+<h3 id="org6a8f2f8"><span class="section-number-3">4.2</span> <span class="done DONE">DONE</span> outline document</h3>
+<div class="outline-text-3" id="text-4-2">
+</div>
+</div>
+<div id="outline-container-org4106ed1" class="outline-3">
+<h3 id="org4106ed1"><span class="section-number-3">4.3</span> <span class="done DONE">DONE</span> Write Introduction</h3>
+<div class="outline-text-3" id="text-4-3">
+</div>
+</div>
+<div id="outline-container-org03293ae" class="outline-3">
+<h3 id="org03293ae"><span class="section-number-3">4.4</span> <span class="todo TODO">TODO</span> write documentation</h3>
 </div>
 </div>
 
 <div id="outline-container-orgf71d4fa" class="outline-2">
-<h2 id="orgf71d4fa"><span class="section-number-2">3</span> The basics</h2>
-<div class="outline-text-2" id="text-3">
+<h2 id="orgf71d4fa"><span class="section-number-2">5</span> The basics</h2>
+<div class="outline-text-2" id="text-5">
 </div><div id="outline-container-orgd0e6eeb" class="outline-3">
-<h3 id="orgd0e6eeb"><span class="section-number-3">3.1</span> Creating a new file</h3>
+<h3 id="orgd0e6eeb"><span class="section-number-3">5.1</span> Creating a new file</h3>
 </div>
 <div id="outline-container-org6c4a560" class="outline-3">
-<h3 id="org6c4a560"><span class="section-number-3">3.2</span> Simple task list</h3>
+<h3 id="org6c4a560"><span class="section-number-3">5.2</span> Simple task list</h3>
 </div>
 <div id="outline-container-orgbda4df1" class="outline-3">
-<h3 id="orgbda4df1"><span class="section-number-3">3.3</span> Usign headlines to structure a document</h3>
+<h3 id="orgbda4df1"><span class="section-number-3">5.3</span> Usign headlines to structure a document</h3>
 </div>
 <div id="outline-container-orga563b64" class="outline-3">
-<h3 id="orga563b64"><span class="section-number-3">3.4</span> Links to other places</h3>
+<h3 id="orga563b64"><span class="section-number-3">5.4</span> Links to other places</h3>
 </div>
 <div id="outline-container-org39ef50a" class="outline-3">
-<h3 id="org39ef50a"><span class="section-number-3">3.5</span> Adding notes to a task</h3>
+<h3 id="org39ef50a"><span class="section-number-3">5.5</span> Adding notes to a task</h3>
 </div>
 <div id="outline-container-org72d07bf" class="outline-3">
-<h3 id="org72d07bf"><span class="section-number-3">3.6</span> Scheduling an appointment.</h3>
+<h3 id="org72d07bf"><span class="section-number-3">5.6</span> Scheduling an appointment.</h3>
 </div>
 <div id="outline-container-org0061b1d" class="outline-3">
-<h3 id="org0061b1d"><span class="section-number-3">3.7</span> Using the agenda</h3>
+<h3 id="org0061b1d"><span class="section-number-3">5.7</span> Using the agenda</h3>
 </div>
 </div>
 
 <div id="outline-container-org82e2145" class="outline-2">
-<h2 id="org82e2145"><span class="section-number-2">4</span> org-mode structure</h2>
-<div class="outline-text-2" id="text-4">
+<h2 id="org82e2145"><span class="section-number-2">6</span> org-mode structure</h2>
+<div class="outline-text-2" id="text-6">
 <p>
 Text in org is structured  by headings, denoted by lines starting
 with one or more * so we can currently in a section.
@@ -423,11 +671,11 @@ with one or more * so we can currently in a section.
 </div>
 
 <div id="outline-container-org62ca1c5" class="outline-3">
-<h3 id="org62ca1c5"><span class="section-number-3">4.1</span> a subheading</h3>
-<div class="outline-text-3" id="text-4-1">
+<h3 id="org62ca1c5"><span class="section-number-3">6.1</span> a subheading</h3>
+<div class="outline-text-3" id="text-6-1">
 </div><div id="outline-container-org8612711" class="outline-4">
-<h4 id="org8612711"><span class="section-number-4">4.1.1</span> navigation</h4>
-<div class="outline-text-4" id="text-4-1-1">
+<h4 id="org8612711"><span class="section-number-4">6.1.1</span> navigation</h4>
+<div class="outline-text-4" id="text-6-1-1">
 <p>
 Headings can be expanded or collapsed by moving to the (sub)heading
 and pressing TAB. S-TAB cycles all headings. You can jump to next
@@ -443,11 +691,11 @@ using M-p and M-down.
 </div>
 
 <div id="outline-container-org0dc4c9d" class="outline-3">
-<h3 id="org0dc4c9d"><span class="section-number-3">4.2</span> lists</h3>
-<div class="outline-text-3" id="text-4-2">
+<h3 id="org0dc4c9d"><span class="section-number-3">6.2</span> lists</h3>
+<div class="outline-text-3" id="text-6-2">
 </div><div id="outline-container-org8f3acb9" class="outline-4">
-<h4 id="org8f3acb9"><span class="section-number-4">4.2.1</span> bullet lists</h4>
-<div class="outline-text-4" id="text-4-2-1">
+<h4 id="org8f3acb9"><span class="section-number-4">6.2.1</span> bullet lists</h4>
+<div class="outline-text-4" id="text-6-2-1">
 <ul class="org-ul">
 <li>bullet lists can be created like this(start a line with one or more</li>
 </ul>
@@ -469,8 +717,8 @@ the line up with the bullet.</li>
 </div>
 
 <div id="outline-container-org255d5c6" class="outline-4">
-<h4 id="org255d5c6"><span class="section-number-4">4.2.2</span> numbered lists</h4>
-<div class="outline-text-4" id="text-4-2-2">
+<h4 id="org255d5c6"><span class="section-number-4">6.2.2</span> numbered lists</h4>
+<div class="outline-text-4" id="text-6-2-2">
 <ol class="org-ol">
 <li>numbered lists are also possible</li>
 <li>M-RET gives me a new number</li>
@@ -479,8 +727,8 @@ the line up with the bullet.</li>
 </div>
 
 <div id="outline-container-org0430f1b" class="outline-4">
-<h4 id="org0430f1b"><span class="section-number-4">4.2.3</span> checklists <code>[0/4]</code></h4>
-<div class="outline-text-4" id="text-4-2-3">
+<h4 id="org0430f1b"><span class="section-number-4">6.2.3</span> checklists <code>[0/4]</code></h4>
+<div class="outline-text-4" id="text-6-2-3">
 <ul class="org-ul">
 <li class="off"><code>[&#xa0;]</code> we can even have check lists</li>
 <li class="off"><code>[&#xa0;]</code> M-S-RET gives a new item with a check</li>
@@ -497,8 +745,8 @@ end of a line above a checklist - this updates whenyou check items off.</li>
 </div>
 
 <div id="outline-container-org7ba58f6" class="outline-4">
-<h4 id="org7ba58f6"><span class="section-number-4">4.2.4</span> definition lists</h4>
-<div class="outline-text-4" id="text-4-2-4">
+<h4 id="org7ba58f6"><span class="section-number-4">6.2.4</span> definition lists</h4>
+<div class="outline-text-4" id="text-6-2-4">
 <dl class="org-dl">
 <dt>definition lists</dt><dd>these are useful sometimes</dd>
 <dt>item 2</dt><dd>M-RET again gives another item, and long lines wrap in a tidy way
@@ -509,9 +757,9 @@ underneath.</dd>
 </div>
 </div>
 
-<div id="outline-container-org627d1f2" class="outline-2">
-<h2 id="org627d1f2"><span class="section-number-2">5</span> Tables</h2>
-<div class="outline-text-2" id="text-5">
+<div id="outline-container-org03cd7fa" class="outline-2">
+<h2 id="org03cd7fa"><span class="section-number-2">7</span> Tables</h2>
+<div class="outline-text-2" id="text-7">
 <p>
 Hopefully you can see straight away that the simple structure provided
 by org-mode gives a nice way to keep an electronic note book.
@@ -539,18 +787,18 @@ cells - you should notice the columns changing width as needed.</li>
 </div>
 
 <div id="outline-container-orgb8c70cb" class="outline-2">
-<h2 id="orgb8c70cb"><span class="section-number-2">6</span> Org-Mode Reference Card</h2>
-<div class="outline-text-2" id="text-6">
+<h2 id="orgb8c70cb"><span class="section-number-2">8</span> Org-Mode Reference Card</h2>
+<div class="outline-text-2" id="text-8">
 </div><div id="outline-container-orgbfa4b0e" class="outline-3">
-<h3 id="orgbfa4b0e"><span class="section-number-3">6.1</span> Getting started</h3>
+<h3 id="orgbfa4b0e"><span class="section-number-3">8.1</span> Getting started</h3>
 </div>
 
-<div id="outline-container-org7ca2597" class="outline-3">
-<h3 id="org7ca2597"><span class="section-number-3">6.2</span> Tables</h3>
-<div class="outline-text-3" id="text-6-2">
+<div id="outline-container-orgb6ea097" class="outline-3">
+<h3 id="orgb6ea097"><span class="section-number-3">8.2</span> Tables</h3>
+<div class="outline-text-3" id="text-8-2">
 </div><div id="outline-container-org3242b72" class="outline-4">
-<h4 id="org3242b72"><span class="section-number-4">6.2.1</span> creating a table</h4>
-<div class="outline-text-4" id="text-6-2-1">
+<h4 id="org3242b72"><span class="section-number-4">8.2.1</span> creating a table</h4>
+<div class="outline-text-4" id="text-8-2-1">
 <ul class="org-ul">
 <li>C-c | : convert region to table</li>
 <li>C-3 C-c | :separator at least 3 spaces</li>
@@ -559,8 +807,8 @@ cells - you should notice the columns changing width as needed.</li>
 </div>
 
 <div id="outline-container-orgc1c91e3" class="outline-4">
-<h4 id="orgc1c91e3"><span class="section-number-4">6.2.2</span> commands available inside tables</h4>
-<div class="outline-text-4" id="text-6-2-2">
+<h4 id="orgc1c91e3"><span class="section-number-4">8.2.2</span> commands available inside tables</h4>
+<div class="outline-text-4" id="text-8-2-2">
 <p>
 The following commands work when the cursor is inside a table. Outside
 of tables,the same keys may have other functionality.
@@ -575,27 +823,27 @@ Re-aligning and field motion
 </div>
 
 <div id="outline-container-org9483a7e" class="outline-2">
-<h2 id="org9483a7e"><span class="section-number-2">7</span> searching</h2>
-<div class="outline-text-2" id="text-7">
+<h2 id="org9483a7e"><span class="section-number-2">9</span> searching</h2>
+<div class="outline-text-2" id="text-9">
 </div><div id="outline-container-org3ccca25" class="outline-3">
-<h3 id="org3ccca25"><span class="section-number-3">7.1</span> incremental search</h3>
-<div class="outline-text-3" id="text-7-1">
+<h3 id="org3ccca25"><span class="section-number-3">9.1</span> incremental search</h3>
+<div class="outline-text-3" id="text-9-1">
 <p>
 C-s
 C-r like C-s but in reverse order.
 </p>
 </div>
 <div id="outline-container-org0ac1b71" class="outline-4">
-<h4 id="org0ac1b71"><span class="section-number-4">7.1.1</span> search a word under cursor</h4>
-<div class="outline-text-4" id="text-7-1-1">
+<h4 id="org0ac1b71"><span class="section-number-4">9.1.1</span> search a word under cursor</h4>
+<div class="outline-text-4" id="text-9-1-1">
 <p>
 C-s C-w
 </p>
 </div>
 </div>
 <div id="outline-container-orge5e0a67" class="outline-4">
-<h4 id="orge5e0a67"><span class="section-number-4">7.1.2</span> move to back/forth between search strings</h4>
-<div class="outline-text-4" id="text-7-1-2">
+<h4 id="orge5e0a67"><span class="section-number-4">9.1.2</span> move to back/forth between search strings</h4>
+<div class="outline-text-4" id="text-9-1-2">
 <p>
 M-p M-n
 </p>
@@ -605,8 +853,8 @@ M-p M-n
 </div>
 
 <div id="outline-container-orga4dda19" class="outline-2">
-<h2 id="orga4dda19"><span class="section-number-2">8</span> Query-replace</h2>
-<div class="outline-text-2" id="text-8">
+<h2 id="orga4dda19"><span class="section-number-2">10</span> Query-replace</h2>
+<div class="outline-text-2" id="text-10">
 <p>
 To use query-replace, go to the beginning of the buffer using M-&lt; and
 then type M-%.  The prompt Query replace: appears in the
@@ -652,16 +900,16 @@ Exit recursive edit and exit query-replace.
 </div>
 </div>
 <div id="outline-container-org284bb62" class="outline-2">
-<h2 id="org284bb62"><span class="section-number-2">9</span> Repeating Query-Replaces (and Other Complex Commands)</h2>
-<div class="outline-text-2" id="text-9">
+<h2 id="org284bb62"><span class="section-number-2">11</span> Repeating Query-Replaces (and Other Complex Commands)</h2>
+<div class="outline-text-2" id="text-11">
 <p>
 Simply go the beginning of the file and press C-x Esc Esc. 
 </p>
 </div>
 </div>
 <div id="outline-container-org19a29ef" class="outline-2">
-<h2 id="org19a29ef"><span class="section-number-2">10</span> Recursive Editing</h2>
-<div class="outline-text-2" id="text-10">
+<h2 id="org19a29ef"><span class="section-number-2">12</span> Recursive Editing</h2>
+<div class="outline-text-2" id="text-12">
 <p>
 To start a recursive edit while in query-replace, press C-r.
 When you want to resume the query-replace, press C-M-c.
@@ -671,8 +919,8 @@ you can type C-] (for abort-recursive-edit) or M-x top-level Enter rather than C
 </div>
 </div>
 <div id="outline-container-org435ce6c" class="outline-2">
-<h2 id="org435ce6c"><span class="section-number-2">11</span> regular expressions</h2>
-<div class="outline-text-2" id="text-11">
+<h2 id="org435ce6c"><span class="section-number-2">13</span> regular expressions</h2>
+<div class="outline-text-2" id="text-13">
 <p>
 C-M-s EnterEdit
 C-M-r EnterEdit
@@ -680,23 +928,23 @@ C-M-%Edit
 </p>
 </div>
 </div>
-<div id="outline-container-org8825542" class="outline-2">
-<h2 id="org8825542"><span class="section-number-2">12</span> word abbreviations</h2>
-<div class="outline-text-2" id="text-12">
+<div id="outline-container-orgfca6272" class="outline-2">
+<h2 id="orgfca6272"><span class="section-number-2">14</span> word abbreviations</h2>
+<div class="outline-text-2" id="text-14">
 </div><div id="outline-container-orgffaf00f" class="outline-3">
-<h3 id="orgffaf00f"><span class="section-number-3">12.1</span> dynamic abbreviations</h3>
-<div class="outline-text-3" id="text-12-1">
+<h3 id="orgffaf00f"><span class="section-number-3">14.1</span> dynamic abbreviations</h3>
+<div class="outline-text-3" id="text-14-1">
 <p>
 M-/ 
 </p>
 </div>
 </div>
-<div id="outline-container-orgd70eb8f" class="outline-3">
-<h3 id="orgd70eb8f"><span class="section-number-3">12.2</span> word abbreviations</h3>
-<div class="outline-text-3" id="text-12-2">
+<div id="outline-container-orgff0c56c" class="outline-3">
+<h3 id="orgff0c56c"><span class="section-number-3">14.2</span> word abbreviations</h3>
+<div class="outline-text-3" id="text-14-2">
 </div><div id="outline-container-org42ced3e" class="outline-4">
-<h4 id="org42ced3e"><span class="section-number-4">12.2.1</span> Trying word abbreviations for one session</h4>
-<div class="outline-text-4" id="text-12-2-1">
+<h4 id="org42ced3e"><span class="section-number-4">14.2.1</span> Trying word abbreviations for one session</h4>
+<div class="outline-text-4" id="text-14-2-1">
 <p>
 Usually, if you go to the trouble of defining a word abbreviation, you will use it in more than one Emacs session. 
 But if you'd like to try out abbreviation mode to see if you want to incorporate it into your startup, use the following procedure. 
@@ -733,8 +981,8 @@ If you find that you like using word abbreviation mode,
 </div>
 
 <div id="outline-container-org69b0a52" class="outline-2">
-<h2 id="org69b0a52"><span class="section-number-2">13</span> moving</h2>
-<div class="outline-text-2" id="text-13">
+<h2 id="org69b0a52"><span class="section-number-2">15</span> moving</h2>
+<div class="outline-text-2" id="text-15">
 <p>
 C-f      character-forward
 M-f      word-forward
@@ -749,8 +997,8 @@ C-x 0    get rid of the current window.
 </div>
 
 <div id="outline-container-org781bb58" class="outline-2">
-<h2 id="org781bb58"><span class="section-number-2">14</span> correcting</h2>
-<div class="outline-text-2" id="text-14">
+<h2 id="org781bb58"><span class="section-number-2">16</span> correcting</h2>
+<div class="outline-text-2" id="text-16">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -830,13 +1078,13 @@ C-x 0    get rid of the current window.
 </div>
 
 <div id="outline-container-org727b11c" class="outline-3">
-<h3 id="org727b11c"><span class="section-number-3">14.1</span> repeat and redo</h3>
+<h3 id="org727b11c"><span class="section-number-3">16.1</span> repeat and redo</h3>
 </div>
 </div>
 
 <div id="outline-container-org95e4574" class="outline-2">
-<h2 id="org95e4574"><span class="section-number-2">15</span> screens</h2>
-<div class="outline-text-2" id="text-15">
+<h2 id="org95e4574"><span class="section-number-2">17</span> screens</h2>
+<div class="outline-text-2" id="text-17">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -902,8 +1150,8 @@ C-x 0    get rid of the current window.
 </div>
 
 <div id="outline-container-org4ab86c3" class="outline-2">
-<h2 id="org4ab86c3"><span class="section-number-2">16</span> buffers</h2>
-<div class="outline-text-2" id="text-16">
+<h2 id="org4ab86c3"><span class="section-number-2">18</span> buffers</h2>
+<div class="outline-text-2" id="text-18">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -954,8 +1202,8 @@ C-x 0    get rid of the current window.
 </div>
 
 <div id="outline-container-orgcd93778" class="outline-2">
-<h2 id="orgcd93778"><span class="section-number-2">17</span> Files</h2>
-<div class="outline-text-2" id="text-17">
+<h2 id="orgcd93778"><span class="section-number-2">19</span> Files</h2>
+<div class="outline-text-2" id="text-19">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -1016,8 +1264,8 @@ C-x 0    get rid of the current window.
 </div>
 
 <div id="outline-container-orgb41543d" class="outline-2">
-<h2 id="orgb41543d"><span class="section-number-2">18</span> Using Buffers, Windows, and Frames</h2>
-<div class="outline-text-2" id="text-18">
+<h2 id="orgb41543d"><span class="section-number-2">20</span> Using Buffers, Windows, and Frames</h2>
+<div class="outline-text-2" id="text-20">
 <p>
 Emacs calls GUI windows frames.
 </p>
@@ -1031,8 +1279,8 @@ C-x C-f   read a  file into buffer.
 </div>
 
 <div id="outline-container-orgfeac472" class="outline-3">
-<h3 id="orgfeac472"><span class="section-number-3">18.1</span> mode line</h3>
-<div class="outline-text-3" id="text-18-1">
+<h3 id="orgfeac472"><span class="section-number-3">20.1</span> mode line</h3>
+<div class="outline-text-3" id="text-20-1">
 <p>
 &#x2013;   Buffer has not been modified.
 **   buffer has been modified(not yet saved)
@@ -1043,8 +1291,8 @@ C-x C-f   read a  file into buffer.
 </div>
 
 <div id="outline-container-orga1ad8e4" class="outline-3">
-<h3 id="orga1ad8e4"><span class="section-number-3">18.2</span> mini-buffer</h3>
-<div class="outline-text-3" id="text-18-2">
+<h3 id="orga1ad8e4"><span class="section-number-3">20.2</span> mini-buffer</h3>
+<div class="outline-text-3" id="text-20-2">
 <p>
 The bottom line of your screen has two purposes.Emacs uses this line to echo your
 regular keystrokes and to display messages(ECHO area).Second emacs uses the same line to 
@@ -1054,8 +1302,8 @@ ask you for information.(MINIBUFFER)
 </div>
 
 <div id="outline-container-org642319c" class="outline-3">
-<h3 id="org642319c"><span class="section-number-3">18.3</span> completion</h3>
-<div class="outline-text-3" id="text-18-3">
+<h3 id="org642319c"><span class="section-number-3">20.3</span> completion</h3>
+<div class="outline-text-3" id="text-20-3">
 <p>
 command | Action
 </p>
@@ -1072,19 +1320,19 @@ RET     |  Same as TAB, then enter the command.
 </div>
 
 <div id="outline-container-orga873f84" class="outline-2">
-<h2 id="orga873f84"><span class="section-number-2">19</span> wrap text</h2>
-<div class="outline-text-2" id="text-19">
+<h2 id="orga873f84"><span class="section-number-2">21</span> wrap text</h2>
+<div class="outline-text-2" id="text-21">
 <p>
 M-x auto-fill-mode + M-q allow you to wordwrap for real a pre-existing paragraph.
 </p>
 </div>
 </div>
 <div id="outline-container-org1cf8c89" class="outline-2">
-<h2 id="org1cf8c89"><span class="section-number-2">20</span> org-mode</h2>
-<div class="outline-text-2" id="text-20">
+<h2 id="org1cf8c89"><span class="section-number-2">22</span> org-mode</h2>
+<div class="outline-text-2" id="text-22">
 </div><div id="outline-container-orgd8ee833" class="outline-3">
-<h3 id="orgd8ee833"><span class="section-number-3">20.1</span> org-capture</h3>
-<div class="outline-text-3" id="text-20-1">
+<h3 id="orgd8ee833"><span class="section-number-3">22.1</span> org-capture</h3>
+<div class="outline-text-3" id="text-22-1">
 <ul class="org-ul">
 <li>remember to require <code>(require 'org)</code>.</li>
 <li>set the org-directory variable location(<code>(setq org-directory "~/Documents/notes/")</code>).</li>
@@ -1094,8 +1342,8 @@ M-x auto-fill-mode + M-q allow you to wordwrap for real a pre-existing paragraph
 </div>
 </div>
 <div id="outline-container-orgf7061ea" class="outline-3">
-<h3 id="orgf7061ea"><span class="section-number-3">20.2</span> run desktop-change-dir at startup</h3>
-<div class="outline-text-3" id="text-20-2">
+<h3 id="orgf7061ea"><span class="section-number-3">22.2</span> run desktop-change-dir at startup</h3>
+<div class="outline-text-3" id="text-22-2">
 <div class="org-src-container">
 <pre class="src src-elisp">(setq desktop-path (list "~/emacs-server"))
 </pre>
@@ -1104,8 +1352,8 @@ M-x auto-fill-mode + M-q allow you to wordwrap for real a pre-existing paragraph
 </div>
 
 <div id="outline-container-orgfad7488" class="outline-3">
-<h3 id="orgfad7488"><span class="section-number-3">20.3</span> save abbrev-mode globally</h3>
-<div class="outline-text-3" id="text-20-3">
+<h3 id="orgfad7488"><span class="section-number-3">22.3</span> save abbrev-mode globally</h3>
+<div class="outline-text-3" id="text-22-3">
 <div class="org-src-container">
 <pre class="src src-elisp">(setq-default abbrev-mode t)
 </pre>
@@ -1115,18 +1363,27 @@ M-x auto-fill-mode + M-q allow you to wordwrap for real a pre-existing paragraph
 </div>
 
 <div id="outline-container-org9cdb406" class="outline-2">
-<h2 id="org9cdb406"><span class="section-number-2">21</span> indent paragraph</h2>
-<div class="outline-text-2" id="text-21">
+<h2 id="org9cdb406"><span class="section-number-2">23</span> indent paragraph</h2>
+<div class="outline-text-2" id="text-23">
 <p>
 select the text to indent
 C-u C-x C-i
 </p>
 </div>
 </div>
+
+<div id="outline-container-orgafe4851" class="outline-2">
+<h2 id="orgafe4851"><span class="section-number-2">24</span> References</h2>
+<div class="outline-text-2" id="text-24">
+<p>
+<a href="http://ehneilsen.net/notebook/orgExamples/org-examples.htm">http://ehneilsen.net/notebook/orgExamples/org-examples.htm</a>
+</p>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
-<p class="author">Author: moh</p>
-<p class="date">Created: 2017-02-07 Tue 16:32</p>
+<p class="author">Author: Mohammad Reza Mansouri</p>
+<p class="date">Created: 2017-02-16 Thu 20:08</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

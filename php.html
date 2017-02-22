@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-02-11 Sat 12:34 -->
+<!-- 2017-02-22 Wed 21:05 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title></title>
@@ -179,6 +179,7 @@
   .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
+<link rel="stylesheet" type="text/css" href="css/main.css" />
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -254,403 +255,248 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org27f0a97">1. strings</a>
+<li><a href="#orgd6e16cb">regular expression</a>
 <ul>
-<li><a href="#org7f5682e">1.1. defining heredoc document</a></li>
-<li><a href="#org5d87bd4">1.2. Accessing Substrings</a></li>
-<li><a href="#orgd5dc8d6">1.3. Extracting Substrings</a></li>
-<li><a href="#orgbfda7af">1.4. substring from beginning of the line except the last char</a></li>
-<li><a href="#orgf4c4369">1.5. Replacing substrings</a></li>
-<li><a href="#org25c66d1">1.6. Processing a String One Byte at a Time</a></li>
-<li><a href="#orgd5f2e8f">1.7. Reversing a String by Byte</a></li>
-<li><a href="#org07de9f0">1.8. Reversing a string by word</a></li>
-<li><a href="#orgbded153">1.9. Switching tabs and spaces</a></li>
-<li><a href="#orge0e7553">1.10. trimming space</a></li>
-<li><a href="#org5049c85">1.11. controlling case</a>
-<ul>
-<li><a href="#org37f033e">1.11.1. capitalizing letters</a></li>
-<li><a href="#org1f39f6f">1.11.2. whole string case control</a></li>
+<li><a href="#orgf3e7a87">Finding the nth Occurrence of a Match</a></li>
+<li><a href="#org1f51b62">replace n counts of a pattern</a></li>
 </ul>
 </li>
-<li><a href="#org62bdecc">1.12. ordinal value of character</a></li>
-<li><a href="#orgca3b44e">1.13. character value of integer</a></li>
-<li><a href="#org1b8bcf7">1.14. replace multiple</a></li>
-<li><a href="#org0b071ee">1.15. convert string to array</a></li>
-<li><a href="#orga882b78">1.16. split a string by char</a></li>
+<li><a href="#org27f0a97">strings</a>
+<ul>
+<li><a href="#org7f5682e">defining heredoc document</a></li>
+<li><a href="#org5d87bd4">Accessing Substrings</a></li>
+<li><a href="#orgd5dc8d6">Extracting Substrings</a></li>
+<li><a href="#orgbfda7af">substring from beginning of the line except the last char</a></li>
+<li><a href="#orgf4c4369">Replacing substrings</a></li>
+<li><a href="#org25c66d1">Processing a String One Byte at a Time</a></li>
+<li><a href="#orgd5f2e8f">Reversing a String by Byte</a></li>
+<li><a href="#org07de9f0">Reversing a string by word</a></li>
+<li><a href="#orgbded153">Switching tabs and spaces</a></li>
+<li><a href="#orge0e7553">trimming space</a></li>
+<li><a href="#org5049c85">controlling case</a>
+<ul>
+<li><a href="#org37f033e">capitalizing letters</a></li>
+<li><a href="#org1f39f6f">whole string case control</a></li>
 </ul>
 </li>
-<li><a href="#orgd6e16cb">2. regular expression</a>
-<ul>
-<li><a href="#orgf3e7a87">2.1. Finding the nth Occurrence of a Match</a></li>
-<li><a href="#org1f51b62">2.2. replace n counts of a pattern</a></li>
+<li><a href="#org62bdecc">ordinal value of character</a></li>
+<li><a href="#orgca3b44e">character value of integer</a></li>
+<li><a href="#org1b8bcf7">replace multiple</a></li>
+<li><a href="#org0b071ee">convert string to array</a></li>
+<li><a href="#orga882b78">split a string by char</a></li>
+<li><a href="#orgc554e03">remove alphabet values from string</a></li>
 </ul>
 </li>
-<li><a href="#orgdb8f5d7">3. numbers</a>
+<li><a href="#orgdb8f5d7">numbers</a>
 <ul>
-<li><a href="#orgc545cf9">3.1. Checking Whether a Variable Contains a Valid Number</a></li>
-<li><a href="#org0b9fcf6">3.2. comparing floating point numbers</a></li>
-<li><a href="#org0a39363">3.3. Rounding Floating-Point Numbers</a></li>
-<li><a href="#org28db7c6">3.4. Converting between bases</a></li>
+<li><a href="#orgc545cf9">Checking Whether a Variable Contains a Valid Number</a></li>
+<li><a href="#org0b9fcf6">comparing floating point numbers</a></li>
+<li><a href="#org0a39363">Rounding Floating-Point Numbers</a></li>
+<li><a href="#org28db7c6">Converting between bases</a></li>
 </ul>
 </li>
-<li><a href="#orgfe0a047">4. arrays</a>
+<li><a href="#orgfe0a047">arrays</a>
 <ul>
-<li><a href="#orgc40efc0">4.1. check for empty array</a></li>
-<li><a href="#orgcf9fe6a">4.2. sum of items in an array</a></li>
-<li><a href="#org2a7081b">4.3. Specifying an Array Not Beginning at Element 0</a></li>
-<li><a href="#orga2ad772">4.4. Storing Multiple Elements Per Key in an Array</a></li>
-<li><a href="#org769d71c">4.5. Initializing an Array to a Range of Integers</a></li>
-<li><a href="#orgd062d08">4.6. Iterating through an array</a></li>
-<li><a href="#org12cd7ef">4.7. Deleting elements from an array</a></li>
-<li><a href="#org1f38577">4.8. Changing array size</a></li>
-<li><a href="#org1368f30">4.9. Appending one array to another</a></li>
-<li><a href="#orga8a1aee">4.10. Turning an Array into a String</a></li>
-<li><a href="#org11f772d">4.11. Checking if a Key Is in an Array</a></li>
-<li><a href="#org2f72e7d">4.12. Checking if an Element Is in an Array</a></li>
-<li><a href="#org2b75e97">4.13. Finding the Position of a Value in an Array</a></li>
-<li><a href="#org9391bd4">4.14. Finding Elements That Pass a Certain Test</a></li>
-<li><a href="#org85b5288">4.15. Finding the Largest or Smallest Valued Element in an Array</a></li>
-<li><a href="#org1cea9e2">4.16. Sorting an Array</a></li>
-<li><a href="#orgec07308">4.17. Randomizing an Array</a></li>
-<li><a href="#org0daa2a6">4.18. Removing Duplicate Elements from an Array</a></li>
-<li><a href="#orgd39d039">4.19. Applying a Function to Each Element in an Array</a></li>
-<li><a href="#orgefd7f6d">4.20. Finding the Union, Intersection, or Difference of Two Arrays</a></li>
-<li><a href="#org07cb094">4.21. Making an Object Act like an Array</a></li>
-<li><a href="#orgcc4bfe2">4.22. array<sub>reduce</sub></a></li>
-<li><a href="#org5177cce">4.23. create and array from variables and their values</a>
+<li><a href="#orgc40efc0">check for empty array</a></li>
+<li><a href="#orgcf9fe6a">sum of items in an array</a></li>
+<li><a href="#org2a7081b">Specifying an Array Not Beginning at Element 0</a></li>
+<li><a href="#orga2ad772">Storing Multiple Elements Per Key in an Array</a></li>
+<li><a href="#org769d71c">Initializing an Array to a Range of Integers</a></li>
+<li><a href="#orgd062d08">Iterating through an array</a></li>
+<li><a href="#org12cd7ef">Deleting elements from an array</a></li>
+<li><a href="#org1f38577">Changing array size</a></li>
+<li><a href="#org1368f30">Appending one array to another</a></li>
+<li><a href="#orga8a1aee">Turning an Array into a String</a></li>
+<li><a href="#org11f772d">Checking if a Key Is in an Array</a></li>
+<li><a href="#org2f72e7d">Checking if an Element Is in an Array</a></li>
+<li><a href="#org2b75e97">Finding the Position of a Value in an Array</a></li>
+<li><a href="#org9391bd4">Finding Elements That Pass a Certain Test</a></li>
+<li><a href="#org85b5288">Finding the Largest or Smallest Valued Element in an Array</a></li>
+<li><a href="#org1cea9e2">Sorting an Array</a></li>
+<li><a href="#orgec07308">Randomizing an Array</a></li>
+<li><a href="#org0daa2a6">Removing Duplicate Elements from an Array</a></li>
+<li><a href="#orgd39d039">Applying a Function to Each Element in an Array</a></li>
+<li><a href="#orgefd7f6d">Finding the Union, Intersection, or Difference of Two Arrays</a></li>
+<li><a href="#org07cb094">Making an Object Act like an Array</a></li>
+<li><a href="#orgcc4bfe2">array<sub>reduce</sub></a></li>
+<li><a href="#org5177cce">create and array from variables and their values</a>
 <ul>
-<li><a href="#org6facc44">4.23.1. intro</a></li>
-<li><a href="#orgf951a2f">4.23.2. using compact for debugging</a></li>
+<li><a href="#orgd414564">intro</a></li>
+<li><a href="#orgf951a2f">using compact for debugging</a></li>
 </ul>
 </li>
+<li><a href="#org1521e69">flatten php array</a></li>
 </ul>
 </li>
-<li><a href="#orgd511018">5. Date and Time</a>
+<li><a href="#orgd511018">Date and Time</a>
 <ul>
-<li><a href="#org06755db">5.1. Finding the Current Date and Time</a></li>
-<li><a href="#org590fa06">5.2. Converting Time and Date Parts to an Epoch Timestamp</a></li>
-<li><a href="#org078a542">5.3. Converting an Epoch Timestamp to Time and Date Parts</a></li>
-<li><a href="#org8b336f8">5.4. Finding the Difference of Two Dates</a></li>
-<li><a href="#org681848c">5.5. date difference using <code>DateInterval</code></a></li>
-<li><a href="#org32af68e">5.6. number of days between two dates</a></li>
+<li><a href="#org06755db">Finding the Current Date and Time</a></li>
+<li><a href="#org590fa06">Converting Time and Date Parts to an Epoch Timestamp</a></li>
+<li><a href="#org078a542">Converting an Epoch Timestamp to Time and Date Parts</a></li>
+<li><a href="#org8b336f8">Finding the Difference of Two Dates</a></li>
+<li><a href="#org681848c">date difference using <code>DateInterval</code></a></li>
+<li><a href="#org32af68e">number of days between two dates</a></li>
 </ul>
 </li>
-<li><a href="#org8a24443">6. variables</a>
+<li><a href="#org8a24443">variables</a>
 <ul>
-<li><a href="#org14ba1d9">6.1. Establishing a Default Value</a></li>
-<li><a href="#org648a3dd">6.2. Exchanging Values Without Using Temporary Variables</a></li>
-<li><a href="#org3723f1b">6.3. Creating a Dynamic Variable Name</a></li>
-<li><a href="#orgcebcab6">6.4. Using Static Variables</a></li>
-<li><a href="#org88c36d5">6.5. Encapsulating Complex Data Types in a String</a></li>
+<li><a href="#org14ba1d9">Establishing a Default Value</a></li>
+<li><a href="#org648a3dd">Exchanging Values Without Using Temporary Variables</a></li>
+<li><a href="#org3723f1b">Creating a Dynamic Variable Name</a></li>
+<li><a href="#orgcebcab6">Using Static Variables</a></li>
+<li><a href="#org88c36d5">Encapsulating Complex Data Types in a String</a></li>
 </ul>
 </li>
-<li><a href="#org2335cc0">7. functions</a>
+<li><a href="#org2335cc0">functions</a>
 <ul>
-<li><a href="#org328de91">7.1. checking for a function's existence</a></li>
+<li><a href="#org328de91">checking for a function's existence</a></li>
+<li><a href="#org938cc6c">Creating Functions That Take a Variable Number of Arguments</a></li>
 </ul>
 </li>
-<li><a href="#org899a838">8. Misc</a>
+<li><a href="#org899a838">Misc</a>
 <ul>
-<li><a href="#orgb96f420">8.1. get results from eval</a></li>
-<li><a href="#org59d9e2a">8.2. check if a class has a property</a></li>
+<li><a href="#orgb96f420">get results from eval</a></li>
+<li><a href="#org59d9e2a">check if a class has a property</a></li>
+<li><a href="#org6f92338">redirecting</a></li>
+<li><a href="#org9847af7">making the root path</a></li>
+<li><a href="#orgc80ab4f">integer division</a></li>
 </ul>
 </li>
-<li><a href="#orgfbec5b2">9. json</a>
+<li><a href="#orgfbec5b2">json</a>
 <ul>
-<li><a href="#orge078d2c">9.1. json encode raw UTF?</a></li>
+<li><a href="#orge078d2c">json encode raw UTF?</a></li>
 </ul>
 </li>
-<li><a href="#orge22dc73">10. webservice</a>
+<li><a href="#orge22dc73">webservice</a>
 <ul>
-<li><a href="#org897a489">10.1. types of webservices</a>
+<li><a href="#org897a489">types of webservices</a>
 <ul>
-<li><a href="#org4f543f1">10.1.1. SOAP</a></li>
-<li><a href="#org7b20449">10.1.2. WSDL</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#org74bbb36">11. lumen</a>
-<ul>
-<li><a href="#org156e249">11.1. lumen on apache</a></li>
-<li><a href="#orgb51961f">11.2. installing globally</a></li>
-<li><a href="#org393fec9">11.3. PHP dependencies</a></li>
-<li><a href="#orgf85306e">11.4. artisan</a>
-<ul>
-<li><a href="#orge9b8f57">11.4.1. create a migration</a></li>
-<li><a href="#orgb4fcc12">11.4.2. commit migration to db</a></li>
-<li><a href="#orgba76ae5">11.4.3. Refreshing the Schema and Seeding the Database</a></li>
-</ul>
-</li>
-<li><a href="#org45a330c">11.5. middleware</a></li>
-</ul>
-</li>
-<li><a href="#org34d290e">12. classes</a>
-<ul>
-<li><a href="#org40be2c5">12.1. static attributes or methods.</a></li>
-<li><a href="#orgaf591b4">12.2. _<sub>clone</sub> magic method</a></li>
-</ul>
-</li>
-<li><a href="#orgcecdbc5">13. patterns</a>
-<ul>
-<li><a href="#orgd47f4df">13.1. value object pattern</a></li>
-<li><a href="#org6ed13a0">13.2. The factory pattern</a></li>
+<li><a href="#org4f543f1">SOAP</a></li>
+<li><a href="#org7b20449">WSDL</a></li>
 </ul>
 </li>
 </ul>
+</li>
+<li><a href="#org34d290e">classes</a>
+<ul>
+<li><a href="#org40be2c5">static attributes or methods.</a></li>
+<li><a href="#orgaf591b4">_<sub>clone</sub> magic method</a></li>
+</ul>
+</li>
+<li><a href="#org066d417">reflection</a>
+<ul>
+<li><a href="#org851fd45">retrieving the name of current function?</a></li>
+</ul>
+</li>
+<li><a href="#org80eacec">Debug</a>
+<ul>
+<li><a href="#orgdcea580">dump all variables?</a></li>
+<li><a href="#org6b586a0">send an error message to  the web server's error log or to a file.</a></li>
+<li><a href="#org61052c4">enabling error reporting</a></li>
+</ul>
+</li>
+<li><a href="#orgcecdbc5">patterns</a>
+<ul>
+<li><a href="#orgd47f4df">value object pattern</a></li>
+<li><a href="#org6ed13a0">The factory pattern</a></li>
+</ul>
+</li>
+<li><a href="#org74bbb36">lumen</a>
+<ul>
+<li><a href="#org156e249">lumen on apache</a></li>
+<li><a href="#orgb51961f">installing globally</a></li>
+<li><a href="#org393fec9">PHP dependencies</a></li>
+<li><a href="#orgf85306e">artisan</a>
+<ul>
+<li><a href="#orge9b8f57">create a migration</a></li>
+<li><a href="#orgb4fcc12">commit migration to db</a></li>
+<li><a href="#orgba76ae5">Refreshing the Schema and Seeding the Database</a></li>
+</ul>
+</li>
+<li><a href="#org45a330c">middleware</a></li>
+</ul>
+</li>
+<li><a href="#orgd0e4ecf">elqoquent</a>
+<ul>
+<li><a href="#orgefff6f2">eloquent postgres json type</a></li>
+</ul>
+</li>
+<li><a href="#org77ba132">installation</a>
+<ul>
+<li><a href="#orga23d3dc">php packages</a></li>
+<li><a href="#org3588c10">phpstorm xdebug</a></li>
+</ul>
+</li>
+<li><a href="#org970eb4f">session handling</a>
+<ul>
+<li><a href="#orgd0bbc5b">starting a session</a></li>
+<li><a href="#org3ae58e0">session variables example</a></li>
+<li><a href="#orgb2dc315">custom session handler</a></li>
+<li><a href="#orgc9e0ddf">ending a session</a></li>
+<li><a href="#org5a5fa41">Exposed Session Data</a></li>
+<li><a href="#orgd08d825">making sure session data is not lost after redirect</a></li>
+<li><a href="#org6fb21d6">check for session status</a></li>
+</ul>
+</li>
+<li><a href="#org1345619">SPL</a>
+<ul>
+<li><a href="#org88e5223">Available objects in SPL</a></li>
+</ul>
+</li>
+<li><a href="#org5e49c98">using <code>include_path</code> to manage larget projects</a></li>
+<li><a href="#org28c85ef">output buffering</a>
+<ul>
+<li><a href="#orgf04e795">intro</a></li>
+<li><a href="#org53612b1">detect if output buffering is turned on?</a></li>
+<li><a href="#orgc86ecc7">example</a></li>
+</ul>
+</li>
+<li><a href="#org8c85e6b">request</a>
+<ul>
+<li><a href="#orga710ed7">check if request is ajax?</a></li>
+</ul>
+</li>
+<li><a href="#orgaa3897c">page generation time</a>
+<ul>
+<li><a href="#org06e3cc0">solution1</a></li>
+<li><a href="#org4a907d2">solution2</a></li>
+<li><a href="#orgef84760">solution3</a></li>
+</ul>
+</li>
+<li><a href="#orgfac89a9">apache <code>.htaccess</code> sample configuration</a></li>
+<li><a href="#org5525ed6">bootstrap</a>
+<ul>
+<li><a href="#orgaa31d5e">structure of page</a>
+<ul>
+<li><a href="#orga7351b8">settings of the viewing arena</a></li>
+<li><a href="#orgca458e0">Grid system</a></li>
+<li><a href="#org2a6be55">Container</a></li>
+<li><a href="#org7d46af9">Device Specific Definitions</a></li>
+<li><a href="#org21571d1">Order Column</a></li>
+</ul>
+</li>
+<li><a href="#orgcc1205d">typography</a>
+<ul>
+<li><a href="#org7a19910">Orientation</a></li>
+<li><a href="#org2c45b7d">transformation</a></li>
+<li><a href="#org4ac1d3b">lists</a>
+<ul>
+<li><a href="#org2f56103"><code>.list-unstyled</code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 </div>
 </div>
-<div id="outline-container-org27f0a97" class="outline-2">
-<h2 id="org27f0a97"><span class="section-number-2">1</span> strings</h2>
-<div class="outline-text-2" id="text-1">
-</div><div id="outline-container-org7f5682e" class="outline-3">
-<h3 id="org7f5682e"><span class="section-number-3">1.1</span> defining heredoc document</h3>
-<div class="outline-text-3" id="text-1-1">
-<div class="org-src-container">
-<pre class="src src-php">print &lt;&lt;&lt; END
-It's funny when signs say things like:
-   Original "Root" Beer
-   "Free" Gift
-   Shoes cleaned while "you" wait
-or have other misquoted words.
-END;
-</pre>
-</div>
-</div>
-</div>
-
-<div id="outline-container-org5d87bd4" class="outline-3">
-<h3 id="org5d87bd4"><span class="section-number-3">1.2</span> Accessing Substrings</h3>
-<div class="outline-text-3" id="text-1-2">
-<div class="org-src-container">
-<pre class="src src-php">&lt;?php
-
-if (strpos($_POST['email'], '@') === false) {
-    print 'There was no @ in the e-mail address!';
- }
-
-?&gt;
-</pre>
-</div>
-</div>
-</div>
-
-<div id="outline-container-orgd5dc8d6" class="outline-3">
-<h3 id="orgd5dc8d6"><span class="section-number-3">1.3</span> Extracting Substrings</h3>
-<div class="outline-text-3" id="text-1-3">
-<div class="org-src-container">
-<pre class="src src-php">&lt;?php
-$substring = substr($string,$start,$length);
-$username = substr($_GET['username'],0,8);
-?&gt;
-</pre>
-</div>
-</div>
-</div>
-
-<div id="outline-container-orgbfda7af" class="outline-3">
-<h3 id="orgbfda7af"><span class="section-number-3">1.4</span> substring from beginning of the line except the last char</h3>
-<div class="outline-text-3" id="text-1-4">
-<div class="org-src-container">
-<pre class="src src-php">substr("abcd",0,-1);       // abc
-</pre>
-</div>
-</div>
-</div>
-
-<div id="outline-container-orgf4c4369" class="outline-3">
-<h3 id="orgf4c4369"><span class="section-number-3">1.5</span> Replacing substrings</h3>
-<div class="outline-text-3" id="text-1-5">
-<div class="org-src-container">
-<pre class="src src-php">// Everything from position $start to the end of $old_string
-// becomes $new_substring
-$new_string = substr_replace($old_string,$new_substring,$start);
-
-// $length characters, starting at position $start, become $new_substring
-$new_string = substr_replace($old_string,$new_substring,$start,$length);
-</pre>
-</div>
-</div>
-</div>
-
-<div id="outline-container-org25c66d1" class="outline-3">
-<h3 id="org25c66d1"><span class="section-number-3">1.6</span> Processing a String One Byte at a Time</h3>
-<div class="outline-text-3" id="text-1-6">
-<div class="org-src-container">
-<pre class="src src-php">&lt;?php
-$string = "This weekend, I'm going shopping for a pet chicken.";
-$vowels = 0;
-for ($i = 0, $j = strlen($string); $i &lt; $j; $i++) {
-    if (strstr('aeiouAEIOU',$string[$i])) {
-	$vowels++;
-    }
-}
-?&gt;
-</pre>
-</div>
-</div>
-</div>
-
-<div id="outline-container-orgd5f2e8f" class="outline-3">
-<h3 id="orgd5f2e8f"><span class="section-number-3">1.7</span> Reversing a String by Byte</h3>
-<div class="outline-text-3" id="text-1-7">
-<div class="org-src-container">
-<pre class="src src-php">&lt;?php
-print strrev('This is not a palindrome.');
-?&gt;
-</pre>
-</div>
-</div>
-</div>
-
-<div id="outline-container-org07de9f0" class="outline-3">
-<h3 id="org07de9f0"><span class="section-number-3">1.8</span> Reversing a string by word</h3>
-<div class="outline-text-3" id="text-1-8">
-<div class="org-src-container">
-<pre class="src src-php">&lt;?php
-$s = "Once upon a time there was a turtle.";
-// break the string up into words
-$words = explode(' ',$s);
-// reverse the array of words
-$words = array_reverse($words);
-// rebuild the string
-$s = implode(' ',$words);
-print $s;
-?&gt;
-</pre>
-</div>
-
-<div class="org-src-container">
-<pre class="src src-php">&lt;?php
-$reversed_s = implode(' ',array_reverse(explode(' ',$s)));
-?&gt;
-</pre>
-</div>
-</div>
-</div>
-
-<div id="outline-container-orgbded153" class="outline-3">
-<h3 id="orgbded153"><span class="section-number-3">1.9</span> Switching tabs and spaces</h3>
-<div class="outline-text-3" id="text-1-9">
-<div class="org-src-container">
-<pre class="src src-php">&lt;?php
-$r = mysql_query("SELECT message FROM messages WHERE id = 1") or die();
-$ob = mysql_fetch_object($r);
-$tabbed = str_replace(' ',"\t",$ob-&gt;message);
-$spaced = str_replace("\t",' ',$ob-&gt;message);
-
-print "With Tabs: &lt;pre&gt;$tabbed&lt;/pre&gt;";
-print "With Spaces: &lt;pre&gt;$spaced&lt;/pre&gt;";
-?&gt;
-</pre>
-</div>
-</div>
-</div>
-
-<div id="outline-container-orge0e7553" class="outline-3">
-<h3 id="orge0e7553"><span class="section-number-3">1.10</span> trimming space</h3>
-<div class="outline-text-3" id="text-1-10">
-<p>
-Use ltrim(), rtrim(), or trim(). ltrim() removes whitespace from the
-beginning of a string, rtrim() from the end of a string, and trim()
-from both the beginning and end of a string:
-</p>
-</div>
-</div>
-
-<div id="outline-container-org5049c85" class="outline-3">
-<h3 id="org5049c85"><span class="section-number-3">1.11</span> controlling case</h3>
-<div class="outline-text-3" id="text-1-11">
-</div><div id="outline-container-org37f033e" class="outline-4">
-<h4 id="org37f033e"><span class="section-number-4">1.11.1</span> capitalizing letters</h4>
-<div class="outline-text-4" id="text-1-11-1">
-<div class="org-src-container">
-<pre class="src src-php">&lt;?php
-print ucfirst("how do you do today?");  //capitalized the first word in string
-print ucwords("the prince of wales");  //capitalizes the first character of each word in a string
-?&gt;
-</pre>
-</div>
-</div>
-</div>
-
-<div id="outline-container-org1f39f6f" class="outline-4">
-<h4 id="org1f39f6f"><span class="section-number-4">1.11.2</span> whole string case control</h4>
-<div class="outline-text-4" id="text-1-11-2">
-<p>
-The functions strtolower() and strtoupper() work on entire strings,
-not just individual characters. All alphabetic characters are changed
-to lowercase by strtolower() and strtoupper() changes all alphabetic
-characters to uppercase:
-</p>
-
-<div class="org-src-container">
-<pre class="src src-php">&lt;?php
-print strtolower("I programmed the WOPR and the TRS-80.");
-print strtoupper('"since feeling is first" is a poem by e. e. cummings.');
-?&gt;
-</pre>
-</div>
-</div>
-</div>
-</div>
-
-<div id="outline-container-org62bdecc" class="outline-3">
-<h3 id="org62bdecc"><span class="section-number-3">1.12</span> ordinal value of character</h3>
-<div class="outline-text-3" id="text-1-12">
-<p>
-use <code>ord("h")</code>
-</p>
-</div>
-</div>
-<div id="outline-container-orgca3b44e" class="outline-3">
-<h3 id="orgca3b44e"><span class="section-number-3">1.13</span> character value of integer</h3>
-<div class="outline-text-3" id="text-1-13">
-<p>
-use <code>chr(ascii)</code>
-</p>
-</div>
-</div>
-<div id="outline-container-org1b8bcf7" class="outline-3">
-<h3 id="org1b8bcf7"><span class="section-number-3">1.14</span> replace multiple</h3>
-<div class="outline-text-3" id="text-1-14">
-<div class="org-src-container">
-<pre class="src src-php">str_ireplace(['a', 'e', 'i', 'o', 'u'], '!', $str);
-</pre>
-</div>
-</div>
-</div>
-
-<div id="outline-container-org0b071ee" class="outline-3">
-<h3 id="org0b071ee"><span class="section-number-3">1.15</span> convert string to array</h3>
-<div class="outline-text-3" id="text-1-15">
-<div class="org-src-container">
-<pre class="src src-php">str_split(' ',$str);
-explode(' ', $str);
-</pre>
-</div>
-</div>
-</div>
-
-<div id="outline-container-orga882b78" class="outline-3">
-<h3 id="orga882b78"><span class="section-number-3">1.16</span> split a string by char</h3>
-<div class="outline-text-3" id="text-1-16">
-<div class="org-src-container">
-<pre class="src src-ph">preg_split('/,/',$str);   // split by ','
-preg_split('//',$str);    // split characters
-explode(',', $str);
-</pre>
-</div>
-</div>
-</div>
-</div>
-
 <div id="outline-container-orgd6e16cb" class="outline-2">
-<h2 id="orgd6e16cb"><span class="section-number-2">2</span> regular expression</h2>
-<div class="outline-text-2" id="text-2">
+<h2 id="orgd6e16cb">regular expression</h2>
+<div class="outline-text-2" id="text-orgd6e16cb">
 </div><div id="outline-container-orgf3e7a87" class="outline-3">
-<h3 id="orgf3e7a87"><span class="section-number-3">2.1</span> Finding the nth Occurrence of a Match</h3>
-<div class="outline-text-3" id="text-2-1">
+<h3 id="orgf3e7a87">Finding the nth Occurrence of a Match</h3>
+<div class="outline-text-3" id="text-orgf3e7a87">
 <div class="org-src-container">
 <pre class="src src-php">&lt;?php
 $todo = "1. Get Dressed 2. Eat Jelly 3. Squash every week into a day";
@@ -730,8 +576,8 @@ foreach ($matches as $match) {
 </div>
 
 <div id="outline-container-org1f51b62" class="outline-3">
-<h3 id="org1f51b62"><span class="section-number-3">2.2</span> replace n counts of a pattern</h3>
-<div class="outline-text-3" id="text-2-2">
+<h3 id="org1f51b62">replace n counts of a pattern</h3>
+<div class="outline-text-3" id="text-org1f51b62">
 <div class="org-src-container">
 <pre class="src src-php">preg_replace($pattern,$replacement,$string,$limit);
 </pre>
@@ -743,13 +589,269 @@ $limit is by the default is -1 which means no limit.
 </div>
 </div>
 </div>
+<div id="outline-container-org27f0a97" class="outline-2">
+<h2 id="org27f0a97">strings</h2>
+<div class="outline-text-2" id="text-org27f0a97">
+</div><div id="outline-container-org7f5682e" class="outline-3">
+<h3 id="org7f5682e">defining heredoc document</h3>
+<div class="outline-text-3" id="text-org7f5682e">
+<div class="org-src-container">
+<pre class="src src-php">print &lt;&lt;&lt; END
+It's funny when signs say things like:
+   Original "Root" Beer
+   "Free" Gift
+   Shoes cleaned while "you" wait
+or have other misquoted words.
+END;
+</pre>
+</div>
+</div>
+</div>
 
+<div id="outline-container-org5d87bd4" class="outline-3">
+<h3 id="org5d87bd4">Accessing Substrings</h3>
+<div class="outline-text-3" id="text-org5d87bd4">
+<div class="org-src-container">
+<pre class="src src-php">&lt;?php
+
+if (strpos($_POST['email'], '@') === false) {
+    print 'There was no @ in the e-mail address!';
+ }
+
+?&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd5dc8d6" class="outline-3">
+<h3 id="orgd5dc8d6">Extracting Substrings</h3>
+<div class="outline-text-3" id="text-orgd5dc8d6">
+<div class="org-src-container">
+<pre class="src src-php">&lt;?php
+$substring = substr($string,$start,$length);
+$username = substr($_GET['username'],0,8);
+?&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgbfda7af" class="outline-3">
+<h3 id="orgbfda7af">substring from beginning of the line except the last char</h3>
+<div class="outline-text-3" id="text-orgbfda7af">
+<div class="org-src-container">
+<pre class="src src-php">substr("abcd",0,-1);       // abc
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf4c4369" class="outline-3">
+<h3 id="orgf4c4369">Replacing substrings</h3>
+<div class="outline-text-3" id="text-orgf4c4369">
+<div class="org-src-container">
+<pre class="src src-php">// Everything from position $start to the end of $old_string
+// becomes $new_substring
+$new_string = substr_replace($old_string,$new_substring,$start);
+
+// $length characters, starting at position $start, become $new_substring
+$new_string = substr_replace($old_string,$new_substring,$start,$length);
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org25c66d1" class="outline-3">
+<h3 id="org25c66d1">Processing a String One Byte at a Time</h3>
+<div class="outline-text-3" id="text-org25c66d1">
+<div class="org-src-container">
+<pre class="src src-php">&lt;?php
+$string = "This weekend, I'm going shopping for a pet chicken.";
+$vowels = 0;
+for ($i = 0, $j = strlen($string); $i &lt; $j; $i++) {
+    if (strstr('aeiouAEIOU',$string[$i])) {
+        $vowels++;
+    }
+}
+?&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd5f2e8f" class="outline-3">
+<h3 id="orgd5f2e8f">Reversing a String by Byte</h3>
+<div class="outline-text-3" id="text-orgd5f2e8f">
+<div class="org-src-container">
+<pre class="src src-php">&lt;?php
+print strrev('This is not a palindrome.');
+?&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org07de9f0" class="outline-3">
+<h3 id="org07de9f0">Reversing a string by word</h3>
+<div class="outline-text-3" id="text-org07de9f0">
+<div class="org-src-container">
+<pre class="src src-php">&lt;?php
+$s = "Once upon a time there was a turtle.";
+// break the string up into words
+$words = explode(' ',$s);
+// reverse the array of words
+$words = array_reverse($words);
+// rebuild the string
+$s = implode(' ',$words);
+print $s;
+?&gt;
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-php">&lt;?php
+$reversed_s = implode(' ',array_reverse(explode(' ',$s)));
+?&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgbded153" class="outline-3">
+<h3 id="orgbded153">Switching tabs and spaces</h3>
+<div class="outline-text-3" id="text-orgbded153">
+<div class="org-src-container">
+<pre class="src src-php">&lt;?php
+$r = mysql_query("SELECT message FROM messages WHERE id = 1") or die();
+$ob = mysql_fetch_object($r);
+$tabbed = str_replace(' ',"\t",$ob-&gt;message);
+$spaced = str_replace("\t",' ',$ob-&gt;message);
+
+print "With Tabs: &lt;pre&gt;$tabbed&lt;/pre&gt;";
+print "With Spaces: &lt;pre&gt;$spaced&lt;/pre&gt;";
+?&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge0e7553" class="outline-3">
+<h3 id="orge0e7553">trimming space</h3>
+<div class="outline-text-3" id="text-orge0e7553">
+<p>
+Use ltrim(), rtrim(), or trim(). ltrim() removes whitespace from the
+beginning of a string, rtrim() from the end of a string, and trim()
+from both the beginning and end of a string:
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5049c85" class="outline-3">
+<h3 id="org5049c85">controlling case</h3>
+<div class="outline-text-3" id="text-org5049c85">
+</div><div id="outline-container-org37f033e" class="outline-4">
+<h4 id="org37f033e">capitalizing letters</h4>
+<div class="outline-text-4" id="text-org37f033e">
+<div class="org-src-container">
+<pre class="src src-php">&lt;?php
+print ucfirst("how do you do today?");  //capitalized the first word in string
+print ucwords("the prince of wales");  //capitalizes the first character of each word in a string
+?&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1f39f6f" class="outline-4">
+<h4 id="org1f39f6f">whole string case control</h4>
+<div class="outline-text-4" id="text-org1f39f6f">
+<p>
+The functions strtolower() and strtoupper() work on entire strings,
+not just individual characters. All alphabetic characters are changed
+to lowercase by strtolower() and strtoupper() changes all alphabetic
+characters to uppercase:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-php">&lt;?php
+print strtolower("I programmed the WOPR and the TRS-80.");
+print strtoupper('"since feeling is first" is a poem by e. e. cummings.');
+?&gt;
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org62bdecc" class="outline-3">
+<h3 id="org62bdecc">ordinal value of character</h3>
+<div class="outline-text-3" id="text-org62bdecc">
+<p>
+use <code>ord("h")</code>
+</p>
+</div>
+</div>
+<div id="outline-container-orgca3b44e" class="outline-3">
+<h3 id="orgca3b44e">character value of integer</h3>
+<div class="outline-text-3" id="text-orgca3b44e">
+<p>
+use <code>chr(ascii)</code>
+</p>
+</div>
+</div>
+<div id="outline-container-org1b8bcf7" class="outline-3">
+<h3 id="org1b8bcf7">replace multiple</h3>
+<div class="outline-text-3" id="text-org1b8bcf7">
+<div class="org-src-container">
+<pre class="src src-php">str_ireplace(['a', 'e', 'i', 'o', 'u'], '!', $str);
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0b071ee" class="outline-3">
+<h3 id="org0b071ee">convert string to array</h3>
+<div class="outline-text-3" id="text-org0b071ee">
+<div class="org-src-container">
+<pre class="src src-php">// split a string without delimiter
+str_split($str);
+// split a string with delimiter
+str_split(' ',$str);
+explode(' ', $str);
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga882b78" class="outline-3">
+<h3 id="orga882b78">split a string by char</h3>
+<div class="outline-text-3" id="text-orga882b78">
+<div class="org-src-container">
+<pre class="src src-ph">preg_split('/,/',$str);   // split by ','
+preg_split('//',$str);    // split characters
+explode(',', $str);
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc554e03" class="outline-3">
+<h3 id="orgc554e03">remove alphabet values from string</h3>
+<div class="outline-text-3" id="text-orgc554e03">
+<div class="org-src-container">
+<pre class="src src-php">$res = preg_replace('/^[0-9].,/',$str);
+</pre>
+</div>
+</div>
+</div>
+</div>
 <div id="outline-container-orgdb8f5d7" class="outline-2">
-<h2 id="orgdb8f5d7"><span class="section-number-2">3</span> numbers</h2>
-<div class="outline-text-2" id="text-3">
+<h2 id="orgdb8f5d7">numbers</h2>
+<div class="outline-text-2" id="text-orgdb8f5d7">
 </div><div id="outline-container-orgc545cf9" class="outline-3">
-<h3 id="orgc545cf9"><span class="section-number-3">3.1</span> Checking Whether a Variable Contains a Valid Number</h3>
-<div class="outline-text-3" id="text-3-1">
+<h3 id="orgc545cf9">Checking Whether a Variable Contains a Valid Number</h3>
+<div class="outline-text-3" id="text-orgc545cf9">
 <div class="org-src-container">
 <pre class="src src-php">&lt;?php
 if (is_numeric(5))          { /* true  */ }
@@ -766,8 +868,8 @@ if (is_numeric("10e200"))   { /* true  */ }
 </div>
 
 <div id="outline-container-org0b9fcf6" class="outline-3">
-<h3 id="org0b9fcf6"><span class="section-number-3">3.2</span> comparing floating point numbers</h3>
-<div class="outline-text-3" id="text-3-2">
+<h3 id="org0b9fcf6">comparing floating point numbers</h3>
+<div class="outline-text-3" id="text-org0b9fcf6">
 <p>
 Use a small delta value, and check if the numbers have a difference smaller than that delta:
 </p>
@@ -803,8 +905,8 @@ the absolute value of the difference.
 </div>
 </div>
 <div id="outline-container-org0a39363" class="outline-3">
-<h3 id="org0a39363"><span class="section-number-3">3.3</span> Rounding Floating-Point Numbers</h3>
-<div class="outline-text-3" id="text-3-3">
+<h3 id="org0a39363">Rounding Floating-Point Numbers</h3>
+<div class="outline-text-3" id="text-org0a39363">
 <p>
 To round a number to the closest integer, use round() :
 </p>
@@ -849,8 +951,8 @@ $final = round($total, 2);   // $final = 56.94
 </div>
 
 <div id="outline-container-org28db7c6" class="outline-3">
-<h3 id="org28db7c6"><span class="section-number-3">3.4</span> Converting between bases</h3>
-<div class="outline-text-3" id="text-3-4">
+<h3 id="org28db7c6">Converting between bases</h3>
+<div class="outline-text-3" id="text-org28db7c6">
 <p>
 Use the base<sub>convert</sub>() function:
 </p>
@@ -912,11 +1014,11 @@ printf('#%02X%02X%02X', 0, 102, 204); // #0066CC
 </div>
 
 <div id="outline-container-orgfe0a047" class="outline-2">
-<h2 id="orgfe0a047"><span class="section-number-2">4</span> arrays</h2>
-<div class="outline-text-2" id="text-4">
+<h2 id="orgfe0a047">arrays</h2>
+<div class="outline-text-2" id="text-orgfe0a047">
 </div><div id="outline-container-orgc40efc0" class="outline-3">
-<h3 id="orgc40efc0"><span class="section-number-3">4.1</span> check for empty array</h3>
-<div class="outline-text-3" id="text-4-1">
+<h3 id="orgc40efc0">check for empty array</h3>
+<div class="outline-text-3" id="text-orgc40efc0">
 <div class="org-src-container">
 <pre class="src src-php">empty([]) // true
 </pre>
@@ -925,8 +1027,8 @@ printf('#%02X%02X%02X', 0, 102, 204); // #0066CC
 </div>
 
 <div id="outline-container-orgcf9fe6a" class="outline-3">
-<h3 id="orgcf9fe6a"><span class="section-number-3">4.2</span> sum of items in an array</h3>
-<div class="outline-text-3" id="text-4-2">
+<h3 id="orgcf9fe6a">sum of items in an array</h3>
+<div class="outline-text-3" id="text-orgcf9fe6a">
 <div class="org-src-container">
 <pre class="src src-php">$scores  = array(98, 76, 56, 80);
 $total   = array_sum($scores);    // $total = 310
@@ -936,8 +1038,8 @@ $total   = array_sum($scores);    // $total = 310
 </div>
 
 <div id="outline-container-org2a7081b" class="outline-3">
-<h3 id="org2a7081b"><span class="section-number-3">4.3</span> Specifying an Array Not Beginning at Element 0</h3>
-<div class="outline-text-3" id="text-4-3">
+<h3 id="org2a7081b">Specifying an Array Not Beginning at Element 0</h3>
+<div class="outline-text-3" id="text-org2a7081b">
 <p>
 Instruct array() to use a different index using the =&gt; syntax:
 </p>
@@ -953,15 +1055,15 @@ foreach ($presidents as $number =&gt; $president) {
 </div>
 
 <div id="outline-container-orga2ad772" class="outline-3">
-<h3 id="orga2ad772"><span class="section-number-3">4.4</span> Storing Multiple Elements Per Key in an Array</h3>
-<div class="outline-text-3" id="text-4-4">
+<h3 id="orga2ad772">Storing Multiple Elements Per Key in an Array</h3>
+<div class="outline-text-3" id="text-orga2ad772">
 <p>
 Store the multiple elements in an array:
 </p>
 
 <div class="org-src-container">
 <pre class="src src-php">$fruits = array('red' =&gt; array('strawberry','apple'),
-		'yellow' =&gt; array('banana'));
+                'yellow' =&gt; array('banana'));
 </pre>
 </div>
 
@@ -1007,7 +1109,7 @@ To print the entries, loop through the array:
 <pre class="src src-php">foreach ($fruits as $color=&gt;$color_fruit) {
     // $color_fruit is an array
     foreach ($color_fruit as $fruit) {
-	print "$fruit is colored $color.&lt;br&gt;";
+        print "$fruit is colored $color.&lt;br&gt;";
     }
 }
 </pre>
@@ -1016,8 +1118,8 @@ To print the entries, loop through the array:
 </div>
 
 <div id="outline-container-org769d71c" class="outline-3">
-<h3 id="org769d71c"><span class="section-number-3">4.5</span> Initializing an Array to a Range of Integers</h3>
-<div class="outline-text-3" id="text-4-5">
+<h3 id="org769d71c">Initializing an Array to a Range of Integers</h3>
+<div class="outline-text-3" id="text-org769d71c">
 <p>
 Use range($start, $stop):
 </p>
@@ -1028,8 +1130,8 @@ $cards = range(1, 52);
 </div>
 </div>
 <div id="outline-container-orgd062d08" class="outline-3">
-<h3 id="orgd062d08"><span class="section-number-3">4.6</span> Iterating through an array</h3>
-<div class="outline-text-3" id="text-4-6">
+<h3 id="orgd062d08">Iterating through an array</h3>
+<div class="outline-text-3" id="text-orgd062d08">
 <p>
 Use foreach:
 </p>
@@ -1074,8 +1176,8 @@ while (list($key, $value) = each ($array)) {
 </div>
 
 <div id="outline-container-org12cd7ef" class="outline-3">
-<h3 id="org12cd7ef"><span class="section-number-3">4.7</span> Deleting elements from an array</h3>
-<div class="outline-text-3" id="text-4-7">
+<h3 id="org12cd7ef">Deleting elements from an array</h3>
+<div class="outline-text-3" id="text-org12cd7ef">
 <p>
 To delete one element, use unset():
 </p>
@@ -1104,8 +1206,8 @@ array<sub>splice</sub>($array, $offset, $length);
 </div>
 </div>
 <div id="outline-container-org1f38577" class="outline-3">
-<h3 id="org1f38577"><span class="section-number-3">4.8</span> Changing array size</h3>
-<div class="outline-text-3" id="text-4-8">
+<h3 id="org1f38577">Changing array size</h3>
+<div class="outline-text-3" id="text-org1f38577">
 <p>
 Use array<sub>pad</sub>() to make an array grow:
 </p>
@@ -1139,8 +1241,8 @@ This removes all but the first two elements from $array.
 </div>
 </div>
 <div id="outline-container-org1368f30" class="outline-3">
-<h3 id="org1368f30"><span class="section-number-3">4.9</span> Appending one array to another</h3>
-<div class="outline-text-3" id="text-4-9">
+<h3 id="org1368f30">Appending one array to another</h3>
+<div class="outline-text-3" id="text-org1368f30">
 <p>
 The array<sub>merge</sub>() function works with both predefined arrays and arrays defined in place using array() :
 </p>
@@ -1209,8 +1311,8 @@ Array
 </div>
 
 <div id="outline-container-orga8a1aee" class="outline-3">
-<h3 id="orga8a1aee"><span class="section-number-3">4.10</span> Turning an Array into a String</h3>
-<div class="outline-text-3" id="text-4-10">
+<h3 id="orga8a1aee">Turning an Array into a String</h3>
+<div class="outline-text-3" id="text-orga8a1aee">
 <p>
 You have an array, and you want to convert it into a nicely formatted string.
 </p>
@@ -1244,8 +1346,8 @@ $string = substr($string, 1); // remove leading ","
 </div>
 </div>
 <div id="outline-container-org11f772d" class="outline-3">
-<h3 id="org11f772d"><span class="section-number-3">4.11</span> Checking if a Key Is in an Array</h3>
-<div class="outline-text-3" id="text-4-11">
+<h3 id="org11f772d">Checking if a Key Is in an Array</h3>
+<div class="outline-text-3" id="text-org11f772d">
 <p>
 Use array<sub>key</sub><sub>exists</sub>() to check for a key no matter what the associated value is:
 </p>
@@ -1279,8 +1381,8 @@ false.
 </div>
 
 <div id="outline-container-org2f72e7d" class="outline-3">
-<h3 id="org2f72e7d"><span class="section-number-3">4.12</span> Checking if an Element Is in an Array</h3>
-<div class="outline-text-3" id="text-4-12">
+<h3 id="org2f72e7d">Checking if an Element Is in an Array</h3>
+<div class="outline-text-3" id="text-org2f72e7d">
 <p>
 Use in<sub>array</sub>():
 </p>
@@ -1312,8 +1414,8 @@ in<sub>array</sub>(2, $array, true);  /</i> false
 </div>
 </div>
 <div id="outline-container-org2b75e97" class="outline-3">
-<h3 id="org2b75e97"><span class="section-number-3">4.13</span> Finding the Position of a Value in an Array</h3>
-<div class="outline-text-3" id="text-4-13">
+<h3 id="org2b75e97">Finding the Position of a Value in an Array</h3>
+<div class="outline-text-3" id="text-org2b75e97">
 <p>
 Use array<sub>search</sub>() . It returns the key of the found value. If the
 value is not in the array, it returns false:
@@ -1328,8 +1430,8 @@ if ($position !== false) {
 </div>
 </div>
 <div id="outline-container-org9391bd4" class="outline-3">
-<h3 id="org9391bd4"><span class="section-number-3">4.14</span> Finding Elements That Pass a Certain Test</h3>
-<div class="outline-text-3" id="text-4-14">
+<h3 id="org9391bd4">Finding Elements That Pass a Certain Test</h3>
+<div class="outline-text-3" id="text-org9391bd4">
 <p>
 Use a foreach loop:
 </p>
@@ -1364,8 +1466,8 @@ $flops = array<sub>filter</sub>($movies, 'flops');
 </div>
 </div>
 <div id="outline-container-org85b5288" class="outline-3">
-<h3 id="org85b5288"><span class="section-number-3">4.15</span> Finding the Largest or Smallest Valued Element in an Array</h3>
-<div class="outline-text-3" id="text-4-15">
+<h3 id="org85b5288">Finding the Largest or Smallest Valued Element in an Array</h3>
+<div class="outline-text-3" id="text-org85b5288">
 <p>
 To find the largest element, use max():
 </p>
@@ -1384,8 +1486,8 @@ $smallest = min($array);
 </div>
 </div>
 <div id="outline-container-org1cea9e2" class="outline-3">
-<h3 id="org1cea9e2"><span class="section-number-3">4.16</span> Sorting an Array</h3>
-<div class="outline-text-3" id="text-4-16">
+<h3 id="org1cea9e2">Sorting an Array</h3>
+<div class="outline-text-3" id="text-org1cea9e2">
 <p>
 To sort an array using the traditional definition of sort, use sort():
 </p>
@@ -1463,8 +1565,8 @@ natcasersort(). You can also pass SORT<sub>NUMERIC</sub> into these functions.
 </div>
 </div>
 <div id="outline-container-orgec07308" class="outline-3">
-<h3 id="orgec07308"><span class="section-number-3">4.17</span> Randomizing an Array</h3>
-<div class="outline-text-3" id="text-4-17">
+<h3 id="orgec07308">Randomizing an Array</h3>
+<div class="outline-text-3" id="text-orgec07308">
 <p>
 Use shuffle():
 </p>
@@ -1476,8 +1578,8 @@ shuffle($array);
 </div>
 
 <div id="outline-container-org0daa2a6" class="outline-3">
-<h3 id="org0daa2a6"><span class="section-number-3">4.18</span> Removing Duplicate Elements from an Array</h3>
-<div class="outline-text-3" id="text-4-18">
+<h3 id="org0daa2a6">Removing Duplicate Elements from an Array</h3>
+<div class="outline-text-3" id="text-org0daa2a6">
 <p>
 If the array is already complete, use array<sub>unique</sub>(), which returns a
 new array that contains no duplicate values:
@@ -1509,8 +1611,8 @@ foreach ($<sub>REQUEST</sub>['fruits'] as $fruit) {
 </div>
 </div>
 <div id="outline-container-orgd39d039" class="outline-3">
-<h3 id="orgd39d039"><span class="section-number-3">4.19</span> Applying a Function to Each Element in an Array</h3>
-<div class="outline-text-3" id="text-4-19">
+<h3 id="orgd39d039">Applying a Function to Each Element in an Array</h3>
+<div class="outline-text-3" id="text-orgd39d039">
 <p>
 Use array<sub>walk</sub>():
 </p>
@@ -1577,8 +1679,8 @@ O&amp;#039;Reilly
 </div>
 </div>
 <div id="outline-container-orgefd7f6d" class="outline-3">
-<h3 id="orgefd7f6d"><span class="section-number-3">4.20</span> Finding the Union, Intersection, or Difference of Two Arrays</h3>
-<div class="outline-text-3" id="text-4-20">
+<h3 id="orgefd7f6d">Finding the Union, Intersection, or Difference of Two Arrays</h3>
+<div class="outline-text-3" id="text-orgefd7f6d">
 <p>
 To compute the union:
 </p>
@@ -1613,8 +1715,8 @@ $difference = array<sub>merge</sub>(array<sub>diff</sub>($a, $b), array<sub>diff
 </div>
 </div>
 <div id="outline-container-org07cb094" class="outline-3">
-<h3 id="org07cb094"><span class="section-number-3">4.21</span> Making an Object Act like an Array</h3>
-<div class="outline-text-3" id="text-4-21">
+<h3 id="org07cb094">Making an Object Act like an Array</h3>
+<div class="outline-text-3" id="text-org07cb094">
 <p>
 Implement SPL’s ArrayAccess interface:
 </p>
@@ -1629,31 +1731,31 @@ private $elements;
 
 <p>
 public function _<sub>construct</sub>() {
-	$this-&gt;elements = array();
+  $this-&gt;elements = array();
 }
 </p>
 
 <p>
 public function offsetExists($offset) {
-	return isset($this-&gt;elements[$offset]);
+  return isset($this-&gt;elements[$offset]);
 }
 </p>
 
 <p>
 public function offsetGet($offset) {
-	return $this-&gt;elements[$offset];
+  return $this-&gt;elements[$offset];
 }
 </p>
 
 <p>
 public function offsetSet($offset, $value) {
-	return $this-&gt;elements[$offset] = $value;
+  return $this-&gt;elements[$offset] = $value;
 }
 </p>
 
 <p>
 public function offsetUnset($offset) {
-	unset($this-&gt;elements[$offset]);
+  unset($this-&gt;elements[$offset]);
 }
 }
 </p>
@@ -1693,8 +1795,8 @@ Well, what did you expect in an opera? A happy ending?
 </div>
 
 <div id="outline-container-orgcc4bfe2" class="outline-3">
-<h3 id="orgcc4bfe2"><span class="section-number-3">4.22</span> array<sub>reduce</sub></h3>
-<div class="outline-text-3" id="text-4-22">
+<h3 id="orgcc4bfe2">array<sub>reduce</sub></h3>
+<div class="outline-text-3" id="text-orgcc4bfe2">
 <p>
 syntax
    mixed array<sub>reduce</sub> ( array $array , callable $callback [, mixed $initial = NULL ] )
@@ -1727,11 +1829,11 @@ var_dump(array_reduce($x, "sum", "No data to reduce")); // string(17) "No data t
 </div>
 
 <div id="outline-container-org5177cce" class="outline-3">
-<h3 id="org5177cce"><span class="section-number-3">4.23</span> create and array from variables and their values</h3>
-<div class="outline-text-3" id="text-4-23">
-</div><div id="outline-container-org6facc44" class="outline-4">
-<h4 id="org6facc44"><span class="section-number-4">4.23.1</span> intro</h4>
-<div class="outline-text-4" id="text-4-23-1">
+<h3 id="org5177cce">create and array from variables and their values</h3>
+<div class="outline-text-3" id="text-org5177cce">
+</div><div id="outline-container-orgd414564" class="outline-4">
+<h4 id="orgd414564">intro</h4>
+<div class="outline-text-4" id="text-orgd414564">
 <p>
 There may also be times when you’ll want to use compact, the inverse
 of extract, to create an array from variables and their
@@ -1778,8 +1880,8 @@ is looking for an array of variable names.
 </div>
 
 <div id="outline-container-orgf951a2f" class="outline-4">
-<h4 id="orgf951a2f"><span class="section-number-4">4.23.2</span> using compact for debugging</h4>
-<div class="outline-text-4" id="text-4-23-2">
+<h4 id="orgf951a2f">using compact for debugging</h4>
+<div class="outline-text-4" id="text-orgf951a2f">
 <p>
 Another use of this function is for debugging, when you wish to
 quickly view several variables and their values, as in Example 6-15.
@@ -1824,14 +1926,38 @@ Array
 </div>
 </div>
 </div>
+
+<div id="outline-container-org1521e69" class="outline-3">
+<h3 id="org1521e69">flatten php array</h3>
+<div class="outline-text-3" id="text-org1521e69">
+<div class="org-src-container">
+<pre class="src src-php">function array_flatten($array, $return = array())
+{
+    foreach ($array as $key =&gt; $value)
+    {
+        if (is_array($value) || is_object($value))
+        {
+            $return = array_flatten($value, $return);
+        }
+        else
+        {
+            $return[] = $value;
+        }
+    }
+    return $return;
+}
+</pre>
+</div>
+</div>
+</div>
 </div>
 
 <div id="outline-container-orgd511018" class="outline-2">
-<h2 id="orgd511018"><span class="section-number-2">5</span> Date and Time</h2>
-<div class="outline-text-2" id="text-5">
+<h2 id="orgd511018">Date and Time</h2>
+<div class="outline-text-2" id="text-orgd511018">
 </div><div id="outline-container-org06755db" class="outline-3">
-<h3 id="org06755db"><span class="section-number-3">5.1</span> Finding the Current Date and Time</h3>
-<div class="outline-text-3" id="text-5-1">
+<h3 id="org06755db">Finding the Current Date and Time</h3>
+<div class="outline-text-3" id="text-org06755db">
 <p>
 Use strftime() or date() for a formatted time string, as in Example 3-2.
 </p>
@@ -1839,23 +1965,22 @@ Use strftime() or date() for a formatted time string, as in Example 3-2.
 <p>
 <b>Example 3-2. Finding the current date and time</b>
 </p>
-
-<p>
-&lt;?php
+<div class="org-src-container">
+<pre class="src src-php">&lt;?php
 print strftime('%c');
 print "\n";
 print date('r');
 ?&gt;
-</p>
+</pre>
+</div>
 
 <p>
 Example 3-2 prints:
 </p>
-
-<p>
+<pre class="example">
 Wed May 10 18:29:59 2006
 Wed, 10 May 2006 18:29:59 -0400
-</p>
+</pre>
 
 <p>
 <b>Use getdate() or localtime() if you want time parts.</b>
@@ -1865,23 +1990,22 @@ Example 3-3 shows how these functions work.
 <p>
 Example 3-3. Finding time parts
 </p>
-
-<p>
-&lt;?php
-$now<sub>1</sub> = getdate();
-$now<sub>2</sub> = localtime();
-print "{$now<sub>1</sub>['hours']}:{$now<sub>1</sub>['minutes']}:{$now<sub>1</sub>['seconds']}\n";
-print "$now<sub>2</sub>[2]:$now<sub>2</sub>[1]:$now<sub>2</sub>[0]";
-</p>
+<div class="org-src-container">
+<pre class="src src-php">&lt;?php
+$now_1 = getdate();
+$now_2 = localtime();
+print "{$now_1['hours']}:{$now_1['minutes']}:{$now_1['seconds']}\n";
+print "$now_2[2]:$now_2[1]:$now_2[0]";
+</pre>
+</div>
 
 <p>
 Example 3-3 prints:
 </p>
-
-<p>
+<pre class="example">
 18:23:45
 18:23:45
-</p>
+</pre>
 
 <p>
 <b>Example 3-4 shows how to use getdate() to print out the month, day, and year.</b>
@@ -1890,21 +2014,20 @@ Example 3-3 prints:
 <p>
 Example 3-4. Finding the month, day, and year
 </p>
-
-<p>
-&lt;?php
+<div class="org-src-container">
+<pre class="src src-php">&lt;?php
 $a = getdate();
 printf('%s %d, %d',$a['month'],$a['mday'],$a['year']);
 ?&gt;
-</p>
+</pre>
+</div>
 
 <p>
 Example 3-4 prints:
 </p>
-
-<p>
+<pre class="example">
 May 5, 2007
-</p>
+</pre>
 
 <p>
 Pass getdate() an epoch timestamp as an argument to make the returned
@@ -1916,21 +2039,20 @@ month, day, and year at epoch timestamp 163727100 is shown in Example
 <p>
 Example 3-5. getdate() with a specific timestamp
 </p>
-
-<p>
-&lt;?php
+<div class="org-src-container">
+<pre class="src src-php">&lt;?php
 $a = getdate(163727100);
 printf('%s %d, %d',$a['month'],$a['mday'],$a['year']);
 ?&gt;
-</p>
+</pre>
+</div>
 
 <p>
 Example 3-5 prints:
 </p>
-
-<p>
+<pre class="example">
 March 10, 1975
-</p>
+</pre>
 
 <p>
 The function localtime() returns an array of time and date parts. It
@@ -1949,22 +2071,21 @@ returns, as shown in Table 3-2.
 <p>
 Example 3-6. Using localtime()
 </p>
-
-<p>
-&lt;?php
+<div class="org-src-container">
+<pre class="src src-php">&lt;?php
 $a = localtime();
 $a[4] += 1;
 $a[5] += 1900;
 print "$a[4]/$a[3]/$a[5]";
-</p>
+</pre>
+</div>
 
 <p>
 Example 3-6 prints:
 </p>
-
-<p>
+<pre class="example">
 6/23/2006
-</p>
+</pre>
 
 <p>
 The month is incremented by 1 before printing since localtime() starts
@@ -1976,8 +2097,8 @@ because localtime() starts counting years with 0 for 1900.
 </div>
 
 <div id="outline-container-org590fa06" class="outline-3">
-<h3 id="org590fa06"><span class="section-number-3">5.2</span> Converting Time and Date Parts to an Epoch Timestamp</h3>
-<div class="outline-text-3" id="text-5-2">
+<h3 id="org590fa06">Converting Time and Date Parts to an Epoch Timestamp</h3>
+<div class="outline-text-3" id="text-org590fa06">
 <p>
 Use mktime() if your time and date parts are in the local time zone,
 as shown in Example 3-7.
@@ -1986,13 +2107,13 @@ as shown in Example 3-7.
 <p>
 Example 3-7. Getting a specific epoch timestamp
 </p>
-
-<p>
-&lt;?php
+<div class="org-src-container">
+<pre class="src src-php">&lt;?php
 // 7:45:03 PM on March 10, 1975, local time
 $then = mktime(19,45,3,3,10,1975);
 ?&gt;
-</p>
+</pre>
+</div>
 
 <p>
 Use gmmktime() , as in Example 3-8, if your time and date parts are in
@@ -2002,26 +2123,27 @@ GMT.
 <p>
 Example 3-8. Getting a specific GMT-based epoch timestamp
 </p>
-
-<p>
-&lt;?php
+<div class="org-src-container">
+<pre class="src src-php">&lt;?php
 // 7:45:03 PM on March 10, 1975, in GMT
 $then = gmmktime(19,45,3,3,10,1975);
 ?&gt;
-</p>
+</pre>
 </div>
 </div>
+</div>
+
 <div id="outline-container-org078a542" class="outline-3">
-<h3 id="org078a542"><span class="section-number-3">5.3</span> Converting an Epoch Timestamp to Time and Date Parts</h3>
-<div class="outline-text-3" id="text-5-3">
+<h3 id="org078a542">Converting an Epoch Timestamp to Time and Date Parts</h3>
+<div class="outline-text-3" id="text-org078a542">
 <p>
 Pass an epoch timestamp to getdate(): $time<sub>parts</sub> = getdate(163727100);.
 </p>
 </div>
 </div>
 <div id="outline-container-org8b336f8" class="outline-3">
-<h3 id="org8b336f8"><span class="section-number-3">5.4</span> Finding the Difference of Two Dates</h3>
-<div class="outline-text-3" id="text-5-4">
+<h3 id="org8b336f8">Finding the Difference of Two Dates</h3>
+<div class="outline-text-3" id="text-org8b336f8">
 <p>
 Convert both dates to epoch timestamps and subtract one from the
 other. Example 3-13 separates the difference into weeks, days, hours,
@@ -2073,40 +2195,44 @@ wouldn’t give an accurate count of the time difference calculated.
 </div>
 
 <div id="outline-container-org681848c" class="outline-3">
-<h3 id="org681848c"><span class="section-number-3">5.5</span> date difference using <code>DateInterval</code></h3>
-<div class="outline-text-3" id="text-5-5">
-<p>
-&lt;?php
+<h3 id="org681848c">date difference using <code>DateInterval</code></h3>
+<div class="outline-text-3" id="text-org681848c">
+<div class="org-src-container">
+<pre class="src src-php">&lt;?php
 $datetime1 = new DateTime('2009-10-11');
 $datetime2 = new DateTime('2009-10-13');
 $interval = $datetime1-&gt;diff($datetime2);
 echo $interval-&gt;format('%R%a days');
 ?&gt;
-</p>
+</pre>
+</div>
 
 <p>
 Procedural style
 </p>
-
-<p>
-&lt;?php
-$datetime1 = date<sub>create</sub>('2009-10-11');
-$datetime2 = date<sub>create</sub>('2009-10-13');
-$interval = date<sub>diff</sub>($datetime1, $datetime2);
+<div class="org-src-container">
+<pre class="src src-php">&lt;?php
+$datetime1 = date_create('2009-10-11');
+$datetime2 = date_create('2009-10-13');
+$interval = date_diff($datetime1, $datetime2);
 echo $interval-&gt;format('%R%a days');
 ?&gt;
-</p>
+</pre>
+</div>
 
 <p>
 The above examples will output:
+</p>
+
+<p>
 +2 days
 </p>
 </div>
 </div>
 
 <div id="outline-container-org32af68e" class="outline-3">
-<h3 id="org32af68e"><span class="section-number-3">5.6</span> number of days between two dates</h3>
-<div class="outline-text-3" id="text-5-6">
+<h3 id="org32af68e">number of days between two dates</h3>
+<div class="outline-text-3" id="text-org32af68e">
 <div class="org-src-container">
 <pre class="src src-php">$today-&gt;diff($yesterday)-&gt;days;
 
@@ -2122,11 +2248,11 @@ $today-&gt;getTimestamp() - $yesterday-&gt;getTimestamp()/86400;
 </div>
 
 <div id="outline-container-org8a24443" class="outline-2">
-<h2 id="org8a24443"><span class="section-number-2">6</span> variables</h2>
-<div class="outline-text-2" id="text-6">
+<h2 id="org8a24443">variables</h2>
+<div class="outline-text-2" id="text-org8a24443">
 </div><div id="outline-container-org14ba1d9" class="outline-3">
-<h3 id="org14ba1d9"><span class="section-number-3">6.1</span> Establishing a Default Value</h3>
-<div class="outline-text-3" id="text-6-1">
+<h3 id="org14ba1d9">Establishing a Default Value</h3>
+<div class="outline-text-3" id="text-org14ba1d9">
 <p>
 Use isset() to assign a default to a variable that may already have a value:
 </p>
@@ -2181,8 +2307,8 @@ isset($vehicles['cars']);            /</i> false
 </div>
 
 <div id="outline-container-org648a3dd" class="outline-3">
-<h3 id="org648a3dd"><span class="section-number-3">6.2</span> Exchanging Values Without Using Temporary Variables</h3>
-<div class="outline-text-3" id="text-6-2">
+<h3 id="org648a3dd">Exchanging Values Without Using Temporary Variables</h3>
+<div class="outline-text-3" id="text-org648a3dd">
 <p>
 To swap $a and $b:
 </p>
@@ -2194,8 +2320,8 @@ list($a,$b) = array($b,$a);
 </div>
 
 <div id="outline-container-org3723f1b" class="outline-3">
-<h3 id="org3723f1b"><span class="section-number-3">6.3</span> Creating a Dynamic Variable Name</h3>
-<div class="outline-text-3" id="text-6-3">
+<h3 id="org3723f1b">Creating a Dynamic Variable Name</h3>
+<div class="outline-text-3" id="text-org3723f1b">
 <p>
 You want to construct a variable’s name dynamically. For example, you
 want to use variable names that match the field names from a database
@@ -2279,25 +2405,25 @@ indirection.
 </div>
 
 <div id="outline-container-orgcebcab6" class="outline-3">
-<h3 id="orgcebcab6"><span class="section-number-3">6.4</span> Using Static Variables</h3>
-<div class="outline-text-3" id="text-6-4">
+<h3 id="orgcebcab6">Using Static Variables</h3>
+<div class="outline-text-3" id="text-orgcebcab6">
 <p>
 Declare the variable as static:
 </p>
-
-<p>
-function track<sub>times</sub><sub>called</sub>() {
+<div class="org-src-container">
+<pre class="src src-php">function track_times_called() {
     static $i = 0;
     $i++;
     return $i;
 }
-</p>
+</pre>
+</div>
 </div>
 </div>
 
 <div id="outline-container-org88c36d5" class="outline-3">
-<h3 id="org88c36d5"><span class="section-number-3">6.5</span> Encapsulating Complex Data Types in a String</h3>
-<div class="outline-text-3" id="text-6-5">
+<h3 id="org88c36d5">Encapsulating Complex Data Types in a String</h3>
+<div class="outline-text-3" id="text-org88c36d5">
 <p>
 You want a string representation of an array or object for storage in
 a file or database. This string should be easily reconstitutable into
@@ -2327,11 +2453,11 @@ $new<sub>pantry</sub> = unserialize(file<sub>get</sub><sub>contents</sub>('/tmp/
 </div>
 
 <div id="outline-container-org2335cc0" class="outline-2">
-<h2 id="org2335cc0"><span class="section-number-2">7</span> functions</h2>
-<div class="outline-text-2" id="text-7">
+<h2 id="org2335cc0">functions</h2>
+<div class="outline-text-2" id="text-org2335cc0">
 </div><div id="outline-container-org328de91" class="outline-3">
-<h3 id="org328de91"><span class="section-number-3">7.1</span> checking for a function's existence</h3>
-<div class="outline-text-3" id="text-7-1">
+<h3 id="org328de91">checking for a function's existence</h3>
+<div class="outline-text-3" id="text-org328de91">
 <div class="org-src-container">
 <pre class="src src-php">&lt;?php
 if (function_exists("array_combine"))
@@ -2347,14 +2473,81 @@ else
 </div>
 </div>
 </div>
+
+<div id="outline-container-org938cc6c" class="outline-3">
+<h3 id="org938cc6c">Creating Functions That Take a Variable Number of Arguments</h3>
+<div class="outline-text-3" id="text-org938cc6c">
+<p>
+use <code>func_num_args()</code> and <code>func_get_arg()</code> functions.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-php">// find the "average" of a group of numbers
+function mean() {
+    // initialize to avoid warnings
+    $sum = 0;
+
+    // the number of arguments passed to the function
+    $size = func_num_args();
+
+    // iterate through the arguments and add up the numbers
+    for ($i = 0; $i &lt; $size; $i++) {
+        $sum += func_get_arg($i);
+    }
+
+    // divide by the amount of numbers
+    $average = $sum / $size;
+
+    // return average
+    return $average;
+}
+
+$mean = mean(96, 93, 97);
+</pre>
+</div>
+
+<p>
+There is a third version of this function that uses func<sub>num</sub><sub>args</sub>( ) to return
+an array containing all the values passed to the function.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-php">// find the "average" of a group of numbers
+function mean() {
+    // initialize to avoid warnings
+    $sum = 0;
+
+    // load the arguments into $numbers
+    $numbers = func_get_args();
+
+    // the number of elements in the array
+    $size = count($numbers);
+
+    // iterate through the array and add up the numbers
+    for ($i = 0; $i &lt; $size; $i++) {
+        $sum += $numbers[$i];
+    }
+
+    // divide by the amount of numbers
+    $average = $sum / $size;
+
+    // return average
+    return $average;
+}
+
+$mean = mean(96, 93, 97);
+</pre>
+</div>
+</div>
+</div>
 </div>
 
 <div id="outline-container-org899a838" class="outline-2">
-<h2 id="org899a838"><span class="section-number-2">8</span> Misc</h2>
-<div class="outline-text-2" id="text-8">
+<h2 id="org899a838">Misc</h2>
+<div class="outline-text-2" id="text-org899a838">
 </div><div id="outline-container-orgb96f420" class="outline-3">
-<h3 id="orgb96f420"><span class="section-number-3">8.1</span> get results from eval</h3>
-<div class="outline-text-3" id="text-8-1">
+<h3 id="orgb96f420">get results from eval</h3>
+<div class="outline-text-3" id="text-orgb96f420">
 <p>
 use  <code>return</code> eg:
 </p>
@@ -2366,12 +2559,9 @@ use  <code>return</code> eg:
 </div>
 </div>
 
-
-
-
 <div id="outline-container-org59d9e2a" class="outline-3">
-<h3 id="org59d9e2a"><span class="section-number-3">8.2</span> check if a class has a property</h3>
-<div class="outline-text-3" id="text-8-2">
+<h3 id="org59d9e2a">check if a class has a property</h3>
+<div class="outline-text-3" id="text-org59d9e2a">
 <div class="org-src-container">
 <pre class="src src-php">bool property_exists ( mixed $class , string $property )
 </pre>
@@ -2391,14 +2581,64 @@ Returns TRUE if the property exists, FALSE if it doesn't exist or NULL in case o
 </p>
 </div>
 </div>
+
+<div id="outline-container-org6f92338" class="outline-3">
+<h3 id="org6f92338">redirecting</h3>
+<div class="outline-text-3" id="text-org6f92338">
+<p>
+When redirecting to some scripts, the redirection also passes on the
+entire QUERY<sub>STRING</sub> the query string is stored in the PHP
+environment variable $QUERY<sub>STRING</sub> as a GET method parameter. In
+addition, a session variable, referer, is registered in selected cases
+so that in later processing the script can redirect to the original
+calling page.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-php">&lt;?php
+if ($_POST[location] == "") {
+   header("Location: http://127.0.0.1/redirect_form.html");
+   exit;
+} else {
+   header("Location: $_POST[location]");
+   exit;
+}
+?&gt;
+</pre>
+</div>
+</div>
 </div>
 
+<div id="outline-container-org9847af7" class="outline-3">
+<h3 id="org9847af7">making the root path</h3>
+<div class="outline-text-3" id="text-org9847af7">
+<div class="org-src-container">
+<pre class="src src-php">define("ROOT",realpath(dirname(__FILE__)));
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc80ab4f" class="outline-3">
+<h3 id="orgc80ab4f">integer division</h3>
+<div class="outline-text-3" id="text-orgc80ab4f">
+<div class="org-src-container">
+<pre class="src src-php">int intdiv ( int $dividend , int $divisor )
+</pre>
+</div>
+
+<p>
+Returns the integer quotient of the division of dividend by divisor.
+</p>
+</div>
+</div>
+</div>
 <div id="outline-container-orgfbec5b2" class="outline-2">
-<h2 id="orgfbec5b2"><span class="section-number-2">9</span> json</h2>
-<div class="outline-text-2" id="text-9">
+<h2 id="orgfbec5b2">json</h2>
+<div class="outline-text-2" id="text-orgfbec5b2">
 </div><div id="outline-container-orge078d2c" class="outline-3">
-<h3 id="orge078d2c"><span class="section-number-3">9.1</span> json encode raw UTF?</h3>
-<div class="outline-text-3" id="text-9-1">
+<h3 id="orge078d2c">json encode raw UTF?</h3>
+<div class="outline-text-3" id="text-orge078d2c">
 <p>
 json<sub>encode</sub>( $text, JSON<sub>UNESCAPED</sub><sub>UNICODE</sub> );
 </p>
@@ -2406,19 +2646,19 @@ json<sub>encode</sub>( $text, JSON<sub>UNESCAPED</sub><sub>UNICODE</sub> );
 </div>
 </div>
 <div id="outline-container-orge22dc73" class="outline-2">
-<h2 id="orge22dc73"><span class="section-number-2">10</span> webservice</h2>
-<div class="outline-text-2" id="text-10">
+<h2 id="orge22dc73">webservice</h2>
+<div class="outline-text-2" id="text-orge22dc73">
 </div><div id="outline-container-org897a489" class="outline-3">
-<h3 id="org897a489"><span class="section-number-3">10.1</span> types of webservices</h3>
-<div class="outline-text-3" id="text-10-1">
+<h3 id="org897a489">types of webservices</h3>
+<div class="outline-text-3" id="text-org897a489">
 <ul class="org-ul">
 <li>restful</li>
 <li>SOAP</li>
 </ul>
 </div>
 <div id="outline-container-org4f543f1" class="outline-4">
-<h4 id="org4f543f1"><span class="section-number-4">10.1.1</span> SOAP</h4>
-<div class="outline-text-4" id="text-10-1-1">
+<h4 id="org4f543f1">SOAP</h4>
+<div class="outline-text-4" id="text-org4f543f1">
 <p>
 SOAP is an acronym for Simple Object Access Protocol.
 </p>
@@ -2440,8 +2680,8 @@ language on any platform.
 </div>
 
 <div id="outline-container-org7b20449" class="outline-4">
-<h4 id="org7b20449"><span class="section-number-4">10.1.2</span> WSDL</h4>
-<div class="outline-text-4" id="text-10-1-2">
+<h4 id="org7b20449">WSDL</h4>
+<div class="outline-text-4" id="text-org7b20449">
 <p>
 WSDL is an acronym for Web Services Description Language.
 </p>
@@ -2462,171 +2702,12 @@ WSDL is pronounced as wiz-dull.
 </div>
 </div>
 </div>
-
-<div id="outline-container-org74bbb36" class="outline-2">
-<h2 id="org74bbb36"><span class="section-number-2">11</span> lumen</h2>
-<div class="outline-text-2" id="text-11">
-</div><div id="outline-container-org156e249" class="outline-3">
-<h3 id="org156e249"><span class="section-number-3">11.1</span> lumen on apache</h3>
-<div class="outline-text-3" id="text-11-1">
-<p>
-install a lumen app in <b>/var/www</b>
-</p>
-
-<p>
-$ lumen new cms.app
-</p>
-
-<p>
-make your storage folder writable
-</p>
-
-<p>
-$ sudo chmod -R 777 storage
-</p>
-
-<p>
-create a virtual host file
-</p>
-
-<p>
-$ cp /ect/apache2/sites-available/000-default.conf /etc/apache2/sites-available/cms.conf
-</p>
-
-<p>
-here we use a different port for listening incoming requests for this <b>VirtualHost</b>:
-</p>
-
-<pre class="example">
-&lt;VirtualHost *:8081&gt;
-#...
-DocunemtRoot /var/www/cms.app/public
-&lt;Directory /var/www/cms.app/public&gt;
-   AllowOverride all
-   # other options
-&lt;/Directory&gt;
-#...
-&lt;/VirtualHost&gt;
-</pre>
-
-<p>
-change <b>ports.conf</b> to listen to port 8081 by adding <b>Listen 8081</b> 
-to <b>/etc/apache2/ports.conf</b> file.
-</p>
-
-<p>
-now we have to make the <b>VirtualHost</b> active by running <b>a2ensite</b>.
-</p>
-
-<p>
-$ sudo a2ensite cms.conf
-</p>
-
-<p>
-restart the service for the new settings to take effect.
-</p>
-
-<p>
-$ sudo service apache2 restart   
-</p>
-
-<p>
-<a href="https://httpd.apache.org/docs/2.4/vhosts/examples.html">https://httpd.apache.org/docs/2.4/vhosts/examples.html</a>
-<a href="https://gist.github.com/dbaeck/89d0b52d9d3d2777a96f">https://gist.github.com/dbaeck/89d0b52d9d3d2777a96f</a>
-<a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-apache-virtual-hosts-on-ubuntu-14-04-lts">https://www.digitalocean.com/community/tutorials/how-to-set-up-apache-virtual-hosts-on-ubuntu-14-04-lts</a>
-<a href="https://www.digitalocean.com/community/questions/what-is-the-correct-folder-to-put-my-website-files-var-www-or-var-www-html">https://www.digitalocean.com/community/questions/what-is-the-correct-folder-to-put-my-website-files-var-www-or-var-www-html</a>
-<a href="http://tecadmin.net/install-laravel-framework-on-ubuntu/">http://tecadmin.net/install-laravel-framework-on-ubuntu/</a>
-</p>
-</div>
-</div>
-
-<div id="outline-container-orgb51961f" class="outline-3">
-<h3 id="orgb51961f"><span class="section-number-3">11.2</span> installing globally</h3>
-<div class="outline-text-3" id="text-11-2">
-<p>
-install the lumen-intaller
-</p>
-<div class="org-src-container">
-<pre class="src src-shell">$ composer global require "laravel/lumen-installer"
-</pre>
-</div>
-
-<p>
-add the lumen binary to path. It can be found at:
-</p>
-
-<ul class="org-ul">
-<li><b>~/.composer/vendor/bin</b></li>
-<li><b>~/.config/composer/vendor/bin</b></li>
-</ul>
-
-<p>
-call like this <code>$ lumen new blog</code> .
-</p>
-</div>
-</div>
-
-<div id="outline-container-org393fec9" class="outline-3">
-<h3 id="org393fec9"><span class="section-number-3">11.3</span> PHP dependencies</h3>
-<div class="outline-text-3" id="text-11-3">
-<div class="org-src-container">
-<pre class="src src-shell">$ sudo apt-get install php7.0-zip
-</pre>
-</div>
-</div>
-</div>
-
-<div id="outline-container-orgf85306e" class="outline-3">
-<h3 id="orgf85306e"><span class="section-number-3">11.4</span> artisan</h3>
-<div class="outline-text-3" id="text-11-4">
-</div><div id="outline-container-orge9b8f57" class="outline-4">
-<h4 id="orge9b8f57"><span class="section-number-4">11.4.1</span> create a migration</h4>
-<div class="outline-text-4" id="text-11-4-1">
-<p>
-php artisan make:migration create<sub>books</sub><sub>table</sub> &#x2013;create=books
-</p>
-</div>
-</div>
-
-<div id="outline-container-orgb4fcc12" class="outline-4">
-<h4 id="orgb4fcc12"><span class="section-number-4">11.4.2</span> commit migration to db</h4>
-<div class="outline-text-4" id="text-11-4-2">
-<p>
-php artisan migrate
-</p>
-</div>
-</div>
-
-<div id="outline-container-orgba76ae5" class="outline-4">
-<h4 id="orgba76ae5"><span class="section-number-4">11.4.3</span> Refreshing the Schema and Seeding the Database</h4>
-<div class="outline-text-4" id="text-11-4-3">
-<p>
-$ composer dump-autoload
-$ php artisan migrate:refresh
-$ php artisan db:seed
-</p>
-</div>
-</div>
-</div>
-
-<div id="outline-container-org45a330c" class="outline-3">
-<h3 id="org45a330c"><span class="section-number-3">11.5</span> middleware</h3>
-<div class="outline-text-3" id="text-11-5">
-<p>
-Middleware provides a way to filter
-incoming HTTP requests before a defined route handles the request. You can use middleware to do any
-number of things, like authentication, validating a signed request, and CORS support, to name a few.
-Middleware classes are typically created in the app/Http/Middleware path by convention
-</p>
-</div>
-</div>
-</div>
 <div id="outline-container-org34d290e" class="outline-2">
-<h2 id="org34d290e"><span class="section-number-2">12</span> classes</h2>
-<div class="outline-text-2" id="text-12">
+<h2 id="org34d290e">classes</h2>
+<div class="outline-text-2" id="text-org34d290e">
 </div><div id="outline-container-org40be2c5" class="outline-3">
-<h3 id="org40be2c5"><span class="section-number-3">12.1</span> static attributes or methods.</h3>
-<div class="outline-text-3" id="text-12-1">
+<h3 id="org40be2c5">static attributes or methods.</h3>
+<div class="outline-text-3" id="text-org40be2c5">
 <p>
 A static property is a class variable that is associated with the class, rather than with an
 instance of the class.
@@ -2666,8 +2747,8 @@ self and parent , which resolve to the current class and the parent of the curre
 </div>
 
 <div id="outline-container-orgaf591b4" class="outline-3">
-<h3 id="orgaf591b4"><span class="section-number-3">12.2</span> _<sub>clone</sub> magic method</h3>
-<div class="outline-text-3" id="text-12-2">
+<h3 id="orgaf591b4">_<sub>clone</sub> magic method</h3>
+<div class="outline-text-3" id="text-orgaf591b4">
 <p>
 To actually copy an object in PHP5, you need to use the built-in _ _ clone()
 method.
@@ -2709,12 +2790,112 @@ should rewrite the class as follows:
 </div>
 </div>
 
+<div id="outline-container-org066d417" class="outline-2">
+<h2 id="org066d417">reflection</h2>
+<div class="outline-text-2" id="text-org066d417">
+</div><div id="outline-container-org851fd45" class="outline-3">
+<h3 id="org851fd45">retrieving the name of current function?</h3>
+<div class="outline-text-3" id="text-org851fd45">
+<p>
+_<sub>FUNCTION</sub>__ returns only the name of the function.
+while as <span class="underline"><span class="underline">METHOD</span></span> returns the name of the class alongwith the name of the function.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-php">class foo
+{
+  function print_func()
+  {
+            echo __FUNCTION__;
+  }
+  function print_method()
+  {
+            echo __METHOD__;
+  }
+}
+
+$obj = new foo();
+$obj-&gt;print_func();      // Returns: print_func
+$obj-&gt;print_method();    // Returns: foo::print_method
+</pre>
+</div>
+<p>
+<a href="http://www.php.net/manual/en/language.constants.predefined.php">http://www.php.net/manual/en/language.constants.predefined.php</a>
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org80eacec" class="outline-2">
+<h2 id="org80eacec">Debug</h2>
+<div class="outline-text-2" id="text-org80eacec">
+</div><div id="outline-container-orgdcea580" class="outline-3">
+<h3 id="orgdcea580">dump all variables?</h3>
+<div class="outline-text-3" id="text-orgdcea580">
+<p>
+Use get<sub>defined</sub><sub>vars</sub> and/or get<sub>defined</sub><sub>constants</sub>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-php">$arr = get_defined_vars();
+print_r($arr);
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-php">$a = print_r(var_dump($GLOBALS),1);
+echo htmlspecialchars($a);
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6b586a0" class="outline-3">
+<h3 id="org6b586a0">send an error message to  the web server's error log or to a file.</h3>
+<div class="outline-text-3" id="text-org6b586a0">
+<div class="org-src-container">
+<pre class="src src-php">bool error_log ( string $message [, int $message_type = 0 [, string $destination [, string $extra_headers ]]] )
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-php">&lt;?php
+// Send notification through the server log if we can not
+// connect to the database.
+if (!Ora_Logon($username, $password)) {
+    error_log("Oracle database not available!", 0);
+}
+
+// Notify administrator by email if we run out of FOO
+if (!($foo = allocate_new_foo())) {
+    error_log("Big trouble, we're all out of FOOs!", 1,
+               "operator@example.com");
+}
+
+// another way to call error_log():
+error_log("You messed up!", 3, "/var/tmp/my-errors.log");
+?&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org61052c4" class="outline-3">
+<h3 id="org61052c4">enabling error reporting</h3>
+<div class="outline-text-3" id="text-org61052c4">
+<div class="org-src-container">
+<pre class="src src-php">error_reporting(E_ALL);
+</pre>
+</div>
+</div>
+</div>
+</div>
+
 <div id="outline-container-orgcecdbc5" class="outline-2">
-<h2 id="orgcecdbc5"><span class="section-number-2">13</span> patterns</h2>
-<div class="outline-text-2" id="text-13">
+<h2 id="orgcecdbc5">patterns</h2>
+<div class="outline-text-2" id="text-orgcecdbc5">
 </div><div id="outline-container-orgd47f4df" class="outline-3">
-<h3 id="orgd47f4df"><span class="section-number-3">13.1</span> value object pattern</h3>
-<div class="outline-text-3" id="text-13-1">
+<h3 id="orgd47f4df">value object pattern</h3>
+<div class="outline-text-3" id="text-orgd47f4df">
 <p>
 <b>The Problem</b>
 So, how do you implement a lightweight, or easy to construct, descriptive object like Date or Dollar?
@@ -2753,8 +2934,8 @@ The fundamentals of the ValueObject pattern in PHP 5 are:
 </div>
 </div>
 <div id="outline-container-org6ed13a0" class="outline-3">
-<h3 id="org6ed13a0"><span class="section-number-3">13.2</span> The factory pattern</h3>
-<div class="outline-text-3" id="text-13-2">
+<h3 id="org6ed13a0">The factory pattern</h3>
+<div class="outline-text-3" id="text-org6ed13a0">
 <p>
 <b>The Problem</b>
 How can you create such “complex” objects easily and conveniently—without cut-and-paste pro-
@@ -2768,10 +2949,900 @@ Create a “factory”—a function or a class method— to “manufacture” ne
 </div>
 </div>
 </div>
+
+<div id="outline-container-org74bbb36" class="outline-2">
+<h2 id="org74bbb36">lumen</h2>
+<div class="outline-text-2" id="text-org74bbb36">
+</div><div id="outline-container-org156e249" class="outline-3">
+<h3 id="org156e249">lumen on apache</h3>
+<div class="outline-text-3" id="text-org156e249">
+<p>
+install a lumen app in <b>/var/www</b>
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">$ lumen new cms.app
+</pre>
+</div>
+
+<p>
+make your storage folder writable
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">$ sudo chmod -R 777 storage
+</pre>
+</div>
+
+<p>
+create a virtual host file
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">$ cp /ect/apache2/sites-available/000-default.conf /etc/apache2/sites-available/cms.conf
+</pre>
+</div>
+
+<p>
+here we use a different port for listening incoming requests for this <b>VirtualHost</b>:
+</p>
+
+<pre class="example">
+&lt;VirtualHost *:8081&gt;
+#...
+DocunemtRoot /var/www/cms.app/public
+&lt;Directory /var/www/cms.app/public&gt;
+   AllowOverride all
+   # other options
+&lt;/Directory&gt;
+#...
+&lt;/VirtualHost&gt;
+</pre>
+
+<p>
+change <b>ports.conf</b> to listen to port 8081 by adding <b>Listen 8081</b> 
+to <b>/etc/apache2/ports.conf</b> file.
+</p>
+
+<p>
+now we have to make the <b>VirtualHost</b> active by running <b>a2ensite</b>.
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">$ sudo a2ensite cms.conf
+</pre>
+</div>
+
+<p>
+restart the service for the new settings to take effect.
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">$ sudo service apache2 restart
+</pre>
+</div>
+
+<p>
+<a href="https://httpd.apache.org/docs/2.4/vhosts/examples.html">https://httpd.apache.org/docs/2.4/vhosts/examples.html</a>
+<a href="https://gist.github.com/dbaeck/89d0b52d9d3d2777a96f">https://gist.github.com/dbaeck/89d0b52d9d3d2777a96f</a>
+<a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-apache-virtual-hosts-on-ubuntu-14-04-lts">https://www.digitalocean.com/community/tutorials/how-to-set-up-apache-virtual-hosts-on-ubuntu-14-04-lts</a>
+<a href="https://www.digitalocean.com/community/questions/what-is-the-correct-folder-to-put-my-website-files-var-www-or-var-www-html">https://www.digitalocean.com/community/questions/what-is-the-correct-folder-to-put-my-website-files-var-www-or-var-www-html</a>
+<a href="http://tecadmin.net/install-laravel-framework-on-ubuntu/">http://tecadmin.net/install-laravel-framework-on-ubuntu/</a>
+</p>
+</div>
+</div>
+<div id="outline-container-orgb51961f" class="outline-3">
+<h3 id="orgb51961f">installing globally</h3>
+<div class="outline-text-3" id="text-orgb51961f">
+<p>
+install the lumen-intaller
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">$ composer global require "laravel/lumen-installer"
+</pre>
+</div>
+
+<p>
+add the lumen binary to path. It can be found at:
+</p>
+
+<ul class="org-ul">
+<li><b>~/.composer/vendor/bin</b></li>
+<li><b>~/.config/composer/vendor/bin</b></li>
+</ul>
+
+<p>
+call like this <code>$ lumen new blog</code> .
+</p>
+</div>
+</div>
+
+<div id="outline-container-org393fec9" class="outline-3">
+<h3 id="org393fec9">PHP dependencies</h3>
+<div class="outline-text-3" id="text-org393fec9">
+<div class="org-src-container">
+<pre class="src src-shell">$ sudo apt-get install php7.0-zip
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf85306e" class="outline-3">
+<h3 id="orgf85306e">artisan</h3>
+<div class="outline-text-3" id="text-orgf85306e">
+</div><div id="outline-container-orge9b8f57" class="outline-4">
+<h4 id="orge9b8f57">create a migration</h4>
+<div class="outline-text-4" id="text-orge9b8f57">
+<p>
+php artisan make:migration create<sub>books</sub><sub>table</sub> &#x2013;create=books
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb4fcc12" class="outline-4">
+<h4 id="orgb4fcc12">commit migration to db</h4>
+<div class="outline-text-4" id="text-orgb4fcc12">
+<p>
+php artisan migrate
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgba76ae5" class="outline-4">
+<h4 id="orgba76ae5">Refreshing the Schema and Seeding the Database</h4>
+<div class="outline-text-4" id="text-orgba76ae5">
+<p>
+$ composer dump-autoload
+$ php artisan migrate:refresh
+$ php artisan db:seed
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org45a330c" class="outline-3">
+<h3 id="org45a330c">middleware</h3>
+<div class="outline-text-3" id="text-org45a330c">
+<p>
+Middleware provides a way to filter
+incoming HTTP requests before a defined route handles the request. You can use middleware to do any
+number of things, like authentication, validating a signed request, and CORS support, to name a few.
+Middleware classes are typically created in the app/Http/Middleware path by convention
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd0e4ecf" class="outline-2">
+<h2 id="orgd0e4ecf">elqoquent</h2>
+<div class="outline-text-2" id="text-orgd0e4ecf">
+</div><div id="outline-container-orgefff6f2" class="outline-3">
+<h3 id="orgefff6f2">eloquent postgres json type</h3>
+<div class="outline-text-3" id="text-orgefff6f2">
+<p>
+In your migrations you can do something like:
+</p>
+<div class="org-src-container">
+<pre class="src src-php">$table-&gt;json('field_name');
+</pre>
+</div>
+
+<p>
+And in you model cast it to JSON by adding the $casts property like so:
+</p>
+<div class="org-src-container">
+<pre class="src src-php">class SomeModel extends Model
+{
+    protected $casts = [
+        'field_name' =&gt; 'json'
+    ];
+}
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org77ba132" class="outline-2">
+<h2 id="org77ba132">installation</h2>
+<div class="outline-text-2" id="text-org77ba132">
+</div><div id="outline-container-orga23d3dc" class="outline-3">
+<h3 id="orga23d3dc">php packages</h3>
+<div class="outline-text-3" id="text-orga23d3dc">
+<div class="org-src-container">
+<pre class="src src-shell">$ sudo apt-get install libapache2-mod-php    # for running php in apache2
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3588c10" class="outline-3">
+<h3 id="org3588c10">phpstorm xdebug</h3>
+<div class="outline-text-3" id="text-org3588c10">
+<div class="org-src-container">
+<pre class="src src-shell">$ sudo apt-get install php-xdebug
+</pre>
+</div>
+
+<p>
+to enable for php storm add <code>xdebug.remote_enable=1</code> to <code>php.ini</code>.
+</p>
+
+<p>
+<a href="https://confluence.jetbrains.com/display/PhpStorm/Zero-configuration+Web+Application+Debugging+with+Xdebug+and+PhpStorm">https://confluence.jetbrains.com/display/PhpStorm/Zero-configuration+Web+Application+Debugging+with+Xdebug+and+PhpStorm</a>
+<a href="https://www.jetbrains.com/phpstorm/marklets/">https://www.jetbrains.com/phpstorm/marklets/</a>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org970eb4f" class="outline-2">
+<h2 id="org970eb4f">session handling</h2>
+<div class="outline-text-2" id="text-org970eb4f">
+</div><div id="outline-container-orgd0bbc5b" class="outline-3">
+<h3 id="orgd0bbc5b">starting a session</h3>
+<div class="outline-text-3" id="text-orgd0bbc5b">
+<p>
+You may start a session manually with session<sub>start</sub>, or you can
+configure PHP to automatically start sessions with the
+session.auto<sub>start</sub> directive in php.ini.
+</p>
+<div class="org-src-container">
+<pre class="src src-php">session_start() !== false or die('could not start session');
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3ae58e0" class="outline-3">
+<h3 id="org3ae58e0">session variables example</h3>
+<div class="outline-text-3" id="text-org3ae58e0">
+<div class="org-src-container">
+<pre class="src src-php">&lt;?php
+    //start session
+    session_start();
+
+    //initialize a set of session variables
+    if(!isset($_SESSION['a']))
+    {
+        print("Initializing Session&lt;br&gt;");
+
+        $_SESSION['a'] = 'Session Var A';
+        $_SESSION['b'] = 123.45;
+        $_SESSION['c'] = 0;
+    }
+
+    //update session with access count
+    $_SESSION['c']++;
+
+    print("Access count: " . $_SESSION['c'] . "&lt;br&gt;");
+
+    print("Session Dump: " . session_encode() . "&lt;br&gt;");
+?&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb2dc315" class="outline-3">
+<h3 id="orgb2dc315">custom session handler</h3>
+<div class="outline-text-3" id="text-orgb2dc315">
+<div class="org-src-container">
+<pre class="src src-php">&lt;?php
+    class mySession
+    {
+        //prefix with which to mark session files
+        var $mark;
+
+        //path for storing session files
+        var $path;
+
+        //name of session cookie
+        var $name;
+
+        function mySession($mark='mySession_')
+        {
+            $this-&gt;mark = $mark;
+        }
+
+        function getFilePath($id)
+        {
+            return($this-&gt;path . '/' . $this-&gt;mark . $id);
+        }
+
+        function open($path, $name)
+        {
+            $this-&gt;path = $path;
+            $this-&gt;name = $name;
+
+            return(TRUE);
+        }
+
+        function close()
+        {
+            return(TRUE);
+        }
+
+        function read($id)
+        {
+            if($fp = @fopen(getFilePath($id), "r"))
+            {
+                return(fread($fp,
+                       filesize($this-&gt;getFilePath($id))));
+            }
+            else
+            {
+                return("");
+            }
+        }
+
+        function write($id, $data)
+        {
+            if($fp = @fopen($this-&gt;getFilePath($id), "w"))
+            {
+                return(fwrite($fp, $data));
+            }
+            else
+            {
+                return(FALSE);
+            }
+        }
+
+        function destroy($id)
+        {
+            return(@unlink($this-&gt;getFilePath($id)));
+        }
+
+        function garbage($lifetime)
+        {
+            $d = dir($this-&gt;path);
+
+            while($f = $d-&gt;read())
+            {
+                //file begins with mark and it's too old
+                if((strpos($f, $this-&gt;mark) == 0) AND
+                    (time() &gt; (fileatime($f) + $lifetime)))
+                {
+                    unlink("$this-&gt;path/$f");
+                }
+
+            }
+            $d-&gt;close();
+            return(TRUE);
+        }
+    }
+
+    $s = new mySession();
+
+    session_set_save_handler(
+        array($s, 'open'),
+        array($s, 'close'),
+        array($s, 'read'),
+        array($s, 'write'),
+        array($s, 'destroy'),
+        array($s, 'garbage')
+        );
+
+    //start session
+    session_start();
+
+    //initialize a set of session variables
+    if(!isset($_SESSION['a']))
+    {
+        print("Initializing Session&lt;br&gt;");
+
+        $_SESSION['a'] = 'Session Var A';
+        $_SESSION['b'] = 123.45;
+        $_SESSION['c'] = 0;
+    }
+
+    //update session with access count
+    $_SESSION['c']++;
+
+    print("Access count: " . $_SESSION['c'] . "&lt;br&gt;");
+
+    print("Session Dump: " . session_encode() . "&lt;br&gt;");
+?&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc9e0ddf" class="outline-3">
+<h3 id="orgc9e0ddf">ending a session</h3>
+<div class="outline-text-3" id="text-orgc9e0ddf">
+<p>
+use <code>session_destroy()</code> function.  
+</p>
+
+<p>
+Keep in mind that ending a session
+doesn't make the values from that session unavailable to the rest of
+the currently executing PHP page.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-php">&lt;?php
+session_start();
+// Do some miscellaneous work
+$_SESSION['username'] = 'Michele';
+// Logout of the site
+session_destroy();
+echo "At this point we can still see the value of username as
+".$_SESSION['username']."&lt;br /&gt;";
+$_SESSION = array();
+echo "Now the value of username is blank: ".$_SESSION['username'];
+?&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org5a5fa41" class="outline-3">
+<h3 id="org5a5fa41">Exposed Session Data</h3>
+<div class="outline-text-3" id="text-org5a5fa41">
+<div class="org-src-container">
+<pre class="src src-php">#!/usr/bin/env php
+&lt;?php
+
+    header('Content-Type: text/plain');
+    session_start();
+
+    $path = ini_get('session.save_path');
+    $handle = dir($path);
+
+    while ($filename = $handle-&gt;read())
+    {
+      if (substr($filename, 0, 5) == 'sess_')
+      {
+        $data = file_get_contents("$path/$filename");
+
+        if (!empty($data))
+        {
+          session_decode($data);
+          $session = $_SESSION;
+          $_SESSION = array();
+          echo "Session [" . substr($filename, 5) . "]\n";
+          print_r($session);
+          echo "\n--\n\n";
+        }
+      }
+    }
+
+?&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd08d825" class="outline-3">
+<h3 id="orgd08d825">making sure session data is not lost after redirect</h3>
+<div class="outline-text-3" id="text-orgd08d825">
+<p>
+call <code>exit()</code> after redirect.
+use <code>session_write_close()</code>
+</p>
+</div>
+</div>
+<div id="outline-container-org6fb21d6" class="outline-3">
+<h3 id="org6fb21d6">check for session status</h3>
+<div class="outline-text-3" id="text-org6fb21d6">
+<div class="org-src-container">
+<pre class="src src-php">function is_session_started()
+{
+    if ( php_sapi_name() !== 'cli' ) {
+        if ( version_compare(phpversion(), '5.4.0', '&gt;=') ) {
+            return session_status() === PHP_SESSION_ACTIVE ? TRUE : FALSE;
+        } else {
+            return session_id() === '' ? FALSE : TRUE;
+        }
+    }
+    return FALSE;
+}
+
+// Example
+if ( is_session_started() === FALSE ) session_start();
+?&gt;
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1345619" class="outline-2">
+<h2 id="org1345619">SPL</h2>
+<div class="outline-text-2" id="text-org1345619">
+</div><div id="outline-container-org88e5223" class="outline-3">
+<h3 id="org88e5223">Available objects in SPL</h3>
+<div class="outline-text-3" id="text-org88e5223">
+<div class="org-src-container">
+<pre class="src src-php">&lt;?php
+foreach(spl_classes() as  $k=&gt;$v){
+    echo nl2br($v."\n");
+}
+?&gt;
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org5e49c98" class="outline-2">
+<h2 id="org5e49c98">using <code>include_path</code> to manage larget projects</h2>
+<div class="outline-text-2" id="text-org5e49c98">
+<p>
+You can add include<sub>path</sub> configuration option in the php.ini file. You
+can use include<sub>path</sub> to define a list of directories that will be
+searched when include() type functions specify relative
+paths. Directories should be separated by colons (semicolons on
+Windows platforms), as shown here:
+</p>
+
+<pre class="example">
+include_path=".:/home/mary/php_lib:/usr/local/lib/php"
+</pre>
+
+<p>
+if you don't have access to php.ini file you can set the include<sub>path</sub> option in .htaccess file:
+</p>
+
+<pre class="example">
+php_value include_path /home/mary/php_lib
+</pre>
+
+<p>
+you could also use the ini<sub>set</sub>() function to set the option at runtime:
+</p>
+<div class="org-src-container">
+<pre class="src src-php">ini_set("include_path", "/home/mary/php_lib");
+</pre>
+</div>
+
+<p>
+As of PHP 4.3, she can use the set<sub>include</sub><sub>path</sub>() function to achieve the same effect, like so:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-php">set_include_path( "/home/mary/php_lib" );
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org28c85ef" class="outline-2">
+<h2 id="org28c85ef">output buffering</h2>
+<div class="outline-text-2" id="text-org28c85ef">
+</div><div id="outline-container-orgf04e795" class="outline-3">
+<h3 id="orgf04e795">intro</h3>
+<div class="outline-text-3" id="text-orgf04e795">
+<p>
+The idea of output buffering is to store all the content that has to
+be outputted in a memory buffer before outputting the whole
+buffer. This has the following advantages: 
+</p>
+<ul class="org-ul">
+<li>I/O operations are reducedto one which is a great performance improvement</li>
+<li>Content can be manipulated and parsed before outputting it to the browser</li>
+<li>The I/O operation can be done sequentially and quickly</li>
+</ul>
+
+<p>
+The downside to this is that the client has to wait until the script
+completes. Therefore, depending on the application design and the
+script execution time, the user might come to the conclusion that the
+system crashed and they will close the browser or do something else
+that would not be quite what we want.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org53612b1" class="outline-3">
+<h3 id="org53612b1">detect if output buffering is turned on?</h3>
+<div class="outline-text-3" id="text-org53612b1">
+<div class="org-src-container">
+<pre class="src src-php">if(ob_get_level() &gt; 0){
+   //there are some buffers active.
+}
+
+$ php -d output_buffering=1 -r'var_dump(ob_get_level());'
+int(1)
+$ php -d output_buffering=0 -r'var_dump(ob_get_level());'
+int(0)
+</pre>
+</div>
+
+<p>
+It does however check whether there is an output buffer active, not
+what the actual setting of PHP itself is. A manual ob<sub>start</sub>() (or more
+then one) will also increase the level.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc86ecc7" class="outline-3">
+<h3 id="orgc86ecc7">example</h3>
+<div class="outline-text-3" id="text-orgc86ecc7">
+<div class="org-src-container">
+<pre class="src src-php">&lt;?php
+ob_start();
+
+echo("This is a test\n");
+echo("More content\n");
+
+ob_end_flush();
+?&gt;
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8c85e6b" class="outline-2">
+<h2 id="org8c85e6b">request</h2>
+<div class="outline-text-2" id="text-org8c85e6b">
+</div><div id="outline-container-orga710ed7" class="outline-3">
+<h3 id="orga710ed7">check if request is ajax?</h3>
+<div class="outline-text-3" id="text-orga710ed7">
+<div class="org-src-container">
+<pre class="src src-php">function is_ajax() {
+  return isset($_SERVER['HTTP_X_REQUESTED_WITH']) &amp;&amp; strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest';
+}
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgaa3897c" class="outline-2">
+<h2 id="orgaa3897c">page generation time</h2>
+<div class="outline-text-2" id="text-orgaa3897c">
+</div><div id="outline-container-org06e3cc0" class="outline-3">
+<h3 id="org06e3cc0">solution1</h3>
+<div class="outline-text-3" id="text-org06e3cc0">
+<div class="org-src-container">
+<pre class="src src-php">&lt;?php
+$time = microtime();
+$time = explode(' ', $time);
+$time = $time[1] + $time[0];
+$start = $time;
+?&gt;
+
+&lt;?php
+$time = microtime();
+$time = explode(' ', $time);
+$time = $time[1] + $time[0];
+$finish = $time;
+$total_time = round(($finish - $start), 4);
+echo 'Page generated in '.$total_time.' seconds.';
+?&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org4a907d2" class="outline-3">
+<h3 id="org4a907d2">solution2</h3>
+<div class="outline-text-3" id="text-org4a907d2">
+<div class="org-src-container">
+<pre class="src src-php">function microtime_float()
+{
+    list($usec, $sec) = explode(" ", microtime());
+    return ((float)$usec + (float)$sec);
+}
+
+$time_start = microtime_float();
+
+// Sleep for a while
+usleep(100);
+
+$time_end = microtime_float();
+$time = $time_end - $time_start;
+
+echo "Did nothing in $time seconds\n";
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgef84760" class="outline-3">
+<h3 id="orgef84760">solution3</h3>
+<div class="outline-text-3" id="text-orgef84760">
+<p>
+microtime() and REQUEST<sub>TIME</sub><sub>FLOAT</sub> (as of PHP 5.4.0)
+</p>
+
+<div class="org-src-container">
+<pre class="src src-php">// Randomize sleeping time
+ usleep(mt_rand(100, 10000));
+
+// As of PHP 5.4.0, REQUEST_TIME_FLOAT is available in the $_SERVER superglobal array.
+// It contains the timestamp of the start of the request with microsecond precision.
+$time = microtime(true) - $_SERVER["REQUEST_TIME_FLOAT"];
+
+echo "Did nothing in $time seconds\n";
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgfac89a9" class="outline-2">
+<h2 id="orgfac89a9">apache <code>.htaccess</code> sample configuration</h2>
+<div class="outline-text-2" id="text-orgfac89a9">
+<pre class="example">
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-l
+RewriteRule .* index.php [L,QSA]
+</pre>
+
+<p>
+The script tells Apache that whenever an HTTP request arrives and if
+no physical file (!-f) or path (!-d) or symbolic link (!-l) can be
+found, it should transfer control to index.php
+</p>
+</div>
+</div>
+<div id="outline-container-org5525ed6" class="outline-2">
+<h2 id="org5525ed6">bootstrap</h2>
+<div class="outline-text-2" id="text-org5525ed6">
+</div><div id="outline-container-orgaa31d5e" class="outline-3">
+<h3 id="orgaa31d5e">structure of page</h3>
+<div class="outline-text-3" id="text-orgaa31d5e">
+</div><div id="outline-container-orga7351b8" class="outline-4">
+<h4 id="orga7351b8">settings of the viewing arena</h4>
+<div class="outline-text-4" id="text-orga7351b8">
+<div class="org-src-container">
+<pre class="src src-html">&lt;meta name="viewport"
+      content="width=device-width, initial-scale=1" /&gt;
+</pre>
+</div>
+
+<p>
+The zoom behavior can be turned off with no user-scalable=no.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgca458e0" class="outline-4">
+<h4 id="orgca458e0">Grid system</h4>
+</div>
+<div id="outline-container-org2a6be55" class="outline-4">
+<h4 id="org2a6be55">Container</h4>
+<div class="outline-text-4" id="text-org2a6be55">
+<p>
+Bootstrap utilizes a container element to initiate the page and find a
+basis for the grid.
+<b>Containers can be used multiple times on the page, but should not be nested.</b>
+</p>
+
+
+<div class="org-src-container">
+<pre class="src src-html">&lt;div class="container"&gt;
+     ...
+&lt;/div&gt;
+</pre>
+</div>
+
+<p>
+Alternatively, the class .container-fluid can be used, which always
+uses the full width of the device:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html">1   &lt;div class="container-fluid"&gt;
+2     ...
+3   &lt;/div&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org7d46af9" class="outline-4">
+<h4 id="org7d46af9">Device Specific Definitions</h4>
+<div class="outline-text-4" id="text-org7d46af9">
+<pre class="example">
+“xs” &lt;= 544 px
+“sm” &lt;= 768 px
+“md” &lt;= 992 px
+“lg” &lt;= 1200 px
+“xl” &gt; 1200 px
+1   @media (min-width: @screen-sm-min) { ... }
+2
+3   @media (min-width: @screen-md-min) { ... }
+4
+5   @media (min-width: @screen-lg-min) { ... }
+</pre>
+</div>
+</div>
+
+
+
+
+<div id="outline-container-org21571d1" class="outline-4">
+<h4 id="org21571d1">Order Column</h4>
+<div class="outline-text-4" id="text-org21571d1">
+<p>
+If individual columns have class styles such as .push-md- or pull-md-, they can be used,
+even if different from their natural order. “Push” means pushing columns to the right,
+while they are pulled to the left with “pull”.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html">1   &lt;div class="row"&gt;
+2     &lt;div class="col-md-9 push-md-3"&gt;9 + 3 right&lt;/div&gt;
+3     &lt;div class="col-md-3 pull-md-9"&gt;3 + 9 left&lt;/div&gt;
+4   &lt;/div&gt;
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgcc1205d" class="outline-3">
+<h3 id="orgcc1205d">typography</h3>
+<div class="outline-text-3" id="text-orgcc1205d">
+</div><div id="outline-container-org7a19910" class="outline-4">
+<h4 id="org7a19910">Orientation</h4>
+<div class="outline-text-4" id="text-org7a19910">
+<p>
+The alignment of text is up to your creative nature.
+</p>
+
+<ul class="org-ul">
+<li>text-left: Left aligned</li>
+<li>text-center: Text is centered</li>
+<li>text-right: Right aligned</li>
+<li>text-justify: Justified</li>
+<li>text-nowrap: Obstruction of upheaval</li>
+</ul>
+
+<p>
+In addition, there are alignment variants that are only valid for certain viewports.
+</p>
+
+<ul class="org-ul">
+<li>text-xs-left: Left aligned when the viewport “xs” is used.</li>
+<li>text-xs-center: Text is centered when the viewport “xs” is used.</li>
+<li>text-xs-right: Right aligned when the viewport “xs” is used.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org2c45b7d" class="outline-4">
+<h4 id="org2c45b7d">transformation</h4>
+<div class="outline-text-4" id="text-org2c45b7d">
+<p>
+Transformations convert text from lowercase to uppercase and vice versa.
+</p>
+
+<ul class="org-ul">
+<li>text-lowercase: Converts to lowercase</li>
+<li>text-uppercase: Converts to uppercase</li>
+<li>text-capitalize: First letter of each word is capitalized.</li>
+<li>text-weight-bold: Bold without an explicit tag.</li>
+<li>text-weight-normal: Normal weight without an explicit tag</li>
+<li>text-italics: Italics without an explicit tag</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org4ac1d3b" class="outline-4">
+<h4 id="org4ac1d3b">lists</h4>
+<div class="outline-text-4" id="text-org4ac1d3b">
+</div><div id="outline-container-org2f56103" class="outline-5">
+<h5 id="org2f56103"><code>.list-unstyled</code></h5>
+<div class="outline-text-5" id="text-org2f56103">
+<p>
+If the default style used and there are icons not needed, they can be removed by the
+class <code>.list-unstyled</code>.
+This will affect only the immediate members not the deeper nesting
+levels.
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: moh</p>
-<p class="date">Created: 2017-02-11 Sat 12:34</p>
+<p class="date">Created: 2017-02-22 Wed 21:05</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

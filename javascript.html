@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-02-22 Wed 21:05 -->
+<!-- 2017-02-27 Mon 22:43 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title></title>
@@ -364,7 +364,7 @@ for the JavaScript code in this tag.
 <ul>
 <li><a href="#org4ab810b">Best way to break from nested loops in Javascript?</a></li>
 <li><a href="#org24dddea">Using toString() to detect object class</a></li>
-<li><a href="#orgf65c74b">Reflection</a></li>
+<li><a href="#org8ccca28">Reflection</a></li>
 <li><a href="#org544f8fe">cloning objects</a></li>
 <li><a href="#org3258f25">return immutable object from a function</a></li>
 <li><a href="#orgfd69e07">tell if a number is even using bitwise &amp; operator</a></li>
@@ -441,7 +441,7 @@ for the JavaScript code in this tag.
 <ul>
 <li><a href="#org2474503">retrieval</a></li>
 <li><a href="#org4f8b5db">Reference</a></li>
-<li><a href="#org8ccca28">Reflection</a></li>
+<li><a href="#org96b21d3">Reflection</a></li>
 <li><a href="#org67520d2">Enumeration</a></li>
 <li><a href="#org634d9ad">Delete</a></li>
 <li><a href="#org6361ff8">Traversing an object</a></li>
@@ -597,6 +597,7 @@ for the JavaScript code in this tag.
 <li><a href="#org2bd5681">jquery</a>
 <ul>
 <li><a href="#orgfc2a332">get/set value of text box</a></li>
+<li><a href="#org64cc5e1">reload an image</a></li>
 </ul>
 </li>
 <li><a href="#org9089b41">references</a></li>
@@ -1549,9 +1550,10 @@ for example, the following will create and array from 1-n.
 <div id="outline-container-orgc50c01e" class="outline-3">
 <h3 id="orgc50c01e">convert ascii code to string?</h3>
 <div class="outline-text-3" id="text-orgc50c01e">
-<p>
-String.fromCharCode(97); // returns 
-</p>
+<div class="org-src-container">
+<pre class="src src-javascript">String.fromCharCode(97); // returns
+</pre>
+</div>
 </div>
 </div>
 <div id="outline-container-org8f66273" class="outline-3">
@@ -1578,28 +1580,30 @@ typeof unknownVariable.valueOf() == 'string') ...
 <div id="outline-container-orgfd03ba4" class="outline-3">
 <h3 id="orgfd03ba4">replace all non-digit characters</h3>
 <div class="outline-text-3" id="text-orgfd03ba4">
-<p>
-str.replace(/\D/g,' ');
-</p>
+<div class="org-src-container">
+<pre class="src src-javascript">str.replace(/\D/g,' ');
+</pre>
+</div>
 </div>
 </div>
 
 <div id="outline-container-org2f89cbe" class="outline-3">
 <h3 id="org2f89cbe">split a string by one or more spaces</h3>
 <div class="outline-text-3" id="text-org2f89cbe">
-<p>
-str.split(/\s+/g)
-</p>
+<div class="org-src-container">
+<pre class="src src-javascript">str.split(/\s+/g)
+</pre>
 </div>
 </div>
-
+</div>
 <div id="outline-container-org2601d37" class="outline-3">
 <h3 id="org2601d37">split a string by digits of size one or bigger(ignoring negative nums)</h3>
 <div class="outline-text-3" id="text-org2601d37">
-<p>
-str.match(<i>\d+/g)
-str.match(</i>\d+/g) || []).map(Number)
-</p>
+<div class="org-src-container">
+<pre class="src src-javascript">str.match(/\d+/g)
+str.match((/\d+/g) || []).map(Number)
+</pre>
+</div>
 </div>
 </div>
 <div id="outline-container-org4926c44" class="outline-3">
@@ -2535,9 +2539,9 @@ toString.call(null);        // [object Null]
 </div>
 </div>
 
-<div id="outline-container-orgf65c74b" class="outline-3">
-<h3 id="orgf65c74b">Reflection</h3>
-<div class="outline-text-3" id="text-orgf65c74b">
+<div id="outline-container-org8ccca28" class="outline-3">
+<h3 id="org8ccca28">Reflection</h3>
+<div class="outline-text-3" id="text-org8ccca28">
 <div class="org-src-container">
 <pre class="src src-javascript">function isUndefined(value) {
    return typeof value === 'undefined';
@@ -3209,36 +3213,28 @@ index.html outputs the exports of the asynchronously loaded modules:
 <p>
 Now we fiddle with more dependencies. So we create the bar.js and baz.js modules:
 </p>
+<div class="org-src-container">
+<pre class="src src-javascript">bar.js
 
-<p>
-bar.js
-</p>
-
-<p>
 define({
   value: "bar"
 });
-</p>
 
-<p>
 baz.js
-</p>
 
-<p>
 define({
   value: "baz"
 });
-</p>
+</pre>
+</div>
 
 <p>
 We have to modify foo.js to access these modules:
 </p>
 
-<p>
-foo.js
-</p>
+<div class="org-src-container">
+<pre class="src src-javascript">foo.js
 
-<p>
 define([ "./bar", "./baz" ], function ( bar, baz ) {
   "use strict";
   // Construction
@@ -3247,7 +3243,8 @@ define([ "./bar", "./baz" ], function ( bar, baz ) {
     baz: baz.value
   };
 });
-</p>
+</pre>
+</div>
 
 <p>
 As you may have noticed, the require/define dependency lists consists of module identifiers.
@@ -3262,8 +3259,8 @@ requireType (a string containing error types such timeout, nodefine, scripterror
 and requireModules (an array of module IDs affected by the error).
 </p>
 
-<p>
-require([ "unexisting-path/foo" ], function ( foo ) {
+<div class="org-src-container">
+<pre class="src src-javascript">require([ "unexisting-path/foo" ], function ( foo ) {
   "use strict";
   console.log( foo.bar );
   console.log( foo.baz );
@@ -3271,20 +3268,18 @@ require([ "unexisting-path/foo" ], function ( foo ) {
   console.log( err.requireType );
   console.log( err.requireModules );
 });
-</p>
+</pre>
+</div>
 
 <p>
 In a well-grained design, modules are numerous and are allocated to a directory tree. 
 In order to avoid relative path computation every time,
- you can configure the script loader once.
- So the loader will know where to find the dependency file by a specified alias:
+you can configure the script loader once.
+So the loader will know where to find the dependency file by a specified alias:
 </p>
+<div class="org-src-container">
+<pre class="src src-javascript">main.js
 
-<p>
-main.js
-</p>
-
-<p>
 require.config({
     paths: {
         foo: "../../module/foo"
@@ -3295,22 +3290,20 @@ require( [ "foo" ], function( foo ) {
   console.log( foo.bar );
   console.log( foo.baz );
 });
-</p>
+</pre>
+</div>
 
 <p>
 This gives a bonus. Now if we decided to change a module file name,
- we do not need to modify every other module that requires it.
- We just need to change the configuration:
+we do not need to modify every other module that requires it.
+We just need to change the configuration:
 </p>
+<div class="org-src-container">
+<pre class="src src-javascript">main.js
 
-<p>
-main.js
-</p>
-
-<p>
 require.config({
   paths: {
-    foo: "../../module/foo-v0<sub>1</sub><sub>1</sub>"
+    foo: "../../module/foo-v0_1_1"
   }
 });
 require( [ "foo" ], function( foo ) {
@@ -3318,32 +3311,28 @@ require( [ "foo" ], function( foo ) {
   console.log( foo.bar );
   console.log( foo.baz );
 });
-</p>
+</pre>
+</div>
 
 <p>
 By configuring, we can also address remote modules. For example, here we refer to jQuery,
- but RequireJS knows the module endpoint from the configuration and, therefore, loads the module from CDN:
+but RequireJS knows the module endpoint from the configuration and, therefore, loads the module from CDN:
 </p>
+<div class="org-src-container">
+<pre class="src src-javascript">require.config({
 
-<p>
-require.config({
-</p>
-
-<p>
-paths: {
-  jquery: "<a href="https://code.jquery.com/jquery-2.1.4.min.js">https://code.jquery.com/jquery-2.1.4.min.js</a>"
-}
+  paths: {
+    jquery: "https://code.jquery.com/jquery-2.1.4.min.js"
+  }
 });
-</p>
 
-<p>
 require([ "jquery" ], function ( $ ) {
   // use jQuery
 });
-</p>
+</pre>
 </div>
 </div>
-
+</div>
 <div id="outline-container-org78e1aca" class="outline-4">
 <h4 id="org78e1aca">How to – use synchronous modules on the server</h4>
 <div class="outline-text-4" id="text-org78e1aca">
@@ -3942,9 +3931,9 @@ a = b = c = {};
 </div>
 </div>
 
-<div id="outline-container-org8ccca28" class="outline-3">
-<h3 id="org8ccca28">Reflection</h3>
-<div class="outline-text-3" id="text-org8ccca28">
+<div id="outline-container-org96b21d3" class="outline-3">
+<h3 id="org96b21d3">Reflection</h3>
+<div class="outline-text-3" id="text-org96b21d3">
 <div class="org-src-container">
 <pre class="src src-javascript">typeof flight.number   // 'number'
 typeof flight.toString // 'function'
@@ -7739,6 +7728,17 @@ You can also use the val(string) method to set that value:
 </div>
 </div>
 </div>
+
+<div id="outline-container-org64cc5e1" class="outline-3">
+<h3 id="org64cc5e1">reload an image</h3>
+<div class="outline-text-3" id="text-org64cc5e1">
+<div class="org-src-container">
+<pre class="src src-javascript">d = new Date();
+$("#myimg").attr("src", "/myimg.jpg?"+d.getTime());
+</pre>
+</div>
+</div>
+</div>
 </div>
 
 <div id="outline-container-org9089b41" class="outline-2">
@@ -7747,7 +7747,7 @@ You can also use the val(string) method to set that value:
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: moh</p>
-<p class="date">Created: 2017-02-22 Wed 21:05</p>
+<p class="date">Created: 2017-02-27 Mon 22:43</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

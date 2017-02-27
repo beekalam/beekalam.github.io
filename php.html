@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-02-22 Wed 21:05 -->
+<!-- 2017-02-27 Mon 22:43 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title></title>
@@ -284,6 +284,7 @@ for the JavaScript code in this tag.
 <li><a href="#org1b8bcf7">replace multiple</a></li>
 <li><a href="#org0b071ee">convert string to array</a></li>
 <li><a href="#orga882b78">split a string by char</a></li>
+<li><a href="#org1ad8a2a">split a string to chunks of length n</a></li>
 <li><a href="#orgc554e03">remove alphabet values from string</a></li>
 </ul>
 </li>
@@ -321,7 +322,7 @@ for the JavaScript code in this tag.
 <li><a href="#orgcc4bfe2">array<sub>reduce</sub></a></li>
 <li><a href="#org5177cce">create and array from variables and their values</a>
 <ul>
-<li><a href="#orgd414564">intro</a></li>
+<li><a href="#org7b577b4">intro</a></li>
 <li><a href="#orgf951a2f">using compact for debugging</a></li>
 </ul>
 </li>
@@ -336,6 +337,7 @@ for the JavaScript code in this tag.
 <li><a href="#org8b336f8">Finding the Difference of Two Dates</a></li>
 <li><a href="#org681848c">date difference using <code>DateInterval</code></a></li>
 <li><a href="#org32af68e">number of days between two dates</a></li>
+<li><a href="#org0e093bf">convert seconds to time with format HH:MM:SS</a></li>
 </ul>
 </li>
 <li><a href="#org8a24443">variables</a>
@@ -381,6 +383,11 @@ for the JavaScript code in this tag.
 <ul>
 <li><a href="#org40be2c5">static attributes or methods.</a></li>
 <li><a href="#orgaf591b4">_<sub>clone</sub> magic method</a></li>
+<li><a href="#orgd417cc1">passing objects as function parameters.</a></li>
+<li><a href="#org01a64ba">Using Magic _<sub>get</sub> and _<sub>set</sub> Methods</a></li>
+<li><a href="#orgcb469da">counting objects</a></li>
+<li><a href="#orgd8ace90">Using _<sub>call</sub>() and _<sub>callStatic</sub>()</a></li>
+<li><a href="#org19eb291">serializing</a></li>
 </ul>
 </li>
 <li><a href="#org066d417">reflection</a>
@@ -395,10 +402,28 @@ for the JavaScript code in this tag.
 <li><a href="#org61052c4">enabling error reporting</a></li>
 </ul>
 </li>
+<li><a href="#org54063d2">exceptions</a>
+<ul>
+<li><a href="#orgbd8629a">Throwing Exceptions</a></li>
+<li><a href="#orgc2c2710">Extending Exceptions</a></li>
+<li><a href="#org96e0edd">Setting a Global Exception Handler</a></li>
+</ul>
+</li>
 <li><a href="#orgcecdbc5">patterns</a>
 <ul>
 <li><a href="#orgd47f4df">value object pattern</a></li>
 <li><a href="#org6ed13a0">The factory pattern</a></li>
+</ul>
+</li>
+<li><a href="#orgb166ce9">files</a>
+<ul>
+<li><a href="#org729cc9e">Reading Entire files</a></li>
+<li><a href="#org54f2d0b">Writing Entire file</a></li>
+<li><a href="#orga266250">Reading and writing parts of files</a></li>
+<li><a href="#orge457a8b">reading a file one line at a time</a></li>
+<li><a href="#org39e396b">Inserting CSV data into a database table</a></li>
+<li><a href="#org44ad95d">Writing CSV-formatted data to a file</a></li>
+<li><a href="#org14187b7">changing the page type of CSV</a></li>
 </ul>
 </li>
 <li><a href="#org74bbb36">lumen</a>
@@ -446,7 +471,7 @@ for the JavaScript code in this tag.
 <li><a href="#org5e49c98">using <code>include_path</code> to manage larget projects</a></li>
 <li><a href="#org28c85ef">output buffering</a>
 <ul>
-<li><a href="#orgf04e795">intro</a></li>
+<li><a href="#org28a8a46">intro</a></li>
 <li><a href="#org53612b1">detect if output buffering is turned on?</a></li>
 <li><a href="#orgc86ecc7">example</a></li>
 </ul>
@@ -461,6 +486,17 @@ for the JavaScript code in this tag.
 <li><a href="#org06e3cc0">solution1</a></li>
 <li><a href="#org4a907d2">solution2</a></li>
 <li><a href="#orgef84760">solution3</a></li>
+</ul>
+</li>
+<li><a href="#org5b87999">autoloading</a>
+<ul>
+<li><a href="#orge106f5f">intro</a></li>
+</ul>
+</li>
+<li><a href="#org654a712">security</a>
+<ul>
+<li><a href="#org6fcc233">Cross-site scripting</a></li>
+<li><a href="#orgf32b257">Cross-site Request Forgery(CSRF)</a></li>
 </ul>
 </li>
 <li><a href="#orgfac89a9">apache <code>.htaccess</code> sample configuration</a></li>
@@ -486,8 +522,13 @@ for the JavaScript code in this tag.
 </li>
 </ul>
 </li>
+<li><a href="#orgd730f66">form</a></li>
 </ul>
 </li>
+<li><a href="#org92c6690">turn off DNS prefetching from individual documents</a></li>
+<li><a href="#orgdbc5c56">disable caching for a website</a></li>
+<li><a href="#org72093df">disable ajax browser caching</a></li>
+<li><a href="#org71150f8">query</a></li>
 </ul>
 </div>
 </div>
@@ -828,9 +869,30 @@ explode(' ', $str);
 <h3 id="orga882b78">split a string by char</h3>
 <div class="outline-text-3" id="text-orga882b78">
 <div class="org-src-container">
-<pre class="src src-ph">preg_split('/,/',$str);   // split by ','
+<pre class="src src-php">preg_split('/,/',$str);   // split by ','
 preg_split('//',$str);    // split characters
 explode(',', $str);
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1ad8a2a" class="outline-3">
+<h3 id="org1ad8a2a">split a string to chunks of length n</h3>
+<div class="outline-text-3" id="text-org1ad8a2a">
+<div class="org-src-container">
+<pre class="src src-php">$str="abcdefghijklm";
+echo print_r(str_split($str, 3),true);
+
+// result
+Array
+(
+    [0] =&gt; abc
+    [1] =&gt; def
+    [2] =&gt; ghi
+    [3] =&gt; jkl
+    [4] =&gt; m
+)
 </pre>
 </div>
 </div>
@@ -846,6 +908,7 @@ explode(',', $str);
 </div>
 </div>
 </div>
+
 <div id="outline-container-orgdb8f5d7" class="outline-2">
 <h2 id="orgdb8f5d7">numbers</h2>
 <div class="outline-text-2" id="text-orgdb8f5d7">
@@ -1120,13 +1183,11 @@ To print the entries, loop through the array:
 <div id="outline-container-org769d71c" class="outline-3">
 <h3 id="org769d71c">Initializing an Array to a Range of Integers</h3>
 <div class="outline-text-3" id="text-org769d71c">
-<p>
-Use range($start, $stop):
-</p>
-
-<p>
+<div class="org-src-container">
+<pre class="src src-php">range($start, $stop):
 $cards = range(1, 52);
-</p>
+</pre>
+</div>
 </div>
 </div>
 <div id="outline-container-orgd062d08" class="outline-3">
@@ -1181,28 +1242,26 @@ while (list($key, $value) = each ($array)) {
 <p>
 To delete one element, use unset():
 </p>
-
-<p>
-unset($array[3]);
+<div class="org-src-container">
+<pre class="src src-php">unset($array[3]);
 unset($array['foo']);
-</p>
-
+</pre>
+</div>
 <p>
 To delete multiple noncontiguous elements, also use unset():
 </p>
-
-<p>
-unset($array[3], $array[5]);
+<div class="org-src-container">
+<pre class="src src-php">unset($array[3], $array[5]);
 unset($array['foo'], $array['bar']);
-</p>
-
+</pre>
+</div>
 <p>
 To delete multiple contiguous elements, use array<sub>splice</sub>():
 </p>
-
-<p>
-array<sub>splice</sub>($array, $offset, $length);
-</p>
+<div class="org-src-container">
+<pre class="src src-php">array_splice($array, $offset, $length);
+</pre>
+</div>
 </div>
 </div>
 <div id="outline-container-org1f38577" class="outline-3">
@@ -1320,29 +1379,25 @@ You have an array, and you want to convert it into a nicely formatted string.
 <p>
 Use join():
 </p>
-
-<p>
-// make a comma delimited list
+<div class="org-src-container">
+<pre class="src src-php">// make a comma delimited list
 $string = join(',', $array);
-</p>
+</pre>
+</div>
 
 <p>
 Or loop yourself:
 </p>
+<div class="org-src-container">
+<pre class="src src-php">$string = '';
 
-<p>
-$string = '';
-</p>
-
-<p>
-foreach ($array as $key <code>&gt; $value) {
-    $string .</code> ",$value";
+foreach ($array as $key =&gt; $value) {
+    $string .= ",$value";
 }
-</p>
 
-<p>
 $string = substr($string, 1); // remove leading ","
-</p>
+</pre>
+</div>
 </div>
 </div>
 <div id="outline-container-org11f772d" class="outline-3">
@@ -1831,9 +1886,9 @@ var_dump(array_reduce($x, "sum", "No data to reduce")); // string(17) "No data t
 <div id="outline-container-org5177cce" class="outline-3">
 <h3 id="org5177cce">create and array from variables and their values</h3>
 <div class="outline-text-3" id="text-org5177cce">
-</div><div id="outline-container-orgd414564" class="outline-4">
-<h4 id="orgd414564">intro</h4>
-<div class="outline-text-4" id="text-orgd414564">
+</div><div id="outline-container-org7b577b4" class="outline-4">
+<h4 id="org7b577b4">intro</h4>
+<div class="outline-text-4" id="text-org7b577b4">
 <p>
 There may also be times when you’ll want to use compact, the inverse
 of extract, to create an array from variables and their
@@ -2245,8 +2300,17 @@ $today-&gt;getTimestamp() - $yesterday-&gt;getTimestamp()/86400;
 </div>
 </div>
 </div>
-</div>
 
+<div id="outline-container-org0e093bf" class="outline-3">
+<h3 id="org0e093bf">convert seconds to time with format HH:MM:SS</h3>
+<div class="outline-text-3" id="text-org0e093bf">
+<div class="org-src-container">
+<pre class="src src-php">date('H:i:s', $seconds);
+</pre>
+</div>
+</div>
+</div>
+</div>
 <div id="outline-container-org8a24443" class="outline-2">
 <h2 id="org8a24443">variables</h2>
 <div class="outline-text-2" id="text-org8a24443">
@@ -2256,18 +2320,18 @@ $today-&gt;getTimestamp() - $yesterday-&gt;getTimestamp()/86400;
 <p>
 Use isset() to assign a default to a variable that may already have a value:
 </p>
-
-<p>
-if (! isset($cars)) { $cars = $default<sub>cars</sub>; }
-</p>
+<div class="org-src-container">
+<pre class="src src-php">if (! isset($cars)) { $cars = $default_cars; }
+</pre>
+</div>
 
 <p>
 Use the ternary (a ? b : c) operator to give a new variable a (possibly default) value:
 </p>
-
-<p>
-$cars = isset($<sub>REQUEST</sub>['cars']) ? $<sub>REQUEST</sub>['cars'] : $default<sub>cars</sub>;
-</p>
+<div class="org-src-container">
+<pre class="src src-php">$cars = isset($_REQUEST['cars']) ? $_REQUEST['cars'] : $default_cars;
+</pre>
+</div>
 
 <p>
 Using isset() is essential when assigning default values. Without it,
@@ -2275,9 +2339,10 @@ the nondefault value can’t be 0 or anything else that evaluates to
 false. Consider this assignment:
 </p>
 
-<p>
-$cars = $<sub>REQUEST</sub>['cars'] ? $<sub>REQUEST</sub>['cars'] : $default<sub>cars</sub>;
-</p>
+<div class="org-src-container">
+<pre class="src src-php">$cars = $_REQUEST['cars'] ? $_REQUEST['cars'] : $default_cars;
+</pre>
+</div>
 
 <p>
 If $<sub>REQUEST</sub>['cars'] is 0, $cars is set to $default<sub>cars</sub> even though 0
@@ -2287,38 +2352,35 @@ may be a valid value for $cars.
 <p>
 An alternative syntax for checking arrays is the array<sub>key</sub><sub>exists</sub>() function:
 </p>
-
-<p>
-$cars = array<sub>key</sub><sub>exists</sub>('cars', $<sub>REQUEST</sub>) ? $<sub>REQUEST</sub>['cars'] : $default<sub>cars</sub>;
-</p>
-
+<div class="org-src-container">
+<pre class="src src-php">$cars = array_key_exists('cars', $_REQUEST) ? $_REQUEST['cars'] : $default_cars;
+</pre>
+</div>
 <p>
 The one difference between isset() and array<sub>key</sub><sub>exists</sub>() is that when
 a key exists but its value is null, then array<sub>key</sub><sub>exists</sub>() returns
 true, while isset() returns false:
 </p>
-
-<p>
-$vehicles = array('cars' =&gt; null);
-array<sub>key</sub><sub>exists</sub>('cars', $vehicles); <i>/ true
-isset($vehicles['cars']);            /</i> false
-</p>
+<div class="org-src-container">
+<pre class="src src-php">$vehicles = array('cars' =&gt; null);
+array_key_exists('cars', $vehicles); // true
+isset($vehicles['cars']);            // false
+</pre>
 </div>
 </div>
-
+</div>
 <div id="outline-container-org648a3dd" class="outline-3">
 <h3 id="org648a3dd">Exchanging Values Without Using Temporary Variables</h3>
 <div class="outline-text-3" id="text-org648a3dd">
 <p>
 To swap $a and $b:
 </p>
-
-<p>
-list($a,$b) = array($b,$a);
-</p>
+<div class="org-src-container">
+<pre class="src src-php">list($a,$b) = array($b,$a);
+</pre>
 </div>
 </div>
-
+</div>
 <div id="outline-container-org3723f1b" class="outline-3">
 <h3 id="org3723f1b">Creating a Dynamic Variable Name</h3>
 <div class="outline-text-3" id="text-org3723f1b">
@@ -2434,20 +2496,22 @@ the original array or object.  Solution
 Use serialize() to encode variables and their values into a textual form:
 </p>
 
-<p>
-$pantry = array('sugar' =&gt; '2 lbs.','butter' =&gt; '3 sticks');
+<div class="org-src-container">
+<pre class="src src-php">$pantry = array('sugar' =&gt; '2 lbs.','butter' =&gt; '3 sticks');
 $fp = fopen('/tmp/pantry','w') or die ("Can't open pantry");
 fputs($fp,serialize($pantry));
 fclose($fp);
-</p>
+</pre>
+</div>
 
 <p>
 To recreate the variables, use unserialize():
 </p>
 
-<p>
-$new<sub>pantry</sub> = unserialize(file<sub>get</sub><sub>contents</sub>('/tmp/pantry'));
-</p>
+<div class="org-src-container">
+<pre class="src src-php">$new_pantry = unserialize(file_get_contents('/tmp/pantry'));
+</pre>
+</div>
 </div>
 </div>
 </div>
@@ -2651,12 +2715,7 @@ json<sub>encode</sub>( $text, JSON<sub>UNESCAPED</sub><sub>UNICODE</sub> );
 </div><div id="outline-container-org897a489" class="outline-3">
 <h3 id="org897a489">types of webservices</h3>
 <div class="outline-text-3" id="text-org897a489">
-<ul class="org-ul">
-<li>restful</li>
-<li>SOAP</li>
-</ul>
-</div>
-<div id="outline-container-org4f543f1" class="outline-4">
+</div><div id="outline-container-org4f543f1" class="outline-4">
 <h4 id="org4f543f1">SOAP</h4>
 <div class="outline-text-4" id="text-org4f543f1">
 <p>
@@ -2788,6 +2847,175 @@ should rewrite the class as follows:
 </div>
 </div>
 </div>
+
+<div id="outline-container-orgd417cc1" class="outline-3">
+<h3 id="orgd417cc1">passing objects as function parameters.</h3>
+<div class="outline-text-3" id="text-orgd417cc1">
+<p>
+objects are always passed by reference. This means that when you pass an object
+into a function, the function operates on that same object, and if it is changed
+inside the function, that change is reflected outside.
+</p>
+</div>
+</div>
+<div id="outline-container-org01a64ba" class="outline-3">
+<h3 id="org01a64ba">Using Magic _<sub>get</sub> and _<sub>set</sub> Methods</h3>
+<div class="outline-text-3" id="text-org01a64ba">
+<p>
+These are called when you access a property that doesn’t exist.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-php">class Courier
+{
+  protected $data = array();
+  public function __get($property) {
+    return $this-&gt;data[$property];
+  }
+  public function __set($property, $value) {
+    $this-&gt;data[$property] = $value;
+    return true;
+  }
+}
+
+$courier = new Courier();
+$courier-&gt;name = 'Avian Carrier';
+echo $courier-&gt;name;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgcb469da" class="outline-3">
+<h3 id="orgcb469da">counting objects</h3>
+<div class="outline-text-3" id="text-orgcb469da">
+<p>
+By default, if you count() an object in PHP, you’ll receive a count of how many
+properties it has. However, by implementing the Countable interface as shown below
+allows us to hook into this.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-php">class Courier implements Countable
+{
+  protected $count = 0;
+  public function ship(Parcel $parcel) {
+    $this-&gt;count++;
+    // ship parcel
+    return true;
+  }
+  public function count() {
+    return $this-&gt;count;
+  }
+}
+
+$courier = new Courier();
+$courier-&gt;ship(new Parcel());
+$courier-&gt;ship(new Parcel());
+$courier-&gt;ship(new Parcel());
+echo count($courier); // outputs 3
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd8ace90" class="outline-3">
+<h3 id="orgd8ace90">Using _<sub>call</sub>() and _<sub>callStatic</sub>()</h3>
+<div class="outline-text-3" id="text-orgd8ace90">
+<p>
+When we call a method that isn’t declared in the class, the _<sub>call</sub>() method is
+called instead.
+</p>
+<div class="org-src-container">
+<pre class="src src-php">class Courier {
+  public $name;
+  public function __construct($name) {
+    $this-&gt;name = $name;
+    return true;
+  }
+
+  public function ship($parcel) {
+    // sends the parcel to its destination
+    return true;
+  }
+
+  public function __call($name, $params) {
+    if($name == 'sendParcel') {
+      // legacy system requirement, pass to newer send() method
+      return $this-&gt;send($params[0]);
+    } else {
+      error_log('Failed call to ' . $name . ' in Courier class');
+    return false;
+    }
+  }
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org19eb291" class="outline-3">
+<h3 id="org19eb291">serializing</h3>
+<div class="outline-text-3" id="text-org19eb291">
+<p>
+To serialize data in PHP means to convert it into a text-based format that we can
+store, for example, in a database.
+</p>
+<div class="org-src-container">
+<pre class="src src-php">$mycourier = new Courier('Avian Services', 'Australia');
+var_dump($mycourier);
+$s = serialize($mycourier);
+</pre>
+</div>
+
+<p>
+When we serialize an object, we can unserialize it in any system where the class
+definition of the object is available. There are some object properties, however, that
+we don’t want to serialize, because they’d be invalid in any other context. A good
+example of this is a resource; a file pointer would make no sense if unserialized at
+a later point, or on a totally different platform.
+</p>
+
+<p>
+To help us deal with this situation, PHP provides the _<sub>sleep</sub>() and _<sub>wakeup</sub>()
+methods, which are called when serializing and unserializing, respectively. These
+methods allow us to name which properties to serialize, and fill in any that aren’t
+stored when the object is “woken.”
+</p>
+
+<div class="org-src-container">
+<pre class="src src-php">class Courier {
+  public $name;
+  public $home_country;
+
+  public function __construct($name, $home_country) {
+    $this-&gt;name = $name;
+    $this-&gt;home_country = $home_country;
+    $this-&gt;logfile = $this-&gt;getLogFile();
+    return true;
+  }
+  protected function getLogFile() {
+      // error log location would be in a config file
+      return fopen('/tmp/error_log.txt', 'a');
+  }
+  public function log($message) {
+    if($this-&gt;logfile) {
+      fputs($this-&gt;logfile, 'Log message: ' . $message . "\n");
+    }
+  }
+  public function __sleep() {
+    // only store the "safe" properties
+    return array("name", "home_country");
+  }
+  public function __wakeup() {
+    // properties are restored, now add the logfile
+    $this-&gt;logfile = $this-&gt;getLogFile();
+    return true;
+  }
+}
+</pre>
+</div>
+</div>
+</div>
 </div>
 
 <div id="outline-container-org066d417" class="outline-2">
@@ -2890,6 +3118,60 @@ error_log("You messed up!", 3, "/var/tmp/my-errors.log");
 </div>
 </div>
 
+<div id="outline-container-org54063d2" class="outline-2">
+<h2 id="org54063d2">exceptions</h2>
+<div class="outline-text-2" id="text-org54063d2">
+</div><div id="outline-container-orgbd8629a" class="outline-3">
+<h3 id="orgbd8629a">Throwing Exceptions</h3>
+<div class="outline-text-3" id="text-orgbd8629a">
+<div class="org-src-container">
+<pre class="src src-php">// something has gone wrong
+throw new Exception('Meaningful error message string');
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc2c2710" class="outline-3">
+<h3 id="orgc2c2710">Extending Exceptions</h3>
+<div class="outline-text-3" id="text-orgc2c2710">
+<div class="org-src-container">
+<pre class="src src-php">class HeavyParcelException extends Exception {}
+</pre>
+</div>
+<p>
+We can set any properties or add any methods we desire to this Exception class.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org96e0edd" class="outline-3">
+<h3 id="org96e0edd">Setting a Global Exception Handler</h3>
+<div class="outline-text-3" id="text-org96e0edd">
+<p>
+To avoid seeing fatal errors where exceptions have been thrown and our code failed
+to catch them, we can set a default behavior for our application in this situation.
+To do this, we use a function called set<sub>exception</sub><sub>handler</sub>() . This accepts a
+callback as its parameter, so we can give the name of a function to use, for example.
+An exception handler will usually present an error screen to the user—much nicer
+than a fatal error message!
+</p>
+
+<div class="org-src-container">
+<pre class="src src-php">A basic exception handler would look similar to this:
+function handleMissedException($e) {
+echo "Sorry, something is wrong. Please try again, or contact us if the problem persists";
+error_log('Unhandled Exception: ' . $e-&gt;getMessage()
+. ' in file ' . $e-&gt;getFile() . ' on line ' . $e-&gt;getLine());
+}
+set_exception_handler('handleMissedException');
+throw new Exception('just testing!');
+</pre>
+</div>
+</div>
+</div>
+</div>
+
 <div id="outline-container-orgcecdbc5" class="outline-2">
 <h2 id="orgcecdbc5">patterns</h2>
 <div class="outline-text-2" id="text-orgcecdbc5">
@@ -2946,6 +3228,133 @@ gramming?
 <b>The Solution</b>
 Create a “factory”—a function or a class method— to “manufacture” new objects.
 </p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb166ce9" class="outline-2">
+<h2 id="orgb166ce9">files</h2>
+<div class="outline-text-2" id="text-orgb166ce9">
+</div><div id="outline-container-org729cc9e" class="outline-3">
+<h3 id="org729cc9e">Reading Entire files</h3>
+<div class="outline-text-3" id="text-org729cc9e">
+<p>
+To read the contents of a file into a string, use <code>file_get_contents()</code>. Pass it a file‐
+name, and it returns a string containing everything in the file.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org54f2d0b" class="outline-3">
+<h3 id="org54f2d0b">Writing Entire file</h3>
+<div class="outline-text-3" id="text-org54f2d0b">
+<p>
+use <code>file_put_contents()</code>.
+</p>
+<div class="org-src-container">
+<pre class="src src-php">// Write the results to page.html
+file_put_contents('page.html', $page);
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga266250" class="outline-3">
+<h3 id="orga266250">Reading and writing parts of files</h3>
+<div class="outline-text-3" id="text-orga266250">
+<p>
+use <code>file()</code> function to access each line of file.
+<code>file()</code> reads the whole file into an array and it is not good for large files.
+</p>
+<div class="org-src-container">
+<pre class="src src-php">foreach (file('people.txt') as $line) {
+  $line = trim($line);
+  $info = explode('|', $line);
+  print '&lt;li&gt;&lt;a href="mailto:' . $info[0] . '"&gt;' . $info[1] ."&lt;/li&gt;\n";
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge457a8b" class="outline-3">
+<h3 id="orge457a8b">reading a file one line at a time</h3>
+<div class="outline-text-3" id="text-orge457a8b">
+<div class="org-src-container">
+<pre class="src src-php">$fh = fopen('people.txt','rb');
+while ((! feof($fh)) &amp;&amp; ($line = fgets($fh))) {
+  $line = trim($line);  // fgets() includes the trailing newline at the end of line.
+  $info = explode('|', $line);
+  print '&lt;li&gt;&lt;a href="mailto:' . $info[0] . '"&gt;' . $info[1] ."&lt;/li&gt;\n";
+}
+fclose($fh);
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org39e396b" class="outline-3">
+<h3 id="org39e396b">Inserting CSV data into a database table</h3>
+<div class="outline-text-3" id="text-org39e396b">
+<div class="org-src-container">
+<pre class="src src-php">try {
+  $db = new PDO('sqlite:/tmp/restaurant.db');
+} catch (Exception $e) {
+  print "Couldn't connect to database: " . $e-&gt;getMessage();
+  exit();
+}
+$fh = fopen('dishes.csv','rb');
+$stmt = $db-&gt;prepare('INSERT INTO dishes (dish_name, price, is_spicy) VALUES (?,?,?)');
+
+while ((! feof($fh)) &amp;&amp; ($info = fgetcsv($fh))) {
+  // $info[0] is the dish name (the first field in a line of dishes.csv)
+  // $info[1] is the price (the second field)
+  // $info[2] is the spicy status (the third field)
+  // Insert a row into the database table
+  $stmt-&gt;execute($info);
+  print "Inserted $info[0]\n";
+}
+// Close the file
+fclose($fh);
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org44ad95d" class="outline-3">
+<h3 id="org44ad95d">Writing CSV-formatted data to a file</h3>
+<div class="outline-text-3" id="text-org44ad95d">
+<div class="org-src-container">
+<pre class="src src-php">try {
+  $db = new PDO('sqlite:/tmp/restaurant.db');
+} catch (Exception $e) {
+  print "Couldn't connect to database: " . $e-&gt;getMessage();
+  exit();
+}
+// Open the CSV file for writing
+$fh = fopen('dish-list.csv','wb');
+$dishes = $db-&gt;query('SELECT dish_name, price, is_spicy FROM dishes');
+while ($row = $dishes-&gt;fetch(PDO::FETCH_NUM)) {
+    // Write the data in $row as a CSV-formatted string. fputcsv()
+    // adds a newline at the end.
+  fputcsv($fh, $row);
+}
+fclose($fh);
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org14187b7" class="outline-3">
+<h3 id="org14187b7">changing the page type of CSV</h3>
+<div class="outline-text-3" id="text-org14187b7">
+<div class="org-src-container">
+<pre class="src src-php">// Tell the web client to expect a CSV file
+header('Content-Type: text/csv');
+// Tell the web client to view the CSV file in a separate program
+header('Content-Disposition: attachment; filename="dishes.csv"');
+</pre>
+</div>
 </div>
 </div>
 </div>
@@ -3507,9 +3916,9 @@ As of PHP 4.3, she can use the set<sub>include</sub><sub>path</sub>() function t
 <div id="outline-container-org28c85ef" class="outline-2">
 <h2 id="org28c85ef">output buffering</h2>
 <div class="outline-text-2" id="text-org28c85ef">
-</div><div id="outline-container-orgf04e795" class="outline-3">
-<h3 id="orgf04e795">intro</h3>
-<div class="outline-text-3" id="text-orgf04e795">
+</div><div id="outline-container-org28a8a46" class="outline-3">
+<h3 id="org28a8a46">intro</h3>
+<div class="outline-text-3" id="text-org28a8a46">
 <p>
 The idea of output buffering is to store all the content that has to
 be outputted in a memory buffer before outputting the whole
@@ -3661,6 +4070,119 @@ echo "Did nothing in $time seconds\n";
 </div>
 </div>
 
+<div id="outline-container-org5b87999" class="outline-2">
+<h2 id="org5b87999">autoloading</h2>
+<div class="outline-text-2" id="text-org5b87999">
+</div><div id="outline-container-orge106f5f" class="outline-3">
+<h3 id="orge106f5f">intro</h3>
+<div class="outline-text-3" id="text-orge106f5f">
+<p>
+Autoloading is when we tell PHP where to look for our class files when it needs
+a class declaration that it’s yet to see.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org654a712" class="outline-2">
+<h2 id="org654a712">security</h2>
+<div class="outline-text-2" id="text-org654a712">
+</div><div id="outline-container-org6fcc233" class="outline-3">
+<h3 id="org6fcc233">Cross-site scripting</h3>
+<div class="outline-text-3" id="text-org6fcc233">
+<p>
+For cross-site scripting—commonly abbreviated as XSS—the attack vector targets
+an area where a user-supplied variable is included in application output, but not
+properly escaped. This allows an attacker to inject a client-side script of their choice
+as part of that variable’s value.
+Here’s an example of code vulnerable to this type of attack:
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;form action=”&lt;?php echo $_SERVER['PHP_SELF']; ?&gt;”&gt;
+&lt;input type=”submit” value=”Submit” /&gt;
+&lt;/form&gt;
+</pre>
+</div>
+
+<p>
+<b>fix</b>
+Compared to the attack itself, the fix is surprisingly simple: escape output from PHP
+code to prevent the attacker from being able to inject their code in the first place.
+This looks like the following:
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;form action=”&lt;?php echo htmlentities($_SERVER['PHP_SELF']); ?&gt;”&gt;
+  &lt;input type=”submit” value=”Submit” /&gt;
+&lt;/form&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf32b257" class="outline-3">
+<h3 id="orgf32b257">Cross-site Request Forgery(CSRF)</h3>
+<div class="outline-text-3" id="text-orgf32b257">
+<p>
+a Cross-site Request Forgery, often abbreviated to CSRF.
+The purpose of this type of attack is to have a victim send an HTTP request to a
+specific website, taking advantage of the victim’s established identity with that
+website.
+</p>
+
+<p>
+<b>fix</b>
+</p>
+<ul class="org-ul">
+<li>Don't use GET for creation,modification or deletion.</li>
+</ul>
+
+<p>
+the specification for the HTTP protocol, which states the following:"the
+convention has been established that the GET and HEAD methods SHOULD NOT have
+the significance of taking an action other than retrieval."
+</p>
+
+<ul class="org-ul">
+<li>use CSRF token</li>
+</ul>
+
+<p>
+This change(use of POST method) doesn’t preclude the possibility that an
+attacker might duplicate this HTML on another website. When a victim submits the
+form, the request will include their session cookie for the domain in the form
+action.
+</p>
+
+<p>
+To address this, you can take advantage that a normal user will view the
+form before submitting it by including a field with a random value, known as a
+nonce or CSRF token. The token will also be stored in the user’s session, and
+compared to the form value when the form is submitted to confirm that the values
+are identical. The modified script to output the form looks as follows:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-php">&lt;?php
+session_start();
+if ($_POST &amp;&amp; $_POST['token'] == $_SESSION['token']) {
+  // process form submission
+} else {
+  $token = uniqid(rand(), true);
+  $_SESSION['token'] = $token;
+?&gt;
+&lt;form method=”post” action=”http://example.com/oneclickpurchase.php”&gt;
+&lt;input type=”hidden” name=”token” value=”&lt;?php echo $token; ?&gt;” /&gt;
+&lt;input type=”hidden” name=”product_id” value=”12345” /&gt;
+&lt;input type=”submit” value=”1-Click Purchase” /&gt;
+&lt;/form&gt;
+&lt;?php
+}
+</pre>
+</div>
+</div>
+</div>
+</div>
+
 <div id="outline-container-orgfac89a9" class="outline-2">
 <h2 id="orgfac89a9">apache <code>.htaccess</code> sample configuration</h2>
 <div class="outline-text-2" id="text-orgfac89a9">
@@ -3752,9 +4274,6 @@ uses the full width of the device:
 </div>
 </div>
 
-
-
-
 <div id="outline-container-org21571d1" class="outline-4">
 <h4 id="org21571d1">Order Column</h4>
 <div class="outline-text-4" id="text-org21571d1">
@@ -3774,6 +4293,7 @@ while they are pulled to the left with “pull”.
 </div>
 </div>
 </div>
+
 <div id="outline-container-orgcc1205d" class="outline-3">
 <h3 id="orgcc1205d">typography</h3>
 <div class="outline-text-3" id="text-orgcc1205d">
@@ -3838,11 +4358,75 @@ levels.
 </div>
 </div>
 </div>
+
+<div id="outline-container-orgd730f66" class="outline-3">
+<h3 id="orgd730f66">form</h3>
+</div>
+</div>
+
+<div id="outline-container-org92c6690" class="outline-2">
+<h2 id="org92c6690">turn off DNS prefetching from individual documents</h2>
+<div class="outline-text-2" id="text-org92c6690">
+<p>
+You can also turn off DNS Prefetching from individual documents, using the
+http-equiv attribute on the &lt;meta&gt; element, like this:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html">&lt;meta http-equiv="x-dns-prefetch-control" content="off"&gt;
+ &lt;!-- turns on dns prefetching --&gt;
+&lt;meta http-equiv="x-dns-prefetch-control" content="off"&gt;
+&lt;!-- force the lookup of specific hostnames --&gt;
+&lt;link rel="dns-prefetch" href="http://www.spreadfirefox.com/"&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgdbc5c56" class="outline-2">
+<h2 id="orgdbc5c56">disable caching for a website</h2>
+<div class="outline-text-2" id="text-orgdbc5c56">
+<div class="org-src-container">
+<pre class="src src-html">&lt;meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" /&gt;
+&lt;meta http-equiv="Pragma" content="no-cache" /&gt;
+&lt;meta http-equiv="Expires" content="0" /&gt;
+</pre>
+</div>
+
+<p>
+<a href="http://live.datatables.net/sadipaji/132/edit">http://live.datatables.net/sadipaji/132/edit</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org72093df" class="outline-2">
+<h2 id="org72093df">disable ajax browser caching</h2>
+<div class="outline-text-2" id="text-org72093df">
+<div class="org-src-container">
+<pre class="src src-javascript">//prevents browser caching
+$.ajaxSetup({ cache: false });
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org71150f8" class="outline-2">
+<h2 id="org71150f8">query</h2>
+<div class="outline-text-2" id="text-org71150f8">
+<div class="org-src-container">
+<pre class="src src-sql">SELECT s,md5 from huge_data_table limit 10;
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-sql" id="org2f49534">SELECT s,md5 FROM huge_data_table limit 10;
+</pre>
+</div>
+</div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: moh</p>
-<p class="date">Created: 2017-02-22 Wed 21:05</p>
+<p class="date">Created: 2017-02-27 Mon 22:43</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

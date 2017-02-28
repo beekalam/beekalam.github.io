@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-02-16 Thu 20:08 -->
+<!-- 2017-02-28 Tue 09:04 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title></title>
@@ -233,45 +233,45 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org5f0a8ea">1. Bash Keyboard Shortcuts</a></li>
-<li><a href="#org5206940">2. increment variable in bash</a></li>
-<li><a href="#org564cbfd">3. testing with <b>if</b></a></li>
-<li><a href="#org1713adb">4. for loops to display only odd natural numbers from  to 99.</a></li>
-<li><a href="#orgac56836">5. Single Quotes versus double quotes</a></li>
-<li><a href="#org25698ab">6. Using Braces to Protect Your Variables</a></li>
-<li><a href="#org8338b2d">7. While Loops</a>
+<li><a href="#org5f0a8ea">Bash Keyboard Shortcuts</a></li>
+<li><a href="#org5206940">increment variable in bash</a></li>
+<li><a href="#org564cbfd">testing with <b>if</b></a></li>
+<li><a href="#org1713adb">for loops to display only odd natural numbers from  to 99.</a></li>
+<li><a href="#orgac56836">Single Quotes versus double quotes</a></li>
+<li><a href="#org25698ab">Using Braces to Protect Your Variables</a></li>
+<li><a href="#org8338b2d">While Loops</a>
 <ul>
-<li><a href="#org9ffe0e9">7.1. intro</a></li>
-<li><a href="#org5e3d989">7.2. break</a></li>
+<li><a href="#org9ffe0e9">intro</a></li>
+<li><a href="#org5e3d989">break</a></li>
 </ul>
 </li>
-<li><a href="#org5136319">8. comparing numbers</a>
+<li><a href="#org5136319">comparing numbers</a>
 <ul>
-<li><a href="#org091f2a0">8.1. example</a></li>
+<li><a href="#org410be8c">example</a></li>
 </ul>
 </li>
-<li><a href="#org8ba88b8">9. string comparison</a></li>
-<li><a href="#org8d69d1d">10. airthmetic with <b>bc</b></a>
+<li><a href="#org8ba88b8">string comparison</a></li>
+<li><a href="#org8d69d1d">airthmetic with <b>bc</b></a>
 <ul>
-<li><a href="#org4c1cc23">10.1. example</a></li>
-<li><a href="#orgacea2f2">10.2. rounding the result</a></li>
+<li><a href="#org7eadc19">example</a></li>
+<li><a href="#orgacea2f2">rounding the result</a></li>
 </ul>
 </li>
-<li><a href="#org504a72c">11. airthmetic with <b>expr</b></a></li>
-<li><a href="#orgd7c6448">12. reading lines from file</a></li>
-<li><a href="#orgc3fe935">13. get file size using <code>stat</code></a></li>
-<li><a href="#org410be8c">14. example</a>
+<li><a href="#org504a72c">airthmetic with <b>expr</b></a></li>
+<li><a href="#orgd7c6448">reading lines from file</a></li>
+<li><a href="#orgc3fe935">get file size using <code>stat</code></a></li>
+<li><a href="#orgfd1b7e0">example</a>
 <ul>
-<li><a href="#org0a58b28">14.1. write <code>head -n 20</code> with shell script</a></li>
+<li><a href="#org0a58b28">write <code>head -n 20</code> with shell script</a></li>
 </ul>
 </li>
-<li><a href="#orgd3b4e11">15. references</a></li>
+<li><a href="#orgd3b4e11">references</a></li>
 </ul>
 </div>
 </div>
 <div id="outline-container-org5f0a8ea" class="outline-2">
-<h2 id="org5f0a8ea"><span class="section-number-2">1</span> Bash Keyboard Shortcuts</h2>
-<div class="outline-text-2" id="text-1">
+<h2 id="org5f0a8ea">Bash Keyboard Shortcuts</h2>
+<div class="outline-text-2" id="text-org5f0a8ea">
 <p>
 Moving the cursor:
   Ctrl + a   Go to the beginning of the line (Home)
@@ -362,7 +362,7 @@ History:
 
 <p>
  Ctrl + s   Go back to the next most recent command.
-	    (beware to not execute it from a terminal because this will also launch its XOFF).
+            (beware to not execute it from a terminal because this will also launch its XOFF).
  Ctrl + o   Execute the command found via Ctrl+r or Ctrl+s
  Ctrl + g   Escape from history searching mode
        !!   Repeat last command
@@ -376,11 +376,11 @@ Process control:
 Ctrl + C   Interrupt/Kill whatever you are running (SIGINT)
 Ctrl + l   Clear the screen
 Ctrl + s   Stop output to the screen (for long running verbose commands)
-	   Then use PgUp/PgDn for navigation
+           Then use PgUp/PgDn for navigation
 Ctrl + q   Allow output to the screen (if previously stopped using command above)
 Ctrl + D   Send an EOF marker, unless disabled by an option, this will close the current shell (EXIT)
 Ctrl + Z   Send the signal SIGTSTP to the current task, which suspends it.
-	   To return to it later enter fg 'process name' (foreground).
+           To return to it later enter fg 'process name' (foreground).
 Emacs mode vs Vi Mode
 All the above assume that bash is running in the default Emacs setting, if you prefer this can be switched to Vi shortcuts instead.
 </p>
@@ -401,8 +401,8 @@ $ set -o emacs
 </div>
 
 <div id="outline-container-org5206940" class="outline-2">
-<h2 id="org5206940"><span class="section-number-2">2</span> increment variable in bash</h2>
-<div class="outline-text-2" id="text-2">
+<h2 id="org5206940">increment variable in bash</h2>
+<div class="outline-text-2" id="text-org5206940">
 <p>
 There are more than one way to increment a variable in bash, but what you tried is not correct.
 </p>
@@ -411,48 +411,37 @@ There are more than one way to increment a variable in bash, but what you tried 
 You can use for example arithmetic expansion:
 </p>
 
-<p>
-var=$((var+1))
+<div class="org-src-container">
+<pre class="src src-shell">var=$((var+1))
 or only:
-</p>
 
-<p>
 ((var=var+1))
 or:
-</p>
 
-<p>
 ((var+=1))
 or even:
-</p>
 
-<p>
 ((var++))
 Or you can use let:
-</p>
 
-<p>
 let "var=var+1"
 or only:
-</p>
 
-<p>
 let "var+=1"
 or even:
-</p>
 
-<p>
 let "var++"
-</p>
+</pre>
+</div>
 </div>
 </div>
 
 <div id="outline-container-org564cbfd" class="outline-2">
-<h2 id="org564cbfd"><span class="section-number-2">3</span> testing with <b>if</b></h2>
+<h2 id="org564cbfd">testing with <b>if</b></h2>
 </div>
 <div id="outline-container-org1713adb" class="outline-2">
-<h2 id="org1713adb"><span class="section-number-2">4</span> for loops to display only odd natural numbers from  to 99.</h2>
-<div class="outline-text-2" id="text-4">
+<h2 id="org1713adb">for loops to display only odd natural numbers from  to 99.</h2>
+<div class="outline-text-2" id="text-org1713adb">
 <div class="org-src-container">
 <pre class="src src-shell">for i in `seq 1 2 99`
 do
@@ -464,8 +453,8 @@ done
 </div>
 
 <div id="outline-container-orgac56836" class="outline-2">
-<h2 id="orgac56836"><span class="section-number-2">5</span> Single Quotes versus double quotes</h2>
-<div class="outline-text-2" id="text-5">
+<h2 id="orgac56836">Single Quotes versus double quotes</h2>
+<div class="outline-text-2" id="text-orgac56836">
 <p>
 Basically,variable names are exapnded within double quotes, but not
 single quotes. If you do not need to refer to variables, single
@@ -510,7 +499,7 @@ as follows:
 <pre class="src src-shell">#!/bin/bash
 X=""
 if [ -n $X ]; then 	# -n tests to see if the argument is non empty
-	echo "the variable X is not the empty string"
+  echo "the variable X is not the empty string"
 fi
 </pre>
 </div>
@@ -533,7 +522,7 @@ better script would have been:
 <pre class="src src-shell">#!/bin/bash
 X=""
 if [ -n "$X" ]; then 	# -n tests to see if the argument is non empty
-	echo "the variable X is not the empty string"
+  echo "the variable X is not the empty string"
 fi
 </pre>
 </div>
@@ -545,8 +534,8 @@ false, since the string enclosed in inverted commas is clearly empty.
 </div>
 </div>
 <div id="outline-container-org25698ab" class="outline-2">
-<h2 id="org25698ab"><span class="section-number-2">6</span> Using Braces to Protect Your Variables</h2>
-<div class="outline-text-2" id="text-6">
+<h2 id="org25698ab">Using Braces to Protect Your Variables</h2>
+<div class="outline-text-2" id="text-org25698ab">
 <p>
 OK. Here's a potential problem situation. Suppose you want to echo the
 value of the variable X, followed immediately by the letters
@@ -578,11 +567,11 @@ echo "${X}abc"
 </div>
 
 <div id="outline-container-org8338b2d" class="outline-2">
-<h2 id="org8338b2d"><span class="section-number-2">7</span> While Loops</h2>
-<div class="outline-text-2" id="text-7">
+<h2 id="org8338b2d">While Loops</h2>
+<div class="outline-text-2" id="text-org8338b2d">
 </div><div id="outline-container-org9ffe0e9" class="outline-3">
-<h3 id="org9ffe0e9"><span class="section-number-3">7.1</span> intro</h3>
-<div class="outline-text-3" id="text-7-1">
+<h3 id="org9ffe0e9">intro</h3>
+<div class="outline-text-3" id="text-org9ffe0e9">
 <p>
 While loops iterate "while" a given condition is true. An example of this:
 </p>
@@ -592,8 +581,8 @@ While loops iterate "while" a given condition is true. An example of this:
 X=0
 while [ $X -le 20 ]
 do
-	echo $X
-	X=$((X+1))
+  echo $X
+  X=$((X+1))
 done
 </pre>
 </div>
@@ -601,8 +590,8 @@ done
 </div>
 
 <div id="outline-container-org5e3d989" class="outline-3">
-<h3 id="org5e3d989"><span class="section-number-3">7.2</span> break</h3>
-<div class="outline-text-3" id="text-7-2">
+<h3 id="org5e3d989">break</h3>
+<div class="outline-text-3" id="text-org5e3d989">
 <div class="org-src-container">
 <pre class="src src-shell">#!/bin/sh
 
@@ -624,8 +613,8 @@ done
 </div>
 
 <div id="outline-container-org5136319" class="outline-2">
-<h2 id="org5136319"><span class="section-number-2">8</span> comparing numbers</h2>
-<div class="outline-text-2" id="text-8">
+<h2 id="org5136319">comparing numbers</h2>
+<div class="outline-text-2" id="text-org5136319">
 <p>
 In bash, you should do your check in arithmetic context:
 </p>
@@ -694,9 +683,9 @@ fi
 </table>
 </div>
 
-<div id="outline-container-org091f2a0" class="outline-3">
-<h3 id="org091f2a0"><span class="section-number-3">8.1</span> example</h3>
-<div class="outline-text-3" id="text-8-1">
+<div id="outline-container-org410be8c" class="outline-3">
+<h3 id="org410be8c">example</h3>
+<div class="outline-text-3" id="text-org410be8c">
 <div class="org-src-container">
 <pre class="src src-c">#!/bin/bash
 count=100
@@ -711,8 +700,8 @@ fi
 </div>
 
 <div id="outline-container-org8ba88b8" class="outline-2">
-<h2 id="org8ba88b8"><span class="section-number-2">9</span> string comparison</h2>
-<div class="outline-text-2" id="text-9">
+<h2 id="org8ba88b8">string comparison</h2>
+<div class="outline-text-2" id="text-org8ba88b8">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -763,11 +752,11 @@ fi
 </div>
 
 <div id="outline-container-org8d69d1d" class="outline-2">
-<h2 id="org8d69d1d"><span class="section-number-2">10</span> airthmetic with <b>bc</b></h2>
-<div class="outline-text-2" id="text-10">
-</div><div id="outline-container-org4c1cc23" class="outline-3">
-<h3 id="org4c1cc23"><span class="section-number-3">10.1</span> example</h3>
-<div class="outline-text-3" id="text-10-1">
+<h2 id="org8d69d1d">airthmetic with <b>bc</b></h2>
+<div class="outline-text-2" id="text-org8d69d1d">
+</div><div id="outline-container-org7eadc19" class="outline-3">
+<h3 id="org7eadc19">example</h3>
+<div class="outline-text-3" id="text-org7eadc19">
 <pre class="example">
 ~$ echo "5+5.2"| bc -l
 10.2
@@ -776,8 +765,8 @@ fi
 </div>
 
 <div id="outline-container-orgacea2f2" class="outline-3">
-<h3 id="orgacea2f2"><span class="section-number-3">10.2</span> rounding the result</h3>
-<div class="outline-text-3" id="text-10-2">
+<h3 id="orgacea2f2">rounding the result</h3>
+<div class="outline-text-3" id="text-orgacea2f2">
 <p>
 use "scale" (number of decimal points).
 </p>
@@ -793,9 +782,10 @@ use "scale" (number of decimal points).
 </div>
 </div>
 </div>
+
 <div id="outline-container-org504a72c" class="outline-2">
-<h2 id="org504a72c"><span class="section-number-2">11</span> airthmetic with <b>expr</b></h2>
-<div class="outline-text-2" id="text-11">
+<h2 id="org504a72c">airthmetic with <b>expr</b></h2>
+<div class="outline-text-2" id="text-org504a72c">
 <pre class="example">
 ~$ echo $(expr 5 + 5)
 10
@@ -813,8 +803,8 @@ Be careful with spacing in such expressions! Bash is very sensitive to them.
 </div>
 </div>
 <div id="outline-container-orgd7c6448" class="outline-2">
-<h2 id="orgd7c6448"><span class="section-number-2">12</span> reading lines from file</h2>
-<div class="outline-text-2" id="text-12">
+<h2 id="orgd7c6448">reading lines from file</h2>
+<div class="outline-text-2" id="text-orgd7c6448">
 <div class="org-src-container">
 <pre class="src src-shell">while read line file; do
 
@@ -825,8 +815,8 @@ done
 </div>
 
 <div id="outline-container-orgc3fe935" class="outline-2">
-<h2 id="orgc3fe935"><span class="section-number-2">13</span> get file size using <code>stat</code></h2>
-<div class="outline-text-2" id="text-13">
+<h2 id="orgc3fe935">get file size using <code>stat</code></h2>
+<div class="outline-text-2" id="text-orgc3fe935">
 <div class="org-src-container">
 <pre class="src src-shell">$ echo stat phpunit.xml -t | awk '{print $2}'
 </pre>
@@ -834,12 +824,12 @@ done
 </div>
 </div>
 
-<div id="outline-container-org410be8c" class="outline-2">
-<h2 id="org410be8c"><span class="section-number-2">14</span> example</h2>
-<div class="outline-text-2" id="text-14">
+<div id="outline-container-orgfd1b7e0" class="outline-2">
+<h2 id="orgfd1b7e0">example</h2>
+<div class="outline-text-2" id="text-orgfd1b7e0">
 </div><div id="outline-container-org0a58b28" class="outline-3">
-<h3 id="org0a58b28"><span class="section-number-3">14.1</span> write <code>head -n 20</code> with shell script</h3>
-<div class="outline-text-3" id="text-14-1">
+<h3 id="org0a58b28">write <code>head -n 20</code> with shell script</h3>
+<div class="outline-text-3" id="text-org0a58b28">
 <div class="org-src-container">
 <pre class="src src-shell">counter=0
 while read line
@@ -848,7 +838,7 @@ do
     counter=$((counter + 1))
     if [ $counter -eq  20 ]
     then
-	break
+        break
     fi
 done
 </pre>
@@ -858,8 +848,8 @@ done
 </div>
 
 <div id="outline-container-orgd3b4e11" class="outline-2">
-<h2 id="orgd3b4e11"><span class="section-number-2">15</span> references</h2>
-<div class="outline-text-2" id="text-15">
+<h2 id="orgd3b4e11">references</h2>
+<div class="outline-text-2" id="text-orgd3b4e11">
 <p>
 <a href="http://www.panix.com/~elflord/unix/bash-tute.html">http://www.panix.com/~elflord/unix/bash-tute.html</a>
 </p>
@@ -868,7 +858,7 @@ done
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: moh</p>
-<p class="date">Created: 2017-02-16 Thu 20:08</p>
+<p class="date">Created: 2017-02-28 Tue 09:04</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

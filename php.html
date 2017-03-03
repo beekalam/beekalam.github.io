@@ -3,12 +3,12 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-02-28 Tue 09:03 -->
+<!-- 2017-03-03 Fri 17:59 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title></title>
+<title>php recipes</title>
 <meta name="generator" content="Org mode" />
-<meta name="author" content="moh" />
+<meta name="author" content="Mohammad Reza Mansouri" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -251,6 +251,7 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
+<h1 class="title">php recipes</h1>
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
@@ -322,7 +323,7 @@ for the JavaScript code in this tag.
 <li><a href="#orgcc4bfe2">array<sub>reduce</sub></a></li>
 <li><a href="#org5177cce">create and array from variables and their values</a>
 <ul>
-<li><a href="#orge106f5f">intro</a></li>
+<li><a href="#orgd58d8ba">intro</a></li>
 <li><a href="#orgf951a2f">using compact for debugging</a></li>
 </ul>
 </li>
@@ -471,7 +472,7 @@ for the JavaScript code in this tag.
 <li><a href="#org5e49c98">using <code>include_path</code> to manage larget projects</a></li>
 <li><a href="#org28c85ef">output buffering</a>
 <ul>
-<li><a href="#org8063a21">intro</a></li>
+<li><a href="#orgda559a9">intro</a></li>
 <li><a href="#org53612b1">detect if output buffering is turned on?</a></li>
 <li><a href="#orgc86ecc7">example</a></li>
 </ul>
@@ -490,7 +491,7 @@ for the JavaScript code in this tag.
 </li>
 <li><a href="#org5b87999">autoloading</a>
 <ul>
-<li><a href="#orged30c0b">intro</a></li>
+<li><a href="#orgfc7078d">intro</a></li>
 </ul>
 </li>
 <li><a href="#org654a712">security</a>
@@ -529,9 +530,11 @@ for the JavaScript code in this tag.
 <li><a href="#orgdbc5c56">disable caching for a website</a></li>
 <li><a href="#org72093df">disable ajax browser caching</a></li>
 <li><a href="#org71150f8">query</a></li>
+<li><a href="#orge371580">test</a></li>
 </ul>
 </div>
 </div>
+
 <div id="outline-container-orgd6e16cb" class="outline-2">
 <h2 id="orgd6e16cb">regular expression</h2>
 <div class="outline-text-2" id="text-orgd6e16cb">
@@ -1190,6 +1193,7 @@ $cards = range(1, 52);
 </div>
 </div>
 </div>
+
 <div id="outline-container-orgd062d08" class="outline-3">
 <h3 id="orgd062d08">Iterating through an array</h3>
 <div class="outline-text-3" id="text-orgd062d08">
@@ -1264,6 +1268,7 @@ To delete multiple contiguous elements, use array<sub>splice</sub>():
 </div>
 </div>
 </div>
+
 <div id="outline-container-org1f38577" class="outline-3">
 <h3 id="org1f38577">Changing array size</h3>
 <div class="outline-text-3" id="text-org1f38577">
@@ -1400,6 +1405,7 @@ $string = substr($string, 1); // remove leading ","
 </div>
 </div>
 </div>
+
 <div id="outline-container-org11f772d" class="outline-3">
 <h3 id="org11f772d">Checking if a Key Is in an Array</h3>
 <div class="outline-text-3" id="text-org11f772d">
@@ -1671,27 +1677,21 @@ foreach ($<sub>REQUEST</sub>['fruits'] as $fruit) {
 <p>
 Use array<sub>walk</sub>():
 </p>
-
-<p>
-function escape<sub>data</sub>(&amp;$value, $key) {
-	$value = htmlentities($value, ENT<sub>QUOTES</sub>);
+<div class="org-src-container">
+<pre class="src src-php">function escape_data(&amp;$value, $key) {
+  $value = htmlentities($value, ENT_QUOTES);
 }
-</p>
 
-<p>
 $names = array('firstname' =&gt; "Baba",
                'lastname'  =&gt; "O'Riley");
-</p>
 
-<p>
-array<sub>walk</sub>($names, 'escape<sub>data</sub>');
-</p>
+array_walk($names, 'escape_data');
 
-<p>
 foreach ($names as $name) {
-	print "$name\n";
+  print "$name\n";
 }
-</p>
+</pre>
+</div>
 
 <p>
 Baba
@@ -1702,28 +1702,23 @@ O&amp;#039;Riley
 For nested data, use array<sub>walk</sub><sub>recursive</sub>():
 </p>
 
-<p>
-function escape<sub>data</sub>(&amp;$value, $key) {
-	$value = htmlentities($value, ENT<sub>QUOTES</sub>);
+<div class="org-src-container">
+<pre class="src src-php">function escape_data(&amp;$value, $key) {
+  $value = htmlentities($value, ENT_QUOTES);
 }
-</p>
 
-<p>
 $names = array('firstnames' =&gt; array("Baba", "Bill"),
                'lastnames'  =&gt; array("O'Riley", "O'Reilly"));
-</p>
 
-<p>
-array<sub>walk</sub><sub>recursive</sub>($names, 'escape<sub>data</sub>');
-</p>
+array_walk_recursive($names, 'escape_data');
 
-<p>
 foreach ($names as $nametypes) {
-	foreach ($nametypes as $name) {
-		print "$name\n";
-	}
+  foreach ($nametypes as $name) {
+    print "$name\n";
+  }
 }
-</p>
+</pre>
+</div>
 
 <p>
 Baba
@@ -1886,9 +1881,9 @@ var_dump(array_reduce($x, "sum", "No data to reduce")); // string(17) "No data t
 <div id="outline-container-org5177cce" class="outline-3">
 <h3 id="org5177cce">create and array from variables and their values</h3>
 <div class="outline-text-3" id="text-org5177cce">
-</div><div id="outline-container-orge106f5f" class="outline-4">
-<h4 id="orge106f5f">intro</h4>
-<div class="outline-text-4" id="text-orge106f5f">
+</div><div id="outline-container-orgd58d8ba" class="outline-4">
+<h4 id="orgd58d8ba">intro</h4>
+<div class="outline-text-4" id="text-orgd58d8ba">
 <p>
 There may also be times when you’ll want to use compact, the inverse
 of extract, to create an array from variables and their
@@ -2311,6 +2306,7 @@ $today-&gt;getTimestamp() - $yesterday-&gt;getTimestamp()/86400;
 </div>
 </div>
 </div>
+
 <div id="outline-container-org8a24443" class="outline-2">
 <h2 id="org8a24443">variables</h2>
 <div class="outline-text-2" id="text-org8a24443">
@@ -2381,6 +2377,7 @@ To swap $a and $b:
 </div>
 </div>
 </div>
+
 <div id="outline-container-org3723f1b" class="outline-3">
 <h3 id="org3723f1b">Creating a Dynamic Variable Name</h3>
 <div class="outline-text-3" id="text-org3723f1b">
@@ -2703,12 +2700,14 @@ Returns the integer quotient of the division of dividend by divisor.
 </div><div id="outline-container-orge078d2c" class="outline-3">
 <h3 id="orge078d2c">json encode raw UTF?</h3>
 <div class="outline-text-3" id="text-orge078d2c">
-<p>
-json<sub>encode</sub>( $text, JSON<sub>UNESCAPED</sub><sub>UNICODE</sub> );
-</p>
+<div class="org-src-container">
+<pre class="src src-php">json_encode( $text, JSON_UNESCAPED_UNICODE );
+</pre>
 </div>
 </div>
 </div>
+</div>
+
 <div id="outline-container-orge22dc73" class="outline-2">
 <h2 id="orge22dc73">webservice</h2>
 <div class="outline-text-2" id="text-orge22dc73">
@@ -2761,6 +2760,7 @@ WSDL is pronounced as wiz-dull.
 </div>
 </div>
 </div>
+
 <div id="outline-container-org34d290e" class="outline-2">
 <h2 id="org34d290e">classes</h2>
 <div class="outline-text-2" id="text-org34d290e">
@@ -2926,6 +2926,7 @@ echo count($courier); // outputs 3
 When we call a method that isn’t declared in the class, the _<sub>call</sub>() method is
 called instead.
 </p>
+
 <div class="org-src-container">
 <pre class="src src-php">class Courier {
   public $name;
@@ -2953,6 +2954,7 @@ called instead.
 </div>
 </div>
 </div>
+
 <div id="outline-container-org19eb291" class="outline-3">
 <h3 id="org19eb291">serializing</h3>
 <div class="outline-text-3" id="text-org19eb291">
@@ -3591,6 +3593,7 @@ You may start a session manually with session<sub>start</sub>, or you can
 configure PHP to automatically start sessions with the
 session.auto<sub>start</sub> directive in php.ini.
 </p>
+
 <div class="org-src-container">
 <pre class="src src-php">session_start() !== false or die('could not start session');
 </pre>
@@ -3916,9 +3919,9 @@ As of PHP 4.3, she can use the set<sub>include</sub><sub>path</sub>() function t
 <div id="outline-container-org28c85ef" class="outline-2">
 <h2 id="org28c85ef">output buffering</h2>
 <div class="outline-text-2" id="text-org28c85ef">
-</div><div id="outline-container-org8063a21" class="outline-3">
-<h3 id="org8063a21">intro</h3>
-<div class="outline-text-3" id="text-org8063a21">
+</div><div id="outline-container-orgda559a9" class="outline-3">
+<h3 id="orgda559a9">intro</h3>
+<div class="outline-text-3" id="text-orgda559a9">
 <p>
 The idea of output buffering is to store all the content that has to
 be outputted in a memory buffer before outputting the whole
@@ -4073,9 +4076,9 @@ echo "Did nothing in $time seconds\n";
 <div id="outline-container-org5b87999" class="outline-2">
 <h2 id="org5b87999">autoloading</h2>
 <div class="outline-text-2" id="text-org5b87999">
-</div><div id="outline-container-orged30c0b" class="outline-3">
-<h3 id="orged30c0b">intro</h3>
-<div class="outline-text-3" id="text-orged30c0b">
+</div><div id="outline-container-orgfc7078d" class="outline-3">
+<h3 id="orgfc7078d">intro</h3>
+<div class="outline-text-3" id="text-orgfc7078d">
 <p>
 Autoloading is when we tell PHP where to look for our class files when it needs
 a class declaration that it’s yet to see.
@@ -4423,10 +4426,19 @@ $.ajaxSetup({ cache: false });
 </div>
 </div>
 </div>
+
+<div id="outline-container-orge371580" class="outline-2">
+<h2 id="orge371580">test</h2>
+<div class="outline-text-2" id="text-orge371580">
+<p>
+fljdl
+</p>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
-<p class="author">Author: moh</p>
-<p class="date">Created: 2017-02-28 Tue 09:03</p>
+<p class="author">Author: Mohammad Reza Mansouri</p>
+<p class="date">Created: 2017-03-03 Fri 17:59</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

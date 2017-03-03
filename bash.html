@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-02-28 Tue 09:04 -->
+<!-- 2017-03-02 Thu 22:26 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title></title>
@@ -237,6 +237,7 @@ for the JavaScript code in this tag.
 <li><a href="#org5206940">increment variable in bash</a></li>
 <li><a href="#org564cbfd">testing with <b>if</b></a></li>
 <li><a href="#org1713adb">for loops to display only odd natural numbers from  to 99.</a></li>
+<li><a href="#org059bfaf">loop in results of <code>find</code></a></li>
 <li><a href="#orgac56836">Single Quotes versus double quotes</a></li>
 <li><a href="#org25698ab">Using Braces to Protect Your Variables</a></li>
 <li><a href="#org8338b2d">While Loops</a>
@@ -247,20 +248,20 @@ for the JavaScript code in this tag.
 </li>
 <li><a href="#org5136319">comparing numbers</a>
 <ul>
-<li><a href="#org410be8c">example</a></li>
+<li><a href="#orgfd1b7e0">example</a></li>
 </ul>
 </li>
 <li><a href="#org8ba88b8">string comparison</a></li>
 <li><a href="#org8d69d1d">airthmetic with <b>bc</b></a>
 <ul>
-<li><a href="#org7eadc19">example</a></li>
+<li><a href="#org45c4e93">example</a></li>
 <li><a href="#orgacea2f2">rounding the result</a></li>
 </ul>
 </li>
 <li><a href="#org504a72c">airthmetic with <b>expr</b></a></li>
 <li><a href="#orgd7c6448">reading lines from file</a></li>
 <li><a href="#orgc3fe935">get file size using <code>stat</code></a></li>
-<li><a href="#orgfd1b7e0">example</a>
+<li><a href="#org253a58e">example</a>
 <ul>
 <li><a href="#org0a58b28">write <code>head -n 20</code> with shell script</a></li>
 </ul>
@@ -446,6 +447,25 @@ let "var++"
 <pre class="src src-shell">for i in `seq 1 2 99`
 do
     echo $i
+done
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org059bfaf" class="outline-2">
+<h2 id="org059bfaf">loop in results of <code>find</code></h2>
+<div class="outline-text-2" id="text-org059bfaf">
+<div class="org-src-container">
+<pre class="src src-shell">find . -name '*.txt' | while read line; do
+    echo "Processing file '$line'"
+done
+
+#E.g. make a copy:
+
+find . -name '*.txt' | while read line; do
+    echo "Copying '$line' to /tmp"
+    cp -- "$line" /tmp
 done
 </pre>
 </div>
@@ -683,9 +703,9 @@ fi
 </table>
 </div>
 
-<div id="outline-container-org410be8c" class="outline-3">
-<h3 id="org410be8c">example</h3>
-<div class="outline-text-3" id="text-org410be8c">
+<div id="outline-container-orgfd1b7e0" class="outline-3">
+<h3 id="orgfd1b7e0">example</h3>
+<div class="outline-text-3" id="text-orgfd1b7e0">
 <div class="org-src-container">
 <pre class="src src-c">#!/bin/bash
 count=100
@@ -754,9 +774,9 @@ fi
 <div id="outline-container-org8d69d1d" class="outline-2">
 <h2 id="org8d69d1d">airthmetic with <b>bc</b></h2>
 <div class="outline-text-2" id="text-org8d69d1d">
-</div><div id="outline-container-org7eadc19" class="outline-3">
-<h3 id="org7eadc19">example</h3>
-<div class="outline-text-3" id="text-org7eadc19">
+</div><div id="outline-container-org45c4e93" class="outline-3">
+<h3 id="org45c4e93">example</h3>
+<div class="outline-text-3" id="text-org45c4e93">
 <pre class="example">
 ~$ echo "5+5.2"| bc -l
 10.2
@@ -824,9 +844,9 @@ done
 </div>
 </div>
 
-<div id="outline-container-orgfd1b7e0" class="outline-2">
-<h2 id="orgfd1b7e0">example</h2>
-<div class="outline-text-2" id="text-orgfd1b7e0">
+<div id="outline-container-org253a58e" class="outline-2">
+<h2 id="org253a58e">example</h2>
+<div class="outline-text-2" id="text-org253a58e">
 </div><div id="outline-container-org0a58b28" class="outline-3">
 <h3 id="org0a58b28">write <code>head -n 20</code> with shell script</h3>
 <div class="outline-text-3" id="text-org0a58b28">
@@ -858,7 +878,7 @@ done
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: moh</p>
-<p class="date">Created: 2017-02-28 Tue 09:04</p>
+<p class="date">Created: 2017-03-02 Thu 22:26</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

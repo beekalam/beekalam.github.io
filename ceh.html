@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-02-16 Thu 20:08 -->
+<!-- 2017-03-02 Thu 22:26 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title></title>
@@ -233,20 +233,42 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgb1b8c2b">1. website footprinting</a>
+<li><a href="#orgc11050c">footpringint</a>
 <ul>
-<li><a href="#org255f4d1">1.1. view headers</a></li>
-<li><a href="#orgd0e2f05">1.2. examine cookies set by the server to determine the software</a></li>
+<li><a href="#orgb1b8c2b">website footprinting</a></li>
+<li><a href="#org255f4d1">view headers</a></li>
+<li><a href="#orgd0e2f05">examine cookies set by the server to determine the software</a></li>
+<li><a href="#orgbd0da67">Email footprinting</a></li>
 </ul>
 </li>
-<li><a href="#orgbd0da67">2. Email footprinting</a></li>
-<li><a href="#org60a3c62">3. google search operators</a></li>
+<li><a href="#org6d849fa">Kali linux prep</a>
+<ul>
+<li><a href="#org7d9bf98">install linux headers for kali</a></li>
+<li><a href="#org21f8483">install kali guest additions</a></li>
+<li><a href="#orge827794">use network managed mode</a></li>
+</ul>
+</li>
+<li><a href="#org60a3c62">google search operators</a></li>
+<li><a href="#org44f1569">whois &amp; DNS</a>
+<ul>
+<li><a href="#org6a6e102">query</a></li>
+<li><a href="#orge1cd439">whois query query handler</a></li>
+<li><a href="#org4d8dc38">MX record</a></li>
+<li><a href="#org56ff1aa">reverse DNS lookup</a></li>
+</ul>
+</li>
+<li><a href="#orga555e35">port scan</a></li>
+<li><a href="#orgce02eec">banner grabbing</a></li>
+<li><a href="#orgbc16b59">host discovery with <code>arping</code></a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgb1b8c2b" class="outline-2">
-<h2 id="orgb1b8c2b"><span class="section-number-2">1</span> website footprinting</h2>
-<div class="outline-text-2" id="text-1">
+<div id="outline-container-orgc11050c" class="outline-2">
+<h2 id="orgc11050c">footpringint</h2>
+<div class="outline-text-2" id="text-orgc11050c">
+</div><div id="outline-container-orgb1b8c2b" class="outline-3">
+<h3 id="orgb1b8c2b">website footprinting</h3>
+<div class="outline-text-3" id="text-orgb1b8c2b">
 <ul class="org-ul">
 <li>operating system used.</li>
 <li>subdirectories and parameters</li>
@@ -258,10 +280,11 @@ to check whether it offers opportunities for SQL injection</li>
 phone numbers, email addresses, and locations of admin or support people.</li>
 </ul>
 </div>
+</div>
 
 <div id="outline-container-org255f4d1" class="outline-3">
-<h3 id="org255f4d1"><span class="section-number-3">1.1</span> view headers</h3>
-<div class="outline-text-3" id="text-1-1">
+<h3 id="org255f4d1">view headers</h3>
+<div class="outline-text-3" id="text-org255f4d1">
 <ul class="org-ul">
 <li>Connection status and content-type</li>
 <li>Accept-ranges</li>
@@ -273,18 +296,17 @@ phone numbers, email addresses, and locations of admin or support people.</li>
 </div>
 
 <div id="outline-container-orgd0e2f05" class="outline-3">
-<h3 id="orgd0e2f05"><span class="section-number-3">1.2</span> examine cookies set by the server to determine the software</h3>
-<div class="outline-text-3" id="text-1-2">
+<h3 id="orgd0e2f05">examine cookies set by the server to determine the software</h3>
+<div class="outline-text-3" id="text-orgd0e2f05">
 <p>
 running and its behavior.
 </p>
 </div>
 </div>
-</div>
 
-<div id="outline-container-orgbd0da67" class="outline-2">
-<h2 id="orgbd0da67"><span class="section-number-2">2</span> Email footprinting</h2>
-<div class="outline-text-2" id="text-2">
+<div id="outline-container-orgbd0da67" class="outline-3">
+<h3 id="orgbd0da67">Email footprinting</h3>
+<div class="outline-text-3" id="text-orgbd0da67">
 <p>
 By using email tracking tools you can gather the following information about
 the victim:
@@ -302,18 +324,269 @@ can be determined easily by using this tool.</li>
 </ul>
 </div>
 </div>
+</div>
+
+<div id="outline-container-org6d849fa" class="outline-2">
+<h2 id="org6d849fa">Kali linux prep</h2>
+<div class="outline-text-2" id="text-org6d849fa">
+</div><div id="outline-container-org7d9bf98" class="outline-3">
+<h3 id="org7d9bf98">install linux headers for kali</h3>
+<div class="outline-text-3" id="text-org7d9bf98">
+<div class="org-src-container">
+<pre class="src src-shell">$ apt-cache search header | grep -i linux
+#  look for the one ending in –kali-all-amd64
+$ apt-get install linux-headers-4.4.0-kalli-all-amd64
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org21f8483" class="outline-3">
+<h3 id="org21f8483">install kali guest additions</h3>
+<div class="outline-text-3" id="text-org21f8483">
+<div class="org-src-container">
+<pre class="src src-shell">$ cd /media/cdrom0
+$ cp VBoxLinuxAdditions.run /root/Desktop
+$ ./VBoxLinuxAdditions.run
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge827794" class="outline-3">
+<h3 id="orge827794">use network managed mode</h3>
+<div class="outline-text-3" id="text-orge827794">
+<div class="org-src-container">
+<pre class="src src-shell">$ vim /etc/NetworkManager.conf
+# change managed=false to managed=true
+</pre>
+</div>
+</div>
+</div>
+</div>
+
 <div id="outline-container-org60a3c62" class="outline-2">
-<h2 id="org60a3c62"><span class="section-number-2">3</span> google search operators</h2>
-<div class="outline-text-2" id="text-3">
+<h2 id="org60a3c62">google search operators</h2>
+<div class="outline-text-2" id="text-org60a3c62">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">&#xa0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Operator</td>
+<td class="org-left">Description intitle Looks for the search terms in the title</td>
+</tr>
+
+<tr>
+<td class="org-left">allintitle</td>
+<td class="org-left">Looks for the search terms only in the title and nowhere else in the document</td>
+</tr>
+
+<tr>
+<td class="org-left">inurl</td>
+<td class="org-left">Looks through the URL (the address) for the search terms</td>
+</tr>
+
+<tr>
+<td class="org-left">allinurl</td>
+<td class="org-left">Similar to allintitle     looks only in the URL for the search terms</td>
+</tr>
+
+<tr>
+<td class="org-left">filetype</td>
+<td class="org-left">You provide the filetype and search terms. All results have that filetype.</td>
+</tr>
+
+<tr>
+<td class="org-left">allintext</td>
+<td class="org-left">The search will not look at the URL and just in the text.</td>
+</tr>
+
+<tr>
+<td class="org-left">site</td>
+<td class="org-left">Narrow your search to a particular site. You have to provide the site as well as search terms.</td>
+</tr>
+
+<tr>
+<td class="org-left">link</td>
+<td class="org-left">Searches for links to pages</td>
+</tr>
+
+<tr>
+<td class="org-left">inanchor</td>
+<td class="org-left">This search will look in anchor tags only</td>
+</tr>
+
+<tr>
+<td class="org-left">numrange</td>
+<td class="org-left">Searches for a number</td>
+</tr>
+
+<tr>
+<td class="org-left">daterange</td>
+<td class="org-left">Results will be within a range of dates            as specified</td>
+</tr>
+
+<tr>
+<td class="org-left">author</td>
+<td class="org-left">Searches Google Groups for a particular author. This only works in Google Groups.</td>
+</tr>
+
+<tr>
+<td class="org-left">group</td>
+<td class="org-left">Looks for a group name. This only works in Google Groups.</td>
+</tr>
+
+<tr>
+<td class="org-left">insubject</td>
+<td class="org-left">Searches subject lines in posts. This only works in Google Groups.</td>
+</tr>
+
+<tr>
+<td class="org-left">msgid</td>
+<td class="org-left">Searches within a group for a message ID.</td>
+</tr>
+</tbody>
+</table>
+
 <p>
 <a href="http://www.googleguide.com/">http://www.googleguide.com/</a>
 </p>
 </div>
 </div>
+<div id="outline-container-org44f1569" class="outline-2">
+<h2 id="org44f1569">whois &amp; DNS</h2>
+<div class="outline-text-2" id="text-org44f1569">
+</div><div id="outline-container-org6a6e102" class="outline-3">
+<h3 id="org6a6e102">query</h3>
+<div class="outline-text-3" id="text-org6a6e102">
+<div class="org-src-container">
+<pre class="src src-shell">$ whois apress.com
+$ whois -h whois.apnic.net &lt;host&gt;
+# Looking up all the whois records that are maintained by the
+# folks from Yahoo!. The following command shows how you do this:
+$ whois –i mnt-by YAHOO-MNT
+# filter ip addresses
+$ whois –i mnt-by YAHOO-MNT | grep inetnum
+$ whois –i mnt-by YAHOO-MNT | grep inetnum | awk –F\: '{ print $2 }'
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge1cd439" class="outline-3">
+<h3 id="orge1cd439">whois query query handler</h3>
+<div class="outline-text-3" id="text-orge1cd439">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">whois.nic.ir</td>
+</tr>
+
+<tr>
+<td class="org-left">whois.apnic.net</td>
+</tr>
+
+<tr>
+<td class="org-left">whois.arin.net</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-org4d8dc38" class="outline-3">
+<h3 id="org4d8dc38">MX record</h3>
+<div class="outline-text-3" id="text-org4d8dc38">
+<p>
+Every domain will have at least one MX record. Knowing the hostname from the MX
+record will tell you which system you need to interact with if you want to
+perform penetration testing against the organization's receiving mail server
+using the simple mail transfer protocol (SMTP) .
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell"># MX records
+$ dig Mx apress.com
+#using nslookup
+$ nslookup
+&gt; set type=mx
+&gt; apress.com
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org56ff1aa" class="outline-3">
+<h3 id="org56ff1aa">reverse DNS lookup</h3>
+<div class="outline-text-3" id="text-org56ff1aa">
+<div class="org-src-container">
+<pre class="src src-shell">$ dig -x [IP address]
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga555e35" class="outline-2">
+<h2 id="orga555e35">port scan</h2>
+<div class="outline-text-2" id="text-orga555e35">
+<div class="org-src-container">
+<pre class="src src-shell"># -p- scann all 65536 ports
+$ sudo nmap -sS -p- 172.30.42.1
+# udp port scan
+$ sudo namp -sU
+# operating system scan
+$ sudo nmap -sS -O 172.30.42.1
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgce02eec" class="outline-2">
+<h2 id="orgce02eec">banner grabbing</h2>
+<div class="outline-text-2" id="text-orgce02eec">
+<p>
+use telnet for TCP and nc for UPD connections.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">$ telnet &lt;host&gt; &lt;port&gt;
+$ nc -u &lt;host&gt; &lt;port&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgbc16b59" class="outline-2">
+<h2 id="orgbc16b59">host discovery with <code>arping</code></h2>
+<div class="outline-text-2" id="text-orgbc16b59">
+<div class="org-src-container">
+<pre class="src src-shell">$ arping [ip address]
+</pre>
+</div>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: moh</p>
-<p class="date">Created: 2017-02-16 Thu 20:08</p>
+<p class="date">Created: 2017-03-02 Thu 22:26</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

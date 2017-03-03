@@ -3,12 +3,12 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-02-28 Tue 09:21 -->
+<!-- 2017-03-03 Fri 21:36 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title></title>
+<title>ubuntu</title>
 <meta name="generator" content="Org mode" />
-<meta name="author" content="moh" />
+<meta name="author" content="Mohammad Reza Mansouri" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -180,6 +180,7 @@
   /*]]>*/-->
 </style>
 <link rel="stylesheet" type="text/css" href="css/main.css" />
+<link rel="stylesheet" type="text/css" href="css/main.css" />
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -251,6 +252,7 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
+<h1 class="title">ubuntu</h1>
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
@@ -269,7 +271,7 @@ for the JavaScript code in this tag.
 </li>
 <li><a href="#org3ffd698">ssh</a>
 <ul>
-<li><a href="#orge590f28">installation</a></li>
+<li><a href="#org8502c20">installation</a></li>
 <li><a href="#org50f394e">ssh escape sequences</a></li>
 </ul>
 </li>
@@ -330,7 +332,7 @@ for the JavaScript code in this tag.
 <li><a href="#orgc9a4e38">Compile Kernel</a></li>
 </ul>
 </li>
-<li><a href="#orgc298861">processes</a></li>
+<li><a href="#orgfc530b4">processes</a></li>
 <li><a href="#org3579a25">Signals/Kill:</a></li>
 <li><a href="#org65f1e9c">Permissions:</a></li>
 <li><a href="#org083ec85">Create a memory file system:</a></li>
@@ -340,13 +342,14 @@ for the JavaScript code in this tag.
 <li><a href="#orgd0418cb">Firewall</a></li>
 <li><a href="#orgd69f831">IP Forward for routing</a></li>
 <li><a href="#org88b76b5">DNS</a></li>
+<li><a href="#org8713071">DHCP</a></li>
 <li><a href="#org37bac69">tar</a>
 <ul>
 <li><a href="#org95b96d5">Create</a></li>
 <li><a href="#org11b45cb">Extract</a></li>
+<li><a href="#org9160fa6">More advanced</a></li>
 </ul>
 </li>
-<li><a href="#org9160fa6">More advanced</a></li>
 <li><a href="#org65952c3">Find</a></li>
 <li><a href="#orgb1053e6">Miscellaneous</a></li>
 <li><a href="#org81ffcf8">Add/Remove software</a></li>
@@ -381,6 +384,7 @@ for the JavaScript code in this tag.
 <li><a href="#orgb8bd826">format a partition</a></li>
 <li><a href="#org08420d7">make a swap partition</a></li>
 <li><a href="#org069ebdd">auto mount a partition</a></li>
+<li><a href="#org4306245">find UUID of a filesystem</a></li>
 </ul>
 </li>
 <li><a href="#orgd736c28">shell</a>
@@ -429,7 +433,7 @@ for the JavaScript code in this tag.
 </li>
 </ul>
 </li>
-<li><a href="#org0e58bfc">processes</a>
+<li><a href="#org1a38fdc">processes</a>
 <ul>
 <li><a href="#orgb549a01">checking the priority of a process?</a></li>
 <li><a href="#org9f5d563">Setting priority on new processes</a></li>
@@ -458,16 +462,15 @@ for the JavaScript code in this tag.
 </ul>
 </li>
 <li><a href="#org1ca685d">make a ramdisk?</a></li>
-<li><a href="#orgc660c13">references</a></li>
 <li><a href="#org673533b">curl</a>
 <ul>
 <li><a href="#orgc651cf5">Fetching a Page with cURL</a></li>
 <li><a href="#orgef40843">Fetching Many Variations on a URL</a></li>
 <li><a href="#org2f5f3c9">Following Redirects Automatically</a></li>
 <li><a href="#org509a260">send cookie with curl?</a></li>
-<li><a href="#orgd9a5f3d">make an options request</a></li>
+<li><a href="#org096f1a1">make an options request</a></li>
 <li><a href="#org2147300">make a head request</a></li>
-<li><a href="#orgf9ef94f">make an options request</a></li>
+<li><a href="#org3a55828">make an options request</a></li>
 <li><a href="#org45f8c13">set a header</a></li>
 <li><a href="#orgd04d9f8">post request</a>
 <ul>
@@ -493,7 +496,7 @@ for the JavaScript code in this tag.
 <li><a href="#org84e3e1a">sudo timeout</a></li>
 <li><a href="#org089903f">How can I get the recoll package to index markdown (.md) files?</a></li>
 <li><a href="#org636f693">json pretty print</a></li>
-<li><a href="#orgd032bb8">installation</a>
+<li><a href="#orgc4097f5">installation</a>
 <ul>
 <li><a href="#org17375b5">other useful php modules</a></li>
 <li><a href="#org38c0f17">starting windows in safe mode from grub</a></li>
@@ -515,7 +518,7 @@ for the JavaScript code in this tag.
 </li>
 <li><a href="#orgfec2626">postgresql</a>
 <ul>
-<li><a href="#org2c71b8a">installation</a></li>
+<li><a href="#orga2a7502">installation</a></li>
 <li><a href="#orgb1fb853">Switching Over to the postgres Account</a>
 <ul>
 <li><a href="#org06b160a">refs</a></li>
@@ -580,17 +583,16 @@ for the JavaScript code in this tag.
 </li>
 </ul>
 </li>
-</ul>
-</li>
-<li><a href="#org8b8f9e0">temp</a>
-<ul>
 <li><a href="#orge75530c">connecting to access point using <code>iwconfig</code></a></li>
 </ul>
 </li>
-<li><a href="#org0951b3d">test</a></li>
+<li><a href="#org36e9061">limit CPU usage of a process</a></li>
+<li><a href="#orge5e735a">send output from one terminal to another</a></li>
+<li><a href="#orgc660c13">references</a></li>
 </ul>
 </div>
 </div>
+
 <div id="outline-container-org53e89e9" class="outline-2">
 <h2 id="org53e89e9">network</h2>
 <div class="outline-text-2" id="text-org53e89e9">
@@ -764,9 +766,9 @@ up route add -net 192.168.40.0/24 gw 192.168.30.1 dev em1
 <div id="outline-container-org3ffd698" class="outline-2">
 <h2 id="org3ffd698">ssh</h2>
 <div class="outline-text-2" id="text-org3ffd698">
-</div><div id="outline-container-orge590f28" class="outline-3">
-<h3 id="orge590f28">installation</h3>
-<div class="outline-text-3" id="text-orge590f28">
+</div><div id="outline-container-org8502c20" class="outline-3">
+<h3 id="org8502c20">installation</h3>
+<div class="outline-text-3" id="text-org8502c20">
 <div class="org-src-container">
 <pre class="src src-shell">$ sudo apt-get install openssh-client
 $ sudo apt-get install openssh-server
@@ -775,6 +777,7 @@ $ sudo apt-get install ssh   # installes both the client and the server
 </div>
 </div>
 </div>
+
 <div id="outline-container-org50f394e" class="outline-3">
 <h3 id="org50f394e">ssh escape sequences</h3>
 <div class="outline-text-3" id="text-org50f394e">
@@ -926,6 +929,7 @@ gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:nocaps']"
 </div>
 </div>
 </div>
+
 <div id="outline-container-org4a47a98" class="outline-3">
 <h3 id="org4a47a98">time</h3>
 <div class="outline-text-3" id="text-org4a47a98">
@@ -1011,26 +1015,22 @@ usermod -g &lt;groupname&gt; username
 <p>
 If you’re trying to figure out a permissions issue, you’ll want to use the id command to see what groups the user is assigned to:
 </p>
+<div class="org-src-container">
+<pre class="src src-shell">id &lt;username&gt;
 
-<p>
-id &lt;username&gt;
-</p>
+# This will display output something like this:
 
-<p>
-This will display output something like this:
-</p>
-
-<p>
 uid=500(howtogeek) gid=500(howtogeek) groups=500(howtogeek), 1093(admins)
-</p>
+</pre>
+</div>
 
 <p>
 You can also use the groups command if you prefer, though it is the same as using id -Gn &lt;username&gt;.
 </p>
-
-<p>
-groups &lt;username&gt;
-</p>
+<div class="org-src-container">
+<pre class="src src-shell">$ groups &lt;username&gt;
+</pre>
+</div>
 </div>
 </div>
 
@@ -1040,50 +1040,53 @@ groups &lt;username&gt;
 <p>
 To view all the groups on the system, you can just use the groups command:
 </p>
-
-<p>
-groups
-</p>
+<div class="org-src-container">
+<pre class="src src-shell">$ groups
+</pre>
+</div>
 
 <p>
 Add a New User and Assign a Group in One Command
 </p>
 
 <p>
-Sometimes you might need to add a new user that has access to a particular resource or directory, like adding a new FTP user. You can do so with the useradd command:
+Sometimes you might need to add a new user that has access to a particular
+resource or directory, like adding a new FTP user. You can do so with the
+useradd command:
 </p>
-
-<p>
-useradd -g &lt;groupname&gt; username
-</p>
+<div class="org-src-container">
+<pre class="src src-shell">$ useradd -g &lt;groupname&gt; username
+</pre>
+</div>
 
 <p>
 For instance, lets say you wanted to add a new user named jsmith to the ftp group:
 </p>
-
-<p>
-useradd -G ftp jsmith
-</p>
+<div class="org-src-container">
+<pre class="src src-shell">$ useradd -G ftp jsmith
+</pre>
+</div>
 
 <p>
 And then you’ll want to assign a password for that user, of course:
 </p>
-
-<p>
-passwd jsmith
-</p>
+<div class="org-src-container">
+<pre class="src src-shell">$ passwd jsmith
+</pre>
+</div>
 
 <p>
 Add a User to Multiple Groups
 </p>
 
 <p>
-You can easily add a user to more than one group by simply specifying them in a comma-delimited list, as long as you are assigning the secondary groups:
+You can easily add a user to more than one group by simply specifying them in a
+comma-delimited list, as long as you are assigning the secondary groups:
 </p>
-
-<p>
-usermod -a -G ftp,admins,othergroup &lt;username&gt;
-</p>
+<div class="org-src-container">
+<pre class="src src-shell">$ usermod -a -G ftp,admins,othergroup &lt;username&gt;
+</pre>
+</div>
 
 <p>
 That should cover everything you need to know about adding users to groups on Linux.
@@ -1104,8 +1107,9 @@ the actual image data.  If you'd like to convert it to the .iso
 format, the Iso9660 Analyzer Tool (-get install iat) should do the
 trick:
 </p>
+
 <div class="org-src-container">
-<pre class="src src-shell">iat my_image.bin my_new_image.iso
+<pre class="src src-shell">$ iat my_image.bin my_new_image.iso
 </pre>
 </div>
 </div>
@@ -1155,7 +1159,7 @@ if php does not get executed.
 <h3 id="org1bbc593">ignore robots.txt</h3>
 <div class="outline-text-3" id="text-org1bbc593">
 <p>
--e robots=off
+<code>-e robots=off</code>
 </p>
 </div>
 </div>
@@ -1163,24 +1167,29 @@ if php does not get executed.
 <div id="outline-container-org5de3a03" class="outline-3">
 <h3 id="org5de3a03">get the size of file before downloading</h3>
 <div class="outline-text-3" id="text-org5de3a03">
-<p>
-wget &#x2013;spider &lt;link&gt;
-curl &#x2013;head &lt;link&gt;
-</p>
+<div class="org-src-container">
+<pre class="src src-shell">$ wget --spider &lt;link&gt;
+$ curl --head &lt;link&gt;
+</pre>
+</div>
 </div>
 </div>
 <div id="outline-container-orgfe9bfdd" class="outline-3">
 <h3 id="orgfe9bfdd">wget download with proxy</h3>
 <div class="outline-text-3" id="text-orgfe9bfdd">
 <p>
-Via ~/.wgetrc file:
+Via <code>~/.wgetrc</code> file:
 </p>
 
+<pre class="example">
+use_proxy=yes
+http_proxy=127.0.0.1:8080
+</pre>
+
 <p>
-use<sub>proxy</sub>=yes
-http<sub>proxy</sub>=127.0.0.1:8080
 or via -e options placed after the URL:
 </p>
+
 <div class="org-src-container">
 <pre class="src src-shell">$ wget ... -e use_proxy=yes -e http_proxy=127.0.0.1:8080 ...
 </pre>
@@ -1226,18 +1235,19 @@ $ last reboot                              # Show system reboot history
 </div>
 </div>
 </div>
+
 <div id="outline-container-org1fff0d4" class="outline-3">
 <h3 id="org1fff0d4">Hardware Informations:</h3>
 <div class="outline-text-3" id="text-org1fff0d4">
 <p>
-Kernel detected hardware:
-  $+begin<sub>src</sub> shell
-  $ dmesg                               # Detected hardware and boot messages
-  $ lsdev                                  # information about installed hardware
-  $ dd if=/dev/mem bs=1k skip=768 count=256 2&gt;/dev/null | strings -n 8 # Read BIOS
+<b>Kernel detected hardware:</b>
 </p>
+<div class="org-src-container">
+<pre class="src src-shell">$+begin_src shell
+$ dmesg                               # Detected hardware and boot messages
+$ lsdev                                  # information about installed hardware
+$ dd if=/dev/mem bs=1k skip=768 count=256 2&gt;/dev/null | strings -n 8 # Read BIOS
 
-<p>
 $ cat /proc/cpuinfo                               # CPU model
 $ cat /proc/meminfo                             # Hardware memory
 $ grep MemTotal /proc/meminfo       # Display the physical memory
@@ -1248,8 +1258,8 @@ $ lspci -tv                       # Show PCI devices
 $ lsusb -tv                      # Show USB devices
 $ lshal                            # Show a list of all devices with their properties
 $ dmidecode                # Show DMI/SMBIOS: hw info from the BIOS
-#+end<sub>src</sub>
-</p>
+</pre>
+</div>
 </div>
 </div>
 
@@ -1328,25 +1338,39 @@ $ tail /var/log/warn                          # System warnings messages see sys
 </div>
 </div>
 
-<div id="outline-container-orgc298861" class="outline-3">
-<h3 id="orgc298861">processes</h3>
-<div class="outline-text-3" id="text-orgc298861">
+<div id="outline-container-orgfc530b4" class="outline-3">
+<h3 id="orgfc530b4">processes</h3>
+<div class="outline-text-3" id="text-orgfc530b4">
 <p>
-Listing and PIDs
+listing and pids
 </p>
 
 <p>
-Each process has a unique number, the PID. A list of all running process is retrieved with ps.
+each process has a unique number, the pid. a list of all running process is retrieved with ps.
 </p>
+<div class="org-src-container">
+<pre class="src src-shell"># ps -auxefw                         # extensive list of all running process
+</pre>
+</div>
 
 <p>
-However more typical usage is with a pipe or with pgrep:
+however more typical usage is with a pipe or with pgrep:
 </p>
 
-
-<p>
-586  ??  Is     0:01.48 /usr/sbin/cron -s
-</p>
+<div class="org-src-container">
+<pre class="src src-shell">$ ps axww | grep cron
+586  ??  is     0:01.48 /usr/sbin/cron -s
+$ ps axjf                                     # all processes in a tree format
+$ ps aux | grep 'ss[h]'               # find all ssh pids without the grep pid
+$ pgrep -l sshd                         # find the pids of processes by (part of) name
+$ echo $$                                  # the pid of your shell
+$ fuser -va 22/tcp                     # list processes using port 22 (linux)
+$ pmap pid                               # memory map of process (hunt memory leaks) (linux)
+$ fuser -va /home                     # list processes accessing the /home partition
+$ strace df                                  # trace system calls and signals
+$ truss df                                    # same as above
+</pre>
+</div>
 </div>
 </div>
 
@@ -1356,15 +1380,25 @@ However more typical usage is with a pipe or with pgrep:
 <p>
 Terminate or send a signal with kill or killall.
 </p>
+<div class="org-src-container">
+<pre class="src src-shell">$ kill -s TERM 4712                  # same as kill -15 4712
+$ killall -1 httpd                          # Kill HUP processes by exact name
+$ pkill -9 http                              # Kill TERM processes by (part of) name
+$ pkill -TERM -u www              # Kill TERM processes owned by www
+$ fuser -k -TERM -m /home     # Kill every process accessing /home (to umount)
+</pre>
+</div>
 
 <p>
 Important signals are:
+</p>
+<pre class="example">
 1       HUP (hang up)
 2       INT (interrupt)
 3       QUIT (quit)
 9       KILL (non-catchable, non-ignorable kill)
 15     TERM (software termination signal)
-</p>
+</pre>
 </div>
 </div>
 
@@ -1384,14 +1418,42 @@ umask 022 results in a permission 0f 755.
 4 r&#x2013; read
   ugo=a                              u=user, g=group, o=others, a=everyone
 </p>
+<div class="org-src-container">
+<pre class="src src-shell">$ chmod [OPTION] MODE[,MODE] FILE    # MODE is of the form [ugoa]*([-+=]([rwxXst]))
+$ chmod 640 /var/log/maillog                      # Restrict the log -rw-r-----
+$ chmod u=rw,g=r,o= /var/log/maillog       # Same as above
+$ chmod -R o-r /home/*                                # Recursive remove other readable for all users
+$ chmod u+s /path/to/prog                           # Set SUID bit on executable (know what you do!)
+$ find / -perm -u+s -print                               # Find all programs with the SUID bit
+$ chown user:group /path/to/file                  # Change the user and group ownership of a file
+$ chgrp group /path/to/file                             # Change the group ownership of a file
+$ chmod 640 `find ./ -type f -print`                # Change permissions to 640 for all files
+$ chmod 751 `find ./ -type d -print`               # Change permissions to 751 for all directories
+</pre>
+</div>
 
 <p>
 Disk information:
 </p>
+<div class="org-src-container">
+<pre class="src src-shell">$ hdparm -I /dev/sda                 # information about the IDE/ATA disk (Linux)
+$ fdisk /dev/ad2                          # Display and manipulate the partition table
+$ smartctl -a /dev/ad2                # Display the disk SMART info
+</pre>
+</div>
 
 <p>
 System mount points/Disk usage
 </p>
+<div class="org-src-container">
+<pre class="src src-shell">$ mount | column -t                   # Show mounted file-systems on the system
+$ df                                              # display free disk space and mounted devices
+$ cat /proc/partitions                # Show all registered partitions
+$ du -sh *                                 # Directory sizes as listing
+$ du -csh                                 # Total directory size of the current directory
+$ du -ks * | sort -n -r              # Sort everything by size in kilobytes
+</pre>
+</div>
 
 <p>
 Who has which files opened:
@@ -1432,13 +1494,25 @@ Xorg    3324 root    0w   REG    8,6 56296 12492 /var/log/Xorg.0.log
 
 <p>
 Mount/remount a file system
-For example the cdrom. If listed in /etc/fstab:
 </p>
 
 <p>
-Entry in /etc/fstab:
-/dev/cdrom   /media/cdrom  subfs noauto,fs=cdfss,ro,procuid,nosuid,nodev,exec 0 0
+For example the cdrom. If listed in /etc/fstab:
 </p>
+<pre class="example">
+# mount /cdrom
+# mount -t auto /dev/cdrom /mnt/cdrom             # typical cdrom mount command
+# mount /dev/hdc -t iso9660 -r /cdrom               # typical IDE
+# mount /dev/scd0 -t iso9660 -r /cdrom             # typical SCSI cdrom
+# mount /dev/sdc0 -t ntfs-3g /windows              # typical SCSI
+</pre>
+
+<p>
+Entry in /etc/fstab:
+</p>
+<pre class="example">
+/dev/cdrom   /media/cdrom  subfs noauto,fs=cdfss,ro,procuid,nosuid,nodev,exec 0 0
+</pre>
 
 <p>
 Add swap on-the-fly
@@ -1448,11 +1522,19 @@ Suppose you need more swap (right now), say a 2GB file /swap2gb .
 
 <p>
 Mount an SMB share
-Suppose we want to access the SMB share myshare on the computer smbserver, the address as typed on a Windows PC is \\smbserver\myshare\. We mount on /mnt/smbshare. Warning&gt; cifs wants an IP or DNS name, not a Windows name.
+</p>
+
+<p>
+Suppose we want to access the SMB share myshare on the computer smbserver, the
+address as typed on a Windows PC is \\smbserver\myshare\. We mount on
+/mnt/smbshare. Warning&gt; cifs wants an IP or DNS name, not a Windows name.
 </p>
 
 <p>
 Additionally with the package mount.cifs it is possible to store the credentials in a file, for example <i>home/user</i>.smb:
+</p>
+
+<p>
 username=winuser
 password=winpwd
 And mount as follow:
@@ -1471,6 +1553,11 @@ Mount an image:
 A memory based file system is very fast for heavy IO application. How
 to create a 64 MB partition mounted on /memdisk:
 </p>
+
+<div class="org-src-container">
+<pre class="src src-shell">$ mount -t tmpfs -osize=64m tmpfs /memdisk
+</pre>
+</div>
 </div>
 </div>
 
@@ -1480,12 +1567,29 @@ to create a 64 MB partition mounted on /memdisk:
 <p>
 Read and write a 1 GB file on partition ad4s3c (/home)
 </p>
+<div class="org-src-container">
+<pre class="src src-shell"># time dd if=/dev/ad4s3c of=/dev/null bs=1024k count=1000
+# time dd if=/dev/zero bs=1024k count=1000 of=/home/1Gb.file
+# hdparm -tT /dev/hda      # Linux only
+</pre>
+</div>
 </div>
 </div>
 
 <div id="outline-container-org6165ca5" class="outline-3">
 <h3 id="org6165ca5">Networking</h3>
 <div class="outline-text-3" id="text-org6165ca5">
+<div class="org-src-container">
+<pre class="src src-shell"># ethtool eth0                                           # Show the ethernet status (replaces mii-diag)
+# ethtool -s eth0 speed 100 duplex full # Force 100Mbit Full duplex
+# ethtool -s eth0 autoneg off # Disable auto negotiation
+# ethtool -p eth1                                      # Blink the ethernet led - very useful when supported
+# ip link show                                           # Display all interfaces on Linux (similar to ifconfig)
+# ip link set eth0 up                                # Bring device up (or down). Same as "ifconfig eth0 up"
+# ip addr show                                        # Display all IP addresses on Linux (similar to ifconfig)
+# ip neighbor show                                      # Similar to arp -a
+</pre>
+</div>
 </div>
 </div>
 
@@ -1495,6 +1599,15 @@ Read and write a 1 GB file on partition ad4s3c (/home)
 <p>
 Listening open ports:
 </p>
+<div class="org-src-container">
+<pre class="src src-shell"># netstat -an | grep LISTEN
+# lsof -i                                         # List all Internet connections
+# socklist                                     # Display list of open sockets
+# netstat -anp --udp --tcp | grep LISTEN      
+# netstat -tup                              # List active connections to/from system
+# netstat -tupl                             # List listening ports from system
+</pre>
+</div>
 </div>
 </div>
 
@@ -1504,6 +1617,16 @@ Listening open ports:
 <p>
 Check if a firewall is running (typical configuration only):
 </p>
+<div class="org-src-container">
+<pre class="src src-shell"># iptables -L -n -v                                 # For status Open the iptables firewall
+# iptables -P INPUT       ACCEPT     # Open everything
+# iptables -P FORWARD     ACCEPT
+# iptables -P OUTPUT      ACCEPT
+# iptables -Z                                         # Zero the packet and byte counters in all chains
+# iptables -F                                         # Flush all chains
+# iptables -X                                         # Delete all chains
+</pre>
+</div>
 </div>
 </div>
 
@@ -1513,7 +1636,11 @@ Check if a firewall is running (typical configuration only):
 <p>
 Check and then enable IP forward with :
 </p>
-
+<div class="org-src-container">
+<pre class="src src-shell"># cat /proc/sys/net/ipv4/ip_forward  # Check IP forward 0=off, 1=on
+# echo 1 &gt; /proc/sys/net/ipv4/ip_forward
+</pre>
+</div>
 <p>
 or edit /etc/sysctl.conf with:
 net.ipv4.ip<sub>forward</sub> = 1
@@ -1522,14 +1649,16 @@ net.ipv4.ip<sub>forward</sub> = 1
 <p>
 Network Address Translation
 </p>
-
-<p>
-&#x2013;to 192.168.16.44:22           # Port forward 20022 to internal IP port ssh
-</p>
-
-<p>
-&#x2013;to 192.168.16.254:993-995     # Port forward of range 993-995
-</p>
+<div class="org-src-container">
+<pre class="src src-shell"># iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE    # to activate NAT
+# iptables -t nat -A PREROUTING -p tcp -d 78.31.70.238 --dport 20022 -j DNAT \
+--to 192.168.16.44:22           # Port forward 20022 to internal IP port ssh
+# iptables -t nat -A PREROUTING -p tcp -d 78.31.70.238 --dport 993:995 -j DNAT \
+--to 192.168.16.254:993-995     # Port forward of range 993-995
+# ip route flush cache
+# iptables -L -t nat            # Check NAT status
+</pre>
+</div>
 </div>
 </div>
 
@@ -1538,7 +1667,7 @@ Network Address Translation
 <div class="outline-text-3" id="text-org88b76b5">
 <p>
 The DNS entries are valid for all interfaces and are stored in /etc/resolv.conf.
- The domain to which the host belongs is also stored in this file. A minimal configuration is:
+The domain to which the host belongs is also stored in this file. A minimal configuration is:
 </p>
 
 <p>
@@ -1547,10 +1676,21 @@ search cipi.net intern.lab
 domain cipi.org
 Check the system domain name with:
 </p>
+<div class="org-src-container">
+<pre class="src src-shell"># hostname -d                # Same as dnsdomainname
+</pre>
+</div>
+</div>
+</div>
 
-<p>
-DHCP
-</p>
+<div id="outline-container-org8713071" class="outline-3">
+<h3 id="org8713071">DHCP</h3>
+<div class="outline-text-3" id="text-org8713071">
+<div class="org-src-container">
+<pre class="src src-shell"># dhcpcd -n eth0           # Trigger a renew (does not always work)
+# dhcpcd -k eth0           # release and shutdown
+</pre>
+</div>
 
 <p>
 The lease with the full information is stored in:
@@ -1603,11 +1743,10 @@ local</i>.
 </div>
 </div>
 </div>
-</div>
 
-<div id="outline-container-org9160fa6" class="outline-3">
-<h3 id="org9160fa6">More advanced</h3>
-<div class="outline-text-3" id="text-org9160fa6">
+<div id="outline-container-org9160fa6" class="outline-4">
+<h4 id="org9160fa6">More advanced</h4>
+<div class="outline-text-4" id="text-org9160fa6">
 <div class="org-src-container">
 <pre class="src src-shell"># tar c dir/ | gzip | ssh user@remote 'dd of=dir.tgz' # arch dir/ and store remotely.
 # tar cvf - `find . -print` &gt; backup.tar                 # arch the current directory.
@@ -1615,6 +1754,7 @@ local</i>.
 # tar -cf - -C /etc . | ssh user@remote tar xpf - -C /backup/etc      # Remote copy.
 # tar -czf home.tgz --exclude '*.o' --exclude 'tmp/' home/
 </pre>
+</div>
 </div>
 </div>
 </div>
@@ -1631,23 +1771,39 @@ Some important options:
 -size n       n is +-n (k M G T P)
 -cmin n       File's status was last changed n minutes ago.
 </p>
+
 <div class="org-src-container">
-<pre class="src src-shell"># find . -type f ! -perm -444        # Find files not readable by all
-# find . -type d ! -perm -111        # Find dirs not accessible by all
-# find /home/user/ -cmin 10 -print   # Files created or modified in the last 10 min.
-# find . -name '*.[ch]' | xargs grep -E 'expr' # Search 'expr' in this dir and below.
-# find / -name "*.core" | xargs rm   # Find core dumps and delete them (also try core.*)
-# find / -name "*.core" -print -exec rm {} \;  # Other syntax
-# Find images and create an archive, iname is not case sensitive. -r for append
-# find . \( -iname "*.png" -o -iname "*.jpg" \) -print -exec tar -rf images.tar {} \;
-# find . -type f -name "*.txt" ! -name README.txt -print  # Exclude README.txt files
-# find /var/ -size +10M -exec ls -lh {} \;     # Find large files &gt; 10 MB
-# find /var/ -size +10M -ls           # This is simpler
-# find . -size +10M -size -50M -print
-# find /usr/ports/ -name work -type d -print -exec rm -rf {} \;  # Clean the ports
-# Find files with SUID; those file are vulnerable and must be kept secure
-# find / -type f -user root -perm -4000 -exec ls -l {} \;
-# find /home/ -name "*~"   #find tilde files (backup files)
+<pre class="src src-shell">$ find . -type f ! -perm -444        # Find files not readable by all
+$ find . -type d ! -perm -111        # Find dirs not accessible by all
+$ find /home/user/ -cmin 10 -print   # Files created or modified in the last 10 min.
+$ find . -name '*.[ch]' | xargs grep -E 'expr' # Search 'expr' in this dir and below.
+$ find / -name "*.core" | xargs rm   # Find core dumps and delete them (also try core.*)
+$ find / -name "*.core" -print -exec rm {} \;  # Other syntax
+$ Find images and create an archive, iname is not case sensitive. -r for append
+$ find . \( -iname "*.png" -o -iname "*.jpg" \) -print -exec tar -rf images.tar {} \;
+$ find . -type f -name "*.txt" ! -name README.txt -print  # Exclude README.txt files
+$ find /var/ -size +10M -exec ls -lh {} \;     # Find large files &gt; 10 MB
+$ find /var/ -size +10M -ls           # This is simpler
+$ find . -size +10M -size -50M -print
+$ find /usr/ports/ -name work -type d -print -exec rm -rf {} \;  # Clean the ports
+$ Find files with SUID; those file are vulnerable and must be kept secure
+$ find / -type f -user root -perm -4000 -exec ls -l {} \;
+$ find /home/ -name "*~"   #find tilde files (backup files)
+# Find all the files directly under the /etc/ directory that start with the letter p
+# and end in anything using the following command:
+$ find / -regex '^/etc/p[a-z]*$'
+
+# Find all the files on the filesystem that are called configuration, ignoring case,
+# and accommodating abbreviations such as confg , cnfg , and cnfig using the
+# following command:
+$ find / -regex '^[/a-z_]*[cC]+[Oo]*[nN]+[fF]+[iI]*[gF]+$'
+
+# This command will find and delete anything reachable one level from the
+# root that has a name such as 'virus'—case-insensitive.
+
+$ find / -regex '^/[a-z_\-]*/[Vv][iI][rR][uS]*$' –delete
+
+$ find /etc/ -maxdepth 1 -name passwd -exec stat {} \;
 </pre>
 </div>
 </div>
@@ -1657,30 +1813,30 @@ Some important options:
 <h3 id="orgb1053e6">Miscellaneous</h3>
 <div class="outline-text-3" id="text-orgb1053e6">
 <div class="org-src-container">
-<pre class="src src-shell"># which command                      # Show full path name of command
-# time command                         # See how long a command takes to execute
-# time cat                                     # Use time as stopwatch. Ctrl-c to stop
-# set | grep $USER                    # List the current environment
-# cal -3                                         # Display a three month calendar
-# date [-u|--utc|--universal] [MMDDhhmm[[CC]YY][.ss]]
-# date 10022155                       # Set date and time
-# whatis grep                              # Display a short info on the command or word
-# whereis java                            # Search path and standard directories for word
-# setenv varname value           # Set env. variable varname to value (csh/tcsh)
-# export varname="value"        # set env. variable varname to value (sh/ksh/bash)
-# pwd                                # Print working directory
-# mkdir -p /path/to/dir                 # no error if existing, make parent dirs as needed
-# mkdir -p project/{bin,src,obj,doc/{html,man,pdf},debug/some/more/dirs}
-# rmdir /path/to/dir                     # Remove directory
-# rm -rf /path/to/dir                     # Remove directory and its content (force)
-# rm -- -badchar.txt                    # Remove file whitch starts with a dash (-)
-# cp -la /dir1 /dir2                       # Archive and hard link files instead of copy
-# cp -lpR /dir1 /dir2                    #
-# cp unixtoolbox.xhtml{,.bak}  # Short way to copy the file with a new extension
-# mv /dir1 /dir2                           # Rename a directory
-# ls -1                                           # list one file per line
-# history | tail -50                       # Display the last 50 used commands
-# cd -                                            # cd to previous ($OLDPWD) directory
+<pre class="src src-shell">$ which command                      # Show full path name of command
+$ time command                         # See how long a command takes to execute
+$ time cat                                     # Use time as stopwatch. Ctrl-c to stop
+$ set | grep $USER                    # List the current environment
+$ cal -3                                         # Display a three month calendar
+$ date [-u|--utc|--universal] [MMDDhhmm[[CC]YY][.ss]]
+$ date 10022155                       # Set date and time
+$ whatis grep                              # Display a short info on the command or word
+$ whereis java                            # Search path and standard directories for word
+$ setenv varname value           # Set env. variable varname to value (csh/tcsh)
+$ export varname="value"        # set env. variable varname to value (sh/ksh/bash)
+$ pwd                                # Print working directory
+$ mkdir -p /path/to/dir                 # no error if existing, make parent dirs as needed
+$ mkdir -p project/{bin,src,obj,doc/{html,man,pdf},debug/some/more/dirs}
+$ rmdir /path/to/dir                     # Remove directory
+$ rm -rf /path/to/dir                     # Remove directory and its content (force)
+$ rm -- -badchar.txt                    # Remove file whitch starts with a dash (-)
+$ cp -la /dir1 /dir2                       # Archive and hard link files instead of copy
+$ cp -lpR /dir1 /dir2                    #
+$ cp unixtoolbox.xhtml{,.bak}  # Short way to copy the file with a new extension
+$ mv /dir1 /dir2                           # Rename a directory
+$ ls -1                                           # list one file per line
+$ history | tail -50                       # Display the last 50 used commands
+$ cd -                                            # cd to previous ($OLDPWD) directory
 </pre>
 </div>
 </div>
@@ -1692,6 +1848,13 @@ Some important options:
 <p>
 Debian/Ubuntu/Mint
 </p>
+<div class="org-src-container">
+<pre class="src src-shell">$ apt-get update                     # First update the package lists
+$ apt-get install emacs          # Install the package emacs
+$ dpkg --remove emacs        # Remove the package emacs
+$ dpkg -S file                           # find what package a file belongs to
+</pre>
+</div>
 </div>
 </div>
 </div>
@@ -1903,6 +2066,49 @@ Automatic mounts are handled by configuration the <b>/etc/fstab</b> file.
 An entry in an fstab file contains several fields, each
 separated by a space or tab.
 </p>
+</div>
+</div>
+
+<div id="outline-container-org4306245" class="outline-3">
+<h3 id="org4306245">find UUID of a filesystem</h3>
+<div class="outline-text-3" id="text-org4306245">
+<p>
+Look up data on /dev/sda1:
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">topher@crucible:~$ sudo blkid /dev/sda1
+/dev/sda1: UUID="727cac18-044b-4504-87f1-a5aefa774bda" TYPE="ext3"
+</pre>
+</div>
+
+<p>
+Show UUID data for all partitions:
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">topher@crucible:~$ sudo blkid
+/dev/sda1: UUID="727cac18-044b-4504-87f1-a5aefa774bda" TYPE="ext3"
+/dev/sdb: UUID="467c4aa9-963d-4467-8cd0-d58caaacaff4" TYPE="ext3"
+</pre>
+</div>
+
+<p>
+Show UUID data for all partitions in easier to read format: (Note: in newer
+releases, blkid -L has a different meaning, and blkid -o list should be used
+instead)
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">topher@crucible:~$ sudo blkid -L
+device     fs_type label    mount point    UUID
+-------------------------------------------------------------------------------
+/dev/sda1 ext3             /              727cac18-044b-4504-87f1-a5aefa774bda
+/dev/sdc  ext3             /home          467c4aa9-963d-4467-8cd0-d58caaacaff4
+Show just the UUID for /dev/sda1 and nothing else:
+
+topher@crucible:~$ sudo blkid -s UUID -o value /dev/sda1
+727cac18-044b-4504-87f1-a5aefa774bda
+</pre>
+</div>
 </div>
 </div>
 </div>
@@ -2266,9 +2472,9 @@ With tr, use the squeeze repeat option:
 </div>
 </div>
 
-<div id="outline-container-org0e58bfc" class="outline-2">
-<h2 id="org0e58bfc">processes</h2>
-<div class="outline-text-2" id="text-org0e58bfc">
+<div id="outline-container-org1a38fdc" class="outline-2">
+<h2 id="org1a38fdc">processes</h2>
+<div class="outline-text-2" id="text-org1a38fdc">
 </div><div id="outline-container-orgb549a01" class="outline-3">
 <h3 id="orgb549a01">checking the priority of a process?</h3>
 <div class="outline-text-3" id="text-orgb549a01">
@@ -2302,6 +2508,7 @@ renice 10 -p 21827
 </pre>
 </div>
 </div>
+
 <div id="outline-container-org2ca586e" class="outline-3">
 <h3 id="org2ca586e">Setting Permanent Priority on all Processes for a Specific User</h3>
 <div class="outline-text-3" id="text-org2ca586e">
@@ -2453,6 +2660,7 @@ use the <code>scale</code> special variable
 <p>
 The tmpfs filesystem is a RAMDISK.
 </p>
+
 <div class="org-src-container">
 <pre class="src src-shell">sudo mkdir -p /media/ramdisk
 sudo mount -t tmpfs -o size=2048M tmpfs /media/ramdisk
@@ -2461,18 +2669,6 @@ sudo mount -t tmpfs -o size=2048M tmpfs /media/ramdisk
 
 <p>
 <a href="http://askubuntu.com/questions/152868/how-do-i-make-a-ram-disk">http://askubuntu.com/questions/152868/how-do-i-make-a-ram-disk</a>
-</p>
-</div>
-</div>
-<div id="outline-container-orgc660c13" class="outline-2">
-<h2 id="orgc660c13">references</h2>
-<div class="outline-text-2" id="text-orgc660c13">
-<p>
-<a href="http://www.folkstalk.com/2012/02/cut-command-in-unix-linux-examples.html">http://www.folkstalk.com/2012/02/cut-command-in-unix-linux-examples.html</a>
-<a href="http://unix.stackexchange.com/questions/35369/how-to-cut-by-tab-character">http://unix.stackexchange.com/questions/35369/how-to-cut-by-tab-character</a>
-<a href="http://unix.stackexchange.com/questions/145978/replace-multiple-spaces-with-one-using-tr-only">http://unix.stackexchange.com/questions/145978/replace-multiple-spaces-with-one-using-tr-only</a>
-<a href="http://askubuntu.com/questions/499995/change-ip-address-which-is-given-by-tor-using-the-terminal">http://askubuntu.com/questions/499995/change-ip-address-which-is-given-by-tor-using-the-terminal</a>
-<a href="http://superuser.com/questions/792525/how-to-change-ffmpeg-threads-settings">http://superuser.com/questions/792525/how-to-change-ffmpeg-threads-settings</a>
 </p>
 </div>
 </div>
@@ -2537,9 +2733,9 @@ matches the behavior of real web browsers.
 </div>
 </div>
 
-<div id="outline-container-orgd9a5f3d" class="outline-3">
-<h3 id="orgd9a5f3d">make an options request</h3>
-<div class="outline-text-3" id="text-orgd9a5f3d">
+<div id="outline-container-org096f1a1" class="outline-3">
+<h3 id="org096f1a1">make an options request</h3>
+<div class="outline-text-3" id="text-org096f1a1">
 <div class="org-src-container">
 <pre class="src src-shell">curl -i -X OPTIONS http://example.org/path
 </pre>
@@ -2557,15 +2753,16 @@ matches the behavior of real web browsers.
 </div>
 </div>
 
-<div id="outline-container-orgf9ef94f" class="outline-3">
-<h3 id="orgf9ef94f">make an options request</h3>
-<div class="outline-text-3" id="text-orgf9ef94f">
+<div id="outline-container-org3a55828" class="outline-3">
+<h3 id="org3a55828">make an options request</h3>
+<div class="outline-text-3" id="text-org3a55828">
 <div class="org-src-container">
 <pre class="src src-shell">curl -i -X OPTIONS http://example.org/path
 </pre>
 </div>
 </div>
 </div>
+
 <div id="outline-container-org45f8c13" class="outline-3">
 <h3 id="org45f8c13">set a header</h3>
 <div class="outline-text-3" id="text-org45f8c13">
@@ -2645,18 +2842,19 @@ matching mechanism.
 </div><div id="outline-container-orgfce28fa" class="outline-3">
 <h3 id="orgfce28fa">grub change timeout</h3>
 <div class="outline-text-3" id="text-orgfce28fa">
-<p>
-$ sudo vim /etc/default/grub 
-</p>
+<div class="org-src-container">
+<pre class="src src-shell">$ sudo vim /etc/default/grub
+</pre>
+</div>
 
 <p>
 and set the <b>GRUB<sub>TIMEOUT</sub></b>. 
 -1 will disable it. And then run
 </p>
-
-<p>
-$ sudo update-grub
-</p>
+<div class="org-src-container">
+<pre class="src src-shell">$ sudo update-grub
+</pre>
+</div>
 </div>
 </div>
 
@@ -2695,9 +2893,10 @@ So you broke grub? Boot from a live cd, [find your linux partition
 <div id="outline-container-orgb4cc118" class="outline-2">
 <h2 id="orgb4cc118">completely remove a package with configurations</h2>
 <div class="outline-text-2" id="text-orgb4cc118">
-<p>
-sudo apt-get purge &lt;package<sub>name</sub>&gt;
-</p>
+<div class="org-src-container">
+<pre class="src src-shell">$ sudo apt-get purge &lt;package_name&gt;
+</pre>
+</div>
 </div>
 </div>
 
@@ -2707,10 +2906,10 @@ sudo apt-get purge &lt;package<sub>name</sub>&gt;
 <p>
 use synaptic package manager.
 </p>
-
-<p>
-$ sudo dpkg -P package<sub>name</sub>   # -P for purge
-</p>
+<div class="org-src-container">
+<pre class="src src-shell">$ sudo dpkg -P package_name			# -P for purge
+</pre>
+</div>
 </div>
 </div>
 
@@ -2779,15 +2978,16 @@ so I think that things should "just work".
 <div id="outline-container-org636f693" class="outline-2">
 <h2 id="org636f693">json pretty print</h2>
 <div class="outline-text-2" id="text-org636f693">
-<p>
-$ cat some.json | python -m json.tool
-</p>
+<div class="org-src-container">
+<pre class="src src-shell">$ cat some.json | python -m json.tool
+</pre>
+</div>
 </div>
 </div>
 
-<div id="outline-container-orgd032bb8" class="outline-2">
-<h2 id="orgd032bb8">installation</h2>
-<div class="outline-text-2" id="text-orgd032bb8">
+<div id="outline-container-orgc4097f5" class="outline-2">
+<h2 id="orgc4097f5">installation</h2>
+<div class="outline-text-2" id="text-orgc4097f5">
 </div><div id="outline-container-org17375b5" class="outline-3">
 <h3 id="org17375b5">other useful php modules</h3>
 <div class="outline-text-3" id="text-org17375b5">
@@ -3062,9 +3262,9 @@ checkbox in "Utility -&gt; Workarounds -&gt; Force full screen redraws
 <div id="outline-container-orgfec2626" class="outline-2">
 <h2 id="orgfec2626">postgresql</h2>
 <div class="outline-text-2" id="text-orgfec2626">
-</div><div id="outline-container-org2c71b8a" class="outline-3">
-<h3 id="org2c71b8a">installation</h3>
-<div class="outline-text-3" id="text-org2c71b8a">
+</div><div id="outline-container-orga2a7502" class="outline-3">
+<h3 id="orga2a7502">installation</h3>
+<div class="outline-text-3" id="text-orga2a7502">
 <div class="org-src-container">
 <pre class="src src-shell">$ sudo apt-get update
 $ sudo apt-get install postgresql postgresql-contrib
@@ -3435,16 +3635,10 @@ sudo apt-cacher-ng -c <i>etc/apt-cacher-ng</i> Port=3142 ForeGround=1 VerboseLog
 wget "<a href="http://localhost:3142/acng-report.html?abortOnErrors=aOe&amp;calcSize=cs&amp;doDownload=dd&amp;doMirror=Start+Mirroring#bottom">http://localhost:3142/acng-report.html?abortOnErrors=aOe&amp;calcSize=cs&amp;doDownload=dd&amp;doMirror=Start+Mirroring#bottom</a>"
 </p>
 
-<div class="org-src-container">
-<pre class="src src-ditaa">+---------+
-|         |
-| Foo     |
-|         |
-+----+----+---+
-|Bar |Baz     |
-|    |        |
-+----+--------+
-</pre>
+
+<div class="figure">
+<p><img src="img/ditaa-simpleboxes.png" alt="ditaa-simpleboxes.png" />
+</p>
 </div>
 </div>
 </div>
@@ -3527,28 +3721,10 @@ Shared Key Authentication uses a shared secret such as the WEP key to authentica
 client.
 </p>
 
-<div class="org-src-container">
-<pre class="src src-ditaa">+---------+                +---------+
-|cPNK{io} |                |         |
-+         +                +         +
-| client  |--------------&gt; | Access  |
-+         +                + Point   +
-|         |                |         |
-+---------+                +---------+
-    ^                           ^
-    | ------------------------&gt; |
-    | 1)Authentication request  |
-    |                           |
-    | &lt;------------------------ |
-    | 2) AP sends challenge text|
-    |                           |
-    | ------------------------&gt; |
-    | 3) challenge response     |
-    |                           |
-    | &lt;------------------------ |
-    | 4) Authentication success |
-    |    failure                |
-</pre>
+
+<div class="figure">
+<p><img src="img/shared-authentication.png" alt="shared-authentication.png" />
+</p>
 </div>
 
 <p>
@@ -3715,12 +3891,8 @@ $ ifconfig wlan0 up
 </div>
 </div>
 </div>
-</div>
 
-<div id="outline-container-org8b8f9e0" class="outline-2">
-<h2 id="org8b8f9e0">temp</h2>
-<div class="outline-text-2" id="text-org8b8f9e0">
-</div><div id="outline-container-orge75530c" class="outline-3">
+<div id="outline-container-orge75530c" class="outline-3">
 <h3 id="orge75530c">connecting to access point using <code>iwconfig</code></h3>
 <div class="outline-text-3" id="text-orge75530c">
 <div class="org-src-container">
@@ -3731,15 +3903,57 @@ $ ifconfig wlan0 up
 </div>
 </div>
 
+<div id="outline-container-org36e9061" class="outline-2">
+<h2 id="org36e9061">limit CPU usage of a process</h2>
+<div class="outline-text-2" id="text-org36e9061">
+<div class="org-src-container">
+<pre class="src src-shell">cpulimit -l 50 -p 1234
+</pre>
+</div>
 
+<p>
+Where 1234 is the PID of the process.
+</p>
+</div>
+</div>
+<div id="outline-container-orge5e735a" class="outline-2">
+<h2 id="orge5e735a">send output from one terminal to another</h2>
+<div class="outline-text-2" id="text-orge5e735a">
+<div class="org-src-container">
+<pre class="src src-shell">$ route &gt; /dev/pts/16
+</pre>
+</div>
+</div>
+</div>
 
-<div id="outline-container-org0951b3d" class="outline-2">
-<h2 id="org0951b3d">test</h2>
+<div id="outline-container-orgc660c13" class="outline-2">
+<h2 id="orgc660c13">references</h2>
+<div class="outline-text-2" id="text-orgc660c13">
+<p>
+<a href="http://www.folkstalk.com/2012/02/cut-command-in-unix-linux-examples.html">http://www.folkstalk.com/2012/02/cut-command-in-unix-linux-examples.html</a>
+</p>
+
+<p>
+<a href="http://unix.stackexchange.com/questions/35369/how-to-cut-by-tab-character">http://unix.stackexchange.com/questions/35369/how-to-cut-by-tab-character</a>
+</p>
+
+<p>
+<a href="http://unix.stackexchange.com/questions/145978/replace-multiple-spaces-with-one-using-tr-only">http://unix.stackexchange.com/questions/145978/replace-multiple-spaces-with-one-using-tr-only</a>
+</p>
+
+<p>
+<a href="http://askubuntu.com/questions/499995/change-ip-address-which-is-given-by-tor-using-the-terminal">http://askubuntu.com/questions/499995/change-ip-address-which-is-given-by-tor-using-the-terminal</a>
+</p>
+
+<p>
+<a href="http://superuser.com/questions/792525/how-to-change-ffmpeg-threads-settings">http://superuser.com/questions/792525/how-to-change-ffmpeg-threads-settings</a>
+</p>
+</div>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="author">Author: moh</p>
-<p class="date">Created: 2017-02-28 Tue 09:21</p>
+<p class="author">Author: Mohammad Reza Mansouri</p>
+<p class="date">Created: 2017-03-03 Fri 21:36</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

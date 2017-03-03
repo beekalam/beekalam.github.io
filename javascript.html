@@ -3,12 +3,12 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-02-28 Tue 09:03 -->
+<!-- 2017-03-02 Thu 14:01 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title></title>
+<title>javascript recipes</title>
 <meta name="generator" content="Org mode" />
-<meta name="author" content="moh" />
+<meta name="author" content="Mohammad Reza Mansouri" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -251,6 +251,7 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
+<h1 class="title">javascript recipes</h1>
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
@@ -290,7 +291,7 @@ for the JavaScript code in this tag.
 <li><a href="#org8bd1275">multidimensional array</a></li>
 </ul>
 </li>
-<li><a href="#org941dc95">make  a deep copy of an array</a></li>
+<li><a href="#org941dc95">make a deep copy of an array</a></li>
 <li><a href="#org3a07b77">string representation</a></li>
 <li><a href="#orgeec7200">Creating New Arrays from Existing Arrays</a></li>
 <li><a href="#org82700cc">shuffle array</a></li>
@@ -364,7 +365,7 @@ for the JavaScript code in this tag.
 <ul>
 <li><a href="#org4ab810b">Best way to break from nested loops in Javascript?</a></li>
 <li><a href="#org24dddea">Using toString() to detect object class</a></li>
-<li><a href="#org96b21d3">Reflection</a></li>
+<li><a href="#org848d4ea">Reflection</a></li>
 <li><a href="#org544f8fe">cloning objects</a></li>
 <li><a href="#org3258f25">return immutable object from a function</a></li>
 <li><a href="#orgfd69e07">tell if a number is even using bitwise &amp; operator</a></li>
@@ -441,7 +442,7 @@ for the JavaScript code in this tag.
 <ul>
 <li><a href="#org2474503">retrieval</a></li>
 <li><a href="#org4f8b5db">Reference</a></li>
-<li><a href="#orgd8aafbe">Reflection</a></li>
+<li><a href="#org28f93af">Reflection</a></li>
 <li><a href="#org67520d2">Enumeration</a></li>
 <li><a href="#org634d9ad">Delete</a></li>
 <li><a href="#org6361ff8">Traversing an object</a></li>
@@ -600,10 +601,16 @@ for the JavaScript code in this tag.
 <li><a href="#org64cc5e1">reload an image</a></li>
 </ul>
 </li>
+<li><a href="#org29f73d6">URL</a>
+<ul>
+<li><a href="#org85d83c0">decode/encode URL</a></li>
+</ul>
+</li>
 <li><a href="#org9089b41">references</a></li>
 </ul>
 </div>
 </div>
+
 <div id="outline-container-org950aefa" class="outline-2">
 <h2 id="org950aefa">operators</h2>
 <div class="outline-text-2" id="text-org950aefa">
@@ -1311,19 +1318,21 @@ JavaScript does not have arrays of more than one dimension, but like most C lan-
 guages, it can have arrays of arrays:
 </p>
 
-<p>
-var matrix = [
+<div class="org-src-container">
+<pre class="src src-javascript">var matrix = [
 [0, 1, 2],
 [3, 4, 5],
 [6, 7, 8]
 ];
 matrix[2][1] // 7
-</p>
+</pre>
+</div>
 
 <p>
 To make a two-dimensional array or an array of arrays, you must build the arrays
 yourself:
 </p>
+
 <div class="org-src-container">
 <pre class="src src-javascript">for (i = 0; i &lt; n; i += 1) {
   my_array[i] = [];
@@ -1374,7 +1383,7 @@ document.writeln(myMatrix[3][3]);  // 1
 </div>
 
 <div id="outline-container-org941dc95" class="outline-3">
-<h3 id="org941dc95">make  a deep copy of an array</h3>
+<h3 id="org941dc95">make a deep copy of an array</h3>
 <div class="outline-text-3" id="text-org941dc95">
 <div class="org-src-container">
 <pre class="src src-javascript">function copy(arr1, arr2) {
@@ -1395,6 +1404,7 @@ There are two functions that return string representations of an array: join() a
 toString() . Both functions return a string containing the elements of the array de‐
 limited by commas. Here are some examples:
 </p>
+
 <div class="org-src-container">
 <pre class="src src-javascript">var names = ["David", "Cynthia", "Raymond", "Clayton", "Mike", "Jennifer"];
 var namestr = names.join();
@@ -1416,6 +1426,7 @@ print(namestr); // David,Cynthia,Raymond,Clayton,Mike,Jennifer
 <p>
 <a href="https://bost.ocks.org/mike/shuffle/">https://bost.ocks.org/mike/shuffle/</a>
 </p>
+
 <div class="org-src-container">
 <pre class="src src-javascript">function shuffle(array) {
   var copy = [], n = array.length, i;
@@ -1463,6 +1474,7 @@ The sort is not necessarily stable (that is, elements that compare equal do not
 necessarily remain in their original order).
 If the objective is to sort by length then by dictionary order you must specify additional criteria:
 </p>
+
 <div class="org-src-container">
 <pre class="src src-javascript">["c", "a", "b"].sort(function(a, b) {
   return a.length - b.length || // sort by length, if equal then
@@ -1479,12 +1491,14 @@ If the objective is to sort by length then by dictionary order you must specify 
 <p>
 for example, the following will create and array from 1-n.
 </p>
+
 <div class="org-src-container">
 <pre class="src src-javascript">Array.from({length:n}, (v,k) =&gt; k+1);
 </pre>
 </div>
 </div>
 </div>
+
 <div id="outline-container-orgd2943ad" class="outline-3">
 <h3 id="orgd2943ad">check for array equality?</h3>
 <div class="outline-text-3" id="text-orgd2943ad">
@@ -1556,6 +1570,7 @@ for example, the following will create and array from 1-n.
 </div>
 </div>
 </div>
+
 <div id="outline-container-org8f66273" class="outline-3">
 <h3 id="org8f66273">Checking for an Existing, Nonempty String</h3>
 <div class="outline-text-3" id="text-org8f66273">
@@ -1577,6 +1592,7 @@ typeof unknownVariable.valueOf() == 'string') ...
 </div>
 </div>
 </div>
+
 <div id="outline-container-orgfd03ba4" class="outline-3">
 <h3 id="orgfd03ba4">replace all non-digit characters</h3>
 <div class="outline-text-3" id="text-orgfd03ba4">
@@ -1596,6 +1612,7 @@ typeof unknownVariable.valueOf() == 'string') ...
 </div>
 </div>
 </div>
+
 <div id="outline-container-org2601d37" class="outline-3">
 <h3 id="org2601d37">split a string by digits of size one or bigger(ignoring negative nums)</h3>
 <div class="outline-text-3" id="text-org2601d37">
@@ -1606,6 +1623,7 @@ str.match((/\d+/g) || []).map(Number)
 </div>
 </div>
 </div>
+
 <div id="outline-container-org4926c44" class="outline-3">
 <h3 id="org4926c44">rotate string</h3>
 <div class="outline-text-3" id="text-org4926c44">
@@ -1629,6 +1647,7 @@ var  allRotations = function(str){
 </div>
 </div>
 </div>
+
 <div id="outline-container-org88eaa12" class="outline-3">
 <h3 id="org88eaa12">name of current function?</h3>
 <div class="outline-text-3" id="text-org88eaa12">
@@ -1687,15 +1706,14 @@ console.log(str);
 <p>
 The results are:
 </p>
-
-<p>
+<pre class="example">
 at 7 we found the
 at 11 we found time
 at 28 we found the
 at 32 we found time
 at 49 we found the
 at 53 we found time
-</p>
+</pre>
 </div>
 </div>
 
@@ -1711,16 +1729,15 @@ ou can coerce forEach() into working with a NodeList (the collection returned by
 using the following:
 </p>
 
-<p>
-// use querySelector to find all second table cells
+<div class="org-src-container">
+<pre class="src src-javascript">// use querySelector to find all second table cells
 var cells = document.querySelectorAll("td + td");
-</p>
 
-<p>
 [].forEach.call(cells,function(cell) {
       sum+=parseFloat(cell.firstChild.data);
    });
-</p>
+</pre>
+</div>
 </div>
 </div>
 
@@ -1734,6 +1751,7 @@ You want to assign array element values to several variables, but you really don
 <p>
 Use ECMAScript 6’s destructuring assignment to simplify array assignment:
 </p>
+
 <div class="org-src-container">
 <pre class="src src-javascript">var stateValues = [459, 144, 96, 34, 0, 14];
 
@@ -1750,6 +1768,7 @@ Converting Function Arguments into an Array
 <p>
 Use Array.prototype.slice() and then the function call() method to convert the arguments collection into an array:
 </p>
+
 <div class="org-src-container">
 <pre class="src src-javascript">function someFunc() {
    var args = Array.prototype.slice.call(arguments);
@@ -1810,6 +1829,7 @@ let v  = new Set([...s1, ...s2]);
 </div>
 </div>
 </div>
+
 <div id="outline-container-org189897c" class="outline-3">
 <h3 id="org189897c">Max &amp; Min value of a array of number?</h3>
 <div class="outline-text-3" id="text-org189897c">
@@ -1957,6 +1977,7 @@ provided your times are based on a 24 hour clock (and they should be
 if there's no AM/PM) and provided they are always in the format
 HH:MM:SS you can do a direct string comparison:
 </p>
+
 <div class="org-src-container">
 <pre class="src src-javascript">var str1 = "10:20:45",
     str2 = "05:10:10";
@@ -2018,6 +2039,7 @@ alert(daydiff(parseDate($('#first').val()), parseDate($('#second').val())));
 </div>
 </div>
 </div>
+
 <div id="outline-container-org8a3995c" class="outline-2">
 <h2 id="org8a3995c">Regular expressions</h2>
 <div class="outline-text-2" id="text-org8a3995c">
@@ -2140,10 +2162,11 @@ for example remove the exclamation mark from the end of a string(it can be one o
 <p>
 for example I want to remove all occurrences of substring = . in a string except the last one.
 The following one-liner is a regular expression that takes advantage of the fact
- that the * character is greedy, and that replace will leave the string alone if no match is found.
- It works by matching [longest string including dots][dot] and leaving [rest of string],
- and if a match is found it strips all '.'s from it:
+that the * character is greedy, and that replace will leave the string alone if no match is found.
+It works by matching [longest string including dots][dot] and leaving [rest of string],
+and if a match is found it strips all '.'s from it:
 </p>
+
 <div class="org-src-container">
 <pre class="src src-javascript">'a.b.c.d'.replace(/(.*)\./, x =&gt; x.replace(/\./g,'')+'.')
 (If your string contains newlines, you will have to use [.\n] rather than naked .s)
@@ -2161,6 +2184,7 @@ The following one-liner is a regular expression that takes advantage of the fact
 </p>
 </div>
 </div>
+
 <div id="outline-container-orga665a02" class="outline-3">
 <h3 id="orga665a02">parsenumber example</h3>
 <div class="outline-text-3" id="text-orga665a02">
@@ -2173,7 +2197,7 @@ an optional exponent part:
 <div class="org-src-container">
 <pre class="src src-javascript">var parse_number = /^-?\d+(?:\.\d*)?(?:e[+\-]?\d+)?$/i;
 var test = function (num) {
-document.writeln(parse_number.test(num));
+  document.writeln(parse_number.test(num));
 };
 test('1');             // true
 test('number');        // false
@@ -2185,10 +2209,10 @@ test('123.45D-67');    // false
 </div>
 
 <p>
-parse<sub>number</sub> successfully identified the strings that conformed to our specification
+<code>parse_number</code> successfully identified the strings that conformed to our specification
 and those that did not, but for those that did not, it gives us no information on why
 or where they failed the number test.
-Let’s break down parse<sub>number</sub> :
+Let’s break down <code>parse_number</code> :
 </p>
 
 <p>
@@ -2289,6 +2313,7 @@ var re = /a|b/i;
 if the set contains {A,C,T} then the following would be matches: ACT,
 CAT, TACT, &#x2026; However, the following would not match: CAB, TAN, CUT.
 </p>
+
 <div class="org-src-container">
 <pre class="src src-javascript">(?=.*A)(?=.*C)(?=.*T).{3}
 </pre>
@@ -2305,6 +2330,7 @@ CAT, TACT, &#x2026; However, the following would not match: CAB, TAN, CUT.
 <p>
 all the words that contains the letter l and a as - car, patrol, left
 </p>
+
 <div class="org-src-container">
 <pre class="src src-javascript">\b(?=\w*[al])\w+\b
 </pre>
@@ -2539,9 +2565,9 @@ toString.call(null);        // [object Null]
 </div>
 </div>
 
-<div id="outline-container-org96b21d3" class="outline-3">
-<h3 id="org96b21d3">Reflection</h3>
-<div class="outline-text-3" id="text-org96b21d3">
+<div id="outline-container-org848d4ea" class="outline-3">
+<h3 id="org848d4ea">Reflection</h3>
+<div class="outline-text-3" id="text-org848d4ea">
 <div class="org-src-container">
 <pre class="src src-javascript">function isUndefined(value) {
    return typeof value === 'undefined';
@@ -2626,39 +2652,33 @@ function imm1(name, age, location, status) {
 <div class="outline-text-3" id="text-orga10e1b4">
 <p>
 Since JavaScript uses function scope, the meaning of this is quite different than what you get in PHP,
- and causes a lot of confusion. Consider the following:
+and causes a lot of confusion. Consider the following:
 </p>
 
-<p>
-#begin<sub>src</sub> javascript
-console.log(this); // outputs window object
-</p>
+<div class="org-src-container">
+<pre class="src src-javascript">console.log(this); // outputs window object
 
-<p>
 var myFunction = function() {
   console.log(this);
 }
-</p>
 
-<p>
 myFunction(); //outputs window object
-</p>
 
-<p>
 var newObject = {
   myFunction: myFunction
 }
-</p>
+
+newObject.myFunction(); //outputs newObjectthis by default refers to the object a function is contained in.
+</pre>
+</div>
 
 <p>
-newObject.myFunction(); //outputs newObjectthis by default refers to the object a function is contained in. 
 Since myFunction() is a property of the global object, this is a reference to the global object, which is window.
-#+end<sub>src</sub>
-</p>
-
-<p>
 this by default refers to the object a function is contained in. Since myFunction() is a property of the global object,
 this is a reference to the global object, which is window.
+</p>
+
+<p>
 Now when we mix myFunction() into a newObject, this now refers to newObject. In PHP and other similar languages,
 this always refers to the the instance of a class containing the method.
 You could argue that JavaScript is doing something stupid here, but truthfully much of the power of the JavaScript
@@ -2666,20 +2686,17 @@ language comes from this feature. In fact, we can even replace the value of this
 by using the call() or apply() methods.
 </p>
 
-<p>
-var myFunction = function(arg1, arg2) {
+<div class="org-src-container">
+<pre class="src src-javascript">var myFunction = function(arg1, arg2) {
   console.log(this, arg1, arg2);
 };
-</p>
 
-<p>
 var newObject = {};
-</p>
 
-<p>
 myFunction.call(newObject, 'foo', 'bar'); //outputs newObject "foo" "bar"
 myFunction.apply(newObject, ['foo', 'bar']); //outputs newObject "foo" "bar"
-</p>
+</pre>
+</div>
 
 <p>
 But let's not get ahead of ourselves. All we are doing here is invoking the function myFunction by
@@ -2699,24 +2716,25 @@ the first argument and apply() expects and array of arguments as it's second arg
 <div class="outline-text-4" id="text-orgf5c98d5">
 <p>
 First, let's look at the core function invocation primitive, a Function's call method[1].
- The call method is relatively straight forward.
+The call method is relatively straight forward.
 Make an argument list (argList) out of parameters 1 through the end
 The first parameter is thisValue
 Invoke the function with this set to thisValue and the argList as its argument list
 For example:
 </p>
 
-<p>
-function hello(thing) {  
+<div class="org-src-container">
+<pre class="src src-javascript">function hello(thing) {  
   console.log(this + " says hello " + thing);
 }
-</p>
+</pre>
+</div>
 
 <p>
 hello.call("Yehuda", "world") //=&gt; Yehuda says hello world  
 As you can see, we invoked the hello method with this set to "Yehuda" and a single argument "world". 
 This is the core primitive of JavaScript function invocation. You can think of all other function calls as
- desugaring to this primitive. (to "desugar" is to take a convenient syntax and describe it in terms of a more basic core primitive).
+desugaring to this primitive. (to "desugar" is to take a convenient syntax and describe it in terms of a more basic core primitive).
 </p>
 
 <p>
@@ -2730,42 +2748,38 @@ This is the core primitive of JavaScript function invocation. You can think of a
 <div class="outline-text-4" id="text-orgf5b4c95">
 <p>
 Obviously, invoking functions with call all the time would be pretty annoying.
- JavaScript allows us to invoke functions directly using the parens syntax (hello("world").
- When we do that, the invocation desugars:
+JavaScript allows us to invoke functions directly using the parens syntax (hello("world").
+When we do that, the invocation desugars:
 </p>
 
-<p>
-function hello(thing) {  
+<div class="org-src-container">
+<pre class="src src-javascript">function hello(thing) {  
   console.log("Hello " + thing);
 }
-</p>
 
-<p>
 // this:
 hello("world")
-</p>
 
-<p>
 // desugars to:
 hello.call(window, "world");  
 This behavior has changed in ECMAScript 5 only when using strict mode[2]:
-</p>
 
-<p>
 // this:
 hello("world")
-</p>
+
+// desugars to:
+hello.call(undefined, "world");
+</pre>
+</div>
 
 <p>
-// desugars to:
-hello.call(undefined, "world");  
 The short version is: a function invocation like fn(&#x2026;args) is the
 same as fn.call(window [ES5-strict: undefined], &#x2026;args).
 </p>
 
 <p>
 Note that this is also true about functions declared inline: (function() {})() is the
- same as (function() {}).call(window [ES5-strict: undefined).
+same as (function() {}).call(window [ES5-strict: undefined).
 </p>
 </div>
 </div>
@@ -2777,46 +2791,44 @@ Note that this is also true about functions declared inline: (function() {})() i
 The next very common way to invoke a method is as a member of an object (person.hello()). In this case, the invocation desugars:
 </p>
 
-<p>
-var person = {  
+<div class="org-src-container">
+<pre class="src src-javascript">var person = {  
   name: "Brendan Eich",
   hello: function(thing) {
     console.log(this + " says hello " + thing);
   }
 }
-</p>
 
-<p>
 // this:
 person.hello("world")
-</p>
+
+// desugars to this:
+person.hello.call(person, "world");
+</pre>
+</div>
 
 <p>
-// desugars to this:
-person.hello.call(person, "world");  
 Note that it doesn't matter how the hello method becomes attached to the object in this form. 
 Remember that we previously defined hello as a standalone function. Let's see what happens if we attach is to the object dynamically:
 </p>
 
-<p>
-function hello(thing) {  
-console.log(this + " says hello " + thing);
+<div class="org-src-container">
+<pre class="src src-javascript">function hello(thing) {  
+  console.log(this + " says hello " + thing);
 }
-</p>
 
-<p>
 person = { name: "Brendan Eich" }  
 person.hello = hello;
-</p>
 
-<p>
 person.hello("world") // still desugars to person.hello.call(person, "world")
-</p>
+
+hello("world") // "[object DOMWindow]world"
+</pre>
+</div>
 
 <p>
-hello("world") // "[object DOMWindow]world"  
 Notice that the function doesn't have a persistent notion of its 'this'. It is always set at call time based upon
- the way it was invoked by its caller.
+the way it was invoked by its caller.
 </p>
 </div>
 </div>
@@ -2826,70 +2838,77 @@ Notice that the function doesn't have a persistent notion of its 'this'. It is a
 <div class="outline-text-4" id="text-orge18d56e">
 <p>
 Because it can sometimes be convenient to have a reference to a function with a persistent this value,
- people have historically used a simple closure trick to convert a function into one with an unchanging this:
+people have historically used a simple closure trick to convert a function into one with an unchanging this:
 </p>
 
-<p>
-var person = {  
+<div class="org-src-container">
+<pre class="src src-javascript">var person = {  
   name: "Brendan Eich",
   hello: function(thing) {
     console.log(this.name + " says hello " + thing);
   }
 }
-</p>
 
-<p>
 var boundHello = function(thing) { return person.hello.call(person, thing); }
-</p>
+
+boundHello("world");
+</pre>
+</div>
 
 <p>
-boundHello("world");  
 Even though our boundHello call still desugars to boundHello.call(window, "world"),
- we turn right around and use our primitive call method to change the this value back to what we want it to be.
+we turn right around and use our primitive call method to change the this value back to what we want it to be.
 </p>
 
 <p>
 We can make this trick general-purpose with a few tweaks:
 </p>
 
-<p>
-var bind = function(func, thisValue) {  
+<div class="org-src-container">
+<pre class="src src-javascript">var bind = function(func, thisValue) {  
   return function() {
     return func.apply(thisValue, arguments);
   }
 }
-</p>
 
-<p>
 var boundHello = bind(person.hello, person);  
-boundHello("world") // "Brendan Eich says hello world"  
-In order to understand this, you just need two more pieces of information. First, arguments is an Array-like object that represents all of the arguments passed into a function. Second, the apply method works exactly like the call primitive, except that it takes an Array-like object instead of listing the arguments out one at a time.
+
+boundHello("world") // "Brendan Eich says hello world"
+</pre>
+</div>
+
+<p>
+In order to understand this, you just need two more pieces of information.
+First, arguments is an Array-like object that represents all of the arguments
+passed into a function. Second, the apply method works exactly like the call
+primitive, except that it takes an Array-like object instead of listing the
+arguments out one at a time.
 </p>
 
 <p>
-Our bind method simply returns a new function. When it is invoked, our new function simply invokes the original function that was passed in, setting the original value as this. It also passes through the arguments.
+Our bind method simply returns a new function. When it is invoked, our new
+function simply invokes the original function that was passed in, setting the
+original value as this. It also passes through the arguments.
 </p>
 
 <p>
-Because this was a somewhat common idiom, ES5 introduced a new method bind on all Function objects that implements this behavior:
+Because this was a somewhat common idiom, ES5 introduced a new method bind on
+all Function objects that implements this behavior:
 </p>
 
-<p>
-var boundHello = person.hello.bind(person);  
+<div class="org-src-container">
+<pre class="src src-javascript">var boundHello = person.hello.bind(person);  
 boundHello("world") // "Brendan Eich says hello world"  
 This is most useful when you need a raw function to pass as a callback:
-</p>
 
-<p>
 var person = {  
   name: "Alex Russell",
   hello: function() { console.log(this.name + " says hello world"); }
 }
-</p>
 
-<p>
 $("#some-div").click(person.hello.bind(person));
-</p>
+</pre>
+</div>
 
 <p>
 // when the div is clicked, "Alex Russell says hello world" is printed
@@ -3692,20 +3711,22 @@ for (var opt in (repeat.defaultOptions || {})) {
 </div><div id="outline-container-org280f4db" class="outline-3">
 <h3 id="org280f4db">Grab an element by its ID.</h3>
 <div class="outline-text-3" id="text-org280f4db">
-<p>
-document.getElementById('elementId')  //plain W3C DOM
+<div class="org-src-container">
+<pre class="src src-javascript">document.getElementById('elementId')  //plain W3C DOM
 $('#elementId')  //jquery
-</p>
+</pre>
+</div>
 </div>
 </div>
 
 <div id="outline-container-org4c2dcb9" class="outline-3">
 <h3 id="org4c2dcb9">Grab elements by XPath/CSS selection.</h3>
 <div class="outline-text-3" id="text-org4c2dcb9">
-<p>
-document.querySelectorAll('selectors')
+<div class="org-src-container">
+<pre class="src src-javascript">document.querySelectorAll('selectors')
 $('selectors')
-</p>
+</pre>
+</div>
 </div>
 </div>
 
@@ -3720,17 +3741,16 @@ $('selectors')
 </div><div id="outline-container-orga77091b" class="outline-3">
 <h3 id="orga77091b">Style an element.</h3>
 <div class="outline-text-3" id="text-orga77091b">
-<p>
-// jQuery
+<div class="org-src-container">
+<pre class="src src-javascript">// jQuery
 $(element).css('prop', 'value')
 $(element).css({ prop: 'value', prop2: 'value2' })
-</p>
 
-<p>
 Retrieve a style.
 // jQuery
 $(element).css('prop')
-</p>
+</pre>
+</div>
 </div>
 </div>
 
@@ -3782,12 +3802,14 @@ $(elementOrSelector).bind('event', handlerFx)
 <div id="outline-container-org1d794c1" class="outline-3">
 <h3 id="org1d794c1">Listen to an event on multiple elements.</h3>
 <div class="outline-text-3" id="text-org1d794c1">
-<p>
-// jQuery
+<div class="org-src-container">
+<pre class="src src-javascript">// jQuery
 $(elements).bind('event', handlerFx)
-</p>
+</pre>
 </div>
 </div>
+</div>
+
 <div id="outline-container-orga62d42c" class="outline-3">
 <h3 id="orga62d42c">Stop listening.</h3>
 </div>
@@ -3931,9 +3953,9 @@ a = b = c = {};
 </div>
 </div>
 
-<div id="outline-container-orgd8aafbe" class="outline-3">
-<h3 id="orgd8aafbe">Reflection</h3>
-<div class="outline-text-3" id="text-orgd8aafbe">
+<div id="outline-container-org28f93af" class="outline-3">
+<h3 id="org28f93af">Reflection</h3>
+<div class="outline-text-3" id="text-org28f93af">
 <div class="org-src-container">
 <pre class="src src-javascript">typeof flight.number   // 'number'
 typeof flight.toString // 'function'
@@ -5504,13 +5526,14 @@ or by tag name (document.getElementsByTagName). You can also search
 for an element by a CSS selector (document.querySelector):
 </p>
 
-<p>
+<pre class="example">
 &lt;article id="bar"&gt;
   &lt;h2&gt;Lorem ipsum&lt;/h2&gt;
 &lt;/article&gt;
+
 var article = document.querySelector( "#bar" ),
       heading = article.querySelector( "h2" );
-</p>
+</pre>
 
 <p>
 A selector builds from one or many type (tag) selectors, class
@@ -5522,17 +5545,14 @@ gives quite a number of possible options. So it can be hard to pick a
 strategy to bind HTML elements from JavaScript. My advice would be to
 always use the data-* attribute selectors:
 </p>
-
-<p>
+<pre class="example">
 &lt;article data-bind="bar"&gt;
   &lt;h2 data-bind="heading"&gt;Lorem ipsum&lt;/h2&gt;
 &lt;/article&gt;
-</p>
 
-<p>
 var article = document.querySelector( "[data-bind=\"bar\"]" ),
       heading = article.querySelector( "[data-bind=\"heading\"]" );
-</p>
+</pre>
 
 <p>
 This way we are independent from the HTML structure. If we change
@@ -5547,19 +5567,17 @@ While querySelector takes the first element in the DOM to match the
 selector, querySelectorAll retrieves all of them:
 </p>
 
-<p>
+<pre class="example">
 &lt;ul data-bind="bar"&gt;
   &lt;li data-bind="item"&gt;Lorem ipsum&lt;/li&gt;
   &lt;li data-bind="item"&gt;Lorem ipsum&lt;/li&gt;
   &lt;li data-bind="item"&gt;Lorem ipsum&lt;/li&gt;
 &lt;/ul&gt;
-</p>
 
-<p>
 var ul = document.querySelector( "[data-bind=\"bar\"]" ),
       lis = ul.querySelectorAll( "[data-bind=\"item\"]" );
 console.log( lis.length );
-</p>
+</pre>
 
 <p>
 The found elements are represented as a NodeList. It looks like an
@@ -5567,12 +5585,12 @@ array, but it's not. It's a live collection that is being updated with
 every DOM reflow. Consider the following example:
 </p>
 
-<p>
+<pre class="example">
 var divs = document.querySelectorAll( "div" ), i; 
 for ( i = 0; i &lt; divs.length; i++ ) { 
   document.appendChild( document.createElement( "div" ) ); 
 }
-</p>
+</pre>
 
 <p>
 The preceding code causes an infinite loop, because whenever we access
@@ -5589,22 +5607,24 @@ collection into an array such as [].slice.call( nodeList ), as covered
 in Chapter 1, Diving into JavaScript Core. In ES6, this can be done
 with the [&#x2026;nodeList]spread operator:
 </p>
-
-<p>
+<pre class="example">
 var ul = document.querySelector( "[data-bind=\"bar\"]" ),
       lis = ul.querySelectorAll( "[data-bind=\"item\"]" );
-console.log( [].slice.call( lis ) ); <i>/ into array ES5 way
-console.log( [ &#x2026;lis ] ); /</i> into array ES6 way
-</p>
+console.log( [].slice.call( lis ) ); // into array ES5 way
+console.log( [ ...lis ] ); // into array ES6 way
+</pre>
 
 <p>
 In addition to querying, we can test whether a found element matches a given selector:
 </p>
 
-<p>
+<pre class="example">
 console.log( el.matches( ".foo &gt; .bar" ) );
 console.log( input.matches( ":checked" ) );
- Changing the DOM
+</pre>
+
+<p>
+Changing the DOM
 </p>
 
 <p>
@@ -5614,20 +5634,20 @@ different ways. We can simply set new HTML content with the
 el.innerHTML method:
 </p>
 
-<p>
+<pre class="example">
 var target = document.getElementById( "target" );
 target.innerHTML = "&lt;div&gt;&lt;/div&gt;";
-</p>
+</pre>
 
 <p>
 Otherwise, we can create a node (document.createElement) and inject it into the DOM (el.appendChild):
 </p>
 
-<p>
+<pre class="example">
 var target = document.getElementById( "target" ),
       div = document.createElement( "div" ),
 target.appendChild( div );
-</p>
+</pre>
 
 <p>
 Here you should remember that every time we change el.innerHTML or
@@ -5644,32 +5664,24 @@ of creating every element in a loop, we can clone the one created
 originally (el.cloneNode), which is way faster:
 </p>
 
-<p>
+<pre class="example">
 var target = document.getElementById( "target" ),
     /**
-</p>
-<ul class="org-ul">
-<li>Create a complex element</li>
-<li>@returns {Node}</li>
-</ul>
-<p>
- */
-createNewElement = function(){
-  var div = document.createElement( "div" ),
-      span = document.createElement( "span" );
-  span.appendChild( document.createTextNode( "Bar" ) );
-  div.appendChild( span );
-  return div;
-},
-el;
-</p>
+     * Create a complex element
+     * @returns {Node}
+     */
+    createNewElement = function(){
+      var div = document.createElement( "div" ),
+          span = document.createElement( "span" );
+      span.appendChild( document.createTextNode( "Bar" ) );
+      div.appendChild( span );
+      return div;
+    },
+    el;
 
-<p>
-el = createNewElement();
-// loop begins
-target.appendChild( el.cloneNode( true ) );
-// loop ends
-</p>
+el = createNewElement(); // loop begins
+target.appendChild( el.cloneNode( true ) ); // loop ends
+</pre>
 
 <p>
 On the other hand, we can create a document fragment
@@ -5691,30 +5703,31 @@ and bar nodes), el.appendChild isn't the right method. We have to go
 with el.insertBefore:
 </p>
 
-<p>
+<pre class="example">
 parent.insertBefore(el, parent.firstChild);
-</p>
+</pre>
 
 <p>
 To remove a particular element from the DOM, we do the following trick:
 </p>
 
-<p>
+<pre class="example">
 el.parentNode.removeChild(el);
-</p>
+</pre>
 
 <p>
 In addition, we can reload an element, for example, to reset all the subscribed listeners:
 </p>
 
-<p>
+<pre class="example">
 function reload( el ) {
     var elClone = el.cloneNode( true );
     el.parentNode &amp;&amp; el.parentNode.replaceChild( elClone, el );
 }
-</p>
+</pre>
 </div>
 </div>
+
 <div id="outline-container-orge79cf00" class="outline-3">
 <h3 id="orge79cf00">styling the DOM</h3>
 <div class="outline-text-3" id="text-orge79cf00">
@@ -5726,13 +5739,13 @@ intended classes to an element via the el.className property. However,
 in the real world, the el.classList object is much more useful:
 </p>
 
-<p>
+<pre class="example">
 el.classList.add( "is-hidden" );
 el.classList.remove( "is-hidden" );
 var isAvailable = true;
 el.classList.toggle("is-hidden", !isAvailable );
 if ( el.classList.contains( "is-hidden" ) ){}
-</p>
+</pre>
 
 <p>
 Here, in addition to the obvious add/remove/contains methods, we also
@@ -5747,19 +5760,19 @@ the CSS. Thus, we can read or set dynamic styling information on an
 element using the el.style property:
 </p>
 
-<p>
+<pre class="example">
 el.style.color = "red";
 el.style.fontFamily = "Arial";
 el.style.fontSize = "1.2rem";
-</p>
+</pre>
 
 <p>
 A lesser known technique is to change the actual text of the style rule:
 </p>
 
-<p>
+<pre class="example">
 el.style.cssText = "color:red;font-family: Arial;font-size: 1.2rem;";
-</p>
+</pre>
 
 <p>
 As you can see, the second approach is not that flexible. You cannot
@@ -5773,29 +5786,25 @@ While el.style comprises explicit styles of an element,
 window.getComputedStyle returns inherited (computed) styles:
 </p>
 
-<p>
+<pre class="example">
 var el = document.querySelector( "h1" ),
     /**
-</p>
-<ul class="org-ul">
-<li>window.getComputedStyle</li>
-<li>@param {HTMLElement} el</li>
-<li>@param {String} pseudo - pseudo-element selector or null</li>
-<li>for regular elements</li>
-<li>@return {CSSStyleDeclaration}</li>
-</ul>
-<p>
- */
+     * window.getComputedStyle
+     * @param {HTMLElement} el
+     * @param {String} pseudo - pseudo-element selector or null 
+     * for regular elements
+     * @return {CSSStyleDeclaration}
+     */
 css = window.getComputedStyle( el, null );
 console.log( css.getPropertyValue( "font-family" ) );
-</p>
+</pre>
 
 <p>
 The cases we've just examined refer to inline styles. In fact, we can
 access external or internal stylesheets as well:
 </p>
 
-<p>
+<pre class="example">
 &lt;style type="text/css"&gt;
 .foo {
  color: red;
@@ -5805,10 +5814,10 @@ access external or internal stylesheets as well:
 &lt;script type="text/javascript"&gt;
 var stylesheet = document.styleSheets[ 0 ];
 stylesheet.cssRules[ 0 ].style.color = "red";
-<i>/ or
-/</i> stylesheet.cssRules[ 0 ].style.cssText = "color: red;";
+// or
+// stylesheet.cssRules[ 0 ].style.cssText = "color: red;";
 &lt;/script&gt;
-</p>
+</pre>
 
 <p>
 Why would we do so? There are special cases. For example, if we want
@@ -5816,12 +5825,12 @@ to modify, let's say, pseudo-element style, we have to involve
 stylesheets:
 </p>
 
-<p>
+<pre class="example">
 var stylesheet = document.styleSheets[ 0 ];
 stylesheet.addRule( ".foo::before", "color: green" );
 // or
 stylesheet.insertRule( ".foo::before { color: green }", 0 );
-</p>
+</pre>
 </div>
 </div>
 
@@ -6074,21 +6083,19 @@ method, subscribe listeners to request-dependent events, set request
 headers (setRequestHeader), and eventually call the send method:
 </p>
 
-<p>
+<pre class="example">
 var xhr = new XMLHttpRequest();
-xhr.open( "GET", "<a href="http://www.telize.com/jsonip?callback=0">http://www.telize.com/jsonip?callback=0</a>", true );
+xhr.open( "GET", "http://www.telize.com/jsonip?callback=0", true );
 xhr.onload = function() {
-      if ( this.status <code>=</code> 200 ) {
+      if ( this.status === 200 ) {
         return console.log( this.response );
       }
     };
-</p>
 
-<p>
 xhr.responseType = "json";
 xhr.setRequestHeader( "Content-Type", "application/x-www-form-urlencoded" );
 xhr.send( null );
-</p>
+</pre>
 
 <p>
 More options are available. For example, we can leverage the progress
@@ -6104,16 +6111,16 @@ be found at <a href="https://github.com/Raynos/xhr">https://github.com/Raynos/xh
 this simple:
 </p>
 
-<p>
+<pre class="example">
 xhr({
-  uri: "<a href="http://www.telize.com/jsonip">http://www.telize.com/jsonip</a>",
+  uri: "http://www.telize.com/jsonip",
   headers: {
     "Content-Type": "application/json"
   }
 }, function ( err, resp ) {
   console.log( resp );
 })
-</p>
+</pre>
 
 <p>
 Besides, the library provides a mock object that can be used to replace real XHR in unit tests.
@@ -6132,14 +6139,14 @@ built-in method called Fetch API. Just consider how easy it is to make
 a call with it:
 </p>
 
-<p>
-fetch( "<i>rest/foo" ).then(function( response ) {
-  /</i> Convert to JSON
+<pre class="example">
+fetch( "/rest/foo" ).then(function( response ) {
+  // Convert to JSON
   return response.json();
 }).catch(function( err ) {
   console.error( err );
 });
-</p>
+</pre>
 
 <p>
 In spite of the apparent simplicity, the API is pretty powerful. The
@@ -6147,15 +6154,15 @@ fetch method expects in the first mandatory argument either a string
 with a remote method URL or a Request object. Request options can be
 passed in the second optional argument:
 </p>
-
-<p>
-fetch( "/rest/foo", {
+<div class="org-src-container">
+<pre class="src src-javascript">fetch( "/rest/foo", {
   headers: {
     "Accept": "application/json",
     "Content-Type": "application/json"
   }
 });
-</p>
+</pre>
+</div>
 
 <p>
 Similar to our previous snippet, the fetch method returns
@@ -6163,31 +6170,32 @@ Promise. Promises are becoming a common practice for asynchronous or
 deferred operations. The function called on the Promise-fulfilled
 event (see then) receives a Response object. This function has a
 number of properties and methods
+</p>
+
+<p>
 (<a href="https://developer.mozilla.org/en-US/docs/Web/API/Response">https://developer.mozilla.org/en-US/docs/Web/API/Response</a>). So we can
 convert the response into JSON, text, blob, or stream with
 corresponding methods, and we can obtain request-relative information:
 </p>
 
-<p>
-console.log( response.text() );
+<div class="org-src-container">
+<pre class="src src-javascript">console.log( response.text() );
 console.log( response.status );
 console.log( response.statusText );
 console.log( response.headers.get( "Content-Type" ) );
-</p>
+</pre>
+</div>
 
 <p>
 What about POST requests? Fetch has a mixin called body that
 represents the body of the Response/Request. We can pass the POST data
 through this:
 </p>
-
-<p>
-var form = document.querySelector( "form[data-bind=foo]" ),
+<div class="org-src-container">
+<pre class="src src-javascript">var form = document.querySelector( "form[data-bind=foo]" ),
     inputEmail = form.querySelector( "[name=email]" ),
     inputPassword = form.querySelector( "[name=pwd]" );
-</p>
 
-<p>
 fetch( "/feedback/submit", {
   method: "post",
   body: JSON.stringify({
@@ -6195,20 +6203,22 @@ fetch( "/feedback/submit", {
     answer: inputPassword.value
   })
 });
-</p>
+</pre>
+</div>
 
 <p>
 It accepts not only key-value pairs, but also, for example, FormData,
 so you can submit the whole form including attached files as it is:
 </p>
 
-<p>
-var form = document.querySelector( "form[data-bind=foo]" );
+<div class="org-src-container">
+<pre class="src src-javascript">var form = document.querySelector( "form[data-bind=foo]" );
 fetch( "/feedback/submit", {
   method: "post",
   body: new FormData( form )
 });
-</p>
+</pre>
+</div>
 
 <p>
 At the moment, some of the major browsers (for example, IE/Edge,
@@ -6246,35 +6256,36 @@ second to keep the data during a session.
 <p>
 Storage API is very simple to use, as shown here:
 </p>
-
-<p>
-var storage = isPersistent ? localStorage : sessionStorage;
+<div class="org-src-container">
+<pre class="src src-javascript">var storage = isPersistent ? localStorage : sessionStorage;
 storage.setItem( "foo", "Foo" );
 console.log( storage.getItem( "foo" ) );
 storage.removeItem( "foo" );
-</p>
+</pre>
+</div>
 
 <p>
 Alternatively, we can use getters/setters for convenience, as follows:
 </p>
-
-<p>
-storage.foo = "Foo";
+<div class="org-src-container">
+<pre class="src src-javascript">storage.foo = "Foo";
 console.log( storage.foo );
 delete storage.foo;
-</p>
+</pre>
+</div>
 
 <p>
 If we want to iterate through the storage, we can use storage.length and storage.key():
 </p>
 
-<p>
-var i = 0, len = storage.length, key;
+<div class="org-src-container">
+<pre class="src src-javascript">var i = 0, len = storage.length, key;
 for( ; i &lt; len; i++ ) {
   key = storage.key( i );
   storage.getItem( key );
 }
-</p>
+</pre>
+</div>
 
 <p>
 As you can see, the Web Storage API is much more developer-friendly
@@ -6292,9 +6303,8 @@ fired on the window object. So we can subscribe a handler for this
 event to update the shopping cart with the actual data. A simple code
 illustrating this example may look like this:
 </p>
-
-<p>
-&lt;html&gt;
+<div class="org-src-container">
+<pre class="src src-html">&lt;html&gt;
   &lt;head&gt;
     &lt;title&gt;Web Storage&lt;/title&gt;
   &lt;/head&gt;
@@ -6304,81 +6314,60 @@ illustrating this example may look like this:
       &lt;button data-bind="reset"&gt;Reset&lt;/button&gt;
     &lt;/div&gt;
     &lt;output data-bind="output"&gt;
-</p>
 
-<p>
-&lt;/output&gt;
-&lt;script&gt;
-</p>
+    &lt;/output&gt;
+    &lt;script&gt;
 
-<p>
-var output = document.querySelector( "[data-bind=\"output\"]" ),
-    btn = document.querySelector( "[data-bind=\"btn\"]" ),
-    reset = document.querySelector( "[data-bind=\"reset\"]" ),
-    storage = localStorage,
-   /**
-</p>
-<ul class="org-ul">
-<li>Read from the storage</li>
-<li>@return {Arrays}</li>
-</ul>
-<p>
-*/
-get = function(){
-   // From the storage we receive either JSON string or null
-   return JSON.parse( storage.getItem( "cart" ) ) || [];
-},
-/**
-</p>
-<ul class="org-ul">
-<li>Append an item to the cart</li>
-<li>@param {Object} product</li>
-</ul>
-<p>
- */
-append = function( product ) {
-  var data = get();
-  data.push( product );
-  // WebStorage accepts simple objects, so we pack the object into JSON string         storage.setItem( "cart", JSON.stringify( data ) );
-},
-<i>** Re-render list of items *</i>
-updateView = function(){
-  var data = get();
-  output.innerHTML = "";
-  data &amp;&amp; data.forEach(function( item ){
-    output.innerHTML += [ "id: ", item.id, "&lt;br /&gt;" ].join( "" );
-  });
-};
-</p>
+    var output = document.querySelector( "[data-bind=\"output\"]" ),
+        btn = document.querySelector( "[data-bind=\"btn\"]" ),
+        reset = document.querySelector( "[data-bind=\"reset\"]" ),
+        storage = localStorage,
+       /**
+        * Read from the storage
+        * @return {Arrays}
+        */
+        get = function(){
+           // From the storage we receive either JSON string or null
+           return JSON.parse( storage.getItem( "cart" ) ) || [];
+        },
+        /**
+         * Append an item to the cart
+         * @param {Object} product
+         */
+        append = function( product ) {
+          var data = get();
+          data.push( product );
+          // WebStorage accepts simple objects, so we pack the object into JSON string         storage.setItem( "cart", JSON.stringify( data ) );
+        },
+        /** Re-render list of items */
+        updateView = function(){
+          var data = get();
+          output.innerHTML = "";
+          data &amp;&amp; data.forEach(function( item ){
+            output.innerHTML += [ "id: ", item.id, "&lt;br /&gt;" ].join( "" );
+          });
+        };
 
-<p>
-this.btn.addEventListener( "click", function(){
-  append({ id: Math.floor(( Math.random() * 100 ) + 1 ) });
-  updateView();
-}, false );
-</p>
+    this.btn.addEventListener( "click", function(){
+      append({ id: Math.floor(( Math.random() * 100 ) + 1 ) });
+      updateView();
+    }, false );
 
-<p>
-this.reset.addEventListener( "click", function(){
-  storage.clear();
-  updateView();
-}, false );
-</p>
+    this.reset.addEventListener( "click", function(){
+      storage.clear();
+      updateView();
+    }, false );
 
-<p>
-// Update item list when a new item is added in another window/tab
-window.addEventListener( "storage", updateView, false );
-</p>
+    // Update item list when a new item is added in another window/tab
+    window.addEventListener( "storage", updateView, false );
 
-<p>
-updateView();
-</p>
+    updateView();
 
-<p>
-  &lt;/script&gt;
-&lt;/body&gt;
+    &lt;/script&gt;
+  &lt;/body&gt;
 &lt;/html&gt;
-</p>
+</pre>
+</div>
 
 <p>
 To see this in action, we have to open the code HTML in two or more
@@ -6422,62 +6411,47 @@ However, the API of IndexedDB is pretty complex. It's also quite hard
 to read because of a large amount of nested callbacks:
 </p>
 
-<p>
-/**
-</p>
-<ul class="org-ul">
-<li>@type {IDBOpenDBRequest}</li>
-<li>Syntax: indexedDB.open( DB name, DB version );</li>
-</ul>
-<p>
-*/
+<div class="org-src-container">
+<pre class="src src-javascript">/**
+ * @type {IDBOpenDBRequest}
+ * Syntax: indexedDB.open( DB name, DB version );
+ */
 var request = indexedDB.open( "Cem", 2 );
-</p>
 
-<p>
-<i>** Report error *</i>
+/** Report error */
 request.onerror = function() {
   alert( "Opps, something went wrong" );
 };
 /**
-</p>
-<ul class="org-ul">
-<li>Create DB</li>
-<li>@param {Event} e</li>
-</ul>
-<p>
-*/
+ * Create DB
+ * @param {Event} e
+ */
 request.onupgradeneeded = function ( e ) {
- var objectStore;
- if ( e.oldVersion ) {
-   return;
- }
- // define schema
- objectStore = e.currentTarget.result.createObjectStore( "employees", { keyPath: "email" });
- objectStore.createIndex( "name", "name", { unique: false } );
-  // Populate objectStore with test data
- objectStore.add({ name: "John Dow", email: "john@company.com" });
- objectStore.add({ name: "Don Dow", email: "don@company.com" });
+  var objectStore;
+  if ( e.oldVersion ) {
+    return;
+  }
+  // define schema
+  objectStore = e.currentTarget.result.createObjectStore( "employees", { keyPath: "email" });
+  objectStore.createIndex( "name", "name", { unique: false } );
+   // Populate objectStore with test data
+  objectStore.add({ name: "John Dow", email: "john@company.com" });
+  objectStore.add({ name: "Don Dow", email: "don@company.com" });
 };
 /**
-</p>
-<ul class="org-ul">
-<li>Find a row from the DB</li>
-<li>@param {Event} e</li>
-</ul>
-<p>
-*/
+ * Find a row from the DB
+ * @param {Event} e
+ */
 request.onsuccess = function( e ) {
- var db = e.target.result,
-     req = db.transaction([ "employees" ]).objectStore( "employees" ).get( "don@company.com" );
-</p>
+  var db = e.target.result,
+      req = db.transaction([ "employees" ]).objectStore( "employees" ).get( "don@company.com" );
 
-<p>
-req.onsuccess = function() {
-  console.log( "Employee matching `don@company.com` is `" + req.result.name + "`" );
+  req.onsuccess = function() {
+    console.log( "Employee matching `don@company.com` is `" + req.result.name + "`" );
+  };
 };
-};
-</p>
+</pre>
+</div>
 
 <p>
 In this sample, we created a request for opening DB. If the DB doesn't
@@ -6502,29 +6476,23 @@ best I know is called Dexie (<a href="http://www.dexie.org/">http://www.dexie.or
 easy it is to solve the same task with the interface it exposes:
 </p>
 
-<p>
+<pre class="example">
 &lt;script src="./Dexie.js"&gt;&lt;/script&gt;
 &lt;script&gt;
 var db = new Dexie( "Cem" );
 // Define DB
 db.version( 3 )
   .stores({ employees: "name, email" });
-</p>
 
-<p>
 // Open the database
 db.open().catch(function( err ){
   alert( "Opps, something went wrong: " + err );
 });
-</p>
 
-<p>
 // Populate objectStore with test data
 db.employees.add({ name: "John Dow", email: "john@company.com" });
 db.employees.add({ name: "Don Dow", email: "don@company.com" });
-</p>
 
-<p>
 // Find an employee by email
 db.employees
   .where( "email" )
@@ -6532,11 +6500,9 @@ db.employees
   .each(function( employee ){
     console.log( "Employee matching `don@company.com` is `" + employee.name + "`" );
   });
-</p>
 
-<p>
 &lt;/script&gt;
-</p>
+</pre>
 </div>
 </div>
 
@@ -6553,80 +6519,67 @@ read, and write to a user's local file system in application
 scope. Let's take up an example:
 </p>
 
-<p>
-window.requestFileSystem  = window.requestFileSystem || window.webkitRequestFileSystem;
+<div class="org-src-container">
+<pre class="src src-javascript">window.requestFileSystem  = window.requestFileSystem || window.webkitRequestFileSystem;
     /**
-</p>
-<ul class="org-ul">
-<li>Read file from a given FileSystem</li>
-<li>@param {DOMFileSystem} fs</li>
-<li>@param {String} file</li>
-</ul>
-<p>
- */
+     * Read file from a given FileSystem
+     * @param {DOMFileSystem} fs
+     * @param {String} file
+     */
 var readFile = function( fs, file ) {
-  console.log( "Reading file " + file );
-  // Obtain FileEntry object
-  fs.root.getFile( file, {}, function( fileEntry ) {
-    fileEntry.file(function( file ){
-       // Create FileReader
-       var reader = new FileReader();
-       reader.onloadend = function() {
-         console.log( "Fetched content: ", this.result );
-       };
-       // Read file
-       reader.readAsText( file );
-    }, console.error );
-  }, console.error );
-},
-/**
-</p>
-<ul class="org-ul">
-<li>Save file into a given FileSystem and run onDone when ready</li>
-<li>@param {DOMFileSystem} fs</li>
-<li>@param {String} file</li>
-<li>@param {Function} onDone</li>
-</ul>
-<p>
- */
-saveFile = function( fs, file, onDone ) {
-  console.log( "Writing file " + file );
-  // Obtain FileEntry object
-  fs.root.getFile( file, { create: true }, function( fileEntry ) {
-    // Create a FileWriter object for the FileEntry
-    fileEntry.createWriter(function( fileWriter ) {
-      var blob;
-      fileWriter.onwriteend = onDone;
-      fileWriter.onerror = function(e) {
-        console.error( "Writing error: " + e.toString() );
-      };
-      // Create a new Blob out of the text we want into the file.
-      blob = new Blob([ "Lorem Ipsum" ], { type: "text/plain" });
-      // Write into the file
-      fileWriter.write( blob );
-    }, console.error );
-  }, console.error );
-},
-/**
-</p>
-<ul class="org-ul">
-<li>Run when FileSystem initialized</li>
-<li>@param {DOMFileSystem} fs</li>
-</ul>
-<p>
- */
-onInitFs = function ( fs ) {
-  const FILENAME = "log.txt";
-  console.log( "Opening file system: " + fs.name );
-  saveFile( fs, FILENAME, function(){
-    readFile( fs, FILENAME );
-  });
-};
-</p>
+      console.log( "Reading file " + file );
+      // Obtain FileEntry object
+      fs.root.getFile( file, {}, function( fileEntry ) {
+        fileEntry.file(function( file ){
+           // Create FileReader
+           var reader = new FileReader();
+           reader.onloadend = function() {
+             console.log( "Fetched content: ", this.result );
+           };
+           // Read file
+           reader.readAsText( file );
+        }, console.error );
+      }, console.error );
+    },
+    /**
+     * Save file into a given FileSystem and run onDone when ready
+     * @param {DOMFileSystem} fs
+     * @param {String} file
+     * @param {Function} onDone
+     */
+    saveFile = function( fs, file, onDone ) {
+      console.log( "Writing file " + file );
+      // Obtain FileEntry object
+      fs.root.getFile( file, { create: true }, function( fileEntry ) {
+        // Create a FileWriter object for the FileEntry
+        fileEntry.createWriter(function( fileWriter ) {
+          var blob;
+          fileWriter.onwriteend = onDone;
+          fileWriter.onerror = function(e) {
+            console.error( "Writing error: " + e.toString() );
+          };
+          // Create a new Blob out of the text we want into the file.
+          blob = new Blob([ "Lorem Ipsum" ], { type: "text/plain" });
+          // Write into the file
+          fileWriter.write( blob );
+        }, console.error );
+      }, console.error );
+    },
+    /**
+     * Run when FileSystem initialized
+     * @param {DOMFileSystem} fs
+     */
+    onInitFs = function ( fs ) {
+      const FILENAME = "log.txt";
+      console.log( "Opening file system: " + fs.name );
+      saveFile( fs, FILENAME, function(){
+        readFile( fs, FILENAME );
+      });
+    };
 
-<p>
-window.requestFileSystem( window.TEMPORARY, 5*1024*1024 <i><b>5MB</b></i>, onInitFs, console.error );
-</p>
+window.requestFileSystem( window.TEMPORARY, 5*1024*1024 /*5MB*/, onInitFs, console.error );
+</pre>
+</div>
 
 <p>
 First of all, we request for a local file system (requestFileSystem)
@@ -6689,7 +6642,7 @@ the web worker using the PostMessage API
 (<a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage">https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage</a>):
 </p>
 
-<p>
+<pre class="example">
 index.html
 &lt;html&gt;
   &lt;body&gt;
@@ -6701,7 +6654,7 @@ var worker = new Worker( "./foo-worker.js" );
 worker.addEventListener( "message", function( e ) {
   console.log( "Result: ", e.data );
 }, false );
-console.log( "Starting the task&#x2026;" );
+console.log( "Starting the task..." );
 // Send a message to worker
 worker.postMessage({
   command: "loadCpu",
@@ -6714,32 +6667,26 @@ foo-worker.js
 "use strict";
 var commands = {
   /**
-</p>
-<ul class="org-ul">
-<li>Emulate resource-consuming operation</li>
-<li>@param {Number} delay in ms</li>
-</ul>
-<p>
- */
-loadCpu: function( delay ) {
-  var start = Date.now();
-  while (( Date.now() - start ) &lt; delay );
-  return "done";
-}
+   * Emulate resource-consuming operation
+   * @param {Number} delay in ms
+   */
+  loadCpu: function( delay ) {
+    var start = Date.now();
+    while (( Date.now() - start ) &lt; delay );
+    return "done";
+  }
 };
-<i>/ Workers don't have access to the window object. /</i> To access global object we have to use self object instead.
+// Workers don't have access to the window object. // To access global object we have to use self object instead.
 self.addEventListener( "message", function( e ) {
-var command;
-if ( commands.hasOwnProperty( e.data.command ) ) {
-  command = commands[ e.data.command ];
-  return self.postMessage( command( e.data.value ) );
-}
-self.postMessage( "Error: Command not found" );
-</p>
+  var command;
+  if ( commands.hasOwnProperty( e.data.command ) ) {
+    command = commands[ e.data.command ];
+    return self.postMessage( command( e.data.value ) );
+  }
+  self.postMessage( "Error: Command not found" );
 
-<p>
 }, false );
-</p>
+</pre>
 
 <p>
 Here in index.html, we requested the web worker (foo-worker.js) to
@@ -6769,11 +6716,9 @@ those running in different windows. That makes this API a bit
 different:
 </p>
 
-<p>
+<pre class="example">
 index.html
-</p>
 
-<p>
 &lt;script&gt;
 "use strict";
 var worker = new SharedWorker( "bar-worker.js" );
@@ -6794,10 +6739,12 @@ onconnect = function( e ) {
   };
   port.start();
 };
-</p>
+</pre>
 
 <p>
-The preceding example worker simply echoes the received message. If the worker does some effective computation, we would be able to command it from different scripts on different pages.
+The preceding example worker simply echoes the received message. If the worker
+does some effective computation, we would be able to command it from different
+scripts on different pages.
 </p>
 
 <p>
@@ -6814,59 +6761,45 @@ worker was unavailable. What I can do is embed the web worker code
 into HTML and register the web worker by data URI:
 </p>
 
-<p>
+<pre class="example">
 &lt;script data-bind="biTracker" type="text/js-worker"&gt;
   "use strict";
-</p>
 
-<p>
-// Here shall go you BI endpoint
-const REST<sub>METHOD</sub> = "<a href="http://www.telize.com/jsonip">http://www.telize.com/jsonip</a>";
-/**
-</p>
-<ul class="org-ul">
-<li>@param {Map} data - BI request params</li>
-<li>@param {Function} resolve</li>
-</ul>
-<p>
- */
-var call = function( data, resolve ) {
-  var xhr = new XMLHttpRequest(),
-      params = data ? Object.keys( data ).map(function( key ){
-          return key + "=" + encodeURIComponent( data[ key ] );
-        }).join( "&amp;" ) : "";
-</p>
+  // Here shall go you BI endpoint
+  const REST_METHOD = "http://www.telize.com/jsonip";
+  /**
+   * @param {Map} data - BI request params
+   * @param {Function} resolve
+   */
+  var call = function( data, resolve ) {
+    var xhr = new XMLHttpRequest(),
+        params = data ? Object.keys( data ).map(function( key ){
+            return key + "=" + encodeURIComponent( data[ key ] );
+          }).join( "&amp;" ) : "";
 
-<p>
-  xhr.open( "POST", REST<sub>METHOD</sub>, true );
-  xhr.addEventListener( "load", function() {
-      if ( this.status &gt;= 200 &amp;&amp; this.status &lt; 400 ) {
-        return resolve( this.response );
-      }
-      console.error( "BI tracker - bad request " + this.status );
-    }, false );
-  xhr.addEventListener( "error", console.error, false );
-  xhr.responseType = "json";
-  xhr.setRequestHeader( "Content-Type", "application/x-www-form-urlencoded" );
-  xhr.send( params );
-};
-/**
-</p>
-<ul class="org-ul">
-<li>Subscribe to window.onmessage event</li>
-</ul>
-<p>
- */
-onmessage = function ( e ) {
-  call( e.data, function( data ){
-    // respond back
-    postMessage( data );
-  })
-};
+    xhr.open( "POST", REST_METHOD, true );
+    xhr.addEventListener( "load", function() {
+        if ( this.status &gt;= 200 &amp;&amp; this.status &lt; 400 ) {
+          return resolve( this.response );
+        }
+        console.error( "BI tracker - bad request " + this.status );
+      }, false );
+    xhr.addEventListener( "error", console.error, false );
+    xhr.responseType = "json";
+    xhr.setRequestHeader( "Content-Type", "application/x-www-form-urlencoded" );
+    xhr.send( params );
+  };
+  /**
+   * Subscribe to window.onmessage event
+   */
+  onmessage = function ( e ) {
+    call( e.data, function( data ){
+      // respond back
+      postMessage( data );
+    })
+  };
 &lt;/script&gt;
-</p>
 
-<p>
 &lt;script type="text/javascript"&gt;
   "use strict";
   window.biTracker = (function(){
@@ -6874,18 +6807,16 @@ onmessage = function ( e ) {
           type: "text/javascript"
         }),
         worker = new Worker( window.URL.createObjectURL( blob ) );
-</p>
 
-<p>
-  worker.onmessage = function ( oEvent ) {
-    console.info( "Bi-Tracker responds: ", oEvent.data );
-  };
-  return worker;
-}());
-// Let's test it
-window.biTracker.postMessage({ page: "#main" });
+    worker.onmessage = function ( oEvent ) {
+      console.info( "Bi-Tracker responds: ", oEvent.data );
+    };
+    return worker;
+  }());
+  // Let's test it
+  window.biTracker.postMessage({ page: "#main" });
 &lt;/script&gt;
-</p>
+</pre>
 
 <p>
 By handing over the web I/O to a worker, we can also get additional
@@ -7020,8 +6951,8 @@ The client side looks similar to SEE. We just register the Web Socket
 server, subscribe to its events, and send to it our events:
 </p>
 
-<p>
-var rtm = new WebSocket("ws://echo.websocket.org");
+<div class="org-src-container">
+<pre class="src src-javascript">var rtm = new WebSocket("ws://echo.websocket.org");
 rtm.onopen = function(){
   console.log( "Connection established" );
   rtm.send("hello");
@@ -7035,26 +6966,23 @@ rtm.onmessage = function( e ){
 rtm.onerror = function( e ){
   console.error( "Error: " + e.message );
 };
-</p>
+</pre>
+</div>
 
 <p>
 This demo source at ws://echo.websocket.org simply echoes any messages sent to it:
 </p>
-
-<p>
+<pre class="example">
 Connection established
 Received: hello
-</p>
+</pre>
 
 <p>
 Need something more practical? I believe the most illustrative case would be a chat:
 </p>
-
-<p>
+<pre class="example">
 demo.html
-</p>
 
-<p>
 &lt;style&gt;
   input {
     border-radius: 5px;
@@ -7072,9 +7000,7 @@ demo.html
     padding: 3px 14px;
   }
 &lt;/style&gt;
-</p>
 
-<p>
 &lt;form data-bind="chat"&gt;
   &lt;input data-bind="whoami" placeholder="Enter your name"&gt;
   &lt;input data-bind="text" placeholder="Enter your msg" /&gt;
@@ -7084,18 +7010,14 @@ demo.html
 &lt;output data-bind="output"&gt;
 &lt;/output&gt;
 &lt;script&gt;
-</p>
 
-<p>
 var whoami = document.querySelector( "[data-bind=\"whoami\"]" ),
     text = document.querySelector( "[data-bind=\"text\"]" ),
     chat = document.querySelector( "[data-bind=\"chat\"]" ),
     output = document.querySelector( "[data-bind=\"output\"]" ),
     // create ws connection
     rtm = new WebSocket("ws://localhost:8001");
-</p>
 
-<p>
 rtm.onmessage = function( e ){
   var data = JSON.parse( e.data );
   output.innerHTML += data.whoami + " says: " + data.text + "&lt;br /&gt;";
@@ -7103,9 +7025,7 @@ rtm.onmessage = function( e ){
 rtm.onerror = function( e ){
   console.error( "Error: " + e.message );
 };
-</p>
 
-<p>
 chat.addEventListener( "submit", function( e ){
   e.preventDefault();
   if ( !whoami.value ) {
@@ -7119,11 +7039,9 @@ chat.addEventListener( "submit", function( e ){
     text: text.value
   }));
 });
-</p>
 
-<p>
 &lt;/script&gt;
-</p>
+</pre>
 
 <p>
 Here we have a form with two input fields. The first expects a
@@ -7136,34 +7054,28 @@ server implementation, nodejs-websocket
 (<a href="https://github.com/sitegui/nodejs-websocket">https://github.com/sitegui/nodejs-websocket</a>):
 </p>
 
-<p>
+<pre class="example">
 ws.js
-</p>
 
-<p>
-<i>** @type {module:nodejs-websocket} *</i>
+    /** @type {module:nodejs-websocket} */
 var ws = require( "nodejs-websocket" ),
-<i>** @type {Server} *</i>
-server = ws.createServer(function( conn ) {
-    conn.on( "text", function ( str ) {
-      console.log( "Received " + str );
-      broadcast( str );
-    });
-}).listen( 8001 ),
-/**
-</p>
-<ul class="org-ul">
-<li>Broadcast message</li>
-<li>@param {String} msg</li>
-</ul>
-<p>
- */
-broadcast = function ( msg ) {
-  server.connections.forEach(function ( conn ) {
-    conn.sendText( msg );
-  });
-};
-</p>
+    /** @type {Server} */
+    server = ws.createServer(function( conn ) {
+        conn.on( "text", function ( str ) {
+          console.log( "Received " + str );
+          broadcast( str );
+        });
+    }).listen( 8001 ),
+    /**
+     * Broadcast message
+     * @param {String} msg
+     */
+    broadcast = function ( msg ) {
+      server.connections.forEach(function ( conn ) {
+        conn.sendText( msg );
+      });
+    };
+</pre>
 
 <p>
 The script creates a server available on the port 8001 that listens to
@@ -7173,7 +7085,7 @@ server like this:
 </p>
 
 <p>
-node ws.js
+<code>node ws.js</code>
 </p>
 
 <p>
@@ -7188,7 +7100,8 @@ Following screenshot shows the WebSocket-driven chat in Chrome:
 </p>
 
 <p>
-Note how fast the clients react to the events. Communication through sockets gives irrefutable advantages.
+Note how fast the clients react to the events. Communication through sockets
+gives irrefutable advantages.
 </p>
 
 <p>
@@ -7205,7 +7118,7 @@ favorite language and then attach your script to the daemon:
 </p>
 
 <p>
-websocketd &#x2013;port=8001 my-script
+<code>websocketd --port=8001 my-script</code>
 </p>
 </div>
 </div>
@@ -7235,9 +7148,10 @@ websocketd &#x2013;port=8001 my-script
 </div><div id="outline-container-orgac5f271" class="outline-4">
 <h4 id="orgac5f271">install node packages from packages.json file?</h4>
 <div class="outline-text-4" id="text-orgac5f271">
-<p>
-npm install (in package directory, no arguments)
-</p>
+<div class="org-src-container">
+<pre class="src src-shell">$ npm install (in package directory, no arguments)
+</pre>
+</div>
 
 <p>
 <a href="https://docs.npmjs.com/cli/instal">https://docs.npmjs.com/cli/instal</a>
@@ -7248,14 +7162,22 @@ npm install (in package directory, no arguments)
 <div id="outline-container-orgf70d3c9" class="outline-4">
 <h4 id="orgf70d3c9">Using npm search to Locate Modules in the npm Registry</h4>
 <div class="outline-text-4" id="text-orgf70d3c9">
+<div class="org-src-container">
+<pre class="src src-shell">$ npm search database
+</pre>
+</div>
+
 <p>
-$ npm search database 
 If you’re not interested in installing the latest version of a package, you can specify a version number. Node
 modules follow a major.minor.patch versioning scheme. For example, to install commander version 1.0.0, use the
 command shown in Listing 2-3. The @ character is used to separate the package name from the version.
 Listing 2-3.  Installing Version 1.0.0 of commander
-$ npm install commander@1.0.0
 </p>
+
+<div class="org-src-container">
+<pre class="src src-shell">$ npm install commander@1.0.0
+</pre>
+</div>
 
 <p>
 Changes to the major version number can indicate that a module has changed in a non-backwards-compatible
@@ -7264,39 +7186,40 @@ Therefore, you’ll typically want to install the latest patch of a certain rele
 x wildcard. The command shown in Listing 2-4 installs the latest patch of version 1.0 of commander. (Note that the x
 wildcard can also be used in place of the major and minor revisions.)
 Listing 2-4.  Installing the Latest Patch of commander 1.0
-$ npm install commander@1.0.x
 </p>
+<div class="org-src-container">
+<pre class="src src-javascript">$ npm install commander@1.0.x
+</pre>
+</div>
 </div>
 </div>
 
 <div id="outline-container-orgd96331c" class="outline-4">
 <h4 id="orgd96331c">package locations</h4>
 <div class="outline-text-4" id="text-orgd96331c">
-<p>
-$ npm ls
+<div class="org-src-container">
+<pre class="src src-javascript">$ npm ls
 to query global packages
-$ npm ls -g     
-</p>
+$ npm ls -g
+</pre>
+</div>
 </div>
 </div>
 
 <div id="outline-container-org1ee6ee4" class="outline-4">
 <h4 id="org1ee6ee4">Intalling packages</h4>
 <div class="outline-text-4" id="text-org1ee6ee4">
-<p>
-Installing the Latest Version of the commander Package Using npm
+<div class="org-src-container">
+<pre class="src src-javascript"># Installing the Latest Version of the commander Package Using npm
 $ npm install commander
-</p>
 
-<p>
-Installing Version 1.0.0 of commander
+# Installing Version 1.0.0 of commander
 $ npm install commander@1.0.0
-</p>
 
-<p>
-Installing the Latest Patch of commander 1.0
+# Installing the Latest Patch of commander 1.0
 $ npm install commander@1.0.x
-</p>
+</pre>
+</div>
 </div>
 
 <div id="outline-container-org813156b" class="outline-5">
@@ -7312,12 +7235,14 @@ $ npm install <a href="https://github.com/user/project/tarball/master">https://g
 <div id="outline-container-org69c8f30" class="outline-4">
 <h4 id="org69c8f30">Uninstalling Packages</h4>
 <div class="outline-text-4" id="text-org69c8f30">
-<p>
-Uninstalling commander Using npm rm
+<div class="org-src-container">
+<pre class="src src-shell"># Uninstalling commander Using npm rm
 $ npm rm commander
-</p>
+</pre>
 </div>
 </div>
+</div>
+
 <div id="outline-container-orgdddf39d" class="outline-4">
 <h4 id="orgdddf39d">Core Modules</h4>
 <div class="outline-text-4" id="text-orgdddf39d">
@@ -7741,13 +7666,53 @@ $("#myimg").attr("src", "/myimg.jpg?"+d.getTime());
 </div>
 </div>
 
+<div id="outline-container-org29f73d6" class="outline-2">
+<h2 id="org29f73d6">URL</h2>
+<div class="outline-text-2" id="text-org29f73d6">
+</div><div id="outline-container-org85d83c0" class="outline-3">
+<h3 id="org85d83c0">decode/encode URL</h3>
+<div class="outline-text-3" id="text-org85d83c0">
+<div class="org-src-container">
+<pre class="src src-javascript">var uri = "https://w3schools.com/my test.asp?name=ståle&amp;car=saab";
+var uri_enc = encodeURIComponent(uri);
+var uri_dec = decodeURIComponent(uri_enc);
+var res = uri_enc + "&lt;br&gt;" + uri_dec;
+The result of res will be:
+
+// Encoded URI
+// https%3A%2F%2Fw3schools.com%2Fmy%20test.asp%3Fname%3Dst%C3%A5le%26car%3Dsaab
+
+// Decoded URI
+// https://w3schools.com/my test.asp?name=ståle&amp;car=saab
+</pre>
+</div>
+
+<p>
+the following  handles the case of space being encoded as +
+</p>
+
+<div class="org-src-container">
+<pre class="src src-javascript">function urldecode(str) {
+   return decodeURIComponent((str+'').replace(/\+/g, '%20'));
+}
+</pre>
+</div>
+
+
+<p>
+<a href="https://github.com/kvz/locutus/blob/master/src/php/url/urldecode.js">https://github.com/kvz/locutus/blob/master/src/php/url/urldecode.js</a>
+</p>
+</div>
+</div>
+</div>
+
 <div id="outline-container-org9089b41" class="outline-2">
 <h2 id="org9089b41">references</h2>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="author">Author: moh</p>
-<p class="date">Created: 2017-02-28 Tue 09:03</p>
+<p class="author">Author: Mohammad Reza Mansouri</p>
+<p class="date">Created: 2017-03-02 Thu 14:01</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

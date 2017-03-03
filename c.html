@@ -3,12 +3,12 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-02-16 Thu 20:08 -->
+<!-- 2017-03-02 Thu 14:02 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title></title>
+<title>c recipes</title>
 <meta name="generator" content="Org mode" />
-<meta name="author" content="moh" />
+<meta name="author" content="Mohammad Reza Mansouri" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -251,46 +251,49 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
+<h1 class="title">c recipes</h1>
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgc76213f">1. character strings</a>
+<li><a href="#orgc76213f">character strings</a>
 <ul>
-<li><a href="#orgaafbaec">1.1. Character String Literals (String Constants)</a></li>
-<li><a href="#org13cc1a2">1.2. Character String Arrays and Initialization</a></li>
-<li><a href="#orgd3426ae">1.3. Array Versus Pointer</a></li>
-<li><a href="#orgc4c1487">1.4. Array and pointer differences</a></li>
-<li><a href="#org1d5cf6a">1.5. Arrays of character Strings</a></li>
-<li><a href="#org1aa4b69">1.6. Pointers and Strings</a></li>
-<li><a href="#org0e07ab0">1.7. string input</a>
+<li><a href="#orgaafbaec">Character String Literals (String Constants)</a></li>
+<li><a href="#org13cc1a2">Character String Arrays and Initialization</a></li>
+<li><a href="#orgd3426ae">Array Versus Pointer</a></li>
+<li><a href="#orgc4c1487">Array and pointer differences</a></li>
+<li><a href="#org1d5cf6a">Arrays of character Strings</a></li>
+<li><a href="#org1aa4b69">Pointers and Strings</a></li>
+<li><a href="#org0e07ab0">string input</a>
 <ul>
-<li><a href="#orgd58de90">1.7.1. alternatives to gets</a></li>
-<li><a href="#orgdfb44c9">1.7.2. scanf() function</a></li>
+<li><a href="#orgd58de90">alternatives to gets</a></li>
+<li><a href="#orgdfb44c9">scanf() function</a></li>
 </ul>
 </li>
-<li><a href="#org0dbef1a">1.8. string output</a></li>
-<li><a href="#orgec1c9ec">1.9. Null character and Null pointer</a></li>
-<li><a href="#org15afa4f">1.10. string length example</a></li>
-<li><a href="#org8c095ff">1.11. concatenation of strings example</a></li>
-<li><a href="#orgc6af7a1">1.12. startsWith</a></li>
-<li><a href="#org3eecf7d">1.13. equalStrings example</a></li>
-<li><a href="#org5b383f3">1.14. read string with scanf</a></li>
-<li><a href="#org2824c3f">1.15. reading lines of code</a></li>
-<li><a href="#orgaefb6f2">1.16. Initializing and Displaying Character Strings</a></li>
-<li><a href="#org99cceb4">1.17. Counting words</a></li>
-<li><a href="#orgeaca293">1.18. Converting a String to its Integer Equivalent</a></li>
+<li><a href="#org0dbef1a">string output</a></li>
+<li><a href="#orgec1c9ec">Null character and Null pointer</a></li>
+<li><a href="#org15afa4f">string length example</a></li>
+<li><a href="#org8c095ff">concatenation of strings example</a></li>
+<li><a href="#orgc6af7a1">startsWith</a></li>
+<li><a href="#org3eecf7d">equalStrings example</a></li>
+<li><a href="#org5b383f3">read string with scanf</a></li>
+<li><a href="#org2824c3f">reading lines of code</a></li>
+<li><a href="#orgaefb6f2">Initializing and Displaying Character Strings</a></li>
+<li><a href="#org99cceb4">Counting words</a></li>
+<li><a href="#orgeaca293">Converting a String to its Integer Equivalent</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
+
+
 <div id="outline-container-orgc76213f" class="outline-2">
-<h2 id="orgc76213f"><span class="section-number-2">1</span> character strings</h2>
-<div class="outline-text-2" id="text-1">
+<h2 id="orgc76213f">character strings</h2>
+<div class="outline-text-2" id="text-orgc76213f">
 </div><div id="outline-container-orgaafbaec" class="outline-3">
-<h3 id="orgaafbaec"><span class="section-number-3">1.1</span> Character String Literals (String Constants)</h3>
-<div class="outline-text-3" id="text-1-1">
+<h3 id="orgaafbaec">Character String Literals (String Constants)</h3>
+<div class="outline-text-3" id="text-orgaafbaec">
 <p>
 A string literal, also termed a string constant, is anything enclosed in double quotation
 marks.
@@ -301,8 +304,8 @@ program, even if the function is called several times.
 </div>
 </div>
 <div id="outline-container-org13cc1a2" class="outline-3">
-<h3 id="org13cc1a2"><span class="section-number-3">1.2</span> Character String Arrays and Initialization</h3>
-<div class="outline-text-3" id="text-1-2">
+<h3 id="org13cc1a2">Character String Arrays and Initialization</h3>
+<div class="outline-text-3" id="text-org13cc1a2">
 <p>
 When you define a character string array, you must let the compiler know how much space
 is needed. One way is to specify an array size large enough to hold the string. The following
@@ -387,8 +390,8 @@ Note the closing null character. Without it, you have a character array, but not
 </div>
 
 <div id="outline-container-orgd3426ae" class="outline-3">
-<h3 id="orgd3426ae"><span class="section-number-3">1.3</span> Array Versus Pointer</h3>
-<div class="outline-text-3" id="text-1-3">
+<h3 id="orgd3426ae">Array Versus Pointer</h3>
+<div class="outline-text-3" id="text-orgd3426ae">
 <p>
 What is the difference, then, between an array and a pointer form? The array form ( ar1[] )
 causes an array of 29 elements (one for each character plus one for the terminating '\0') to
@@ -468,8 +471,8 @@ are not, but it depends on what you try to do. Let’s look further into the mat
 </div>
 
 <div id="outline-container-orgc4c1487" class="outline-3">
-<h3 id="orgc4c1487"><span class="section-number-3">1.4</span> Array and pointer differences</h3>
-<div class="outline-text-3" id="text-1-4">
+<h3 id="orgc4c1487">Array and pointer differences</h3>
+<div class="outline-text-3" id="text-orgc4c1487">
 <p>
 Let’s examine the differences between initializing a character array to hold a string and initializing
 a pointer to point to a string. (By “pointing to a string,” we really mean pointing to the
@@ -635,8 +638,8 @@ In short, don’t use a pointer to a string literal if you plan to alter the str
 </div>
 </div>
 <div id="outline-container-org1d5cf6a" class="outline-3">
-<h3 id="org1d5cf6a"><span class="section-number-3">1.5</span> Arrays of character Strings</h3>
-<div class="outline-text-3" id="text-1-5">
+<h3 id="org1d5cf6a">Arrays of character Strings</h3>
+<div class="outline-text-3" id="text-org1d5cf6a">
 <div class="org-src-container">
 <pre class="src src-c">// arrchar.c -- array of pointers, array of strings
 #include &lt;stdio.h&gt;
@@ -669,8 +672,8 @@ return 0;
 </div>
 
 <div id="outline-container-org1aa4b69" class="outline-3">
-<h3 id="org1aa4b69"><span class="section-number-3">1.6</span> Pointers and Strings</h3>
-<div class="outline-text-3" id="text-1-6">
+<h3 id="org1aa4b69">Pointers and Strings</h3>
+<div class="outline-text-3" id="text-org1aa4b69">
 <div class="org-src-container">
 <pre class="src src-c">/* p_and_s.c -- pointers and strings */
 #include &lt;stdio.h&gt;
@@ -698,11 +701,11 @@ copy = Don't be a fool!; &amp;copy = 0x0012ff44; value = 0x0040a000
 </div>
 </div>
 <div id="outline-container-org0e07ab0" class="outline-3">
-<h3 id="org0e07ab0"><span class="section-number-3">1.7</span> string input</h3>
-<div class="outline-text-3" id="text-1-7">
+<h3 id="org0e07ab0">string input</h3>
+<div class="outline-text-3" id="text-org0e07ab0">
 </div><div id="outline-container-orgd58de90" class="outline-4">
-<h4 id="orgd58de90"><span class="section-number-4">1.7.1</span> alternatives to gets</h4>
-<div class="outline-text-4" id="text-1-7-1">
+<h4 id="orgd58de90">alternatives to gets</h4>
+<div class="outline-text-4" id="text-orgd58de90">
 <p>
 The fgets() Function (and fputs() )
 Here is how fgets() differs from gets() :
@@ -779,8 +782,8 @@ int main(void)
 </div>
 
 <div id="outline-container-orgdfb44c9" class="outline-4">
-<h4 id="orgdfb44c9"><span class="section-number-4">1.7.2</span> scanf() function</h4>
-<div class="outline-text-4" id="text-1-7-2">
+<h4 id="orgdfb44c9">scanf() function</h4>
+<div class="outline-text-4" id="text-orgdfb44c9">
 <p>
 If you use the %s format, the string runs up to (but not including)
 the next whitespace character (blank, tab, or newline). If you specify
@@ -833,11 +836,11 @@ word Portensia.
 </div>
 
 <div id="outline-container-org0dbef1a" class="outline-3">
-<h3 id="org0dbef1a"><span class="section-number-3">1.8</span> string output</h3>
+<h3 id="org0dbef1a">string output</h3>
 </div>
 <div id="outline-container-orgec1c9ec" class="outline-3">
-<h3 id="orgec1c9ec"><span class="section-number-3">1.9</span> Null character and Null pointer</h3>
-<div class="outline-text-3" id="text-1-9">
+<h3 id="orgec1c9ec">Null character and Null pointer</h3>
+<div class="outline-text-3" id="text-orgec1c9ec">
 <p>
 Null character and null pointer both appear in Listing 11.9 . Conceptually, these two nulls are
 different from one another. The null character, or '\0' , is the character used to mark the end
@@ -850,8 +853,8 @@ byte, the null pointer, being an address, typically is four bytes.
 </div>
 </div>
 <div id="outline-container-org15afa4f" class="outline-3">
-<h3 id="org15afa4f"><span class="section-number-3">1.10</span> string length example</h3>
-<div class="outline-text-3" id="text-1-10">
+<h3 id="org15afa4f">string length example</h3>
+<div class="outline-text-3" id="text-org15afa4f">
 <div class="org-src-container">
 <pre class="src src-c">// Function to count the number of characters in a string
 
@@ -862,7 +865,7 @@ int  stringLength (const char  string[])
     int  count = 0;
 
     while ( string[count] != '\0' )
-	++count;
+        ++count;
 
     return count;
 }
@@ -875,7 +878,7 @@ int main (void)
     const char  word3[] = { 'a', 'w', 'e', '\0' };
 
     printf ("%i   %i   %i\n", stringLength (word1),
-	     stringLength (word2), stringLength (word3));
+             stringLength (word2), stringLength (word3));
 
     return 0;
 }
@@ -883,9 +886,10 @@ int main (void)
 </div>
 </div>
 </div>
+
 <div id="outline-container-org8c095ff" class="outline-3">
-<h3 id="org8c095ff"><span class="section-number-3">1.11</span> concatenation of strings example</h3>
-<div class="outline-text-3" id="text-1-11">
+<h3 id="org8c095ff">concatenation of strings example</h3>
+<div class="outline-text-3" id="text-org8c095ff">
 <div class="org-src-container">
 <pre class="src src-c">#include &lt;stdio.h&gt;
 
@@ -912,12 +916,12 @@ void concat (char  result[], const char  str1[], const char  str2[])
     // copy str1 to result
 
     for ( i = 0;  str1[i] != '\0';  ++i )
-	result[i] = str1[i];
+        result[i] = str1[i];
 
     // copy str2 to result
 
     for ( j = 0;  str2[j] != '\0';  ++j )
-	result[i + j] = str2[j];
+        result[i + j] = str2[j];
 
     // Terminate the concatenated string with a null character
 
@@ -929,8 +933,8 @@ void concat (char  result[], const char  str1[], const char  str2[])
 </div>
 
 <div id="outline-container-orgc6af7a1" class="outline-3">
-<h3 id="orgc6af7a1"><span class="section-number-3">1.12</span> startsWith</h3>
-<div class="outline-text-3" id="text-1-12">
+<h3 id="orgc6af7a1">startsWith</h3>
+<div class="outline-text-3" id="text-orgc6af7a1">
 <div class="org-src-container">
 <pre class="src src-c">int startsWith(const char *string, const char *prefix) {
   while(*prefix) {
@@ -946,8 +950,8 @@ void concat (char  result[], const char  str1[], const char  str2[])
 </div>
 
 <div id="outline-container-org3eecf7d" class="outline-3">
-<h3 id="org3eecf7d"><span class="section-number-3">1.13</span> equalStrings example</h3>
-<div class="outline-text-3" id="text-1-13">
+<h3 id="org3eecf7d">equalStrings example</h3>
+<div class="outline-text-3" id="text-org3eecf7d">
 <div class="org-src-container">
 <pre class="src src-c">// Function to determine if two strings are equal
 
@@ -960,8 +964,8 @@ bool equalStrings (const char  s1[], const char  s2[])
     bool areEqual;
 
     while ( s1[i] == s2 [i]  &amp;&amp;
-		 s1[i] != '\0' &amp;&amp;  s2[i] != '\0' )
-	++i;
+                 s1[i] != '\0' &amp;&amp;  s2[i] != '\0' )
+        ++i;
 
     if ( s1[i] == '\0'  &amp;&amp;  s2[i] == '\0' )
        areEqual = true;
@@ -990,8 +994,8 @@ int main (void)
 </div>
 
 <div id="outline-container-org5b383f3" class="outline-3">
-<h3 id="org5b383f3"><span class="section-number-3">1.14</span> read string with scanf</h3>
-<div class="outline-text-3" id="text-1-14">
+<h3 id="org5b383f3">read string with scanf</h3>
+<div class="outline-text-3" id="text-org5b383f3">
 <div class="org-src-container">
 <pre class="src src-c">//  Program to illustrate the %s scanf format characters
 
@@ -1014,8 +1018,8 @@ int main (void)
 </div>
 
 <div id="outline-container-org2824c3f" class="outline-3">
-<h3 id="org2824c3f"><span class="section-number-3">1.15</span> reading lines of code</h3>
-<div class="outline-text-3" id="text-1-15">
+<h3 id="org2824c3f">reading lines of code</h3>
+<div class="outline-text-3" id="text-org2824c3f">
 <div class="org-src-container">
 <pre class="src src-c">#include &lt;stdio.h&gt;
 
@@ -1027,8 +1031,8 @@ int main (void)
 
     for ( i = 0; i &lt; 3; ++i )
     {
-	readLine (line);
-	printf ("%s\n\n", line);
+        readLine (line);
+        printf ("%s\n\n", line);
     }
 
     return 0;
@@ -1043,9 +1047,9 @@ void  readLine (char  buffer[])
 
     do
     {
-	character = getchar ();
-	buffer[i] = character;
-	++i;
+        character = getchar ();
+        buffer[i] = character;
+        ++i;
     }
     while ( character != '\n' );
 
@@ -1057,8 +1061,8 @@ void  readLine (char  buffer[])
 </div>
 
 <div id="outline-container-orgaefb6f2" class="outline-3">
-<h3 id="orgaefb6f2"><span class="section-number-3">1.16</span> Initializing and Displaying Character Strings</h3>
-<div class="outline-text-3" id="text-1-16">
+<h3 id="orgaefb6f2">Initializing and Displaying Character Strings</h3>
+<div class="outline-text-3" id="text-orgaefb6f2">
 <p>
 C permits a character array to be initialized by simply specifying a
 constant character string rather than a list of individual
@@ -1117,8 +1121,8 @@ it either).
 </div>
 </div>
 <div id="outline-container-org99cceb4" class="outline-3">
-<h3 id="org99cceb4"><span class="section-number-3">1.17</span> Counting words</h3>
-<div class="outline-text-3" id="text-1-17">
+<h3 id="org99cceb4">Counting words</h3>
+<div class="outline-text-3" id="text-org99cceb4">
 <div class="org-src-container">
 <pre class="src src-c">//  Function to determine if a character is alphabetic
 
@@ -1141,16 +1145,16 @@ int  countWords (const char  string[])
     bool  lookingForWord = true, alphabetic (const char  c);
 
     for ( i = 0;  string[i] != '\0';  ++i )
-	if ( alphabetic(string[i]) )
-	{
-	    if ( lookingForWord )
-	    {
-		++wordCount;
-		lookingForWord = false;
-	    }
-	}
-	else
-	    lookingForWord = true;
+        if ( alphabetic(string[i]) )
+        {
+            if ( lookingForWord )
+            {
+                ++wordCount;
+                lookingForWord = false;
+            }
+        }
+        else
+            lookingForWord = true;
 
     return wordCount;
 }
@@ -1172,8 +1176,8 @@ int main (void)
 </div>
 
 <div id="outline-container-orgeaca293" class="outline-3">
-<h3 id="orgeaca293"><span class="section-number-3">1.18</span> Converting a String to its Integer Equivalent</h3>
-<div class="outline-text-3" id="text-1-18">
+<h3 id="orgeaca293">Converting a String to its Integer Equivalent</h3>
+<div class="outline-text-3" id="text-orgeaca293">
 <div class="org-src-container">
 <pre class="src src-c">// Function to convert a string to an integer
 
@@ -1185,8 +1189,8 @@ int  strToInt (const char  string[])
 
     for  ( i = 0; string[i] &gt;= '0' &amp;&amp; string[i] &lt;= '9'; ++i )
     {
-	intValue = string[i] - '0';
-	result = result * 10 + intValue;
+        intValue = string[i] - '0';
+        result = result * 10 + intValue;
     }
 
     return result;
@@ -1209,8 +1213,8 @@ int main (void)
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="author">Author: moh</p>
-<p class="date">Created: 2017-02-16 Thu 20:08</p>
+<p class="author">Author: Mohammad Reza Mansouri</p>
+<p class="date">Created: 2017-03-02 Thu 14:02</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-03-03 Fri 17:59 -->
+<!-- 2017-03-05 Sun 23:56 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>php recipes</title>
@@ -323,7 +323,7 @@ for the JavaScript code in this tag.
 <li><a href="#orgcc4bfe2">array<sub>reduce</sub></a></li>
 <li><a href="#org5177cce">create and array from variables and their values</a>
 <ul>
-<li><a href="#orgd58d8ba">intro</a></li>
+<li><a href="#org7e0dd5e">intro</a></li>
 <li><a href="#orgf951a2f">using compact for debugging</a></li>
 </ul>
 </li>
@@ -472,7 +472,7 @@ for the JavaScript code in this tag.
 <li><a href="#org5e49c98">using <code>include_path</code> to manage larget projects</a></li>
 <li><a href="#org28c85ef">output buffering</a>
 <ul>
-<li><a href="#orgda559a9">intro</a></li>
+<li><a href="#org9245b85">intro</a></li>
 <li><a href="#org53612b1">detect if output buffering is turned on?</a></li>
 <li><a href="#orgc86ecc7">example</a></li>
 </ul>
@@ -491,16 +491,26 @@ for the JavaScript code in this tag.
 </li>
 <li><a href="#org5b87999">autoloading</a>
 <ul>
-<li><a href="#orgfc7078d">intro</a></li>
+<li><a href="#orge8203aa">intro</a></li>
 </ul>
 </li>
-<li><a href="#org654a712">security</a>
+<li><a href="#org1d7056b">security</a>
 <ul>
 <li><a href="#org6fcc233">Cross-site scripting</a></li>
 <li><a href="#orgf32b257">Cross-site Request Forgery(CSRF)</a></li>
 </ul>
 </li>
 <li><a href="#orgfac89a9">apache <code>.htaccess</code> sample configuration</a></li>
+<li><a href="#org92c6690">turn off DNS prefetching from individual documents</a></li>
+<li><a href="#orgdbc5c56">disable caching for a website</a></li>
+<li><a href="#org72093df">disable ajax browser caching</a></li>
+<li><a href="#org71150f8">query</a></li>
+<li><a href="#org6c6a966">error handler</a></li>
+<li><a href="#orgdc25fc4">security</a>
+<ul>
+<li><a href="#org12a81e5">disable <code>register_globals</code></a></li>
+</ul>
+</li>
 <li><a href="#org5525ed6">bootstrap</a>
 <ul>
 <li><a href="#orgaa31d5e">structure of page</a>
@@ -524,13 +534,16 @@ for the JavaScript code in this tag.
 </ul>
 </li>
 <li><a href="#orgd730f66">form</a></li>
+<li><a href="#orgc5fdc0b">show/hide bootstrap modals</a></li>
 </ul>
 </li>
-<li><a href="#org92c6690">turn off DNS prefetching from individual documents</a></li>
-<li><a href="#orgdbc5c56">disable caching for a website</a></li>
-<li><a href="#org72093df">disable ajax browser caching</a></li>
-<li><a href="#org71150f8">query</a></li>
-<li><a href="#orge371580">test</a></li>
+<li><a href="#orgdce577c">HTML</a>
+<ul>
+<li><a href="#org5bb9127">How do you disable browser Autocomplete on web form field / input tag?</a></li>
+<li><a href="#orgebe013a">How to use the “required” attribute with a “radio” input field</a></li>
+<li><a href="#org78c9ddf">HTML5 form required attribute. Set custom validation message?</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -1201,42 +1214,31 @@ $cards = range(1, 52);
 Use foreach:
 </p>
 
-<p>
-foreach ($array as $value) {
+<div class="org-src-container">
+<pre class="src src-php">foreach ($array as $value) {
     // Act on $value
 }
-</p>
 
-<p>
-Or to get an array’s keys and values:
-</p>
+#Or to get an array’s keys and values:
 
-<p>
 foreach ($array as $key =&gt; $value) {
     // Act II
 }
-</p>
 
-<p>
-Another technique is to use for:
-</p>
+#Another technique is to use for:
 
-<p>
 for ($key = 0, $size = count($array); $key &lt; $size; $key++) {
    // Act III
 }
-</p>
 
-<p>
-Finally, you can use each() in combination with list() and while:
-</p>
+#Finally, you can use each() in combination with list() and while:
 
-<p>
 reset($array) // reset internal pointer to beginning of array
 while (list($key, $value) = each ($array)) {
     // Final Act
 }
-</p>
+</pre>
+</div>
 </div>
 </div>
 
@@ -1308,20 +1310,22 @@ This removes all but the first two elements from $array.
 <h3 id="org1368f30">Appending one array to another</h3>
 <div class="outline-text-3" id="text-org1368f30">
 <p>
-The array<sub>merge</sub>() function works with both predefined arrays and arrays defined in place using array() :
+The array<sub>merge</sub>() function works with both predefined arrays and arrays defined
+in place using array() :
 </p>
 
-<p>
-$p<sub>languages</sub> = array('Perl', 'PHP');
-$p<sub>languages</sub> = array<sub>merge</sub>($p<sub>languages</sub>, array('Python'));
-print<sub>r</sub>($p<sub>languages</sub>);
+<div class="org-src-container">
+<pre class="src src-php">$p_languages = array('Perl', 'PHP');
+$p_languages = array_merge($p_languages, array('Python'));
+print_r($p_languages);
 Array
 (
     [0] =&gt; PHP
     [1] =&gt; Perl
     [2] =&gt; Python
 )
-</p>
+</pre>
+</div>
 
 <p>
 Merging arrays with only numerical keys causes the arrays to get
@@ -1331,18 +1335,18 @@ keys. Arrays with both types of keys exhibit both types of
 behavior. For example:
 </p>
 
-<p>
-$lc = array('a', 'b' =&gt; 'b'); <i>/ lower-case letters as values
-$uc = array('A', 'b' =&gt; 'B'); /</i> upper-case letters as values
-$ac = array<sub>merge</sub>($lc, $uc);  // all-cases?
-print<sub>r</sub>($ac);
+<pre class="example">
+$lc = array('a', 'b' =&gt; 'b'); // lower-case letters as values
+$uc = array('A', 'b' =&gt; 'B'); // upper-case letters as values
+$ac = array_merge($lc, $uc);  // all-cases?
+print_r($ac);
 Array
 (
     [0] =&gt; a
     [b] =&gt; B
     [1] =&gt; A
 )
-</p>
+</pre>
 
 <p>
 The uppercase A has been renumbered from index 0 to index 1, to avoid
@@ -1357,9 +1361,9 @@ overwrites any identically named keys found on the left. It doesn’t do
 any reordering to prevent collisions. Using the previous example:
 </p>
 
-<p>
-print<sub>r</sub>($uc + $lc);
-print<sub>r</sub>($lc + $uc);
+<pre class="example">
+print_r($uc + $lc);
+print_r($lc + $uc);
 Array
 (
     [0] =&gt; a
@@ -1370,7 +1374,7 @@ Array
     [0] =&gt; A
     [b] =&gt; B
 )
-</p>
+</pre>
 </div>
 </div>
 
@@ -1881,9 +1885,9 @@ var_dump(array_reduce($x, "sum", "No data to reduce")); // string(17) "No data t
 <div id="outline-container-org5177cce" class="outline-3">
 <h3 id="org5177cce">create and array from variables and their values</h3>
 <div class="outline-text-3" id="text-org5177cce">
-</div><div id="outline-container-orgd58d8ba" class="outline-4">
-<h4 id="orgd58d8ba">intro</h4>
-<div class="outline-text-4" id="text-orgd58d8ba">
+</div><div id="outline-container-org7e0dd5e" class="outline-4">
+<h4 id="org7e0dd5e">intro</h4>
+<div class="outline-text-4" id="text-org7e0dd5e">
 <p>
 There may also be times when you’ll want to use compact, the inverse
 of extract, to create an array from variables and their
@@ -3919,9 +3923,9 @@ As of PHP 4.3, she can use the set<sub>include</sub><sub>path</sub>() function t
 <div id="outline-container-org28c85ef" class="outline-2">
 <h2 id="org28c85ef">output buffering</h2>
 <div class="outline-text-2" id="text-org28c85ef">
-</div><div id="outline-container-orgda559a9" class="outline-3">
-<h3 id="orgda559a9">intro</h3>
-<div class="outline-text-3" id="text-orgda559a9">
+</div><div id="outline-container-org9245b85" class="outline-3">
+<h3 id="org9245b85">intro</h3>
+<div class="outline-text-3" id="text-org9245b85">
 <p>
 The idea of output buffering is to store all the content that has to
 be outputted in a memory buffer before outputting the whole
@@ -4076,9 +4080,9 @@ echo "Did nothing in $time seconds\n";
 <div id="outline-container-org5b87999" class="outline-2">
 <h2 id="org5b87999">autoloading</h2>
 <div class="outline-text-2" id="text-org5b87999">
-</div><div id="outline-container-orgfc7078d" class="outline-3">
-<h3 id="orgfc7078d">intro</h3>
-<div class="outline-text-3" id="text-orgfc7078d">
+</div><div id="outline-container-orge8203aa" class="outline-3">
+<h3 id="orge8203aa">intro</h3>
+<div class="outline-text-3" id="text-orge8203aa">
 <p>
 Autoloading is when we tell PHP where to look for our class files when it needs
 a class declaration that it’s yet to see.
@@ -4087,9 +4091,9 @@ a class declaration that it’s yet to see.
 </div>
 </div>
 
-<div id="outline-container-org654a712" class="outline-2">
-<h2 id="org654a712">security</h2>
-<div class="outline-text-2" id="text-org654a712">
+<div id="outline-container-org1d7056b" class="outline-2">
+<h2 id="org1d7056b">security</h2>
+<div class="outline-text-2" id="text-org1d7056b">
 </div><div id="outline-container-org6fcc233" class="outline-3">
 <h3 id="org6fcc233">Cross-site scripting</h3>
 <div class="outline-text-3" id="text-org6fcc233">
@@ -4202,6 +4206,111 @@ The script tells Apache that whenever an HTTP request arrives and if
 no physical file (!-f) or path (!-d) or symbolic link (!-l) can be
 found, it should transfer control to index.php
 </p>
+</div>
+</div>
+<div id="outline-container-org92c6690" class="outline-2">
+<h2 id="org92c6690">turn off DNS prefetching from individual documents</h2>
+<div class="outline-text-2" id="text-org92c6690">
+<p>
+You can also turn off DNS Prefetching from individual documents, using the
+http-equiv attribute on the &lt;meta&gt; element, like this:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html">&lt;meta http-equiv="x-dns-prefetch-control" content="off"&gt;
+ &lt;!-- turns on dns prefetching --&gt;
+&lt;meta http-equiv="x-dns-prefetch-control" content="off"&gt;
+&lt;!-- force the lookup of specific hostnames --&gt;
+&lt;link rel="dns-prefetch" href="http://www.spreadfirefox.com/"&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgdbc5c56" class="outline-2">
+<h2 id="orgdbc5c56">disable caching for a website</h2>
+<div class="outline-text-2" id="text-orgdbc5c56">
+<div class="org-src-container">
+<pre class="src src-html">&lt;meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" /&gt;
+&lt;meta http-equiv="Pragma" content="no-cache" /&gt;
+&lt;meta http-equiv="Expires" content="0" /&gt;
+</pre>
+</div>
+
+<p>
+<a href="http://live.datatables.net/sadipaji/132/edit">http://live.datatables.net/sadipaji/132/edit</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org72093df" class="outline-2">
+<h2 id="org72093df">disable ajax browser caching</h2>
+<div class="outline-text-2" id="text-org72093df">
+<div class="org-src-container">
+<pre class="src src-javascript">//prevents browser caching
+$.ajaxSetup({ cache: false });
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org71150f8" class="outline-2">
+<h2 id="org71150f8">query</h2>
+<div class="outline-text-2" id="text-org71150f8">
+<div class="org-src-container">
+<pre class="src src-sql">SELECT s,md5 from huge_data_table limit 10;
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-sql" id="org2f49534">SELECT s,md5 FROM huge_data_table limit 10;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6c6a966" class="outline-2">
+<h2 id="org6c6a966">error handler</h2>
+<div class="outline-text-2" id="text-org6c6a966">
+<div class="org-src-container">
+<pre class="src src-php"> &lt;?php
+    ini_set('error_reporting', E_ALL | E_STRICT);
+    ini_set('display_errors', 'Off');
+    ini_set('log_errors', 'On');
+    ini_set('error_log', '/usr/local/apache/logs/error_log');
+  ?&gt;
+
+// PHP also allows you to handle your own errors with the set_error_handler( ) function: 
+    &lt;?php
+    set_error_handler('my_error_handler');
+    ?&gt;
+
+// This allows you to define your own function (my_error_handler( )) to handle errors; the following is an example implementation: 
+    &lt;?php
+    function my_error_handler($number, $string, $file, $line, $context)
+    {
+      $error = "=  ==  ==  ==  ==\nPHP ERROR\n=  ==  ==  ==  ==\n";
+      $error .= "Number: [$number]\n";
+      $error .= "String: [$string]\n";
+      $error .= "File:   [$file]\n";
+      $error .= "Line:   [$line]\n";
+      $error .= "Context:\n" . print_r($context, TRUE) . "\n\n";
+      error_log($error, 3, '/usr/local/apache/logs/error_log');
+    }
+?&gt;
+// This restricts errors to warnings.
+&lt;?php
+    set_error_handler('my_warning_handler', E_WARNING);
+ ?&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgdc25fc4" class="outline-2">
+<h2 id="orgdc25fc4">security</h2>
+<div class="outline-text-2" id="text-orgdc25fc4">
+</div><div id="outline-container-org12a81e5" class="outline-3">
+<h3 id="org12a81e5">disable <code>register_globals</code></h3>
 </div>
 </div>
 <div id="outline-container-org5525ed6" class="outline-2">
@@ -4365,80 +4474,82 @@ levels.
 <div id="outline-container-orgd730f66" class="outline-3">
 <h3 id="orgd730f66">form</h3>
 </div>
-</div>
-
-<div id="outline-container-org92c6690" class="outline-2">
-<h2 id="org92c6690">turn off DNS prefetching from individual documents</h2>
-<div class="outline-text-2" id="text-org92c6690">
+<div id="outline-container-orgc5fdc0b" class="outline-3">
+<h3 id="orgc5fdc0b">show/hide bootstrap modals</h3>
+<div class="outline-text-3" id="text-orgc5fdc0b">
 <p>
-You can also turn off DNS Prefetching from individual documents, using the
-http-equiv attribute on the &lt;meta&gt; element, like this:
+Bootstrap has a few functions that can be called manually on modals:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-html">&lt;meta http-equiv="x-dns-prefetch-control" content="off"&gt;
- &lt;!-- turns on dns prefetching --&gt;
-&lt;meta http-equiv="x-dns-prefetch-control" content="off"&gt;
-&lt;!-- force the lookup of specific hostnames --&gt;
-&lt;link rel="dns-prefetch" href="http://www.spreadfirefox.com/"&gt;
+<pre class="src src-javascript">$('#myModal').modal('toggle');
+$('#myModal').modal('show');
+$('#myModal').modal('hide');
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgdce577c" class="outline-2">
+<h2 id="orgdce577c">HTML</h2>
+<div class="outline-text-2" id="text-orgdce577c">
+</div><div id="outline-container-org5bb9127" class="outline-3">
+<h3 id="org5bb9127">How do you disable browser Autocomplete on web form field / input tag?</h3>
+<div class="outline-text-3" id="text-org5bb9127">
+<p>
+autocomplete prevents form data from being cached in older browsers.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html">&lt;input type="text" name="foo" autocomplete="off" /&gt;
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgdbc5c56" class="outline-2">
-<h2 id="orgdbc5c56">disable caching for a website</h2>
-<div class="outline-text-2" id="text-orgdbc5c56">
-<div class="org-src-container">
-<pre class="src src-html">&lt;meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" /&gt;
-&lt;meta http-equiv="Pragma" content="no-cache" /&gt;
-&lt;meta http-equiv="Expires" content="0" /&gt;
-</pre>
-</div>
+
+<div id="outline-container-orgebe013a" class="outline-3">
+<h3 id="orgebe013a">How to use the “required” attribute with a “radio” input field</h3>
+<div class="outline-text-3" id="text-orgebe013a">
+<p>
+You just need to set the required-attribute for one input of the radiogroup, but you can set it for all.
+</p>
 
 <p>
-<a href="http://live.datatables.net/sadipaji/132/edit">http://live.datatables.net/sadipaji/132/edit</a>
+For example:
 </p>
-</div>
-</div>
-<div id="outline-container-org72093df" class="outline-2">
-<h2 id="org72093df">disable ajax browser caching</h2>
-<div class="outline-text-2" id="text-org72093df">
+
 <div class="org-src-container">
-<pre class="src src-javascript">//prevents browser caching
-$.ajaxSetup({ cache: false });
+<pre class="src src-html">&lt;form&gt;
+  &lt;label for="input1"&gt;1:&lt;/label&gt;
+  &lt;input type="radio" name="myradiogroup1" id="input1" value="1" required&gt;&lt;br&gt;
+
+  &lt;label for="input2"&gt;2:&lt;/label&gt;
+  &lt;input type="radio" name="myradiogroup1" id="input2" value="2"&gt;&lt;br&gt;
+
+  &lt;label for="input3"&gt;3:&lt;/label&gt;
+  &lt;input type="radio" name="myradiogroup1" id="input3" value="3"&gt;&lt;br&gt;
+
+  &lt;input type="submit" value="send"&gt;
+&lt;/form&gt;
 </pre>
 </div>
 </div>
 </div>
-
-<div id="outline-container-org71150f8" class="outline-2">
-<h2 id="org71150f8">query</h2>
-<div class="outline-text-2" id="text-org71150f8">
-<div class="org-src-container">
-<pre class="src src-sql">SELECT s,md5 from huge_data_table limit 10;
-</pre>
-</div>
-
-<div class="org-src-container">
-<pre class="src src-sql" id="org2f49534">SELECT s,md5 FROM huge_data_table limit 10;
-</pre>
-</div>
-</div>
-</div>
-
-<div id="outline-container-orge371580" class="outline-2">
-<h2 id="orge371580">test</h2>
-<div class="outline-text-2" id="text-orge371580">
+<div id="outline-container-org78c9ddf" class="outline-3">
+<h3 id="org78c9ddf">HTML5 form required attribute. Set custom validation message?</h3>
+<div class="outline-text-3" id="text-org78c9ddf">
 <p>
-fljdl
+<a href="http://jsfiddle.net/nteb4/23/">http://jsfiddle.net/nteb4/23/</a>
 </p>
+</div>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Mohammad Reza Mansouri</p>
-<p class="date">Created: 2017-03-03 Fri 17:59</p>
+<p class="date">Created: 2017-03-05 Sun 23:56</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

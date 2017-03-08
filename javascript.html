@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-03-02 Thu 14:01 -->
+<!-- 2017-03-04 Sat 20:30 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>javascript recipes</title>
@@ -365,7 +365,7 @@ for the JavaScript code in this tag.
 <ul>
 <li><a href="#org4ab810b">Best way to break from nested loops in Javascript?</a></li>
 <li><a href="#org24dddea">Using toString() to detect object class</a></li>
-<li><a href="#org848d4ea">Reflection</a></li>
+<li><a href="#org6eda487">Reflection</a></li>
 <li><a href="#org544f8fe">cloning objects</a></li>
 <li><a href="#org3258f25">return immutable object from a function</a></li>
 <li><a href="#orgfd69e07">tell if a number is even using bitwise &amp; operator</a></li>
@@ -442,7 +442,7 @@ for the JavaScript code in this tag.
 <ul>
 <li><a href="#org2474503">retrieval</a></li>
 <li><a href="#org4f8b5db">Reference</a></li>
-<li><a href="#org28f93af">Reflection</a></li>
+<li><a href="#org8272cb2">Reflection</a></li>
 <li><a href="#org67520d2">Enumeration</a></li>
 <li><a href="#org634d9ad">Delete</a></li>
 <li><a href="#org6361ff8">Traversing an object</a></li>
@@ -599,6 +599,7 @@ for the JavaScript code in this tag.
 <ul>
 <li><a href="#orgfc2a332">get/set value of text box</a></li>
 <li><a href="#org64cc5e1">reload an image</a></li>
+<li><a href="#orgb72acdc"><code>preventDefault</code> and ajax calls</a></li>
 </ul>
 </li>
 <li><a href="#org29f73d6">URL</a>
@@ -2565,9 +2566,9 @@ toString.call(null);        // [object Null]
 </div>
 </div>
 
-<div id="outline-container-org848d4ea" class="outline-3">
-<h3 id="org848d4ea">Reflection</h3>
-<div class="outline-text-3" id="text-org848d4ea">
+<div id="outline-container-org6eda487" class="outline-3">
+<h3 id="org6eda487">Reflection</h3>
+<div class="outline-text-3" id="text-org6eda487">
 <div class="org-src-container">
 <pre class="src src-javascript">function isUndefined(value) {
    return typeof value === 'undefined';
@@ -3953,9 +3954,9 @@ a = b = c = {};
 </div>
 </div>
 
-<div id="outline-container-org28f93af" class="outline-3">
-<h3 id="org28f93af">Reflection</h3>
-<div class="outline-text-3" id="text-org28f93af">
+<div id="outline-container-org8272cb2" class="outline-3">
+<h3 id="org8272cb2">Reflection</h3>
+<div class="outline-text-3" id="text-org8272cb2">
 <div class="org-src-container">
 <pre class="src src-javascript">typeof flight.number   // 'number'
 typeof flight.toString // 'function'
@@ -7664,6 +7665,43 @@ $("#myimg").attr("src", "/myimg.jpg?"+d.getTime());
 </div>
 </div>
 </div>
+
+<div id="outline-container-orgb72acdc" class="outline-3">
+<h3 id="orgb72acdc"><code>preventDefault</code> and ajax calls</h3>
+<div class="outline-text-3" id="text-orgb72acdc">
+<p>
+submits the form after getting response from ajax call.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-javascript">$('.recover-form').on('submit', function (e) {
+    var form = $(this),
+        input = $('.check-recover-email'),
+        span = $('.recover-error'),
+        email = input.val();
+    span.text('');
+    //prevent the submit
+    e.preventDefault();
+    $.ajax({
+        url: 'ajax/check-email',
+        async: 'false',
+        cache: 'false',
+        type: 'POST',
+        data: form.serialize(),
+        success: function (response) {
+            if (response == 0) {
+                span.text('email does not exist');
+            } else {
+                //submit if valie
+                form[0].submit()
+            }
+        }
+    });
+});
+</pre>
+</div>
+</div>
+</div>
 </div>
 
 <div id="outline-container-org29f73d6" class="outline-2">
@@ -7712,7 +7750,7 @@ the following  handles the case of space being encoded as +
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Mohammad Reza Mansouri</p>
-<p class="date">Created: 2017-03-02 Thu 14:01</p>
+<p class="date">Created: 2017-03-04 Sat 20:30</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

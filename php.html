@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-03-05 Sun 23:56 -->
+<!-- 2017-03-21 Tue 20:57 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>php recipes</title>
@@ -180,6 +180,8 @@
   /*]]>*/-->
 </style>
 <link rel="stylesheet" type="text/css" href="css/main.css" />
+<script src="js/org-info.js"></script>
+<script src="js/ganalytics.js" async></script>
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -286,7 +288,10 @@ for the JavaScript code in this tag.
 <li><a href="#org0b071ee">convert string to array</a></li>
 <li><a href="#orga882b78">split a string by char</a></li>
 <li><a href="#org1ad8a2a">split a string to chunks of length n</a></li>
+<li><a href="#org819d72a">split string by string</a></li>
 <li><a href="#orgc554e03">remove alphabet values from string</a></li>
+<li><a href="#orgbf9f6bd">check if string is empty or null</a></li>
+<li><a href="#orgce6b083">remove all leading zeros from  a string</a></li>
 </ul>
 </li>
 <li><a href="#orgdb8f5d7">numbers</a>
@@ -307,27 +312,6 @@ for the JavaScript code in this tag.
 <li><a href="#orgd062d08">Iterating through an array</a></li>
 <li><a href="#org12cd7ef">Deleting elements from an array</a></li>
 <li><a href="#org1f38577">Changing array size</a></li>
-<li><a href="#org1368f30">Appending one array to another</a></li>
-<li><a href="#orga8a1aee">Turning an Array into a String</a></li>
-<li><a href="#org11f772d">Checking if a Key Is in an Array</a></li>
-<li><a href="#org2f72e7d">Checking if an Element Is in an Array</a></li>
-<li><a href="#org2b75e97">Finding the Position of a Value in an Array</a></li>
-<li><a href="#org9391bd4">Finding Elements That Pass a Certain Test</a></li>
-<li><a href="#org85b5288">Finding the Largest or Smallest Valued Element in an Array</a></li>
-<li><a href="#org1cea9e2">Sorting an Array</a></li>
-<li><a href="#orgec07308">Randomizing an Array</a></li>
-<li><a href="#org0daa2a6">Removing Duplicate Elements from an Array</a></li>
-<li><a href="#orgd39d039">Applying a Function to Each Element in an Array</a></li>
-<li><a href="#orgefd7f6d">Finding the Union, Intersection, or Difference of Two Arrays</a></li>
-<li><a href="#org07cb094">Making an Object Act like an Array</a></li>
-<li><a href="#orgcc4bfe2">array<sub>reduce</sub></a></li>
-<li><a href="#org5177cce">create and array from variables and their values</a>
-<ul>
-<li><a href="#org7e0dd5e">intro</a></li>
-<li><a href="#orgf951a2f">using compact for debugging</a></li>
-</ul>
-</li>
-<li><a href="#org1521e69">flatten php array</a></li>
 </ul>
 </li>
 <li><a href="#orgd511018">Date and Time</a>
@@ -339,6 +323,7 @@ for the JavaScript code in this tag.
 <li><a href="#org681848c">date difference using <code>DateInterval</code></a></li>
 <li><a href="#org32af68e">number of days between two dates</a></li>
 <li><a href="#org0e093bf">convert seconds to time with format HH:MM:SS</a></li>
+<li><a href="#org39bdab2">current minute, second</a></li>
 </ul>
 </li>
 <li><a href="#org8a24443">variables</a>
@@ -363,6 +348,8 @@ for the JavaScript code in this tag.
 <li><a href="#org6f92338">redirecting</a></li>
 <li><a href="#org9847af7">making the root path</a></li>
 <li><a href="#orgc80ab4f">integer division</a></li>
+<li><a href="#orgc74ea16">HTTP refresh with echo</a></li>
+<li><a href="#org77c17d5">user IP</a></li>
 </ul>
 </li>
 <li><a href="#orgfbec5b2">json</a>
@@ -383,17 +370,18 @@ for the JavaScript code in this tag.
 <li><a href="#org34d290e">classes</a>
 <ul>
 <li><a href="#org40be2c5">static attributes or methods.</a></li>
-<li><a href="#orgaf591b4">_<sub>clone</sub> magic method</a></li>
+<li><a href="#org9e77f4b"><code>__clone</code> magic method</a></li>
 <li><a href="#orgd417cc1">passing objects as function parameters.</a></li>
-<li><a href="#org01a64ba">Using Magic _<sub>get</sub> and _<sub>set</sub> Methods</a></li>
+<li><a href="#orgf53c531">Using Magic <code>__get</code> and <code>__set</code> Methods</a></li>
 <li><a href="#orgcb469da">counting objects</a></li>
-<li><a href="#orgd8ace90">Using _<sub>call</sub>() and _<sub>callStatic</sub>()</a></li>
+<li><a href="#org82952fe">Using <code>__call()</code> and <code>__callStatic()</code></a></li>
 <li><a href="#org19eb291">serializing</a></li>
 </ul>
 </li>
 <li><a href="#org066d417">reflection</a>
 <ul>
 <li><a href="#org851fd45">retrieving the name of current function?</a></li>
+<li><a href="#orgf82c684">get type of variable</a></li>
 </ul>
 </li>
 <li><a href="#org80eacec">Debug</a>
@@ -472,7 +460,7 @@ for the JavaScript code in this tag.
 <li><a href="#org5e49c98">using <code>include_path</code> to manage larget projects</a></li>
 <li><a href="#org28c85ef">output buffering</a>
 <ul>
-<li><a href="#org9245b85">intro</a></li>
+<li><a href="#org6799e60">intro</a></li>
 <li><a href="#org53612b1">detect if output buffering is turned on?</a></li>
 <li><a href="#orgc86ecc7">example</a></li>
 </ul>
@@ -491,10 +479,10 @@ for the JavaScript code in this tag.
 </li>
 <li><a href="#org5b87999">autoloading</a>
 <ul>
-<li><a href="#orge8203aa">intro</a></li>
+<li><a href="#org7c99851">intro</a></li>
 </ul>
 </li>
-<li><a href="#org1d7056b">security</a>
+<li><a href="#org248186c">security</a>
 <ul>
 <li><a href="#org6fcc233">Cross-site scripting</a></li>
 <li><a href="#orgf32b257">Cross-site Request Forgery(CSRF)</a></li>
@@ -506,7 +494,7 @@ for the JavaScript code in this tag.
 <li><a href="#org72093df">disable ajax browser caching</a></li>
 <li><a href="#org71150f8">query</a></li>
 <li><a href="#org6c6a966">error handler</a></li>
-<li><a href="#orgdc25fc4">security</a>
+<li><a href="#org6d3a0e0">security</a>
 <ul>
 <li><a href="#org12a81e5">disable <code>register_globals</code></a></li>
 </ul>
@@ -516,7 +504,6 @@ for the JavaScript code in this tag.
 <li><a href="#orgaa31d5e">structure of page</a>
 <ul>
 <li><a href="#orga7351b8">settings of the viewing arena</a></li>
-<li><a href="#orgca458e0">Grid system</a></li>
 <li><a href="#org2a6be55">Container</a></li>
 <li><a href="#org7d46af9">Device Specific Definitions</a></li>
 <li><a href="#org21571d1">Order Column</a></li>
@@ -535,6 +522,15 @@ for the JavaScript code in this tag.
 </li>
 <li><a href="#orgd730f66">form</a></li>
 <li><a href="#orgc5fdc0b">show/hide bootstrap modals</a></li>
+<li><a href="#org88eac1f">change <code>table-stripped</code> strip color</a></li>
+<li><a href="#orga034c12">disable modal outside popup close</a></li>
+<li><a href="#orgc865e11">customize modal style</a></li>
+<li><a href="#org78dd9e1">useful resources</a></li>
+</ul>
+</li>
+<li><a href="#orga616f62"><code>datatables</code></a>
+<ul>
+<li><a href="#orgc4c6e43">filter for text inside a <code>&lt;span&gt;</code> or other html</a></li>
 </ul>
 </li>
 <li><a href="#orgdce577c">HTML</a>
@@ -542,6 +538,69 @@ for the JavaScript code in this tag.
 <li><a href="#org5bb9127">How do you disable browser Autocomplete on web form field / input tag?</a></li>
 <li><a href="#orgebe013a">How to use the “required” attribute with a “radio” input field</a></li>
 <li><a href="#org78c9ddf">HTML5 form required attribute. Set custom validation message?</a></li>
+<li><a href="#org8556f4d">disable input box <code>autocomplete</code></a></li>
+<li><a href="#orgbcfb5b0">How to disable the mobile keyboard from displaying input field</a></li>
+<li><a href="#orgce57b74">useful resources</a></li>
+<li><a href="#orgb219ecf">web application mobile icons</a></li>
+</ul>
+</li>
+<li><a href="#org4de2c25">FatFreeFramework</a>
+<ul>
+<li><a href="#orgef76014">CSRF protection example</a></li>
+</ul>
+</li>
+<li><a href="#org545dffb">css</a>
+<ul>
+<li><a href="#org071a339">media query</a>
+<ul>
+<li><a href="#orgaf7c550">basic syntax</a></li>
+<li><a href="#org0e420b5">logic</a></li>
+<li><a href="#orgc53d5d4">feature</a></li>
+<li><a href="#org5d2c66a">width and height</a></li>
+<li><a href="#org209a769">Pixel ratio</a>
+<ul>
+<li><a href="#org1884562">resolution media feature</a></li>
+</ul>
+</li>
+<li><a href="#org74459f9">device width and height</a></li>
+<li><a href="#org14e3a06">orientation</a></li>
+<li><a href="#org6c1ba73">aspect ratio</a></li>
+<li><a href="#org67f6f4c">Multiple Media Features</a></li>
+</ul>
+</li>
+<li><a href="#org12a4da1">selectors</a>
+<ul>
+<li><a href="#orgf97895f">Attribute selectors</a></li>
+<li><a href="#orga1cd2ac">New Attribute Selectors in CSS3</a></li>
+<li><a href="#org71ffd32">Ending Substring Attribute Value Selector</a></li>
+<li><a href="#orgfe7bb5a">Arbitrary Substring Attribute Value Selector</a></li>
+<li><a href="#org9e3ade7">Multiple Attribute Selectors</a></li>
+<li><a href="#org15fc7ea">The General Sibling Combinator</a></li>
+<li><a href="#org4a8c716">Structural Pseudo-classes</a></li>
+<li><a href="#org3622bfe">The :nth-* Pseudo-classes</a></li>
+<li><a href="#orgc224fc1">:nth-child() and :nth-of-type()</a></li>
+<li><a href="#orgef4710b">:nth-last-child() and :nth-last-of-type()</a></li>
+<li><a href="#org7b39bf5">:first-of-type, :last-child, and :last-of-type</a></li>
+<li><a href="#org03142ad">:only-child and :only-of-type</a></li>
+<li><a href="#org8ba1da3">:target</a></li>
+<li><a href="#org9b8dbbc">:empty</a></li>
+<li><a href="#orgcd17933">:root</a></li>
+<li><a href="#org04f1ff9">:not()</a></li>
+<li><a href="#orgc57f3e7">UI Element States</a></li>
+<li><a href="#org98b92e3">Constraint Validation Pseudo-classes</a></li>
+<li><a href="#org41ec9f9">Pseudo-elements</a></li>
+<li><a href="#orgd873932">The ::selection Pseudo-element</a></li>
+</ul>
+</li>
+<li><a href="#orgf38e50a">web fonts</a>
+<ul>
+<li><a href="#orgb6de2bd">The @font-face Rule</a></li>
+<li><a href="#orgd743fea">Defining Different Faces</a></li>
+<li><a href="#orgdab86a9">The Final “Bulletproof” Syntax</a></li>
+<li><a href="#org37e11db">todo: continue text effects@ch6 the book of css3</a></li>
+</ul>
+</li>
+<li><a href="#org4083ba6">useful resources</a></li>
 </ul>
 </li>
 </ul>
@@ -686,8 +745,8 @@ if (strpos($_POST['email'], '@') === false) {
 <div class="outline-text-3" id="text-orgd5dc8d6">
 <div class="org-src-container">
 <pre class="src src-php">&lt;?php
-$substring = substr($string,$start,$length);
-$username = substr($_GET['username'],0,8);
+ $substring = substr($string,$start,$length);
+ $username = substr($_GET['username'],0,8);
 ?&gt;
 </pre>
 </div>
@@ -914,11 +973,56 @@ Array
 </div>
 </div>
 
+<div id="outline-container-org819d72a" class="outline-3">
+<h3 id="org819d72a">split string by string</h3>
+<div class="outline-text-3" id="text-org819d72a">
+<div class="org-src-container">
+<pre class="src src-php">//array explode ( string $delimiter , string $string [, int $limit = PHP_INT_MAX ] );
+
+// Example 1
+$pizza  = "piece1 piece2 piece3 piece4 piece5 piece6";
+$pieces = explode(" ", $pizza);
+echo $pieces[0]; // piece1
+echo $pieces[1]; // piece2
+
+// Example 2
+$data = "foo:*:1023:1000::/home/foo:/bin/sh";
+list($user, $pass, $uid, $gid, $gecos, $home, $shell) = explode(":", $data);
+echo $user; // foo
+echo $pass; // *
+</pre>
+</div>
+</div>
+</div>
+
 <div id="outline-container-orgc554e03" class="outline-3">
 <h3 id="orgc554e03">remove alphabet values from string</h3>
 <div class="outline-text-3" id="text-orgc554e03">
 <div class="org-src-container">
 <pre class="src src-php">$res = preg_replace('/^[0-9].,/',$str);
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgbf9f6bd" class="outline-3">
+<h3 id="orgbf9f6bd">check if string is empty or null</h3>
+<div class="outline-text-3" id="text-orgbf9f6bd">
+<div class="org-src-container">
+<pre class="src src-php">// Function for basic field validation (present and neither empty nor only white space)
+function IsNullOrEmptyString($question){
+    return (!isset($question) || trim($question)==='');
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgce6b083" class="outline-3">
+<h3 id="orgce6b083">remove all leading zeros from  a string</h3>
+<div class="outline-text-3" id="text-orgce6b083">
+<div class="org-src-container">
+<pre class="src src-php">$str = ltrim($str, '0');
 </pre>
 </div>
 </div>
@@ -1278,728 +1382,21 @@ To delete multiple contiguous elements, use array<sub>splice</sub>():
 Use array<sub>pad</sub>() to make an array grow:
 </p>
 
-<p>
-// start at three
+<div class="org-src-container">
+<pre class="src src-php">// start at three
 $array = array('apple', 'banana', 'coconut');
-</p>
 
-<p>
 // grow to five
-$array = array<sub>pad</sub>($array, 5, '');
-</p>
+$array = array_pad($array, 5, '');
 
-<p>
 Now, count($array) is 5, and the last two elements, $array[3] and $array[4], contain the empty string.
-</p>
 
-<p>
-To reduce an array, you can use array<sub>splice</sub>():
-</p>
+To reduce an array, you can use array_splice():
 
-<p>
 // no assignment to $array
-array<sub>splice</sub>($array, 2);
-</p>
+array_splice($array, 2);
 
-<p>
-This removes all but the first two elements from $array.
-</p>
-</div>
-</div>
-<div id="outline-container-org1368f30" class="outline-3">
-<h3 id="org1368f30">Appending one array to another</h3>
-<div class="outline-text-3" id="text-org1368f30">
-<p>
-The array<sub>merge</sub>() function works with both predefined arrays and arrays defined
-in place using array() :
-</p>
-
-<div class="org-src-container">
-<pre class="src src-php">$p_languages = array('Perl', 'PHP');
-$p_languages = array_merge($p_languages, array('Python'));
-print_r($p_languages);
-Array
-(
-    [0] =&gt; PHP
-    [1] =&gt; Perl
-    [2] =&gt; Python
-)
-</pre>
-</div>
-
-<p>
-Merging arrays with only numerical keys causes the arrays to get
-renumbered, so values aren’t lost. Merging arrays with string keys
-causes the second array to overwrite the value of any duplicated
-keys. Arrays with both types of keys exhibit both types of
-behavior. For example:
-</p>
-
-<pre class="example">
-$lc = array('a', 'b' =&gt; 'b'); // lower-case letters as values
-$uc = array('A', 'b' =&gt; 'B'); // upper-case letters as values
-$ac = array_merge($lc, $uc);  // all-cases?
-print_r($ac);
-Array
-(
-    [0] =&gt; a
-    [b] =&gt; B
-    [1] =&gt; A
-)
-</pre>
-
-<p>
-The uppercase A has been renumbered from index 0 to index 1, to avoid
-a collision, and merged onto the end. The uppercase B has overwritten
-the lowercase b and replaced it in the original place within the
-array.
-</p>
-
-<p>
-The + operator can also merge arrays. The array on the right
-overwrites any identically named keys found on the left. It doesn’t do
-any reordering to prevent collisions. Using the previous example:
-</p>
-
-<pre class="example">
-print_r($uc + $lc);
-print_r($lc + $uc);
-Array
-(
-    [0] =&gt; a
-    [b] =&gt; b
-)
-Array
-(
-    [0] =&gt; A
-    [b] =&gt; B
-)
-</pre>
-</div>
-</div>
-
-<div id="outline-container-orga8a1aee" class="outline-3">
-<h3 id="orga8a1aee">Turning an Array into a String</h3>
-<div class="outline-text-3" id="text-orga8a1aee">
-<p>
-You have an array, and you want to convert it into a nicely formatted string.
-</p>
-
-<p>
-Use join():
-</p>
-<div class="org-src-container">
-<pre class="src src-php">// make a comma delimited list
-$string = join(',', $array);
-</pre>
-</div>
-
-<p>
-Or loop yourself:
-</p>
-<div class="org-src-container">
-<pre class="src src-php">$string = '';
-
-foreach ($array as $key =&gt; $value) {
-    $string .= ",$value";
-}
-
-$string = substr($string, 1); // remove leading ","
-</pre>
-</div>
-</div>
-</div>
-
-<div id="outline-container-org11f772d" class="outline-3">
-<h3 id="org11f772d">Checking if a Key Is in an Array</h3>
-<div class="outline-text-3" id="text-org11f772d">
-<p>
-Use array<sub>key</sub><sub>exists</sub>() to check for a key no matter what the associated value is:
-</p>
-
-<p>
-if (array<sub>key</sub><sub>exists</sub>('key', $array)) {
-    <i>* there is a value for $array['key'] *</i>
-}
-</p>
-
-<p>
-Use isset() to find a key whose associated value is anything but null:
-</p>
-
-<p>
-if (isset($array['key'])) { <i>* there is a non-null value for 'key' in $array *</i> }
-</p>
-
-<p>
-Discussion
-</p>
-
-<p>
-The array<sub>key</sub><sub>exists</sub>() function completely ignores array values—it
-just reports whether there is an element in the array with a
-particular key. isset(), however, behaves the same way on array keys
-as it does with other variables. A null value causes isset() to return
-false.
-</p>
-</div>
-</div>
-
-<div id="outline-container-org2f72e7d" class="outline-3">
-<h3 id="org2f72e7d">Checking if an Element Is in an Array</h3>
-<div class="outline-text-3" id="text-org2f72e7d">
-<p>
-Use in<sub>array</sub>():
-</p>
-
-<p>
-if (in<sub>array</sub>($value, $array)) {
-    // an element has $value as its value in array $array
-}
-</p>
-
-<p>
-The default behavior of in<sub>array</sub>() is to compare items using the <code>=
-operator. To use the strict equality check, ==</code>, pass true as the
-third parameter to in<sub>array</sub>():
-</p>
-
-<p>
-$array = array(1, '2', 'three');
-</p>
-
-<p>
-in<sub>array</sub>(0, $array);        <i>/ true!
-in<sub>array</sub>(0, $array, true);  /</i> false
-in<sub>array</sub>(1, $array);        <i>/ true
-in<sub>array</sub>(1, $array, true);  /</i> true
-in<sub>array</sub>(2, $array);        <i>/ true
-in<sub>array</sub>(2, $array, true);  /</i> false
-</p>
-</div>
-</div>
-<div id="outline-container-org2b75e97" class="outline-3">
-<h3 id="org2b75e97">Finding the Position of a Value in an Array</h3>
-<div class="outline-text-3" id="text-org2b75e97">
-<p>
-Use array<sub>search</sub>() . It returns the key of the found value. If the
-value is not in the array, it returns false:
-</p>
-
-<p>
-$position = array<sub>search</sub>($value, $array);
-if ($position !== false) {
-    // the element in position $position has $value as its value in array $array
-}
-</p>
-</div>
-</div>
-<div id="outline-container-org9391bd4" class="outline-3">
-<h3 id="org9391bd4">Finding Elements That Pass a Certain Test</h3>
-<div class="outline-text-3" id="text-org9391bd4">
-<p>
-Use a foreach loop:
-</p>
-
-<p>
-$movies = array(&#x2026;);
-</p>
-
-<p>
-foreach ($movies as $movie) {
-    if ($movie['box<sub>office</sub><sub>gross</sub>'] &lt; 5000000) { $flops[] = $movie; }
-}
-</p>
-
-<p>
-Or array<sub>filter</sub>():
-</p>
-
-<p>
-$movies = array(&#x2026;);
-</p>
-
-<p>
-function flops($movie) {
-    return ($movie['box<sub>office</sub><sub>gross</sub>'] &lt; 5000000) ? 1 : 0;
-}
-</p>
-
-<p>
-$flops = array<sub>filter</sub>($movies, 'flops');
-</p>
-</div>
-</div>
-<div id="outline-container-org85b5288" class="outline-3">
-<h3 id="org85b5288">Finding the Largest or Smallest Valued Element in an Array</h3>
-<div class="outline-text-3" id="text-org85b5288">
-<p>
-To find the largest element, use max():
-</p>
-
-<p>
-$largest = max($array);
-</p>
-
-<p>
-To find the smallest element, use min():
-</p>
-
-<p>
-$smallest = min($array);
-</p>
-</div>
-</div>
-<div id="outline-container-org1cea9e2" class="outline-3">
-<h3 id="org1cea9e2">Sorting an Array</h3>
-<div class="outline-text-3" id="text-org1cea9e2">
-<p>
-To sort an array using the traditional definition of sort, use sort():
-</p>
-
-<p>
-$states = array('Delaware', 'Pennsylvania', 'New Jersey');
-sort($states);
-</p>
-
-<p>
-To sort numerically, pass SORT<sub>NUMERIC</sub> as the second argument to sort():
-</p>
-
-<p>
-$scores = array(1, 10, 2, 20);
-sort($scores, SORT<sub>NUMERIC</sub>);
-</p>
-
-<p>
-This resorts the numbers in ascending order (1, 2, 10, 20) instead of
-lexicographical order (1, 10, 2, 20).
-</p>
-
-<p>
-The sort() function doesn’t preserve the key/value association between
-elements; instead, entries are reindexed starting at 0 and going
-upward. (The one exception to this rule is a one-element array; its
-lone element doesn’t have its index reset to 0. This is fixed as of
-PHP 4.2.3.)
-</p>
-
-<p>
-To preserve the key/value links, use asort(). The asort() function is
-normally used for associative arrays, but it can also be useful when
-the indexes of the entries are meaningful:
-</p>
-
-<p>
-$states = array(1 =&gt; 'Delaware', 'Pennsylvania', 'New Jersey');
-asort($states);
-</p>
-
-<p>
-while (list($rank, $state) = each($states)) {
-    print "$state was the #$rank state to join the United States\n";
-</p>
-
-<p>
-}
-</p>
-
-<p>
-Use natsort() to sort the array using a natural sorting
-algorithm. Under natural sorting, you can mix strings and numbers
-inside your elements and still get the right answer:
-</p>
-
-<p>
-$tests = array('test1.php', 'test10.php', 'test11.php', 'test2.php');
-natsort($tests);
-</p>
-
-<p>
-The elements are now ordered 'test1.php', 'test2.php', 'test10.php',
-and 'test11.php'. With natural sorting, the number 10 comes after the
-number 2; the opposite occurs under traditional sorting. For
-case-insensitive natural sorting, use natcasesort().
-</p>
-
-<p>
-To sort the array in reverse order, use rsort() or arsort(), which is
-like rsort() but also preserves keys. There is no natrsort() or
-natcasersort(). You can also pass SORT<sub>NUMERIC</sub> into these functions.
-</p>
-</div>
-</div>
-<div id="outline-container-orgec07308" class="outline-3">
-<h3 id="orgec07308">Randomizing an Array</h3>
-<div class="outline-text-3" id="text-orgec07308">
-<p>
-Use shuffle():
-</p>
-
-<p>
-shuffle($array);
-</p>
-</div>
-</div>
-
-<div id="outline-container-org0daa2a6" class="outline-3">
-<h3 id="org0daa2a6">Removing Duplicate Elements from an Array</h3>
-<div class="outline-text-3" id="text-org0daa2a6">
-<p>
-If the array is already complete, use array<sub>unique</sub>(), which returns a
-new array that contains no duplicate values:
-</p>
-
-<p>
-$unique = array<sub>unique</sub>($array);
-</p>
-
-<p>
-If you create the array while processing results, here is a technique for numerical arrays:
-</p>
-
-<p>
-foreach ($<sub>REQUEST</sub>['fruits'] as $fruit) {
-    if (!in<sub>array</sub>($array, $fruit)) { $array[] = $fruit; }
-}
-</p>
-
-<p>
-Here’s one for associative arrays:
-</p>
-
-<p>
-foreach ($<sub>REQUEST</sub>['fruits'] as $fruit) {
-    $array[$fruit] = $fruit;
-}
-</p>
-</div>
-</div>
-<div id="outline-container-orgd39d039" class="outline-3">
-<h3 id="orgd39d039">Applying a Function to Each Element in an Array</h3>
-<div class="outline-text-3" id="text-orgd39d039">
-<p>
-Use array<sub>walk</sub>():
-</p>
-<div class="org-src-container">
-<pre class="src src-php">function escape_data(&amp;$value, $key) {
-  $value = htmlentities($value, ENT_QUOTES);
-}
-
-$names = array('firstname' =&gt; "Baba",
-               'lastname'  =&gt; "O'Riley");
-
-array_walk($names, 'escape_data');
-
-foreach ($names as $name) {
-  print "$name\n";
-}
-</pre>
-</div>
-
-<p>
-Baba
-O&amp;#039;Riley
-</p>
-
-<p>
-For nested data, use array<sub>walk</sub><sub>recursive</sub>():
-</p>
-
-<div class="org-src-container">
-<pre class="src src-php">function escape_data(&amp;$value, $key) {
-  $value = htmlentities($value, ENT_QUOTES);
-}
-
-$names = array('firstnames' =&gt; array("Baba", "Bill"),
-               'lastnames'  =&gt; array("O'Riley", "O'Reilly"));
-
-array_walk_recursive($names, 'escape_data');
-
-foreach ($names as $nametypes) {
-  foreach ($nametypes as $name) {
-    print "$name\n";
-  }
-}
-</pre>
-</div>
-
-<p>
-Baba
-Bill
-O&amp;#039;Riley
-O&amp;#039;Reilly
-</p>
-</div>
-</div>
-<div id="outline-container-orgefd7f6d" class="outline-3">
-<h3 id="orgefd7f6d">Finding the Union, Intersection, or Difference of Two Arrays</h3>
-<div class="outline-text-3" id="text-orgefd7f6d">
-<p>
-To compute the union:
-</p>
-
-<p>
-$union = array<sub>unique</sub>(array<sub>merge</sub>($a, $b));
-</p>
-
-<p>
-To compute the intersection:
-</p>
-
-<p>
-$intersection = array<sub>intersect</sub>($a, $b);
-</p>
-
-<p>
-To find the simple difference:
-</p>
-
-<p>
-$difference = array<sub>diff</sub>($a, $b);
-</p>
-
-<p>
-And for the symmetric difference:
-</p>
-
-<p>
-$difference = array<sub>merge</sub>(array<sub>diff</sub>($a, $b), array<sub>diff</sub>($b, $a));
-</p>
-</div>
-</div>
-<div id="outline-container-org07cb094" class="outline-3">
-<h3 id="org07cb094">Making an Object Act like an Array</h3>
-<div class="outline-text-3" id="text-org07cb094">
-<p>
-Implement SPL’s ArrayAccess interface:
-</p>
-
-<p>
-class FakeArray implements ArrayAccess {
-</p>
-
-<p>
-private $elements;
-</p>
-
-<p>
-public function _<sub>construct</sub>() {
-  $this-&gt;elements = array();
-}
-</p>
-
-<p>
-public function offsetExists($offset) {
-  return isset($this-&gt;elements[$offset]);
-}
-</p>
-
-<p>
-public function offsetGet($offset) {
-  return $this-&gt;elements[$offset];
-}
-</p>
-
-<p>
-public function offsetSet($offset, $value) {
-  return $this-&gt;elements[$offset] = $value;
-}
-</p>
-
-<p>
-public function offsetUnset($offset) {
-  unset($this-&gt;elements[$offset]);
-}
-}
-</p>
-
-<p>
-$array = new FakeArray;
-</p>
-
-<p>
-// What's Opera, Doc?
-$array['animal'] = 'wabbit';
-</p>
-
-<p>
-// Be very quiet I'm hunting wabbits
-if (isset($array['animal']) &amp;&amp;
-	// Wabbit tracks!!!
-    $array['animal'] == 'wabbit') {
-</p>
-
-<p>
-// Kill the wabbit, kill the wabbit, kill the wabbit
-unset($array['animal']);
-// Yo ho to oh! Yo ho to oh! Yo ho&#x2026;
-}    
-</p>
-
-<p>
-<i>/ What have I done?? I've killed the wabbit&#x2026;.
-/</i> Poor little bunny, poor little wabbit&#x2026;
-if (!isset($array['animal'])) {
-	print "Well, what did you expect in an opera? A happy ending?\n";
-}
-Well, what did you expect in an opera? A happy ending?
-</p>
-</div>
-</div>
-
-<div id="outline-container-orgcc4bfe2" class="outline-3">
-<h3 id="orgcc4bfe2">array<sub>reduce</sub></h3>
-<div class="outline-text-3" id="text-orgcc4bfe2">
-<p>
-syntax
-   mixed array<sub>reduce</sub> ( array $array , callable $callback [, mixed $initial = NULL ] )
-</p>
-
-<div class="org-src-container">
-<pre class="src src-php">&lt;?php
-function sum($carry, $item)
-{
-    $carry += $item;
-    return $carry;
-}
-
-function product($carry, $item)
-{
-    $carry *= $item;
-    return $carry;
-}
-
-$a = array(1, 2, 3, 4, 5);
-$x = array();
-
-var_dump(array_reduce($a, "sum")); // int(15)
-var_dump(array_reduce($a, "product", 10)); // int(1200), because: 10*1*2*3*4*5
-var_dump(array_reduce($x, "sum", "No data to reduce")); // string(17) "No data to reduce"
-?&gt;
-</pre>
-</div>
-</div>
-</div>
-
-<div id="outline-container-org5177cce" class="outline-3">
-<h3 id="org5177cce">create and array from variables and their values</h3>
-<div class="outline-text-3" id="text-org5177cce">
-</div><div id="outline-container-org7e0dd5e" class="outline-4">
-<h4 id="org7e0dd5e">intro</h4>
-<div class="outline-text-4" id="text-org7e0dd5e">
-<p>
-There may also be times when you’ll want to use compact, the inverse
-of extract, to create an array from variables and their
-values. Example 6-14 shows how you might use this function.
-</p>
-
-<p>
-Example 6-14. Using the compact function
-</p>
-<div class="org-src-container">
-<pre class="src src-php">&lt;?php
-$fname   = "Elizabeth";
-$sname   = "Windsor";
-$address = "Buckingham Palace";
-$city    = "London";
-$country = "United Kingdom";
-
-$contact = compact('fname', 'sname', 'address', 'city', 'country');
-print_r($contact);
-?&gt;
-</pre>
-</div>
-
-<p>
-The result of running Example 6-14 is:
-</p>
-<pre class="example">
-Array
-(
-    [fname] =&gt; Elizabeth
-    [sname] =&gt; Windsor
-    [address] =&gt; Buckingham Palace
-    [city] =&gt; London
-    [country] =&gt; United Kingdom
-)
-</pre>
-
-<p>
-Note that compact requires the variable names to be supplied in quotes
-and not as variables preceded with a $ symbol. This is because compact
-is looking for an array of variable names.
-</p>
-</div>
-</div>
-
-<div id="outline-container-orgf951a2f" class="outline-4">
-<h4 id="orgf951a2f">using compact for debugging</h4>
-<div class="outline-text-4" id="text-orgf951a2f">
-<p>
-Another use of this function is for debugging, when you wish to
-quickly view several variables and their values, as in Example 6-15.
-</p>
-
-<p>
-Example 6-15. Using compact to help with debugging
-</p>
-<div class="org-src-container">
-<pre class="src src-php">&lt;?php
-$j       = 23;
-$temp    = "Hello";
-$address = "1 Old Street";
-$age     = 61;
-
-print_r(compact(explode(' ', 'j temp address age')));
-?&gt;
-</pre>
-</div>
-
-<p>
-This works by using the explode function to extract all the words from
-the string into an array, which is then passed to the compact
-function. This function in turn returns an array to print<sub>r</sub>, which
-shows its contents.
-</p>
-
-<p>
-If you copy and paste the print<sub>r</sub> line of code, you only need to alter
-the variables named there for a quick printout of a group of
-variables’ values. In this example, the output is:
-</p>
-<pre class="example">
-Array
-(
-    [j] =&gt; 23
-    [temp] =&gt; Hello
-    [address] =&gt; 1 Old Street
-    [age] =&gt; 61
-)
-</pre>
-</div>
-</div>
-</div>
-
-<div id="outline-container-org1521e69" class="outline-3">
-<h3 id="org1521e69">flatten php array</h3>
-<div class="outline-text-3" id="text-org1521e69">
-<div class="org-src-container">
-<pre class="src src-php">function array_flatten($array, $return = array())
-{
-    foreach ($array as $key =&gt; $value)
-    {
-        if (is_array($value) || is_object($value))
-        {
-            $return = array_flatten($value, $return);
-        }
-        else
-        {
-            $return[] = $value;
-        }
-    }
-    return $return;
-}
+// This removes all but the first two elements from $array.
 </pre>
 </div>
 </div>
@@ -2305,6 +1702,17 @@ $today-&gt;getTimestamp() - $yesterday-&gt;getTimestamp()/86400;
 <div class="outline-text-3" id="text-org0e093bf">
 <div class="org-src-container">
 <pre class="src src-php">date('H:i:s', $seconds);
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org39bdab2" class="outline-3">
+<h3 id="org39bdab2">current minute, second</h3>
+<div class="outline-text-3" id="text-org39bdab2">
+<div class="org-src-container">
+<pre class="src src-php">$currentMinute = ltrim(date('i'),'0');
+$currentSecond = date('s')+0;
 </pre>
 </div>
 </div>
@@ -2697,7 +2105,35 @@ Returns the integer quotient of the division of dividend by divisor.
 </p>
 </div>
 </div>
+<div id="outline-container-orgc74ea16" class="outline-3">
+<h3 id="orgc74ea16">HTTP refresh with echo</h3>
+<div class="outline-text-3" id="text-orgc74ea16">
+<div class="org-src-container">
+<pre class="src src-php">echo "&lt;meta http-equiv='refresh' content='0;url=http://domain.com?a=1&amp;b=2'&gt;";
+//or even
+header ("Location: url=http://domain.com?a=1&amp;b=2");
+</pre>
 </div>
+</div>
+</div>
+
+<div id="outline-container-org77c17d5" class="outline-3">
+<h3 id="org77c17d5">user IP</h3>
+<div class="outline-text-3" id="text-org77c17d5">
+<div class="org-src-container">
+<pre class="src src-php">if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+  $ip=$_SERVER['HTTP_CLIENT_IP'];}
+elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+  $ip=$_SERVER['HTTP_X_FORWARDED_FOR'];} 
+else {
+  $ip=$_SERVER['REMOTE_ADDR'];
+}
+</pre>
+</div>
+</div>
+</div>
+</div>
+
 <div id="outline-container-orgfbec5b2" class="outline-2">
 <h2 id="orgfbec5b2">json</h2>
 <div class="outline-text-2" id="text-orgfbec5b2">
@@ -2809,9 +2245,9 @@ self and parent , which resolve to the current class and the parent of the curre
 </div>
 </div>
 
-<div id="outline-container-orgaf591b4" class="outline-3">
-<h3 id="orgaf591b4">_<sub>clone</sub> magic method</h3>
-<div class="outline-text-3" id="text-orgaf591b4">
+<div id="outline-container-org9e77f4b" class="outline-3">
+<h3 id="org9e77f4b"><code>__clone</code> magic method</h3>
+<div class="outline-text-3" id="text-org9e77f4b">
 <p>
 To actually copy an object in PHP5, you need to use the built-in _ _ clone()
 method.
@@ -2862,9 +2298,9 @@ inside the function, that change is reflected outside.
 </p>
 </div>
 </div>
-<div id="outline-container-org01a64ba" class="outline-3">
-<h3 id="org01a64ba">Using Magic _<sub>get</sub> and _<sub>set</sub> Methods</h3>
-<div class="outline-text-3" id="text-org01a64ba">
+<div id="outline-container-orgf53c531" class="outline-3">
+<h3 id="orgf53c531">Using Magic <code>__get</code> and <code>__set</code> Methods</h3>
+<div class="outline-text-3" id="text-orgf53c531">
 <p>
 These are called when you access a property that doesn’t exist.
 </p>
@@ -2923,11 +2359,11 @@ echo count($courier); // outputs 3
 </div>
 </div>
 
-<div id="outline-container-orgd8ace90" class="outline-3">
-<h3 id="orgd8ace90">Using _<sub>call</sub>() and _<sub>callStatic</sub>()</h3>
-<div class="outline-text-3" id="text-orgd8ace90">
+<div id="outline-container-org82952fe" class="outline-3">
+<h3 id="org82952fe">Using <code>__call()</code> and <code>__callStatic()</code></h3>
+<div class="outline-text-3" id="text-org82952fe">
 <p>
-When we call a method that isn’t declared in the class, the _<sub>call</sub>() method is
+When we call a method that isn’t declared in the class, the <code>__call()</code> method is
 called instead.
 </p>
 
@@ -2966,6 +2402,7 @@ called instead.
 To serialize data in PHP means to convert it into a text-based format that we can
 store, for example, in a database.
 </p>
+
 <div class="org-src-container">
 <pre class="src src-php">$mycourier = new Courier('Avian Services', 'Australia');
 var_dump($mycourier);
@@ -3031,8 +2468,8 @@ stored when the object is “woken.”
 <h3 id="org851fd45">retrieving the name of current function?</h3>
 <div class="outline-text-3" id="text-org851fd45">
 <p>
-_<sub>FUNCTION</sub>__ returns only the name of the function.
-while as <span class="underline"><span class="underline">METHOD</span></span> returns the name of the class alongwith the name of the function.
+<code>__FUNCTION__</code> returns only the name of the function.
+while as <code>__METHOD__</code> returns the name of the class alongwith the name of the function.
 </p>
 
 <div class="org-src-container">
@@ -3058,7 +2495,38 @@ $obj-&gt;print_method();    // Returns: foo::print_method
 </p>
 </div>
 </div>
+<div id="outline-container-orgf82c684" class="outline-3">
+<h3 id="orgf82c684">get type of variable</h3>
+<div class="outline-text-3" id="text-orgf82c684">
+<div class="org-src-container">
+<pre class="src src-php">string gettype ( mixed $var );
+&lt;?php
+
+$data = array(1, 1., NULL, new stdClass, 'foo');
+
+foreach ($data as $value) {
+    echo gettype($value), "\n";
+}
+
+?&gt;
+</pre>
 </div>
+
+<p>
+The above example will output something similar to:
+</p>
+
+<pre class="example">
+integer
+double
+NULL
+object
+string
+</pre>
+</div>
+</div>
+</div>
+
 <div id="outline-container-org80eacec" class="outline-2">
 <h2 id="org80eacec">Debug</h2>
 <div class="outline-text-2" id="text-org80eacec">
@@ -3157,7 +2625,7 @@ We can set any properties or add any methods we desire to this Exception class.
 <p>
 To avoid seeing fatal errors where exceptions have been thrown and our code failed
 to catch them, we can set a default behavior for our application in this situation.
-To do this, we use a function called set<sub>exception</sub><sub>handler</sub>() . This accepts a
+To do this, we use a function called <code>set_exception_handler()</code> . This accepts a
 callback as its parameter, so we can give the name of a function to use, for example.
 An exception handler will usually present an error screen to the user—much nicer
 than a fatal error message!
@@ -3257,6 +2725,7 @@ name, and it returns a string containing everything in the file.
 <p>
 use <code>file_put_contents()</code>.
 </p>
+
 <div class="org-src-container">
 <pre class="src src-php">// Write the results to page.html
 file_put_contents('page.html', $page);
@@ -3374,6 +2843,7 @@ header('Content-Disposition: attachment; filename="dishes.csv"');
 <p>
 install a lumen app in <b>/var/www</b>
 </p>
+
 <div class="org-src-container">
 <pre class="src src-shell">$ lumen new cms.app
 </pre>
@@ -3382,6 +2852,7 @@ install a lumen app in <b>/var/www</b>
 <p>
 make your storage folder writable
 </p>
+
 <div class="org-src-container">
 <pre class="src src-shell">$ sudo chmod -R 777 storage
 </pre>
@@ -3390,6 +2861,7 @@ make your storage folder writable
 <p>
 create a virtual host file
 </p>
+
 <div class="org-src-container">
 <pre class="src src-shell">$ cp /ect/apache2/sites-available/000-default.conf /etc/apache2/sites-available/cms.conf
 </pre>
@@ -3419,6 +2891,7 @@ to <b>/etc/apache2/ports.conf</b> file.
 <p>
 now we have to make the <b>VirtualHost</b> active by running <b>a2ensite</b>.
 </p>
+
 <div class="org-src-container">
 <pre class="src src-shell">$ sudo a2ensite cms.conf
 </pre>
@@ -3427,6 +2900,7 @@ now we have to make the <b>VirtualHost</b> active by running <b>a2ensite</b>.
 <p>
 restart the service for the new settings to take effect.
 </p>
+
 <div class="org-src-container">
 <pre class="src src-shell">$ sudo service apache2 restart
 </pre>
@@ -3447,6 +2921,7 @@ restart the service for the new settings to take effect.
 <p>
 install the lumen-intaller
 </p>
+
 <div class="org-src-container">
 <pre class="src src-shell">$ composer global require "laravel/lumen-installer"
 </pre>
@@ -3483,29 +2958,31 @@ call like this <code>$ lumen new blog</code> .
 </div><div id="outline-container-orge9b8f57" class="outline-4">
 <h4 id="orge9b8f57">create a migration</h4>
 <div class="outline-text-4" id="text-orge9b8f57">
-<p>
-php artisan make:migration create<sub>books</sub><sub>table</sub> &#x2013;create=books
-</p>
+<pre class="example">
+$ php artisan make:migration create_books_table --create=books
+</pre>
 </div>
 </div>
 
 <div id="outline-container-orgb4fcc12" class="outline-4">
 <h4 id="orgb4fcc12">commit migration to db</h4>
 <div class="outline-text-4" id="text-orgb4fcc12">
-<p>
-php artisan migrate
-</p>
+<div class="org-src-container">
+<pre class="src src-shel">$ php artisan migrate
+</pre>
+</div>
 </div>
 </div>
 
 <div id="outline-container-orgba76ae5" class="outline-4">
 <h4 id="orgba76ae5">Refreshing the Schema and Seeding the Database</h4>
 <div class="outline-text-4" id="text-orgba76ae5">
-<p>
-$ composer dump-autoload
+<div class="org-src-container">
+<pre class="src src-shell">$ composer dump-autoload
 $ php artisan migrate:refresh
 $ php artisan db:seed
-</p>
+</pre>
+</div>
 </div>
 </div>
 </div>
@@ -3532,6 +3009,7 @@ Middleware classes are typically created in the app/Http/Middleware path by conv
 <p>
 In your migrations you can do something like:
 </p>
+
 <div class="org-src-container">
 <pre class="src src-php">$table-&gt;json('field_name');
 </pre>
@@ -3540,6 +3018,7 @@ In your migrations you can do something like:
 <p>
 And in you model cast it to JSON by adding the $casts property like so:
 </p>
+
 <div class="org-src-container">
 <pre class="src src-php">class SomeModel extends Model
 {
@@ -3835,6 +3314,7 @@ use <code>session_write_close()</code>
 </p>
 </div>
 </div>
+
 <div id="outline-container-org6fb21d6" class="outline-3">
 <h3 id="org6fb21d6">check for session status</h3>
 <div class="outline-text-3" id="text-org6fb21d6">
@@ -3923,9 +3403,9 @@ As of PHP 4.3, she can use the set<sub>include</sub><sub>path</sub>() function t
 <div id="outline-container-org28c85ef" class="outline-2">
 <h2 id="org28c85ef">output buffering</h2>
 <div class="outline-text-2" id="text-org28c85ef">
-</div><div id="outline-container-org9245b85" class="outline-3">
-<h3 id="org9245b85">intro</h3>
-<div class="outline-text-3" id="text-org9245b85">
+</div><div id="outline-container-org6799e60" class="outline-3">
+<h3 id="org6799e60">intro</h3>
+<div class="outline-text-3" id="text-org6799e60">
 <p>
 The idea of output buffering is to store all the content that has to
 be outputted in a memory buffer before outputting the whole
@@ -4059,7 +3539,7 @@ echo "Did nothing in $time seconds\n";
 <h3 id="orgef84760">solution3</h3>
 <div class="outline-text-3" id="text-orgef84760">
 <p>
-microtime() and REQUEST<sub>TIME</sub><sub>FLOAT</sub> (as of PHP 5.4.0)
+<code>microtime()</code> and <code>REQUEST_TIME_FLOAT</code> (as of PHP 5.4.0)
 </p>
 
 <div class="org-src-container">
@@ -4080,9 +3560,9 @@ echo "Did nothing in $time seconds\n";
 <div id="outline-container-org5b87999" class="outline-2">
 <h2 id="org5b87999">autoloading</h2>
 <div class="outline-text-2" id="text-org5b87999">
-</div><div id="outline-container-orge8203aa" class="outline-3">
-<h3 id="orge8203aa">intro</h3>
-<div class="outline-text-3" id="text-orge8203aa">
+</div><div id="outline-container-org7c99851" class="outline-3">
+<h3 id="org7c99851">intro</h3>
+<div class="outline-text-3" id="text-org7c99851">
 <p>
 Autoloading is when we tell PHP where to look for our class files when it needs
 a class declaration that it’s yet to see.
@@ -4091,9 +3571,9 @@ a class declaration that it’s yet to see.
 </div>
 </div>
 
-<div id="outline-container-org1d7056b" class="outline-2">
-<h2 id="org1d7056b">security</h2>
-<div class="outline-text-2" id="text-org1d7056b">
+<div id="outline-container-org248186c" class="outline-2">
+<h2 id="org248186c">security</h2>
+<div class="outline-text-2" id="text-org248186c">
 </div><div id="outline-container-org6fcc233" class="outline-3">
 <h3 id="org6fcc233">Cross-site scripting</h3>
 <div class="outline-text-3" id="text-org6fcc233">
@@ -4104,6 +3584,7 @@ properly escaped. This allows an attacker to inject a client-side script of thei
 as part of that variable’s value.
 Here’s an example of code vulnerable to this type of attack:
 </p>
+
 <div class="org-src-container">
 <pre class="src src-html">&lt;form action=”&lt;?php echo $_SERVER['PHP_SELF']; ?&gt;”&gt;
 &lt;input type=”submit” value=”Submit” /&gt;
@@ -4117,6 +3598,7 @@ Compared to the attack itself, the fix is surprisingly simple: escape output fro
 code to prevent the attacker from being able to inject their code in the first place.
 This looks like the following:
 </p>
+
 <div class="org-src-container">
 <pre class="src src-html">&lt;form action=”&lt;?php echo htmlentities($_SERVER['PHP_SELF']); ?&gt;”&gt;
   &lt;input type=”submit” value=”Submit” /&gt;
@@ -4208,6 +3690,7 @@ found, it should transfer control to index.php
 </p>
 </div>
 </div>
+
 <div id="outline-container-org92c6690" class="outline-2">
 <h2 id="org92c6690">turn off DNS prefetching from individual documents</h2>
 <div class="outline-text-2" id="text-org92c6690">
@@ -4306,9 +3789,9 @@ $.ajaxSetup({ cache: false });
 </div>
 </div>
 
-<div id="outline-container-orgdc25fc4" class="outline-2">
-<h2 id="orgdc25fc4">security</h2>
-<div class="outline-text-2" id="text-orgdc25fc4">
+<div id="outline-container-org6d3a0e0" class="outline-2">
+<h2 id="org6d3a0e0">security</h2>
+<div class="outline-text-2" id="text-org6d3a0e0">
 </div><div id="outline-container-org12a81e5" class="outline-3">
 <h3 id="org12a81e5">disable <code>register_globals</code></h3>
 </div>
@@ -4334,9 +3817,6 @@ The zoom behavior can be turned off with no user-scalable=no.
 </div>
 </div>
 
-<div id="outline-container-orgca458e0" class="outline-4">
-<h4 id="orgca458e0">Grid system</h4>
-</div>
 <div id="outline-container-org2a6be55" class="outline-4">
 <h4 id="org2a6be55">Container</h4>
 <div class="outline-text-4" id="text-org2a6be55">
@@ -4489,6 +3969,79 @@ $('#myModal').modal('hide');
 </div>
 </div>
 </div>
+
+<div id="outline-container-org88eac1f" class="outline-3">
+<h3 id="org88eac1f">change <code>table-stripped</code> strip color</h3>
+<div class="outline-text-3" id="text-org88eac1f">
+<div class="org-src-container">
+<pre class="src src-html">/* for bootstrap table-striped strip color*/
+.table-striped&gt;tbody&gt;tr:nth-child(odd)&gt;td,
+.table-striped&gt;tbody&gt;tr:nth-child(odd)&gt;th {
+    background-color: #B6E9DF;  /* choose your color here */
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga034c12" class="outline-3">
+<h3 id="orga034c12">disable modal outside popup close</h3>
+<div class="outline-text-3" id="text-orga034c12">
+<div class="org-src-container">
+<pre class="src src-html">&lt;div class="modal fade"  role="dialog" data-backdrop="static" data-keyboard="false"&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc865e11" class="outline-3">
+<h3 id="orgc865e11">customize modal style</h3>
+<div class="outline-text-3" id="text-orgc865e11">
+<p>
+add an extra class to the modal like <code>&lt;div class="modal custom"&gt;</code> then you can
+style it like <code>.modal.custom</code>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html">&lt;div class="modal custom fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"&gt;
+  &lt;div class="modal-dialog"&gt;
+
+.modal.custom .modal-dialog {
+    width:50%;
+    margin:0 auto;
+    /*add what you want here*/
+}
+</pre>
+</div>
+
+<p>
+<a href="http://jsfiddle.net/surjithctly/ka8uW/">http://jsfiddle.net/surjithctly/ka8uW/</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org78dd9e1" class="outline-3">
+<h3 id="org78dd9e1">useful resources</h3>
+<div class="outline-text-3" id="text-org78dd9e1">
+<p>
+<a href="http://www.tutorialrepublic.com/twitter-bootstrap-tutorial">http://www.tutorialrepublic.com/twitter-bootstrap-tutorial</a>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga616f62" class="outline-2">
+<h2 id="orga616f62"><code>datatables</code></h2>
+<div class="outline-text-2" id="text-orga616f62">
+</div><div id="outline-container-orgc4c6e43" class="outline-3">
+<h3 id="orgc4c6e43">filter for text inside a <code>&lt;span&gt;</code> or other html</h3>
+<div class="outline-text-3" id="text-orgc4c6e43">
+<div class="org-src-container">
+<pre class="src src-javascript">{column_number: 4, filter_reset_button_text: false, filter_default_label: '', column_data_type:'html', html_data_type:'text', filter_match_mode:'exact'},
+</pre>
+</div>
+</div>
+</div>
 </div>
 
 <div id="outline-container-orgdce577c" class="outline-2">
@@ -4507,7 +4060,6 @@ autocomplete prevents form data from being cached in older browsers.
 </div>
 </div>
 </div>
-
 
 <div id="outline-container-orgebe013a" class="outline-3">
 <h3 id="orgebe013a">How to use the “required” attribute with a “radio” input field</h3>
@@ -4537,6 +4089,7 @@ For example:
 </div>
 </div>
 </div>
+
 <div id="outline-container-org78c9ddf" class="outline-3">
 <h3 id="org78c9ddf">HTML5 form required attribute. Set custom validation message?</h3>
 <div class="outline-text-3" id="text-org78c9ddf">
@@ -4545,11 +4098,968 @@ For example:
 </p>
 </div>
 </div>
+
+<div id="outline-container-org8556f4d" class="outline-3">
+<h3 id="org8556f4d">disable input box <code>autocomplete</code></h3>
+<div class="outline-text-3" id="text-org8556f4d">
+<div class="org-src-container">
+<pre class="src src-html">&lt;input type="text"  id="codetxt" autocomplete="off"/&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgbcfb5b0" class="outline-3">
+<h3 id="orgbcfb5b0">How to disable the mobile keyboard from displaying input field</h3>
+<div class="outline-text-3" id="text-orgbcfb5b0">
+<p>
+To block the mobile device keyboard from displaying you simply need to set the
+field to readonly with jQuery as displayed in the code below.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html">$('#input_92_31').attr('readonly','readonly');
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgce57b74" class="outline-3">
+<h3 id="orgce57b74">useful resources</h3>
+<div class="outline-text-3" id="text-orgce57b74">
+<p>
+<a href="https://html.spec.whatwg.org/multipage/index.html">https://html.spec.whatwg.org/multipage/index.html</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb219ecf" class="outline-3">
+<h3 id="orgb219ecf">web application mobile icons</h3>
+<div class="outline-text-3" id="text-orgb219ecf">
+<div class="org-src-container">
+<pre class="src src-html">&lt;meta name="apple-mobile-web-app-capable" content="yes"&gt;
+&lt;meta name="apple-mobile-web-app-status-bar-style" content="black"&gt;
+&lt;link rel="apple-touch-startup-image" href="startup.png"&gt;
+&lt;link rel="apple-touch-icon" href="youricon.png"/&gt;
+&lt;link rel="apple-touch-icon-precomposed" sizes="128x128" href="youricon.png"&gt;
+
+&lt;meta name="mobile-web-app-capable" content="yes"&gt;
+&lt;link rel="shortcut icon" sizes="196x196" href="youriconhighres.png"&gt;
+&lt;link rel="shortcut icon" sizes="128x128" href="youricon.png"&gt;
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org4de2c25" class="outline-2">
+<h2 id="org4de2c25">FatFreeFramework</h2>
+<div class="outline-text-2" id="text-org4de2c25">
+</div><div id="outline-container-orgef76014" class="outline-3">
+<h3 id="orgef76014">CSRF protection example</h3>
+<div class="outline-text-3" id="text-orgef76014">
+<div class="org-src-container">
+<pre class="src src-php">$f3-&gt;route('GET /',
+    function($f3) {
+        $f3-&gt;set('IP',$f3-&gt;get('IP'));
+        $f3-&gt;set('AGENT',$f3-&gt;get('AGENT'));
+        $rand= mt_rand(79, 7900);
+        $f3-&gt;set('csrf',$rand);
+        $f3-&gt;set('SESSION.csrf',$rand);    
+        echo \Template::instance()-&gt;render('login.html');
+    }
+,0,64);
+
+///
+if ($f3-&gt;get('POST.csrf') == $f3-&gt;get('SESSION.csrf')) {
+balalalala
+}
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org545dffb" class="outline-2">
+<h2 id="org545dffb">css</h2>
+<div class="outline-text-2" id="text-org545dffb">
+</div><div id="outline-container-org071a339" class="outline-3">
+<h3 id="org071a339">media query</h3>
+<div class="outline-text-3" id="text-org071a339">
+</div><div id="outline-container-orgaf7c550" class="outline-4">
+<h4 id="orgaf7c550">basic syntax</h4>
+<div class="outline-text-4" id="text-orgaf7c550">
+<p>
+You can use media queries in three ways, all of which match
+the different ways that CSS can be applied to a document.
+</p>
+
+<p>
+&lt;link href="file" rel="stylesheet" media="logic media and (expression)"&gt;
+</p>
+
+<p>
+The second is to call an external style sheet using the @import directive:
+</p>
+
+<p>
+@import url('file') logic media and (expression);
+</p>
+
+<p>
+The third is to use media queries in an embedded style element or in
+the style sheet itself with the extended @media rule:
+</p>
+
+<p>
+@media logic media and (expression) { rules }
+</p>
+
+<p>
+writing rules that will apply to all media types
+</p>
+
+<p>
+@media all and (expression) { rules }
+@media (expression) { rules }
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0e420b5" class="outline-4">
+<h4 id="org0e420b5">logic</h4>
+<div class="outline-text-4" id="text-org0e420b5">
+<p>
+The first new attribute for the @media rule is logic . This optional key-
+word can have the value of either only or not:
+</p>
+
+<p>
+@media only media and (expression) { rules }
+@media not media and (expression) { rules }
+</p>
+
+<p>
+The only value is mainly useful if you want to hide the rule from older
+browsers that don’t support the syntax; for browsers that do support it, only
+is effectively ignored. The not value is used to negate the query; you use not
+to apply the styles if the parameters you set are not met.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc53d5d4" class="outline-4">
+<h4 id="orgc53d5d4">feature</h4>
+<div class="outline-text-4" id="text-orgc53d5d4">
+<p>
+Media features are information about the device that’s being used to display
+the web page: its dimensions, resolution, and so on.
+</p>
+
+<p>
+@media (feature: value) { rules }
+@media (feature) { rules }
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5d2c66a" class="outline-4">
+<h4 id="org5d2c66a">width and height</h4>
+<div class="outline-text-4" id="text-org5d2c66a">
+<p>
+@media (width: 600px) { rules }
+the rules are applied only to browsers that are set to be
+exactly 600px wide
+</p>
+
+<p>
+@media (max-width: 480px) { rules }
+@media (min-width: 640px) { rules }
+</p>
+
+<p>
+The first query applies the rules in browsers that are no wider than
+480px, and the second in browsers that are at least 640px wide.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org209a769" class="outline-4">
+<h4 id="org209a769">Pixel ratio</h4>
+<div class="outline-text-4" id="text-org209a769">
+<p>
+In general, the CSS pixel unit (px) is a measurement of a single pixel on the
+computer screen.
+The ratio of physical pixels to CSS pixels is known as the device pixel ratio (DPR).
+</p>
+</div>
+
+<div id="outline-container-org1884562" class="outline-5">
+<h5 id="org1884562">resolution media feature</h5>
+<div class="outline-text-5" id="text-org1884562">
+<p>
+@media media and (resolution: value) { rules }
+</p>
+
+<p>
+The value of resolution is a number with a unit of resolution: dots per
+inch (DPI), dots per centimeter (DPCM), or, most pertinently to us, dots per pixel
+(DPPX). The DPPX unit maps to the DPR of the device, so to apply a rule to
+devices that have a DPR value of 1.5, you use this:
+</p>
+
+<p>
+@media (resolution: 1.5dppx) { rules }
+</p>
+
+<p>
+As with the other media features, you can also detect maximum and
+minimum pixel ratios:
+</p>
+
+<p>
+@media (max-resolution: number) { rules }
+@media (min-resolution: number) { rules }
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org74459f9" class="outline-4">
+<h4 id="org74459f9">device width and height</h4>
+<div class="outline-text-4" id="text-org74459f9">
+<p>
+The width and height media features are related to the dimensions of the
+browser viewport, but that viewport isn’t always as big as the screen it’s
+displayed on. If you need to target the physical screen size rather than the
+viewport size, you can use the <b>device-width</b> and <b>device-height</b> properties and
+their related min- and max- variants.
+</p>
+
+<p>
+&lt;meta name="viewport" content="width=device-width"&gt;
+</p>
+
+<p>
+When the viewport meta tag with these values is present in the head of a
+page, mobile browsers go into “mobile mode,” in which the viewport is sized
+to ideal dimensions for that device.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org14e3a06" class="outline-4">
+<h4 id="org14e3a06">orientation</h4>
+<div class="outline-text-4" id="text-org14e3a06">
+<p>
+If you’re less concerned with the actual dimensions of the viewing device
+but want to optimize your pages for either horizontal (like a typical desk-
+top/laptop web browser) or vertical (like a mobile phone or ebook reader)
+viewing, the media feature you need is orientation . Here is its syntax:
+</p>
+
+<p>
+@media (orientation: value) { rules }
+</p>
+
+<p>
+value can be one of two keyword options: landscape or portrait . The
+landscape value applies when the width of your browser is greater than its
+height, and the portrait value applies when the opposite is true.
+</p>
+
+<p>
+<b>example</b>
+</p>
+
+<p>
+ul { overflow: hidden; }
+li { float: left; }
+@media (orientation: portrait) {
+    li { float: none; }
+}
+</p>
+</div>
+</div>
+
+<div id="outline-container-org6c1ba73" class="outline-4">
+<h4 id="org6c1ba73">aspect ratio</h4>
+<div class="outline-text-4" id="text-org6c1ba73">
+<p>
+You can also create queries that apply when a certain width-to-height ratio is
+met. Use aspect-ratio to test the browser’s aspect ratio or device-aspect-ratio
+to test the device’s aspect ratio. Here is the syntax for these two features:
+</p>
+
+<p>
+@media (aspect-ratio: horizontal/vertical) { rules }
+@media (device-aspect-ratio: horizontal/vertical) { rules }
+</p>
+
+<p>
+The horizontal and vertical values are positive integers that represent
+the ratio of the width and height (respectively) of the viewing device’s screen,
+so a square display would be 1/1 and a cinematic widescreen display would
+be 16/9.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org67f6f4c" class="outline-4">
+<h4 id="org67f6f4c">Multiple Media Features</h4>
+<div class="outline-text-4" id="text-org67f6f4c">
+<p>
+You can chain multiple queries together on the same media type by adding
+expressions with the and operator:
+</p>
+
+<p>
+@media logic media and (expression) and (expression) { rules }
+</p>
+
+<p>
+For example, to test for a narrow screen on a device with an
+aspect ratio no greater than 15/10, you use this query:
+</p>
+
+<p>
+@media (max-device-aspect-ratio: 15/10) and (max-width: 800px) {&#x2026;}
+</p>
+
+<p>
+You can also use a conditional “or” expression by adding extra queries
+in a comma-separated list:
+</p>
+
+<p>
+@media logic media and (expression), logic media and (expression) { rules }
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org12a4da1" class="outline-3">
+<h3 id="org12a4da1">selectors</h3>
+<div class="outline-text-3" id="text-org12a4da1">
+</div><div id="outline-container-orgf97895f" class="outline-4">
+<h4 id="orgf97895f">Attribute selectors</h4>
+<div class="outline-text-4" id="text-orgf97895f">
+<p>
+E[attr] {&#x2026;} <i>* Simple Attribute Selector *</i>
+E[attr='value'] {&#x2026;} <i>* Exact Attribute Value Selector *</i>
+E[attr  ~='value'] {&#x2026;} <i>* Partial Attribute Value Selector *</i>
+E[attr|='value'] {&#x2026;} <i>* Language Attribute Selector *</i>
+</p>
+
+
+<p>
+The Simple Attribute Selector applies rules to elements that have the
+s ­ pecified attribute defined, regardless of that attribute’s value.
+</p>
+
+<p>
+a[rel] { color: red; }
+</p>
+
+<p>
+If you want to be more specific, you can use the Exact Attribute Value Selector
+to define a value:
+</p>
+
+<p>
+a[rel='friend'] { color: red; }
+</p>
+
+<p>
+This code applies the rule only to the second a element in the
+markup (v) because it selects only elements that have the exact value
+of  friend . If you want to select both of the elements that have this value,
+you would use the Partial Attribute Value Selector:
+</p>
+
+<p>
+a[rel~='friend'] { color: red; }
+</p>
+
+<p>
+This code looks for the value of friend as part of a space-separated list
+(in most cases, a word)
+</p>
+
+<p>
+The final selector, the Language Attribute Selector, applies rules to ele-
+ments that have an attribute matching the first argument in the selector,
+the value of which is the second argument in the selector followed immedi-
+ately by a hyphen.
+</p>
+
+<p>
+a[lang|='es'] { color: red; }
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga1cd2ac" class="outline-4">
+<h4 id="orga1cd2ac">New Attribute Selectors in CSS3</h4>
+<div class="outline-text-4" id="text-orga1cd2ac">
+<p>
+Beginning Substring Attribute Value Selector
+</p>
+
+<p>
+E[attr^='value'] {&#x2026;}
+</p>
+
+<p>
+This code looks for the supplied value at the beginning of the specified
+attribute.
+</p>
+
+<p>
+To illustrate, consider the following example markup, showing a
+list of three items, each of which contains a hyperlink with different (albeit
+similar) values for the title attribute:
+</p>
+
+<p>
+&lt;li&gt;&lt;a href="<a href="http://example.com/">http://example.com/</a>" title="Image Library"&gt;Example&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="<a href="http://example.com/">http://example.com/</a>" title="Free Image Library"&gt;Example&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="<a href="http://example.com/">http://example.com/</a>" title="Free Sound Library"&gt;Example&lt;/a&gt;&lt;/li&gt;
+</p>
+
+<p>
+I’ll apply this selector to the example markup:
+</p>
+
+<p>
+a[title^='image'] {&#x2026;}
+</p>
+
+<p>
+In this case, the rule will be applied to the a element in the first list
+item because the title attribute string begins with the word image. The rule
+will not be applied to the a element in the second item, however, because,
+although its title attribute contains that string, it doesn’t begin with it. Nor
+will it be applied to the third string, as that string doesn’t match.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org71ffd32" class="outline-4">
+<h4 id="org71ffd32">Ending Substring Attribute Value Selector</h4>
+<div class="outline-text-4" id="text-org71ffd32">
+<p>
+E[attr$='value'] {&#x2026;}
+</p>
+
+<p>
+a[title$='library'] {&#x2026;}
+This time the rule applies to all of the list items, as all of their title
+attribute values end with the string library .
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgfe7bb5a" class="outline-4">
+<h4 id="orgfe7bb5a">Arbitrary Substring Attribute Value Selector</h4>
+<div class="outline-text-4" id="text-orgfe7bb5a">
+<p>
+This selector uses the asterisk ( * ) character. Here’s the new syntax:
+E[attr*='value'] {&#x2026;}
+</p>
+
+<p>
+a[title*='image'] {&#x2026;}
+This rule is applied to the first and second list items because they both
+contain the text string image in their title attributes, even though the string
+appears in a different position in each example.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9e3ade7" class="outline-4">
+<h4 id="org9e3ade7">Multiple Attribute Selectors</h4>
+<div class="outline-text-4" id="text-org9e3ade7">
+<p>
+You can also chain multiple selectors together, which allows you to be really
+specific.
+Imagine,
+for example, that you had links to two files with identical names but that
+were located in different folders:
+</p>
+
+<p>
+&lt;p&gt;&lt;a href="<a href="http://example.com/folder1/file.pdf">http://example.com/folder1/file.pdf</a>"&gt;Example&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="<a href="http://example.com/folder2/file.pdf">http://example.com/folder2/file.pdf</a>"&gt;Example&lt;/a&gt;&lt;/p&gt;
+</p>
+
+<p>
+If you want to specify a rule to apply to only the second p element, you
+can chain some selectors together:
+</p>
+
+<p>
+a[href^='http://'][href*='<i>folder2</i>'][href$='.pdf'] {&#x2026;}
+</p>
+
+<p>
+This code looks for a elements that have an href attribute beginning
+with <a href="http:///">http:///</a> , ending with .pdf , and with <i>folder2</i> contained within it. That’s
+specific!
+</p>
+</div>
+</div>
+
+<div id="outline-container-org15fc7ea" class="outline-4">
+<h4 id="org15fc7ea">The General Sibling Combinator</h4>
+<div class="outline-text-4" id="text-org15fc7ea">
+<p>
+Our final new DOM selector in CSS3 is a combinator, which you’ll recall
+means that it joins together more than one selector. The General Sibling
+Combinator is an extension of the Adjacent Sibling Combinator, which was
+introduced in CSS2. The syntaxes differ by just a single character:
+</p>
+
+<p>
+E + F {&#x2026;} <i>* Adjacent Sibling Combinator *</i>
+E ~ F {&#x2026;} <i>* General Sibling Combinator *</i>
+</p>
+
+<p>
+The difference between the two is subtle but important: Adjacent
+Sibling selects any element ( F ) that is immediately preceded by element
+( E ) on the same level of the document tree, but General Sibling selects any
+element ( F ) that is preceded by element ( E ) on the same level of the tree,
+regardless of whether it is immediately adjacent.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4a8c716" class="outline-4">
+<h4 id="org4a8c716">Structural Pseudo-classes</h4>
+<div class="outline-text-4" id="text-org4a8c716">
+<p>
+As I stated in the introduction to this chapter, a pseudo-class provides a way
+to select an element based on information that is not specified in the docu-
+ment tree.
+</p>
+
+<p>
+Take, for example, the following markup:
+</p>
+
+<p>
+&lt;div&gt;
+&lt;p&gt;Lorem ipsum.&lt;/p&gt;
+&lt;p&gt;Dolor sit amet.&lt;/p&gt;
+&lt;/div&gt;
+</p>
+
+<p>
+The first of the two p elements is the first child of the div element. That’s
+obvious from the document tree, but the document tree doesn’t provide any
+information that would allow you to apply a rule only to that element. CSS2
+introduced the :first-child pseudo-class for exactly that reason:
+</p>
+
+<p>
+E:first-child {&#x2026;}
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3622bfe" class="outline-4">
+<h4 id="org3622bfe">The :nth-* Pseudo-classes</h4>
+<div class="outline-text-4" id="text-org3622bfe">
+<p>
+The basic syntax of the :nth-* pseudo-classes is quite straightforward.
+By default, n represents a number that begins at 0 and increments by 1 (1, 2,
+3, etc.). Another integer can be passed into it as a multiplier. For example,
+2n is every multiple of 2 (2, 4, 6, etc.), 3n is every multiple of 3 (3, 6, 9, etc.),
+and so on:
+</p>
+
+<p>
+E:nth-*(n) {&#x2026;}
+E:nth-*(2n) {&#x2026;}
+E:nth-*(3n) {&#x2026;}
+</p>
+
+<p>
+You may also use the mathematical operators for plus (+) and minus (−).
+So 2n+1 selects every multiple of two plus one (1, 3, 5, etc.), and 3n-1 selects
+every multiple of three minus one (2, 5, 8, etc.):
+</p>
+
+<p>
+E:nth-*(n+1) {&#x2026;}
+E:nth-*(2n+1) {&#x2026;}
+E:nth-*(3n-1) {&#x2026;}
+</p>
+
+<p>
+Two special keyword values, even and odd , are also available; you can use
+these to replace 2n and 2n+1 , respectively:
+</p>
+
+<p>
+E:nth-*(even) {&#x2026;}
+E:nth-*(odd) {&#x2026;}
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc224fc1" class="outline-4">
+<h4 id="orgc224fc1">:nth-child() and :nth-of-type()</h4>
+<div class="outline-text-4" id="text-orgc224fc1">
+<p>
+The simplest examples of these pseudo-classes are :nth-child()
+and  :nth-of-type() . The first, :nth-child() , selects an element based on its
+position in a count of the total number of children in its parent element;
+:nth-of-type() bases its count not on the total children, but only on those
+of the specified element type.
+</p>
+
+<p>
+E:nth-child(n) {&#x2026;}
+E:nth-of-type(n) {&#x2026;}
+E:nth-child(2n) {&#x2026;}
+E:nth-of-type(2n) {&#x2026;}
+</p>
+
+
+<p>
+In this example, rules u and v are equivalent because the count value
+( n ) is left at the default; both of these simply select all child elements of type
+E . The difference reveals itself in the later examples: in w, :nth-child(2n)
+selects all elements of type E from a count that includes all its siblings
+but only where those elements are even-numbered. In x, by comparison,
+:nth-of-type(2n) selects all even-numbered elements of type E from a count
+that includes only those elements.
+</p>
+
+<p>
+.table td{
+    border: red solid 1px !important;
+}
+</p>
+
+<p>
+.table th{
+    border: red solid 1px !important;
+}
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgef4710b" class="outline-4">
+<h4 id="orgef4710b">:nth-last-child() and :nth-last-of-type()</h4>
+<div class="outline-text-4" id="text-orgef4710b">
+<p>
+The :nth-last-child() and :nth-last-of-type() pseudo-classes accept the
+same arguments as :nth-child() and :nth-of-type() , except they are counted
+from the last element, working in reverse.
+</p>
+</div>
+</div>
+<div id="outline-container-org7b39bf5" class="outline-4">
+<h4 id="org7b39bf5">:first-of-type, :last-child, and :last-of-type</h4>
+<div class="outline-text-4" id="text-org7b39bf5">
+<p>
+As you’re no doubt aware, the :first-child pseudo-class is a selector
+used to apply rules to an element that is the first child of its parent. As
+with  :nth-of-type() , however, :first-of-type is more specific, applying only
+to the element that is the first child of the named type of its parent. A pair
+of counterpart pseudo-classes is also available, :last-child and :last-of-type ,
+which—as you might have guessed—select the last child element or the last
+child element of that type, respectively, of the parent.
+</p>
+</div>
+</div>
+<div id="outline-container-org03142ad" class="outline-4">
+<h4 id="org03142ad">:only-child and :only-of-type</h4>
+<div class="outline-text-4" id="text-org03142ad">
+<p>
+These two pseudo-classes are used to select elements in the document tree
+that have a parent but either no sibling elements ( :only-child ) or no siblings
+of the same type ( :only-of-type ).
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8ba1da3" class="outline-4">
+<h4 id="org8ba1da3">:target</h4>
+<div class="outline-text-4" id="text-org8ba1da3">
+<p>
+For example, if you had this markup in a page:
+&lt;h4 id="my<sub>id</sub>"&gt;Lorem ipsum&lt;/h4&gt;
+you could refer to it with this link:
+&lt;a href="page.html#my<sub>id</sub>"&gt;Lorem&lt;/a&gt;
+The :target pseudo-class allows you to apply styles to the element when
+the referring URI has been followed. In this example, if you want to apply
+styles to the h4 element when the URI is followed, you use:
+#my<sub>id</sub>:target {&#x2026;}
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9b8dbbc" class="outline-4">
+<h4 id="org9b8dbbc">:empty</h4>
+<div class="outline-text-4" id="text-org9b8dbbc">
+<p>
+The :empty pseudo-class selects an element that has no children, including
+text nodes.
+html {&#x2026;} <i>* Specificity: 1; *</i>
+html:root {&#x2026;} <i>* Specificity: 2; *</i>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgcd17933" class="outline-4">
+<h4 id="orgcd17933">:root</h4>
+<div class="outline-text-4" id="text-orgcd17933">
+<p>
+The :root pseudo-class selects the first element in a document tree
+Let’s say you’re creating a base style sheet and want to set a property on
+the html element, which shouldn’t be altered. In this case, you would use
+something like this:
+</p>
+
+<p>
+html:root { background-color: black; }
+</p>
+
+<p>
+The higher specificity gives precedence to this rule over any other rules
+applied to the html element, meaning the following is ignored:
+</p>
+
+<p>
+html { background-color: white; }
+</p>
+</div>
+</div>
+
+<div id="outline-container-org04f1ff9" class="outline-4">
+<h4 id="org04f1ff9">:not()</h4>
+<div class="outline-text-4" id="text-org04f1ff9">
+<p>
+The negation pseudo-class :not() selects all elements except those that are
+given as the value of an argument:
+E :not(F) {&#x2026;}
+This rule selects all children of element E except for those of type F . For
+example, to color all the immediate child elements of a div , except for p ele-
+ments, you use this:
+div &gt; :not(p) { color: red; }
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc57f3e7" class="outline-4">
+<h4 id="orgc57f3e7">UI Element States</h4>
+<div class="outline-text-4" id="text-orgc57f3e7">
+<p>
+CSS3 has three UI state pseudo-class selectors, which allow you to apply
+rules to elements based on their current state:
+:checked {&#x2026;}
+:disabled {&#x2026;}
+:enabled {&#x2026;}
+</p>
+
+<p>
+input[type='text']:disabled { border: 1px dotted gray; }
+input[type='text']:enabled { border: 1px solid black; }
+</p>
+</div>
+</div>
+
+<div id="outline-container-org98b92e3" class="outline-4">
+<h4 id="org98b92e3">Constraint Validation Pseudo-classes</h4>
+<div class="outline-text-4" id="text-org98b92e3">
+<p>
+HTML5 introduced a new API for client-side validation of forms, known
+as the constraint validation API, which can be used to determine if certain
+requirements are met before the form contents are sent to the server.
+You can style elements depending on whether they’re required or
+optional by using their namesake pseudo-classes:
+</p>
+
+<p>
+:required {&#x2026;}
+:optional {&#x2026;}
+</p>
+
+<p>
+Each form field can be in one of two states of validation: either valid or
+invalid. If no specific constraints are applied, either by the browser or the
+author, a form field is valid by default. As before, each state has a namesake
+pseudo-class:
+</p>
+
+<p>
+:valid {&#x2026;}
+:invalid {&#x2026;}
+</p>
+
+<p>
+Finally, some HTML5 elements can have a permitted range of values,
+set by using the min and max attributes.
+</p>
+
+<p>
+:in-range {&#x2026;}
+:out-of-range {&#x2026;}
+</p>
+</div>
+</div>
+
+<div id="outline-container-org41ec9f9" class="outline-4">
+<h4 id="org41ec9f9">Pseudo-elements</h4>
+<div class="outline-text-4" id="text-org41ec9f9">
+<p>
+Like pseudo-classes, pseudo-elements provide information that is not speci-
+fied in the document tree. But where pseudo-classes use “phantom” condi-
+tions such as an element’s position in the tree or its state, pseudo-elements
+go further and allow you to apply styles to elements that don’t exist in the
+tree at all.
+</p>
+
+<p>
+In CSS2, the four pseudo-elements are :first-line and :first-letter ,
+which select subelements in text nodes, and :after and :before , which allow
+you to apply styles at the beginning and end of existing elements. CSS3
+doesn’t introduce any new pseudo-elements, but it refines the definitions
+slightly and introduces a new syntax to differentiate them from pseudo-
+classes. In CSS3, pseudo-elements are prefixed with a double colon ( :: ),
+like so:
+</p>
+
+<p>
+::first-line {&#x2026;}
+::first-letter {&#x2026;}
+::after {&#x2026;}
+::before {&#x2026;}
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd873932" class="outline-4">
+<h4 id="orgd873932">The ::selection Pseudo-element</h4>
+<div class="outline-text-4" id="text-orgd873932">
+<p>
+::selection is used to apply rules to an element that the user has
+selected in the browser (for example, a portion of a text node):
+::selection {&#x2026;}
+</p>
+
+<p>
+Only a limited number of properties can be applied with ::­selection :
+color , background-color , and the background shorthand (although not
+background-image ). Using ::selection , you can do something like this:
+</p>
+
+<p>
+p::selection {
+background-color: black;
+color: white;
+}
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf38e50a" class="outline-3">
+<h3 id="orgf38e50a">web fonts</h3>
+<div class="outline-text-3" id="text-orgf38e50a">
+</div><div id="outline-container-orgb6de2bd" class="outline-4">
+<h4 id="orgb6de2bd">The @font-face Rule</h4>
+<div class="outline-text-4" id="text-orgb6de2bd">
+<p>
+To display web fonts on your pages, you first need to define them by using
+the @font-face rule.
+</p>
+
+<p>
+@font-face {
+font-family: FontName;
+src: local('fontname'), xurl('/path/filename.otf') yformat('opentype');
+}
+</p>
+
+<p>
+To use the font I just defined, I need only call its name in the font stack,
+as I’d normally do:
+E { font-family: FontName; }
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd743fea" class="outline-4">
+<h4 id="orgd743fea">Defining Different Faces</h4>
+<div class="outline-text-4" id="text-orgd743fea">
+<p>
+If you want to use a different face, such as a
+bolder weight or an italic type, you have to define each font face individu-
+ally. To do this, you re-use the same name and add extra descriptors to the
+@font-face rule:
+</p>
+
+<p>
+@font-face {
+font-family: 'Gentium Basic';
+src: url('vGenBasR.woff') format('woff');
+}
+@font-face {
+font-family: 'Gentium Basic';
+font-style: italic;
+src: url('yGenBasI.woff') format('woff');
+}
+h1 { font-family: 'Gentium Basic', sans-serif; }
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgdab86a9" class="outline-4">
+<h4 id="orgdab86a9">The Final “Bulletproof” Syntax</h4>
+<div class="outline-text-4" id="text-orgdab86a9">
+<p>
+For your chosen font to display the same in every browser on every plat-
+form, you should use code in this format:
+@font-face {
+font-family: 'Gentium Basic';
+src: url('GenBkBasR.eot');
+src: url('GenBasR.eot?#iefix') format('embedded-opentype'),
+url('GenBkBasR.woff') format('woff'),
+url('GenBkBasR.ttf') format('truetype');
+}
+</p>
+</div>
+</div>
+
+<div id="outline-container-org37e11db" class="outline-4">
+<h4 id="org37e11db">todo: continue text effects@ch6 the book of css3</h4>
+</div>
+</div>
+<div id="outline-container-org4083ba6" class="outline-3">
+<h3 id="org4083ba6">useful resources</h3>
+<div class="outline-text-3" id="text-org4083ba6">
+<p>
+<a href="https://www.w3.org/TR/css3-selectors/">https://www.w3.org/TR/css3-selectors/</a>
+</p>
+
+<p>
+<a href="http://www.w3.org/TR/css3-fonts/">http://www.w3.org/TR/css3-fonts/</a>
+</p>
+
+<p>
+<a href="https://css-tricks.com/">https://css-tricks.com/</a>
+</p>
+</div>
+</div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Mohammad Reza Mansouri</p>
-<p class="date">Created: 2017-03-05 Sun 23:56</p>
+<p class="date">Created: 2017-03-21 Tue 20:57</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

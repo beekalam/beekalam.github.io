@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-03-05 Sun 23:56 -->
+<!-- 2017-03-17 Fri 21:08 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title></title>
@@ -374,55 +374,58 @@ $ pkg search &lt;packagename&gt;
 <div id="outline-container-orgf68ecb7" class="outline-2">
 <h2 id="orgf68ecb7">installing postgresql</h2>
 <div class="outline-text-2" id="text-orgf68ecb7">
-<p>
-$ pkg install postgresql-&lt;version&gt;
+<div class="org-src-container">
+<pre class="src src-shell">$ pkg install postgresql-&lt;version&gt;
 $ /usr/local/etc/rc.d/postgresql initdb
 $ /usr/local/etc/rc.d/postgresql start
-</p>
+</pre>
+</div>
 
 <p>
 the default user created when you install <code>postgresql</code> in Freebsd is <code>pgsql</code>
 </p>
 
-<p>
-$ su pgsql
-</p>
+<div class="org-src-container">
+<pre class="src src-shell">$ su pgsql
+</pre>
+</div>
 
 <p>
 logs in as pgsql.
 </p>
 
 <p>
-_<sub>ADDING</sub> root user to postgresql login__
+<b>ADDING root user to postgresql login</b>
 </p>
 
-<p>
-$ su pgsql
-$ createuser &#x2013;interactive
-</p>
+<div class="org-src-container">
+<pre class="src src-shell">$ su pgsql
+$ createuser --interactive
+</pre>
+</div>
 
 <p>
-_<sub>REMOVING</sub> role__
+<b>REMOVING role</b>
 </p>
 
-<p>
-$ su pgsql
+<div class="org-src-container">
+<pre class="src src-shell">$ su pgsql
 $ drop role &lt;rolename&gt;
-</p>
+</pre>
+</div>
 </div>
 </div>
 
 <div id="outline-container-org1090326" class="outline-2">
 <h2 id="org1090326">restoring database with pg<sub>restore</sub></h2>
 <div class="outline-text-2" id="text-org1090326">
-<p>
-pg<sub>restore</sub> -h localhost -p 5432 -U root -C -d mydb ./mydb.custom
-</p>
+<div class="org-src-container">
+<pre class="src src-shell">$ pg_restore -h localhost -p 5432 -U root -C -d mydb ./mydb.custom
 
-<p>
--C creates the datbase
--d connects to the database
-</p>
+# -C creates the datbase
+# -d connects to the database
+</pre>
+</div>
 </div>
 </div>
 
@@ -485,7 +488,6 @@ If you need default system wide PATHs and other ENV variables
 </div>
 </div>
 
-
 <div id="outline-container-org635926f" class="outline-2">
 <h2 id="org635926f">installing PHP extensions</h2>
 <div class="outline-text-2" id="text-org635926f">
@@ -532,7 +534,7 @@ make install clean
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: moh</p>
-<p class="date">Created: 2017-03-05 Sun 23:56</p>
+<p class="date">Created: 2017-03-17 Fri 21:08</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

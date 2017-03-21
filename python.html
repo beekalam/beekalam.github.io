@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-03-02 Thu 14:00 -->
+<!-- 2017-03-21 Tue 21:00 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>python recipes</title>
@@ -180,6 +180,7 @@
   /*]]>*/-->
 </style>
 <link rel="stylesheet" type="text/css" href="css/main.css" />
+<script src="js/ganalytics.js" async></script>
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -258,10 +259,36 @@ for the JavaScript code in this tag.
 <li><a href="#org60b20a4">read all files in a directory</a></li>
 </ul>
 </li>
+<li><a href="#orgdd7d348">creating meaningful names</a></li>
+<li><a href="#org45da7d3">Doing currency calculations</a></li>
+<li><a href="#orgf4adaad">string</a>
+<ul>
+<li><a href="#org9b7827c">slicing string</a></li>
+<li><a href="#org6ca56bc">slicing using <code>partition()</code>:</a></li>
+<li><a href="#org1b12ebe">updating a string with a replacement</a></li>
+<li><a href="#org54f8ca0">Removing extra punctuation marks</a></li>
+<li><a href="#orgb6abdc9">tell if a string is numeric</a></li>
+</ul>
+</li>
+<li><a href="#orga40608c">numbers</a>
+<ul>
+<li><a href="#org18f3162">tell if float number is finite with integral value</a></li>
+</ul>
+</li>
+<li><a href="#org43e8b55">classes</a>
+<ul>
+<li><a href="#orgfe9a4d7">calling Superclass constructors</a></li>
+<li><a href="#org4b74a5e">class interface</a></li>
+<li><a href="#org8943279">Abstract superclass</a></li>
+</ul>
+</li>
+<li><a href="#orgedc85b8">Arguments and options</a></li>
+<li><a href="#orgeae6e4c"><code>compat.py</code> and python version 2.x and 3.x</a></li>
+<li><a href="#orgb4a8f74">Acronyms</a></li>
+<li><a href="#orgd2aab0e">Useful Resources</a></li>
 </ul>
 </div>
 </div>
-
 
 <div id="outline-container-org0155fdf" class="outline-2">
 <h2 id="org0155fdf">core types</h2>
@@ -385,10 +412,347 @@ for root, dirs, files in os.walk("/mydir"):
 </div>
 </div>
 </div>
+
+<div id="outline-container-orgdd7d348" class="outline-2">
+<h2 id="orgdd7d348">creating meaningful names</h2>
+<div class="outline-text-2" id="text-orgdd7d348">
+<ol class="org-ol">
+<li>The last part of the name is a very broad summary of the thing. In a few
+cases, this may be all we need; context will supply the rest. We'll suggest
+some typical broad summary categories later.</li>
+
+<li>Use a prefix to narrow this name around your application or problem domain.</li>
+
+<li>If needed, put more narrow and specialized prefixes on this name to clarify
+how it's distinct from other classes, modules, packages, functions, and
+other objects. When in doubt about prefixing, remember how domain names
+work. Think of mail.google.com —the name flows from particular to general.
+There's no magic about the three levels of naming, but it often happens to
+work out that way. Format the name depending on how it's used in Python.
+There are three broad classes of things we'll put names on, which are shown
+as follows:</li>
+</ol>
+
+<p>
+<b>Classes</b> : A class has a name that summarizes the objects that are part of the
+class. These names will (often) use CapitalizedCamelCase . The first letter of a
+class name is capitalized to emphasize that it's a class, not an instance of the
+class. A class is often a generic concept, rarely a description of a tangible
+thing.
+</p>
+
+<p>
+<b>Objects</b> : A name for an object usually uses snake<sub>case</sub> - all lowercase with
+multiple _ characters between words. In Python, this includes variables,
+functions, modules, packages, parameters, attributes of objects, methods of
+classes, and almost everything else.
+</p>
+
+<p>
+<b>Script and module files</b> : These are really the OS resources, as seen by
+Python. Therefore, a filename should follow the conventions for Python objects,
+using letters, the _ characters and ending with the .py extension. It's
+technically possible to have pretty wild and free filenames. Filenames that
+don't follow Python rules can be difficult to use as a module or package.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org45da7d3" class="outline-2">
+<h2 id="org45da7d3">Doing currency calculations</h2>
+<div class="outline-text-2" id="text-org45da7d3">
+<p>
+When working with currency, we should always use the decimal module. If we try
+to use Python's built-in float values, we'll have problems with rounding and
+truncation of numbers.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python">&gt;&gt;&gt; from decimal import Decimal
+&gt;&gt;&gt; tax_rate = Decimal('7.25')/Decimal(100)
+&gt;&gt;&gt; purchase_amount = Decimal('2.95')
+&gt;&gt;&gt; tax_rate * purchase_amount
+Decimal('0.213875')
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf4adaad" class="outline-2">
+<h2 id="orgf4adaad">string</h2>
+<div class="outline-text-2" id="text-orgf4adaad">
+</div><div id="outline-container-org9b7827c" class="outline-3">
+<h3 id="org9b7827c">slicing string</h3>
+<div class="outline-text-3" id="text-org9b7827c">
+<div class="org-src-container">
+<pre class="src src-python">&gt;&gt;&gt; title = "Recipe 5: Rewriting, and the Immutable String"
+&gt;&gt;&gt; colon_position = title.index(':')
+&gt;&gt;&gt; discard_text, post_colon_text = title[:colon_position], title[colon_position+1:]
+&gt;&gt;&gt; discard_text
+'Recipe 5'
+&gt;&gt;&gt; post_colon_text
+' Rewriting, and the Immutable String'
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6ca56bc" class="outline-3">
+<h3 id="org6ca56bc">slicing using <code>partition()</code>:</h3>
+<div class="outline-text-3" id="text-org6ca56bc">
+<div class="org-src-container">
+<pre class="src src-python">&gt;&gt;&gt; pre_colon_text, _, post_colon_text = title.partition(':')
+&gt;&gt;&gt; pre_colon_text
+'Recipe 5'
+&gt;&gt;&gt; post_colon_text
+' Rewriting, and the Immutable String'
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1b12ebe" class="outline-3">
+<h3 id="org1b12ebe">updating a string with a replacement</h3>
+<div class="outline-text-3" id="text-org1b12ebe">
+<div class="org-src-container">
+<pre class="src src-python">&gt;&gt;&gt; title = "Recipe 5: Rewriting, and the Immutable String"
+&gt;&gt;&gt; post_colon_text = post_colon_text.replace(' ', '_')
+&gt;&gt;&gt; post_colon_text = post_colon_text.replace(',', '_')
+&gt;&gt;&gt; post_colon_text
+'_Rewriting__and_the_Immutable_String'
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org54f8ca0" class="outline-3">
+<h3 id="org54f8ca0">Removing extra punctuation marks</h3>
+<div class="outline-text-3" id="text-org54f8ca0">
+<p>
+In many cases, there are some additional steps we might follow. We often want to
+remove leading and trailing _ characters. We can use strip() for this:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python">&gt;&gt;&gt; post_colon_text = post_colon_text.strip('_')
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb6abdc9" class="outline-3">
+<h3 id="orgb6abdc9">tell if a string is numeric</h3>
+<div class="outline-text-3" id="text-orgb6abdc9">
+<div class="org-src-container">
+<pre class="src src-python">&gt;&gt;&gt; 'some word'.isnumeric()
+False
+&gt;&gt;&gt; '1298'.isnumeric()
+True
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga40608c" class="outline-2">
+<h2 id="orga40608c">numbers</h2>
+<div class="outline-text-2" id="text-orga40608c">
+</div><div id="outline-container-org18f3162" class="outline-3">
+<h3 id="org18f3162">tell if float number is finite with integral value</h3>
+<div class="outline-text-3" id="text-org18f3162">
+<div class="org-src-container">
+<pre class="src src-python">&gt;&gt;&gt; 1.5.is_integer()
+False
+&gt;&gt;&gt; 1.0.is_integer()
+True
+&gt;&gt;&gt; 1.4142135623730951.is_integer()
+False
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org43e8b55" class="outline-2">
+<h2 id="org43e8b55">classes</h2>
+<div class="outline-text-2" id="text-org43e8b55">
+</div><div id="outline-container-orgfe9a4d7" class="outline-3">
+<h3 id="orgfe9a4d7">calling Superclass constructors</h3>
+<div class="outline-text-3" id="text-orgfe9a4d7">
+<p>
+If subclass constructors need to guarantee that superclass construction-time
+logic runs, too, they generally must call the superclass’s <span class="underline"><span class="underline">init</span></span> method
+explicitly through the class:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python">class Super:
+    def __init__(self, x):
+        ...default code...
+
+class Sub(Super):
+    def __init__(self, x, y):
+        Super.__init__(self, x)             # Run superclass __init__
+        ...custom code...                   # Do my init actions
+
+I = Sub(1, 2)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org4b74a5e" class="outline-3">
+<h3 id="org4b74a5e">class interface</h3>
+<div class="outline-text-3" id="text-org4b74a5e">
+<div class="org-src-container">
+<pre class="src src-python">class Super:
+    def method(self):
+        print('in Super.method')           # Default behavior
+    def delegate(self):
+        self.action()                      # Expected to be defined
+
+class Inheritor(Super):                    # Inherit method verbatim
+    pass
+
+class Replacer(Super):                     # Replace method completely
+    def method(self):
+        print('in Replacer.method')
+
+class Extender(Super):                     # Extend method behavior
+    def method(self):
+        print('starting Extender.method')
+        Super.method(self)
+        print('ending Extender.method')
+
+class Provider(Super):                     # Fill in a required method
+    def action(self):
+        print('in Provider.action')
+
+if __name__ == '__main__':
+    for klass in (Inheritor, Replacer, Extender):
+        print('\n' + klass.__name__ + '...')
+        klass().method()
+    print('\nProvider...')
+    x = Provider()
+    x.delegate()
+</pre>
+</div>
+
+<pre class="example">
+% python specialize.py
+
+Inheritor...
+in Super.method
+
+Replacer...
+in Replacer.method
+
+Extender...
+starting Extender.method
+in Super.method
+ending Extender.method
+
+Provider...
+in Provider.action
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org8943279" class="outline-3">
+<h3 id="org8943279">Abstract superclass</h3>
+<div class="outline-text-3" id="text-org8943279">
+<p>
+abstract superclass—a class that expects parts of its behavior to be provided by
+its subclasses. If an expected method is not defined in a subclass, Python
+raises an undefined name exception when the inheritance search fails.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgedc85b8" class="outline-2">
+<h2 id="orgedc85b8">Arguments and options</h2>
+<div class="outline-text-2" id="text-orgedc85b8">
+<div class="org-src-container">
+<pre class="src src-python">#!/usr/bin/env python
+
+import sys
+
+arguments = sys.argv
+print("The number of arguments passed was: %s") % (str(len(arguments)))
+i=0
+for x in arguments:
+    print("The %d argument is %s") % (i,x)
+    i+=1
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgeae6e4c" class="outline-2">
+<h2 id="orgeae6e4c"><code>compat.py</code> and python version 2.x and 3.x</h2>
+<div class="outline-text-2" id="text-orgeae6e4c">
+<p>
+in some situations, developers may not want to include additional dependencies
+in some small packages. A common practice is the additional module that gathers
+all the compatibility code, usually named compat.py. Here is an example of such
+a compat module taken from the python-gmaps project
+(<a href="https://github.com/swistakm/python-gmaps">https://github.com/swistakm/python-gmaps</a>):
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"># -*- coding: utf-8 -*-
+import sys
+
+if sys.version_info &lt; (3, 0, 0):
+    import urlparse  # noqa
+
+    def is_string(s):
+        return isinstance(s, basestring)
+
+else:
+    from urllib import parse as urlparse  # noqa
+
+    def is_string(s):
+        return isinstance(s, str)
+</pre>
+</div>
+
+<p>
+Such a compat.py module is popular even in projects that depends on Six for 2/3
+compatibility because it is a very convenient way to store code that handles
+compatibility with different versions of packages used as dependencies.
+</p>
+</div>
+</div>
+<div id="outline-container-orgb4a8f74" class="outline-2">
+<h2 id="orgb4a8f74">Acronyms</h2>
+<div class="outline-text-2" id="text-orgb4a8f74">
+<p>
+PyPA (Python Packaging Authority)
+</p>
+</div>
+</div>
+<div id="outline-container-orgd2aab0e" class="outline-2">
+<h2 id="orgd2aab0e">Useful Resources</h2>
+<div class="outline-text-2" id="text-orgd2aab0e">
+<p>
+Awesome-python (<a href="https://github.com/vinta/awesome-python">https://github.com/vinta/awesome-python</a>), which includes a
+curated list of popular packages and frameworks
+</p>
+
+<p>
+Python Weekly (<a href="http://www.pythonweekly.com/">http://www.pythonweekly.com/</a>) is a popular newsletter that
+delivers to its subscribers dozens of new and interesting Python packages and
+resources every week
+</p>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Mohammad Reza Mansouri</p>
-<p class="date">Created: 2017-03-02 Thu 14:00</p>
+<p class="date">Created: 2017-03-21 Tue 21:00</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

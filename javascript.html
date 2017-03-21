@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-03-04 Sat 20:30 -->
+<!-- 2017-03-21 Tue 21:00 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>javascript recipes</title>
@@ -180,6 +180,7 @@
   /*]]>*/-->
 </style>
 <link rel="stylesheet" type="text/css" href="css/main.css" />
+<script src="js/ganalytics.js" async></script>
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -316,6 +317,7 @@ for the JavaScript code in this tag.
 <li><a href="#org51d8d97">Traversing the Results from querySelectorAll() with forEach() and call()</a></li>
 <li><a href="#org58db98e">Using a Destructuring Assignment to Simplify Code</a></li>
 <li><a href="#orgeffe51c">convert string to set</a></li>
+<li><a href="#org3a14e50">convert persian digits to English</a></li>
 </ul>
 </li>
 <li><a href="#orgaea1067">numbers</a>
@@ -365,7 +367,7 @@ for the JavaScript code in this tag.
 <ul>
 <li><a href="#org4ab810b">Best way to break from nested loops in Javascript?</a></li>
 <li><a href="#org24dddea">Using toString() to detect object class</a></li>
-<li><a href="#org6eda487">Reflection</a></li>
+<li><a href="#orge20cb33">Reflection</a></li>
 <li><a href="#org544f8fe">cloning objects</a></li>
 <li><a href="#org3258f25">return immutable object from a function</a></li>
 <li><a href="#orgfd69e07">tell if a number is even using bitwise &amp; operator</a></li>
@@ -442,7 +444,7 @@ for the JavaScript code in this tag.
 <ul>
 <li><a href="#org2474503">retrieval</a></li>
 <li><a href="#org4f8b5db">Reference</a></li>
-<li><a href="#org8272cb2">Reflection</a></li>
+<li><a href="#org45ee9aa">Reflection</a></li>
 <li><a href="#org67520d2">Enumeration</a></li>
 <li><a href="#org634d9ad">Delete</a></li>
 <li><a href="#org6361ff8">Traversing an object</a></li>
@@ -600,13 +602,32 @@ for the JavaScript code in this tag.
 <li><a href="#orgfc2a332">get/set value of text box</a></li>
 <li><a href="#org64cc5e1">reload an image</a></li>
 <li><a href="#orgb72acdc"><code>preventDefault</code> and ajax calls</a></li>
+<li><a href="#orgc6b3ee8">using <code>Nodejs</code> to install <code>JQuery</code></a></li>
+<li><a href="#org419586f">loading <code>JQuery</code> with  fallback</a></li>
+<li><a href="#orgcdb36b2">Replacing or modifying existing behaviors</a></li>
+<li><a href="#orgcea0ce5">validating forms with <code>JQuery</code></a></li>
+<li><a href="#org6f6c242">selecting elements</a></li>
+<li><a href="#org1433e67">Finding and selecting sibling elements</a></li>
+<li><a href="#org8bbf6d6">creating DOM elements</a></li>
+<li><a href="#org186ee4f">add new items  to list</a></li>
+<li><a href="#orgf336611">Inserting content into an element</a></li>
+<li><a href="#org7b1d1a1">Modifying the DOM element properties</a></li>
+<li><a href="#orgd0e880b">Adding and removing CSS classes to dynamically change their style</a></li>
+<li><a href="#orga1e1e3c">Enabling and disabling buttons by changing their properties</a></li>
+<li><a href="#orgf681277">Updating an image within a page</a></li>
+<li><a href="#org8454335">Populating list elements</a></li>
+<li><a href="#orgeb98435">pagination example</a></li>
+<li><a href="#orgd46e005">detecting button clicks</a></li>
+<li><a href="#orgf2b6a27">detecting element clicks</a></li>
 </ul>
 </li>
+<li><a href="#orgd853f4d"><code>HTML5</code> validation</a></li>
 <li><a href="#org29f73d6">URL</a>
 <ul>
 <li><a href="#org85d83c0">decode/encode URL</a></li>
 </ul>
 </li>
+<li><a href="#org2ec0d97">css</a></li>
 <li><a href="#org9089b41">references</a></li>
 </ul>
 </div>
@@ -1664,6 +1685,7 @@ Though, in some implementations you can simply get the name using arguments.call
 <p>
 Parsing:
 </p>
+
 <div class="org-src-container">
 <pre class="src src-javascript">function DisplayMyName() 
 {
@@ -1707,6 +1729,7 @@ console.log(str);
 <p>
 The results are:
 </p>
+
 <pre class="example">
 at 7 we found the
 at 11 we found time
@@ -1810,6 +1833,22 @@ console.log(sum); // 45
 <pre class="src src-javascript">let s1="somestring";
 let s2="anotherstring";
 let v  = new Set([...s1, ...s2]);
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3a14e50" class="outline-3">
+<h3 id="org3a14e50">convert persian digits to English</h3>
+<div class="outline-text-3" id="text-org3a14e50">
+<div class="org-src-container">
+<pre class="src src-javascript">function toEnDigits(str) {
+    str = str &amp;&amp; str.toString().replace(/[\u06F0\u06F1\u06F2\u06F3\u06F4\u06F5\u06F6\u06F7\u06F8\u06F9]/g,
+                function(v){
+                return String.fromCharCode(v.charCodeAt(0) - 1728)}).replace(/[\u0660\u0661\u0662\u0663\u0664\u0665\u0666\u0667\u0668\u0669]/g, 
+                function(v){return String.fromCharCode(v.charCodeAt(0) - 1584)}).replace(/[\u066B]/g, '.');
+    return str;
+}
 </pre>
 </div>
 </div>
@@ -2012,6 +2051,7 @@ function daydiff(first, second) {
 alert(daydiff(parseDate($('#first').val()), parseDate($('#second').val())));
 </pre>
 </div>
+
 <p>
 <a href="http://stackoverflow.com/questions/542938/how-do-i-get-the-number-of-days-between-two-dates-in-javascript">http://stackoverflow.com/questions/542938/how-do-i-get-the-number-of-days-between-two-dates-in-javascript</a>
 </p>
@@ -2294,6 +2334,7 @@ The following one-liner is a regular expression that takes advantage of the fact
 <p>
 Use the RegExp object constructor to create a regular expression from a string:
 </p>
+
 <div class="org-src-container">
 <pre class="src src-javascript">var re = new RegExp("a|b", "i");
 // same as
@@ -2551,6 +2592,7 @@ need to call Function.prototype.call() or Function.prototype.apply()
 on it, passing the object you want to inspect as the first parameter
 called thisArg.
 </p>
+
 <div class="org-src-container">
 <pre class="src src-javascript">var toString = Object.prototype.toString;
 
@@ -2566,9 +2608,9 @@ toString.call(null);        // [object Null]
 </div>
 </div>
 
-<div id="outline-container-org6eda487" class="outline-3">
-<h3 id="org6eda487">Reflection</h3>
-<div class="outline-text-3" id="text-org6eda487">
+<div id="outline-container-orge20cb33" class="outline-3">
+<h3 id="orge20cb33">Reflection</h3>
+<div class="outline-text-3" id="text-orge20cb33">
 <div class="org-src-container">
 <pre class="src src-javascript">function isUndefined(value) {
    return typeof value === 'undefined';
@@ -2593,6 +2635,7 @@ toString.call(null);        // [object Null]
 var clone = JSON.parse(JSON.stringify(object));
 </pre>
 </div>
+
 <p>
 <a href="http://stackoverflow.com/questions/728360/how-do-i-correctly-clone-a-javascript-object/">http://stackoverflow.com/questions/728360/how-do-i-correctly-clone-a-javascript-object/</a>
 </p>
@@ -3954,9 +3997,9 @@ a = b = c = {};
 </div>
 </div>
 
-<div id="outline-container-org8272cb2" class="outline-3">
-<h3 id="org8272cb2">Reflection</h3>
-<div class="outline-text-3" id="text-org8272cb2">
+<div id="outline-container-org45ee9aa" class="outline-3">
+<h3 id="org45ee9aa">Reflection</h3>
+<div class="outline-text-3" id="text-org45ee9aa">
 <div class="org-src-container">
 <pre class="src src-javascript">typeof flight.number   // 'number'
 typeof flight.toString // 'function'
@@ -7702,6 +7745,542 @@ submits the form after getting response from ajax call.
 </div>
 </div>
 </div>
+
+<div id="outline-container-orgc6b3ee8" class="outline-3">
+<h3 id="orgc6b3ee8">using <code>Nodejs</code> to install <code>JQuery</code></h3>
+<div class="outline-text-3" id="text-orgc6b3ee8">
+<div class="org-src-container">
+<pre class="src src-shell">$ npm install jquery
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org419586f" class="outline-3">
+<h3 id="org419586f">loading <code>JQuery</code> with  fallback</h3>
+<div class="outline-text-3" id="text-org419586f">
+<p>
+Try to implement a fallback on your locally hosted library of the same version.
+If CDN links become unavailable (and they are not 100 percent infallible), then
+the local version will kick in automatically, until the CDN link becomes
+available again:
+</p>
+
+<pre class="example">
+&lt;script type="text/javascript" src="//code.jquery.com/jquery-1.11.1.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;window.jQuery || document.write('&lt;script src="js/jquery-1.11.1.min.js"&gt;&lt;\/script&gt;')&lt;/script&gt;
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgcdb36b2" class="outline-3">
+<h3 id="orgcdb36b2">Replacing or modifying existing behaviors</h3>
+<div class="outline-text-3" id="text-orgcdb36b2">
+<div class="org-src-container">
+<pre class="src src-javascript">(function($){
+  // store original reference to the method
+  var _old = $.fn.method;
+  $.fn.method = function(arg1,arg2){
+    if ( ... condition ... ) {
+      return ....
+    } 
+    else { // do the default
+      return _old.apply(this,arguments);
+    }
+  };
+})(jQuery);
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgcea0ce5" class="outline-3">
+<h3 id="orgcea0ce5">validating forms with <code>JQuery</code></h3>
+<div class="outline-text-3" id="text-orgcea0ce5">
+<div class="org-src-container">
+<pre class="src src-javascript">$(document).ready(function () {
+   var emailField = $("#email");
+    if (emailField.is("input") &amp;&amp; emailField.prop("type") === "email") {
+  }
+
+emailField.on("change", function(e) {
+  emailField[0].checkValidity();
+    if (!e.target.validity.valid) {
+      $(this).removeClass("success").addClass("error")
+    } else {
+      $(this).removeClass("error").addClass("success")
+    }
+});
+
+emailField.on("invalid", function(e) {
+  e.target.setCustomValidity("");
+  if (!e.target.validity.valid) {
+  e.target.setCustomValidity("I need to see an email address 
+  here, not what you've typed!");
+}
+else {
+  e.target.setCustomValidity("");
+}
+});
+
+});
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6f6c242" class="outline-3">
+<h3 id="org6f6c242">selecting elements</h3>
+<div class="outline-text-3" id="text-org6f6c242">
+<div class="org-src-container">
+<pre class="src src-javascript">var content = $("#content");             //Select the content div
+var span = $(".span-element");           //Select the span element
+var listelements = $("li");             //Select all the list elements
+
+// select an anchor element that has a rel attribute of nofollow
+$(function(){
+var nofollow = $('a[rel="nofollow"]');
+});
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1433e67" class="outline-3">
+<h3 id="org1433e67">Finding and selecting sibling elements</h3>
+<div class="outline-text-3" id="text-org1433e67">
+<div class="org-src-container">
+<pre class="src src-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Finding and selecting sibling elements&lt;/title&gt;
+    &lt;script src="jquery.min.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+        $(function(){
+            var element1 = $('#content .top .top-left'); //Select the top left division element
+            var element2 = $('.parent').find('a'); //Select the anchor element
+            var element3 = $('.parent').find('.grandchild'); //Select the grandchild element
+        });
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div class="division-container"&gt;Some text &lt;span&gt;within&lt;/span&gt; a div &lt;span&gt;which&lt;/span&gt; has a many &lt;span&gt;span&lt;/span&gt; elements.&lt;/div&gt;
+&lt;div id="content"&gt;
+    &lt;div class="top"&gt;
+        &lt;div class="top-left"&gt;Left&lt;/div&gt;
+        &lt;div class="top-right"&gt;Right&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;ul class="info-list"&gt;
+    &lt;li&gt;List Item 1&lt;/li&gt;
+    &lt;li&gt;List Item 2&lt;/li&gt;
+    &lt;li&gt;List Item 3&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul class="second-info-list"&gt;
+    &lt;li&gt;Second List Item 1&lt;/li&gt;
+    &lt;li&gt;Second List Item 2&lt;/li&gt;
+    &lt;li&gt;Second List Item 3&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="parent"&gt;
+    &lt;div class="child"&gt;
+        &lt;div class="grandchild"&gt;
+            &lt;a href="#"&gt;A Link&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8bbf6d6" class="outline-3">
+<h3 id="org8bbf6d6">creating DOM elements</h3>
+<div class="outline-text-3" id="text-org8bbf6d6">
+<p>
+To dynamically add DOM elements to any part of the document, we can use the append() ,
+addAfter() , after() , addBefore() , and before() functions of jQuery. The functions
+after() and insertAfter() essentially perform the same action; the difference lies in
+the order in which the expressions are specified. This is the same for insertBefore() and
+before() .
+</p>
+
+<p>
+The following JavaScript code will add two buttons to the DOM after the #myList
+element utilizes jQuery's after() and insertAfter() functions.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Creating DOM elements&lt;/title&gt;
+    &lt;script src="jquery.min.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+        $(function(){
+            $('#myList').after("&lt;button&gt;Button 1&lt;/button&gt;");
+            $('&lt;button&gt;Button 2&lt;/button&gt;').insertAfter("#myList");
+        });
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id="container"&gt;
+    &lt;ul id="myList"&gt;
+        &lt;li&gt;List Item 1&lt;/li&gt;
+        &lt;li&gt;List Item 2&lt;/li&gt;
+        &lt;li&gt;List Item 3&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org186ee4f" class="outline-3">
+<h3 id="org186ee4f">add new items  to list</h3>
+<div class="outline-text-3" id="text-org186ee4f">
+<div class="org-src-container">
+<pre class="src src-html">$(function(){
+   $('#myList').append("&lt;li&gt;List Item 4&lt;/li&gt;");
+});
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf336611" class="outline-3">
+<h3 id="orgf336611">Inserting content into an element</h3>
+<div class="outline-text-3" id="text-orgf336611">
+<div class="org-src-container">
+<pre class="src src-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Insert content into an element&lt;/title&gt;
+    &lt;script src="jquery.min.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+        $(function(){
+            //Remove the container elements current HTML
+            $('#container').html("&lt;p&gt;I have replaced the all the HTML within the #container element&lt;/p&gt;");
+            //Add some more HTML to the beginning of the container element
+            $('#container').prepend("&lt;p&gt;Another paragraph that has been prepended.&lt;/p&gt;");
+            //Add a button to the end of the container element after all other HTML content
+            $('#container').append("&lt;button&gt;A Button Appended&lt;/button&gt;");
+            //Add some text into the text area element
+            $('#myTextarea').val("Added some text using .text()");
+        });
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id="container"&gt;
+    &lt;p&gt;Here is some current HTML content&lt;/p&gt;
+&lt;/div&gt;
+&lt;textarea id="myTextarea"&gt;&lt;/textarea&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org7b1d1a1" class="outline-3">
+<h3 id="org7b1d1a1">Modifying the DOM element properties</h3>
+<div class="outline-text-3" id="text-org7b1d1a1">
+<div class="org-src-container">
+<pre class="src src-javascript">$(function(){
+  //Set the checkbox to be checked
+  $('input[type="checkbox"]').prop('checked', true);
+  //Disable any text inputs
+  $('input[type="text"]').prop('disabled', true);
+  //Change the value of any text inputs
+  $('input[type="text"]').val("This is a new Value!");
+});
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd0e880b" class="outline-3">
+<h3 id="orgd0e880b">Adding and removing CSS classes to dynamically change their style</h3>
+<div class="outline-text-3" id="text-orgd0e880b">
+<div class="org-src-container">
+<pre class="src src-javascript">//Remove all classes current on the #sometext paragraph
+$('#sometext').removeClass();
+//Add the .green class to the #sometext paragraph
+$('#sometext').addClass('green');
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga1e1e3c" class="outline-3">
+<h3 id="orga1e1e3c">Enabling and disabling buttons by changing their properties</h3>
+<div class="outline-text-3" id="text-orga1e1e3c">
+<div class="org-src-container">
+<pre class="src src-javascript">$('#search-btn').prop("disabled", false);
+$('#search-btn').prop("disabled", true);
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf681277" class="outline-3">
+<h3 id="orgf681277">Updating an image within a page</h3>
+<div class="outline-text-3" id="text-orgf681277">
+<div class="org-src-container">
+<pre class="src src-javascript">$('#square').prop("src", "images/red.png");
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8454335" class="outline-3">
+<h3 id="org8454335">Populating list elements</h3>
+<div class="outline-text-3" id="text-org8454335">
+<div class="org-src-container">
+<pre class="src src-html">&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Populate a list element&lt;/title&gt;
+    &lt;script src="jquery.min.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+        var names = [
+            {
+                id: 1,
+                firstname: 'Leon',
+                lastname: 'Revill'
+            },
+            {
+                id: 2,
+                firstname: 'Allyce',
+                lastname: 'Wolverson'
+            },
+            {
+                id: 3,
+                firstname: 'Harry',
+                lastname: 'Round'
+            },
+            {
+                id: 4,
+                firstname: 'Chris',
+                lastname: 'Wilshaw'
+            }
+        ];
+        $(function(){
+            $.each(names, function(index, obj){
+                $('#namelist').append("&lt;li&gt;#" + obj.id + " " + obj.firstname + " " + obj.lastname + "&lt;/li&gt;");
+            });
+        });
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;ul id="namelist"&gt;&lt;/ul&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgeb98435" class="outline-3">
+<h3 id="orgeb98435">pagination example</h3>
+<div class="outline-text-3" id="text-orgeb98435">
+<div class="org-src-container">
+<pre class="src src-html">&lt;html&gt;
+&lt;head&gt;
+    &lt;script src="jquery.min.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+        var animals = [
+            {
+                id: 1,
+                name: 'Dog',
+                type: 'Mammal'
+            },
+            {
+                id: 2,
+                name: 'Cat',
+                type: 'Mammal'
+            },
+            {
+                id: 3,
+                name: 'Goat',
+                type: 'Mammal'
+            },
+            {
+                id: 4,
+                name: 'Lizard',
+                type: 'Reptile'
+            },
+            {
+                id: 5,
+                name: 'Frog',
+                type: 'Amphibian'
+            },
+            {
+                id: 6,
+                name: 'Spider',
+                type: 'Arachnid'
+            },
+            {
+                id: 7,
+                name: 'Crocodile',
+                type: 'Reptile'
+            },
+            {
+                id: 8,
+                name: 'Tortoise',
+                type: 'Reptile'
+            },{
+                id: 9,
+                name: 'Barracuda',
+                type: 'Fish'
+            },
+            {
+                id: 10,
+                name: 'Sheep',
+                type: 'Mammal'
+            },
+            {
+                id: 11,
+                name: 'Lion',
+                type: 'Mammal'
+            },
+            {
+                id: 12,
+                name: 'Seal',
+                type: 'Mammal'
+            }
+        ];
+        var pageSize = 4;
+        var currentPage = 1;
+        var pagedResults = [];
+        var totalResults = animals.length;
+        $(function(){
+            //Populate the list on load
+            updateList();
+            $('.next').click(function(){
+                //Only increase the current page if there are enough results
+                if ((currentPage * pageSize) &lt;= totalResults) currentPage++;
+                updateList();
+            });
+            $('.previous').click(function(){
+                //Only decrease the current page if it is currently greater than 1
+                if (currentPage &gt; 1) currentPage--;
+                updateList();
+            });
+        });
+        function updateList() {
+            //Grab the required section of results from the animals list
+            var end = (currentPage * pageSize);
+            var start = (end - pageSize);
+            pagedResults = animals.slice(start, end);
+            //Empty the list element before re-population
+            $('#list').empty();
+            //Disable the previous button if we are on the first page
+            if (currentPage &lt;= 1) {
+                $('.previous').prop("disabled", true);
+            }
+            //Enable the previous button if we are not on the first page
+            else {
+                $('.previous').prop("disabled", false);
+            }
+            //Disable the next button if there are no more pages
+            if ((currentPage * pageSize) &gt;= totalResults) {
+                $('.next').prop("disabled", true);
+            }
+            //Enable the next button if there are results left to page
+            else {
+                $('.next').prop("disabled", false);
+            }
+            //Loop through the pages results and add them to the list
+            $.each(pagedResults, function(index, obj){
+                $('#list').append("&lt;li&gt;&lt;strong&gt;" + obj.name + "&lt;/strong&gt; (" + obj.type + ")&lt;/li&gt;");
+            });
+        }
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;ul id="list"&gt;&lt;/ul&gt;
+&lt;button class="previous"&gt;&lt;&lt; Previous&lt;/button&gt;
+&lt;button class="next"&gt;Next &gt;&gt;&lt;/button&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd46e005" class="outline-3">
+<h3 id="orgd46e005">detecting button clicks</h3>
+<div class="outline-text-3" id="text-orgd46e005">
+<div class="org-src-container">
+<pre class="src src-javascript">$(function() {
+
+  $('.button1').click(function(){
+    alert("Button 1 clicked");
+  });
+
+  $('body').on("click", ".button2", function(){
+    alert("Button 2 clicked");
+  });
+
+});
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf2b6a27" class="outline-3">
+<h3 id="orgf2b6a27">detecting element clicks</h3>
+<div class="outline-text-3" id="text-orgf2b6a27">
+<div class="org-src-container">
+<pre class="src src-html">&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Chapter 2 :: jQuery Events&lt;/title&gt;
+    &lt;script src="jquery.min.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+        $(function() {
+            $('a').click(function(){
+                alert("You have clicked a link!");
+            });
+            $('body').on('click', 'input[type="text"]', function(){
+                alert("You have clicked a text input!");
+            });
+            $('.clickme').click(function(){
+                alert("You have clicked a division element");
+            });
+        });
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;a href="#"&gt;Link 1&lt;/a&gt;
+&lt;input type="text" name="input1" /&gt;
+&lt;div class="clickme"&gt;Click Me!&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd853f4d" class="outline-2">
+<h2 id="orgd853f4d"><code>HTML5</code> validation</h2>
+<div class="outline-text-2" id="text-orgd853f4d">
+<div class="org-src-container">
+<pre class="src src-html">&lt;input type="email" name="email" id="email" required= 
+  "required"&gt;
+
+ &lt;input id="name" name="username" value="" required="required" 
+  pattern="[A-Za-z]+\s[A-Za-z]+" title="firstnamelastname"&gt;
+
+&lt;input type="email" name="email" id="email" 
+  required="required" pattern="[^ @]*@[^ @]*\.[a-zA-Z]{2,}" 
+  title="test@test.com"&gt;
+</pre>
+</div>
+</div>
 </div>
 
 <div id="outline-container-org29f73d6" class="outline-2">
@@ -7744,13 +8323,17 @@ the following  handles the case of space being encoded as +
 </div>
 </div>
 
+<div id="outline-container-org2ec0d97" class="outline-2">
+<h2 id="org2ec0d97">css</h2>
+</div>
+
 <div id="outline-container-org9089b41" class="outline-2">
 <h2 id="org9089b41">references</h2>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Mohammad Reza Mansouri</p>
-<p class="date">Created: 2017-03-04 Sat 20:30</p>
+<p class="date">Created: 2017-03-21 Tue 21:00</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

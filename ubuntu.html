@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-03-08 Wed 10:56 -->
+<!-- 2017-03-21 Tue 21:00 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>ubuntu</title>
@@ -180,7 +180,7 @@
   /*]]>*/-->
 </style>
 <link rel="stylesheet" type="text/css" href="css/main.css" />
-<link rel="stylesheet" type="text/css" href="css/main.css" />
+<script src="js/ganalytics.js" async></script>
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -267,11 +267,12 @@ for the JavaScript code in this tag.
 <li><a href="#org192d746">network open sockets by program name?</a></li>
 <li><a href="#org6badf82">bandwidth usage by program name?</a></li>
 <li><a href="#org166e0bb">static route</a></li>
+<li><a href="#org784d539">nmcli</a></li>
 </ul>
 </li>
 <li><a href="#org3ffd698">ssh</a>
 <ul>
-<li><a href="#org7c113e1">installation</a></li>
+<li><a href="#orgfc94837">installation</a></li>
 <li><a href="#org50f394e">ssh escape sequences</a></li>
 </ul>
 </li>
@@ -338,13 +339,13 @@ for the JavaScript code in this tag.
 <li><a href="#orgc9a4e38">Compile Kernel</a></li>
 </ul>
 </li>
-<li><a href="#orgc9de008">processes</a></li>
-<li><a href="#org3579a25">Signals/Kill:</a></li>
-<li><a href="#org65f1e9c">Permissions:</a></li>
-<li><a href="#org083ec85">Create a memory file system:</a></li>
-<li><a href="#org7bcb3ed">Disk performance:</a></li>
+<li><a href="#orgdccda58">processes</a></li>
+<li><a href="#orgbd858ce">Signals/Kill</a></li>
+<li><a href="#org044ca1c">Permissions</a></li>
+<li><a href="#org8f52222">Create a memory file system</a></li>
+<li><a href="#orgef22ec3">Disk performance</a></li>
 <li><a href="#org6165ca5">Networking</a></li>
-<li><a href="#org0302b08">Ports in use:</a></li>
+<li><a href="#orga4b3670">Ports in use</a></li>
 <li><a href="#orgd0418cb">Firewall</a></li>
 <li><a href="#orgd69f831">IP Forward for routing</a></li>
 <li><a href="#org88b76b5">DNS</a></li>
@@ -438,7 +439,7 @@ for the JavaScript code in this tag.
 </li>
 </ul>
 </li>
-<li><a href="#orgfe802f2">processes</a>
+<li><a href="#org3753e34">processes</a>
 <ul>
 <li><a href="#orgb549a01">checking the priority of a process?</a></li>
 <li><a href="#org9f5d563">Setting priority on new processes</a></li>
@@ -473,9 +474,9 @@ for the JavaScript code in this tag.
 <li><a href="#orgef40843">Fetching Many Variations on a URL</a></li>
 <li><a href="#org2f5f3c9">Following Redirects Automatically</a></li>
 <li><a href="#org509a260">send cookie with curl?</a></li>
-<li><a href="#org9b8e3dc">make an options request</a></li>
+<li><a href="#orgef595e1">make an options request</a></li>
 <li><a href="#org2147300">make a head request</a></li>
-<li><a href="#orgd7aa5e7">make an options request</a></li>
+<li><a href="#org68f29ce">make an options request</a></li>
 <li><a href="#org45f8c13">set a header</a></li>
 <li><a href="#orgd04d9f8">post request</a>
 <ul>
@@ -496,7 +497,7 @@ for the JavaScript code in this tag.
 <li><a href="#org84e3e1a">sudo timeout</a></li>
 <li><a href="#org089903f">How can I get the recoll package to index markdown (.md) files?</a></li>
 <li><a href="#org636f693">json pretty print</a></li>
-<li><a href="#org8b5a3de">installation</a>
+<li><a href="#orga12800c">installation</a>
 <ul>
 <li><a href="#org17375b5">other useful php modules</a></li>
 <li><a href="#org38c0f17">starting windows in safe mode from grub</a></li>
@@ -518,7 +519,7 @@ for the JavaScript code in this tag.
 </li>
 <li><a href="#orgfec2626">postgresql</a>
 <ul>
-<li><a href="#org1429979">installation</a></li>
+<li><a href="#org32e9082">installation</a></li>
 <li><a href="#orgb1fb853">Switching Over to the postgres Account</a>
 <ul>
 <li><a href="#org06b160a">refs</a></li>
@@ -539,8 +540,22 @@ for the JavaScript code in this tag.
 <li><a href="#orge2b89b7">create UUID without extension</a></li>
 <li><a href="#org16da57d">get list of installed extensions?</a></li>
 <li><a href="#org1df6509">copying postgresql database to another server</a></li>
-<li><a href="#org0745edd">getting tablenames in a particular database</a></li>
-<li><a href="#org921fd0c">generating random timestamps</a></li>
+<li><a href="#org65c4cfa">active connections to the database</a></li>
+<li><a href="#orga673689">rename postgresql database</a></li>
+<li><a href="#org18447dd">which version of <code>postgresql</code> am I running?</a></li>
+<li><a href="#org55e1623">restoring database with <code>psql</code></a></li>
+<li><a href="#orge72fe4c">connect to <code>postgresql</code> database in local host without password</a></li>
+<li><a href="#orgc2d6d73">How to reload config settings without restarting database</a></li>
+<li><a href="#orgd982f62">backup</a>
+<ul>
+<li><a href="#org5e0be37">intro</a></li>
+<li><a href="#org69f2795">backup a single database</a></li>
+<li><a href="#org5186708">logical backup of all databases</a></li>
+<li><a href="#org4f91c3a">taking a base backup</a></li>
+</ul>
+</li>
+<li><a href="#org822f56d">examplg <code>pg_hba.conf</code></a></li>
+<li><a href="#org256616f">connect to <code>psql</code> without password</a></li>
 </ul>
 </li>
 <li><a href="#orgc03fae8">phppgadmin</a></li>
@@ -564,7 +579,7 @@ for the JavaScript code in this tag.
 </li>
 <li><a href="#orgf68c31d">wireless</a>
 <ul>
-<li><a href="#org56f9ac4">concepts</a>
+<li><a href="#org2b42772">concepts</a>
 <ul>
 <li><a href="#orgbebc4f0">wlan frames</a></li>
 <li><a href="#orgca2a942">Shared Key Authentication</a></li>
@@ -573,6 +588,8 @@ for the JavaScript code in this tag.
 <li><a href="#orgd8f01ef">aircrack-ng</a>
 <ul>
 <li><a href="#orga83666e">put card in monitor mode</a></li>
+<li><a href="#org78fd08f">check for interfering processes</a></li>
+<li><a href="#orge785fae">capturing packets</a></li>
 <li><a href="#org5874cc5">viewing management,control and data frames</a></li>
 <li><a href="#org8c646c9">sniffing data packets of a network.</a></li>
 <li><a href="#org3cc17f5">bypassing authentication</a>
@@ -586,6 +603,20 @@ for the JavaScript code in this tag.
 </ul>
 </li>
 <li><a href="#orge75530c">connecting to access point using <code>iwconfig</code></a></li>
+<li><a href="#org7f80785">viewing available wireless interfaces</a></li>
+<li><a href="#org2453f16">scan for Access Points</a></li>
+</ul>
+</li>
+<li><a href="#org3980223">capturing traffic</a>
+<ul>
+<li><a href="#org6f4c44b">concepts</a>
+<ul>
+<li><a href="#org9428f3e">ARP</a></li>
+</ul>
+</li>
+<li><a href="#orgaf0ace3">viewing ARP cache</a></li>
+<li><a href="#orgfd0b8fd">ARP cache poisoning</a></li>
+<li><a href="#orgce31b1f">Using ARP Cache Poisoning to Impersonate the Default Gateway</a></li>
 </ul>
 </li>
 <li><a href="#org36e9061">limit CPU usage of a process</a></li>
@@ -601,6 +632,19 @@ for the JavaScript code in this tag.
 <li><a href="#orgead0666">Starting, Stopping, and Restarting Apache</a></li>
 </ul>
 </li>
+<li><a href="#orge809680">redis</a>
+<ul>
+<li><a href="#orgc9a2a17">using from command line</a></li>
+<li><a href="#org8231f2d">Redis data types</a>
+<ul>
+<li><a href="#org8a62b50">Strings</a></li>
+<li><a href="#orgdd1152d"><code>EXPIRE</code> command</a></li>
+</ul>
+</li>
+<li><a href="#orgf36929b">Hello world using <code>redis</code> and <code>Nodejs</code></a></li>
+<li><a href="#org61b4092">Building a voting system with Strings using Node.js</a></li>
+</ul>
+</li>
 <li><a href="#orgc660c13">references</a></li>
 </ul>
 </div>
@@ -614,14 +658,14 @@ for the JavaScript code in this tag.
 <div class="outline-text-3" id="text-org4f1644b">
 <p>
 Ubuntu and all the Debian-based distributions use a unique file to
-configure all the network interfaces; this file is named <b><i>etc/network</i></b>
-interfaces.
+configure all the network interfaces; this file is named <b>/etc/network/interfaces</b>.
 </p>
 
 <p>
 An Ethernet interface is configured in either the DHCP or static mode. If it is the
-DHCP mode, we will find the following lines in /etc/network/interfaces :
+DHCP mode, we will find the following lines in <b>/etc/network/interfaces</b> :
 </p>
+
 <pre class="example">
 auto eth0
 iface eth0 inet dhcp
@@ -635,6 +679,7 @@ automatically brought up when a computer boots up.
 <p>
 If it is in the static mode, you will find the output that looks like the following lines:
 </p>
+
 <pre class="example">
 iface eth0 inet static
 address 192.168.1.58
@@ -660,7 +705,7 @@ nameserver 192.168.1.12
 </pre>
 
 <p>
-starting from Ubuntu 12.04 and later, =/etc/resolve.conf is located at:
+starting from Ubuntu 12.04 and later, <code>/etc/resolve.conf</code> is located at:
 </p>
 
 <pre class="example">
@@ -742,9 +787,10 @@ $ netstat -ltpu
 <div id="outline-container-org6badf82" class="outline-3">
 <h3 id="org6badf82">bandwidth usage by program name?</h3>
 <div class="outline-text-3" id="text-org6badf82">
-<pre class="example">
-sudo nethogs &lt;NIC&gt;
+<div class="org-src-container">
+<pre class="src src-shell">$ sudo nethogs &lt;NIC&gt;
 </pre>
+</div>
 </div>
 </div>
 
@@ -773,7 +819,30 @@ At the bottom of this section, add the following line:
 
 <pre class="example">
 up route add -net 192.168.40.0/24 gw 192.168.30.1 dev em1
+up route add -net 172.16.11.0/24 gw 172.16.12.141 dev eth0:0
 </pre>
+</div>
+</div>
+
+<div id="outline-container-org784d539" class="outline-3">
+<h3 id="org784d539">nmcli</h3>
+<div class="outline-text-3" id="text-org784d539">
+<div class="org-src-container">
+<pre class="src src-shell">$ nmcli device wifi list    # the same as sudo iw wlp12s0 scan | grep SSID
+# use nmcli to display configured permissions with the following command:
+$ nmcli general permissions
+
+#creating  a connection
+$ sudo nmcli connection add con-name wired-home \
+ifname enp9s0 type ethernet ip4 192.168.0.8 gw4 192.168.0.1
+Connection 'wired-home' (e17cb6b7-685f-4cf2-9e8b-16cbfae1f73a)
+successfully added.
+#add the DNS configuration to the connection profile
+$ sudo nmcli connection modify wired-home ipv4.dns "192.168.0.3 8.8.8.8"
+# We can now display the properties with the following command:
+$ nmcli -p connection show wired-home
+</pre>
+</div>
 </div>
 </div>
 </div>
@@ -781,9 +850,9 @@ up route add -net 192.168.40.0/24 gw 192.168.30.1 dev em1
 <div id="outline-container-org3ffd698" class="outline-2">
 <h2 id="org3ffd698">ssh</h2>
 <div class="outline-text-2" id="text-org3ffd698">
-</div><div id="outline-container-org7c113e1" class="outline-3">
-<h3 id="org7c113e1">installation</h3>
-<div class="outline-text-3" id="text-org7c113e1">
+</div><div id="outline-container-orgfc94837" class="outline-3">
+<h3 id="orgfc94837">installation</h3>
+<div class="outline-text-3" id="text-orgfc94837">
 <div class="org-src-container">
 <pre class="src src-shell">$ sudo apt-get install openssh-client
 $ sudo apt-get install openssh-server
@@ -1024,6 +1093,7 @@ usermod -g &lt;groupname&gt; username
 </pre>
 </div>
 </div>
+
 <div id="outline-container-org01701e0" class="outline-4">
 <h4 id="org01701e0">View a User’s Group Assignments</h4>
 <div class="outline-text-4" id="text-org01701e0">
@@ -1273,6 +1343,7 @@ $ curl --head &lt;link&gt;
 </div>
 </div>
 </div>
+
 <div id="outline-container-orgfe9bfdd" class="outline-3">
 <h3 id="orgfe9bfdd">wget download with proxy</h3>
 <div class="outline-text-3" id="text-orgfe9bfdd">
@@ -1341,6 +1412,7 @@ $ last reboot                              # Show system reboot history
 <p>
 <b>Kernel detected hardware:</b>
 </p>
+
 <div class="org-src-container">
 <pre class="src src-shell">$+begin_src shell
 $ dmesg                               # Detected hardware and boot messages
@@ -1409,44 +1481,44 @@ $ tail /var/log/warn                          # System warnings messages see sys
 <h4 id="orge70b648">Kernel modules</h4>
 <div class="outline-text-4" id="text-orge70b648">
 <div class="org-src-container">
-<pre class="src src-shell"># lsmod                                      # List all modules loaded in the kernel
-# modprobe isdn                      # To load a module (here isdn)
+<pre class="src src-shell">$ lsmod                                      # List all modules loaded in the kernel
+$ modprobe isdn                      # To load a module (here isdn)
 </pre>
 </div>
 </div>
 </div>
-
-
 
 <div id="outline-container-orgc9a4e38" class="outline-4">
 <h4 id="orgc9a4e38">Compile Kernel</h4>
 <div class="outline-text-4" id="text-orgc9a4e38">
 <div class="org-src-container">
-<pre class="src src-shell"># cd /usr/src/linux
-# make mrproper                      # Clean everything, including config files
-# make oldconfig                      # Reuse the old .config if existent
-# make menuconfig                 # or xconfig (Qt) or gconfig (GTK)
-# make                                       # Create a compressed kernel image
-# make modules                      # Compile the modules
-# make modules_install         # Install the modules
-# make install                           # Install the kernel
-# reboot
+<pre class="src src-shell">$ cd /usr/src/linux
+$ make mrproper                      # Clean everything, including config files
+$ make oldconfig                      # Reuse the old .config if existent
+$ make menuconfig                 # or xconfig (Qt) or gconfig (GTK)
+$ make                                       # Create a compressed kernel image
+$ make modules                      # Compile the modules
+$ make modules_install         # Install the modules
+$ make install                           # Install the kernel
+$ reboot
 </pre>
 </div>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgc9de008" class="outline-3">
-<h3 id="orgc9de008">processes</h3>
-<div class="outline-text-3" id="text-orgc9de008">
+<div id="outline-container-orgdccda58" class="outline-3">
+<h3 id="orgdccda58">processes</h3>
+<div class="outline-text-3" id="text-orgdccda58">
 <p>
 listing and pids
 </p>
 
 <p>
-each process has a unique number, the pid. a list of all running process is retrieved with ps.
+each process has a unique number, the pid. a list of all running process is
+retrieved with ps.
 </p>
+
 <div class="org-src-container">
 <pre class="src src-shell"># ps -auxefw                         # extensive list of all running process
 </pre>
@@ -1473,12 +1545,13 @@ $ truss df                                    # same as above
 </div>
 </div>
 
-<div id="outline-container-org3579a25" class="outline-3">
-<h3 id="org3579a25">Signals/Kill:</h3>
-<div class="outline-text-3" id="text-org3579a25">
+<div id="outline-container-orgbd858ce" class="outline-3">
+<h3 id="orgbd858ce">Signals/Kill</h3>
+<div class="outline-text-3" id="text-orgbd858ce">
 <p>
 Terminate or send a signal with kill or killall.
 </p>
+
 <div class="org-src-container">
 <pre class="src src-shell">$ kill -s TERM 4712                  # same as kill -15 4712
 $ killall -1 httpd                          # Kill HUP processes by exact name
@@ -1491,6 +1564,7 @@ $ fuser -k -TERM -m /home     # Kill every process accessing /home (to umount)
 <p>
 Important signals are:
 </p>
+
 <pre class="example">
 1       HUP (hang up)
 2       INT (interrupt)
@@ -1501,9 +1575,9 @@ Important signals are:
 </div>
 </div>
 
-<div id="outline-container-org65f1e9c" class="outline-3">
-<h3 id="org65f1e9c">Permissions:</h3>
-<div class="outline-text-3" id="text-org65f1e9c">
+<div id="outline-container-org044ca1c" class="outline-3">
+<h3 id="org044ca1c">Permissions</h3>
+<div class="outline-text-3" id="text-org044ca1c">
 <p>
 Change permission and ownership with chmod and chown.  The default
 umask can be changed for all users in /etc/profile for Linux.  The
@@ -1515,8 +1589,9 @@ umask 022 results in a permission 0f 755.
 1 &#x2013;x execute                        # Mode 764 = exec/read/write | read/write | read
 2 -w- write                          # For:       |&#x2013;  Owner  &#x2013;|   |- Group-|   |Oth|
 4 r&#x2013; read
-  ugo=a                              u=user, g=group, o=others, a=everyone
+ugo=a                              u=user, g=group, o=others, a=everyone
 </p>
+
 <div class="org-src-container">
 <pre class="src src-shell">$ chmod [OPTION] MODE[,MODE] FILE    # MODE is of the form [ugoa]*([-+=]([rwxXst]))
 $ chmod 640 /var/log/maillog                      # Restrict the log -rw-r-----
@@ -1645,9 +1720,9 @@ Mount an image:
 </div>
 </div>
 
-<div id="outline-container-org083ec85" class="outline-3">
-<h3 id="org083ec85">Create a memory file system:</h3>
-<div class="outline-text-3" id="text-org083ec85">
+<div id="outline-container-org8f52222" class="outline-3">
+<h3 id="org8f52222">Create a memory file system</h3>
+<div class="outline-text-3" id="text-org8f52222">
 <p>
 A memory based file system is very fast for heavy IO application. How
 to create a 64 MB partition mounted on /memdisk:
@@ -1660,9 +1735,9 @@ to create a 64 MB partition mounted on /memdisk:
 </div>
 </div>
 
-<div id="outline-container-org7bcb3ed" class="outline-3">
-<h3 id="org7bcb3ed">Disk performance:</h3>
-<div class="outline-text-3" id="text-org7bcb3ed">
+<div id="outline-container-orgef22ec3" class="outline-3">
+<h3 id="orgef22ec3">Disk performance</h3>
+<div class="outline-text-3" id="text-orgef22ec3">
 <p>
 Read and write a 1 GB file on partition ad4s3c (/home)
 </p>
@@ -1692,9 +1767,9 @@ Read and write a 1 GB file on partition ad4s3c (/home)
 </div>
 </div>
 
-<div id="outline-container-org0302b08" class="outline-3">
-<h3 id="org0302b08">Ports in use:</h3>
-<div class="outline-text-3" id="text-org0302b08">
+<div id="outline-container-orga4b3670" class="outline-3">
+<h3 id="orga4b3670">Ports in use</h3>
+<div class="outline-text-3" id="text-orga4b3670">
 <p>
 Listening open ports:
 </p>
@@ -1735,14 +1810,19 @@ Check if a firewall is running (typical configuration only):
 <p>
 Check and then enable IP forward with :
 </p>
+
 <div class="org-src-container">
 <pre class="src src-shell"># cat /proc/sys/net/ipv4/ip_forward  # Check IP forward 0=off, 1=on
 # echo 1 &gt; /proc/sys/net/ipv4/ip_forward
 </pre>
 </div>
+
 <p>
-or edit /etc/sysctl.conf with:
-net.ipv4.ip<sub>forward</sub> = 1
+or edit <code>/etc/sysctl.conf</code> with:
+</p>
+
+<p>
+<code>net.ipv4.ip_forward = 1</code>
 </p>
 
 <p>
@@ -1773,8 +1853,12 @@ The domain to which the host belongs is also stored in this file. A minimal conf
 nameserver 66.63.128.84
 search cipi.net intern.lab
 domain cipi.org
+</p>
+
+<p>
 Check the system domain name with:
 </p>
+
 <div class="org-src-container">
 <pre class="src src-shell"># hostname -d                # Same as dnsdomainname
 </pre>
@@ -1819,10 +1903,15 @@ relative structure. For example archive /usr/local/etc and
 <i>usr/local/www and the first directory in the archive should be
 local</i>.
 </p>
+
 <div class="org-src-container">
-<pre class="src src-shell"># tar -C /usr -czf local.tgz local/etc local/www
-# tar -C /usr -xzf local.tgz      # To untar the local dir into /usr
-# cd /usr; tar -xzf local.tgz     # Is the same as above
+<pre class="src src-shell">$ tar czf name_of_archive_file.tar.gz name_of_directory_to_tar 
+$ tar -C /usr -czf local.tgz local/etc local/www
+$ tar -C /usr -xzf local.tgz      # To untar the local dir into /usr
+$ cd /usr; tar -xzf local.tgz     # Is the same as above
+
+$ cd /var/www &amp;&amp; sudo tar czf ~/www_backups/$(date +%Y%m%d-%H%M%S).tar.gz .
+# This would have created a file named something like 20120902-185558.tar.gz.
 </pre>
 </div>
 </div>
@@ -1857,7 +1946,6 @@ local</i>.
 </div>
 </div>
 </div>
-
 
 <div id="outline-container-orgb1053e6" class="outline-3">
 <h3 id="orgb1053e6">Miscellaneous</h3>
@@ -1898,6 +1986,7 @@ $ cd -                                            # cd to previous ($OLDPWD) dir
 <p>
 Debian/Ubuntu/Mint
 </p>
+
 <div class="org-src-container">
 <pre class="src src-shell">$ apt-get update                     # First update the package lists
 $ apt-get install emacs          # Install the package emacs
@@ -2065,12 +2154,14 @@ $ sudo fdisk -l /dev/sda
 </div>
 </div>
 </div>
+
 <div id="outline-container-org7cf426f" class="outline-3">
 <h3 id="org7cf426f">make partitions</h3>
 <div class="outline-text-3" id="text-org7cf426f">
 <p>
 entering command mode in fdisk
 </p>
+
 <div class="org-src-container">
 <pre class="src src-shell">$ sudo fdisk /dev/sda
 </pre>
@@ -2091,6 +2182,7 @@ then type n for new partition.
 </div>
 </div>
 </div>
+
 <div id="outline-container-org08420d7" class="outline-3">
 <h3 id="org08420d7">make a swap partition</h3>
 <div class="outline-text-3" id="text-org08420d7">
@@ -2103,6 +2195,7 @@ then type n for new partition.
 </p>
 </div>
 </div>
+
 <div id="outline-container-org069ebdd" class="outline-3">
 <h3 id="org069ebdd">auto mount a partition</h3>
 <div class="outline-text-3" id="text-org069ebdd">
@@ -2125,6 +2218,7 @@ separated by a space or tab.
 <p>
 Look up data on /dev/sda1:
 </p>
+
 <div class="org-src-container">
 <pre class="src src-shell">topher@crucible:~$ sudo blkid /dev/sda1
 /dev/sda1: UUID="727cac18-044b-4504-87f1-a5aefa774bda" TYPE="ext3"
@@ -2134,6 +2228,7 @@ Look up data on /dev/sda1:
 <p>
 Show UUID data for all partitions:
 </p>
+
 <div class="org-src-container">
 <pre class="src src-shell">topher@crucible:~$ sudo blkid
 /dev/sda1: UUID="727cac18-044b-4504-87f1-a5aefa774bda" TYPE="ext3"
@@ -2357,8 +2452,11 @@ the Glibc source tree.
 <div id="outline-container-org5db126f" class="outline-4">
 <h4 id="org5db126f">Linker search path</h4>
 <div class="outline-text-4" id="text-org5db126f">
+<div class="org-src-container">
+<pre class="src src-shell">$ ld --verbose | grep SEARCH
+</pre>
+</div>
 <p>
-ld &#x2013;verbose | grep SEARCH
 will illustrate the current search paths and their order.
 </p>
 </div>
@@ -2367,9 +2465,10 @@ will illustrate the current search paths and their order.
 <div id="outline-container-org5c2fb4b" class="outline-4">
 <h4 id="org5c2fb4b">To find out which standard linker gcc will use, run:</h4>
 <div class="outline-text-4" id="text-org5c2fb4b">
-<p>
-gcc -print-prog-name=l
-</p>
+<div class="org-src-container">
+<pre class="src src-shell">$ gcc -print-prog-name=l
+</pre>
+</div>
 </div>
 </div>
 </div>
@@ -2481,6 +2580,7 @@ linux good
 <p>
 You can print a range of fields by specifying the start and end position.
 </p>
+
 <div class="org-src-container">
 <pre class="src src-shell">cut -d' ' -f1-3 file.txt
 </pre>
@@ -2522,9 +2622,9 @@ With tr, use the squeeze repeat option:
 </div>
 </div>
 
-<div id="outline-container-orgfe802f2" class="outline-2">
-<h2 id="orgfe802f2">processes</h2>
-<div class="outline-text-2" id="text-orgfe802f2">
+<div id="outline-container-org3753e34" class="outline-2">
+<h2 id="org3753e34">processes</h2>
+<div class="outline-text-2" id="text-org3753e34">
 </div><div id="outline-container-orgb549a01" class="outline-3">
 <h3 id="orgb549a01">checking the priority of a process?</h3>
 <div class="outline-text-3" id="text-orgb549a01">
@@ -2651,33 +2751,18 @@ The easiest way is simply to send all STDOUT and STDERR to Syslog
 </p>
 
 <div class="org-src-container">
-<pre class="src src-shell">* * * * * echo "test message" 2&gt;&amp;1 |logger
+<pre class="src src-shell">    * * * * * echo "test message" 2&gt;&amp;1 |logger
+
+#If you want to debug your bash script just add debug mode to the beginning of your script
+set -x
+
+#To ensure your jobs are executed tail on /var/log/cron
+$ tail -f /var/log/cron
+
+# To see all the outputs in Syslog
+$ tail -f /var/log/messages
 </pre>
 </div>
-
-<p>
-If you want to debug your bash script just add debug mode to the beginning of your script
-</p>
-
-<p>
-set -x
-</p>
-
-<p>
-To ensure your jobs are executed tail on /var/log/cron
-</p>
-
-<p>
-tail -f /var/log/cron
-</p>
-
-<p>
-To see all the outputs in Syslog
-</p>
-
-<p>
-tail -f /var/log/messages
-</p>
 
 <p>
 <a href="http://www.emind.co/how-to/how-to-debug-cron-jobs/">http://www.emind.co/how-to/how-to-debug-cron-jobs/</a>
@@ -2783,9 +2868,9 @@ matches the behavior of real web browsers.
 </div>
 </div>
 
-<div id="outline-container-org9b8e3dc" class="outline-3">
-<h3 id="org9b8e3dc">make an options request</h3>
-<div class="outline-text-3" id="text-org9b8e3dc">
+<div id="outline-container-orgef595e1" class="outline-3">
+<h3 id="orgef595e1">make an options request</h3>
+<div class="outline-text-3" id="text-orgef595e1">
 <div class="org-src-container">
 <pre class="src src-shell">curl -i -X OPTIONS http://example.org/path
 </pre>
@@ -2803,9 +2888,9 @@ matches the behavior of real web browsers.
 </div>
 </div>
 
-<div id="outline-container-orgd7aa5e7" class="outline-3">
-<h3 id="orgd7aa5e7">make an options request</h3>
-<div class="outline-text-3" id="text-orgd7aa5e7">
+<div id="outline-container-org68f29ce" class="outline-3">
+<h3 id="org68f29ce">make an options request</h3>
+<div class="outline-text-3" id="text-org68f29ce">
 <div class="org-src-container">
 <pre class="src src-shell">curl -i -X OPTIONS http://example.org/path
 </pre>
@@ -2882,6 +2967,7 @@ curl --tr-encoding -X POST -v -# -o output -T filename.dat  http://example.com/r
 and set the <b>GRUB<sub>TIMEOUT</sub></b>. 
 -1 will disable it. And then run
 </p>
+
 <div class="org-src-container">
 <pre class="src src-shell">$ sudo update-grub
 </pre>
@@ -2894,9 +2980,9 @@ and set the <b>GRUB<sub>TIMEOUT</sub></b>.
 <div class="outline-text-3" id="text-orgaec7ccb">
 <p>
 So you broke grub? Boot from a live cd, [find your linux partition
- under /dev and use fdisk to find the linux partion] mount the linux
- partition, add /proc and /dev and use grub-install /dev/xyz. Suppose
- linux lies on /dev/sda4:
+under /dev and use fdisk to find the linux partion] mount the linux
+partition, add /proc and /dev and use grub-install /dev/xyz. Suppose
+linux lies on /dev/sda4:
 </p>
 
 <div class="org-src-container">
@@ -2937,6 +3023,7 @@ So you broke grub? Boot from a live cd, [find your linux partition
 <p>
 use synaptic package manager.
 </p>
+
 <div class="org-src-container">
 <pre class="src src-shell">$ sudo dpkg -P package_name			# -P for purge
 </pre>
@@ -3016,9 +3103,9 @@ so I think that things should "just work".
 </div>
 </div>
 
-<div id="outline-container-org8b5a3de" class="outline-2">
-<h2 id="org8b5a3de">installation</h2>
-<div class="outline-text-2" id="text-org8b5a3de">
+<div id="outline-container-orga12800c" class="outline-2">
+<h2 id="orga12800c">installation</h2>
+<div class="outline-text-2" id="text-orga12800c">
 </div><div id="outline-container-org17375b5" class="outline-3">
 <h3 id="org17375b5">other useful php modules</h3>
 <div class="outline-text-3" id="text-org17375b5">
@@ -3189,6 +3276,7 @@ You can now access a Postgres prompt immediately by typing:
 <p>
 connecting to <b>postgresql</b> with <b>PDO</b>
 </p>
+
 <div class="org-src-container">
 <pre class="src src-shell">$ sudo apt-get install php-pgsql
 </pre>
@@ -3197,6 +3285,7 @@ connecting to <b>postgresql</b> with <b>PDO</b>
 <p>
 Or if the package is installed, you need to enable the module in php.ini
 </p>
+
 <div class="org-src-container">
 <pre class="src src-shell">extension=php_pgsql.dll (windows)
 extension=php_pgsql.so (linux)
@@ -3211,6 +3300,7 @@ extension=php_pgsql.so (linux)
 <p>
 try installing
 </p>
+
 <div class="org-src-container">
 <pre class="src src-shell">$ sudo apt-get install php-cgi
 </pre>
@@ -3281,6 +3371,7 @@ zlib: '1.2.8' }
 <p>
 Install Compiz Config, from a terminal, type:
 </p>
+
 <div class="org-src-container">
 <pre class="src src-shell">$ sudo apt-get install compizconfig-settings-manager
 </pre>
@@ -3298,9 +3389,9 @@ checkbox in "Utility -&gt; Workarounds -&gt; Force full screen redraws
 <div id="outline-container-orgfec2626" class="outline-2">
 <h2 id="orgfec2626">postgresql</h2>
 <div class="outline-text-2" id="text-orgfec2626">
-</div><div id="outline-container-org1429979" class="outline-3">
-<h3 id="org1429979">installation</h3>
-<div class="outline-text-3" id="text-org1429979">
+</div><div id="outline-container-org32e9082" class="outline-3">
+<h3 id="org32e9082">installation</h3>
+<div class="outline-text-3" id="text-org32e9082">
 <div class="org-src-container">
 <pre class="src src-shell">$ sudo apt-get update
 $ sudo apt-get install postgresql postgresql-contrib
@@ -3474,9 +3565,10 @@ ALTER SEQUENCE tablename_colname_seq OWNED BY tablename.colname;
 <h3 id="orgdefed12">backup with pg<sub>dump</sub></h3>
 <div class="outline-text-3" id="text-orgdefed12">
 <div class="org-src-container">
-<pre class="src src-shell">/usr/local/bin/pg_dump shahkar -U pgsql &gt; /root/farahoosh/shahkar-db-backup/`date +%Y-%m-%d-%H:%M:%S`.sql
+<pre class="src src-shell">$ /usr/local/bin/pg_dump shahkar -U pgsql &gt; /root/farahoosh/shahkar-db-backup/`date +%Y-%m-%d-%H:%M:%S`.sql
 </pre>
 </div>
+
 <p>
 You can also run the command you'd like with the postgres account
 directly with sudo.
@@ -3528,28 +3620,329 @@ $ pg_dump -C dbname | ssh -C remoteuser@remotehost "psql dbname"
 </div>
 </div>
 
-<div id="outline-container-org0745edd" class="outline-3">
-<h3 id="org0745edd">getting tablenames in a particular database</h3>
-<div class="outline-text-3" id="text-org0745edd">
+<div id="outline-container-org65c4cfa" class="outline-3">
+<h3 id="org65c4cfa">active connections to the database</h3>
+<div class="outline-text-3" id="text-org65c4cfa">
 <div class="org-src-container">
-<pre class="src src-sql">SELECT tablename FROM pg_tables WHERE tablename NOT LIKE ‘pg%’ AND tablename NOT LIKE ‘sql%’.
+<pre class="src src-sql">select * from pg_stat_activity;
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org921fd0c" class="outline-3">
-<h3 id="org921fd0c">generating random timestamps</h3>
-<div class="outline-text-3" id="text-org921fd0c">
+<div id="outline-container-orga673689" class="outline-3">
+<h3 id="orga673689">rename postgresql database</h3>
+<div class="outline-text-3" id="text-orga673689">
 <div class="org-src-container">
-<pre class="src src-sql">select timestamp 'epoch' + (
-          extract('epoch' from timestamp '2014-10-01 10:00:00')
-        + random() * (
-                     extract('epoch' from timestamp '2014-20-01 20:00:00')
-                   - extract('epoch' from timestamp '2014-10-01 10:00:00')
-       )) * interval '1 second'
+<pre class="src src-sql">alter &lt;db_name&gt; rename to &lt;new_db_name&gt;;
 </pre>
 </div>
+</div>
+</div>
+
+<div id="outline-container-org18447dd" class="outline-3">
+<h3 id="org18447dd">which version of <code>postgresql</code> am I running?</h3>
+<div class="outline-text-3" id="text-org18447dd">
+<div class="org-src-container">
+<pre class="src src-shell">$ pg_config --version
+#Client version:
+$ psql --version
+
+#  using psql
+$psql
+postgres=# \g
+postgres=# SELECT version();
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org55e1623" class="outline-3">
+<h3 id="org55e1623">restoring database with <code>psql</code></h3>
+<div class="outline-text-3" id="text-org55e1623">
+<div class="org-src-container">
+<pre class="src src-shell">$ createdb dbname
+$ cat filename* | psql dbname
+</pre>
+</div>
+
+<p>
+<a href="https://www.postgresql.org/docs/8.1/static/backup.html">https://www.postgresql.org/docs/8.1/static/backup.html</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge72fe4c" class="outline-3">
+<h3 id="orge72fe4c">connect to <code>postgresql</code> database in local host without password</h3>
+<div class="outline-text-3" id="text-orge72fe4c">
+<div class="org-src-container">
+<pre class="src src-shell">$ locate pg_hba.conf
+$ vim /path/to/pg_hba.conf
+</pre>
+</div>
+
+<p>
+change METHOD to <code>trust</code>
+</p>
+
+<pre class="example">
+TYPE  DATABASE        USER            ADDRESS                 METHOD
+host    all             all             127.0.0.1/32            trust
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgc2d6d73" class="outline-3">
+<h3 id="orgc2d6d73">How to reload config settings without restarting database</h3>
+<div class="outline-text-3" id="text-orgc2d6d73">
+<p>
+if you are making modifications to the Postgres configuration file
+postgresql.conf (or similar), and you want to new settings to take effect
+without needing to restart the entire database, there are two ways to accomplish
+this.
+</p>
+
+<p>
+Option 1: From the command-line shell
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">$ su - postgres
+$ /usr/bin/pg_ctl reload
+</pre>
+</div>
+
+<p>
+Option 2: Using SQL
+</p>
+
+<pre class="example">
+SELECT pg_reload_conf();
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgd982f62" class="outline-3">
+<h3 id="orgd982f62">backup</h3>
+<div class="outline-text-3" id="text-orgd982f62">
+</div><div id="outline-container-org5e0be37" class="outline-4">
+<h4 id="org5e0be37">intro</h4>
+<div class="outline-text-4" id="text-org5e0be37">
+<p>
+<b>Logical backups</b>: A logical backup refers to the dump file that is created by the
+pg<sub>dump</sub> utility and which might be used to restore the database in the case of a
+data loss or an accidental deletion of a database object, such as a table. The
+pg<sub>dump</sub> utility is a PostgreSQL specific utility that can be run on the command
+line, which makes a connection to the database and initiates the logical backup.
+</p>
+
+<p>
+<b>Physical backups</b>: A physical backup refers to the OS level backup of a database
+directory and its associated files.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org69f2795" class="outline-4">
+<h4 id="org69f2795">backup a single database</h4>
+<div class="outline-text-4" id="text-org69f2795">
+<div class="org-src-container">
+<pre class="src src-shell">$ pg_dump -U username -W -F t database_name &gt; [Backup Location Path]
+</pre>
+</div>
+
+<p>
+The usage of the options used with the pg<sub>dump</sub> command is explained here:
+</p>
+
+<p>
+<b>U switch</b>: The -U switch specifies the database user initiating the connection.
+As pg<sub>dump</sub> is a command-line utility, we need to specify the username via which
+the pg<sub>dump</sub> utility can make a database connection.
+</p>
+
+<p>
+<b>W switch</b>: This option is not mandatory. This option forces pg<sub>dump</sub> to prompt for
+the password before connecting to the PostgreSQL database server. After you
+press Enter, pg<sub>dump</sub> will prompt for the password of the database user from
+which the connection is initiated.
+</p>
+
+<p>
+<b>F switch</b>: The -F switch specifies the output file format that will be used. We
+specified the t option with the -F switch because the output file will be
+implemented as a tar format archive file.
+</p>
+</div>
+</div>
+<div id="outline-container-org5186708" class="outline-4">
+<h4 id="org5186708">logical backup of all databases</h4>
+<div class="outline-text-4" id="text-org5186708">
+<p>
+to back up all the databases in one go in Linux, use the pg<sub>dumpall</sub> command, as
+follows:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">$ pg_dumpall -U postgres &gt;   /home/pgbackup/all.sql
+</pre>
+</div>
+
+<p>
+To back up all object definitions in all the databases, including roles,
+tablespaces, databases, schemas, tables, indexes, triggers, functions,
+constraints, views, ownership, and privileges, you can use the following command
+in Windows:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">$fpg_dumpall --schema-only &gt; c:\pgdump\definitiononly.sql
+</pre>
+</div>
+
+<p>
+If you want to back up the role definition only, use the following command:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">$ pg_dumpall --roles-only &gt; c:\pgdump\myroles.sql
+</pre>
+</div>
+
+<p>
+If you want to back up tablespace definitions, use the following command:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">$ pg_dumpall --tablespaces-only &gt; c:\pgdump\mytablespaces.sql
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org4f91c3a" class="outline-4">
+<h4 id="org4f91c3a">taking a base backup</h4>
+<div class="outline-text-4" id="text-org4f91c3a">
+<p>
+You can use the pg<sub>basebackup</sub> command in the following manner:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">$ pg_basebackup -h 192.168.10.14 -D /home/abcd/pgsql/data
+</pre>
+</div>
+
+<p>
+Here, we take a base backup of the server located at 192.168.10.14 and store it
+in the /home/abcd/pgsql/data local directory.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org822f56d" class="outline-3">
+<h3 id="org822f56d">examplg <code>pg_hba.conf</code></h3>
+<div class="outline-text-3" id="text-org822f56d">
+<pre class="example">
+Example pg_hba.conf Entries
+
+# Allow any user on the local system to connect to any database with
+# any database user name using Unix-domain sockets (the default for local
+# connections).
+#
+# TYPE  DATABASE        USER            ADDRESS                 METHOD
+local   all             all                                     trust
+
+# The same using local loopback TCP/IP connections.
+#
+# TYPE  DATABASE        USER            ADDRESS                 METHOD
+host    all             all             127.0.0.1/32            trust
+
+# The same as the previous line, but using a separate netmask column
+#
+# TYPE  DATABASE        USER            IP-ADDRESS      IP-MASK             METHOD
+host    all             all             127.0.0.1       255.255.255.255     trust
+
+# The same over IPv6.
+#
+# TYPE  DATABASE        USER            ADDRESS                 METHOD
+host    all             all             ::1/128                 trust
+
+# The same using a host name (would typically cover both IPv4 and IPv6).
+#
+# TYPE  DATABASE        USER            ADDRESS                 METHOD
+host    all             all             localhost               trust
+
+# Allow any user from any host with IP address 192.168.93.x to connect
+# to database "postgres" as the same user name that ident reports for
+# the connection (typically the operating system user name).
+#
+# TYPE  DATABASE        USER            ADDRESS                 METHOD
+host    postgres        all             192.168.93.0/24         ident
+
+# Allow any user from host 192.168.12.10 to connect to database
+# "postgres" if the user's password is correctly supplied.
+#
+# TYPE  DATABASE        USER            ADDRESS                 METHOD
+host    postgres        all             192.168.12.10/32        md5
+
+# Allow any user from hosts in the example.com domain to connect to
+# any database if the user's password is correctly supplied.
+#
+# TYPE  DATABASE        USER            ADDRESS                 METHOD
+host    all             all             .example.com            md5
+
+# In the absence of preceding "host" lines, these two lines will
+# reject all connections from 192.168.54.1 (since that entry will be
+# matched first), but allow Kerberos 5 connections from anywhere else
+# on the Internet.  The zero mask causes no bits of the host IP
+# address to be considered, so it matches any host.
+#
+# TYPE  DATABASE        USER            ADDRESS                 METHOD
+host    all             all             192.168.54.1/32         reject
+host    all             all             0.0.0.0/0               krb5
+
+# Allow users from 192.168.x.x hosts to connect to any database, if
+# they pass the ident check.  If, for example, ident says the user is
+# "bryanh" and he requests to connect as PostgreSQL user "guest1", the
+# connection is allowed if there is an entry in pg_ident.conf for map
+# "omicron" that says "bryanh" is allowed to connect as "guest1".
+#
+# TYPE  DATABASE        USER            ADDRESS                 METHOD
+host    all             all             192.168.0.0/16          ident map=omicron
+
+# If these are the only three lines for local connections, they will
+# allow local users to connect only to their own databases (databases
+# with the same name as their database user name) except for administrators
+# and members of role "support", who can connect to all databases.  The file
+# $PGDATA/admins contains a list of names of administrators.  Passwords
+# are required in all cases.
+#
+# TYPE  DATABASE        USER            ADDRESS                 METHOD
+local   sameuser        all                                     md5
+local   all             @admins                                 md5
+local   all             +support                                md5
+
+# The last two lines above can be combined into a single line:
+local   all             @admins,+support                        md5
+
+# The database column can also use lists and file names:
+local   db1,db2,@demodbs  all                                   md5
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org256616f" class="outline-3">
+<h3 id="org256616f">connect to <code>psql</code> without password</h3>
+<div class="outline-text-3" id="text-org256616f">
+<p>
+After installation, open <code>&lt;PostgreSQL PATH&gt;\data\pg_hba.conf</code>.
+Modify these two lines, and change "md5" to "trust":
+</p>
+
+<pre class="example">
+host    all             all             127.0.0.1/32            md5
+host    all             all             ::1/128                 md5
+</pre>
 </div>
 </div>
 </div>
@@ -3711,9 +4104,9 @@ use <code>echo -en</code>
 <div id="outline-container-orgf68c31d" class="outline-2">
 <h2 id="orgf68c31d">wireless</h2>
 <div class="outline-text-2" id="text-orgf68c31d">
-</div><div id="outline-container-org56f9ac4" class="outline-3">
-<h3 id="org56f9ac4">concepts</h3>
-<div class="outline-text-3" id="text-org56f9ac4">
+</div><div id="outline-container-org2b42772" class="outline-3">
+<h3 id="org2b42772">concepts</h3>
+<div class="outline-text-3" id="text-org2b42772">
 </div><div id="outline-container-orgbebc4f0" class="outline-4">
 <h4 id="orgbebc4f0">wlan frames</h4>
 <div class="outline-text-4" id="text-orgbebc4f0">
@@ -3798,6 +4191,27 @@ Protocol.
 $ ifconfig mon0              
 # stopping monitor mode
 $ sudo airmon-ng stop mon0
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org78fd08f" class="outline-4">
+<h4 id="org78fd08f">check for interfering processes</h4>
+<div class="outline-text-4" id="text-org78fd08f">
+<div class="org-src-container">
+<pre class="src src-shell">$ airmon-ng check        # check for interfering processes
+$ airmon-ng check kill   # kill them if necessary
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge785fae" class="outline-4">
+<h4 id="orge785fae">capturing packets</h4>
+<div class="outline-text-4" id="text-orge785fae">
+<div class="org-src-container">
+<pre class="src src-shell">$ airodump-ng mon0 --channel 6
 </pre>
 </div>
 </div>
@@ -3962,6 +4376,75 @@ $ airdecap-ng –p abdefg WPACrackingDemo-02.cap –e "Wireless Lab"
 <div class="outline-text-3" id="text-orge75530c">
 <div class="org-src-container">
 <pre class="src src-shell">$ iwconfig wlan0 &lt;ESSID&gt;  # ESSID of the target
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org7f80785" class="outline-3">
+<h3 id="org7f80785">viewing available wireless interfaces</h3>
+<div class="outline-text-3" id="text-org7f80785">
+<div class="org-src-container">
+<pre class="src src-shell">$ iwconfig
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2453f16" class="outline-3">
+<h3 id="org2453f16">scan for Access Points</h3>
+<div class="outline-text-3" id="text-org2453f16">
+<div class="org-src-container">
+<pre class="src src-shell">$ iwcofig wlan0 scan
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3980223" class="outline-2">
+<h2 id="org3980223">capturing traffic</h2>
+<div class="outline-text-2" id="text-org3980223">
+</div><div id="outline-container-org6f4c44b" class="outline-3">
+<h3 id="org6f4c44b">concepts</h3>
+<div class="outline-text-3" id="text-org6f4c44b">
+</div><div id="outline-container-org9428f3e" class="outline-4">
+<h4 id="org9428f3e">ARP</h4>
+</div>
+</div>
+<div id="outline-container-orgaf0ace3" class="outline-3">
+<h3 id="orgaf0ace3">viewing ARP cache</h3>
+<div class="outline-text-3" id="text-orgaf0ace3">
+<div class="org-src-container">
+<pre class="src src-shell">$ arp -a
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgfd0b8fd" class="outline-3">
+<h3 id="orgfd0b8fd">ARP cache poisoning</h3>
+<div class="outline-text-3" id="text-orgfd0b8fd">
+<p>
+[ubuntu&#x2013;192.168.20.11] --------&#x2013;&#x2014; [ kali-192.168.20.9] -------------&#x2013;&#x2014; [winxp - 192.168.20.10]
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell"># enable IP forwarding
+$ echo 1 &gt; /proc/sys/net/ipv4/ip_forward
+$ arpspoof -i eth0 -t 192.168.20.11 192.168.20.10
+$ arpspoof -i eth0 -t 192.168.20.10 192.168.20.11
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgce31b1f" class="outline-3">
+<h3 id="orgce31b1f">Using ARP Cache Poisoning to Impersonate the Default Gateway</h3>
+<div class="outline-text-3" id="text-orgce31b1f">
+<div class="org-src-container">
+<pre class="src src-shell">root@kali:~# arpspoof -i eth0 -t 192.168.20.11 192.168.20.1
+root@kali:~# arpspoof -i eth0 -t 192.168.20.1 192.168.20.11
 </pre>
 </div>
 </div>
@@ -4227,6 +4710,184 @@ This shuts the server down immediately. Any existing connections are terminated 
 </div>
 </div>
 
+<div id="outline-container-orge809680" class="outline-2">
+<h2 id="orge809680">redis</h2>
+<div class="outline-text-2" id="text-orge809680">
+</div><div id="outline-container-orgc9a2a17" class="outline-3">
+<h3 id="orgc9a2a17">using from command line</h3>
+<div class="outline-text-3" id="text-orgc9a2a17">
+<pre class="example">
+$ redis-cli
+127.0.0.1:6379&gt; SET philosopher "socrates"
+OK
+127.0.0.1:6379&gt; GET philosopher
+"socrates"
+127.0.0.1:6379&gt;
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org8231f2d" class="outline-3">
+<h3 id="org8231f2d">Redis data types</h3>
+<div class="outline-text-3" id="text-org8231f2d">
+</div><div id="outline-container-org8a62b50" class="outline-4">
+<h4 id="org8a62b50">Strings</h4>
+<div class="outline-text-4" id="text-org8a62b50">
+<p>
+The MSET command sets the values of multiple keys at once. The arguments are
+key-value pairs separated by spaces.
+The MGET command retrieves the values of multiple key names at once, and the
+key names are separated by spaces.
+</p>
+
+<pre class="example">
+$ redis-cli
+127.0.0.1:6379&gt; MSET first "First Key value" second "Second Key value"
+OK
+127.0.0.1:6379&gt; MGET first second
+1) "First Key value"
+2) "Second Key value"
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgdd1152d" class="outline-4">
+<h4 id="orgdd1152d"><code>EXPIRE</code> command</h4>
+<div class="outline-text-4" id="text-orgdd1152d">
+<p>
+The EXPIRE command adds an expiration time (in seconds) to a given key. After that
+time, the key is automatically deleted. It returns 1 if the expiration is set successfully
+and 0 if the key does not exist or cannot be set.
+The TTL (Time To Live) command returns one of the following:
+•	 A positive integer: This is the amount of seconds a given key
+has left to live
+•	 -2: If the key is expired or does not exist
+•	 -1: If the key exists but has no expiration time set
+</p>
+
+<pre class="example">
+$ redis-cli
+127.0.0.1:6379&gt; SET current_chapter "Chapter 1"
+OK
+127.0.0.1:6379&gt; EXPIRE current_chapter 10
+(integer) 1
+127.0.0.1:6379&gt; GET current_chapter
+"Chapter 1"
+127.0.0.1:6379&gt; TTL current_chapter
+(integer) 3
+127.0.0.1:6379&gt; TTL current_chapter
+(integer) -2
+127.0.0.1:6379&gt; GET current_chapter
+(nil)
+127.0.0.1:6379&gt;
+</pre>
+
+<p>
+The command INCRBYFLOAT increments a key by a given float number and returns
+the new value. INCRBY, DECRBY, and INCRBYFLOAT accept either a positive or a
+negative number:
+</p>
+
+<pre class="example">
+$ redis-cli
+127.0.0.1:6379&gt; SET counter 100
+OK
+127.0.0.1:6379&gt; INCR counter
+(integer) 101
+127.0.0.1:6379&gt; INCRBY counter 5
+(integer) 106
+127.0.0.1:6379&gt; DECR counter
+(integer) 105
+127.0.0.1:6379&gt; DECRBY counter 100
+(integer) 5
+127.0.0.1:6379&gt; GET counter
+"5"
+127.0.0.1:6379&gt; INCRBYFLOAT counter 2.4
+"7.4"
+</pre>
+
+<p>
+The preceding commands shown are atomic, which means that they increment/
+decrement and return the new value as a single operation. It is not possible for two
+different clients to execute the same command at the same time and get the same
+result—no race conditions happen with those commands.
+For example, if the counter key is 1 and two different clients (A and B) increment
+their counters at the same time with INCR, client A will receive the value 2 and
+client B will receive 3.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf36929b" class="outline-3">
+<h3 id="orgf36929b">Hello world using <code>redis</code> and <code>Nodejs</code></h3>
+<div class="outline-text-3" id="text-orgf36929b">
+<div class="org-src-container">
+<pre class="src src-javascript">// install by: $ npm install redis
+var redis = require("redis");
+var client = redis.createClient();
+client.set("my_key", "Hello world using nodejs and redis");
+client.get("my_key",redis.print);
+client.quit();
+</pre>
+</div>
+
+<p>
+and run with
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">$ node hello.js
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org61b4092" class="outline-3">
+<h3 id="org61b4092">Building a voting system with Strings using Node.js</h3>
+<div class="outline-text-3" id="text-org61b4092">
+<div class="org-src-container">
+<pre class="src src-javascript">var redis =require('redis');
+
+var client = redis.createClient();
+
+function upVote(id){
+  var key = "article:" + id + ":votes";
+  client.incr(key);
+}
+
+function downVote(id){
+  var key = "article:" + id + ":votes";
+  client.decr(key);
+}
+
+function showResults(id) {
+  var headlineKey = "article:" + id + ":headline";
+  var voteKey = "article:" + id + ":votes";
+  client.mget([headlineKey, voteKey], function(err, replies){
+    console.log("The article " + replies[0] + " has " + replies[1] + " votes");
+  });
+}
+
+upVote(12345);
+upVote(12345);
+upVote(12345);
+upVote(10001);
+upVote(10001);
+downVote(10001);
+upVote(60056);
+
+showResults(12345);
+showResults(10001);
+showResults(60056);
+
+client.quit();
+</pre>
+</div>
+</div>
+</div>
+</div>
+
 
 <div id="outline-container-orgc660c13" class="outline-2">
 <h2 id="orgc660c13">references</h2>
@@ -4255,7 +4916,7 @@ This shuts the server down immediately. Any existing connections are terminated 
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Mohammad Reza Mansouri</p>
-<p class="date">Created: 2017-03-08 Wed 10:56</p>
+<p class="date">Created: 2017-03-21 Tue 21:00</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
